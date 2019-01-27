@@ -1,0 +1,9 @@
+[submodule "9899-1990"]
+	path = std/9899-1990
+	url = git@gitlab.com:ung.org/lib/9899-1990.git
+[submodule "POSIX.1-1988"]
+	path = std/POSIX.1-1988
+	url = git@gitlab.com:ung.org/lib/POSIX.1-1988.git
+[submodule "POSIX.1-1990"]
+	path = std/POSIX.1-1990
+	url = git@gitlab.com:ung.org/lib/POSIX.1-1990.git
