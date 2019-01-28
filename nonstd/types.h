@@ -99,8 +99,6 @@ struct libc {
 			char *name;
 			char *dir;
 		} *fds;
-		const char **confstr;
-		const int nconfstr;
 	} unistd;
 	char* (*atpath)(int fd, const char *path);
 	long (*syscall_lookup)(const char *call);
