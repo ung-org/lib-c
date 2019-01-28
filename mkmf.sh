@@ -1,30 +1,12 @@
 #!/bin/sh
 
-classify_source () {
-	NAME=$(basename $1 .c)
-
-	if grep -q "define ${NAME}[ (]" $1; then
-		echo MACRO
-	elif grep -q "typedef.* ${NAME};" $1; then
-		echo TYPE
-	elif grep -q "typedef.*{$" $1; then
-		echo TYPE_LONG
-	elif grep -q "struct.*${NAME} {" $1; then
-		echo STRUCT
-	elif grep -q "union.* ${NAME} {" $1; then
-		echo UNION
-	elif grep -q "^[A-Za-z_].* ${NAME};" $1; then
-		echo EXTERN
-	else
-		echo FUNCTION
-	fi
-}
+. ./mk.sh
 
 STANDARD=${1-9899-1990}
 #STANDARD=${1-POSIX.1-1990}
 
 if [ ! -f .dep/to-build ]; then
-	rm -rf .dep Makefile header.mk
+	rm -rf .dep Makefile .headers.mk
 	mkdir -p .dep
 	echo ${STANDARD} > .dep/to-build
 fi
@@ -42,20 +24,30 @@ fi
 
 rm -f .dep/${STANDARD}.*
 
-for i in $(find std/${STANDARD} -name \*.c); do
-	NAME=$(basename $i .c)
-	TYPE=$(classify_source $i)
-	HEADER=$(sed -ne 's/.*<\(.*\.h\)>.*/\1/p' $i)
-	LIB=$(grep '^LINK(' $i | m4 -DLINK='lib$1')
+for i in $(find std/${STANDARD} -name \*.c) $(find std/${STANDARD} -name \*.ref); do
+	FILE=$i
+	BASE=$i
+	if grep -q '^REFERENCE(' $FILE; then
+		BASE=$(grep '^REFERENCE(' $i | m4 -DREFERENCE='std/$1')
+	fi
+	NAME=$(basename $BASE .c)
+	TYPE=$(classify_source $BASE)
+	HEADER=$(sed -ne 's/.*<\(.*\.h\)>.*/\1/p' $FILE)
+	LIB=$(grep '^LINK(' $BASE | m4 -DLINK='lib$1')
 	LIB=${LIB:-libc}
 
 	if [ ! -f .dep/${HEADER}.mk ]; then
 		mkdir -p $(dirname .dep/${HEADER}.mk)
-		printf '$(INCDIR)/%s:' "${HEADER}" > .dep/${HEADER}.mk
+		printf '%s_SOURCES = ' $(echo ${HEADER} | tr /. _) > .dep/${HEADER}.mk
 	fi
-	printf ' \\\n\t%s' "$i" >> .dep/${HEADER}.mk
+	printf ' \\\n\t%s' "$FILE" >> .dep/${HEADER}.mk
 
-	if [ ${TYPE} = EXTERN -o ${TYPE} = FUNCTION ]; then
+	if [ $FILE != $BASE ]; then
+		printf ' \\\n\t%s' "$BASE" >> .dep/${HEADER}.mk
+		continue
+	fi
+
+	if [ ${TYPE} = EXTERN -o ${TYPE} = FUNCTION -o ${TYPE} = TGFN ]; then
 		printf '$(OBJDIR)/%s.o: %s $(INCDIR)/%s' ${NAME} $i ${HEADER}> .dep/${NAME}.o.mk
 		for j in $(grep include $i); do
 			: # TODO: add each header to depends file here
@@ -70,7 +62,6 @@ for i in $(find std/${STANDARD} -name \*.c); do
 		fi
 		printf ' \\\n\t$(OBJDIR)/%s.o' ${NAME} >> .dep/${LIB}.a.mk
 	fi
-
 done
 
 if [ $(cat .dep/to-build) = ${STANDARD} ]; then
@@ -86,16 +77,22 @@ if [ $(cat .dep/to-build) = ${STANDARD} ]; then
 		printf '\n\n%s.a: $(%s_OBJS)\n\t$(AR) r $@ $?\n\n' $LIB $LIB >> Makefile
 	done
 
-	printf '.POSIX:\n\ninclude config.mk\n\n' > headers.mk
+	printf '.POSIX:\n\ninclude config.mk\n\n' > .headers.mk
+	printf 'default: headers\n\n' >> .headers.mk
 	for i in $(find .dep -name \*.h.mk); do
-		cat $i >> headers.mk
-		printf '\n\t./gen-header $@\n\n' >> headers.mk
+		HDR=$(echo $i | sed -e 's#^.*\.dep/##;s#\.mk$##')
+		cat $i >> .headers.mk
+		printf '\n\n$(INCDIR)/%s: $(%s_SOURCES)\n' ${HDR} $(echo $HDR | tr /. _) >> .headers.mk
+		printf '\tsh mkh.sh $@ $(%s_SOURCES)\n\n' $(echo $HDR | tr /. _) >> .headers.mk
+		printf ' $(INCDIR)/%s' ${HDR} >> .dep/all_headers.mk
 	done
+	printf 'headers:' >> .headers.mk
+	cat .dep/all_headers.mk >> .headers.mk
 
 	cat .dep/*.o.mk >> Makefile
 
-	printf '$(OBJDIR)/libc.o: nonstd/libc.c\n\t$(CC) $(CFLAGS) -c $? -o $@\n\n' >> Makefile
-	printf '$(OBJDIR)/x86-64.o: nonstd/x86-64.s\n\t$(CC) $(CFLAGS) -c $? -o $@\n\n' >> Makefile
+	printf '$(OBJDIR)/libc.o: nonstd/libc.c\n\t-@mkdir -p $(OBJDIR)\n\t$(CC) $(CFLAGS) -c $? -o $@\n\n' >> Makefile
+	printf '$(OBJDIR)/x86-64.o: nonstd/x86-64.s\n\t-@mkdir -p $(OBJDIR)\n\t$(CC) $(CFLAGS) -c $? -o $@\n\n' >> Makefile
 
 	printf 'all:' >> Makefile
 	for i in  .dep/lib*.a.mk; do
@@ -103,7 +100,10 @@ if [ $(cat .dep/to-build) = ${STANDARD} ]; then
 	done
 	printf '\n\n' >> Makefile
 
+	printf 'headers:\n\t@$(MAKE) -f .headers.mk $@\n\n' >> Makefile
+
 	printf 'clean:\n\trm -rf $(OBJDIR) *.a\n\n' >> Makefile
-	printf 'git-clean: clean\n\trm -rf .dep header.mk Makefile\n\n' >> Makefile
+	printf 'git-clean: clean\n\trm -rf .dep .headers.mk Makefile\n\n' >> Makefile
 	
+	rm -f .dep/to-build
 fi
