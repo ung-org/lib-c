@@ -40,6 +40,26 @@ for i in $@; do
 	echo $i >> $HEADER.$(classify_source $i)
 done
 
+#if [ POSIX ]; then
+cat <<-EOF > /dev/null
+	#if (!defined _POSIX_C_SOURCE) && (defined _XOPEN_SOURCE)
+	#	if (_XOPEN_SOURCE >= 700)
+	#		define _POSIX_C_SOURCE 200809L
+	#	elif (_XOPEN_SOURCE >= 600)
+	#		define _POSIX_C_SOURCE 200112L
+	#	elif (_XOPEN_SOURCE >= 500)
+	#		define _POSIX_C_SOURCE 199506L
+	#	else
+	#		define _POSIX_C_SOURCE 2
+	#	endif
+	#endif
+
+	#ifdef _POSIX_C_SOURCE
+	#	define _POSIX_SOURCE
+	#endif
+EOF
+#fi
+
 if [ -f $HEADER.MACRO ]; then
 	for i in $(sort $HEADER.MACRO); do
 		grep ' *extern.*;$' $i
@@ -108,15 +128,24 @@ fi
 
 if [ -f $HEADER.FUNCTION ]; then
 	if grep -q restrict $(cat $HEADER.FUNCTION); then
-	printf '#if ! defined __STDC_VERSION__ || __STDC_VERSION__ < 199909L\n'
-	printf '#define restrict\n'
-	printf '#endif\n\n'
+		printf '#if (!defined __STDC_VERSION__) || (__STDC_VERSION__ < 199909L)\n'
+		printf '#define restrict\n'
+		printf '#endif\n\n'
 	fi
+
+	if grep -q _Noreturn $(cat $HEADER.FUNCTION); then
+		printf '#if (!defined __STDC_VERSION__) || (__STDC_VERSION__ < 200112L)\n'
+		printf '#define _Noreturn\n'
+		printf '#endif\n\n'
+	fi
+
 	for i in $(sort $HEADER.FUNCTION); do
 		printf '%s;\n' "$(sed -e "/{/q" $i | tail -n2 | head -n1)"
 	done
 	printf '\n'
 	rm -f $HEADER.FUNCTION
 fi
+
+rm -f $HEADER.REFERENCE
 
 printf '\n#endif\n'
