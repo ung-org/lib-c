@@ -3,3 +3,4 @@
 include
 obj
 tags
+*.a
