@@ -62,11 +62,9 @@ EOF
 
 if [ -f $HEADER.MACRO ]; then
 	for i in $(sort $HEADER.MACRO); do
-		grep ' *extern.*;$' $i
 		grep -E '^#(if|def|undef|el|end)' $i
 	done
 	printf '\n'
-	rm $HEADER.MACRO
 fi
 
 if [ -f $HEADER.TYPE ]; then
@@ -144,6 +142,14 @@ if [ -f $HEADER.FUNCTION ]; then
 	done
 	printf '\n'
 	rm -f $HEADER.FUNCTION
+fi
+
+if [ -f $HEADER.MACRO ]; then
+	for i in $(sort $HEADER.MACRO); do
+		grep ' *extern.*;$' $i
+	done
+	printf '\n'
+	rm $HEADER.MACRO
 fi
 
 rm -f $HEADER.REFERENCE
