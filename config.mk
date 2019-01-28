@@ -1,0 +1,4 @@
+.POSIX:
+CC=c89
+OBJDIR=obj
+INCDIR=include
