@@ -28,11 +28,11 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 */
-
-#ifndef ${GUARD}
-#define ${GUARD}
-
 EOF
+
+if [ $(basename $HEADER) != assert.h ]; then
+	printf '\n#ifndef %s\n#define %s\n\n' ${GUARD} ${GUARD}
+fi
 
 rm -f $HEADER.*
 for i in $@; do
@@ -61,6 +61,7 @@ EOF
 #fi
 
 if [ -f $HEADER.MACRO ]; then
+	# FIXME: line continuation
 	for i in $(sort $HEADER.MACRO); do
 		grep -E '^#(if|def|undef|el|end)' $i
 	done
@@ -154,4 +155,6 @@ fi
 
 rm -f $HEADER.REFERENCE
 
-printf '\n#endif\n'
+if [ $(basename $HEADER) != assert.h ]; then
+	printf '\n#endif\n'
+fi
