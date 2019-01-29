@@ -23,7 +23,7 @@ libc_OBJS = $(OBJDIR)/libc.o $(OBJDIR)/x86-64.o \
 	$(OBJDIR)/toupper.o \
 	$(OBJDIR)/localeconv.o \
 	$(OBJDIR)/setlocale.o \
-	$(OBJDIR)/jmp_buf.o \
+	$(OBJDIR)/struct_lconv.o \
 	$(OBJDIR)/longjmp.o \
 	$(OBJDIR)/setjmp.o \
 	$(OBJDIR)/raise.o \
@@ -127,6 +127,7 @@ libc_OBJS = $(OBJDIR)/libc.o $(OBJDIR)/x86-64.o \
 	$(OBJDIR)/localtime.o \
 	$(OBJDIR)/mktime.o \
 	$(OBJDIR)/strftime.o \
+	$(OBJDIR)/struct_tm.o \
 	$(OBJDIR)/time.o
 
 libc.a: $(libc_OBJS)
@@ -407,10 +408,6 @@ $(OBJDIR)/isxdigit.o: std/9899-1990/ctype/isxdigit.c $(INCDIR)/ctype.h
 	-@mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGS) -c std/9899-1990/ctype/isxdigit.c -o $@
 
-$(OBJDIR)/jmp_buf.o: std/9899-1990/setjmp/jmp_buf.c $(INCDIR)/setjmp.h
-	-@mkdir -p $(OBJDIR)
-	$(CC) $(CFLAGS) -c std/9899-1990/setjmp/jmp_buf.c -o $@
-
 $(OBJDIR)/labs.o: std/9899-1990/stdlib/labs.c $(INCDIR)/stdlib.h
 	-@mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGS) -c std/9899-1990/stdlib/labs.c -o $@
@@ -666,6 +663,14 @@ $(OBJDIR)/strtol.o: std/9899-1990/stdlib/strtol.c $(INCDIR)/stdlib.h
 $(OBJDIR)/strtoul.o: std/9899-1990/stdlib/strtoul.c $(INCDIR)/stdlib.h
 	-@mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGS) -c std/9899-1990/stdlib/strtoul.c -o $@
+
+$(OBJDIR)/struct_lconv.o: std/9899-1990/locale/struct_lconv.c $(INCDIR)/locale.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c std/9899-1990/locale/struct_lconv.c -o $@
+
+$(OBJDIR)/struct_tm.o: std/9899-1990/time/struct_tm.c $(INCDIR)/time.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c std/9899-1990/time/struct_tm.c -o $@
 
 $(OBJDIR)/strxfrm.o: std/9899-1990/string/strxfrm.c $(INCDIR)/string.h
 	-@mkdir -p $(OBJDIR)

@@ -98,9 +98,9 @@ locale_h_SOURCES =  \
 	std/9899-1990/locale/LC_MONETARY.c \
 	std/9899-1990/locale/LC_NUMERIC.c \
 	std/9899-1990/locale/LC_TIME.c \
-	std/9899-1990/locale/lconv.c \
 	std/9899-1990/locale/localeconv.c \
 	std/9899-1990/locale/setlocale.c \
+	std/9899-1990/locale/struct_lconv.c \
 	std/9899-1990/locale/NULL.ref \
 	std/9899-1990/stddef/NULL.c
 
@@ -335,9 +335,9 @@ time_h_SOURCES =  \
 	std/9899-1990/time/localtime.c \
 	std/9899-1990/time/mktime.c \
 	std/9899-1990/time/strftime.c \
+	std/9899-1990/time/struct_tm.c \
 	std/9899-1990/time/time.c \
 	std/9899-1990/time/time_t.c \
-	std/9899-1990/time/tm.c \
 	std/9899-1990/time/NULL.ref \
 	std/9899-1990/stddef/NULL.c \
 	std/9899-1990/time/size_t.ref \
