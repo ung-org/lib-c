@@ -11,9 +11,9 @@ classify_source () {
 		echo TYPE
 	elif grep -q "typedef.*{$" $1; then
 		echo TYPE_LONG
-	elif grep -q "struct.*${NAME} {" $1; then
+	elif grep -q "struct.*{" $1; then
 		echo STRUCT
-	elif grep -q "union.* ${NAME} {" $1; then
+	elif grep -q "union.*{" $1; then
 		echo UNION
 	elif grep -q "^[A-Za-z_].* ${NAME};" $1; then
 		echo EXTERN
