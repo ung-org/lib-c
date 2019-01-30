@@ -1,4 +1,6 @@
 #include <stddef.h>
+#include <locale.h>
+
 #include "nonstd/types.h"
 
 #include "nonstd/public/setjmp.h"
@@ -86,6 +88,13 @@ void __libc_start(int argc, char **argv)
 	stdout = __libc.stdio.fopen(&fo);
 	fo.fd = 2;
 	stderr = __libc.stdio.fopen(&fo);
+
+	#if defined _POSIX_SOURCE || defined _POSIX_C_SOURCE || defined _XOPEN_SOURCE
+	setlocale("POSIX");
+	#else
+	setlocale(LC_ALL, "C");
+	#endif
+
 	exit(main(argc, argv));
 }
 
