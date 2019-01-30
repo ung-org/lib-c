@@ -139,7 +139,7 @@ if [ -f $HEADER.FUNCTION ]; then
 	fi
 
 	for i in $(sort $HEADER.FUNCTION); do
-		printf '%s;\n' "$(sed -e "/{/q" $i | tail -n2 | head -n1)"
+		printf '%s;\n' "$(sed -e "/{/q" $i | tail -n2 | head -n1 | sed -e 's/\([a-zA-Z_][a-zA-Z_0-9]*\)\([,)]\)/__\1\2/g;s/__void/void/g')"
 	done
 	printf '\n'
 	rm -f $HEADER.FUNCTION
