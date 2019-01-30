@@ -10,6 +10,10 @@ mkdir -p $(dirname $HEADER)
 shift
 exec > $HEADER
 
+if [ $(basename $HEADER) != assert.h ]; then
+	printf '#ifndef %s\n#define %s\n\n' ${GUARD} ${GUARD}
+fi
+
 cat <<EOF
 /*
 UNG's Not GNU
@@ -28,11 +32,8 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 */
-EOF
 
-if [ $(basename $HEADER) != assert.h ]; then
-	printf '\n#ifndef %s\n#define %s\n\n' ${GUARD} ${GUARD}
-fi
+EOF
 
 rm -f $HEADER.*
 for i in $@; do
