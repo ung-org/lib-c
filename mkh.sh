@@ -2,24 +2,6 @@
 
 . $(dirname $0)/mk.sh
 
-version_guard () {
-	m4in=/tmp/$(basename $HEADER).m4
-	grep -F -e 'STDC(' -e 'POSIX(' -e 'XOPEN(' $1 | sort > $m4in
-	lines=$(wc -l $m4in | cut -f1 -d' ')
-	if [ $lines -eq 0 ]; then
-		return
-	fi
-
-	printf '#if'
-	loop=1
-	while [ $loop -lt $lines ]; do
-		printf '\t(%s) || \\\n' "$(sed -ne "${loop}p;q" $m4in | m4 $(dirname $0)/ftm.m4 - | grep .)"
-		loop=$((loop + 1))
-	done
-	sed -ne "${loop}p;q" $m4in > /tmp/sed.out.${loop}
-	printf '\t(%s)\n' "$(sed -ne "${loop}p;q" $m4in | m4 $(dirname $0)/ftm.m4 - | grep .)"
-}
-
 export LC_ALL=POSIX
 export LANG=POSIX
 HEADER=$1
@@ -57,9 +39,10 @@ rm -rf $HEADER.*
 for i in $(echo $@ | sort -u); do
 	# TODO: refs
 	type=$(classify_source $i)
-	version=v$(grep -F -e 'STDC(' -e 'POSIX(' -e 'XOPEN(' $1 | sort | tr -d '() ,')
+	version=v$(grep -F -e 'STDC(' -e 'POSIX(' -e 'XOPEN(' $i | sort | tr , - | tr -d '() ')
 	mkdir -p $HEADER.$type
 	echo $i >> $HEADER.$type/$version
+	printf '%s <%s> (%s)\n' "$i" "$HEADER" "$version" >&2
 done
 
 if grep -Fq 'POSIX(' $(cat $HEADER.*/*); then
@@ -277,7 +260,7 @@ if [ -d $HEADER.MACRO ]; then
 	rm -rf $HEADER.MACRO
 fi
 
-#rm -rf $HEADER.REFERENCE
+rm -rf $HEADER.REFERENCE
 
 if [ $(basename $HEADER) != assert.h ]; then
 	printf '\n#endif\n'
