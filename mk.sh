@@ -25,3 +25,23 @@ classify_source () {
 		echo FUNCTION
 	fi
 }
+
+version_guard () {
+	parsed=/tmp/$(basename $1).v
+	grep -F -e 'STDC(' -e 'POSIX(' -e 'XOPEN(' $1 | sort | m4 $(dirname $0)/ftm.m4 - | grep . > $parsed
+	lines=$(wc -l $parsed | cut -f1 -d' ')
+
+	if [ $lines -ne 0 ]; then
+		printf '#if'
+		loop=1
+		while [ $loop -lt $lines ]; do
+			printf '\t(%s) || \\\n' "$(sed -ne "${loop}p;q" $parsed)"
+			loop=$((loop + 1))
+		done
+
+		sed -ne "${loop}p;q" $parsed > /tmp/sed.out.${loop}
+		printf '\t(%s)\n' "$(sed -ne "${loop}p;q" $parsed)"
+	fi
+
+	rm -f $parsed
+}
