@@ -12,9 +12,11 @@ all: .deps.mk
 
 .deps.mk:
 	sh mkmf.sh $(STANDARD)
+	rm -rf .dep
 
 .headers.mk:
 	sh mkmf.sh $(STANDARD)
+	rm -rf .dep
 
 headers: .headers.mk
 	@$(MAKE) -f .headers.mk $@
@@ -23,5 +25,4 @@ clean:
 	rm -rf $(OBJDIR) *.a
 
 git-clean: clean
-	rm -rf .dep .headers.mk .deps.mk
-
+	rm -rf .dep .headers.mk .deps.mk include
