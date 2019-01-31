@@ -6,7 +6,7 @@ STANDARD=${1-9899-1990}
 #STANDARD=${1-POSIX.1-1990}
 
 if [ ! -f .dep/to-build ]; then
-	rm -rf .dep Makefile .headers.mk
+	rm -rf .dep .deps.mk .headers.mk
 	mkdir -p .dep
 	echo ${STANDARD} > .dep/to-build
 fi
@@ -65,16 +65,16 @@ for i in $(find std/${STANDARD} -name \*.c) $(find std/${STANDARD} -name \*.ref)
 done
 
 if [ $(cat .dep/to-build) = ${STANDARD} ]; then
-	printf '.POSIX:\n\n' > Makefile
-	printf 'default: all\n\n' >> Makefile
-	printf 'include config.mk\n\n' >> Makefile
-	printf 'INCLUDES=-I$(INCDIR) -I. -Inonstd/stubs\n' >> Makefile
-	printf 'CFLAGS=$(INCLUDES) -g -fno-builtin -nostdinc -nostdlib -nodefaultlibs -Werror -Wall -Wextra -fPIC\n\n' >> Makefile
+	printf '.POSIX:\n\n' > .deps.mk
+	printf 'default: all\n\n' >> .deps.mk
+	printf 'include config.mk\n\n' >> .deps.mk
+	printf 'INCLUDES=-I$(INCDIR) -I. -Inonstd/stubs\n' >> .deps.mk
+	printf 'CFLAGS=$(INCLUDES) -g -fno-builtin -nostdinc -nostdlib -nodefaultlibs -Werror -Wall -Wextra -fPIC\n\n' >> .deps.mk
 
 	for i in .dep/lib*.a.mk; do
 		LIB=$(basename $i .a.mk)
-		cat $i >> Makefile
-		printf '\n\n%s.a: $(%s_OBJS)\n\t$(AR) r $@ $?\n\n' $LIB $LIB >> Makefile
+		cat $i >> .deps.mk
+		printf '\n\n%s.a: $(%s_OBJS)\n\t$(AR) r $@ $?\n\n' $LIB $LIB >> .deps.mk
 	done
 
 	printf '.POSIX:\n\ninclude config.mk\n\n' > .headers.mk
@@ -89,21 +89,16 @@ if [ $(cat .dep/to-build) = ${STANDARD} ]; then
 	printf 'headers:' >> .headers.mk
 	cat .dep/all_headers.mk >> .headers.mk
 
-	cat .dep/*.o.mk >> Makefile
+	cat .dep/*.o.mk >> .deps.mk
 
-	printf '$(OBJDIR)/libc.o: nonstd/libc.c\n\t-@mkdir -p $(OBJDIR)\n\t$(CC) $(CFLAGS) -c $? -o $@\n\n' >> Makefile
-	printf '$(OBJDIR)/x86-64.o: nonstd/x86-64.s\n\t-@mkdir -p $(OBJDIR)\n\t$(CC) $(CFLAGS) -c $? -o $@\n\n' >> Makefile
+	printf '$(OBJDIR)/libc.o: nonstd/libc.c\n\t-@mkdir -p $(OBJDIR)\n\t$(CC) $(CFLAGS) -c $? -o $@\n\n' >> .deps.mk
+	printf '$(OBJDIR)/x86-64.o: nonstd/x86-64.s\n\t-@mkdir -p $(OBJDIR)\n\t$(CC) $(CFLAGS) -c $? -o $@\n\n' >> .deps.mk
 
-	printf 'all:' >> Makefile
+	printf 'all:' >> .deps.mk
 	for i in  .dep/lib*.a.mk; do
-		printf ' %s' $(basename $i .mk) >> Makefile
+		printf ' %s' $(basename $i .mk) >> .deps.mk
 	done
-	printf '\n\n' >> Makefile
+	printf '\n\n' >> .deps.mk
 
-	printf 'headers:\n\t@$(MAKE) -f .headers.mk $@\n\n' >> Makefile
-
-	printf 'clean:\n\trm -rf $(OBJDIR) *.a\n\n' >> Makefile
-	printf 'git-clean: clean\n\trm -rf .dep .headers.mk Makefile\n\n' >> Makefile
-	
 	rm -f .dep/to-build
 fi
