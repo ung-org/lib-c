@@ -2,6 +2,20 @@
 
 . $(dirname $0)/mk.sh
 
+version_guard () {
+	m4in=/tmp/$(basename $HEADER).m4
+	grep -F -e 'STDC(' -e 'POSIX(' -e 'XOPEN(' $1 | sort > $m4in
+	lines=$(wc -l $m4in | cut -f1 -d' ')
+	printf '#if'
+	loop=1
+	while [ $loop -lt $lines ]; do
+		printf '\t(%s) || \\\n' "$(sed -ne "${loop}p;q" $m4in | m4 $(dirname $0)/ftm.m4 - | grep .)"
+		loop=$((loop + 1))
+	done
+	sed -ne "${loop}p;q" $m4in > /tmp/sed.out.${loop}
+	printf '\t(%s)\n' "$(sed -ne "${loop}p;q" $m4in | m4 $(dirname $0)/ftm.m4 - | grep .)"
+}
+
 export LC_ALL=POSIX
 export LANG=POSIX
 HEADER=$1
@@ -35,17 +49,17 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 EOF
 
-rm -f $HEADER.*
+rm -rf $HEADER.*
 for i in $@; do
 	# TODO: refs
 	type=$(classify_source $i)
-	version=1
+	version=$(grep -F -e 'STDC(' -e 'POSIX(' -e 'XOPEN(' $1 | sort | tr -d '() ,')
 	mkdir -p $HEADER.$type
 	echo $i >> $HEADER.$type/$version
 done
 
-#if [ POSIX ]; then
-cat <<-EOF > /dev/null
+if grep -Fq 'POSIX(' $(cat $HEADER.*/*); then
+cat <<-EOF
 	#if defined _XOPEN_SOURCE && !defined _POSIX_C_SOURCE
 	#	if (_XOPEN_SOURCE >= 700)
 	#		define _POSIX_C_SOURCE 200809L
@@ -61,101 +75,203 @@ cat <<-EOF > /dev/null
 	#if defined _POSIX_C_SOURCE && !defined _POSIX_SOURCE
 	#	define _POSIX_SOURCE
 	#endif
+
 EOF
-#fi
+fi
 
 if [ -d $HEADER.MACRO ]; then
 	# FIXME: line continuation
-	for i in $(sort $HEADER.MACRO/*); do
-		grep -E '^#(if|def|undef|el|end)' $i
+	for v in $HEADER.MACRO/*; do
+		version=$(version_guard $(head -n1 $v))
+		if [ -n "$version" ]; then
+			printf '%s\n' "$version"
+		fi
+
+		for i in $(sort $v); do
+			grep -E '^#(if|def|undef|el|end)' $i
+		done
+
+		if [ -n "$version" ]; then
+			printf '#endif\n'
+		fi
+
+		printf '\n'
 	done
-	printf '\n'
-	# not deleted so externs can be placed later
+
+	if ! grep -q extern $(cat $HEADER.MACRO/*); then
+		rm -rf $HEADER.MACRO
+	fi
 fi
 
 if [ -d $HEADER.TYPE ]; then
-	for i in $(sort $HEADER.TYPE/*); do
-		if grep -q '^#ifdef' $i; then
-			sed -ne '/#ifdef/,/#endif/p' $i
-		elif grep -q '^typedef.*;$' $i; then
-			grep '^typedef' $i
-		else
-			sed -ne '/^typedef/,/\}.*;$/p' $i
+	for v in $HEADER.TYPE/*; do
+		version=$(version_guard $(head -n1 $v))
+		if [ -n "$version" ]; then
+			printf '%s\n' "$version"
 		fi
+
+		for i in $(sort $v); do
+			if grep -q '^#ifdef' $i; then
+				sed -ne '/#ifdef/,/#endif/p' $i
+			elif grep -q '^typedef.*;$' $i; then
+				grep '^typedef' $i
+			else
+				sed -ne '/^typedef/,/\}.*;$/p' $i
+			fi
+		done
+
+		if [ -n "$version" ]; then
+			printf '#endif\n'
+		fi
+
+		printf '\n'
 	done
-	printf '\n'
-	#rm -rf $HEADER.TYPE
+	rm -rf $HEADER.TYPE
 fi
 
 if [ -d $HEADER.TYPE_LONG ]; then
-	for i in $(sort $HEADER.TYPE_LONG/*); do
-		if grep -q '^#ifdef' $i; then
-			sed -ne '/#ifdef/,/#endif/p' $i
-		elif grep -q '^typedef.*;$' $i; then
-			grep '^typedef' $i
-		else
-			sed -ne '/^typedef/,/\}.*;$/p' $i
+	for v in $HEADER.TYPE_LONG/*; do
+		version=$(version_guard $(head -n1 $v))
+		if [ -n "$version" ]; then
+			printf '%s\n' "$version"
 		fi
+
+		for i in $(sort $v); do
+			if grep -q '^#ifdef' $i; then
+				sed -ne '/#ifdef/,/#endif/p' $i
+			elif grep -q '^typedef.*;$' $i; then
+				grep '^typedef' $i
+			else
+				sed -ne '/^typedef/,/\}.*;$/p' $i
+			fi
+		done
+
+		if [ -n "$version" ]; then
+			printf '#endif\n'
+		fi
+
+		printf '\n'
 	done
-	printf '\n'
-	#rm -rf $HEADER.TYPE_LONG
+	rm -rf $HEADER.TYPE_LONG
 fi
 
 if [ -d $HEADER.STRUCT -o -d $HEADER.UNION ]; then
 	mkdir -p $HEADER.STRUCT $HEADER.UNION
-	for i in $(sort $HEADER.STRUCT/* $HEADER.UNION/* 2>/dev/null); do
-		if grep -q '^struct' $i; then
-			sed -ne '/^struct/,/\};/p' $i
-		else
-			sed -ne '/^union/,/\};/p' $i
+	for v in $HEADER.STRUCT/* $HEADER.UNION/*; do
+		version=$(version_guard $(head -n1 $v))
+		if [ -n "$version" ]; then
+			printf '%s\n' "$version"
 		fi
+
+		for i in $(sort $v 2>/dev/null); do
+			if grep -q '^struct' $i; then
+				sed -ne '/^struct/,/\};/p' $i
+			else
+				sed -ne '/^union/,/\};/p' $i
+			fi
+		done
+
+		if [ -n "$version" ]; then
+			printf '#endif\n'
+		fi
+
+		printf '\n'
 	done
-	printf '\n'
-	#rm -rf $HEADER.STRUCT $HEADER.UNION
+	rm -rf $HEADER.STRUCT $HEADER.UNION
 fi
 
 if [ -d $HEADER.EXTERN ]; then
-	for i in $(sort $HEADER.EXTERN/*); do
-		printf 'extern %s' "$(grep '^[a-zA-Z_].*;$' $i)"
+	for v in $HEADER.EXTERN/*; do
+		version=$(version_guard $(head -n1 $v))
+		if [ -n "$version" ]; then
+			printf '%s\n' "$version"
+		fi
+
+		for i in $(sort $v); do
+			printf 'extern %s' "$(grep '^[a-zA-Z_].*;$' $i)"
+		done
+
+		if [ -n "$version" ]; then
+			printf '#endif\n'
+		fi
+
+		printf '\n'
 	done
-	printf '\n'
-	#rm -rf $HEADER.EXTERN
+	rm -rf $HEADER.EXTERN
 fi
 
 if [ -d $HEADER.TGFN ]; then
-	for i in $(sort $HEADER.TGFN/*); do
-		printf '%s;\n' "$(sed -e "/{/q" $i | tail -n2 | head -n1 | m4 '-DTGFN=$1' -DTYPE=double)"
+	for v in $HEADER.TGFN/*; do
+		version=$(version_guard $(head -n1 $v))
+		if [ -n "$version" ]; then
+			printf '%s\n' "$version"
+		fi
+
+		for i in $(sort $v); do
+			printf '%s;\n' "$(sed -e "/{/q" $i | tail -n2 | head -n1 | m4 '-DTGFN=$1' -DTYPE=double)"
+		done
+
+		if [ -n "$version" ]; then
+			printf '#endif\n'
+		fi
+
+		printf '\n'
 	done
-	printf '\n'
-	#rm -rf $HEADER.TGFN
+	rm -rf $HEADER.TGFN
 fi
 
 if [ -d $HEADER.FUNCTION ]; then
+	### TODO: only if header includes C89/AMD1 stuff
 	if grep -q restrict $(cat $HEADER.FUNCTION/*); then
 		printf '#if (!defined __STDC_VERSION__) || (__STDC_VERSION__ < 199909L)\n'
 		printf '#define restrict\n'
 		printf '#endif\n\n'
 	fi
 
+	### TODO: only if header works with C<11
 	if grep -q _Noreturn $(cat $HEADER.FUNCTION/*); then
 		printf '#if (!defined __STDC_VERSION__) || (__STDC_VERSION__ < 200112L)\n'
 		printf '#define _Noreturn\n'
 		printf '#endif\n\n'
 	fi
 
-	for i in $(sort $HEADER.FUNCTION/*); do
-		printf '%s;\n' "$(sed -e "/{/q" $i | tail -n2 | head -n1 | sed -e 's/\([a-zA-Z_][a-zA-Z_0-9]*\)\([,)]\)/__\1\2/g;s/(__\([a-zA-Z_][a-zA-Z_0-9]*\))/(\1)/g')"
+	for v in $HEADER.FUNCTION/*; do
+		version=$(version_guard $(head -n1 $v))
+		if [ -n "$version" ]; then
+			printf '%s\n' "$version"
+		fi
+
+		for i in $(sort $v); do
+			printf '%s;\n' "$(sed -e "/{/q" $i | tail -n2 | head -n1 | sed -e 's/\([a-zA-Z_][a-zA-Z_0-9]*\)\([,)]\)/__\1\2/g;s/(__\([a-zA-Z_][a-zA-Z_0-9]*\))/(\1)/g')"
+		done
+
+		if [ -n "$version" ]; then
+			printf '#endif\n'
+		fi
+
+		printf '\n'
 	done
-	printf '\n'
-	#rm -rf $HEADER.FUNCTION
+	rm -rf $HEADER.FUNCTION
 fi
 
 if [ -d $HEADER.MACRO ]; then
-	for i in $(sort $HEADER.MACRO/*); do
-		grep ' *extern.*;$' $i
+	for v in $HEADER.MACRO/*; do
+		version=$(version_guard $(head -n1 $v))
+		if [ -n "$version" ]; then
+			printf '%s\n' "$version"
+		fi
+
+		for i in $(sort $v); do
+			grep ' *extern.*;$' $i
+		done
+
+		if [ -n "$version" ]; then
+			printf '#endif\n'
+		fi
+
+		printf '\n'
 	done
-	printf '\n'
-	#rm -rf $HEADER.MACRO
+	rm -rf $HEADER.MACRO
 fi
 
 #rm -rf $HEADER.REFERENCE
