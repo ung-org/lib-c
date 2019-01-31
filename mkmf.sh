@@ -25,6 +25,8 @@ fi
 rm -f .dep/${STANDARD}.*
 
 for i in $(find std/${STANDARD} -name \*.c) $(find std/${STANDARD} -name \*.ref); do
+	printf '%s\t' "$i"
+
 	FILE=$i
 	BASE=$i
 	if grep -q '^REFERENCE(' $FILE; then
@@ -36,6 +38,8 @@ for i in $(find std/${STANDARD} -name \*.c) $(find std/${STANDARD} -name \*.ref)
 	LIB=$(grep '^LINK(' $BASE | m4 -DLINK='lib$1')
 	LIB=${LIB:-libc}
 
+
+	printf ' <%s>\t' "${HEADER}"
 	if [ ! -f .dep/${HEADER}.mk ]; then
 		mkdir -p $(dirname .dep/${HEADER}.mk)
 		printf '%s_SOURCES = ' $(echo ${HEADER} | tr /. _) > .dep/${HEADER}.mk
@@ -47,6 +51,7 @@ for i in $(find std/${STANDARD} -name \*.c) $(find std/${STANDARD} -name \*.ref)
 		continue
 	fi
 
+	printf ' %s.a\n' "${LIB}"
 	if [ ${TYPE} = EXTERN -o ${TYPE} = FUNCTION -o ${TYPE} = TGFN ]; then
 		printf '$(OBJDIR)/%s.o: %s $(INCDIR)/%s' ${NAME} $i ${HEADER}> .dep/${NAME}.o.mk
 		for j in $(grep include $i); do
