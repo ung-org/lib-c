@@ -39,7 +39,7 @@ rm -rf $HEADER.*
 for i in $(echo $@ | sort -u); do
 	# TODO: refs
 	type=$(classify_source $i)
-	version=v$(grep -F -e 'STDC(' -e 'POSIX(' -e 'XOPEN(' $i | sort | tr , - | tr -d '() ')
+	version=v$(grep -F -e 'STDC(' -e 'POSIX(' -e 'XOPEN(' $i | sed -e 's/STDC/C/' | sort | tr , - | tr -d '() ')
 	mkdir -p $HEADER.$type
 	echo $i >> $HEADER.$type/$version
 	printf '%s <%s> (%s)\n' "$i" "$HEADER" "$version" >&2
