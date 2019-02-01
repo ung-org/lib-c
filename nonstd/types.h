@@ -3,6 +3,7 @@
 
 #include <stdio.h>	/* for FILE */
 #include <stdarg.h>	/* for va_list */
+#include <locale.h>	/* for struct lconv */
 
 #include "nonstd/FILE.h"
 
