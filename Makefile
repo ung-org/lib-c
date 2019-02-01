@@ -24,5 +24,5 @@ headers: .headers.mk
 clean:
 	rm -rf $(OBJDIR) *.a
 
-git-clean: clean
+extra-clean: clean
 	rm -rf .dep .headers.mk .deps.mk include
