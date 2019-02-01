@@ -7,7 +7,7 @@ include config.mk
 INCLUDES=-I$(INCDIR) -I. -Inonstd/stubs
 CFLAGS=$(INCLUDES) -g -fno-builtin -nostdinc -nostdlib -nodefaultlibs -Werror -Wall -Wextra -fPIC -D_POSIX_SOURCE
 
-all: .deps.mk headers
+all: .deps.mk include
 	@$(MAKE) -f .deps.mk $@
 
 .deps.mk:
@@ -22,6 +22,9 @@ deps:
 
 tags:
 	ctags $$(find src -name \*.c)
+
+include:
+	$(MAKE) headers
 
 headers: .headers.mk
 	@$(MAKE) -f .headers.mk $@
