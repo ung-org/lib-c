@@ -17,7 +17,7 @@ classify_source () {
 		echo RECORD
 	elif grep -q "^union.*{" $1; then
 		echo RECORD
-	elif grep -q "^[A-Za-z_].* ${NAME};" $1; then
+	elif grep -q "^[A-Za-z_].*[ \*]${NAME}[[;]" $1; then
 		echo EXTERN
 	elif grep -q 'TGFN' $1; then
 		echo TGFN
