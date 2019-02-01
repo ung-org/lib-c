@@ -1,9 +1,8 @@
 #!/bin/sh
 
-. ./mk.sh
+. $(dirname $0)/mk.sh
 
 STANDARD=${1-9899-1990}
-#STANDARD=${1-POSIX.1-1990}
 
 if [ ! -f .dep/to-build ]; then
 	rm -rf .dep .deps.mk .headers.mk
@@ -11,26 +10,26 @@ if [ ! -f .dep/to-build ]; then
 	echo ${STANDARD} > .dep/to-build
 fi
 
-if [ ! -d std/${STANDARD} ]; then
+if [ ! -d src/${STANDARD} ]; then
 	printf "Standard %s not found.\n" "${STANDARD}"
 	exit 1
 fi
 
-if [ -f std/${STANDARD}/INCLUDE ]; then
-	for i in $(cat std/${STANDARD}/INCLUDE); do
-		$0 $i
+if [ -f src/${STANDARD}/DEPS.mk ]; then
+	for i in $(grep DEPS src/${STANDARD}/DEPS.mk | cut -d= -f2); do
+		sh $0 $i
 	done
 fi
 
 rm -f .dep/${STANDARD}.*
 
-for i in $(find std/${STANDARD} -name \*.c) $(find std/${STANDARD} -name \*.ref); do
+for i in $(find src/${STANDARD} -name \*.c) $(find src/${STANDARD} -name \*.ref); do
 	printf '%s\t' "$i"
 
 	FILE=$i
 	BASE=$i
 	if grep -q '^REFERENCE(' $FILE; then
-		BASE=$(grep '^REFERENCE(' $i | m4 -DREFERENCE='std/$1')
+		BASE=$(grep '^REFERENCE(' $i | m4 -DREFERENCE='src/$1')
 	fi
 	NAME=$(basename $BASE .c)
 	TYPE=$(classify_source $BASE)
