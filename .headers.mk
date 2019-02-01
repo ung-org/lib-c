@@ -5,6 +5,9 @@ include config.mk
 default: headers
 
 assert_h_SOURCES =  \
+	src/9899-1990/assert/assert.c \
+	src/9899-1990/assert/assert.c \
+	src/9899-1990/assert/assert.c \
 	src/9899-1990/assert/assert.c
 
 $(INCDIR)/assert.h: $(assert_h_SOURCES)
@@ -37,6 +40,20 @@ $(INCDIR)/cpio.h: $(cpio_h_SOURCES)
 	sh mkh.sh $@ $(cpio_h_SOURCES)
 
 ctype_h_SOURCES =  \
+	src/9899-1990/ctype/isalnum.c \
+	src/9899-1990/ctype/isalpha.c \
+	src/9899-1990/ctype/isalnum.c \
+	src/9899-1990/ctype/isalpha.c \
+	src/9899-1990/ctype/iscntrl.c \
+	src/9899-1990/ctype/isdigit.c \
+	src/9899-1990/ctype/isgraph.c \
+	src/9899-1990/ctype/islower.c \
+	src/9899-1990/ctype/isprint.c \
+	src/9899-1990/ctype/ispunct.c \
+	src/9899-1990/ctype/isspace.c \
+	src/9899-1990/ctype/isupper.c \
+	src/9899-1990/ctype/isalnum.c \
+	src/9899-1990/ctype/isalpha.c \
 	src/9899-1990/ctype/isalnum.c \
 	src/9899-1990/ctype/isalpha.c \
 	src/9899-1990/ctype/iscntrl.c \
@@ -103,7 +120,8 @@ errno_h_SOURCES =  \
 	src/POSIX.1-1988/errno/EROFS.c \
 	src/POSIX.1-1988/errno/ESPIPE.c \
 	src/POSIX.1-1988/errno/ESRCH.c \
-	src/POSIX.1-1988/errno/EXDEV.c
+	src/POSIX.1-1988/errno/EXDEV.c \
+	src/9899-1990-AMD1/errno/EILSEQ.c
 
 $(INCDIR)/errno.h: $(errno_h_SOURCES)
 	sh mkh.sh $@ $(errno_h_SOURCES)
@@ -180,6 +198,22 @@ grp_h_SOURCES =  \
 
 $(INCDIR)/grp.h: $(grp_h_SOURCES)
 	sh mkh.sh $@ $(grp_h_SOURCES)
+
+iso646_h_SOURCES =  \
+	src/9899-1990-AMD1/iso646/and.c \
+	src/9899-1990-AMD1/iso646/and_eq.c \
+	src/9899-1990-AMD1/iso646/bitand.c \
+	src/9899-1990-AMD1/iso646/bitor.c \
+	src/9899-1990-AMD1/iso646/compl.c \
+	src/9899-1990-AMD1/iso646/not.c \
+	src/9899-1990-AMD1/iso646/not_eq.c \
+	src/9899-1990-AMD1/iso646/or.c \
+	src/9899-1990-AMD1/iso646/or_eq.c \
+	src/9899-1990-AMD1/iso646/xor.c \
+	src/9899-1990-AMD1/iso646/xor_eq.c
+
+$(INCDIR)/iso646.h: $(iso646_h_SOURCES)
+	sh mkh.sh $@ $(iso646_h_SOURCES)
 
 limits_h_SOURCES =  \
 	src/9899-1990/limits/CHAR_BIT.c \
@@ -341,7 +375,8 @@ stdarg_h_SOURCES =  \
 	src/9899-1990/stdarg/va_arg.c \
 	src/9899-1990/stdarg/va_end.c \
 	src/9899-1990/stdarg/va_list.c \
-	src/9899-1990/stdarg/va_start.c
+	src/9899-1990/stdarg/va_start.c \
+	src/9899-1990-AMD1/wchar/vswprintf.c
 
 $(INCDIR)/stdarg.h: $(stdarg_h_SOURCES)
 	sh mkh.sh $@ $(stdarg_h_SOURCES)
@@ -424,7 +459,8 @@ stdio_h_SOURCES =  \
 	src/POSIX.1-1988/stdio/L_ctermid.c \
 	src/POSIX.1-1988/stdio/L_cuserid.c \
 	src/POSIX.1-1988/stdio/fdopen.c \
-	src/POSIX.1-1988/stdio/fileno.c
+	src/POSIX.1-1988/stdio/fileno.c \
+	src/9899-1990-AMD1/wchar/fgetwc.c
 
 $(INCDIR)/stdio.h: $(stdio_h_SOURCES)
 	sh mkh.sh $@ $(stdio_h_SOURCES)
@@ -813,4 +849,89 @@ utime_h_SOURCES =  \
 $(INCDIR)/utime.h: $(utime_h_SOURCES)
 	sh mkh.sh $@ $(utime_h_SOURCES)
 
-headers: $(INCDIR)/assert.h $(INCDIR)/cpio.h $(INCDIR)/ctype.h $(INCDIR)/dirent.h $(INCDIR)/errno.h $(INCDIR)/fcntl.h $(INCDIR)/float.h $(INCDIR)/grp.h $(INCDIR)/limits.h $(INCDIR)/locale.h $(INCDIR)/math.h $(INCDIR)/pwd.h $(INCDIR)/setjmp.h $(INCDIR)/signal.h $(INCDIR)/stdarg.h $(INCDIR)/stddef.h $(INCDIR)/stdio.h $(INCDIR)/stdlib.h $(INCDIR)/string.h $(INCDIR)/sys/stat.h $(INCDIR)/sys/times.h $(INCDIR)/sys/types.h $(INCDIR)/sys/utsname.h $(INCDIR)/sys/wait.h $(INCDIR)/tar.h $(INCDIR)/termios.h $(INCDIR)/time.h $(INCDIR)/unistd.h $(INCDIR)/utime.h
+wchar_h_SOURCES =  \
+	src/9899-1990-AMD1/wchar/WCHAR_MAX.c \
+	src/9899-1990-AMD1/wchar/WCHAR_MIN.c \
+	src/9899-1990-AMD1/wchar/btowc.c \
+	src/9899-1990-AMD1/wchar/fgetws.c \
+	src/9899-1990-AMD1/wchar/fputwc.c \
+	src/9899-1990-AMD1/wchar/fputws.c \
+	src/9899-1990-AMD1/wchar/fwide.c \
+	src/9899-1990-AMD1/wchar/fwprintf.c \
+	src/9899-1990-AMD1/wchar/fwscanf.c \
+	src/9899-1990-AMD1/wchar/getwc.c \
+	src/9899-1990-AMD1/wchar/getwchar.c \
+	src/9899-1990-AMD1/wchar/mbrlen.c \
+	src/9899-1990-AMD1/wchar/mbrtowc.c \
+	src/9899-1990-AMD1/wchar/mbsinit.c \
+	src/9899-1990-AMD1/wchar/mbsrtowcs.c \
+	src/9899-1990-AMD1/wchar/mbstate_t.c \
+	src/9899-1990-AMD1/wchar/putwc.c \
+	src/9899-1990-AMD1/wchar/putwchar.c \
+	src/9899-1990-AMD1/wchar/swprintf.c \
+	src/9899-1990-AMD1/wchar/swscanf.c \
+	src/9899-1990-AMD1/wchar/tm.c \
+	src/9899-1990-AMD1/wchar/ungetwc.c \
+	src/9899-1990-AMD1/wchar/vfwprintf.c \
+	src/9899-1990-AMD1/wchar/vwprintf.c \
+	src/9899-1990-AMD1/wchar/wcrtomb.c \
+	src/9899-1990-AMD1/wchar/wcscat.c \
+	src/9899-1990-AMD1/wchar/wcschr.c \
+	src/9899-1990-AMD1/wchar/wcscmp.c \
+	src/9899-1990-AMD1/wchar/wcscoll.c \
+	src/9899-1990-AMD1/wchar/wcscpy.c \
+	src/9899-1990-AMD1/wchar/wcscspn.c \
+	src/9899-1990-AMD1/wchar/wcsftime.c \
+	src/9899-1990-AMD1/wchar/wcslen.c \
+	src/9899-1990-AMD1/wchar/wcsncat.c \
+	src/9899-1990-AMD1/wchar/wcsncmp.c \
+	src/9899-1990-AMD1/wchar/wcsncpy.c \
+	src/9899-1990-AMD1/wchar/wcspbrk.c \
+	src/9899-1990-AMD1/wchar/wcsrchr.c \
+	src/9899-1990-AMD1/wchar/wcsrtombs.c \
+	src/9899-1990-AMD1/wchar/wcsspn.c \
+	src/9899-1990-AMD1/wchar/wcsstr.c \
+	src/9899-1990-AMD1/wchar/wcstod.c \
+	src/9899-1990-AMD1/wchar/wcstok.c \
+	src/9899-1990-AMD1/wchar/wcstol.c \
+	src/9899-1990-AMD1/wchar/wcstoul.c \
+	src/9899-1990-AMD1/wchar/wcsxfrm.c \
+	src/9899-1990-AMD1/wchar/wctob.c \
+	src/9899-1990-AMD1/wchar/wmemchr.c \
+	src/9899-1990-AMD1/wchar/wmemcmp.c \
+	src/9899-1990-AMD1/wchar/wmemcpy.c \
+	src/9899-1990-AMD1/wchar/wmemmove.c \
+	src/9899-1990-AMD1/wchar/wmemset.c \
+	src/9899-1990-AMD1/wchar/wprintf.c \
+	src/9899-1990-AMD1/wchar/wscanf.c
+
+$(INCDIR)/wchar.h: $(wchar_h_SOURCES)
+	sh mkh.sh $@ $(wchar_h_SOURCES)
+
+wctype_h_SOURCES =  \
+	src/9899-1990-AMD1/wctype/WEOF.c \
+	src/9899-1990-AMD1/wctype/iswalnum.c \
+	src/9899-1990-AMD1/wctype/iswalpha.c \
+	src/9899-1990-AMD1/wctype/iswcntrl.c \
+	src/9899-1990-AMD1/wctype/iswctype.c \
+	src/9899-1990-AMD1/wctype/iswdigit.c \
+	src/9899-1990-AMD1/wctype/iswgraph.c \
+	src/9899-1990-AMD1/wctype/iswlower.c \
+	src/9899-1990-AMD1/wctype/iswprint.c \
+	src/9899-1990-AMD1/wctype/iswpunct.c \
+	src/9899-1990-AMD1/wctype/iswspace.c \
+	src/9899-1990-AMD1/wctype/iswupper.c \
+	src/9899-1990-AMD1/wctype/iswxdigit.c \
+	src/9899-1990-AMD1/wctype/towctrans.c \
+	src/9899-1990-AMD1/wctype/towlower.c \
+	src/9899-1990-AMD1/wctype/towupper.c \
+	src/9899-1990-AMD1/wctype/wctrans.c \
+	src/9899-1990-AMD1/wctype/wctrans_t.c \
+	src/9899-1990-AMD1/wctype/wctype.c \
+	src/9899-1990-AMD1/wctype/wctype_t.c \
+	src/9899-1990-AMD1/wctype/wint_t.c
+
+$(INCDIR)/wctype.h: $(wctype_h_SOURCES)
+	sh mkh.sh $@ $(wctype_h_SOURCES)
+
+headers: $(INCDIR)/assert.h $(INCDIR)/cpio.h $(INCDIR)/ctype.h $(INCDIR)/dirent.h $(INCDIR)/errno.h $(INCDIR)/fcntl.h $(INCDIR)/float.h $(INCDIR)/grp.h $(INCDIR)/iso646.h $(INCDIR)/limits.h $(INCDIR)/locale.h $(INCDIR)/math.h $(INCDIR)/pwd.h $(INCDIR)/setjmp.h $(INCDIR)/signal.h $(INCDIR)/stdarg.h $(INCDIR)/stddef.h $(INCDIR)/stdio.h $(INCDIR)/stdlib.h $(INCDIR)/string.h $(INCDIR)/sys/stat.h $(INCDIR)/sys/times.h $(INCDIR)/sys/types.h $(INCDIR)/sys/utsname.h $(INCDIR)/sys/wait.h $(INCDIR)/tar.h $(INCDIR)/termios.h $(INCDIR)/time.h $(INCDIR)/unistd.h $(INCDIR)/utime.h $(INCDIR)/wchar.h $(INCDIR)/wctype.h

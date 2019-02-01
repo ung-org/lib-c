@@ -10,6 +10,19 @@ CFLAGS=$(INCLUDES) -g -fno-builtin -nostdinc -nostdlib -nodefaultlibs -Werror -W
 libc_OBJS = $(OBJDIR)/libc.o $(OBJDIR)/x86-64.o \
 	$(OBJDIR)/isalnum.o \
 	$(OBJDIR)/isalpha.o \
+	$(OBJDIR)/isalnum.o \
+	$(OBJDIR)/isalpha.o \
+	$(OBJDIR)/iscntrl.o \
+	$(OBJDIR)/isdigit.o \
+	$(OBJDIR)/isgraph.o \
+	$(OBJDIR)/islower.o \
+	$(OBJDIR)/isprint.o \
+	$(OBJDIR)/ispunct.o \
+	$(OBJDIR)/isspace.o \
+	$(OBJDIR)/isupper.o \
+	$(OBJDIR)/isalnum.o \
+	$(OBJDIR)/isalnum.o \
+	$(OBJDIR)/isalpha.o \
 	$(OBJDIR)/iscntrl.o \
 	$(OBJDIR)/isdigit.o \
 	$(OBJDIR)/isgraph.o \
@@ -152,10 +165,8 @@ libc_OBJS = $(OBJDIR)/libc.o $(OBJDIR)/x86-64.o \
 	$(OBJDIR)/sigpending.o \
 	$(OBJDIR)/sigprocmask.o \
 	$(OBJDIR)/sigsuspend.o \
-	$(OBJDIR)/L_cuserid.o \
 	$(OBJDIR)/fdopen.o \
 	$(OBJDIR)/fileno.o \
-	$(OBJDIR)/S_ISCHR.o \
 	$(OBJDIR)/chmod.o \
 	$(OBJDIR)/fstat.o \
 	$(OBJDIR)/mkdir.o \
@@ -225,7 +236,77 @@ libc_OBJS = $(OBJDIR)/libc.o $(OBJDIR)/x86-64.o \
 	$(OBJDIR)/ttyname.o \
 	$(OBJDIR)/unlink.o \
 	$(OBJDIR)/write.o \
-	$(OBJDIR)/utime.o
+	$(OBJDIR)/utime.o \
+	$(OBJDIR)/btowc.o \
+	$(OBJDIR)/fgetwc.o \
+	$(OBJDIR)/fgetws.o \
+	$(OBJDIR)/fputwc.o \
+	$(OBJDIR)/fputws.o \
+	$(OBJDIR)/fwide.o \
+	$(OBJDIR)/fwprintf.o \
+	$(OBJDIR)/fwscanf.o \
+	$(OBJDIR)/getwc.o \
+	$(OBJDIR)/getwchar.o \
+	$(OBJDIR)/mbrlen.o \
+	$(OBJDIR)/mbrtowc.o \
+	$(OBJDIR)/mbsinit.o \
+	$(OBJDIR)/mbsrtowcs.o \
+	$(OBJDIR)/putwc.o \
+	$(OBJDIR)/putwchar.o \
+	$(OBJDIR)/swprintf.o \
+	$(OBJDIR)/swscanf.o \
+	$(OBJDIR)/tm.o \
+	$(OBJDIR)/ungetwc.o \
+	$(OBJDIR)/vfwprintf.o \
+	$(OBJDIR)/vswprintf.o \
+	$(OBJDIR)/vwprintf.o \
+	$(OBJDIR)/wcrtomb.o \
+	$(OBJDIR)/wcscat.o \
+	$(OBJDIR)/wcschr.o \
+	$(OBJDIR)/wcscmp.o \
+	$(OBJDIR)/wcscoll.o \
+	$(OBJDIR)/wcscpy.o \
+	$(OBJDIR)/wcscspn.o \
+	$(OBJDIR)/wcsftime.o \
+	$(OBJDIR)/wcslen.o \
+	$(OBJDIR)/wcsncat.o \
+	$(OBJDIR)/wcsncmp.o \
+	$(OBJDIR)/wcsncpy.o \
+	$(OBJDIR)/wcspbrk.o \
+	$(OBJDIR)/wcsrchr.o \
+	$(OBJDIR)/wcsrtombs.o \
+	$(OBJDIR)/wcsspn.o \
+	$(OBJDIR)/wcsstr.o \
+	$(OBJDIR)/wcstod.o \
+	$(OBJDIR)/wcstok.o \
+	$(OBJDIR)/wcstol.o \
+	$(OBJDIR)/wcstoul.o \
+	$(OBJDIR)/wcsxfrm.o \
+	$(OBJDIR)/wctob.o \
+	$(OBJDIR)/wmemchr.o \
+	$(OBJDIR)/wmemcmp.o \
+	$(OBJDIR)/wmemcpy.o \
+	$(OBJDIR)/wmemmove.o \
+	$(OBJDIR)/wmemset.o \
+	$(OBJDIR)/wprintf.o \
+	$(OBJDIR)/wscanf.o \
+	$(OBJDIR)/iswalnum.o \
+	$(OBJDIR)/iswalpha.o \
+	$(OBJDIR)/iswcntrl.o \
+	$(OBJDIR)/iswctype.o \
+	$(OBJDIR)/iswdigit.o \
+	$(OBJDIR)/iswgraph.o \
+	$(OBJDIR)/iswlower.o \
+	$(OBJDIR)/iswprint.o \
+	$(OBJDIR)/iswpunct.o \
+	$(OBJDIR)/iswspace.o \
+	$(OBJDIR)/iswupper.o \
+	$(OBJDIR)/iswxdigit.o \
+	$(OBJDIR)/towctrans.o \
+	$(OBJDIR)/towlower.o \
+	$(OBJDIR)/towupper.o \
+	$(OBJDIR)/wctrans.o \
+	$(OBJDIR)/wctype.o
 
 libc.a: $(libc_OBJS)
 	$(AR) r $@ $?
@@ -256,14 +337,6 @@ libm_OBJS = \
 
 libm.a: $(libm_OBJS)
 	$(AR) r $@ $?
-
-$(OBJDIR)/L_cuserid.o: src/POSIX.1-1988/stdio/L_cuserid.c $(INCDIR)/stdio.h
-	-@mkdir -p $(OBJDIR)
-	$(CC) $(CFLAGS) -c src/POSIX.1-1988/stdio/L_cuserid.c -o $@
-
-$(OBJDIR)/S_ISCHR.o: src/POSIX.1-1988/sys/stat/S_ISCHR.c $(INCDIR)/sys/stat.h
-	-@mkdir -p $(OBJDIR)
-	$(CC) $(CFLAGS) -c src/POSIX.1-1988/sys/stat/S_ISCHR.c -o $@
 
 $(OBJDIR)/_POSIX_SOURCE.o: src/POSIX.1-1988/_POSIX_SOURCE.c $(INCDIR)/
 	-@mkdir -p $(OBJDIR)
@@ -328,6 +401,10 @@ $(OBJDIR)/atol.o: src/9899-1990/stdlib/atol.c $(INCDIR)/stdlib.h
 $(OBJDIR)/bsearch.o: src/9899-1990/stdlib/bsearch.c $(INCDIR)/stdlib.h
 	-@mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGS) -c src/9899-1990/stdlib/bsearch.c -o $@
+
+$(OBJDIR)/btowc.o: src/9899-1990-AMD1/wchar/btowc.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/btowc.c -o $@
 
 $(OBJDIR)/calloc.o: src/9899-1990/stdlib/calloc.c $(INCDIR)/stdlib.h
 	-@mkdir -p $(OBJDIR)
@@ -497,6 +574,14 @@ $(OBJDIR)/fgets.o: src/9899-1990/stdio/fgets.c $(INCDIR)/stdio.h
 	-@mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGS) -c src/9899-1990/stdio/fgets.c -o $@
 
+$(OBJDIR)/fgetwc.o: src/9899-1990-AMD1/wchar/fgetwc.c $(INCDIR)/stdio.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/fgetwc.c -o $@
+
+$(OBJDIR)/fgetws.o: src/9899-1990-AMD1/wchar/fgetws.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/fgetws.c -o $@
+
 $(OBJDIR)/fileno.o: src/POSIX.1-1988/stdio/fileno.c $(INCDIR)/stdio.h
 	-@mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGS) -c src/POSIX.1-1988/stdio/fileno.c -o $@
@@ -532,6 +617,14 @@ $(OBJDIR)/fputc.o: src/9899-1990/stdio/fputc.c $(INCDIR)/stdio.h
 $(OBJDIR)/fputs.o: src/9899-1990/stdio/fputs.c $(INCDIR)/stdio.h
 	-@mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGS) -c src/9899-1990/stdio/fputs.c -o $@
+
+$(OBJDIR)/fputwc.o: src/9899-1990-AMD1/wchar/fputwc.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/fputwc.c -o $@
+
+$(OBJDIR)/fputws.o: src/9899-1990-AMD1/wchar/fputws.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/fputws.c -o $@
 
 $(OBJDIR)/fread.o: src/9899-1990/stdio/fread.c $(INCDIR)/stdio.h
 	-@mkdir -p $(OBJDIR)
@@ -569,9 +662,21 @@ $(OBJDIR)/ftell.o: src/9899-1990/stdio/ftell.c $(INCDIR)/stdio.h
 	-@mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGS) -c src/9899-1990/stdio/ftell.c -o $@
 
+$(OBJDIR)/fwide.o: src/9899-1990-AMD1/wchar/fwide.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/fwide.c -o $@
+
+$(OBJDIR)/fwprintf.o: src/9899-1990-AMD1/wchar/fwprintf.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/fwprintf.c -o $@
+
 $(OBJDIR)/fwrite.o: src/9899-1990/stdio/fwrite.c $(INCDIR)/stdio.h
 	-@mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGS) -c src/9899-1990/stdio/fwrite.c -o $@
+
+$(OBJDIR)/fwscanf.o: src/9899-1990-AMD1/wchar/fwscanf.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/fwscanf.c -o $@
 
 $(OBJDIR)/getc.o: src/9899-1990/stdio/getc.c $(INCDIR)/stdio.h
 	-@mkdir -p $(OBJDIR)
@@ -645,6 +750,14 @@ $(OBJDIR)/getuid.o: src/POSIX.1-1988/unistd/getuid.c $(INCDIR)/unistd.h
 	-@mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGS) -c src/POSIX.1-1988/unistd/getuid.c -o $@
 
+$(OBJDIR)/getwc.o: src/9899-1990-AMD1/wchar/getwc.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/getwc.c -o $@
+
+$(OBJDIR)/getwchar.o: src/9899-1990-AMD1/wchar/getwchar.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/getwchar.c -o $@
+
 $(OBJDIR)/gmtime.o: src/9899-1990/time/gmtime.c $(INCDIR)/time.h
 	-@mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGS) -c src/9899-1990/time/gmtime.c -o $@
@@ -692,6 +805,54 @@ $(OBJDIR)/isspace.o: src/9899-1990/ctype/isspace.c $(INCDIR)/ctype.h
 $(OBJDIR)/isupper.o: src/9899-1990/ctype/isupper.c $(INCDIR)/ctype.h
 	-@mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGS) -c src/9899-1990/ctype/isupper.c -o $@
+
+$(OBJDIR)/iswalnum.o: src/9899-1990-AMD1/wctype/iswalnum.c $(INCDIR)/wctype.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wctype/iswalnum.c -o $@
+
+$(OBJDIR)/iswalpha.o: src/9899-1990-AMD1/wctype/iswalpha.c $(INCDIR)/wctype.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wctype/iswalpha.c -o $@
+
+$(OBJDIR)/iswcntrl.o: src/9899-1990-AMD1/wctype/iswcntrl.c $(INCDIR)/wctype.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wctype/iswcntrl.c -o $@
+
+$(OBJDIR)/iswctype.o: src/9899-1990-AMD1/wctype/iswctype.c $(INCDIR)/wctype.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wctype/iswctype.c -o $@
+
+$(OBJDIR)/iswdigit.o: src/9899-1990-AMD1/wctype/iswdigit.c $(INCDIR)/wctype.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wctype/iswdigit.c -o $@
+
+$(OBJDIR)/iswgraph.o: src/9899-1990-AMD1/wctype/iswgraph.c $(INCDIR)/wctype.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wctype/iswgraph.c -o $@
+
+$(OBJDIR)/iswlower.o: src/9899-1990-AMD1/wctype/iswlower.c $(INCDIR)/wctype.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wctype/iswlower.c -o $@
+
+$(OBJDIR)/iswprint.o: src/9899-1990-AMD1/wctype/iswprint.c $(INCDIR)/wctype.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wctype/iswprint.c -o $@
+
+$(OBJDIR)/iswpunct.o: src/9899-1990-AMD1/wctype/iswpunct.c $(INCDIR)/wctype.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wctype/iswpunct.c -o $@
+
+$(OBJDIR)/iswspace.o: src/9899-1990-AMD1/wctype/iswspace.c $(INCDIR)/wctype.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wctype/iswspace.c -o $@
+
+$(OBJDIR)/iswupper.o: src/9899-1990-AMD1/wctype/iswupper.c $(INCDIR)/wctype.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wctype/iswupper.c -o $@
+
+$(OBJDIR)/iswxdigit.o: src/9899-1990-AMD1/wctype/iswxdigit.c $(INCDIR)/wctype.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wctype/iswxdigit.c -o $@
 
 $(OBJDIR)/isxdigit.o: src/9899-1990/ctype/isxdigit.c $(INCDIR)/ctype.h
 	-@mkdir -p $(OBJDIR)
@@ -748,6 +909,22 @@ $(OBJDIR)/malloc.o: src/9899-1990/stdlib/malloc.c $(INCDIR)/stdlib.h
 $(OBJDIR)/mblen.o: src/9899-1990/stdlib/mblen.c $(INCDIR)/stdlib.h
 	-@mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGS) -c src/9899-1990/stdlib/mblen.c -o $@
+
+$(OBJDIR)/mbrlen.o: src/9899-1990-AMD1/wchar/mbrlen.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/mbrlen.c -o $@
+
+$(OBJDIR)/mbrtowc.o: src/9899-1990-AMD1/wchar/mbrtowc.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/mbrtowc.c -o $@
+
+$(OBJDIR)/mbsinit.o: src/9899-1990-AMD1/wchar/mbsinit.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/mbsinit.c -o $@
+
+$(OBJDIR)/mbsrtowcs.o: src/9899-1990-AMD1/wchar/mbsrtowcs.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/mbsrtowcs.c -o $@
 
 $(OBJDIR)/mbstowcs.o: src/9899-1990/stdlib/mbstowcs.c $(INCDIR)/stdlib.h
 	-@mkdir -p $(OBJDIR)
@@ -836,6 +1013,14 @@ $(OBJDIR)/putchar.o: src/9899-1990/stdio/putchar.c $(INCDIR)/stdio.h
 $(OBJDIR)/puts.o: src/9899-1990/stdio/puts.c $(INCDIR)/stdio.h
 	-@mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGS) -c src/9899-1990/stdio/puts.c -o $@
+
+$(OBJDIR)/putwc.o: src/9899-1990-AMD1/wchar/putwc.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/putwc.c -o $@
+
+$(OBJDIR)/putwchar.o: src/9899-1990-AMD1/wchar/putwchar.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/putwchar.c -o $@
 
 $(OBJDIR)/qsort.o: src/9899-1990/stdlib/qsort.c $(INCDIR)/stdlib.h
 	-@mkdir -p $(OBJDIR)
@@ -1081,6 +1266,14 @@ $(OBJDIR)/strxfrm.o: src/9899-1990/string/strxfrm.c $(INCDIR)/string.h
 	-@mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGS) -c src/9899-1990/string/strxfrm.c -o $@
 
+$(OBJDIR)/swprintf.o: src/9899-1990-AMD1/wchar/swprintf.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/swprintf.c -o $@
+
+$(OBJDIR)/swscanf.o: src/9899-1990-AMD1/wchar/swscanf.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/swscanf.c -o $@
+
 $(OBJDIR)/sysconf.o: src/POSIX.1-1988/unistd/sysconf.c $(INCDIR)/unistd.h
 	-@mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGS) -c src/POSIX.1-1988/unistd/sysconf.c -o $@
@@ -1137,6 +1330,10 @@ $(OBJDIR)/times.o: src/POSIX.1-1988/sys/times/times.c $(INCDIR)/sys/times.h
 	-@mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGS) -c src/POSIX.1-1988/sys/times/times.c -o $@
 
+$(OBJDIR)/tm.o: src/9899-1990-AMD1/wchar/tm.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/tm.c -o $@
+
 $(OBJDIR)/tmpfile.o: src/9899-1990/stdio/tmpfile.c $(INCDIR)/stdio.h
 	-@mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGS) -c src/9899-1990/stdio/tmpfile.c -o $@
@@ -1152,6 +1349,18 @@ $(OBJDIR)/tolower.o: src/9899-1990/ctype/tolower.c $(INCDIR)/ctype.h
 $(OBJDIR)/toupper.o: src/9899-1990/ctype/toupper.c $(INCDIR)/ctype.h
 	-@mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGS) -c src/9899-1990/ctype/toupper.c -o $@
+
+$(OBJDIR)/towctrans.o: src/9899-1990-AMD1/wctype/towctrans.c $(INCDIR)/wctype.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wctype/towctrans.c -o $@
+
+$(OBJDIR)/towlower.o: src/9899-1990-AMD1/wctype/towlower.c $(INCDIR)/wctype.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wctype/towlower.c -o $@
+
+$(OBJDIR)/towupper.o: src/9899-1990-AMD1/wctype/towupper.c $(INCDIR)/wctype.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wctype/towupper.c -o $@
 
 $(OBJDIR)/ttyname.o: src/POSIX.1-1988/unistd/ttyname.c $(INCDIR)/unistd.h
 	-@mkdir -p $(OBJDIR)
@@ -1177,6 +1386,10 @@ $(OBJDIR)/ungetc.o: src/9899-1990/stdio/ungetc.c $(INCDIR)/stdio.h
 	-@mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGS) -c src/9899-1990/stdio/ungetc.c -o $@
 
+$(OBJDIR)/ungetwc.o: src/9899-1990-AMD1/wchar/ungetwc.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/ungetwc.c -o $@
+
 $(OBJDIR)/unlink.o: src/POSIX.1-1988/unistd/unlink.c $(INCDIR)/unistd.h
 	-@mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGS) -c src/POSIX.1-1988/unistd/unlink.c -o $@
@@ -1189,6 +1402,10 @@ $(OBJDIR)/vfprintf.o: src/9899-1990/stdio/vfprintf.c $(INCDIR)/stdio.h
 	-@mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGS) -c src/9899-1990/stdio/vfprintf.c -o $@
 
+$(OBJDIR)/vfwprintf.o: src/9899-1990-AMD1/wchar/vfwprintf.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/vfwprintf.c -o $@
+
 $(OBJDIR)/vprintf.o: src/9899-1990/stdio/vprintf.c $(INCDIR)/stdio.h
 	-@mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGS) -c src/9899-1990/stdio/vprintf.c -o $@
@@ -1196,6 +1413,14 @@ $(OBJDIR)/vprintf.o: src/9899-1990/stdio/vprintf.c $(INCDIR)/stdio.h
 $(OBJDIR)/vsprintf.o: src/9899-1990/stdio/vsprintf.c $(INCDIR)/stdio.h
 	-@mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGS) -c src/9899-1990/stdio/vsprintf.c -o $@
+
+$(OBJDIR)/vswprintf.o: src/9899-1990-AMD1/wchar/vswprintf.c $(INCDIR)/stdarg.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/vswprintf.c -o $@
+
+$(OBJDIR)/vwprintf.o: src/9899-1990-AMD1/wchar/vwprintf.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/vwprintf.c -o $@
 
 $(OBJDIR)/wait.o: src/POSIX.1-1988/sys/wait/wait.c $(INCDIR)/sys/wait.h
 	-@mkdir -p $(OBJDIR)
@@ -1205,17 +1430,145 @@ $(OBJDIR)/waitpid.o: src/POSIX.1-1988/sys/wait/waitpid.c $(INCDIR)/sys/wait.h
 	-@mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGS) -c src/POSIX.1-1988/sys/wait/waitpid.c -o $@
 
+$(OBJDIR)/wcrtomb.o: src/9899-1990-AMD1/wchar/wcrtomb.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/wcrtomb.c -o $@
+
+$(OBJDIR)/wcscat.o: src/9899-1990-AMD1/wchar/wcscat.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/wcscat.c -o $@
+
+$(OBJDIR)/wcschr.o: src/9899-1990-AMD1/wchar/wcschr.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/wcschr.c -o $@
+
+$(OBJDIR)/wcscmp.o: src/9899-1990-AMD1/wchar/wcscmp.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/wcscmp.c -o $@
+
+$(OBJDIR)/wcscoll.o: src/9899-1990-AMD1/wchar/wcscoll.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/wcscoll.c -o $@
+
+$(OBJDIR)/wcscpy.o: src/9899-1990-AMD1/wchar/wcscpy.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/wcscpy.c -o $@
+
+$(OBJDIR)/wcscspn.o: src/9899-1990-AMD1/wchar/wcscspn.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/wcscspn.c -o $@
+
+$(OBJDIR)/wcsftime.o: src/9899-1990-AMD1/wchar/wcsftime.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/wcsftime.c -o $@
+
+$(OBJDIR)/wcslen.o: src/9899-1990-AMD1/wchar/wcslen.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/wcslen.c -o $@
+
+$(OBJDIR)/wcsncat.o: src/9899-1990-AMD1/wchar/wcsncat.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/wcsncat.c -o $@
+
+$(OBJDIR)/wcsncmp.o: src/9899-1990-AMD1/wchar/wcsncmp.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/wcsncmp.c -o $@
+
+$(OBJDIR)/wcsncpy.o: src/9899-1990-AMD1/wchar/wcsncpy.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/wcsncpy.c -o $@
+
+$(OBJDIR)/wcspbrk.o: src/9899-1990-AMD1/wchar/wcspbrk.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/wcspbrk.c -o $@
+
+$(OBJDIR)/wcsrchr.o: src/9899-1990-AMD1/wchar/wcsrchr.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/wcsrchr.c -o $@
+
+$(OBJDIR)/wcsrtombs.o: src/9899-1990-AMD1/wchar/wcsrtombs.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/wcsrtombs.c -o $@
+
+$(OBJDIR)/wcsspn.o: src/9899-1990-AMD1/wchar/wcsspn.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/wcsspn.c -o $@
+
+$(OBJDIR)/wcsstr.o: src/9899-1990-AMD1/wchar/wcsstr.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/wcsstr.c -o $@
+
+$(OBJDIR)/wcstod.o: src/9899-1990-AMD1/wchar/wcstod.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/wcstod.c -o $@
+
+$(OBJDIR)/wcstok.o: src/9899-1990-AMD1/wchar/wcstok.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/wcstok.c -o $@
+
+$(OBJDIR)/wcstol.o: src/9899-1990-AMD1/wchar/wcstol.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/wcstol.c -o $@
+
 $(OBJDIR)/wcstombs.o: src/9899-1990/stdlib/wcstombs.c $(INCDIR)/stdlib.h
 	-@mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGS) -c src/9899-1990/stdlib/wcstombs.c -o $@
+
+$(OBJDIR)/wcstoul.o: src/9899-1990-AMD1/wchar/wcstoul.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/wcstoul.c -o $@
+
+$(OBJDIR)/wcsxfrm.o: src/9899-1990-AMD1/wchar/wcsxfrm.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/wcsxfrm.c -o $@
+
+$(OBJDIR)/wctob.o: src/9899-1990-AMD1/wchar/wctob.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/wctob.c -o $@
 
 $(OBJDIR)/wctomb.o: src/9899-1990/stdlib/wctomb.c $(INCDIR)/stdlib.h
 	-@mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGS) -c src/9899-1990/stdlib/wctomb.c -o $@
 
+$(OBJDIR)/wctrans.o: src/9899-1990-AMD1/wctype/wctrans.c $(INCDIR)/wctype.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wctype/wctrans.c -o $@
+
+$(OBJDIR)/wctype.o: src/9899-1990-AMD1/wctype/wctype.c $(INCDIR)/wctype.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wctype/wctype.c -o $@
+
+$(OBJDIR)/wmemchr.o: src/9899-1990-AMD1/wchar/wmemchr.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/wmemchr.c -o $@
+
+$(OBJDIR)/wmemcmp.o: src/9899-1990-AMD1/wchar/wmemcmp.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/wmemcmp.c -o $@
+
+$(OBJDIR)/wmemcpy.o: src/9899-1990-AMD1/wchar/wmemcpy.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/wmemcpy.c -o $@
+
+$(OBJDIR)/wmemmove.o: src/9899-1990-AMD1/wchar/wmemmove.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/wmemmove.c -o $@
+
+$(OBJDIR)/wmemset.o: src/9899-1990-AMD1/wchar/wmemset.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/wmemset.c -o $@
+
+$(OBJDIR)/wprintf.o: src/9899-1990-AMD1/wchar/wprintf.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/wprintf.c -o $@
+
 $(OBJDIR)/write.o: src/POSIX.1-1988/unistd/write.c $(INCDIR)/unistd.h
 	-@mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGS) -c src/POSIX.1-1988/unistd/write.c -o $@
+
+$(OBJDIR)/wscanf.o: src/9899-1990-AMD1/wchar/wscanf.c $(INCDIR)/wchar.h
+	-@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/wscanf.c -o $@
 
 $(OBJDIR)/libc.o: nonstd/libc.c
 	-@mkdir -p $(OBJDIR)
