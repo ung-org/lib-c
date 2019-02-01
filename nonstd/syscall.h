@@ -28,7 +28,7 @@
 
 #define SC0(_type) static int _scno = -2; \
 	if (_scno == -2) { _scno = __libc.syscall_lookup(__func__); } \
-	_type __ret = __libc.syscall(_scno); \
+	_type _ret = __libc.syscall(_scno); \
 	if (_ret < 0) { \
 		errno = -_ret; \
 		return -1; \
