@@ -10,19 +10,6 @@ CFLAGS=$(INCLUDES) -g -fno-builtin -nostdinc -nostdlib -nodefaultlibs -Werror -W
 libc_OBJS = $(OBJDIR)/libc.o $(OBJDIR)/x86-64.o \
 	$(OBJDIR)/isalnum.o \
 	$(OBJDIR)/isalpha.o \
-	$(OBJDIR)/isalnum.o \
-	$(OBJDIR)/isalpha.o \
-	$(OBJDIR)/iscntrl.o \
-	$(OBJDIR)/isdigit.o \
-	$(OBJDIR)/isgraph.o \
-	$(OBJDIR)/islower.o \
-	$(OBJDIR)/isprint.o \
-	$(OBJDIR)/ispunct.o \
-	$(OBJDIR)/isspace.o \
-	$(OBJDIR)/isupper.o \
-	$(OBJDIR)/isalnum.o \
-	$(OBJDIR)/isalnum.o \
-	$(OBJDIR)/isalpha.o \
 	$(OBJDIR)/iscntrl.o \
 	$(OBJDIR)/isdigit.o \
 	$(OBJDIR)/isgraph.o \
@@ -140,7 +127,6 @@ libc_OBJS = $(OBJDIR)/libc.o $(OBJDIR)/x86-64.o \
 	$(OBJDIR)/mktime.o \
 	$(OBJDIR)/strftime.o \
 	$(OBJDIR)/time.o \
-	$(OBJDIR)/_POSIX_SOURCE.o \
 	$(OBJDIR)/closedir.o \
 	$(OBJDIR)/opendir.o \
 	$(OBJDIR)/readdir.o \
@@ -337,10 +323,6 @@ libm_OBJS = \
 
 libm.a: $(libm_OBJS)
 	$(AR) r $@ $?
-
-$(OBJDIR)/_POSIX_SOURCE.o: src/POSIX.1-1988/_POSIX_SOURCE.c $(INCDIR)/
-	-@mkdir -p $(OBJDIR)
-	$(CC) $(CFLAGS) -c src/POSIX.1-1988/_POSIX_SOURCE.c -o $@
 
 $(OBJDIR)/_exit.o: src/POSIX.1-1988/unistd/_exit.c $(INCDIR)/unistd.h
 	-@mkdir -p $(OBJDIR)
@@ -574,7 +556,7 @@ $(OBJDIR)/fgets.o: src/9899-1990/stdio/fgets.c $(INCDIR)/stdio.h
 	-@mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGS) -c src/9899-1990/stdio/fgets.c -o $@
 
-$(OBJDIR)/fgetwc.o: src/9899-1990-AMD1/wchar/fgetwc.c $(INCDIR)/stdio.h
+$(OBJDIR)/fgetwc.o: src/9899-1990-AMD1/wchar/fgetwc.c $(INCDIR)/wchar.h
 	-@mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/fgetwc.c -o $@
 

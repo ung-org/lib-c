@@ -5,9 +5,6 @@ include config.mk
 default: headers
 
 assert_h_SOURCES =  \
-	src/9899-1990/assert/assert.c \
-	src/9899-1990/assert/assert.c \
-	src/9899-1990/assert/assert.c \
 	src/9899-1990/assert/assert.c
 
 $(INCDIR)/assert.h: $(assert_h_SOURCES)
@@ -40,20 +37,6 @@ $(INCDIR)/cpio.h: $(cpio_h_SOURCES)
 	sh mkh.sh $@ $(cpio_h_SOURCES)
 
 ctype_h_SOURCES =  \
-	src/9899-1990/ctype/isalnum.c \
-	src/9899-1990/ctype/isalpha.c \
-	src/9899-1990/ctype/isalnum.c \
-	src/9899-1990/ctype/isalpha.c \
-	src/9899-1990/ctype/iscntrl.c \
-	src/9899-1990/ctype/isdigit.c \
-	src/9899-1990/ctype/isgraph.c \
-	src/9899-1990/ctype/islower.c \
-	src/9899-1990/ctype/isprint.c \
-	src/9899-1990/ctype/ispunct.c \
-	src/9899-1990/ctype/isspace.c \
-	src/9899-1990/ctype/isupper.c \
-	src/9899-1990/ctype/isalnum.c \
-	src/9899-1990/ctype/isalpha.c \
 	src/9899-1990/ctype/isalnum.c \
 	src/9899-1990/ctype/isalpha.c \
 	src/9899-1990/ctype/iscntrl.c \
@@ -459,8 +442,7 @@ stdio_h_SOURCES =  \
 	src/POSIX.1-1988/stdio/L_ctermid.c \
 	src/POSIX.1-1988/stdio/L_cuserid.c \
 	src/POSIX.1-1988/stdio/fdopen.c \
-	src/POSIX.1-1988/stdio/fileno.c \
-	src/9899-1990-AMD1/wchar/fgetwc.c
+	src/POSIX.1-1988/stdio/fileno.c
 
 $(INCDIR)/stdio.h: $(stdio_h_SOURCES)
 	sh mkh.sh $@ $(stdio_h_SOURCES)
@@ -853,6 +835,7 @@ wchar_h_SOURCES =  \
 	src/9899-1990-AMD1/wchar/WCHAR_MAX.c \
 	src/9899-1990-AMD1/wchar/WCHAR_MIN.c \
 	src/9899-1990-AMD1/wchar/btowc.c \
+	src/9899-1990-AMD1/wchar/fgetwc.c \
 	src/9899-1990-AMD1/wchar/fgetws.c \
 	src/9899-1990-AMD1/wchar/fputwc.c \
 	src/9899-1990-AMD1/wchar/fputws.c \
