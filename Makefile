@@ -5,14 +5,16 @@ default: all
 include config.mk
 
 INCLUDES=-I$(INCDIR) -I. -Inonstd/stubs
-CFLAGS=$(INCLUDES) -g -fno-builtin -nostdinc -nostdlib -nodefaultlibs -Werror -Wall -Wextra -fPIC
+CFLAGS=$(INCLUDES) -g -fno-builtin -nostdinc -nostdlib -nodefaultlibs -Werror -Wall -Wextra -fPIC -D_POSIX_SOURCE
 
 all: .deps.mk headers
 	@$(MAKE) -f .deps.mk $@
 
-.deps.mk: deps
+.deps.mk:
+	$(MAKE) deps
 
-.headers.mk: deps
+.headers.mk:
+	$(MAKE) deps
 
 deps:
 	sh mkmf.sh $(STANDARD)
