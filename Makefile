@@ -10,13 +10,16 @@ CFLAGS=$(INCLUDES) -g -fno-builtin -nostdinc -nostdlib -nodefaultlibs -Werror -W
 all: .deps.mk headers
 	@$(MAKE) -f .deps.mk $@
 
-.deps.mk:
+.deps.mk: deps
+
+.headers.mk: deps
+
+deps:
 	sh mkmf.sh $(STANDARD)
 	rm -rf .dep
 
-.headers.mk:
-	sh mkmf.sh $(STANDARD)
-	rm -rf .dep
+tags:
+	ctags $$(find src -name \*.c)
 
 headers: .headers.mk
 	@$(MAKE) -f .headers.mk $@
