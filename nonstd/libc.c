@@ -59,21 +59,8 @@ struct libc __libc = {
 	.stdio.fopen = __common_fopen,
 	.stdlib.rand = 1,
 	.stdlib.atexit_max = 32,
-	/*
-	.wctype.wctype =  __wctype,
-	.wctype.nwctype = sizeof(__wctype) / sizeof(__wctype[0]),
-	.wctype.wctrans = __wctrans,
-	.wctype.nwctrans = sizeof(__wctrans) / sizeof(__wctrans[0]),
-	.unistd.confstr = confstr,
-	.unistd.nconfstr = sizeof(confstr) / sizeof(confstr[0]),
-	*/
 	.syscall_lookup = __syscall_lookup,
 	.syscall = __syscall,
-	/*
-	.syscall_byname = __syscall_byname,
-	.syscall_bynum = __syscall_bynum,
-	.syscall_arglist = __syscall_arglist,
-	*/
 	.per_thread = per_thread,
 };
 
@@ -90,7 +77,7 @@ void __libc_start(int argc, char **argv)
 	stderr = __libc.stdio.fopen(&fo);
 
 	#if defined _POSIX_SOURCE || defined _POSIX_C_SOURCE || defined _XOPEN_SOURCE
-	setlocale("POSIX");
+	setlocale(LC_ALL, "POSIX");
 	#else
 	setlocale(LC_ALL, "C");
 	#endif
