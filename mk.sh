@@ -9,7 +9,9 @@ classify_source () {
 		echo MACRO
 	elif grep -q "#undef ${NAME}" $1; then
 		echo MACRO
-	elif grep -q "^typedef.* ${NAME}.*;" $1; then
+	elif grep -q "^typedef .*${NAME}.*;" $1; then
+		echo TYPE
+	elif grep -q "^struct .*;$" $1; then
 		echo TYPE
 	elif grep -q "^typedef.*{$" $1; then
 		echo TYPE_LONG
