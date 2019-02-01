@@ -102,6 +102,8 @@ if [ -d $HEADER.TYPE ]; then
 				sed -ne '/#ifdef/,/#endif/p' $i
 			elif grep -q '^typedef.*;$' $i; then
 				grep '^typedef' $i
+			elif grep -q '^struct.*;$' $i; then
+				grep '^struct.*;$' $i
 			else
 				sed -ne '/^typedef/,/\}.*;$/p' $i
 			fi
@@ -174,7 +176,7 @@ if [ -d $HEADER.EXTERN ]; then
 		fi
 
 		for i in $(sort -u $v); do
-			printf 'extern %s' "$(grep '^[a-zA-Z_].*;$' $i)"
+			printf 'extern %s\n' "$(grep '^[a-zA-Z_].*;$' $i)"
 		done
 
 		if [ -n "$version" ]; then
