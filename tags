@@ -263,7 +263,7 @@ S_IRUSR	src/POSIX.1-1988/sys/stat/S_IRUSR.c	3;"	d	file:
 S_IRWXG	src/POSIX.1-1988/sys/stat/S_IRWXG.c	3;"	d	file:
 S_IRWXO	src/POSIX.1-1988/sys/stat/S_IRWXO.c	3;"	d	file:
 S_IRWXU	src/POSIX.1-1988/sys/stat/S_IRWXU.c	3;"	d	file:
-S_ISCHAR	src/POSIX.1-1988/sys/stat/S_ISCHR.c	2;"	d	file:
+S_ISCHR	src/POSIX.1-1988/sys/stat/S_ISCHR.c	2;"	d	file:
 S_ISDIR	src/POSIX.1-1988/sys/stat/S_ISDIR.c	2;"	d	file:
 S_ISFIFO	src/POSIX.1-1988/sys/stat/S_ISFIFO.c	2;"	d	file:
 S_ISGID	src/POSIX.1-1988/sys/stat/S_ISGID.c	2;"	d	file:
