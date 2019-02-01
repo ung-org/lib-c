@@ -1,0 +1,880 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AREGTYPE	src/POSIX.1-1988/tar/AREGTYPE.c	3;"	d	file:
+B0	src/POSIX.1-1988/termios/B0.c	2;"	d	file:
+B110	src/POSIX.1-1988/termios/B110.c	2;"	d	file:
+B1200	src/POSIX.1-1988/termios/B1200.c	2;"	d	file:
+B134	src/POSIX.1-1988/termios/B134.c	2;"	d	file:
+B150	src/POSIX.1-1988/termios/B150.c	2;"	d	file:
+B1800	src/POSIX.1-1988/termios/B1800.c	2;"	d	file:
+B19200	src/POSIX.1-1988/termios/B19200.c	2;"	d	file:
+B200	src/POSIX.1-1988/termios/B200.c	2;"	d	file:
+B2400	src/POSIX.1-1988/termios/B2400.c	2;"	d	file:
+B300	src/POSIX.1-1988/termios/B300.c	2;"	d	file:
+B38400	src/POSIX.1-1988/termios/B38400.c	2;"	d	file:
+B4800	src/POSIX.1-1988/termios/B4800.c	2;"	d	file:
+B50	src/POSIX.1-1988/termios/B50.c	2;"	d	file:
+B600	src/POSIX.1-1988/termios/B600.c	2;"	d	file:
+B75	src/POSIX.1-1988/termios/B75.c	2;"	d	file:
+B9600	src/POSIX.1-1988/termios/B9600.c	2;"	d	file:
+BLKTYPE	src/POSIX.1-1988/tar/BLKTYPE.c	3;"	d	file:
+BRKINT	src/POSIX.1-1988/termios/BRKINT.c	2;"	d	file:
+BUFSIZ	src/9899-1990/stdio/BUFSIZ.c	2;"	d	file:
+CHAR_BIT	src/9899-1990/limits/CHAR_BIT.c	2;"	d	file:
+CHAR_MAX	src/9899-1990/limits/CHAR_MAX.c	3;"	d	file:
+CHAR_MAX	src/9899-1990/limits/CHAR_MAX.c	5;"	d	file:
+CHAR_MIN	src/9899-1990/limits/CHAR_MIN.c	3;"	d	file:
+CHAR_MIN	src/9899-1990/limits/CHAR_MIN.c	5;"	d	file:
+CHRTYPE	src/POSIX.1-1988/tar/CHRTYPE.c	3;"	d	file:
+CLK_TCK	src/POSIX.1-1988/time/CLK_TCK.c	2;"	d	file:
+CLOCAL	src/POSIX.1-1988/termios/CLOCAL.c	2;"	d	file:
+CLOCKS_PER_SEC	src/9899-1990/time/CLOCKS_PER_SEC.c	2;"	d	file:
+CONTTYPE	src/POSIX.1-1988/tar/CONTTYPE.c	3;"	d	file:
+CREAD	src/POSIX.1-1988/termios/CREAD.c	2;"	d	file:
+CS5	src/POSIX.1-1988/termios/CS5.c	2;"	d	file:
+CS6	src/POSIX.1-1988/termios/CS6.c	2;"	d	file:
+CS7	src/POSIX.1-1988/termios/CS7.c	2;"	d	file:
+CS8	src/POSIX.1-1988/termios/CS8.c	2;"	d	file:
+CSIZE	src/POSIX.1-1988/termios/CSIZE.c	2;"	d	file:
+CSTOPB	src/POSIX.1-1988/termios/CSTOPB.c	2;"	d	file:
+C_IRGRP	src/POSIX.1-1988/cpio/C_IRGRP.c	2;"	d	file:
+C_IROTH	src/POSIX.1-1988/cpio/C_IROTH.c	2;"	d	file:
+C_IRUSR	src/POSIX.1-1988/cpio/C_IRUSR.c	2;"	d	file:
+C_ISBLK	src/POSIX.1-1988/cpio/C_ISBLK.c	2;"	d	file:
+C_ISCHR	src/POSIX.1-1988/cpio/C_ISCHR.c	2;"	d	file:
+C_ISCTG	src/POSIX.1-1988/cpio/C_ISCTG.c	2;"	d	file:
+C_ISDIR	src/POSIX.1-1988/cpio/C_ISDIR.c	2;"	d	file:
+C_ISFIFO	src/POSIX.1-1988/cpio/C_ISFIFO.c	2;"	d	file:
+C_ISGID	src/POSIX.1-1988/cpio/C_ISGID.c	2;"	d	file:
+C_ISLNK	src/POSIX.1-1988/cpio/C_ISLNK.c	2;"	d	file:
+C_ISREG	src/POSIX.1-1988/cpio/C_ISREG.c	2;"	d	file:
+C_ISSOCK	src/POSIX.1-1988/cpio/C_ISSOCK.c	2;"	d	file:
+C_ISUID	src/POSIX.1-1988/cpio/C_ISUID.c	2;"	d	file:
+C_ISVTX	src/POSIX.1-1988/cpio/C_ISVTX.c	2;"	d	file:
+C_IWGRP	src/POSIX.1-1988/cpio/C_IWGRP.c	2;"	d	file:
+C_IWOTH	src/POSIX.1-1988/cpio/C_IWOTH.c	2;"	d	file:
+C_IWUSR	src/POSIX.1-1988/cpio/C_IWUSR.c	2;"	d	file:
+C_IXGRP	src/POSIX.1-1988/cpio/C_IXGRP.c	2;"	d	file:
+C_IXOTH	src/POSIX.1-1988/cpio/C_IXOTH.c	2;"	d	file:
+C_IXUSR	src/POSIX.1-1988/cpio/C_IXUSR.c	2;"	d	file:
+DAY_PER_YEAR	src/9899-1990/time/gmtime.c	9;"	d	file:
+DBL_DIG	src/9899-1990/float/DBL_DIG.c	2;"	d	file:
+DBL_EPSILON	src/9899-1990/float/DBL_EPSILON.c	2;"	d	file:
+DBL_MANT_DIG	src/9899-1990/float/DBL_MANT_DIG.c	2;"	d	file:
+DBL_MAX	src/9899-1990/float/DBL_MAX.c	2;"	d	file:
+DBL_MAX_10_EXP	src/9899-1990/float/DBL_MAX_10_EXP.c	2;"	d	file:
+DBL_MAX_EXP	src/9899-1990/float/DBL_MAX_EXP.c	2;"	d	file:
+DBL_MIN	src/9899-1990/float/DBL_MIN.c	2;"	d	file:
+DBL_MIN_10_EXP	src/9899-1990/float/DBL_MIN_10_EXP.c	2;"	d	file:
+DBL_MIN_EXP	src/9899-1990/float/DBL_MIN_EXP.c	2;"	d	file:
+DIR	src/POSIX.1-1988/dirent/DIR.c	/^typedef struct __DIR                                                        DIR;$/;"	t	typeref:struct:__DIR	file:
+DIRTYPE	src/POSIX.1-1988/tar/DIRTYPE.c	3;"	d	file:
+E2BIG	src/POSIX.1-1988/errno/E2BIG.c	3;"	d	file:
+EACCES	src/POSIX.1-1988/errno/EACCES.c	3;"	d	file:
+EAGAIN	src/POSIX.1-1988/errno/EAGAIN.c	3;"	d	file:
+EBADF	src/POSIX.1-1988/errno/EBADF.c	3;"	d	file:
+EBUSY	src/POSIX.1-1988/errno/EBUSY.c	3;"	d	file:
+ECHILD	src/POSIX.1-1988/errno/ECHILD.c	3;"	d	file:
+ECHO	src/POSIX.1-1988/termios/ECHO.c	2;"	d	file:
+ECHOE	src/POSIX.1-1988/termios/ECHOE.c	2;"	d	file:
+ECHOK	src/POSIX.1-1988/termios/ECHOK.c	2;"	d	file:
+ECHONL	src/POSIX.1-1988/termios/ECHONL.c	2;"	d	file:
+EDEADLK	src/POSIX.1-1988/errno/EDEADLK.c	3;"	d	file:
+EDOM	src/9899-1990/errno/EDOM.c	2;"	d	file:
+EEXIST	src/POSIX.1-1988/errno/EEXIST.c	3;"	d	file:
+EFAULT	src/POSIX.1-1988/errno/EFAULT.c	3;"	d	file:
+EFBIG	src/POSIX.1-1988/errno/EFBIG.c	3;"	d	file:
+EILSEQ	src/9899-1990-AMD1/errno/EILSEQ.c	2;"	d	file:
+EINTR	src/POSIX.1-1988/errno/EINTR.c	3;"	d	file:
+EINVAL	src/POSIX.1-1988/errno/EINVAL.c	3;"	d	file:
+EIO	src/POSIX.1-1988/errno/EIO.c	3;"	d	file:
+EISDIR	src/POSIX.1-1988/errno/EISDIR.c	3;"	d	file:
+EMFILE	src/POSIX.1-1988/errno/EMFILE.c	3;"	d	file:
+EMLINK	src/POSIX.1-1988/errno/EMLINK.c	3;"	d	file:
+ENAMETOOLONG	src/POSIX.1-1988/errno/ENAMETOOLONG.c	3;"	d	file:
+ENFILE	src/POSIX.1-1988/errno/ENFILE.c	3;"	d	file:
+ENODEV	src/POSIX.1-1988/errno/ENODEV.c	3;"	d	file:
+ENOENT	src/POSIX.1-1988/errno/ENOENT.c	3;"	d	file:
+ENOEXEC	src/POSIX.1-1988/errno/ENOEXEC.c	3;"	d	file:
+ENOLCK	src/POSIX.1-1988/errno/ENOLCK.c	3;"	d	file:
+ENOMEM	src/POSIX.1-1988/errno/ENOMEM.c	3;"	d	file:
+ENOSPC	src/POSIX.1-1988/errno/ENOSPC.c	3;"	d	file:
+ENOSYS	src/POSIX.1-1988/errno/ENOSYS.c	3;"	d	file:
+ENOTDIR	src/POSIX.1-1988/errno/ENOTDIR.c	3;"	d	file:
+ENOTEMPTY	src/POSIX.1-1988/errno/ENOTEMPTY.c	3;"	d	file:
+ENOTTY	src/POSIX.1-1988/errno/ENOTTY.c	3;"	d	file:
+ENXIO	src/POSIX.1-1988/errno/ENXIO.c	3;"	d	file:
+EOF	src/9899-1990/stdio/EOF.c	2;"	d	file:
+EPERM	src/POSIX.1-1988/errno/EPERM.c	3;"	d	file:
+EPIPE	src/POSIX.1-1988/errno/EPIPE.c	3;"	d	file:
+EPOCH_YEAR	src/9899-1990/time/gmtime.c	12;"	d	file:
+ERANGE	src/9899-1990/errno/ERANGE.c	2;"	d	file:
+EROFS	src/POSIX.1-1988/errno/EROFS.c	3;"	d	file:
+ESPIPE	src/POSIX.1-1988/errno/ESPIPE.c	3;"	d	file:
+ESRCH	src/POSIX.1-1988/errno/ESRCH.c	3;"	d	file:
+EXDEV	src/POSIX.1-1988/errno/EXDEV.c	3;"	d	file:
+EXIT_FAILURE	src/9899-1990/stdlib/EXIT_FAILURE.c	5;"	d	file:
+EXIT_SUCCESS	src/9899-1990/stdlib/EXIT_SUCCESS.c	5;"	d	file:
+FD_CLOEXEC	src/POSIX.1-1988/fcntl/FD_CLOEXEC.c	3;"	d	file:
+FIFOTYPE	src/POSIX.1-1988/tar/FIFOTYPE.c	3;"	d	file:
+FILE	src/9899-1990/stdio/FILE.c	/^typedef struct __FILE                                                      FILE;$/;"	t	typeref:struct:__FILE	file:
+FILENAME_MAX	src/9899-1990/stdio/FILENAME_MAX.c	2;"	d	file:
+FLT_DIG	src/9899-1990/float/FLT_DIG.c	2;"	d	file:
+FLT_EPSILON	src/9899-1990/float/FLT_EPSILON.c	2;"	d	file:
+FLT_MANT_DIG	src/9899-1990/float/FLT_MANT_DIG.c	2;"	d	file:
+FLT_MAX	src/9899-1990/float/FLT_MAX.c	2;"	d	file:
+FLT_MAX_10_EXP	src/9899-1990/float/FLT_MAX_10_EXP.c	2;"	d	file:
+FLT_MAX_EXP	src/9899-1990/float/FLT_MAX_EXP.c	2;"	d	file:
+FLT_MIN	src/9899-1990/float/FLT_MIN.c	2;"	d	file:
+FLT_MIN_10_EXP	src/9899-1990/float/FLT_MIN_10_EXP.c	2;"	d	file:
+FLT_MIN_EXP	src/9899-1990/float/FLT_MIN_EXP.c	2;"	d	file:
+FLT_RADIX	src/9899-1990/float/FLT_RADIX.c	2;"	d	file:
+FLT_ROUNDS	src/9899-1990/float/FLT_ROUNDS.c	3;"	d	file:
+FOPEN_MAX	src/9899-1990/stdio/FOPEN_MAX.c	2;"	d	file:
+F_DUPFD	src/POSIX.1-1988/fcntl/F_DUPFD.c	3;"	d	file:
+F_GETFD	src/POSIX.1-1988/fcntl/F_GETFD.c	3;"	d	file:
+F_GETFL	src/POSIX.1-1988/fcntl/F_GETFL.c	3;"	d	file:
+F_GETLK	src/POSIX.1-1988/fcntl/F_GETLK.c	3;"	d	file:
+F_OK	src/POSIX.1-1988/unistd/F_OK.c	2;"	d	file:
+F_RDLCK	src/POSIX.1-1988/fcntl/F_RDLCK.c	3;"	d	file:
+F_SETFD	src/POSIX.1-1988/fcntl/F_SETFD.c	3;"	d	file:
+F_SETFL	src/POSIX.1-1988/fcntl/F_SETFL.c	3;"	d	file:
+F_SETLK	src/POSIX.1-1988/fcntl/F_SETLK.c	3;"	d	file:
+F_SETLKW	src/POSIX.1-1988/fcntl/F_SETLKW.c	3;"	d	file:
+F_UNLCK	src/POSIX.1-1988/fcntl/F_UNLCK.c	3;"	d	file:
+F_WRLCK	src/POSIX.1-1988/fcntl/F_WRLCK.c	3;"	d	file:
+HR_PER_DAY	src/9899-1990/time/gmtime.c	7;"	d	file:
+HUGE_VAL	src/9899-1990/math/HUGE_VAL.c	2;"	d	file:
+HUPCL	src/POSIX.1-1988/termios/HUPCL.c	2;"	d	file:
+ICANON	src/POSIX.1-1988/termios/ICANON.c	2;"	d	file:
+ICRNL	src/POSIX.1-1988/termios/ICRNL.c	2;"	d	file:
+IEXTEN	src/POSIX.1-1988/termios/IEXTEN.c	2;"	d	file:
+IGNBRK	src/POSIX.1-1988/termios/IGNBRK.c	2;"	d	file:
+IGNCR	src/POSIX.1-1988/termios/IGNCR.c	2;"	d	file:
+IGNPAR	src/POSIX.1-1988/termios/IGNPAR.c	2;"	d	file:
+INLCR	src/POSIX.1-1988/termios/INLCR.c	2;"	d	file:
+INPCK	src/POSIX.1-1988/termios/INPCK.c	2;"	d	file:
+INT_MAX	src/9899-1990/limits/INT_MAX.c	3;"	d	file:
+INT_MAX	src/9899-1990/limits/INT_MAX.c	5;"	d	file:
+INT_MAX	src/9899-1990/limits/INT_MAX.c	7;"	d	file:
+INT_MIN	src/9899-1990/limits/INT_MIN.c	2;"	d	file:
+ISIG	src/POSIX.1-1988/termios/ISIG.c	2;"	d	file:
+ISLEAPYEAR	src/9899-1990/time/gmtime.c	11;"	d	file:
+ISTRIP	src/POSIX.1-1988/termios/ISTRIP.c	2;"	d	file:
+IXOFF	src/POSIX.1-1988/termios/IXOFF.c	2;"	d	file:
+IXON	src/POSIX.1-1988/termios/IXON.c	2;"	d	file:
+LC_ALL	src/9899-1990/locale/LC_ALL.c	2;"	d	file:
+LC_COLLATE	src/9899-1990/locale/LC_COLLATE.c	2;"	d	file:
+LC_CTYPE	src/9899-1990/locale/LC_CTYPE.c	2;"	d	file:
+LC_MONETARY	src/9899-1990/locale/LC_MONETARY.c	2;"	d	file:
+LC_NUMERIC	src/9899-1990/locale/LC_NUMERIC.c	2;"	d	file:
+LC_TIME	src/9899-1990/locale/LC_TIME.c	2;"	d	file:
+LDBL_DIG	src/9899-1990/float/LDBL_DIG.c	2;"	d	file:
+LDBL_EPSILON	src/9899-1990/float/LDBL_EPSILON.c	2;"	d	file:
+LDBL_MANT_DIG	src/9899-1990/float/LDBL_MANT_DIG.c	2;"	d	file:
+LDBL_MAX	src/9899-1990/float/LDBL_MAX.c	2;"	d	file:
+LDBL_MAX_10_EXP	src/9899-1990/float/LDBL_MAX_10_EXP.c	2;"	d	file:
+LDBL_MAX_EXP	src/9899-1990/float/LDBL_MAX_EXP.c	2;"	d	file:
+LDBL_MIN	src/9899-1990/float/LDBL_MIN.c	2;"	d	file:
+LDBL_MIN_10_EXP	src/9899-1990/float/LDBL_MIN_10_EXP.c	2;"	d	file:
+LDBL_MIN_EXP	src/9899-1990/float/LDBL_MIN_EXP.c	2;"	d	file:
+LNKTYPE	src/POSIX.1-1988/tar/LNKTYPE.c	3;"	d	file:
+LONG_MAX	src/9899-1990/limits/LONG_MAX.c	3;"	d	file:
+LONG_MAX	src/9899-1990/limits/LONG_MAX.c	5;"	d	file:
+LONG_MIN	src/9899-1990/limits/LONG_MIN.c	2;"	d	file:
+L_ctermid	src/POSIX.1-1988/stdio/L_ctermid.c	2;"	d	file:
+L_tmpnam	src/9899-1990/stdio/L_tmpnam.c	2;"	d	file:
+L_userid	src/POSIX.1-1988/stdio/L_cuserid.c	2;"	d	file:
+MAGIC	src/POSIX.1-1988/cpio/MAGIC.c	2;"	d	file:
+MB_CUR_MAX	src/9899-1990/stdlib/MB_CUR_MAX.c	5;"	d	file:
+MB_LEN_MAX	src/9899-1990/limits/MB_LEN_MAX.c	2;"	d	file:
+MIN_PER_HR	src/9899-1990/time/gmtime.c	5;"	d	file:
+NCCS	src/POSIX.1-1988/termios/NCCS.c	2;"	d	file:
+NDEBUG	src/9899-1990/assert/NDEBUG.c	3;"	d	file:
+NGROUPS_MAX	src/POSIX.1-1988/limits/NGROUPS_MAX.c	2;"	d	file:
+NOFLSH	src/POSIX.1-1988/termios/NOFLSH.c	2;"	d	file:
+NULL	src/9899-1990/stddef/NULL.c	2;"	d	file:
+OPOST	src/POSIX.1-1988/termios/OPOST.c	2;"	d	file:
+O_ACCMODE	src/POSIX.1-1988/fcntl/O_ACCMODE.c	3;"	d	file:
+O_APPEND	src/POSIX.1-1988/fcntl/O_APPEND.c	3;"	d	file:
+O_CREAT	src/POSIX.1-1988/fcntl/O_CREAT.c	3;"	d	file:
+O_EXCL	src/POSIX.1-1988/fcntl/O_EXCL.c	3;"	d	file:
+O_NOCTTY	src/POSIX.1-1988/fcntl/O_NOCTTY.c	3;"	d	file:
+O_NONBLOCK	src/POSIX.1-1988/fcntl/O_NONBLOCK.c	3;"	d	file:
+O_RDONLY	src/POSIX.1-1988/fcntl/O_RDONLY.c	3;"	d	file:
+O_RDWR	src/POSIX.1-1988/fcntl/O_RDWR.c	3;"	d	file:
+O_TRUNC	src/POSIX.1-1988/fcntl/O_TRUNC.c	3;"	d	file:
+O_WRONLY	src/POSIX.1-1988/fcntl/O_WRONLY.c	3;"	d	file:
+PARENB	src/POSIX.1-1988/termios/PARENB.c	2;"	d	file:
+PARMRK	src/POSIX.1-1988/termios/PARMRK.c	2;"	d	file:
+PARODD	src/POSIX.1-1988/termios/PARODD.c	2;"	d	file:
+RAND_MAX	src/9899-1990/stdlib/RAND_MAX.c	5;"	d	file:
+REGTYPE	src/POSIX.1-1988/tar/REGTYPE.c	3;"	d	file:
+R_OK	src/POSIX.1-1988/unistd/R_OK.c	2;"	d	file:
+SA_NOCLDSTOP	src/POSIX.1-1988/signal/SA_NOCLDSTOP.c	3;"	d	file:
+SCHAR_MAX	src/9899-1990/limits/SCHAR_MAX.c	2;"	d	file:
+SCHAR_MIN	src/9899-1990/limits/SCHAR_MIN.c	2;"	d	file:
+SEC_PER_DAY	src/9899-1990/time/gmtime.c	8;"	d	file:
+SEC_PER_HR	src/9899-1990/time/gmtime.c	6;"	d	file:
+SEC_PER_MIN	src/9899-1990/time/gmtime.c	4;"	d	file:
+SEC_PER_YEAR	src/9899-1990/time/gmtime.c	10;"	d	file:
+SEEK_CUR	src/9899-1990/stdio/SEEK_CUR.c	2;"	d	file:
+SEEK_END	src/9899-1990/stdio/SEEK_END.c	2;"	d	file:
+SEEK_SET	src/9899-1990/stdio/SEEK_SET.c	2;"	d	file:
+SHRT_MAX	src/9899-1990/limits/SHRT_MAX.c	2;"	d	file:
+SHRT_MIN	src/9899-1990/limits/SHRT_MIN.c	2;"	d	file:
+SIGABRT	src/9899-1990/signal/SIGABRT.c	2;"	d	file:
+SIGALRM	src/POSIX.1-1988/signal/SIGALRM.c	2;"	d	file:
+SIGCHLD	src/POSIX.1-1988/signal/SIGCHLD.c	2;"	d	file:
+SIGCONT	src/POSIX.1-1988/signal/SIGCONT.c	2;"	d	file:
+SIGFPE	src/9899-1990/signal/SIGFPE.c	2;"	d	file:
+SIGHUP	src/POSIX.1-1988/signal/SIGHUP.c	2;"	d	file:
+SIGILL	src/9899-1990/signal/SIGILL.c	2;"	d	file:
+SIGINT	src/9899-1990/signal/SIGINT.c	2;"	d	file:
+SIGKILL	src/POSIX.1-1988/signal/SIGKILL.c	2;"	d	file:
+SIGPIPE	src/POSIX.1-1988/signal/SIGPIPE.c	2;"	d	file:
+SIGQUIT	src/POSIX.1-1988/signal/SIGQUIT.c	2;"	d	file:
+SIGSEGV	src/9899-1990/signal/SIGSEGV.c	2;"	d	file:
+SIGSTOP	src/POSIX.1-1988/signal/SIGSTOP.c	2;"	d	file:
+SIGTERM	src/9899-1990/signal/SIGTERM.c	2;"	d	file:
+SIGTSTP	src/POSIX.1-1988/signal/SIGTSTP.c	2;"	d	file:
+SIGTTIN	src/POSIX.1-1988/signal/SIGTTIN.c	2;"	d	file:
+SIGTTOU	src/POSIX.1-1988/signal/SIGTTOU.c	2;"	d	file:
+SIGUSR1	src/POSIX.1-1988/signal/SIGUSR1.c	2;"	d	file:
+SIGUSR2	src/POSIX.1-1988/signal/SIGUSR2.c	2;"	d	file:
+SIG_BLOCK	src/POSIX.1-1988/signal/SIG_BLOCK.c	2;"	d	file:
+SIG_DFL	src/9899-1990/signal/SIG_DFL.c	2;"	d	file:
+SIG_ERR	src/9899-1990/signal/SIG_ERR.c	2;"	d	file:
+SIG_IGN	src/9899-1990/signal/SIG_IGN.c	2;"	d	file:
+SIG_SETMASK	src/POSIX.1-1988/signal/SIG_SETMASK.c	2;"	d	file:
+SIG_UNBLOCK	src/POSIX.1-1988/signal/SIG_UNBLOCK.c	2;"	d	file:
+SSIZE_MAX	src/POSIX.1-1990/limits/SSIZE_MAX.c	3;"	d	file:
+STDERR_FILENO	src/POSIX.1-1988/unistd/STDERR_FILENO.c	2;"	d	file:
+STDIN_FILENO	src/POSIX.1-1988/unistd/STDIN_FILENO.c	2;"	d	file:
+STDOUT_FILENO	src/POSIX.1-1988/unistd/STDOUT_FILENO.c	2;"	d	file:
+SYMTYPE	src/POSIX.1-1988/tar/SYMTYPE.c	3;"	d	file:
+S_IRGRP	src/POSIX.1-1988/sys/stat/S_IRGRP.c	3;"	d	file:
+S_IROTH	src/POSIX.1-1988/sys/stat/S_IROTH.c	3;"	d	file:
+S_IRUSR	src/POSIX.1-1988/sys/stat/S_IRUSR.c	3;"	d	file:
+S_IRWXG	src/POSIX.1-1988/sys/stat/S_IRWXG.c	3;"	d	file:
+S_IRWXO	src/POSIX.1-1988/sys/stat/S_IRWXO.c	3;"	d	file:
+S_IRWXU	src/POSIX.1-1988/sys/stat/S_IRWXU.c	3;"	d	file:
+S_ISCHAR	src/POSIX.1-1988/sys/stat/S_ISCHR.c	2;"	d	file:
+S_ISDIR	src/POSIX.1-1988/sys/stat/S_ISDIR.c	2;"	d	file:
+S_ISFIFO	src/POSIX.1-1988/sys/stat/S_ISFIFO.c	2;"	d	file:
+S_ISGID	src/POSIX.1-1988/sys/stat/S_ISGID.c	2;"	d	file:
+S_ISREG	src/POSIX.1-1988/sys/stat/S_ISREG.c	2;"	d	file:
+S_ISUID	src/POSIX.1-1988/sys/stat/S_ISUID.c	2;"	d	file:
+S_IWGRP	src/POSIX.1-1988/sys/stat/S_IWGRP.c	2;"	d	file:
+S_IWOTH	src/POSIX.1-1988/sys/stat/S_IWOTH.c	2;"	d	file:
+S_IWUSR	src/POSIX.1-1988/sys/stat/S_IWUSR.c	2;"	d	file:
+S_IXGRP	src/POSIX.1-1988/sys/stat/S_IXGRP.c	2;"	d	file:
+S_IXOTH	src/POSIX.1-1988/sys/stat/S_IXOTH.c	2;"	d	file:
+S_IXUSR	src/POSIX.1-1988/sys/stat/S_IXUSR.c	2;"	d	file:
+TCIFLUSH	src/POSIX.1-1988/termios/TCIFLUSH.c	2;"	d	file:
+TCIOFF	src/POSIX.1-1988/termios/TCIOFF.c	2;"	d	file:
+TCIOFLUSH	src/POSIX.1-1988/termios/TCIOFLUSH.c	2;"	d	file:
+TCION	src/POSIX.1-1988/termios/TCION.c	2;"	d	file:
+TCOFLUSH	src/POSIX.1-1988/termios/TCOFLUSH.c	2;"	d	file:
+TCOOFF	src/POSIX.1-1988/termios/TCOOFF.c	2;"	d	file:
+TCOON	src/POSIX.1-1988/termios/TCOON.c	2;"	d	file:
+TCSADRAIN	src/POSIX.1-1988/termios/TCSADRAIN.c	2;"	d	file:
+TCSAFLUSH	src/POSIX.1-1988/termios/TCSAFLUSH.c	2;"	d	file:
+TCSANOW	src/POSIX.1-1988/termios/TCSANOW.c	2;"	d	file:
+TGEXEC	src/POSIX.1-1988/tar/TGEXEC.c	3;"	d	file:
+TGREAD	src/POSIX.1-1988/tar/TGREAD.c	3;"	d	file:
+TGSOURCE	src/9899-1990/math/acos.c	1;"	d	file:
+TGSOURCE	src/9899-1990/math/asin.c	1;"	d	file:
+TGSOURCE	src/9899-1990/math/atan.c	1;"	d	file:
+TGSOURCE	src/9899-1990/math/atan2.c	1;"	d	file:
+TGSOURCE	src/9899-1990/math/ceil.c	1;"	d	file:
+TGSOURCE	src/9899-1990/math/cos.c	1;"	d	file:
+TGSOURCE	src/9899-1990/math/cosh.c	1;"	d	file:
+TGSOURCE	src/9899-1990/math/exp.c	1;"	d	file:
+TGSOURCE	src/9899-1990/math/fabs.c	1;"	d	file:
+TGSOURCE	src/9899-1990/math/floor.c	1;"	d	file:
+TGSOURCE	src/9899-1990/math/fmod.c	1;"	d	file:
+TGSOURCE	src/9899-1990/math/frexp.c	1;"	d	file:
+TGSOURCE	src/9899-1990/math/ldexp.c	1;"	d	file:
+TGSOURCE	src/9899-1990/math/log.c	1;"	d	file:
+TGSOURCE	src/9899-1990/math/log10.c	1;"	d	file:
+TGSOURCE	src/9899-1990/math/modf.c	1;"	d	file:
+TGSOURCE	src/9899-1990/math/pow.c	1;"	d	file:
+TGSOURCE	src/9899-1990/math/sin.c	1;"	d	file:
+TGSOURCE	src/9899-1990/math/sinh.c	1;"	d	file:
+TGSOURCE	src/9899-1990/math/sqrt.c	1;"	d	file:
+TGSOURCE	src/9899-1990/math/tan.c	1;"	d	file:
+TGSOURCE	src/9899-1990/math/tanh.c	1;"	d	file:
+TGWRITE	src/POSIX.1-1988/tar/TGWRITE.c	3;"	d	file:
+TMAGIC	src/POSIX.1-1988/tar/TMAGIC.c	3;"	d	file:
+TMAGLEN	src/POSIX.1-1988/tar/TMAGLEN.c	3;"	d	file:
+TMP_MAX	src/9899-1990/stdio/TMP_MAX.c	2;"	d	file:
+TOEXEC	src/POSIX.1-1988/tar/TOEXEC.c	3;"	d	file:
+TOREAD	src/POSIX.1-1988/tar/TOREAD.c	3;"	d	file:
+TOSTOP	src/POSIX.1-1988/termios/TOSTOP.c	2;"	d	file:
+TOWRITE	src/POSIX.1-1988/tar/TOWRITE.c	3;"	d	file:
+TSGID	src/POSIX.1-1988/tar/TSGID.c	3;"	d	file:
+TSUID	src/POSIX.1-1988/tar/TSUID.c	3;"	d	file:
+TSVTX	src/POSIX.1-1988/tar/TSVTX.c	3;"	d	file:
+TUEXEC	src/POSIX.1-1988/tar/TUEXEC.c	3;"	d	file:
+TUREAD	src/POSIX.1-1988/tar/TUREAD.c	3;"	d	file:
+TUWRITE	src/POSIX.1-1988/tar/TUWRITE.c	3;"	d	file:
+TVERSION	src/POSIX.1-1988/tar/TVERSION.c	3;"	d	file:
+TVERSLEN	src/POSIX.1-1988/tar/TVERSLEN.c	3;"	d	file:
+UCHAR_MAX	src/9899-1990/limits/UCHAR_MAX.c	2;"	d	file:
+UINT_MAX	src/9899-1990/limits/UINT_MAX.c	3;"	d	file:
+UINT_MAX	src/9899-1990/limits/UINT_MAX.c	5;"	d	file:
+UINT_MAX	src/9899-1990/limits/UINT_MAX.c	7;"	d	file:
+ULONG_MAX	src/9899-1990/limits/ULONG_MAX.c	3;"	d	file:
+ULONG_MAX	src/9899-1990/limits/ULONG_MAX.c	5;"	d	file:
+USE_FORK	src/9899-1990/stdlib/system.c	8;"	d	file:
+USHRT_MAX	src/9899-1990/limits/USHRT_MAX.c	2;"	d	file:
+VEOF	src/POSIX.1-1988/termios/VEOF.c	2;"	d	file:
+VEOL	src/POSIX.1-1988/termios/VEOL.c	2;"	d	file:
+VERASE	src/POSIX.1-1988/termios/VERASE.c	2;"	d	file:
+VINTR	src/POSIX.1-1988/termios/VINTR.c	2;"	d	file:
+VKILL	src/POSIX.1-1988/termios/VKILL.c	2;"	d	file:
+VMIN	src/POSIX.1-1988/termios/VMIN.c	2;"	d	file:
+VQUIT	src/POSIX.1-1988/termios/VQUIT.c	2;"	d	file:
+VSTART	src/POSIX.1-1988/termios/VSTART.c	2;"	d	file:
+VSTOP	src/POSIX.1-1988/termios/VSTOP.c	2;"	d	file:
+VSUSP	src/POSIX.1-1988/termios/VSUSP.c	2;"	d	file:
+VTIME	src/POSIX.1-1988/termios/VTIME.c	2;"	d	file:
+WCHAR_MAX	src/9899-1990-AMD1/wchar/WCHAR_MAX.c	2;"	d	file:
+WCHAR_MIN	src/9899-1990-AMD1/wchar/WCHAR_MIN.c	2;"	d	file:
+WEOF	src/9899-1990-AMD1/wctype/WEOF.c	2;"	d	file:
+WEXITSTATUS	src/POSIX.1-1988/sys/wait/WEXITSTATUS.c	3;"	d	file:
+WIFEXITED	src/POSIX.1-1988/sys/wait/WIFEXITED.c	3;"	d	file:
+WIFSIGNALED	src/POSIX.1-1988/sys/wait/WIFSIGNALED.c	3;"	d	file:
+WIFSTOPPED	src/POSIX.1-1988/sys/wait/WIFSTOPPED.c	3;"	d	file:
+WNOHANG	src/POSIX.1-1988/sys/wait/WNOHANG.c	3;"	d	file:
+WSTOPSIG	src/POSIX.1-1988/sys/wait/WSTOPSIG.c	3;"	d	file:
+WTERMSIG	src/POSIX.1-1988/sys/wait/WTERMSIG.c	3;"	d	file:
+WUNTRACED	src/POSIX.1-1988/sys/wait/WUNTRACED.c	3;"	d	file:
+W_OK	src/POSIX.1-1988/unistd/W_OK.c	2;"	d	file:
+X_OK	src/POSIX.1-1988/unistd/X_OK.c	2;"	d	file:
+_IOFBF	src/9899-1990/stdio/_IOFBF.c	2;"	d	file:
+_IOLBF	src/9899-1990/stdio/_IOLBF.c	2;"	d	file:
+_IONBF	src/9899-1990/stdio/_IONBF.c	2;"	d	file:
+_PC_CHOWN_RESTRICTED	src/POSIX.1-1988/unistd/_PC_CHOWN_RESTRICTED.c	2;"	d	file:
+_PC_LINK_MAX	src/POSIX.1-1988/unistd/_PC_LINK_MAX.c	2;"	d	file:
+_PC_MAX_CANON	src/POSIX.1-1988/unistd/_PC_MAX_CANON.c	2;"	d	file:
+_PC_MAX_INPUT	src/POSIX.1-1988/unistd/_PC_MAX_INPUT.c	2;"	d	file:
+_PC_NAME_MAX	src/POSIX.1-1988/unistd/_PC_NAME_MAX.c	2;"	d	file:
+_PC_NO_TRUNC	src/POSIX.1-1988/unistd/_PC_NO_TRUNC.c	2;"	d	file:
+_PC_PATH_MAX	src/POSIX.1-1988/unistd/_PC_PATH_MAX.c	2;"	d	file:
+_PC_PIPE_BUF	src/POSIX.1-1988/unistd/_PC_PIPE_BUF.c	2;"	d	file:
+_PC_VDISABLE	src/POSIX.1-1988/unistd/_PC_VDISABLE.c	2;"	d	file:
+_POSIX_ARG_MAX	src/POSIX.1-1988/limits/_POSIX_ARG_MAX.c	2;"	d	file:
+_POSIX_CHILD_MAX	src/POSIX.1-1988/limits/_POSIX_CHILD_MAX.c	2;"	d	file:
+_POSIX_CHOWN_RESTRICTED	src/POSIX.1-1988/unistd/_POSIX_CHOWN_RESTRICTED.c	2;"	d	file:
+_POSIX_JOB_CONTROL	src/POSIX.1-1988/unistd/_POSIX_JOB_CONTROL.c	2;"	d	file:
+_POSIX_LINK_MAX	src/POSIX.1-1988/limits/_POSIX_LINK_MAX.c	2;"	d	file:
+_POSIX_MAX_CANON	src/POSIX.1-1988/limits/_POSIX_MAX_CANON.c	2;"	d	file:
+_POSIX_MAX_INPUT	src/POSIX.1-1988/limits/_POSIX_MAX_INPUT.c	2;"	d	file:
+_POSIX_NAME_MAX	src/POSIX.1-1988/limits/_POSIX_NAME_MAX.c	2;"	d	file:
+_POSIX_NGROUPS_MAX	src/POSIX.1-1988/limits/_POSIX_NGROUPS_MAX.c	2;"	d	file:
+_POSIX_NO_TRUNC	src/POSIX.1-1988/unistd/_POSIX_NO_TRUNC.c	2;"	d	file:
+_POSIX_OPEN_MAX	src/POSIX.1-1988/limits/_POSIX_OPEN_MAX.c	2;"	d	file:
+_POSIX_PATH_MAX	src/POSIX.1-1988/limits/_POSIX_PATH_MAX.c	2;"	d	file:
+_POSIX_PIPE_BUF	src/POSIX.1-1988/limits/_POSIX_PIPE_BUF.c	2;"	d	file:
+_POSIX_SAVED_IDS	src/POSIX.1-1988/unistd/_POSIX_SAVED_IDS.c	2;"	d	file:
+_POSIX_SOURCE	src/POSIX.1-1988/_POSIX_SOURCE.c	1;"	d	file:
+_POSIX_SSIZE_MAX	src/POSIX.1-1990/limits/_POSIX_SSIZE_MAX.c	3;"	d	file:
+_POSIX_STREAM_MAX	src/POSIX.1-1990/limits/_POSIX_STREAM_MAX.c	2;"	d	file:
+_POSIX_TZNAME_MAX	src/POSIX.1-1990/limits/_POSIX_TZNAME_MAX.c	3;"	d	file:
+_POSIX_VDISABLE	src/POSIX.1-1988/unistd/_POSIX_VDISABLE.c	2;"	d	file:
+_POSIX_VERISON	src/POSIX.1-1988/unistd/_POSIX_VERSION.c	3;"	d	file:
+_POSIX_VERSION	src/POSIX.1-1988/unistd/_POSIX_VERSION.c	11;"	d	file:
+_POSIX_VERSION	src/POSIX.1-1988/unistd/_POSIX_VERSION.c	13;"	d	file:
+_POSIX_VERSION	src/POSIX.1-1988/unistd/_POSIX_VERSION.c	5;"	d	file:
+_POSIX_VERSION	src/POSIX.1-1988/unistd/_POSIX_VERSION.c	7;"	d	file:
+_POSIX_VERSION	src/POSIX.1-1988/unistd/_POSIX_VERSION.c	9;"	d	file:
+_SC_ARG_MAX	src/POSIX.1-1988/unistd/_SC_ARG_MAX.c	2;"	d	file:
+_SC_CHILD_MAX	src/POSIX.1-1988/unistd/_SC_CHILD_MAX.c	2;"	d	file:
+_SC_CLK_TCK	src/POSIX.1-1988/unistd/_SC_CLK_TCK.c	2;"	d	file:
+_SC_JOB_CONTROL	src/POSIX.1-1988/unistd/_SC_JOB_CONTROL.c	2;"	d	file:
+_SC_NGROUPS_MAX	src/POSIX.1-1988/unistd/_SC_NGROUPS_MAX.c	2;"	d	file:
+_SC_OPEN_MAX	src/POSIX.1-1988/unistd/_SC_OPEN_MAX.c	2;"	d	file:
+_SC_SAVED_IDS	src/POSIX.1-1988/unistd/_SC_SAVED_IDS.c	2;"	d	file:
+_SC_STREAM_MAX	src/POSIX.1-1990/unistd/_SC_STREAM_MAX.c	3;"	d	file:
+_SC_TZNAME_MAX	src/POSIX.1-1990/unistd/_SC_TZNAME_MAX.c	3;"	d	file:
+_SC_VERSION	src/POSIX.1-1988/unistd/_SC_VERSION.c	2;"	d	file:
+__DATE__	src/9899-1990/__DATE__.c	1;"	d	file:
+__FILE__	src/9899-1990/__FILE__.c	1;"	d	file:
+__LINE__	src/9899-1990/__LINE__.c	1;"	d	file:
+__LONGEST_STRERR	src/9899-1990/string/strerror.c	4;"	d	file:
+__PLATFORM__	src/POSIX.1-1988/sys/utsname/uname.c	7;"	d	file:
+__STDC_VERSION__	src/9899-1990-AMD1/__STDC_VERSION__.c	1;"	d	file:
+__STDC__	src/9899-1990/__STDC__.c	1;"	d	file:
+__TIME__	src/9899-1990/__TIME__.c	1;"	d	file:
+__func__	src/9899-1990/assert/assert.c	10;"	d	file:
+__func__	src/9899-1990/assert/assert.c	18;"	d	file:
+__int_n_cs_precedes	src/9899-1990/locale/struct_lconv.c	/^	char __int_n_cs_precedes;$/;"	m	struct:lconv	file:
+__int_n_sep_by_space	src/9899-1990/locale/struct_lconv.c	/^	char __int_n_sep_by_space;$/;"	m	struct:lconv	file:
+__int_n_sign_posn	src/9899-1990/locale/struct_lconv.c	/^	char __int_n_sign_posn;$/;"	m	struct:lconv	file:
+__int_p_cs_precedes	src/9899-1990/locale/struct_lconv.c	/^	char __int_p_cs_precedes;$/;"	m	struct:lconv	file:
+__int_p_sep_by_space	src/9899-1990/locale/struct_lconv.c	/^	char __int_p_sep_by_space;$/;"	m	struct:lconv	file:
+__int_p_sign_posn	src/9899-1990/locale/struct_lconv.c	/^	char __int_p_sign_posn;$/;"	m	struct:lconv	file:
+__padding	src/POSIX.1-1988/signal/struct_sigaction.c	/^	void (*__padding)(int, siginfo_t *, void *);$/;"	m	struct:sigaction	file:
+_exit	src/POSIX.1-1988/unistd/_exit.c	/^void _exit(int status)$/;"	f
+abort	src/9899-1990/stdlib/abort.c	/^_Noreturn void abort(void)$/;"	f
+abs	src/9899-1990/stdlib/abs.c	/^int abs(int j)$/;"	f
+access	src/POSIX.1-1988/unistd/access.c	/^int access(const char *path, int amode)$/;"	f
+acos	src/9899-1990/math/acos.c	/^TYPE TGFN(acos)(TYPE x)$/;"	f
+actime	src/POSIX.1-1988/utime/struct_utimbuf.c	/^	time_t actime;$/;"	m	struct:utimbuf	file:
+alarm	src/POSIX.1-1988/unistd/alarm.c	/^unsigned alarm(unsigned seconds)$/;"	f
+and	src/9899-1990-AMD1/iso646/and.c	2;"	d	file:
+and_eq	src/9899-1990-AMD1/iso646/and_eq.c	2;"	d	file:
+asctime	src/9899-1990/time/asctime.c	/^char * asctime(const struct tm * timeptr)$/;"	f
+asin	src/9899-1990/math/asin.c	/^TYPE TGFN(asin)(TYPE x)$/;"	f
+assert	src/9899-1990/assert/assert.c	14;"	d	file:
+assert	src/9899-1990/assert/assert.c	3;"	d	file:
+assert	src/9899-1990/assert/assert.c	6;"	d	file:
+atan	src/9899-1990/math/atan.c	/^TYPE TGFN(atan)(TYPE x)$/;"	f
+atan2	src/9899-1990/math/atan2.c	/^TYPE TGFN(atan2)(TYPE y, TYPE x)$/;"	f
+atexit	src/9899-1990/stdlib/atexit.c	/^int atexit(void (*func)(void))$/;"	f
+atof	src/9899-1990/stdlib/atof.c	/^double atof(const char * nptr)$/;"	f
+atoi	src/9899-1990/stdlib/atoi.c	/^int atoi(const char * nptr)$/;"	f
+atol	src/9899-1990/stdlib/atol.c	/^long int atol(const char * nptr)$/;"	f
+bitand	src/9899-1990-AMD1/iso646/bitand.c	2;"	d	file:
+bitor	src/9899-1990-AMD1/iso646/bitor.c	2;"	d	file:
+bsearch	src/9899-1990/stdlib/bsearch.c	/^void * bsearch(const void * key, const void * base, size_t nmemb, size_t size, int (*compar)(const void *, const void*))$/;"	f
+btowc	src/9899-1990-AMD1/wchar/btowc.c	/^wint_t btowc(int c)$/;"	f
+c_cc	src/POSIX.1-1988/termios/struct_termios.c	/^	cc_t c_cc[NCCS];$/;"	m	struct:termios	file:
+c_cflag	src/POSIX.1-1988/termios/struct_termios.c	/^	tcflag_t c_cflag;$/;"	m	struct:termios	file:
+c_iflag	src/POSIX.1-1988/termios/struct_termios.c	/^	tcflag_t c_iflag;$/;"	m	struct:termios	file:
+c_lflag	src/POSIX.1-1988/termios/struct_termios.c	/^	tcflag_t c_lflag;$/;"	m	struct:termios	file:
+c_oflag	src/POSIX.1-1988/termios/struct_termios.c	/^	tcflag_t c_oflag;$/;"	m	struct:termios	file:
+calloc	src/9899-1990/stdlib/calloc.c	/^void * calloc(size_t nmemb, size_t size)$/;"	f
+cc_t	src/POSIX.1-1988/termios/cc_t.c	/^typedef int                                                                cc_t;$/;"	t	file:
+ceil	src/9899-1990/math/ceil.c	/^TYPE TGFN(ceil)(TYPE x)$/;"	f
+cfgetispeed	src/POSIX.1-1988/termios/cfgetispeed.c	/^speed_t cfgetispeed(const struct termios *termios_p)$/;"	f
+cfgetospeed	src/POSIX.1-1988/termios/cfgetospeed.c	/^speed_t cfgetospeed(const struct termios *termios_p)$/;"	f
+cfsetispeed	src/POSIX.1-1988/termios/cfsetispeed.c	/^int cfsetispeed(struct termios *termios_p, speed_t speed)$/;"	f
+cfsetospeed	src/POSIX.1-1988/termios/cfsetospeed.c	/^int cfsetospeed(struct termios *termios_p, speed_t speed)$/;"	f
+chdir	src/POSIX.1-1988/unistd/chdir.c	/^int chdir(const char *path)$/;"	f
+chmod	src/POSIX.1-1988/sys/stat/chmod.c	/^int chmod(const char *path, mode_t mode)$/;"	f
+chown	src/POSIX.1-1988/unistd/chown.c	/^int chown(const char *path, uid_t owner, gid_t group)$/;"	f
+clearerr	src/9899-1990/stdio/clearerr.c	/^void clearerr(FILE * stream)$/;"	f
+clock	src/9899-1990/time/clock.c	/^clock_t clock(void)$/;"	f
+clock_t	src/9899-1990/time/clock_t.c	/^typedef long int                                                        clock_t;$/;"	t	file:
+close	src/POSIX.1-1988/unistd/close.c	/^int close(int fildes)$/;"	f
+closedir	src/POSIX.1-1988/dirent/closedir.c	/^int closedir(DIR *dirp)$/;"	f
+compl	src/9899-1990-AMD1/iso646/compl.c	2;"	d	file:
+cos	src/9899-1990/math/cos.c	/^TYPE TGFN(cos)(TYPE x)$/;"	f
+cosh	src/9899-1990/math/cosh.c	/^TYPE TGFN(cosh)(TYPE x)$/;"	f
+creat	src/POSIX.1-1988/fcntl/creat.c	/^int creat(const char *path, mode_t mode)$/;"	f
+ctermid	src/POSIX.1-1988/unistd/ctermid.c	/^char * ctermid(char * s)$/;"	f
+ctime	src/9899-1990/time/ctime.c	/^char * ctime(const time_t * timer)$/;"	f
+currency_symbol	src/9899-1990/locale/struct_lconv.c	/^	char *currency_symbol;		\/* "" *\/$/;"	m	struct:lconv	file:
+cuserid	src/POSIX.1-1988/unistd/cuserid.c	/^char *cuserid(char *s)$/;"	f
+d_ino	src/POSIX.1-1988/dirent/struct_dirent.c	/^	ino_t d_ino;$/;"	m	struct:dirent	file:
+d_name	src/POSIX.1-1988/dirent/struct_dirent.c	/^	char d_name[];$/;"	m	struct:dirent	file:
+decimal_point	src/9899-1990/locale/struct_lconv.c	/^	char *decimal_point;		\/* "." *\/$/;"	m	struct:lconv	file:
+dev_t	src/POSIX.1-1988/sys/types/dev_t.c	/^typedef unsigned long long int                                            dev_t;$/;"	t	file:
+difftime	src/9899-1990/time/difftime.c	/^double difftime(time_t time1, time_t time0)$/;"	f
+dirent	src/POSIX.1-1988/dirent/struct_dirent.c	/^struct dirent {$/;"	s	file:
+div	src/9899-1990/stdlib/div.c	/^div_t div(int numer, int denom)$/;"	f
+div_t	src/9899-1990/stdlib/div_t.c	/^} div_t;$/;"	t	typeref:struct:__anon1	file:
+dup	src/POSIX.1-1988/unistd/dup.c	/^int dup(int fildes)$/;"	f
+dup2	src/POSIX.1-1988/unistd/dup2.c	/^int dup2(int fildes, int fildes2)$/;"	f
+environ	src/POSIX.1-1988/environ.c	/^char **environ;$/;"	v
+errno	src/9899-1990/errno/errno.c	3;"	d	file:
+execl	src/POSIX.1-1988/unistd/execl.c	/^int execl(const char *path, const char *arg0, ...  \/*, (char *)0 *\/)$/;"	f
+execle	src/POSIX.1-1988/unistd/execle.c	/^int execle(const char *path, const char *arg0, ... \/*, (char *)0, char *const envp[] *\/)$/;"	f
+execlp	src/POSIX.1-1988/unistd/execlp.c	/^int execlp(const char *file, const char *arg0, ...  \/*, (char *0) *\/)$/;"	f
+execv	src/POSIX.1-1988/unistd/execv.c	/^int execv(const char *path, char *const argv[])$/;"	f
+execve	src/POSIX.1-1988/unistd/execve.c	/^int execve(const char *path, char *const argv[], char *const envp[])$/;"	f
+execvp	src/POSIX.1-1988/unistd/execvp.c	/^int execvp(const char *file, char *const argv[])$/;"	f
+exit	src/9899-1990/stdlib/exit.c	/^_Noreturn void exit(int status)$/;"	f
+exp	src/9899-1990/math/exp.c	/^TYPE TGFN(exp)(TYPE x)$/;"	f
+fabs	src/9899-1990/math/fabs.c	/^TYPE TGFN(fabs)(TYPE x)$/;"	f
+fclose	src/9899-1990/stdio/fclose.c	/^int fclose(FILE *stream)$/;"	f
+fcntl	src/POSIX.1-1988/fcntl/fcntl.c	/^int fcntl(int fildes, int cmd, ...)$/;"	f
+fdopen	src/POSIX.1-1988/stdio/fdopen.c	/^FILE * fdopen(int fildes, const char * mode)$/;"	f
+feof	src/9899-1990/stdio/feof.c	/^int feof(FILE *stream)$/;"	f
+ferror	src/9899-1990/stdio/ferror.c	/^int ferror(FILE *stream)$/;"	f
+fflush	src/9899-1990/stdio/fflush.c	/^int fflush(FILE *stream)$/;"	f
+fgetc	src/9899-1990/stdio/fgetc.c	/^int fgetc(FILE *stream)$/;"	f
+fgetpos	src/9899-1990/stdio/fgetpos.c	/^int fgetpos(FILE * restrict stream, fpos_t * restrict pos)$/;"	f
+fgets	src/9899-1990/stdio/fgets.c	/^char * fgets(char * restrict s, int n, FILE * restrict stream)$/;"	f
+fgetwc	src/9899-1990-AMD1/wchar/fgetwc.c	/^wint_t fgetwc(FILE * stream)$/;"	f
+fgetws	src/9899-1990-AMD1/wchar/fgetws.c	/^wchar_t * fgetws(wchar_t * restrict s, int n, FILE * restrict stream)$/;"	f
+fileno	src/POSIX.1-1988/stdio/fileno.c	/^int fileno(FILE * stream)$/;"	f
+flock	src/POSIX.1-1988/fcntl/struct_flock.c	/^struct flock {$/;"	s	file:
+floor	src/9899-1990/math/floor.c	/^TYPE TGFN(floor)(TYPE x)$/;"	f
+fmod	src/9899-1990/math/fmod.c	/^TYPE TGFN(fmod)(TYPE x, TYPE y)$/;"	f
+fopen	src/9899-1990/stdio/fopen.c	/^FILE * fopen(const char * restrict filename, const char * restrict mode)$/;"	f
+fork	src/POSIX.1-1988/unistd/fork.c	/^pid_t fork(void)$/;"	f
+fpathconf	src/POSIX.1-1988/unistd/fpathconf.c	/^long fpathconf(int fildes, int name)$/;"	f
+fpos_t	src/9899-1990/stdio/fpos_t.c	/^typedef struct __fpos_t *                                                fpos_t;$/;"	t	typeref:struct:__fpos_t	file:
+fprintf	src/9899-1990/stdio/fprintf.c	/^int fprintf(FILE * restrict stream, const char * restrict format, ...)$/;"	f
+fputc	src/9899-1990/stdio/fputc.c	/^int fputc(int c, FILE *stream)$/;"	f
+fputs	src/9899-1990/stdio/fputs.c	/^int fputs(const char * restrict s, FILE * restrict stream)$/;"	f
+fputwc	src/9899-1990-AMD1/wchar/fputwc.c	/^wint_t fputwc(wchar_t c, FILE * stream)$/;"	f
+fputws	src/9899-1990-AMD1/wchar/fputws.c	/^int fputws(const wchar_t * restrict s, FILE * restrict stream)$/;"	f
+frac_digits	src/9899-1990/locale/struct_lconv.c	/^	char frac_digits;		\/* CHAR_MAX *\/$/;"	m	struct:lconv	file:
+fread	src/9899-1990/stdio/fread.c	/^size_t fread(void * restrict ptr, size_t size, size_t nmemb, FILE * restrict stream)$/;"	f
+free	src/9899-1990/stdlib/free.c	/^void free(void * ptr)$/;"	f
+freopen	src/9899-1990/stdio/freopen.c	/^FILE * freopen(const char * restrict filename, const char * restrict mode, FILE * restrict stream)$/;"	f
+frexp	src/9899-1990/math/frexp.c	/^TYPE TGFN(frexp)(TYPE value, int *exp)$/;"	f
+fscanf	src/9899-1990/stdio/fscanf.c	/^int fscanf(FILE * restrict stream, const char * restrict format, ...)$/;"	f
+fseek	src/9899-1990/stdio/fseek.c	/^int fseek(FILE *stream, long int offset, int whence)$/;"	f
+fsetpos	src/9899-1990/stdio/fsetpos.c	/^int fsetpos(FILE *stream, const fpos_t *pos)$/;"	f
+fstat	src/POSIX.1-1988/sys/stat/fstat.c	/^int fstat(int fildes, struct stat *buf)$/;"	f
+ftell	src/9899-1990/stdio/ftell.c	/^long int ftell(FILE *stream)$/;"	f
+fwide	src/9899-1990-AMD1/wchar/fwide.c	/^int fwide(FILE * stream, int mode)$/;"	f
+fwprintf	src/9899-1990-AMD1/wchar/fwprintf.c	/^int fwprintf(FILE * restrict stream, const wchar_t * restrict format, ...)$/;"	f
+fwrite	src/9899-1990/stdio/fwrite.c	/^size_t fwrite(const void * restrict ptr, size_t size, size_t nmemb, FILE * restrict stream)$/;"	f
+fwscanf	src/9899-1990-AMD1/wchar/fwscanf.c	/^int fwscanf(FILE * restrict stream, const wchar_t * restrict format, ...)$/;"	f
+getc	src/9899-1990/stdio/getc.c	/^int getc(FILE *stream)$/;"	f
+getchar	src/9899-1990/stdio/getchar.c	/^int getchar(void)$/;"	f
+getcwd	src/POSIX.1-1988/unistd/getcwd.c	/^char * getcwd(char *buf, size_t size)$/;"	f
+getegid	src/POSIX.1-1988/unistd/getegid.c	/^gid_t getegid(void)$/;"	f
+getenv	src/9899-1990/stdlib/getenv.c	/^char * getenv(const char * name)$/;"	f
+geteuid	src/POSIX.1-1988/unistd/geteuid.c	/^uid_t geteuid(void)$/;"	f
+getgid	src/POSIX.1-1988/unistd/getgid.c	/^gid_t getgid(void)$/;"	f
+getgrgid	src/POSIX.1-1988/grp/getgrgid.c	/^struct group * getgrgid(gid_t gid)$/;"	f
+getgrnam	src/POSIX.1-1988/grp/getgrnam.c	/^struct group * getgrnam(const char * name)$/;"	f
+getgroups	src/POSIX.1-1988/unistd/getgroups.c	/^int getgroups(int gidsetsize, gid_t grouplist[])$/;"	f
+getlogin	src/POSIX.1-1988/unistd/getlogin.c	/^char * getlogin(void)$/;"	f
+getpgrp	src/POSIX.1-1988/unistd/getpgrp.c	/^pid_t getpgrp(void)$/;"	f
+getpid	src/POSIX.1-1988/unistd/getpid.c	/^pid_t getpid(void)$/;"	f
+getppid	src/POSIX.1-1988/unistd/getppid.c	/^pid_t getppid(void)$/;"	f
+getpwnam	src/POSIX.1-1988/pwd/getpwnam.c	/^struct passwd * getpwnam(const char * name)$/;"	f
+getpwuid	src/POSIX.1-1988/pwd/getpwuid.c	/^struct passwd * getpwuid(uid_t uid)$/;"	f
+gets	src/9899-1990/stdio/gets.c	/^char * gets(char *s)$/;"	f
+getuid	src/POSIX.1-1988/unistd/getuid.c	/^uid_t getuid(void)$/;"	f
+getwc	src/9899-1990-AMD1/wchar/getwc.c	/^wint_t getwc(FILE * stream)$/;"	f
+getwchar	src/9899-1990-AMD1/wchar/getwchar.c	/^wint_t getwchar(void)$/;"	f
+gid_t	src/POSIX.1-1988/sys/types/gid_t.c	/^typedef unsigned long long int                                            gid_t;$/;"	t	file:
+gmtime	src/9899-1990/time/gmtime.c	/^struct tm * gmtime(const time_t * timer)$/;"	f
+gr_gid	src/POSIX.1-1988/grp/struct_group.c	/^	gid_t	gr_gid;$/;"	m	struct:group	file:
+gr_mem	src/POSIX.1-1988/grp/struct_group.c	/^	char **	gr_mem;$/;"	m	struct:group	file:
+gr_name	src/POSIX.1-1988/grp/struct_group.c	/^	char *	gr_name;$/;"	m	struct:group	file:
+group	src/POSIX.1-1988/grp/struct_group.c	/^struct group {$/;"	s	file:
+grouping	src/9899-1990/locale/struct_lconv.c	/^	char *grouping;			\/* "" *\/$/;"	m	struct:lconv	file:
+ino_t	src/POSIX.1-1988/sys/types/ino_t.c	/^typedef unsigned long long int                                            ino_t;$/;"	t	file:
+int_curr_symbol	src/9899-1990/locale/struct_lconv.c	/^	char *int_curr_symbol;		\/* "" *\/$/;"	m	struct:lconv	file:
+int_frac_digits	src/9899-1990/locale/struct_lconv.c	/^	char int_frac_digits;		\/* CHAR_MAX *\/$/;"	m	struct:lconv	file:
+int_n_cs_precedes	src/9899-1990/locale/struct_lconv.c	/^	char int_n_cs_precedes;		\/* CHAR_MAX *\/$/;"	m	struct:lconv	file:
+int_n_sep_by_space	src/9899-1990/locale/struct_lconv.c	/^	char int_n_sep_by_space;	\/* CHAR_MAX *\/$/;"	m	struct:lconv	file:
+int_n_sign_posn	src/9899-1990/locale/struct_lconv.c	/^	char int_n_sign_posn;		\/* CHAR_MAX *\/$/;"	m	struct:lconv	file:
+int_p_cs_precedes	src/9899-1990/locale/struct_lconv.c	/^	char int_p_cs_precedes;		\/* CHAR_MAX *\/$/;"	m	struct:lconv	file:
+int_p_sep_by_space	src/9899-1990/locale/struct_lconv.c	/^	char int_p_sep_by_space;	\/* CHAR_MAX *\/$/;"	m	struct:lconv	file:
+int_p_sign_posn	src/9899-1990/locale/struct_lconv.c	/^	char int_p_sign_posn;		\/* CHAR_MAX *\/$/;"	m	struct:lconv	file:
+isalnum	src/9899-1990/ctype/isalnum.c	/^int isalnum(int c)$/;"	f
+isalpha	src/9899-1990/ctype/isalpha.c	/^int isalpha(int c)$/;"	f
+isatty	src/POSIX.1-1988/unistd/isatty.c	/^int isatty(int fildes)$/;"	f
+iscntrl	src/9899-1990/ctype/iscntrl.c	/^int iscntrl(int c)$/;"	f
+isdigit	src/9899-1990/ctype/isdigit.c	/^int isdigit(int c)$/;"	f
+isgraph	src/9899-1990/ctype/isgraph.c	/^int isgraph(int c)$/;"	f
+islower	src/9899-1990/ctype/islower.c	/^int islower(int c)$/;"	f
+isprint	src/9899-1990/ctype/isprint.c	/^int isprint(int c)$/;"	f
+ispunct	src/9899-1990/ctype/ispunct.c	/^int ispunct(int c)$/;"	f
+isspace	src/9899-1990/ctype/isspace.c	/^int isspace(int c)$/;"	f
+isupper	src/9899-1990/ctype/isupper.c	/^int isupper(int c)$/;"	f
+iswalnum	src/9899-1990-AMD1/wctype/iswalnum.c	/^int iswalnum(wint_t wc)$/;"	f
+iswalpha	src/9899-1990-AMD1/wctype/iswalpha.c	/^int iswalpha(wint_t wc)$/;"	f
+iswcntrl	src/9899-1990-AMD1/wctype/iswcntrl.c	/^int iswcntrl(wint_t wc)$/;"	f
+iswctype	src/9899-1990-AMD1/wctype/iswctype.c	/^int iswctype(wint_t wc, wctype_t desc)$/;"	f
+iswdigit	src/9899-1990-AMD1/wctype/iswdigit.c	/^int iswdigit(wint_t wc)$/;"	f
+iswgraph	src/9899-1990-AMD1/wctype/iswgraph.c	/^int iswgraph(wint_t wc)$/;"	f
+iswlower	src/9899-1990-AMD1/wctype/iswlower.c	/^int iswlower(wint_t wc)$/;"	f
+iswprint	src/9899-1990-AMD1/wctype/iswprint.c	/^int iswprint(wint_t wc)$/;"	f
+iswpunct	src/9899-1990-AMD1/wctype/iswpunct.c	/^int iswpunct(wint_t wc)$/;"	f
+iswspace	src/9899-1990-AMD1/wctype/iswspace.c	/^int iswspace(wint_t wc)$/;"	f
+iswupper	src/9899-1990-AMD1/wctype/iswupper.c	/^int iswupper(wint_t wc)$/;"	f
+iswxdigit	src/9899-1990-AMD1/wctype/iswxdigit.c	/^int iswxdigit(wint_t wc)$/;"	f
+isxdigit	src/9899-1990/ctype/isxdigit.c	/^int isxdigit(int c)$/;"	f
+jmp_buf	src/9899-1990/setjmp/jmp_buf.c	/^typedef unsigned long int                                           jmp_buf[32];$/;"	t	file:
+kill	src/POSIX.1-1988/signal/kill.c	/^int kill(pid_t pid, int sig)$/;"	f
+l_len	src/POSIX.1-1988/fcntl/struct_flock.c	/^	off_t l_len;$/;"	m	struct:flock	file:
+l_pid	src/POSIX.1-1988/fcntl/struct_flock.c	/^	pid_t l_pid;$/;"	m	struct:flock	file:
+l_start	src/POSIX.1-1988/fcntl/struct_flock.c	/^	off_t l_start;$/;"	m	struct:flock	file:
+l_type	src/POSIX.1-1988/fcntl/struct_flock.c	/^	short l_type;$/;"	m	struct:flock	file:
+l_whence	src/POSIX.1-1988/fcntl/struct_flock.c	/^	short l_whence;$/;"	m	struct:flock	file:
+labs	src/9899-1990/stdlib/labs.c	/^long int labs(long int j)$/;"	f
+lconv	src/9899-1990/locale/struct_lconv.c	/^struct lconv {$/;"	s	file:
+ldexp	src/9899-1990/math/ldexp.c	/^TYPE TGFN(ldexp)(TYPE x, int exp)$/;"	f
+ldiv	src/9899-1990/stdlib/ldiv.c	/^ldiv_t ldiv(long int numer, long int denom)$/;"	f
+ldiv_t	src/9899-1990/stdlib/ldiv_t.c	/^} ldiv_t;$/;"	t	typeref:struct:__anon2	file:
+link	src/POSIX.1-1988/unistd/link.c	/^int link(const char *path1, const char *path2)$/;"	f
+localeconv	src/9899-1990/locale/localeconv.c	/^struct lconv * localeconv(void)$/;"	f
+localtime	src/9899-1990/time/localtime.c	/^struct tm * localtime(const time_t * timer)$/;"	f
+log	src/9899-1990/math/log.c	/^TYPE TGFN(log)(TYPE x)$/;"	f
+log10	src/9899-1990/math/log10.c	/^TYPE TGFN(log10)(TYPE x)$/;"	f
+longjmp	src/9899-1990/setjmp/longjmp.c	/^_Noreturn void longjmp(jmp_buf env, int val)$/;"	f
+lseek	src/POSIX.1-1988/unistd/lseek.c	/^off_t lseek(int fildes, off_t offset, int whence)$/;"	f
+machine	src/POSIX.1-1988/sys/utsname/struct_utsname.c	/^	char machine[100];$/;"	m	struct:utsname	file:
+malloc	src/9899-1990/stdlib/malloc.c	/^void * malloc(size_t size)$/;"	f
+mblen	src/9899-1990/stdlib/mblen.c	/^int mblen(const char * s, size_t n)$/;"	f
+mbrlen	src/9899-1990-AMD1/wchar/mbrlen.c	/^size_t mbrlen(const char * restrict s, size_t n, mbstate_t * restrict ps)$/;"	f
+mbrtowc	src/9899-1990-AMD1/wchar/mbrtowc.c	/^size_t mbrtowc(wchar_t * restrict pwc, const char * restrict s, size_t n, mbstate_t * restrict ps)$/;"	f
+mbsinit	src/9899-1990-AMD1/wchar/mbsinit.c	/^int mbsinit(const mbstate_t * ps)$/;"	f
+mbsrtowcs	src/9899-1990-AMD1/wchar/mbsrtowcs.c	/^size_t mbsrtowcs(wchar_t * restrict dst, const char * restrict src, size_t len,$/;"	f
+mbstate_t	src/9899-1990-AMD1/wchar/mbstate_t.c	/^typedef int                                                           mbstate_t;$/;"	t	file:
+mbstowcs	src/9899-1990/stdlib/mbstowcs.c	/^size_t mbstowcs(wchar_t * restrict pwcs, const char * restrict s, size_t n)$/;"	f
+mbtowc	src/9899-1990/stdlib/mbtowc.c	/^int mbtowc(wchar_t * restrict pwc, const char * restrict s, size_t n)$/;"	f
+memchr	src/9899-1990/string/memchr.c	/^void * memchr(const void *s, int c, size_t n)$/;"	f
+memcmp	src/9899-1990/string/memcmp.c	/^int memcmp(const void *s1, const void *s2, size_t n)$/;"	f
+memcpy	src/9899-1990/string/memcpy.c	/^void * memcpy(void * restrict s1, const void * restrict s2, size_t n)$/;"	f
+memmove	src/9899-1990/string/memmove.c	/^void * memmove(void *s1, const void *s2, size_t n)$/;"	f
+memset	src/9899-1990/string/memset.c	/^void * memset(void *s, int c, size_t n)$/;"	f
+mkdir	src/POSIX.1-1988/sys/stat/mkdir.c	/^int mkdir(const char *path, mode_t mode)$/;"	f
+mkfifo	src/POSIX.1-1988/sys/stat/mkfifo.c	/^int mkfifo(const char *path, mode_t mode)$/;"	f
+mktime	src/9899-1990/time/mktime.c	/^time_t mktime(struct tm * timeptr)$/;"	f
+mode_t	src/POSIX.1-1988/sys/types/mode_t.c	/^typedef unsigned long int                                                mode_t;$/;"	t	file:
+modf	src/9899-1990/math/modf.c	/^TYPE TGFN(modf)(TYPE value, TYPE *iptr)$/;"	f
+modtime	src/POSIX.1-1988/utime/struct_utimbuf.c	/^	time_t modtime;$/;"	m	struct:utimbuf	file:
+mon_decimal_point	src/9899-1990/locale/struct_lconv.c	/^	char *mon_decimal_point;	\/* "" *\/$/;"	m	struct:lconv	file:
+mon_grouping	src/9899-1990/locale/struct_lconv.c	/^	char *mon_grouping;		\/* "" *\/$/;"	m	struct:lconv	file:
+mon_thousands_sep	src/9899-1990/locale/struct_lconv.c	/^	char *mon_thousands_sep;	\/* "" *\/$/;"	m	struct:lconv	file:
+n_cs_precedes	src/9899-1990/locale/struct_lconv.c	/^	char n_cs_precedes;		\/* CHAR_MAX *\/$/;"	m	struct:lconv	file:
+n_sep_by_space	src/9899-1990/locale/struct_lconv.c	/^	char n_sep_by_space;		\/* CHAR_MAX *\/$/;"	m	struct:lconv	file:
+n_sign_posn	src/9899-1990/locale/struct_lconv.c	/^	char n_sign_posn;		\/* CHAR_MAX *\/$/;"	m	struct:lconv	file:
+negative_sign	src/9899-1990/locale/struct_lconv.c	/^	char *negative_sign;		\/* "" *\/$/;"	m	struct:lconv	file:
+nlink_t	src/POSIX.1-1988/sys/types/nlink_t.c	/^typedef unsigned long long int                                          nlink_t;$/;"	t	file:
+nodename	src/POSIX.1-1988/sys/utsname/struct_utsname.c	/^	char nodename[100];$/;"	m	struct:utsname	file:
+not	src/9899-1990-AMD1/iso646/not.c	2;"	d	file:
+not_eq	src/9899-1990-AMD1/iso646/not_eq.c	2;"	d	file:
+off_t	src/POSIX.1-1988/sys/types/off_t.c	/^typedef long long int                                                     off_t;$/;"	t	file:
+offsetof	src/9899-1990/stddef/offsetof.c	2;"	d	file:
+open	src/POSIX.1-1988/fcntl/open.c	/^int open(const char *path, int oflag, ...)$/;"	f
+opendir	src/POSIX.1-1988/dirent/opendir.c	/^DIR * opendir(const char * dirname)$/;"	f
+or	src/9899-1990-AMD1/iso646/or.c	2;"	d	file:
+or_eq	src/9899-1990-AMD1/iso646/or_eq.c	2;"	d	file:
+p_cs_precedes	src/9899-1990/locale/struct_lconv.c	/^	char p_cs_precedes;		\/* CHAR_MAX *\/$/;"	m	struct:lconv	file:
+p_sep_by_space	src/9899-1990/locale/struct_lconv.c	/^	char p_sep_by_space;		\/* CHAR_MAX *\/$/;"	m	struct:lconv	file:
+p_sign_posn	src/9899-1990/locale/struct_lconv.c	/^	char p_sign_posn;		\/* CHAR_MAX *\/$/;"	m	struct:lconv	file:
+passwd	src/POSIX.1-1988/pwd/struct_passwd.c	/^struct passwd {$/;"	s	file:
+pathconf	src/POSIX.1-1988/unistd/pathconf.c	/^long pathconf(const char *path, int name)$/;"	f
+pause	src/POSIX.1-1988/unistd/pause.c	/^int pause(void)$/;"	f
+perror	src/9899-1990/stdio/perror.c	/^void perror(const char *s)$/;"	f
+pid_t	src/POSIX.1-1988/sys/types/pid_t.c	/^typedef long int                                                          pid_t;$/;"	t	file:
+pipe	src/POSIX.1-1988/unistd/pipe.c	/^int pipe(int fildes[2])$/;"	f
+positive_sign	src/9899-1990/locale/struct_lconv.c	/^	char *positive_sign;		\/* "" *\/$/;"	m	struct:lconv	file:
+pow	src/9899-1990/math/pow.c	/^TYPE TGFN(pow)(TYPE x, TYPE y)$/;"	f
+printf	src/9899-1990/stdio/printf.c	/^int printf(const char *format, ...)$/;"	f
+ptrdiff_t	src/9899-1990/stddef/ptrdiff_t.c	/^typedef __int64                                                       ptrdiff_t;$/;"	t	file:
+ptrdiff_t	src/9899-1990/stddef/ptrdiff_t.c	/^typedef long int                                                      ptrdiff_t;$/;"	t	file:
+ptrdiff_t	src/9899-1990/stddef/ptrdiff_t.c	/^typedef long long int                                                 ptrdiff_t;$/;"	t	file:
+putc	src/9899-1990/stdio/putc.c	/^int putc(int c, FILE *stream)$/;"	f
+putchar	src/9899-1990/stdio/putchar.c	/^int putchar(int c)$/;"	f
+puts	src/9899-1990/stdio/puts.c	/^int puts(const char *s)$/;"	f
+putwc	src/9899-1990-AMD1/wchar/putwc.c	/^wint_t putwc(wchar_t c, FILE * stream)$/;"	f
+putwchar	src/9899-1990-AMD1/wchar/putwchar.c	/^wint_t putwchar(wchar_t c)$/;"	f
+pw_dir	src/POSIX.1-1988/pwd/struct_passwd.c	/^	char *	pw_dir;$/;"	m	struct:passwd	file:
+pw_gid	src/POSIX.1-1988/pwd/struct_passwd.c	/^	gid_t	pw_gid;$/;"	m	struct:passwd	file:
+pw_name	src/POSIX.1-1988/pwd/struct_passwd.c	/^	char *	pw_name;$/;"	m	struct:passwd	file:
+pw_shell	src/POSIX.1-1988/pwd/struct_passwd.c	/^	char *	pw_shell;$/;"	m	struct:passwd	file:
+pw_uid	src/POSIX.1-1988/pwd/struct_passwd.c	/^	uid_t	pw_uid;$/;"	m	struct:passwd	file:
+qsort	src/9899-1990/stdlib/qsort.c	/^void qsort(void * base, size_t nmemb, size_t size, int (*compar)(const void *, const void *))$/;"	f
+quot	src/9899-1990/stdlib/div_t.c	/^	int quot;$/;"	m	struct:__anon1	file:
+quot	src/9899-1990/stdlib/ldiv_t.c	/^	long int quot;$/;"	m	struct:__anon2	file:
+raise	src/9899-1990/signal/raise.c	/^int raise(int sig)$/;"	f
+rand	src/9899-1990/stdlib/rand.c	/^int rand(void)$/;"	f
+read	src/POSIX.1-1988/unistd/read.c	/^ssize_t read(int fildes, void *buf, size_t nbyte)$/;"	f
+readdir	src/POSIX.1-1988/dirent/readdir.c	/^struct dirent * readdir(DIR * dirp)$/;"	f
+realloc	src/9899-1990/stdlib/realloc.c	/^void * realloc(void * ptr, size_t size)$/;"	f
+release	src/POSIX.1-1988/sys/utsname/struct_utsname.c	/^	char release[100];$/;"	m	struct:utsname	file:
+rem	src/9899-1990/stdlib/div_t.c	/^	int rem;$/;"	m	struct:__anon1	file:
+rem	src/9899-1990/stdlib/ldiv_t.c	/^	long int rem;$/;"	m	struct:__anon2	file:
+remove	src/9899-1990/stdio/remove.c	/^int remove(const char *filename)$/;"	f
+rename	src/9899-1990/stdio/rename.c	/^int rename(const char *old, const char *new)$/;"	f
+rewind	src/9899-1990/stdio/rewind.c	/^void rewind(FILE *stream)$/;"	f
+rewinddir	src/POSIX.1-1988/dirent/rewinddir.c	/^void rewinddir(DIR * dirp)$/;"	f
+rmdir	src/POSIX.1-1988/unistd/rmdir.c	/^int rmdir(const char *path)$/;"	f
+sa_flags	src/POSIX.1-1988/signal/struct_sigaction.c	/^	int sa_flags;$/;"	m	struct:sigaction	file:
+sa_handler	src/POSIX.1-1988/signal/struct_sigaction.c	/^	void (*sa_handler)(int);$/;"	m	struct:sigaction	file:
+sa_mask	src/POSIX.1-1988/signal/struct_sigaction.c	/^	sigset_t sa_mask;$/;"	m	struct:sigaction	file:
+sa_sigaction	src/POSIX.1-1988/signal/struct_sigaction.c	/^	void (*sa_sigaction)(int, siginfo_t *, void *);	$/;"	m	struct:sigaction	file:
+scanf	src/9899-1990/stdio/scanf.c	/^int scanf(const char * restrict format, ...)$/;"	f
+setbuf	src/9899-1990/stdio/setbuf.c	/^void setbuf(FILE * restrict stream, char * restrict buf)$/;"	f
+setgid	src/POSIX.1-1988/unistd/setgid.c	/^int setgid(gid_t gid)$/;"	f
+setjmp	src/9899-1990/setjmp/setjmp.c	/^int setjmp(jmp_buf env)$/;"	f
+setlocale	src/9899-1990/locale/setlocale.c	/^char * setlocale(int category, const char *locale)$/;"	f
+setpgid	src/POSIX.1-1988/unistd/setpgid.c	/^int setpgid(pid_t pid, pid_t pgid)$/;"	f
+setsid	src/POSIX.1-1988/unistd/setsid.c	/^pid_t setsid(void)$/;"	f
+setuid	src/POSIX.1-1988/unistd/setuid.c	/^int setuid(uid_t uid)$/;"	f
+setvbuf	src/9899-1990/stdio/setvbuf.c	/^int setvbuf(FILE *stream, char *buf, int mode, size_t size)$/;"	f
+sig_atomic_t	src/9899-1990/signal/sig_atomic_t.c	/^typedef volatile int                                               sig_atomic_t;$/;"	t	file:
+sigaction	src/POSIX.1-1988/signal/sigaction.c	/^int sigaction(int sig, const struct sigaction * restrict act, struct sigaction * restrict oact)$/;"	f
+sigaction	src/POSIX.1-1988/signal/struct_sigaction.c	/^struct sigaction {$/;"	s	file:
+sigaddset	src/POSIX.1-1988/signal/sigaddset.c	/^int sigaddset(sigset_t * set, int signo)$/;"	f
+sigdelset	src/POSIX.1-1988/signal/sigdelset.c	/^int sigdelset(sigset_t * set, int signo)$/;"	f
+sigemptyset	src/POSIX.1-1988/signal/sigemptyset.c	/^int sigemptyset(sigset_t * set)$/;"	f
+sigfillset	src/POSIX.1-1988/signal/sigfillset.c	/^int sigfillset(sigset_t * set)$/;"	f
+sigismember	src/POSIX.1-1988/signal/sigismember.c	/^int sigismember(const sigset_t * set, int signo)$/;"	f
+sigjmp_buf	src/POSIX.1-1988/setjmp/sigjmp_buf.c	/^typedef jmp_buf                                                      sigjmp_buf;$/;"	t	file:
+siglongjmp	src/POSIX.1-1988/setjmp/siglongjmp.c	/^void siglongjmp(sigjmp_buf env, int val)$/;"	f
+signal	src/9899-1990/signal/signal.c	/^void (*signal(int sig, void (*func)(int)))(int)$/;"	f
+sigpending	src/POSIX.1-1988/signal/sigpending.c	/^int sigpending(sigset_t * set)$/;"	f
+sigprocmask	src/POSIX.1-1988/signal/sigprocmask.c	/^int sigprocmask(int how, const sigset_t * restrict set, sigset_t * restrict oset)$/;"	f
+sigset_t	src/POSIX.1-1988/signal/sigset_t.c	/^typedef unsigned int                                                   sigset_t;$/;"	t	file:
+sigsetjmp	src/POSIX.1-1988/setjmp/sigsetjmp.c	/^int sigsetjmp(sigjmp_buf env, int savemask)$/;"	f
+sigsuspend	src/POSIX.1-1988/signal/sigsuspend.c	/^int sigsuspend(const sigset_t * sigmask)$/;"	f
+sin	src/9899-1990/math/sin.c	/^TYPE TGFN(sin)(TYPE x)$/;"	f
+sinh	src/9899-1990/math/sinh.c	/^TYPE TGFN(sinh)(TYPE x)$/;"	f
+size_t	src/9899-1990/stddef/size_t.c	/^typedef unsigned __int64                                                 size_t;$/;"	t	file:
+size_t	src/9899-1990/stddef/size_t.c	/^typedef unsigned long int                                                size_t;$/;"	t	file:
+size_t	src/9899-1990/stddef/size_t.c	/^typedef unsigned long long int                                           size_t;$/;"	t	file:
+sleep	src/POSIX.1-1988/unistd/sleep.c	/^unsigned sleep(unsigned seconds)$/;"	f
+speed_t	src/POSIX.1-1988/termios/speed_t.c	/^typedef int                                                             speed_t;$/;"	t	file:
+sprintf	src/9899-1990/stdio/sprintf.c	/^int sprintf(char * restrict s, const char * restrict format, ...)$/;"	f
+sqrt	src/9899-1990/math/sqrt.c	/^TYPE TGFN(sqrt)(TYPE x)$/;"	f
+srand	src/9899-1990/stdlib/srand.c	/^void srand(unsigned int seed)$/;"	f
+sscanf	src/9899-1990/stdio/sscanf.c	/^int sscanf(const char * restrict s, const char * restrict format, ...)$/;"	f
+ssize_t	src/POSIX.1-1990/sys/types/ssize_t.c	/^typedef long int                                                        ssize_t;$/;"	t	file:
+st_atim	src/POSIX.1-1988/sys/stat/struct_stat.c	/^	struct timespec st_atim;$/;"	m	struct:stat	typeref:struct:stat::timespec	file:
+st_blksize	src/POSIX.1-1988/sys/stat/struct_stat.c	/^	blksize_t st_blksize;$/;"	m	struct:stat	file:
+st_blocks	src/POSIX.1-1988/sys/stat/struct_stat.c	/^	blkcnt_t st_blocks;$/;"	m	struct:stat	file:
+st_ctim	src/POSIX.1-1988/sys/stat/struct_stat.c	/^	struct timespec st_ctim;$/;"	m	struct:stat	typeref:struct:stat::timespec	file:
+st_dev	src/POSIX.1-1988/sys/stat/struct_stat.c	/^	dev_t st_dev;$/;"	m	struct:stat	file:
+st_gid	src/POSIX.1-1988/sys/stat/struct_stat.c	/^	gid_t st_gid;$/;"	m	struct:stat	file:
+st_ino	src/POSIX.1-1988/sys/stat/struct_stat.c	/^	ino_t st_ino;$/;"	m	struct:stat	file:
+st_mode	src/POSIX.1-1988/sys/stat/struct_stat.c	/^	mode_t st_mode;$/;"	m	struct:stat	file:
+st_mtim	src/POSIX.1-1988/sys/stat/struct_stat.c	/^	struct timespec st_mtim;$/;"	m	struct:stat	typeref:struct:stat::timespec	file:
+st_nlink	src/POSIX.1-1988/sys/stat/struct_stat.c	/^	nlink_t st_nlink;$/;"	m	struct:stat	file:
+st_rdev	src/POSIX.1-1988/sys/stat/struct_stat.c	/^	dev_t st_rdev;$/;"	m	struct:stat	file:
+st_size	src/POSIX.1-1988/sys/stat/struct_stat.c	/^	off_t st_size;$/;"	m	struct:stat	file:
+st_uid	src/POSIX.1-1988/sys/stat/struct_stat.c	/^	uid_t st_uid;$/;"	m	struct:stat	file:
+stat	src/POSIX.1-1988/sys/stat/stat.c	/^int stat(const char * restrict path, struct stat * restrict buf)$/;"	f
+stat	src/POSIX.1-1988/sys/stat/struct_stat.c	/^struct stat {$/;"	s	file:
+stderr	src/9899-1990/stdio/stderr.c	3;"	d	file:
+stdin	src/9899-1990/stdio/stdin.c	3;"	d	file:
+stdout	src/9899-1990/stdio/stdout.c	3;"	d	file:
+strcat	src/9899-1990/string/strcat.c	/^char * strcat(char * restrict s1, const char * restrict s2)$/;"	f
+strchr	src/9899-1990/string/strchr.c	/^char * strchr(const char *s, int c)$/;"	f
+strcmp	src/9899-1990/string/strcmp.c	/^int strcmp(const char *s1, const char *s2)$/;"	f
+strcoll	src/9899-1990/string/strcoll.c	/^int strcoll(const char *s1, const char *s2)$/;"	f
+strcpy	src/9899-1990/string/strcpy.c	/^char * strcpy(char * restrict s1, const char * restrict s2)$/;"	f
+strcspn	src/9899-1990/string/strcspn.c	/^size_t strcspn(const char *s1, const char *s2)$/;"	f
+strerror	src/9899-1990/string/strerror.c	/^char * strerror(int errnum)$/;"	f
+strftime	src/9899-1990/time/strftime.c	/^size_t strftime(char * restrict s, size_t maxsize, const char * restrict format, const struct tm * restrict timeptr)$/;"	f
+strlen	src/9899-1990/string/strlen.c	/^size_t strlen(const char *s)$/;"	f
+strncat	src/9899-1990/string/strncat.c	/^char * strncat(char * restrict s1, const char * restrict s2, size_t n)$/;"	f
+strncmp	src/9899-1990/string/strncmp.c	/^int strncmp(const char *s1, const char *s2, size_t n)$/;"	f
+strncpy	src/9899-1990/string/strncpy.c	/^char * strncpy(char * restrict s1, const char * restrict s2, size_t n)$/;"	f
+strpbrk	src/9899-1990/string/strpbrk.c	/^char * strpbrk(const char *s1, const char *s2)$/;"	f
+strrchr	src/9899-1990/string/strrchr.c	/^char * strrchr(const char *s, int c)$/;"	f
+strspn	src/9899-1990/string/strspn.c	/^size_t strspn(const char *s1, const char *s2)$/;"	f
+strstr	src/9899-1990/string/strstr.c	/^char * strstr(const char *s1, const char *s2)$/;"	f
+strtod	src/9899-1990/stdlib/strtod.c	/^double strtod(const char * restrict nptr, char ** restrict endptr)$/;"	f
+strtok	src/9899-1990/string/strtok.c	/^char * strtok(char * restrict s1, const char * restrict s2)$/;"	f
+strtol	src/9899-1990/stdlib/strtol.c	/^long int strtol(const char * restrict nptr, char ** restrict endptr, int base)$/;"	f
+strtoul	src/9899-1990/stdlib/strtoul.c	/^unsigned long int strtoul(const char * nptr, char ** endptr, int base)$/;"	f
+strxfrm	src/9899-1990/string/strxfrm.c	/^size_t strxfrm(char * restrict s1, const char * restrict s2, size_t n)$/;"	f
+swprintf	src/9899-1990-AMD1/wchar/swprintf.c	/^int swprintf(wchar_t * restrict s, size_t n, const wchar_t * restrict format, ...)$/;"	f
+swscanf	src/9899-1990-AMD1/wchar/swscanf.c	/^int swscanf(const wchar_t * restrict s, const wchar_t * restrict format, ...)$/;"	f
+sysconf	src/POSIX.1-1988/unistd/sysconf.c	/^long sysconf(int name)$/;"	f
+sysname	src/POSIX.1-1988/sys/utsname/struct_utsname.c	/^	char sysname[100];$/;"	m	struct:utsname	file:
+system	src/9899-1990/stdlib/system.c	/^int system(const char * string)$/;"	f
+tan	src/9899-1990/math/tan.c	/^TYPE TGFN(tan)(TYPE x)$/;"	f
+tanh	src/9899-1990/math/tanh.c	/^TYPE TGFN(tanh)(TYPE x)$/;"	f
+tcdrain	src/POSIX.1-1988/termios/tcdrain.c	/^int tcdrain(int fildes)$/;"	f
+tcflag_t	src/POSIX.1-1988/termios/tcflag_t.c	/^typedef unsigned int                                                   tcflag_t;$/;"	t	file:
+tcflow	src/POSIX.1-1988/termios/tcflow.c	/^int tcflow(int fildes, int action)$/;"	f
+tcflush	src/POSIX.1-1988/termios/tcflush.c	/^int tcflush(int fildes, int queue_selector)$/;"	f
+tcgetattr	src/POSIX.1-1988/termios/tcgetattr.c	/^int tcgetattr(int fildes, struct termios *termios_p)$/;"	f
+tcgetpgrp	src/POSIX.1-1988/unistd/tcgetpgrp.c	/^pid_t tcgetpgrp(int fildes)$/;"	f
+tcsendbreak	src/POSIX.1-1988/termios/tcsendbreak.c	/^int tcsendbreak(int fildes, int duration)$/;"	f
+tcsetattr	src/POSIX.1-1988/termios/tcsetattr.c	/^int tcsetattr(int fildes, int optional_actions, struct termios *termios_p)$/;"	f
+tcsetpgrp	src/POSIX.1-1988/unistd/tcsetpgrp.c	/^int tcsetpgrp(int fildes, pid_t pgid_id)$/;"	f
+termios	src/POSIX.1-1988/termios/struct_termios.c	/^struct termios {$/;"	s	file:
+thousands_sep	src/9899-1990/locale/struct_lconv.c	/^	char *thousands_sep;		\/* "" *\/$/;"	m	struct:lconv	file:
+time	src/9899-1990/time/time.c	/^time_t time(time_t * timer)$/;"	f
+time_t	src/9899-1990/time/time_t.c	/^typedef long int                                                         time_t;$/;"	t	file:
+times	src/POSIX.1-1988/sys/times/times.c	/^clock_t times(struct tms *buffer)$/;"	f
+tm	src/9899-1990/time/struct_tm.c	/^struct tm {$/;"	s	file:
+tm_hour	src/9899-1990/time/struct_tm.c	/^	int tm_hour;	\/* Hour [0,23] *\/$/;"	m	struct:tm	file:
+tm_isdst	src/9899-1990/time/struct_tm.c	/^	int tm_isdst;	\/* Daylight Saving Time flag *\/$/;"	m	struct:tm	file:
+tm_mday	src/9899-1990/time/struct_tm.c	/^	int tm_mday;	\/* Day of the month [1,31] *\/$/;"	m	struct:tm	file:
+tm_min	src/9899-1990/time/struct_tm.c	/^	int tm_min;	\/* Minutes [0, 59] *\/$/;"	m	struct:tm	file:
+tm_mon	src/9899-1990/time/struct_tm.c	/^	int tm_mon;	\/* Month of the year [0,11] *\/$/;"	m	struct:tm	file:
+tm_sec	src/9899-1990/time/struct_tm.c	/^	int tm_sec;	\/* Seconds [0,60] *\/$/;"	m	struct:tm	file:
+tm_wday	src/9899-1990/time/struct_tm.c	/^	int tm_wday;	\/* Day of the week [0,6] (Sunday = 0) *\/$/;"	m	struct:tm	file:
+tm_yday	src/9899-1990/time/struct_tm.c	/^	int tm_yday;	\/* Day of the year [0,365] *\/$/;"	m	struct:tm	file:
+tm_year	src/9899-1990/time/struct_tm.c	/^	int tm_year;	\/* Years since 1900 *\/$/;"	m	struct:tm	file:
+tmpfile	src/9899-1990/stdio/tmpfile.c	/^FILE * tmpfile(void)$/;"	f
+tmpnam	src/9899-1990/stdio/tmpnam.c	/^char * tmpnam(char *s)$/;"	f
+tms	src/POSIX.1-1988/sys/times/struct_tms.c	/^struct tms {$/;"	s	file:
+tms_cstime	src/POSIX.1-1988/sys/times/struct_tms.c	/^	clock_t tms_cstime;$/;"	m	struct:tms	file:
+tms_cutime	src/POSIX.1-1988/sys/times/struct_tms.c	/^	clock_t tms_cutime;$/;"	m	struct:tms	file:
+tms_stime	src/POSIX.1-1988/sys/times/struct_tms.c	/^	clock_t tms_stime;$/;"	m	struct:tms	file:
+tms_utime	src/POSIX.1-1988/sys/times/struct_tms.c	/^	clock_t tms_utime;$/;"	m	struct:tms	file:
+tolower	src/9899-1990/ctype/tolower.c	/^int tolower(int c)$/;"	f
+toupper	src/9899-1990/ctype/toupper.c	/^int toupper(int c)$/;"	f
+towctrans	src/9899-1990-AMD1/wctype/towctrans.c	/^wint_t towctrans(wint_t wc, wctrans_t desc)$/;"	f
+towlower	src/9899-1990-AMD1/wctype/towlower.c	/^wint_t towlower(wint_t wc)$/;"	f
+towupper	src/9899-1990-AMD1/wctype/towupper.c	/^wint_t towupper(wint_t wc)$/;"	f
+ttyname	src/POSIX.1-1988/unistd/ttyname.c	/^char *ttyname(int fildes)$/;"	f
+tzname	src/POSIX.1-1988/time/tzname.c	/^char *tzname[2];$/;"	v
+tzset	src/POSIX.1-1988/time/tzset.c	/^void tzset(void)$/;"	f
+uid_t	src/POSIX.1-1988/sys/types/uid_t.c	/^typedef unsigned long long int                                            uid_t;$/;"	t	file:
+umask	src/POSIX.1-1988/sys/stat/umask.c	/^mode_t umask(mode_t cmask)$/;"	f
+uname	src/POSIX.1-1988/sys/utsname/uname.c	/^int uname(struct utsname *name)$/;"	f
+ungetc	src/9899-1990/stdio/ungetc.c	/^int ungetc(int c, FILE *stream)$/;"	f
+ungetwc	src/9899-1990-AMD1/wchar/ungetwc.c	/^wint_t ungetwc(wint_t c, FILE * stream)$/;"	f
+unlink	src/POSIX.1-1988/unistd/unlink.c	/^int unlink(const char *path)$/;"	f
+utimbuf	src/POSIX.1-1988/utime/struct_utimbuf.c	/^struct utimbuf {$/;"	s	file:
+utime	src/POSIX.1-1988/utime/utime.c	/^int utime(const char *path, const struct utimbuf *times)$/;"	f
+utsname	src/POSIX.1-1988/sys/utsname/struct_utsname.c	/^struct utsname {$/;"	s	file:
+va_arg	src/9899-1990/stdarg/va_arg.c	2;"	d	file:
+va_end	src/9899-1990/stdarg/va_end.c	2;"	d	file:
+va_list	src/9899-1990/stdarg/va_list.c	/^typedef __builtin_va_list                                               va_list;$/;"	t	file:
+va_start	src/9899-1990/stdarg/va_start.c	2;"	d	file:
+version	src/POSIX.1-1988/sys/utsname/struct_utsname.c	/^	char version[100];$/;"	m	struct:utsname	file:
+vfprintf	src/9899-1990/stdio/vfprintf.c	/^int vfprintf(FILE * restrict stream, const char * restrict format, va_list arg)$/;"	f
+vfwprintf	src/9899-1990-AMD1/wchar/vfwprintf.c	/^int vfwprintf(FILE * restrict stream, const wchar_t * restrict format, va_list arg)$/;"	f
+vprintf	src/9899-1990/stdio/vprintf.c	/^int vprintf(const char * restrict format, va_list arg)$/;"	f
+vsprintf	src/9899-1990/stdio/vsprintf.c	/^int vsprintf(char *s, const char *format, va_list arg)$/;"	f
+vswprintf	src/9899-1990-AMD1/wchar/vswprintf.c	/^int vswprintf(wchar_t * restrict s, size_t n, const wchar_t * restrict format, va_list arg)$/;"	f
+vwprintf	src/9899-1990-AMD1/wchar/vwprintf.c	/^int vwprintf(const wchar_t * restrict format, va_list arg)$/;"	f
+wait	src/POSIX.1-1988/sys/wait/wait.c	/^pid_t wait(int *stat_loc)$/;"	f
+waitpid	src/POSIX.1-1988/sys/wait/waitpid.c	/^pid_t waitpid(pid_t pid, int *stat_loc, int options)$/;"	f
+wcrtomb	src/9899-1990-AMD1/wchar/wcrtomb.c	/^size_t wcrtomb(char * restrict s, wchar_t wc, mbstate_t * restrict ps)$/;"	f
+wcscat	src/9899-1990-AMD1/wchar/wcscat.c	/^wchar_t * wcscat(wchar_t * restrict s1, const wchar_t * restrict s2)$/;"	f
+wcschr	src/9899-1990-AMD1/wchar/wcschr.c	/^wchar_t * wcschr(const wchar_t * s, wchar_t c)$/;"	f
+wcscmp	src/9899-1990-AMD1/wchar/wcscmp.c	/^int wcscmp(const wchar_t * s1, const wchar_t * s2)$/;"	f
+wcscoll	src/9899-1990-AMD1/wchar/wcscoll.c	/^int wcscoll(const wchar_t * s1, const wchar_t * s2)$/;"	f
+wcscpy	src/9899-1990-AMD1/wchar/wcscpy.c	/^wchar_t * wcscpy(wchar_t * restrict s1, const wchar_t * restrict s2)$/;"	f
+wcscspn	src/9899-1990-AMD1/wchar/wcscspn.c	/^size_t wcscspn(const wchar_t * s1, const wchar_t * s2)$/;"	f
+wcsftime	src/9899-1990-AMD1/wchar/wcsftime.c	/^size_t wcsftime(wchar_t * restrict s, size_t maxsize, const wchar_t * restrict format, const struct tm * restrict timeptr)$/;"	f
+wcslen	src/9899-1990-AMD1/wchar/wcslen.c	/^size_t wcslen(const wchar_t * s)$/;"	f
+wcsncat	src/9899-1990-AMD1/wchar/wcsncat.c	/^wchar_t * wcsncat(wchar_t * restrict s1, const wchar_t * restrict s2, size_t n)$/;"	f
+wcsncmp	src/9899-1990-AMD1/wchar/wcsncmp.c	/^int wcsncmp(const wchar_t * s1, const wchar_t * s2, size_t n)$/;"	f
+wcsncpy	src/9899-1990-AMD1/wchar/wcsncpy.c	/^wchar_t * wcsncpy(wchar_t * restrict s1, const wchar_t * restrict s2, size_t n)$/;"	f
+wcspbrk	src/9899-1990-AMD1/wchar/wcspbrk.c	/^wchar_t * wcspbrk(const wchar_t * s1, const wchar_t * s2)$/;"	f
+wcsrchr	src/9899-1990-AMD1/wchar/wcsrchr.c	/^wchar_t * wcsrchr(const wchar_t * s, wchar_t c)$/;"	f
+wcsrtombs	src/9899-1990-AMD1/wchar/wcsrtombs.c	/^size_t wcsrtombs(char * restrict dst, const wchar_t ** restrict src, size_t len, mbstate_t * restrict ps)$/;"	f
+wcsspn	src/9899-1990-AMD1/wchar/wcsspn.c	/^size_t wcsspn(const wchar_t * s1, const wchar_t * s2)$/;"	f
+wcsstr	src/9899-1990-AMD1/wchar/wcsstr.c	/^wchar_t * wcsstr(const wchar_t * s1, const wchar_t * s2)$/;"	f
+wcstod	src/9899-1990-AMD1/wchar/wcstod.c	/^double wcstod(const wchar_t * restrict nptr, wchar_t ** restrict endptr)$/;"	f
+wcstok	src/9899-1990-AMD1/wchar/wcstok.c	/^wchar_t * wcstok(wchar_t * restrict s1, const wchar_t * restrict s2, wchar_t ** restrict ptr)$/;"	f
+wcstol	src/9899-1990-AMD1/wchar/wcstol.c	/^long int wcstol(const wchar_t * restrict nptr, wchar_t ** restrict endptr, int base)$/;"	f
+wcstombs	src/9899-1990/stdlib/wcstombs.c	/^size_t wcstombs(char * restrict s, const wchar_t * restrict pwcs, size_t n)$/;"	f
+wcstoul	src/9899-1990-AMD1/wchar/wcstoul.c	/^unsigned long int wcstoul(const wchar_t * restrict nptr, wchar_t ** restrict endptr, int base)$/;"	f
+wcsxfrm	src/9899-1990-AMD1/wchar/wcsxfrm.c	/^size_t wcsxfrm(wchar_t * restrict s1, const wchar_t * restrict s2, size_t n)$/;"	f
+wctob	src/9899-1990-AMD1/wchar/wctob.c	/^int wctob(wint_t c)$/;"	f
+wctomb	src/9899-1990/stdlib/wctomb.c	/^int wctomb(char * s, wchar_t wchar)$/;"	f
+wctrans	src/9899-1990-AMD1/wctype/wctrans.c	/^wctrans_t wctrans(const char * property)$/;"	f
+wctrans_t	src/9899-1990-AMD1/wctype/wctrans_t.c	/^typedef int                                                           wctrans_t;$/;"	t	file:
+wctype	src/9899-1990-AMD1/wctype/wctype.c	/^wctype_t wctype(const char * property)$/;"	f
+wctype_t	src/9899-1990-AMD1/wctype/wctype_t.c	/^typedef int                                                            wctype_t;$/;"	t	file:
+wint_t	src/9899-1990-AMD1/wctype/wint_t.c	/^typedef int                                                              wint_t;$/;"	t	file:
+wmemchr	src/9899-1990-AMD1/wchar/wmemchr.c	/^wchar_t * wmemchr(const wchar_t * s, wchar_t c, size_t n)$/;"	f
+wmemcmp	src/9899-1990-AMD1/wchar/wmemcmp.c	/^int wmemcmp(const wchar_t * s1, const wchar_t * s2, size_t n)$/;"	f
+wmemcpy	src/9899-1990-AMD1/wchar/wmemcpy.c	/^wchar_t * wmemcpy(wchar_t * restrict s1, const wchar_t * restrict s2, size_t n)$/;"	f
+wmemmove	src/9899-1990-AMD1/wchar/wmemmove.c	/^wchar_t * wmemmove(wchar_t * s1, const wchar_t * s2, size_t n)$/;"	f
+wmemset	src/9899-1990-AMD1/wchar/wmemset.c	/^wchar_t * wmemset(wchar_t * s, wchar_t c, size_t n)$/;"	f
+wprintf	src/9899-1990-AMD1/wchar/wprintf.c	/^int wprintf(const wchar_t * restrict format, ...)$/;"	f
+write	src/POSIX.1-1988/unistd/write.c	/^ssize_t write(int fildes, const void *buf, size_t nbyte)$/;"	f
+wscanf	src/9899-1990-AMD1/wchar/wscanf.c	/^int wscanf(const wchar_t * restrict format, ...)$/;"	f
+xor	src/9899-1990-AMD1/iso646/xor.c	2;"	d	file:
+xor_eq	src/9899-1990-AMD1/iso646/xor_eq.c	2;"	d	file:
