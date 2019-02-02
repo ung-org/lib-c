@@ -1,6 +1,0 @@
-#define RETURN_ALWAYS(x, ...)
-#define OBSOLETE(x, ...)
-#define RETURN(x, ...)
-#define RETURN_SUCCESS(x, ...)
-#define RETURN_FAILURE(x, ...)
-#define IMPLEMENTATION(x, ...)

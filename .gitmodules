@@ -10,3 +10,6 @@
 [submodule "std/9899-1990-AMD1"]
 	path = src/9899-1990-AMD1
 	url = git@gitlab.com:ung.org/lib/9899-1990-AMD1.git
+[submodule "src/9899-1999"]
+	path = src/9899-1999
+	url = git@gitlab.com:ung.org/lib/9899-1999.git
