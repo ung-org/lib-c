@@ -1,0 +1,15 @@
+[submodule "src/9899-1990"]
+	path = src/9899-1990
+	url = git@gitlab.com:ung.org/lib/9899-1990.git
+[submodule "src/9899-1990-AMD1"]
+	path = src/9899-1990-AMD1
+	url = git@gitlab.com:ung.org/lib/9899-1990-AMD1.git
+[submodule "src/9899-1999"]
+	path = src/9899-1999
+	url = git@gitlab.com:ung.org/lib/9899-1999.git
+[submodule "src/9899-2011"]
+	path = src/9899-2011
+	url = git@gitlab.com:ung.org/lib/9899-2011.git
+[submodule "src/9899-2011-EXT1"]
+	path = src/9899-2011-EXT1
+	url = git@gitlab.com:ung.org/lib/9899-2011-EXT1.git
