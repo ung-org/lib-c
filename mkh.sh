@@ -168,6 +168,26 @@ if [ -d $HEADER.RECORD ]; then
 	rm -rf $HEADER.RECORD
 fi
 
+if [ -d $HEADER.FNTYPE ]; then
+	for v in $HEADER.FNTYPE/*; do
+		version=$(version_guard $(head -n1 $v))
+		if [ -n "$version" ]; then
+			printf '%s\n' "$version"
+		fi
+
+		for i in $(sort -u $v 2>/dev/null); do
+			grep '^typedef ' $i
+		done
+
+		if [ -n "$version" ]; then
+			printf '#endif\n'
+		fi
+
+		printf '\n'
+	done
+	rm -rf $HEADER.FNTYPE
+fi
+
 if [ -d $HEADER.EXTERN ]; then
 	for v in $HEADER.EXTERN/*; do
 		version=$(version_guard $(head -n1 $v))
