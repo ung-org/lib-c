@@ -19,6 +19,15 @@ if [ -f src/${STANDARD}/DEPS.mk ]; then
 	for i in $(grep DEPS src/${STANDARD}/DEPS.mk | cut -d= -f2); do
 		sh $0 $i
 	done
+
+	if grep -q 'CC' src/${STANDARD}/DEPS.mk; then
+		grep 'CC' src/${STANDARD}/DEPS.mk > .cc.mk
+	fi
+
+	if grep -q 'CFLAGS' src/${STANDARD}/DEPS.mk; then
+		#grep 'CFLAGS' src/${STANDARD}/DEPS.mk > .cflags.mk
+		grep 'CFLAGS' src/${STANDARD}/DEPS.mk | sed -e 's/CFLAGS/STD_CFLAGS/' >> .cflags.mk
+	fi
 fi
 
 rm -f .dep/${STANDARD}.*
@@ -71,9 +80,11 @@ done
 if [ $(cat .dep/to-build) = ${STANDARD} ]; then
 	printf '.POSIX:\n\n' > .deps.mk
 	printf 'default: all\n\n' >> .deps.mk
+	printf 'include .cc.mk\n' >> .deps.mk
+	printf 'include .cflags.mk\n' >> .deps.mk
 	printf 'include config.mk\n\n' >> .deps.mk
 	printf 'INCLUDES=-I$(INCDIR) -I. -Inonstd/stubs\n' >> .deps.mk
-	printf 'CFLAGS=$(INCLUDES) -g -fno-builtin -nostdinc -nostdlib -nodefaultlibs -Werror -Wall -Wextra -fPIC\n\n' >> .deps.mk
+	printf 'CFLAGS=$(INCLUDES) $(STD_CFLAGS) -g -fno-builtin -nostdinc -nostdlib -nodefaultlibs -Werror -Wall -Wextra -fPIC\n\n' >> .deps.mk
 
 	for i in .dep/lib*.a.mk; do
 		LIB=$(basename $i .a.mk)

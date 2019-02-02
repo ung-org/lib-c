@@ -358,8 +358,7 @@ stdarg_h_SOURCES =  \
 	src/9899-1990/stdarg/va_arg.c \
 	src/9899-1990/stdarg/va_end.c \
 	src/9899-1990/stdarg/va_list.c \
-	src/9899-1990/stdarg/va_start.c \
-	src/9899-1990-AMD1/wchar/vswprintf.c
+	src/9899-1990/stdarg/va_start.c
 
 $(INCDIR)/stdarg.h: $(stdarg_h_SOURCES)
 	sh mkh.sh $@ $(stdarg_h_SOURCES)
@@ -851,11 +850,12 @@ wchar_h_SOURCES =  \
 	src/9899-1990-AMD1/wchar/mbstate_t.c \
 	src/9899-1990-AMD1/wchar/putwc.c \
 	src/9899-1990-AMD1/wchar/putwchar.c \
+	src/9899-1990-AMD1/wchar/struct_tm.c \
 	src/9899-1990-AMD1/wchar/swprintf.c \
 	src/9899-1990-AMD1/wchar/swscanf.c \
-	src/9899-1990-AMD1/wchar/tm.c \
 	src/9899-1990-AMD1/wchar/ungetwc.c \
 	src/9899-1990-AMD1/wchar/vfwprintf.c \
+	src/9899-1990-AMD1/wchar/vswprintf.c \
 	src/9899-1990-AMD1/wchar/vwprintf.c \
 	src/9899-1990-AMD1/wchar/wcrtomb.c \
 	src/9899-1990-AMD1/wchar/wcscat.c \
@@ -886,7 +886,21 @@ wchar_h_SOURCES =  \
 	src/9899-1990-AMD1/wchar/wmemmove.c \
 	src/9899-1990-AMD1/wchar/wmemset.c \
 	src/9899-1990-AMD1/wchar/wprintf.c \
-	src/9899-1990-AMD1/wchar/wscanf.c
+	src/9899-1990-AMD1/wchar/wscanf.c \
+	src/9899-1990-AMD1/wchar/FILE.ref \
+	src/9899-1990/stdio/FILE.c \
+	src/9899-1990-AMD1/wchar/NULL.ref \
+	src/9899-1990/stddef/NULL.c \
+	src/9899-1990-AMD1/wchar/WEOF.ref \
+	src/9899-1990-AMD1/wctype/WEOF.c \
+	src/9899-1990-AMD1/wchar/size_t.ref \
+	src/9899-1990/stddef/size_t.c \
+	src/9899-1990-AMD1/wchar/va_list.ref \
+	src/9899-1990/stdarg/va_list.c \
+	src/9899-1990-AMD1/wchar/wchar_t.ref \
+	src/9899-1990/stddef/wchar_t.c \
+	src/9899-1990-AMD1/wchar/wint_t.ref \
+	src/9899-1990-AMD1/wctype/wint_t.c
 
 $(INCDIR)/wchar.h: $(wchar_h_SOURCES)
 	sh mkh.sh $@ $(wchar_h_SOURCES)

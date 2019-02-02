@@ -2,10 +2,12 @@
 
 default: all
 
+include .cc.mk
+include .cflags.mk
 include config.mk
 
 INCLUDES=-I$(INCDIR) -I. -Inonstd/stubs
-CFLAGS=$(INCLUDES) -g -fno-builtin -nostdinc -nostdlib -nodefaultlibs -Werror -Wall -Wextra -fPIC
+CFLAGS=$(INCLUDES) $(STD_CFLAGS) -g -fno-builtin -nostdinc -nostdlib -nodefaultlibs -Werror -Wall -Wextra -fPIC
 
 libc_OBJS = $(OBJDIR)/libc.o $(OBJDIR)/x86-64.o \
 	$(OBJDIR)/isalnum.o \
@@ -241,7 +243,6 @@ libc_OBJS = $(OBJDIR)/libc.o $(OBJDIR)/x86-64.o \
 	$(OBJDIR)/putwchar.o \
 	$(OBJDIR)/swprintf.o \
 	$(OBJDIR)/swscanf.o \
-	$(OBJDIR)/tm.o \
 	$(OBJDIR)/ungetwc.o \
 	$(OBJDIR)/vfwprintf.o \
 	$(OBJDIR)/vswprintf.o \
@@ -1312,10 +1313,6 @@ $(OBJDIR)/times.o: src/POSIX.1-1988/sys/times/times.c $(INCDIR)/sys/times.h
 	-@mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGS) -c src/POSIX.1-1988/sys/times/times.c -o $@
 
-$(OBJDIR)/tm.o: src/9899-1990-AMD1/wchar/tm.c $(INCDIR)/wchar.h
-	-@mkdir -p $(OBJDIR)
-	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/tm.c -o $@
-
 $(OBJDIR)/tmpfile.o: src/9899-1990/stdio/tmpfile.c $(INCDIR)/stdio.h
 	-@mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGS) -c src/9899-1990/stdio/tmpfile.c -o $@
@@ -1396,7 +1393,7 @@ $(OBJDIR)/vsprintf.o: src/9899-1990/stdio/vsprintf.c $(INCDIR)/stdio.h
 	-@mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGS) -c src/9899-1990/stdio/vsprintf.c -o $@
 
-$(OBJDIR)/vswprintf.o: src/9899-1990-AMD1/wchar/vswprintf.c $(INCDIR)/stdarg.h
+$(OBJDIR)/vswprintf.o: src/9899-1990-AMD1/wchar/vswprintf.c $(INCDIR)/wchar.h
 	-@mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGS) -c src/9899-1990-AMD1/wchar/vswprintf.c -o $@
 
