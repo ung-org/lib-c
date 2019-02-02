@@ -70,7 +70,7 @@ for i in $(find src/${STANDARD} -name \*.c) $(find src/${STANDARD} -name \*.ref)
 		if [ ! -f .dep/${LIB}.a.mk ]; then
 			printf '%s_OBJS =' ${LIB} > .dep/${LIB}.a.mk
 			if [ ${LIB} = libc ]; then
-				printf ' $(OBJDIR)/libc.o $(OBJDIR)/x86-64.o' >> .dep/${LIB}.a.mk
+				printf ' $(OBJDIR)/$(ARCH)-$(WORDSIZE).o' >> .dep/${LIB}.a.mk
 			fi
 		fi
 		printf ' \\\n\t$(OBJDIR)/%s.o' ${NAME} >> .dep/${LIB}.a.mk
@@ -83,7 +83,7 @@ if [ $(cat .dep/to-build) = ${STANDARD} ]; then
 	printf 'include .cc.mk\n' >> .deps.mk
 	printf 'include .cflags.mk\n' >> .deps.mk
 	printf 'include config.mk\n\n' >> .deps.mk
-	printf 'INCLUDES=-I$(INCDIR) -I. -Inonstd/stubs\n' >> .deps.mk
+	printf 'INCLUDES=-I$(INCDIR)\n' >> .deps.mk
 	printf 'CFLAGS=$(INCLUDES) $(STD_CFLAGS) -g -fno-builtin -nostdinc -nostdlib -nodefaultlibs -Werror -Wall -Wextra -fPIC\n\n' >> .deps.mk
 
 	for i in .dep/lib*.a.mk; do
@@ -106,8 +106,7 @@ if [ $(cat .dep/to-build) = ${STANDARD} ]; then
 
 	cat .dep/*.o.mk >> .deps.mk
 
-	printf '$(OBJDIR)/libc.o: nonstd/libc.c\n\t-@mkdir -p $(OBJDIR)\n\t$(CC) $(CFLAGS) -c $? -o $@\n\n' >> .deps.mk
-	printf '$(OBJDIR)/x86-64.o: nonstd/x86-64.s\n\t-@mkdir -p $(OBJDIR)\n\t$(CC) $(CFLAGS) -c $? -o $@\n\n' >> .deps.mk
+	printf '$(OBJDIR)/$(ARCH)-$(WORDSIZE).o: src/internal/$(ARCH)-$(WORDSIZE).s\n\t-@mkdir -p $(OBJDIR)\n\t$(CC) $(CFLAGS) -c $? -o $@\n\n' >> .deps.mk
 
 	printf 'all:' >> .deps.mk
 	for i in  .dep/lib*.a.mk; do
