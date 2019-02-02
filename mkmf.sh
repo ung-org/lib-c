@@ -25,8 +25,7 @@ if [ -f src/${STANDARD}/DEPS.mk ]; then
 	fi
 
 	if grep -q 'CFLAGS' src/${STANDARD}/DEPS.mk; then
-		#grep 'CFLAGS' src/${STANDARD}/DEPS.mk > .cflags.mk
-		grep 'CFLAGS' src/${STANDARD}/DEPS.mk | sed -e 's/CFLAGS/STD_CFLAGS/' >> .cflags.mk
+		grep 'CFLAGS' src/${STANDARD}/DEPS.mk | sed -e 's/CFLAGS/STD_CFLAGS/' > .cflags.mk
 	fi
 fi
 
@@ -106,7 +105,7 @@ if [ $(cat .dep/to-build) = ${STANDARD} ]; then
 
 	cat .dep/*.o.mk >> .deps.mk
 
-	printf '$(OBJDIR)/$(ARCH)-$(WORDSIZE).o: src/internal/$(ARCH)-$(WORDSIZE).s\n\t-@mkdir -p $(OBJDIR)\n\t$(CC) $(CFLAGS) -c $? -o $@\n\n' >> .deps.mk
+	printf '$(OBJDIR)/$(ARCH)-$(WORDSIZE).o: src/9899-1990/nonstd/$(ARCH)-$(WORDSIZE).s\n\t-@mkdir -p $(OBJDIR)\n\t$(CC) $(CFLAGS) -c $? -o $@\n\n' >> .deps.mk
 
 	printf 'all:' >> .deps.mk
 	for i in  .dep/lib*.a.mk; do
