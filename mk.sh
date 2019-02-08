@@ -85,9 +85,9 @@ get_declaration () {
 		;;
 
 	TGFN)
-		echo "$(grep TGFN $1 | m4 -DTGFN='$1' -DTYPE='double');"
-		echo "$(grep TGFN $1 | m4 -DTGFN='$1f' -DTYPE='float');"
-		echo "$(grep TGFN $1 | m4 -DTGFN='$1l' -DTYPE='long double');"
+		echo "$(grep 'TGFN.*)$' $1 | m4 -DTGFN='$1' -DTYPE='double');"
+		echo "$(grep 'TGFN.*)$' $1 | m4 -DTGFN='$1f' -DTYPE='float');"
+		echo "$(grep 'TGFN.*)$' $1 | m4 -DTGFN='$1l' -DTYPE='long double');"
 		;;
 
 	*)
