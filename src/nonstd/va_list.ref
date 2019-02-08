@@ -1,0 +1,2 @@
+#include <nonstd/io.h>
+REFERENCE(stdarg/va_list.c)

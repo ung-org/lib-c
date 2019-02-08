@@ -1,0 +1,3 @@
+#include <wchar.h>
+REFERENCE(stdarg/va_list.c)
+STDC(199409)

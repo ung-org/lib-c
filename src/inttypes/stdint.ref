@@ -1,0 +1,6 @@
+#include <inttypes.h>
+REFERENCE(<stdint.h>)
+
+/*
+STDC(199901)
+*/

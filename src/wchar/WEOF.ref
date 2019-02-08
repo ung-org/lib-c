@@ -1,0 +1,3 @@
+#include <wchar.h>
+REFERENCE(wctype/WEOF.c)
+STDC(199409)

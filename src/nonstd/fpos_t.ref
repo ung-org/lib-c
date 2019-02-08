@@ -1,0 +1,2 @@
+#include <nonstd/io.h>
+REFERENCE(stdio/fpos_t.c)

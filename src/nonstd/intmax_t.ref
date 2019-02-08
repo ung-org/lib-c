@@ -1,0 +1,2 @@
+#include <nonstd/types.h>
+REFERENCE(stdint/intmax_t.c)
