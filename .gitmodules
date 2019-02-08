@@ -19,3 +19,6 @@
 [submodule "src/POSIX.1-1990"]
 	path = src/POSIX.1-1990
 	url = git@gitlab.com:ung.org/lib/POSIX.1-1990.git
+[submodule "src/XOPEN-1994"]
+	path = src/XOPEN-1994
+	url = git@gitlab.com:ung.org/lib/XOPEN-1994.git
