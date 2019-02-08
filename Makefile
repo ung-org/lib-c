@@ -1,36 +1,22 @@
 .POSIX:
-
-default: all
-
+.DEFAULT: all
+.SILENT: all headers include
 include config.mk
 
-INCLUDES=-I$(INCDIR) -I. -Inonstd/stubs
-CFLAGS=$(INCLUDES) -g -fno-builtin -nostdinc -nostdlib -nodefaultlibs -Werror -Wall -Wextra -fPIC -D_POSIX_SOURCE
-
 all: .deps.mk include
-	@$(MAKE) -f .deps.mk $@
+	$(MAKE) -f .deps.mk $@
 
-.deps.mk:
-	$(MAKE) deps
-
-.headers.mk:
-	$(MAKE) deps
-
-deps:
+deps .headers.mk .deps.mk:
 	sh mkmf.sh $(STANDARD)
-	rm -rf .dep
+
+headers include: .headers.mk
+	$(MAKE) -f .headers.mk include
 
 ctags:
 	ctags $$(find src -name \*.c)
-
-include:
-	$(MAKE) headers
-
-headers: .headers.mk
-	@$(MAKE) -f .headers.mk $@
 
 clean:
 	rm -rf $(OBJDIR) *.a
 
 extra-clean: clean
-	rm -rf .dep .headers.mk .deps.mk include
+	rm -rf .dep .*.mk include
