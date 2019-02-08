@@ -75,7 +75,7 @@ if [ -d $HEADER.MACRO ]; then
 		fi
 
 		for i in $(sort -u $v); do
-			grep -E '^#(if|def|undef|el|end)' $i
+			get_declaration $i MACRO
 		done
 
 		if [ -n "$version" ]; then
@@ -98,15 +98,7 @@ if [ -d $HEADER.TYPE ]; then
 		fi
 
 		for i in $(sort -u $v); do
-			if grep -q '^#ifdef' $i; then
-				sed -ne '/#ifdef/,/#endif/p' $i
-			elif grep -q '^typedef.*;$' $i; then
-				grep '^typedef' $i
-			elif grep -q '^struct.*;$' $i; then
-				grep '^struct.*;$' $i
-			else
-				sed -ne '/^typedef/,/\}.*;$/p' $i
-			fi
+			get_declaration $i TYPE
 		done
 
 		if [ -n "$version" ]; then
@@ -126,13 +118,7 @@ if [ -d $HEADER.TYPE_LONG ]; then
 		fi
 
 		for i in $(sort -u $v); do
-			if grep -q '^#ifdef' $i; then
-				sed -ne '/#ifdef/,/#endif/p' $i
-			elif grep -q '^typedef.*;$' $i; then
-				grep '^typedef' $i
-			else
-				sed -ne '/^typedef/,/\}.*;$/p' $i
-			fi
+			get_declaration $i TYPE_LONG
 		done
 
 		if [ -n "$version" ]; then
@@ -152,11 +138,7 @@ if [ -d $HEADER.RECORD ]; then
 		fi
 
 		for i in $(sort -u $v 2>/dev/null); do
-			if grep -q '^struct' $i; then
-				sed -ne '/^struct/,/\};/p' $i
-			else
-				sed -ne '/^union/,/\};/p' $i
-			fi
+			get_declaration $i RECORD
 		done
 
 		if [ -n "$version" ]; then
@@ -176,7 +158,7 @@ if [ -d $HEADER.FNTYPE ]; then
 		fi
 
 		for i in $(sort -u $v 2>/dev/null); do
-			grep '^typedef ' $i
+			get_declaration $1 FNTYPE
 		done
 
 		if [ -n "$version" ]; then
@@ -196,7 +178,7 @@ if [ -d $HEADER.EXTERN ]; then
 		fi
 
 		for i in $(sort -u $v); do
-			printf 'extern %s\n' "$(grep '^[a-zA-Z_].*;$' $i)"
+			get_declaration $i EXTERN
 		done
 
 		if [ -n "$version" ]; then
@@ -216,7 +198,7 @@ if [ -d $HEADER.TGFN ]; then
 		fi
 
 		for i in $(sort -u $v); do
-			printf '%s;\n' "$(sed -e "/{/q" $i | tail -n2 | head -n1 | m4 '-DTGFN=$1' -DTYPE=double)"
+			get_declaration $i TGFN
 		done
 
 		if [ -n "$version" ]; then
@@ -229,11 +211,12 @@ if [ -d $HEADER.TGFN ]; then
 fi
 
 if [ -d $HEADER.FUNCTION ]; then
-	### TODO: only if header includes C89/AMD1 stuff
 	if grep -q restrict $(cat $HEADER.FUNCTION/*); then
-		printf '#if (!defined __STDC_VERSION__) || (__STDC_VERSION__ < 199909L)\n'
-		printf '#define restrict\n'
-		printf '#endif\n\n'
+		if grep -Fq -e 'STDC(1)' -e 'STDC(1,' -e 'STDC(199409' $(grep -l restrict $(cat $HEADER.FUNCTION/*)); then
+			printf '#if (!defined __STDC_VERSION__) || (__STDC_VERSION__ < 199901L)\n'
+			printf '#define restrict\n'
+			printf '#endif\n\n'
+		fi
 	fi
 
 	### TODO: only if header works with C<11
@@ -250,7 +233,7 @@ if [ -d $HEADER.FUNCTION ]; then
 		fi
 
 		for i in $(sort -u $v); do
-			printf '%s;\n' "$(sed -e "/{/q" $i | tail -n2 | head -n1 | sed -e 's/\([a-zA-Z_][a-zA-Z_0-9]*\)\([,)]\)/__\1\2/g;s/(__\([a-zA-Z_][a-zA-Z_0-9]*\))/(\1)/g')"
+			get_declaration $i FUNCTION | sed -e 's/\([a-zA-Z_][a-zA-Z_0-9]*\)\([,)]\)/__\1\2/g;s/(__\([a-zA-Z_][a-zA-Z_0-9]*\))/(\1)/g'
 		done
 
 		if [ -n "$version" ]; then
