@@ -64,7 +64,7 @@ for i in $(find src/${STANDARD} -name \*.c) $(find src/${STANDARD} -name \*.ref)
 		for j in $(grep include $i); do
 			: # TODO: add each header to depends file here
 		done
-		printf '\n\t-@mkdir -p $(OBJDIR)\n\t$(CC) $(CFLAGS) -c %s -o $@\n\n' $i >> .dep/${NAME}.o.mk
+		printf '\n\t$(CC) $(CFLAGS) -c %s -o $@\n\n' $i >> .dep/${NAME}.o.mk
 
 		if [ ! -f .dep/${LIB}.a.mk ]; then
 			printf '%s_OBJS =' ${LIB} > .dep/${LIB}.a.mk
@@ -83,7 +83,7 @@ if [ $(cat .dep/to-build) = ${STANDARD} ]; then
 	printf 'include .cflags.mk\n' >> .deps.mk
 	printf 'include config.mk\n\n' >> .deps.mk
 	printf 'INCLUDES=-I$(INCDIR)\n' >> .deps.mk
-	printf 'CFLAGS=$(INCLUDES) $(STD_CFLAGS) -g -fno-builtin -nostdinc -nostdlib -nodefaultlibs -Werror -Wall -Wextra -fPIC\n\n' >> .deps.mk
+	printf 'CFLAGS=$(INCLUDES) $(STD_CFLAGS) -g -fno-builtin -nostdinc -Werror -Wall -Wextra -fPIC\n\n' >> .deps.mk
 
 	for i in .dep/lib*.a.mk; do
 		LIB=$(basename $i .a.mk)
@@ -105,9 +105,10 @@ if [ $(cat .dep/to-build) = ${STANDARD} ]; then
 
 	cat .dep/*.o.mk >> .deps.mk
 
-	printf '$(OBJDIR)/$(ARCH)-$(WORDSIZE).o: src/9899-1990/nonstd/$(ARCH)-$(WORDSIZE).s\n\t-@mkdir -p $(OBJDIR)\n\t$(CC) $(CFLAGS) -c $? -o $@\n\n' >> .deps.mk
+	printf '$(OBJDIR)/$(ARCH)-$(WORDSIZE).o: src/9899-1990/nonstd/$(ARCH)-$(WORDSIZE).s\n\t$(CC) $(CFLAGS) -c $? -o $@\n\n' >> .deps.mk
+	printf '$(OBJDIR):;mkdir -p $@\n' >> .deps.mk
 
-	printf 'all:' >> .deps.mk
+	printf 'all: $(OBJDIR)' >> .deps.mk
 	for i in  .dep/lib*.a.mk; do
 		printf ' %s' $(basename $i .mk) >> .deps.mk
 	done
