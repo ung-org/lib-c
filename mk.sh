@@ -49,3 +49,51 @@ version_guard () {
 
 	rm -f $parsed
 }
+
+get_declaration () {
+	case ${2:-$(classify_source $1)} in
+
+	REFERENCE)
+		ref="$(grep -F 'REFERENCE(' $1 | m4 -DREFERENCE='$1')"
+		if (echo "$ref" | grep -q '<.*>'); then
+			echo "$ref"
+		else
+			get_declaration "src/${ref}"
+		fi
+		;;
+
+	MACRO)	
+		grep -E '^(#(if|def|undef|el|end)|	)' $1
+		;;
+
+	TYPE|TYPE_LONG|RECORD|FNTYPE)
+		if grep -q '^#if' $1; then
+			sed -ne '/^#if/,/#endif/p' $1
+		elif grep -qE '^(typedef|struct|union) .*{' $1; then
+			sed -ne '/{$/,/^}/p' $1
+		else
+			grep -E '^(typedef|struct|union) ' $1
+		fi
+		;;
+
+	EXTERN)
+		echo "extern $(grep '^[a-zA-Z_].*;$' $1)"
+		;;
+
+	FUNCTION)
+		echo "$(grep '^[a-zA-Z_].*)' $1 | head -n1);"
+		;;
+
+	TGFN)
+		echo "$(grep TGFN $1 | m4 -DTGFN='$1' -DTYPE='double');"
+		echo "$(grep TGFN $1 | m4 -DTGFN='$1f' -DTYPE='float');"
+		echo "$(grep TGFN $1 | m4 -DTGFN='$1l' -DTYPE='long double');"
+		;;
+
+	*)
+		# unknown type, so try guessing
+		get_declaration $1
+		;;
+
+	esac
+}
