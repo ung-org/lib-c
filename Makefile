@@ -20,7 +20,7 @@ deps:
 	sh mkmf.sh $(STANDARD)
 	rm -rf .dep
 
-tags:
+ctags:
 	ctags $$(find src -name \*.c)
 
 include:
