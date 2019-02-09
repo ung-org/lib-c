@@ -148,15 +148,18 @@ version_sources() {
 }
 
 make_headers_mk() {
+	if ! [ -f "${DEPS}/all.h" ]; then
+		find_all
+	fi
+
 	rm -f "${TOPDIR}/.headers.mk"
 	printf '.POSIX:\n.DEFAULT: headers\ninclude config.mk\n\n' > "${TOPDIR}/.headers.mk"
 
 	for header in $(cat "${DEPS}/all.h"); do
 		printf 'Building dependencies for <%s>\n' "$header"
-		printf '$(INCDIR)/%s: ' "$header" >> "${TOPDIR}/.headers.mk"
-		#printf '$(INCDIR)/%s: $$(grep -l "#include <%s>" $$(cat %s/all.c %s/all.ref)\n' "$header" "$header" "${DEPS}" "${DEPS}" >> "${TOPDIR}/.headers.mk"
+		printf '$(INCDIR)/%s: mkh.sh ' "$header" >> "${TOPDIR}/.headers.mk"
 		grep -l "#include <${header}>" $(cat "${DEPS}/all.c" "${DEPS}/all.ref") | sed -e "s#${SRCDIR}#\$(SRCDIR)#" | tr '\n' ' ' >> "${TOPDIR}/.headers.mk"
-		printf '\n\tsh mkh.sh $@\n\n' >> "${TOPDIR}/.headers.mk"
+		printf '\n\tINCDIR=$(INCDIR) sh mkh.sh $@\n\n' >> "${TOPDIR}/.headers.mk"
 	done
 
 	printf 'headers: ' >> "${TOPDIR}/.headers.mk"
