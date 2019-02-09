@@ -6,8 +6,13 @@ include config.mk
 all: .deps.mk include
 	$(MAKE) -f .deps.mk $@
 
-deps .headers.mk .deps.mk:
-	sh mkdeps.sh
+deps: .headers.mk .deps.mk
+
+.deps.mk:
+	sh -c '. ./mk.sh; make_deps_mk'
+
+.headers.mk:
+	sh -c '. ./mk.sh; make_headers_mk'
 
 headers include: .headers.mk
 	$(MAKE) -f .headers.mk headers
