@@ -47,11 +47,10 @@ version_guard () {
 			loop=$((loop + 1))
 		done
 
-		sed -ne "${loop}p;q" $parsed > /tmp/sed.out.${loop}
-		printf '\t(%s)\n' "$(sed -ne "${loop}p;q" $parsed)"
+		printf '\t(%s)\n' "$(sed -ne "${loop}p" $parsed)"
 	fi
 
-	rm -f $parsed
+	#rm -f $parsed
 }
 
 get_declaration () {
