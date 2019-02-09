@@ -8,13 +8,13 @@ all: .deps.mk include
 
 deps: .headers.mk .deps.mk
 
-.deps.mk:
+.deps.mk: mk.sh
 	sh -c '. ./mk.sh; make_deps_mk'
 
-.headers.mk:
+.headers.mk: mk.sh
 	sh -c '. ./mk.sh; make_headers_mk'
 
-headers include: .headers.mk
+headers include: .headers.mk mkh.sh
 	$(MAKE) -f .headers.mk headers
 
 ctags:
