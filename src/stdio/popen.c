@@ -1,0 +1,62 @@
+#include <stdio.h>
+#include "string.h"
+#include "errno.h"
+#include "unistd.h"
+#include "wchar.h"
+#include "__nonstd.h"
+
+FILE * popen(const char * command, const char * mode)
+{
+	__ASSERT_NONNULL(command);
+	__ASSERT_NONNULL(mode);
+	
+	int direction = 0;
+	if (!strcmp(mode, "w")) {
+		direction = 1;
+	} else if (strcmp(mode, "r")) {
+		errno = EINVAL;
+		return NULL;
+	}
+
+	int pd[2];
+	if (pipe(pd) == -1) {
+		return NULL;
+	}
+
+	pid_t child = fork();
+	if (child == -1) {
+		close(pd[0]);
+		close(pd[1]);
+		return NULL;
+	} else if (child == 0) {
+		if (direction == 1) {
+			dup2(pd[0], STDIN_FILENO);
+		} else {
+			dup2(pd[1], STDOUT_FILENO);
+		}
+		close(pd[0]);
+		close(pd[1]);
+		execl("/bin/sh", "sh", "-c", command, (char *)0);
+		return NULL;
+	}
+
+	FILE *p = NULL;
+	if (direction == 1) {
+		p = fdopen(pd[1], "w");
+	} else {
+		p = fdopen(pd[0], "r");
+	}
+
+	if (p == NULL) {
+		return NULL;
+	}
+
+	fwide(p, -1);
+	p->pipe_pid = pid;
+	return p;
+}
+
+/*
+POSIX(2)
+*/
+
