@@ -1,13 +1,17 @@
 #!/bin/sh
 
-. $(dirname $0)/mk.sh
+TOPDIR=$(dirname $0)
+if [ -z "${INCDIR}" ]; then
+	INCDIR="${TOPDIR}/include"
+fi
+. "${TOPDIR}/mk.sh"
 
 export LC_ALL=POSIX
 export LANG=POSIX
 HEADER=$1
-GUARD=__$(echo $HEADER | tr a-z/. A-Z__)__
+HEADERNAME=$(echo $HEADER | sed -e "s#^${INCDIR}/*##")
+GUARD=__$(echo $HEADERNAME | tr a-z/. A-Z__)__
 mkdir -p $(dirname $HEADER)
-shift
 exec > $HEADER
 
 if [ $(basename $HEADER) != assert.h ]; then
@@ -36,10 +40,10 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 EOF
 
 rm -rf $HEADER.*
-for i in $(echo $@ | sort -u); do
+for i in $(grep -l "#include <$HEADERNAME>" $(cat "${TOPDIR}/.deps/all.c" "${TOPDIR}/.deps/all.ref") | sort -u); do
 	# TODO: refs
 	type=$(classify_source $i)
-	version=v$(grep -F -e 'STDC(' -e 'POSIX(' -e 'XOPEN(' $i | sed -e 's/STDC/C/' | sort | tr , - | tr -d '() ')
+	version=v$(grep -F -e 'STDC(' -e 'POSIX(' -e 'XOPEN(' $i | sed -e 's/STDC/C/' | sort | tr , - | tr -d '() \n')
 	mkdir -p $HEADER.$type
 	echo $i >> $HEADER.$type/$version
 	printf '%s <%s> (%s)\n' "$i" "$HEADER" "$version" >&2
