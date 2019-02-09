@@ -50,7 +50,7 @@ version_guard () {
 		printf '\t(%s)\n' "$(sed -ne "${loop}p" $parsed)"
 	fi
 
-	#rm -f $parsed
+	rm -f $parsed
 }
 
 get_declaration () {
@@ -65,7 +65,7 @@ get_declaration () {
 		fi
 		;;
 
-	MACRO)	
+	MACRO)
 		grep -E '^(#(if|def|undef|el|end)|	)' $1
 		;;
 
@@ -128,17 +128,17 @@ version_sources() {
 		c_version=$(stdc_base "${file}")
 		p_version=$(posix_base "${file}")
 		x_version=$(xopen_base "${file}")
-	
+
 		if [ -n "${c_version}" ]; then
 			mkdir -p "${DEPS}/c.${c_version}"
 			echo "$file" >> "${DEPS}/c.${c_version}/sources"
 		fi
-	
+
 		if [ -n "${p_version}" ]; then
 			mkdir -p "${DEPS}/p.${p_version}"
 			echo "$file" >> "${DEPS}/p.${p_version}/sources"
 		fi
-	
+
 		if [ -n "${x_version}" ]; then
 			mkdir -p "${DEPS}/x.${x_version}"
 			echo "$file" >> "${DEPS}/x.${x_version}/sources"
@@ -170,19 +170,79 @@ make_headers_mk() {
 }
 
 make_deps_mk() {
+	if ! [ -f "${DEPS}/all.c" ]; then
+		find_all
+	fi
+
 	rm -f "${TOPDIR}/.deps.mk"
-	printf '.POSIX:\n.DEFAULT: all\ninclude config.mk\n\n' > "${TOPDIR}/.deps.mk"
+	rm -f "${DEPS}"/lib*
+
+	printf '.POSIX:\ndefault: all\n\n' > "${TOPDIR}/.deps.mk"
+	printf 'include config.mk\n\n' >> "${TOPDIR}/.deps.mk"
+	printf '$(OBJDIR):;mkdir -p $@\n' >> "${TOPDIR}/.deps.mk"
+	printf 'BASE_CFLAGS=-I$(INCDIR) -fno-builtin -nostdinc\n' >> "${TOPDIR}/.deps.mk"
+	printf '\n' >> "${TOPDIR}/.deps.mk"
 
 	for file in $(cat "${DEPS}/all.c"); do
 		printf 'Building dependencies from %s\n' "$file"
 		type=$(classify_source "${file}")
 
 		if [ ${type} = EXTERN -o ${type} = TGFN -o ${type} = FUNCTION ]; then
-			printf '$(OBJDIR)/%s.o: $(SRCDIR)/%s' "$(basename $file .c)" "$file" >> "${TOPDIR}/.deps.mk"
-			for header in $(grep '#include' "${file}"); do
-				printf ' \\\n\t$(INCDIR)/%s' "$header" >> "${TOPDIR}/.deps.mk"
-			done
-			printf '\n\t$(CC) $(CFLAGS) -c $(SRCDIR)/%s -o $@\n\n' "$file" >> "${TOPDIR}/.deps.mk"
+			LINK=$(grep -F 'LINK(' $file | m4 -DLINK='$1')
+			LIB=lib${LINK:-c}
+			OBJ=$(basename $file .c).o
+
+			printf '%s.a(%s): $(OBJDIR)/%s\n' $LIB $OBJ $OBJ >> "${TOPDIR}/.deps.mk"
+			printf '$(OBJDIR)/%s: %s' "$OBJ" "$file" >> "${TOPDIR}/.deps.mk"
+			#for header in $(grep '#include' "${file}"); do
+				#printf ' \\\n\t$(INCDIR)/%s' "$header" >> "${TOPDIR}/.deps.mk"
+			#done
+			printf '\n\t$(CC) $(BASE_CFLAGS) $(CFLAGS) -c %s -o $@\n\n' "$file" >> "${TOPDIR}/.deps.mk"
+
+			cver=$(stdc_base $file)
+			pver=$(posix_base $file)
+			xver=$(xopen_base $file)
+
+			if [ -n "$cver" ]; then
+				if ! [ -f "${DEPS}/${LIB}.C_${cver}" ]; then
+					printf '.POSIX:\n%s_C_%s_OBJS=' "${LIB}" "${cver}" > "${DEPS}/${LIB}.C_${cver}"
+				fi
+				printf ' \\\n\t%s.a(%s)' $LIB $OBJ >> "${DEPS}/${LIB}.C_${cver}"
+			fi
+
+			if [ -n "$pver" ]; then
+				if ! [ -f "${DEPS}/${LIB}.POSIX_${pver}" ]; then
+					printf '.POSIX:\n%s_POSIX_%s_OBJS=' "${LIB}" "${pver}" > "${DEPS}/${LIB}.POSIX_${pver}"
+				fi
+				printf ' \\\n\t%s.a(%s)' $LIB $OBJ >> "${DEPS}/${LIB}.POSIX_${pver}"
+			fi
+
+			if [ -n "$xver" ]; then
+				if ! [ -f "${DEPS}/${LIB}.XOPEN_${xver}" ]; then
+					printf '.POSIX:\n%s_XOPEN_%s_OBJS=' "${LIB}" "${xver}" > "${DEPS}/${LIB}.XOPEN_${xver}"
+				fi
+				printf ' \\\n\t%s.a(%s)' $LIB $OBJ >> "${DEPS}/${LIB}.XOPEN_${xver}"
+			fi
 		fi
+	done
+
+	printf '\n' >> "${TOPDIR}/.deps.mk"
+
+	for libdep in ${DEPS}/lib*; do
+		LIB=$(basename $libdep | sed -e 's/\..*$//')
+		VER=$(basename $libdep | sed -e 's/^.*\.//')
+		echo adding dependencies for $LIB v $VER
+		printf 'include .deps/%s\n' $(basename $libdep) >> "${TOPDIR}/.deps.mk"
+
+		if ! [ -f "${DEPS}/${LIB}.mk" ]; then
+			printf '.POSIX:\n%s.a:' "${LIB}" > "${DEPS}/${LIB}.mk"
+			printf 'include .deps/%s.mk\n' "${LIB}" >> .deps.mk
+		fi
+		printf ' \\\n\t$(%s_%s_OBJS)' $LIB $VER >> ${DEPS}/${LIB}.mk
+	done
+
+	printf '\n\nall:' >> "${TOPDIR}/.deps.mk"
+	for lib in ${DEPS}/lib*.mk; do
+		printf ' %s.a' $(basename $lib .mk) >> "${TOPDIR}/.deps.mk"
 	done
 }
