@@ -1,5 +1,5 @@
 .POSIX:
-.DEFAULT: all
+.DEFAULT:; $(MAKE) all
 .SILENT: all headers include
 include config.mk
 
