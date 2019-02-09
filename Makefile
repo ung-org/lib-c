@@ -43,4 +43,4 @@ clean:
 	rm -rf $(OBJDIR) *.a
 
 extra-clean: clean
-	rm -rf .dep .*.mk include
+	rm -rf .deps .*.mk $(INCDIR)
