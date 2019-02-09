@@ -17,6 +17,6 @@ define(`XOPEN',
 			`ifelse($1, 400, `XEXT() && _XOPEN_SOURCE < $2',
 				`defined _XOPEN_SOURCE && $1 <= _XOPEN_SOURCE && _XOPEN_SOURCE < $2')')',
 		`ifelse($1, 4, `defined _XOPEN_SOURCE',
-			`ifelse($1, 400, `XEXT())',
+			`ifelse($1, 400, `XEXT()',
 				`defined _XOPEN_SOURCE && $1 <= _XOPEN_SOURCE')')')
 ')dnl
