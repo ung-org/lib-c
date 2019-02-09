@@ -1,6 +1,5 @@
 #include <stdio.h>
-                                                            extern FILE *stdout;
-#define stdout                                                            stdout
+#define stdout                                                          __stdout
 
 /** standard output **/
 

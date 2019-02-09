@@ -1,6 +1,5 @@
 #include <stdio.h>
-                                                             extern FILE *stdin;
-#define stdin                                                              stdin
+#define stdin                                                            __stdin
 
 /** standard input **/
 

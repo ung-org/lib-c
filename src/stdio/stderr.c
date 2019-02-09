@@ -1,6 +1,5 @@
 #include <stdio.h>
-                                                            extern FILE *stderr;
-#define stderr                                                            stderr
+#define stderr                                                          __stderr
 
 /** standard error **/
 
