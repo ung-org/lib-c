@@ -43,9 +43,14 @@ rm -rf $HEADER.*
 for i in $(grep -l "#include <$HEADERNAME>" $(cat "${TOPDIR}/.deps/all.c" "${TOPDIR}/.deps/all.ref") | sort -u); do
 	# TODO: refs
 	type=$(classify_source $i)
+	source=$i
+	if [ $type = "REFERENCE" ]; then
+		source=src/$(grep REFERENCE $i | m4 -DREFERENCE='$1')
+		type=$(classify_source $source)
+	fi
 	version=v$(grep -F -e 'STDC(' -e 'POSIX(' -e 'XOPEN(' $i | sed -e 's/STDC/C/' | sort | tr , - | tr -d '() \n')
 	mkdir -p $HEADER.$type
-	echo $i >> $HEADER.$type/$version
+	echo $source >> $HEADER.$type/$version
 	printf '%s <%s> (%s)\n' "$i" "$HEADER" "$version" >&2
 done
 
