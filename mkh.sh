@@ -89,9 +89,7 @@ if [ -d $HEADER.MACRO ]; then
 		printf '\n'
 	done
 
-	if ! grep -q extern $(cat $HEADER.MACRO/*); then
-		rm -rf $HEADER.MACRO
-	fi
+	rm -rf $HEADER.MACRO
 fi
 
 if [ -d $HEADER.TYPE ]; then
@@ -247,26 +245,6 @@ if [ -d $HEADER.FUNCTION ]; then
 		printf '\n'
 	done
 	rm -rf $HEADER.FUNCTION
-fi
-
-if [ -d $HEADER.MACRO ]; then
-	for v in $HEADER.MACRO/*; do
-		version=$(version_guard $(head -n1 $v))
-		if [ -n "$version" ]; then
-			printf '%s\n' "$version"
-		fi
-
-		for i in $(sort -u $v); do
-			grep ' *extern.*;$' $i
-		done
-
-		if [ -n "$version" ]; then
-			printf '#endif\n'
-		fi
-
-		printf '\n'
-	done
-	rm -rf $HEADER.MACRO
 fi
 
 rm -rf $HEADER.REFERENCE
