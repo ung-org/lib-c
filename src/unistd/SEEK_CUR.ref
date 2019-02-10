@@ -1,0 +1,3 @@
+#include <unistd.h>
+REFERENCE(stdio/SEEK_CUR.c)
+POSIX(1)
