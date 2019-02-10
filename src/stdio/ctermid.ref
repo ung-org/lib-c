@@ -1,3 +1,3 @@
 #include <stdio.h>
 REFERENCE(unistd/ctermid.c)
-POSIX(19xxyy)
+POSIX(1)
