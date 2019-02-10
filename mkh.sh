@@ -52,8 +52,9 @@ for i in $(grep -l "#include <$HEADERNAME>" $(cat "${TOPDIR}/.deps/all.c" "${TOP
 	mkdir -p $HEADER.$type
 	echo $source >> $HEADER.$type/$version
 
-	if ! [ -f $(dirname $0)/.deps/$version.ftm ]; then
-		version_guard $source > $(dirname $0)/.deps/$version.ftm
+	if ! [ -f $(dirname $0)/.deps/ftm/$version ]; then
+		mkdir -p $(dirname $0)/.deps/ftm
+		version_guard $source > $(dirname $0)/.deps/ftm/$version
 	fi
 
 	printf '%s <%s> (%s)\n' "$i" "$HEADER" "$version" >&2
@@ -83,7 +84,7 @@ fi
 for type in MACRO TYPE TYPE_LONG RECORD FNTYPE EXTERN; do
 	if [ -d $HEADER.$type ]; then
 		for v in $HEADER.$type/*; do
-			version=$(cat $(dirname $0)/.deps/$(basename $v | sed -e 's/^.*\.//').ftm)
+			version=$(cat $(dirname $0)/.deps/ftm/$(basename $v | sed -e 's/^.*\.//'))
 			if [ -n "$version" ]; then
 				printf '%s\n' "$version"
 			fi
@@ -104,7 +105,7 @@ done
 
 if [ -d $HEADER.TGFN ]; then
 	for v in $HEADER.TGFN/*; do
-		version=$(version_guard $(head -n1 $v))
+		version=$(cat $(dirname $0)/.deps/ftm/$(basename $v | sed -e 's/^.*\.//'))
 		if [ -n "$version" ]; then
 			printf '%s\n' "$version"
 		fi
@@ -139,7 +140,7 @@ if [ -d $HEADER.FUNCTION ]; then
 	fi
 
 	for v in $HEADER.FUNCTION/*; do
-		version=$(version_guard $(head -n1 $v))
+		version=$(cat $(dirname $0)/.deps/ftm/$(basename $v | sed -e 's/^.*\.//'))
 		if [ -n "$version" ]; then
 			printf '%s\n' "$version"
 		fi
