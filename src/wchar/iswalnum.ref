@@ -1,0 +1,3 @@
+#include <wchar.h>
+REFERENCE(wctype/iswalnum.c)
+XOPEN(4)

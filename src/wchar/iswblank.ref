@@ -1,0 +1,3 @@
+#include <wchar.h>
+REFERENCE(wctype/iswblank.c)
+XOPEN(4)

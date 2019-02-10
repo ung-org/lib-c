@@ -1,0 +1,3 @@
+#include <wchar.h>
+REFERENCE(wctype/iswprint.c)
+XOPEN(4)

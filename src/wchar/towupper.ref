@@ -1,0 +1,3 @@
+#include <wchar.h>
+REFERENCE(wctype/towupper.c)
+XOPEN(4)

@@ -1,0 +1,3 @@
+#include <wchar.h>
+REFERENCE(wctype/iswdigit.c)
+XOPEN(4)

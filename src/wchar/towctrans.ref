@@ -1,0 +1,3 @@
+#include <wchar.h>
+REFERENCE(wctype/towctrans.c)
+XOPEN(4)

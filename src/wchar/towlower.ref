@@ -1,0 +1,3 @@
+#include <wchar.h>
+REFERENCE(wctype/towlower.c)
+XOPEN(4)

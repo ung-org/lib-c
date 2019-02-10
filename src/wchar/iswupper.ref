@@ -1,0 +1,3 @@
+#include <wchar.h>
+REFERENCE(wctype/iswupper.c)
+XOPEN(4)

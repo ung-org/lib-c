@@ -1,0 +1,3 @@
+#include <wchar.h>
+REFERENCE(wctype/iswspace.c)
+XOPEN(4)

@@ -1,0 +1,3 @@
+#include <wchar.h>
+REFERENCE(wctype/wctype.c)
+XOPEN(4)

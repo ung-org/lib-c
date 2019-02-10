@@ -1,0 +1,3 @@
+#include <wchar.h>
+REFERENCE(wctype/iswlower.c)
+XOPEN(4)
