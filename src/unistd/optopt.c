@@ -1,5 +1,5 @@
 #include <unistd.h>
-int optopt = 0;
+int optopt;
 /*
 POSIX(2)
 */
