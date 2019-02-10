@@ -1,4 +1,4 @@
-#incude <wctype.h>
+#include <wctype.h>
 typedef int                                                            wctype_t;
 
 /*
