@@ -1,0 +1,3 @@
+#include <sys/types.h>
+REFERENCE(time/time_t.c)
+XOPEN(4)

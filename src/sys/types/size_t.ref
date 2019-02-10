@@ -1,0 +1,3 @@
+#include <sys/types.h>
+REFERENCE(stddef/size_t.c)
+POSIX(1)
