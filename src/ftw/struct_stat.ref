@@ -1,0 +1,3 @@
+#include <ftw.h>
+REFERENCE(sys/stat/struct_stat.c)
+XOPEN(4)
