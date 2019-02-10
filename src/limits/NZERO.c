@@ -1,4 +1,4 @@
-#if (defined _XOPEN_SOURCE)
+#include <limits.h>
 #define NZERO                                                               (20)
 * MIN: 20 */
 /** default process priority **/
