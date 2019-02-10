@@ -1,0 +1,3 @@
+#include <sys/resource.h>
+REFERENCE(sys/time/struct_timeval.c)
+XOPEN(400)
