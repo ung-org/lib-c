@@ -9,4 +9,5 @@
 /*
 STDC(199901)
 LINK(m)
+see also SUSv1
 */

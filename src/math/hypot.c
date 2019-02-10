@@ -9,5 +9,6 @@ TYPE TGFN(hypot)(TYPE x, TYPE y)
 
 /*
 STDC(199901)
+XOPEN(4)
 LINK(m)
 */

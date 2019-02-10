@@ -7,4 +7,5 @@ double jn(int n, double x)
 
 /*
 XOPEN(4)
+LINK(m)
 */

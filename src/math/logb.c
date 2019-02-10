@@ -9,5 +9,6 @@ TYPE TGFN(logb)(TYPE x)
 
 /*
 STDC(199901)
+XOPEN(400)
 LINK(m)
 */

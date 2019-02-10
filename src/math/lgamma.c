@@ -9,5 +9,6 @@ TYPE TGFN(lgamma)(TYPE x)
 
 /*
 STDC(199901)
+XOPEN(4)
 LINK(m)
 */

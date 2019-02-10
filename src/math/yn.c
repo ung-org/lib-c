@@ -7,4 +7,5 @@ double yn(int n, double x)
 
 /*
 XOPEN(4)
+LINK(m)
 */

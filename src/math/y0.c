@@ -7,4 +7,5 @@ double y0(double x)
 
 /*
 XOPEN(4)
+LINK(m)
 */

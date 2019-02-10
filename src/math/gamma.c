@@ -7,4 +7,5 @@ double gamma(double x)
 
 /*
 XOPEN(4,600)
+LINK(m)
 */

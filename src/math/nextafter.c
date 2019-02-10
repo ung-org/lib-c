@@ -9,5 +9,6 @@ TYPE TGFN(nextafter)(TYPE x, TYPE y)
 
 /*
 STDC(199901)
+XOPEN(400)
 LINK(m)
 */
