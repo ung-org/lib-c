@@ -1,0 +1,3 @@
+#include <sys/wait.h>
+REFERENCE(sys/resource/struct_rusage.c)
+XOPEN(400)

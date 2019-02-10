@@ -1,0 +1,3 @@
+#include <sys/wait.h>
+REFERENCE(sys/types/id_t.c)
+XOPEN(400)
