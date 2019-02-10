@@ -1,0 +1,2 @@
+#include <nonstd/syscall.h>
+REFERENCE(errno/ENOSYS.c)
