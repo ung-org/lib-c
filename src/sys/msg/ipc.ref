@@ -1,0 +1,3 @@
+#include <sys/msg.h>
+REFERENCE(<sys/ipc.h>)
+XOPEN(4)

@@ -1,0 +1,3 @@
+#include <sys/ipc.h>
+REFERENCE(sys/types/key_t.c)
+XOPEN(4)
