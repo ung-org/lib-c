@@ -51,6 +51,11 @@ for i in $(grep -l "#include <$HEADERNAME>" $(cat "${TOPDIR}/.deps/all.c" "${TOP
 	version=v$(grep -F -e 'STDC(' -e 'POSIX(' -e 'XOPEN(' $i | sed -e 's/STDC/C/' | sort | tr , - | tr -d '() \n')
 	mkdir -p $HEADER.$type
 	echo $source >> $HEADER.$type/$version
+
+	if ! [ -f $(dirname $0)/.deps/$version.ftm ]; then
+		version_guard $source > $(dirname $0)/.deps/$version.ftm
+	fi
+
 	printf '%s <%s> (%s)\n' "$i" "$HEADER" "$version" >&2
 done
 
@@ -75,127 +80,27 @@ cat <<-EOF
 EOF
 fi
 
-if [ -d $HEADER.MACRO ]; then
-	# FIXME: line continuation
-	for v in $HEADER.MACRO/*; do
-		version=$(version_guard $(head -n1 $v))
-		if [ -n "$version" ]; then
-			printf '%s\n' "$version"
-		fi
+for type in MACRO TYPE TYPE_LONG RECORD FNTYPE EXTERN; do
+	if [ -d $HEADER.$type ]; then
+		for v in $HEADER.$type/*; do
+			version=$(cat $(dirname $0)/.deps/$(basename $v | sed -e 's/^.*\.//').ftm)
+			if [ -n "$version" ]; then
+				printf '%s\n' "$version"
+			fi
 
-		for i in $(sort -u $v); do
-			get_declaration $i MACRO
+			for i in $(sort -u $v); do
+				get_declaration $i
+			done
+
+			if [ -n "$version" ]; then
+				printf '#endif\n'
+			fi
+
+			printf '\n'
 		done
-
-		if [ -n "$version" ]; then
-			printf '#endif\n'
-		fi
-
-		printf '\n'
-	done
-
-	rm -rf $HEADER.MACRO
-fi
-
-if [ -d $HEADER.TYPE ]; then
-	for v in $HEADER.TYPE/*; do
-		version=$(version_guard $(head -n1 $v))
-		if [ -n "$version" ]; then
-			printf '%s\n' "$version"
-		fi
-
-		for i in $(sort -u $v); do
-			get_declaration $i TYPE
-		done
-
-		if [ -n "$version" ]; then
-			printf '#endif\n'
-		fi
-
-		printf '\n'
-	done
-	rm -rf $HEADER.TYPE
-fi
-
-if [ -d $HEADER.TYPE_LONG ]; then
-	for v in $HEADER.TYPE_LONG/*; do
-		version=$(version_guard $(head -n1 $v))
-		if [ -n "$version" ]; then
-			printf '%s\n' "$version"
-		fi
-
-		for i in $(sort -u $v); do
-			get_declaration $i TYPE_LONG
-		done
-
-		if [ -n "$version" ]; then
-			printf '#endif\n'
-		fi
-
-		printf '\n'
-	done
-	rm -rf $HEADER.TYPE_LONG
-fi
-
-if [ -d $HEADER.RECORD ]; then
-	for v in $HEADER.RECORD/*; do
-		version=$(version_guard $(head -n1 $v))
-		if [ -n "$version" ]; then
-			printf '%s\n' "$version"
-		fi
-
-		for i in $(sort -u $v 2>/dev/null); do
-			get_declaration $i RECORD
-		done
-
-		if [ -n "$version" ]; then
-			printf '#endif\n'
-		fi
-
-		printf '\n'
-	done
-	rm -rf $HEADER.RECORD
-fi
-
-if [ -d $HEADER.FNTYPE ]; then
-	for v in $HEADER.FNTYPE/*; do
-		version=$(version_guard $(head -n1 $v))
-		if [ -n "$version" ]; then
-			printf '%s\n' "$version"
-		fi
-
-		for i in $(sort -u $v 2>/dev/null); do
-			get_declaration $1 FNTYPE
-		done
-
-		if [ -n "$version" ]; then
-			printf '#endif\n'
-		fi
-
-		printf '\n'
-	done
-	rm -rf $HEADER.FNTYPE
-fi
-
-if [ -d $HEADER.EXTERN ]; then
-	for v in $HEADER.EXTERN/*; do
-		version=$(version_guard $(head -n1 $v))
-		if [ -n "$version" ]; then
-			printf '%s\n' "$version"
-		fi
-
-		for i in $(sort -u $v); do
-			get_declaration $i EXTERN
-		done
-
-		if [ -n "$version" ]; then
-			printf '#endif\n'
-		fi
-
-		printf '\n'
-	done
-	rm -rf $HEADER.EXTERN
-fi
+		rm -rf $HEADER.$type
+	fi
+done
 
 if [ -d $HEADER.TGFN ]; then
 	for v in $HEADER.TGFN/*; do
