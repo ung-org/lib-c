@@ -1,3 +1,4 @@
 #include <stdio.h>
 REFERENCE(stdarg/va_list.c)
 STDC(1)
+NOTE: technically not in any standard C, but is present in xopen and posix
