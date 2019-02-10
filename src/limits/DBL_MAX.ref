@@ -1,0 +1,3 @@
+#include <limits.h>
+REFERENCE(float/DBL_MAX.c)
+XOPEN(4,700)
