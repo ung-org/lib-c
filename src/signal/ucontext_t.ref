@@ -1,0 +1,3 @@
+#include <signal.h>
+REFERENCE(ucontext/ucontext_t.c)
+XOPEN(400)
