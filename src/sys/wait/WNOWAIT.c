@@ -1,5 +1,5 @@
 #include <sys/wait.h>
-#define NOWAIT /* TODO */
+#define WNOWAIT /* TODO */
 /*
 XOPEN(400)
 POSIX(200809)
