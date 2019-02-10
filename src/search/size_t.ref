@@ -1,0 +1,3 @@
+#include <search.h>
+REFERENCE(stddef/size_t.c)
+XOPEN(4)
