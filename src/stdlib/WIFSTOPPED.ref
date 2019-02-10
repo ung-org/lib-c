@@ -1,0 +1,3 @@
+#include <stdlib.h>
+REFERENCE(sys/wait/WIFSTOPPED.c)
+XOPEN(4)

@@ -1,0 +1,3 @@
+#include <stdlib.h>
+REFERENCE(sys/wait/WIFSIGNALED.c)
+XOPEN(4)

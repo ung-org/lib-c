@@ -1,0 +1,3 @@
+#include <stdlib.h>
+REFERENCE(sys/wait/WEXITSTATUS.c)
+XOPEN(4)

@@ -1,0 +1,3 @@
+#include <stdlib.h>
+REFERENCE(sys/wait/WNOHANG.c)
+XOPEN(4)

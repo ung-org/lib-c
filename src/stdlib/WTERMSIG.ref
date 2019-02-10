@@ -1,0 +1,3 @@
+#include <stdlib.h>
+REFERENCE(sys/wait/WTERMSIG.c)
+XOPEN(4)
