@@ -23,7 +23,7 @@ ABMON_6	src/langinfo/ABMON_6.c	2;"	d	file:
 ABMON_7	src/langinfo/ABMON_7.c	2;"	d	file:
 ABMON_8	src/langinfo/ABMON_8.c	2;"	d	file:
 ABMON_9	src/langinfo/ABMON_9.c	2;"	d	file:
-ACTION	src/search/ACTION.c	/^typedef enum { FIND, ENTER }                                             ACTION;$/;"	t	typeref:enum:__anon13	file:
+ACTION	src/search/ACTION.c	/^} ACTION;$/;"	t	typeref:enum:__anon13	file:
 ALLOCED	src/nonstd/struct_FILE.c	/^	enum { SUPPLIED, ALLOCED, UNSET } buftype;$/;"	e	enum:__FILE::__anon6	file:
 ALPHA	src/nonstd/ctype_t.c	/^	ALPHA = (1 << 0),$/;"	e	enum:__anon5	file:
 ALT_DIGITS	src/langinfo/ALT_DIGITS.c	2;"	d	file:
@@ -214,7 +214,7 @@ ENOTDIR	src/errno/ENOTDIR.c	3;"	d	file:
 ENOTEMPTY	src/errno/ENOTEMPTY.c	3;"	d	file:
 ENOTSOCK	src/errno/ENOTSOCK.c	2;"	d	file:
 ENOTTY	src/errno/ENOTTY.c	3;"	d	file:
-ENTER	src/search/ACTION.c	/^typedef enum { FIND, ENTER }                                             ACTION;$/;"	e	enum:__anon13	file:
+ENTER	src/search/ACTION.c	/^	ENTER$/;"	e	enum:__anon13	file:
 ENTRY	src/search/ENTRY.c	/^} ENTRY;$/;"	t	typeref:struct:__anon14	file:
 ENXIO	src/errno/ENXIO.c	3;"	d	file:
 EOF	src/stdio/EOF.c	2;"	d	file:
@@ -269,7 +269,7 @@ FIFOTYPE	src/tar/FIFOTYPE.c	3;"	d	file:
 FILE	src/stdio/FILE.c	/^typedef struct __FILE                                                      FILE;$/;"	t	typeref:struct:__FILE	file:
 FILENAME_MAX	src/stdio/FILENAME_MAX.c	2;"	d	file:
 FILE_TAIL	src/nonstd/LIBC_INTERNAL.c	/^	FILE_TAIL,$/;"	e	enum:__anon4	file:
-FIND	src/search/ACTION.c	/^typedef enum { FIND, ENTER }                                             ACTION;$/;"	e	enum:__anon13	file:
+FIND	src/search/ACTION.c	/^	FIND,$/;"	e	enum:__anon13	file:
 FLT_DIG	src/float/FLT_DIG.c	2;"	d	file:
 FLT_EPSILON	src/float/FLT_EPSILON.c	2;"	d	file:
 FLT_EVAL_METHOD	src/float/FLT_EVAL_METHOD.c	3;"	d	file:
@@ -589,7 +589,7 @@ MS_SYNC	src/sys/mman/MS_SYNC.c	2;"	d	file:
 MUXID_ALL	src/stropts/MUXID_ALL.c	2;"	d	file:
 M_1_PI	src/math/M_1_PI.c	2;"	d	file:
 M_2_PI	src/math/M_2_PI.c	2;"	d	file:
-M_2_PI	src/math/M_2_SQRTPI.c	2;"	d	file:
+M_2_SQRTPI	src/math/M_2_SQRTPI.c	2;"	d	file:
 M_E	src/math/M_E.c	2;"	d	file:
 M_LN10	src/math/M_LN10.c	2;"	d	file:
 M_LN2	src/math/M_LN2.c	2;"	d	file:
@@ -964,6 +964,7 @@ SIG_ATOMIC_MIN	src/stdint/SIG_ATOMIC_MIN.c	2;"	d	file:
 SIG_BLOCK	src/signal/SIG_BLOCK.c	2;"	d	file:
 SIG_DFL	src/signal/SIG_DFL.c	2;"	d	file:
 SIG_ERR	src/signal/SIG_ERR.c	2;"	d	file:
+SIG_HOLD	src/signal/SIG_HOLD.c	2;"	d	file:
 SIG_IGN	src/signal/SIG_IGN.c	2;"	d	file:
 SIG_SETMASK	src/signal/SIG_SETMASK.c	2;"	d	file:
 SIG_UNBLOCK	src/signal/SIG_UNBLOCK.c	2;"	d	file:
@@ -1185,7 +1186,7 @@ VEOF	src/termios/VEOF.c	2;"	d	file:
 VEOL	src/termios/VEOL.c	2;"	d	file:
 VERASE	src/termios/VERASE.c	2;"	d	file:
 VINTR	src/termios/VINTR.c	2;"	d	file:
-VISIT	src/search/VISIT.c	/^typedef enum { preorder, postorder, endorder, leaf }                      VISIT;$/;"	t	typeref:enum:__anon15	file:
+VISIT	src/search/VISIT.c	/^} VISIT;$/;"	t	typeref:enum:__anon15	file:
 VKILL	src/termios/VKILL.c	2;"	d	file:
 VMIN	src/termios/VMIN.c	2;"	d	file:
 VQUIT	src/termios/VQUIT.c	2;"	d	file:
@@ -1255,7 +1256,7 @@ _POSIX2_BC_DIM_MAX	src/limits/_POSIX2_BC_DIM_MAX.c	2;"	d	file:
 _POSIX2_BC_SCALE_MAX	src/limits/_POSIX2_BC_SCALE_MAX.c	2;"	d	file:
 _POSIX2_BC_STRING_MAX	src/limits/_POSIX2_BC_STRING_MAX.c	2;"	d	file:
 _POSIX2_CHAR_TERM	src/unistd/_POSIX2_CHAR_TERM.c	2;"	d	file:
-_POSIX2_COLL_WEIGHTS_MAX	src/limits/_POSIX2_COLL_WEIGTHS_MAX.c	2;"	d	file:
+_POSIX2_COLL_WEIGHTS_MAX	src/limits/_POSIX2_COLL_WEIGHTS_MAX.c	2;"	d	file:
 _POSIX2_C_DEV	src/unistd/_POSIX2_C_DEV.c	2;"	d	file:
 _POSIX2_C_VERSION	src/unistd/_POSIX2_C_VERSION.c	11;"	d	file:
 _POSIX2_C_VERSION	src/unistd/_POSIX2_C_VERSION.c	13;"	d	file:
@@ -1387,15 +1388,9 @@ __stdin	src/stdio/__stdin.c	/^FILE *__stdin;$/;"	v
 __stdout	src/stdio/__stdout.c	/^FILE *__stdout;$/;"	v
 _exit	src/unistd/_exit.c	/^void _exit(int status)$/;"	f
 _longjmp	src/setjmp/_longjmp.c	/^void _longjmp(jmp_buf env, int val)$/;"	f
-_ret	src/nonstd/SYSCALL.c	/^	_type _ret = __syscall(_scno, __VA_ARGS__); \\$/;"	v
-_ret	src/nonstd/SYSCALL0.c	/^	_type _ret = __syscall(_scno); \\$/;"	v
-_scno	src/nonstd/SYSCALL.c	/^	static int _scno = -2; \\$/;"	v	file:
-_scno	src/nonstd/SYSCALL0.c	/^	static int _scno = -2; \\$/;"	v	file:
-_scno	src/nonstd/SYSCALL_NOFAIL.c	/^	static int _scno = -2; \\$/;"	v	file:
 _setjmp	src/setjmp/_setjmp.c	/^int _setjmp(jmp_buf env)$/;"	f
 _tolower	src/ctype/_tolower.c	2;"	d	file:
 _toupper	src/ctype/_toupper.c	2;"	d	file:
-_var	src/nonstd/SYSCALL_NUMBER.c	/^	static int _var = -2; do { \\$/;"	v	file:
 a64l	src/stdlib/a64l.c	/^long a64l(const char *s)$/;"	f
 abday	src/nonstd/struct_locale_t.c	/^		char *abday[7];$/;"	m	struct:__locale_t::__anon9	file:
 abmon	src/nonstd/struct_locale_t.c	/^		char *abmon[12];$/;"	m	struct:__locale_t::__anon9	file:
@@ -1561,7 +1556,7 @@ end_day	src/nonstd/struct_locale_t.c	/^			int end_day;$/;"	m	struct:__locale_t::
 end_month	src/nonstd/struct_locale_t.c	/^			int end_month;$/;"	m	struct:__locale_t::__anon9::__anon10	file:
 end_year	src/nonstd/struct_locale_t.c	/^			int end_year;$/;"	m	struct:__locale_t::__anon9::__anon10	file:
 endgrent	src/grp/endgrent.c	/^void endgrent(void)$/;"	f
-endorder	src/search/VISIT.c	/^typedef enum { preorder, postorder, endorder, leaf }                      VISIT;$/;"	e	enum:__anon15	file:
+endorder	src/search/VISIT.c	/^	endorder,$/;"	e	enum:__anon15	file:
 endpwent	src/pwd/endpwent.c	/^void endpwent(void)$/;"	f
 endutxent	src/utmpx/endutxent.c	/^void endutxent(void)$/;"	f
 environ	src/environ.c	/^char **environ;$/;"	v
@@ -1585,9 +1580,9 @@ execv	src/unistd/execv.c	/^int execv(const char *path, char *const argv[])$/;"	f
 execve	src/unistd/execve.c	/^int execve(const char *path, char *const argv[], char *const envp[])$/;"	f
 execvp	src/unistd/execvp.c	/^int execvp(const char *file, char *const argv[])$/;"	f
 exit	src/stdlib/exit.c	/^_Noreturn void exit(int status)$/;"	f
-exmp1	src/math/expm1.c	/^TYPE TGFN(exmp1)(TYPE x)$/;"	f
 exp	src/math/exp.c	/^TYPE TGFN(exp)(TYPE x)$/;"	f
 exp2	src/math/exp2.c	/^TYPE TGFN(exp2)(TYPE x)$/;"	f
+expm1	src/math/expm1.c	/^TYPE TGFN(expm1)(TYPE x)$/;"	f
 f_bavail	src/sys/statvfs/struct_statvfs.c	/^	fsblkcnt_t f_bavail;$/;"	m	struct:statvfs	file:
 f_bfree	src/sys/statvfs/struct_statvfs.c	/^	fsblkcnt_t f_bfree;$/;"	m	struct:statvfs	file:
 f_blocks	src/sys/statvfs/struct_statvfs.c	/^	fsblkcnt_t f_blocks;$/;"	m	struct:statvfs	file:
@@ -1874,7 +1869,7 @@ lconv	src/locale/struct_lconv.c	/^struct lconv {$/;"	s	file:
 ldexp	src/math/ldexp.c	/^TYPE TGFN(ldexp)(TYPE x, int exp)$/;"	f
 ldiv	src/stdlib/ldiv.c	/^ldiv_t ldiv(long int numer, long int denom)$/;"	f
 ldiv_t	src/stdlib/ldiv_t.c	/^} ldiv_t;$/;"	t	typeref:struct:__anon19	file:
-leaf	src/search/VISIT.c	/^typedef enum { preorder, postorder, endorder, leaf }                      VISIT;$/;"	e	enum:__anon15	file:
+leaf	src/search/VISIT.c	/^	leaf$/;"	e	enum:__anon15	file:
 len	src/stropts/struct_strpeek.c	/^	int len;$/;"	m	struct:strpeek	file:
 level	src/ftw/struct_FTW.c	/^	int level;$/;"	m	struct:FTW	file:
 lfind	src/search/lfind.c	/^void * lfind(const void * key, const void * base, size_t * nelp, size_t width, int (*compar) (const void *, const void *))$/;"	f
@@ -2000,7 +1995,7 @@ openlog	src/syslog/openlog.c	/^void openlog(const char * ident, int logopt, int 
 optarg	src/unistd/optarg.c	/^char * optarg;$/;"	v
 opterr	src/unistd/opterr.c	/^int opterr;$/;"	v
 optind	src/unistd/optind.c	/^int optind;$/;"	v
-optopt	src/unistd/optopt.c	/^int optopt = 0;$/;"	v
+optopt	src/unistd/optopt.c	/^int optopt;$/;"	v
 or	src/iso646/or.c	2;"	d	file:
 or_eq	src/iso646/or_eq.c	2;"	d	file:
 orientation	src/nonstd/struct_FILE.c	/^	int orientation;$/;"	m	struct:__FILE	file:
@@ -2022,9 +2017,9 @@ pollfd	src/poll/struct_pollfd.c	/^struct pollfd {$/;"	s	file:
 popen	src/stdio/popen.c	/^FILE * popen(const char * command, const char * mode)$/;"	f
 pos	src/nonstd/struct_FILE.c	/^	fpos_t pos;$/;"	m	struct:__FILE	file:
 positive_sign	src/locale/struct_lconv.c	/^	char *positive_sign;		\/* "" *\/$/;"	m	struct:lconv	file:
-postorder	src/search/VISIT.c	/^typedef enum { preorder, postorder, endorder, leaf }                      VISIT;$/;"	e	enum:__anon15	file:
+postorder	src/search/VISIT.c	/^	postorder,$/;"	e	enum:__anon15	file:
 pow	src/math/pow.c	/^TYPE TGFN(pow)(TYPE x, TYPE y)$/;"	f
-preorder	src/search/VISIT.c	/^typedef enum { preorder, postorder, endorder, leaf }                      VISIT;$/;"	e	enum:__anon15	file:
+preorder	src/search/VISIT.c	/^	preorder,$/;"	e	enum:__anon15	file:
 prev	src/nonstd/struct_FILE.c	/^	struct __FILE *prev;$/;"	m	struct:__FILE	typeref:struct:__FILE::__FILE	file:
 prev	src/nonstd/struct_atexit.c	/^	struct atexit *prev;$/;"	m	struct:atexit	typeref:struct:atexit::atexit	file:
 printf	src/stdio/printf.c	/^int printf(const char *format, ...)$/;"	f
@@ -2105,6 +2100,7 @@ sa_handler	src/signal/struct_sigaction.c	/^	void (*sa_handler)(int);$/;"	m	struc
 sa_mask	src/signal/struct_sigaction.c	/^	sigset_t sa_mask;$/;"	m	struct:sigaction	file:
 sa_sigaction	src/signal/struct_sigaction.c	/^	void (*sa_sigaction)(int, siginfo_t *, void *);	$/;"	m	struct:sigaction	file:
 sbrk	src/unistd/sbrk.c	/^void *sbrk(int incr)$/;"	f
+scalb	src/math/scalb.c	/^double scalb(double x, double n)$/;"	f
 scalbln	src/math/scalbln.c	/^TYPE TGFN(scalbln)(TYPE x, long int n)$/;"	f
 scalbn	src/math/scalbn.c	/^TYPE TGFN(scalbn)(TYPE x, int n)$/;"	f
 scanf	src/stdio/scanf.c	/^int scanf(const char * restrict format, ...)$/;"	f
