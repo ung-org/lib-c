@@ -1,0 +1,4 @@
+#include <fcntl.h>
+REFERENCE(sys/types/off_t.c)
+XOPEN(4)
+probably-posix

@@ -1,0 +1,4 @@
+#include <fcntl.h>
+REFERENCE(stdio/SEEK_END.c)
+XOPEN(4)
+probably-posix
