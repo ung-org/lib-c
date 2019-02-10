@@ -1,5 +1,5 @@
 #include <math.h>
-#define HUGE_VALL                       /* TODO: massive positive long double */
+#define HUGE_VALL                  0.0  /* TODO: massive positive long double */
 
 /*
 STDC(199901)
