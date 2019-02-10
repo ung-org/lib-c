@@ -1,6 +1,6 @@
 # define TGSOURCE "log10.c"
 #include <math.h>
-#include "nonstd/tgmath.h"
+#include "_tgmath.h"
 #include "errno.h"
 
 /** base-10 logarithm **/

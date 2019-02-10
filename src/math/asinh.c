@@ -1,5 +1,5 @@
 # define TGSOURCE "asinh.c"
-#include "nontsd/tgmath.h"
+#include "_tgmath.h"
 #include <math.h>
 
 TYPE TGFN(asinh)(TYPE x)

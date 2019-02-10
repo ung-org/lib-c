@@ -1,6 +1,6 @@
 # define TGSOURCE "pow.c"
 #include <math.h>
-#include "nonstd/tgmath.h"
+#include "_tgmath.h"
 #include "errno.h"
 
 /** exponentiation **/

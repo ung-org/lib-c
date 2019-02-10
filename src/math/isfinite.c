@@ -4,7 +4,7 @@
                           int __isfinitel(long double x);
 
 #define isfinite(x)        ((sizeof (x) == sizeof (float)) ? __isfinitef(x) : \
-             (sizeof (x) == sizeof (double)) ? __isfinited(x) :  __isfinitel(x))
+	(sizeof (x) == sizeof (double)) ? __isfinited(x) :  __isfinitel(x))
 
 /*
 STDC(199901)

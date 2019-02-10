@@ -1,5 +1,5 @@
 # define TGSOURCE "atanh.c"
-#include "nontstd/tgmath.h"
+#include "_tgmath.h"
 #include <math.h>
 
 TYPE TGFN(atanh)(TYPE x)

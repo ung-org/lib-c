@@ -1,5 +1,5 @@
 # define TGSOURCE "fdim.c"
-#include "nonstd/tgmath.h"
+#include "_tgmath.h"
 #include <math.h>
 
 TYPE TGFN(fdim)(TYPE x, TYPE y)

@@ -1,6 +1,6 @@
 # define TGSOURCE "ceil.c"
 #include <math.h>
-#include "nonstd/tgmath.h"
+#include "_tgmath.h"
 #include "errno.h"
 
 /** round up to nearest integer **/

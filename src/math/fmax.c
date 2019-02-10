@@ -1,5 +1,5 @@
 # define TGSOURCE "fmax.c"
-#include "nonstd/tgmath.h"
+#include "_tgmath.h"
 #include <math.h>
 
 TYPE TGFN(fmax)(TYPE x, TYPE y)

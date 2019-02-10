@@ -1,7 +1,7 @@
 # define TGSOURCE "atan.c"
 #include <math.h>
 #include "errno.h"
-#include "nonstd/tgmath.h"
+#include "_tgmath.h"
 
 /** arc tangent **/
 TYPE TGFN(atan)(TYPE x)

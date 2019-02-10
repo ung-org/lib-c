@@ -1,6 +1,6 @@
 # define TGSOURCE "tan.c"
 #include <math.h>
-#include "nonstd/tgmath.h"
+#include "_tgmath.h"
 #include "errno.h"
 
 /** tangent **/

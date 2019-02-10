@@ -1,5 +1,5 @@
 # define TGSOURCE "lrint.c"
-#include "nonstd/tgmath.h"
+#include "_tgmath.h"
 #include <math.h>
 
 long int TGFN(lrint)(TYPE x)

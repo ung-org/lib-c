@@ -1,5 +1,5 @@
 # define TGSOURCE "remquo.c"
-#include "nonstd/tgmath.h"
+#include "_tgmath.h"
 #include <math.h>
 
 TYPE TGFN(remquo)(TYPE x, TYPE y, int *quo)

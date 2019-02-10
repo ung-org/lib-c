@@ -1,6 +1,6 @@
 # define TGSOURCE "modf.c"
 #include <math.h>
-#include "nonstd/tgmath.h"
+#include "_tgmath.h"
 #include "errno.h"
 
 /** decompose floating-point numbers **/

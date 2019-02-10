@@ -1,6 +1,6 @@
 # define TGSOURCE "sqrt.c"
 #include <math.h>
-#include "nonstd/tgmath.h"
+#include "_tgmath.h"
 #include "errno.h"
 
 /** square root **/

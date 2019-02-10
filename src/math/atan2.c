@@ -1,6 +1,6 @@
 # define TGSOURCE "atan2.c"
 #include <math.h>
-#include "nonstd/tgmath.h"
+#include "_tgmath.h"
 #include "errno.h"
 #include "nonstd/assert.h"
 

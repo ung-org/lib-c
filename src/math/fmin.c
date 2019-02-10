@@ -1,5 +1,5 @@
 # define TGSOURCE "fmin.c"
-#include "nonstd/tgmath.h"
+#include "_tgmath.h"
 #include <math.h>
 
 TYPE TGFN(fmin)(TYPE x, TYPE y)

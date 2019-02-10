@@ -1,5 +1,5 @@
 # define TGSOURCE "nextafter.c"
-#include "nonstd/tgmath.h"
+#include "_tgmath.h"
 #include <math.h>
 
 TYPE TGFN(nextafter)(TYPE x, TYPE y)

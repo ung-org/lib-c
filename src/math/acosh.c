@@ -1,5 +1,5 @@
 # define TGSOURCE "acosh.c"
-#include "nontstd/tgmath.h"
+#include "_tgmath.h"
 #include <math.h>
 
 TYPE TGFN(acosh)(TYPE x)

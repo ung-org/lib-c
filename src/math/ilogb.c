@@ -1,5 +1,5 @@
 # define TGSOURCE "ilogb.c"
-#include "nonstd/tgmath.h"
+#include "_tgmath.h"
 #include <math.h>
 
 TYPE TGFN(ilogb)(TYPE x)

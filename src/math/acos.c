@@ -1,7 +1,7 @@
 # define TGSOURCE "std/9899-1990/math/acos.c"
 #include <math.h>
 #include "errno.h"
-#include "nonstd/tgmath.h"
+#include "_tgmath.h"
 
 /** arc cosine **/
 TYPE TGFN(acos)(TYPE x)

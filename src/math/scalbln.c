@@ -1,5 +1,5 @@
 # define TGSOURCE "scalbln.c"
-#include "nonstd/tgmath.h"
+#include "_tgmath.h"
 #include <math.h>
 
 TYPE TGFN(scalbln)(TYPE x, long int n)

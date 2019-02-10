@@ -1,5 +1,5 @@
 #define TGSOURCE "log2.c"
-#include "nonstd/tgmath.h"
+#include "_tgmath.h"
 #include <math.h>
 
 TYPE TGFN(log2)(TYPE x)

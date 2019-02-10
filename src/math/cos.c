@@ -1,6 +1,6 @@
 # define TGSOURCE "cos.c"
 #include <math.h>
-#include "nonstd/tgmath.h"
+#include "_tgmath.h"
 #include "errno.h"
 
 /** cosine **/

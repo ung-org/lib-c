@@ -1,5 +1,5 @@
 # define TGSOURCE "nearbyint.c"
-#include "nonstd/tgmath.h"
+#include "_tgmath.h"
 #include <math.h>
 
 TYPE TGFN(nearbyint)(TYPE x)
