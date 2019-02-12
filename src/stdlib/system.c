@@ -20,6 +20,9 @@ int system(const char * string)
 		return 0;
 	}
 
+	/* ignore SIGINT and SIGQUIT */
+	/* block SIGCHLD */
+
 	pid = fork();
 	if (pid < 0) {
 		/* errno comes from fork() */
@@ -27,13 +30,19 @@ int system(const char * string)
 	}
 
 	if (pid == 0) {
+		/* restore signal handlers */
 		execl("/bin/sh", "sh", "-c", string, (char *)0);
-		_exit(1);
+		_exit(127);
 	}
 	
 	if (waitpid(pid, &status, 0) == -1) {
 		errno = ECHILD;
-		return -1;
+		status = -1;
+	}
+
+	/* restore signal handlers */
+	if (WIFSIGNALED(status)) {
+		
 	}
 
 	return status;
