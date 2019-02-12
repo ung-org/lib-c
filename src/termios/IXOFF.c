@@ -1,5 +1,5 @@
 #include <termios.h>
-#define IXOFF /* TBD */
+#define IXOFF                                                             (1<<8)
 /*
 POSIX(1)
 */

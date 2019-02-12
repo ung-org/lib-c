@@ -1,5 +1,5 @@
 #include <termios.h>
-#define PARMRK /* TBD */
+#define PARMRK                                                            (1<<9)
 /*
 POSIX(1)
 */

@@ -1,5 +1,5 @@
 #include <termios.h>
-#define ICRNL /* TBD */
+#define ICRNL                                                             (1<<1)
 /*
 POSIX(1)
 */

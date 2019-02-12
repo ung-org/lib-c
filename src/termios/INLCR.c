@@ -1,5 +1,5 @@
 #include <termios.h>
-#define INLCR /* TBD */
+#define INLCR                                                             (1<<5)
 /*
 POSIX(1)
 */

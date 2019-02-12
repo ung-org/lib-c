@@ -1,5 +1,5 @@
 #include <termios.h>
-#define IGNCR /* TBD */
+#define IGNCR                                                             (1<<3)
 /*
 POSIX(1)
 */

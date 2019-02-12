@@ -1,5 +1,5 @@
 #include <termios.h>
-#define IGNPAR /* TBD */
+#define IGNPAR                                                            (1<<4)
 /*
 POSIX(1)
 */

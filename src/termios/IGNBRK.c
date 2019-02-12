@@ -1,5 +1,5 @@
 #include <termios.h>
-#define IGNBRK /* TBD */
+#define IGNBRK                                                            (1<<2)
 /*
 POSIX(1)
 */
