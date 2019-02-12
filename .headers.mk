@@ -1,934 +1,309 @@
 .POSIX:
-
+.DEFAULT: headers
 include config.mk
 
-default: headers
-
-assert_h_SOURCES =  \
-	src/9899-1990/assert/assert.c
-
-$(INCDIR)/assert.h: $(assert_h_SOURCES)
-	sh mkh.sh $@ $(assert_h_SOURCES)
-
-cpio_h_SOURCES =  \
-	src/POSIX.1-1988/cpio/C_IRGRP.c \
-	src/POSIX.1-1988/cpio/C_IROTH.c \
-	src/POSIX.1-1988/cpio/C_IRUSR.c \
-	src/POSIX.1-1988/cpio/C_ISBLK.c \
-	src/POSIX.1-1988/cpio/C_ISCHR.c \
-	src/POSIX.1-1988/cpio/C_ISCTG.c \
-	src/POSIX.1-1988/cpio/C_ISDIR.c \
-	src/POSIX.1-1988/cpio/C_ISFIFO.c \
-	src/POSIX.1-1988/cpio/C_ISGID.c \
-	src/POSIX.1-1988/cpio/C_ISLNK.c \
-	src/POSIX.1-1988/cpio/C_ISREG.c \
-	src/POSIX.1-1988/cpio/C_ISSOCK.c \
-	src/POSIX.1-1988/cpio/C_ISUID.c \
-	src/POSIX.1-1988/cpio/C_ISVTX.c \
-	src/POSIX.1-1988/cpio/C_IWGRP.c \
-	src/POSIX.1-1988/cpio/C_IWOTH.c \
-	src/POSIX.1-1988/cpio/C_IWUSR.c \
-	src/POSIX.1-1988/cpio/C_IXGRP.c \
-	src/POSIX.1-1988/cpio/C_IXOTH.c \
-	src/POSIX.1-1988/cpio/C_IXUSR.c \
-	src/POSIX.1-1988/cpio/MAGIC.c
-
-$(INCDIR)/cpio.h: $(cpio_h_SOURCES)
-	sh mkh.sh $@ $(cpio_h_SOURCES)
-
-ctype_h_SOURCES =  \
-	src/9899-1990/ctype/isalnum.c \
-	src/9899-1990/ctype/isalpha.c \
-	src/9899-1990/ctype/iscntrl.c \
-	src/9899-1990/ctype/isdigit.c \
-	src/9899-1990/ctype/isgraph.c \
-	src/9899-1990/ctype/islower.c \
-	src/9899-1990/ctype/isprint.c \
-	src/9899-1990/ctype/ispunct.c \
-	src/9899-1990/ctype/isspace.c \
-	src/9899-1990/ctype/isupper.c \
-	src/9899-1990/ctype/isxdigit.c \
-	src/9899-1990/ctype/tolower.c \
-	src/9899-1990/ctype/toupper.c
-
-$(INCDIR)/ctype.h: $(ctype_h_SOURCES)
-	sh mkh.sh $@ $(ctype_h_SOURCES)
-
-dirent_h_SOURCES =  \
-	src/POSIX.1-1988/dirent/DIR.c \
-	src/POSIX.1-1988/dirent/closedir.c \
-	src/POSIX.1-1988/dirent/opendir.c \
-	src/POSIX.1-1988/dirent/readdir.c \
-	src/POSIX.1-1988/dirent/rewinddir.c \
-	src/POSIX.1-1988/dirent/struct_dirent.c
-
-$(INCDIR)/dirent.h: $(dirent_h_SOURCES)
-	sh mkh.sh $@ $(dirent_h_SOURCES)
-
-errno_h_SOURCES =  \
-	src/9899-1990/errno/EDOM.c \
-	src/9899-1990/errno/ERANGE.c \
-	src/9899-1990/errno/errno.c \
-	src/POSIX.1-1988/errno/E2BIG.c \
-	src/POSIX.1-1988/errno/EACCES.c \
-	src/POSIX.1-1988/errno/EAGAIN.c \
-	src/POSIX.1-1988/errno/EBADF.c \
-	src/POSIX.1-1988/errno/EBUSY.c \
-	src/POSIX.1-1988/errno/ECHILD.c \
-	src/POSIX.1-1988/errno/EDEADLK.c \
-	src/POSIX.1-1988/errno/EEXIST.c \
-	src/POSIX.1-1988/errno/EFAULT.c \
-	src/POSIX.1-1988/errno/EFBIG.c \
-	src/POSIX.1-1988/errno/EINTR.c \
-	src/POSIX.1-1988/errno/EINVAL.c \
-	src/POSIX.1-1988/errno/EIO.c \
-	src/POSIX.1-1988/errno/EISDIR.c \
-	src/POSIX.1-1988/errno/EMFILE.c \
-	src/POSIX.1-1988/errno/EMLINK.c \
-	src/POSIX.1-1988/errno/ENAMETOOLONG.c \
-	src/POSIX.1-1988/errno/ENFILE.c \
-	src/POSIX.1-1988/errno/ENODEV.c \
-	src/POSIX.1-1988/errno/ENOENT.c \
-	src/POSIX.1-1988/errno/ENOEXEC.c \
-	src/POSIX.1-1988/errno/ENOLCK.c \
-	src/POSIX.1-1988/errno/ENOMEM.c \
-	src/POSIX.1-1988/errno/ENOSPC.c \
-	src/POSIX.1-1988/errno/ENOSYS.c \
-	src/POSIX.1-1988/errno/ENOTDIR.c \
-	src/POSIX.1-1988/errno/ENOTEMPTY.c \
-	src/POSIX.1-1988/errno/ENOTTY.c \
-	src/POSIX.1-1988/errno/ENXIO.c \
-	src/POSIX.1-1988/errno/EPERM.c \
-	src/POSIX.1-1988/errno/EPIPE.c \
-	src/POSIX.1-1988/errno/EROFS.c \
-	src/POSIX.1-1988/errno/ESPIPE.c \
-	src/POSIX.1-1988/errno/ESRCH.c \
-	src/POSIX.1-1988/errno/EXDEV.c \
-	src/9899-1990-AMD1/errno/EILSEQ.c
-
-$(INCDIR)/errno.h: $(errno_h_SOURCES)
-	sh mkh.sh $@ $(errno_h_SOURCES)
-
-fcntl_h_SOURCES =  \
-	src/POSIX.1-1988/fcntl/FD_CLOEXEC.c \
-	src/POSIX.1-1988/fcntl/F_DUPFD.c \
-	src/POSIX.1-1988/fcntl/F_GETFD.c \
-	src/POSIX.1-1988/fcntl/F_GETFL.c \
-	src/POSIX.1-1988/fcntl/F_GETLK.c \
-	src/POSIX.1-1988/fcntl/F_RDLCK.c \
-	src/POSIX.1-1988/fcntl/F_SETFD.c \
-	src/POSIX.1-1988/fcntl/F_SETFL.c \
-	src/POSIX.1-1988/fcntl/F_SETLK.c \
-	src/POSIX.1-1988/fcntl/F_SETLKW.c \
-	src/POSIX.1-1988/fcntl/F_UNLCK.c \
-	src/POSIX.1-1988/fcntl/F_WRLCK.c \
-	src/POSIX.1-1988/fcntl/O_ACCMODE.c \
-	src/POSIX.1-1988/fcntl/O_APPEND.c \
-	src/POSIX.1-1988/fcntl/O_CREAT.c \
-	src/POSIX.1-1988/fcntl/O_EXCL.c \
-	src/POSIX.1-1988/fcntl/O_NOCTTY.c \
-	src/POSIX.1-1988/fcntl/O_NONBLOCK.c \
-	src/POSIX.1-1988/fcntl/O_RDONLY.c \
-	src/POSIX.1-1988/fcntl/O_RDWR.c \
-	src/POSIX.1-1988/fcntl/O_TRUNC.c \
-	src/POSIX.1-1988/fcntl/O_WRONLY.c \
-	src/POSIX.1-1988/fcntl/creat.c \
-	src/POSIX.1-1988/fcntl/fcntl.c \
-	src/POSIX.1-1988/fcntl/open.c \
-	src/POSIX.1-1988/fcntl/struct_flock.c
-
-$(INCDIR)/fcntl.h: $(fcntl_h_SOURCES)
-	sh mkh.sh $@ $(fcntl_h_SOURCES)
-
-float_h_SOURCES =  \
-	src/9899-1990/float/DBL_DIG.c \
-	src/9899-1990/float/DBL_EPSILON.c \
-	src/9899-1990/float/DBL_MANT_DIG.c \
-	src/9899-1990/float/DBL_MAX.c \
-	src/9899-1990/float/DBL_MAX_10_EXP.c \
-	src/9899-1990/float/DBL_MAX_EXP.c \
-	src/9899-1990/float/DBL_MIN.c \
-	src/9899-1990/float/DBL_MIN_10_EXP.c \
-	src/9899-1990/float/DBL_MIN_EXP.c \
-	src/9899-1990/float/FLT_DIG.c \
-	src/9899-1990/float/FLT_EPSILON.c \
-	src/9899-1990/float/FLT_MANT_DIG.c \
-	src/9899-1990/float/FLT_MAX.c \
-	src/9899-1990/float/FLT_MAX_10_EXP.c \
-	src/9899-1990/float/FLT_MAX_EXP.c \
-	src/9899-1990/float/FLT_MIN.c \
-	src/9899-1990/float/FLT_MIN_10_EXP.c \
-	src/9899-1990/float/FLT_MIN_EXP.c \
-	src/9899-1990/float/FLT_RADIX.c \
-	src/9899-1990/float/FLT_ROUNDS.c \
-	src/9899-1990/float/LDBL_DIG.c \
-	src/9899-1990/float/LDBL_EPSILON.c \
-	src/9899-1990/float/LDBL_MANT_DIG.c \
-	src/9899-1990/float/LDBL_MAX.c \
-	src/9899-1990/float/LDBL_MAX_10_EXP.c \
-	src/9899-1990/float/LDBL_MAX_EXP.c \
-	src/9899-1990/float/LDBL_MIN.c \
-	src/9899-1990/float/LDBL_MIN_10_EXP.c \
-	src/9899-1990/float/LDBL_MIN_EXP.c
-
-$(INCDIR)/float.h: $(float_h_SOURCES)
-	sh mkh.sh $@ $(float_h_SOURCES)
-
-grp_h_SOURCES =  \
-	src/POSIX.1-1988/grp/getgrgid.c \
-	src/POSIX.1-1988/grp/getgrnam.c \
-	src/POSIX.1-1988/grp/struct_group.c
-
-$(INCDIR)/grp.h: $(grp_h_SOURCES)
-	sh mkh.sh $@ $(grp_h_SOURCES)
-
-iso646_h_SOURCES =  \
-	src/9899-1990-AMD1/iso646/and.c \
-	src/9899-1990-AMD1/iso646/and_eq.c \
-	src/9899-1990-AMD1/iso646/bitand.c \
-	src/9899-1990-AMD1/iso646/bitor.c \
-	src/9899-1990-AMD1/iso646/compl.c \
-	src/9899-1990-AMD1/iso646/not.c \
-	src/9899-1990-AMD1/iso646/not_eq.c \
-	src/9899-1990-AMD1/iso646/or.c \
-	src/9899-1990-AMD1/iso646/or_eq.c \
-	src/9899-1990-AMD1/iso646/xor.c \
-	src/9899-1990-AMD1/iso646/xor_eq.c
-
-$(INCDIR)/iso646.h: $(iso646_h_SOURCES)
-	sh mkh.sh $@ $(iso646_h_SOURCES)
-
-limits_h_SOURCES =  \
-	src/9899-1990/limits/CHAR_BIT.c \
-	src/9899-1990/limits/CHAR_MAX.c \
-	src/9899-1990/limits/CHAR_MIN.c \
-	src/9899-1990/limits/INT_MAX.c \
-	src/9899-1990/limits/INT_MIN.c \
-	src/9899-1990/limits/LONG_MAX.c \
-	src/9899-1990/limits/LONG_MIN.c \
-	src/9899-1990/limits/MB_LEN_MAX.c \
-	src/9899-1990/limits/SCHAR_MAX.c \
-	src/9899-1990/limits/SCHAR_MIN.c \
-	src/9899-1990/limits/SHRT_MAX.c \
-	src/9899-1990/limits/SHRT_MIN.c \
-	src/9899-1990/limits/UCHAR_MAX.c \
-	src/9899-1990/limits/UINT_MAX.c \
-	src/9899-1990/limits/ULONG_MAX.c \
-	src/9899-1990/limits/USHRT_MAX.c \
-	src/POSIX.1-1988/limits/ARG_MAX.c \
-	src/POSIX.1-1988/limits/CHILD_MAX.c \
-	src/POSIX.1-1988/limits/LINK_MAX.c \
-	src/POSIX.1-1988/limits/MAX_CANON.c \
-	src/POSIX.1-1988/limits/MAX_INPUT.c \
-	src/POSIX.1-1988/limits/NAME_MAX.c \
-	src/POSIX.1-1988/limits/NGROUPS_MAX.c \
-	src/POSIX.1-1988/limits/OPEN_MAX.c \
-	src/POSIX.1-1988/limits/PATH_MAX.c \
-	src/POSIX.1-1988/limits/PIPE_BUF.c \
-	src/POSIX.1-1988/limits/_POSIX_ARG_MAX.c \
-	src/POSIX.1-1988/limits/_POSIX_CHILD_MAX.c \
-	src/POSIX.1-1988/limits/_POSIX_LINK_MAX.c \
-	src/POSIX.1-1988/limits/_POSIX_MAX_CANON.c \
-	src/POSIX.1-1988/limits/_POSIX_MAX_INPUT.c \
-	src/POSIX.1-1988/limits/_POSIX_NAME_MAX.c \
-	src/POSIX.1-1988/limits/_POSIX_NGROUPS_MAX.c \
-	src/POSIX.1-1988/limits/_POSIX_OPEN_MAX.c \
-	src/POSIX.1-1988/limits/_POSIX_PATH_MAX.c \
-	src/POSIX.1-1988/limits/_POSIX_PIPE_BUF.c \
-	src/POSIX.1-1990/limits/SSIZE_MAX.c \
-	src/POSIX.1-1990/limits/STREAM_MAX.c \
-	src/POSIX.1-1990/limits/TZNAME_MAX.c \
-	src/POSIX.1-1990/limits/_POSIX_SSIZE_MAX.c \
-	src/POSIX.1-1990/limits/_POSIX_STREAM_MAX.c \
-	src/POSIX.1-1990/limits/_POSIX_TZNAME_MAX.c
-
-$(INCDIR)/limits.h: $(limits_h_SOURCES)
-	sh mkh.sh $@ $(limits_h_SOURCES)
-
-locale_h_SOURCES =  \
-	src/9899-1990/locale/LC_ALL.c \
-	src/9899-1990/locale/LC_COLLATE.c \
-	src/9899-1990/locale/LC_CTYPE.c \
-	src/9899-1990/locale/LC_MONETARY.c \
-	src/9899-1990/locale/LC_NUMERIC.c \
-	src/9899-1990/locale/LC_TIME.c \
-	src/9899-1990/locale/localeconv.c \
-	src/9899-1990/locale/setlocale.c \
-	src/9899-1990/locale/struct_lconv.c \
-	src/9899-1990/locale/NULL.ref \
-	src/9899-1990/stddef/NULL.c
-
-$(INCDIR)/locale.h: $(locale_h_SOURCES)
-	sh mkh.sh $@ $(locale_h_SOURCES)
-
-math_h_SOURCES =  \
-	src/9899-1990/math/HUGE_VAL.c \
-	src/9899-1990/math/acos.c \
-	src/9899-1990/math/asin.c \
-	src/9899-1990/math/atan.c \
-	src/9899-1990/math/atan2.c \
-	src/9899-1990/math/ceil.c \
-	src/9899-1990/math/cos.c \
-	src/9899-1990/math/cosh.c \
-	src/9899-1990/math/exp.c \
-	src/9899-1990/math/fabs.c \
-	src/9899-1990/math/floor.c \
-	src/9899-1990/math/fmod.c \
-	src/9899-1990/math/frexp.c \
-	src/9899-1990/math/ldexp.c \
-	src/9899-1990/math/log.c \
-	src/9899-1990/math/log10.c \
-	src/9899-1990/math/modf.c \
-	src/9899-1990/math/pow.c \
-	src/9899-1990/math/sin.c \
-	src/9899-1990/math/sinh.c \
-	src/9899-1990/math/sqrt.c \
-	src/9899-1990/math/tan.c \
-	src/9899-1990/math/tanh.c
-
-$(INCDIR)/math.h: $(math_h_SOURCES)
-	sh mkh.sh $@ $(math_h_SOURCES)
-
-pwd_h_SOURCES =  \
-	src/POSIX.1-1988/pwd/getpwnam.c \
-	src/POSIX.1-1988/pwd/getpwuid.c \
-	src/POSIX.1-1988/pwd/struct_passwd.c
-
-$(INCDIR)/pwd.h: $(pwd_h_SOURCES)
-	sh mkh.sh $@ $(pwd_h_SOURCES)
-
-setjmp_h_SOURCES =  \
-	src/9899-1990/setjmp/jmp_buf.c \
-	src/9899-1990/setjmp/longjmp.c \
-	src/9899-1990/setjmp/setjmp.c \
-	src/POSIX.1-1988/setjmp/sigjmp_buf.c \
-	src/POSIX.1-1988/setjmp/siglongjmp.c \
-	src/POSIX.1-1988/setjmp/sigsetjmp.c
-
-$(INCDIR)/setjmp.h: $(setjmp_h_SOURCES)
-	sh mkh.sh $@ $(setjmp_h_SOURCES)
-
-signal_h_SOURCES =  \
-	src/9899-1990/signal/SIGABRT.c \
-	src/9899-1990/signal/SIGFPE.c \
-	src/9899-1990/signal/SIGILL.c \
-	src/9899-1990/signal/SIGINT.c \
-	src/9899-1990/signal/SIGSEGV.c \
-	src/9899-1990/signal/SIGTERM.c \
-	src/9899-1990/signal/SIG_DFL.c \
-	src/9899-1990/signal/SIG_ERR.c \
-	src/9899-1990/signal/SIG_IGN.c \
-	src/9899-1990/signal/raise.c \
-	src/9899-1990/signal/sig_atomic_t.c \
-	src/9899-1990/signal/signal.c \
-	src/POSIX.1-1988/signal/SA_NOCLDSTOP.c \
-	src/POSIX.1-1988/signal/SIGALRM.c \
-	src/POSIX.1-1988/signal/SIGCHLD.c \
-	src/POSIX.1-1988/signal/SIGCONT.c \
-	src/POSIX.1-1988/signal/SIGHUP.c \
-	src/POSIX.1-1988/signal/SIGKILL.c \
-	src/POSIX.1-1988/signal/SIGPIPE.c \
-	src/POSIX.1-1988/signal/SIGQUIT.c \
-	src/POSIX.1-1988/signal/SIGSTOP.c \
-	src/POSIX.1-1988/signal/SIGTSTP.c \
-	src/POSIX.1-1988/signal/SIGTTIN.c \
-	src/POSIX.1-1988/signal/SIGTTOU.c \
-	src/POSIX.1-1988/signal/SIGUSR1.c \
-	src/POSIX.1-1988/signal/SIGUSR2.c \
-	src/POSIX.1-1988/signal/SIG_BLOCK.c \
-	src/POSIX.1-1988/signal/SIG_SETMASK.c \
-	src/POSIX.1-1988/signal/SIG_UNBLOCK.c \
-	src/POSIX.1-1988/signal/kill.c \
-	src/POSIX.1-1988/signal/sigaction.c \
-	src/POSIX.1-1988/signal/sigaddset.c \
-	src/POSIX.1-1988/signal/sigdelset.c \
-	src/POSIX.1-1988/signal/sigemptyset.c \
-	src/POSIX.1-1988/signal/sigfillset.c \
-	src/POSIX.1-1988/signal/sigismember.c \
-	src/POSIX.1-1988/signal/sigpending.c \
-	src/POSIX.1-1988/signal/sigprocmask.c \
-	src/POSIX.1-1988/signal/sigset_t.c \
-	src/POSIX.1-1988/signal/sigsuspend.c \
-	src/POSIX.1-1988/signal/struct_sigaction.c
-
-$(INCDIR)/signal.h: $(signal_h_SOURCES)
-	sh mkh.sh $@ $(signal_h_SOURCES)
-
-stdarg_h_SOURCES =  \
-	src/9899-1990/stdarg/va_arg.c \
-	src/9899-1990/stdarg/va_end.c \
-	src/9899-1990/stdarg/va_list.c \
-	src/9899-1990/stdarg/va_start.c
-
-$(INCDIR)/stdarg.h: $(stdarg_h_SOURCES)
-	sh mkh.sh $@ $(stdarg_h_SOURCES)
-
-stddef_h_SOURCES =  \
-	src/9899-1990/stddef/NULL.c \
-	src/9899-1990/stddef/offsetof.c \
-	src/9899-1990/stddef/ptrdiff_t.c \
-	src/9899-1990/stddef/size_t.c \
-	src/9899-1990/stddef/wchar_t.c
-
-$(INCDIR)/stddef.h: $(stddef_h_SOURCES)
-	sh mkh.sh $@ $(stddef_h_SOURCES)
-
-stdio_h_SOURCES =  \
-	src/9899-1990/stdio/BUFSIZ.c \
-	src/9899-1990/stdio/EOF.c \
-	src/9899-1990/stdio/FILE.c \
-	src/9899-1990/stdio/FILENAME_MAX.c \
-	src/9899-1990/stdio/FOPEN_MAX.c \
-	src/9899-1990/stdio/L_tmpnam.c \
-	src/9899-1990/stdio/SEEK_CUR.c \
-	src/9899-1990/stdio/SEEK_END.c \
-	src/9899-1990/stdio/SEEK_SET.c \
-	src/9899-1990/stdio/TMP_MAX.c \
-	src/9899-1990/stdio/_IOFBF.c \
-	src/9899-1990/stdio/_IOLBF.c \
-	src/9899-1990/stdio/_IONBF.c \
-	src/9899-1990/stdio/clearerr.c \
-	src/9899-1990/stdio/fclose.c \
-	src/9899-1990/stdio/feof.c \
-	src/9899-1990/stdio/ferror.c \
-	src/9899-1990/stdio/fflush.c \
-	src/9899-1990/stdio/fgetc.c \
-	src/9899-1990/stdio/fgetpos.c \
-	src/9899-1990/stdio/fgets.c \
-	src/9899-1990/stdio/fopen.c \
-	src/9899-1990/stdio/fpos_t.c \
-	src/9899-1990/stdio/fprintf.c \
-	src/9899-1990/stdio/fputc.c \
-	src/9899-1990/stdio/fputs.c \
-	src/9899-1990/stdio/fread.c \
-	src/9899-1990/stdio/freopen.c \
-	src/9899-1990/stdio/fscanf.c \
-	src/9899-1990/stdio/fseek.c \
-	src/9899-1990/stdio/fsetpos.c \
-	src/9899-1990/stdio/ftell.c \
-	src/9899-1990/stdio/fwrite.c \
-	src/9899-1990/stdio/getc.c \
-	src/9899-1990/stdio/getchar.c \
-	src/9899-1990/stdio/gets.c \
-	src/9899-1990/stdio/perror.c \
-	src/9899-1990/stdio/printf.c \
-	src/9899-1990/stdio/putc.c \
-	src/9899-1990/stdio/putchar.c \
-	src/9899-1990/stdio/puts.c \
-	src/9899-1990/stdio/remove.c \
-	src/9899-1990/stdio/rename.c \
-	src/9899-1990/stdio/rewind.c \
-	src/9899-1990/stdio/scanf.c \
-	src/9899-1990/stdio/setbuf.c \
-	src/9899-1990/stdio/setvbuf.c \
-	src/9899-1990/stdio/sprintf.c \
-	src/9899-1990/stdio/sscanf.c \
-	src/9899-1990/stdio/stderr.c \
-	src/9899-1990/stdio/stdin.c \
-	src/9899-1990/stdio/stdout.c \
-	src/9899-1990/stdio/tmpfile.c \
-	src/9899-1990/stdio/tmpnam.c \
-	src/9899-1990/stdio/ungetc.c \
-	src/9899-1990/stdio/vfprintf.c \
-	src/9899-1990/stdio/vprintf.c \
-	src/9899-1990/stdio/vsprintf.c \
-	src/9899-1990/stdio/NULL.ref \
-	src/9899-1990/stddef/NULL.c \
-	src/9899-1990/stdio/size_t.ref \
-	src/9899-1990/stddef/size_t.c \
-	src/9899-1990/stdio/va_list.ref \
-	src/9899-1990/stdarg/va_list.c \
-	src/POSIX.1-1988/stdio/L_ctermid.c \
-	src/POSIX.1-1988/stdio/L_cuserid.c \
-	src/POSIX.1-1988/stdio/fdopen.c \
-	src/POSIX.1-1988/stdio/fileno.c
-
-$(INCDIR)/stdio.h: $(stdio_h_SOURCES)
-	sh mkh.sh $@ $(stdio_h_SOURCES)
-
-stdlib_h_SOURCES =  \
-	src/9899-1990/stdlib/EXIT_FAILURE.c \
-	src/9899-1990/stdlib/EXIT_SUCCESS.c \
-	src/9899-1990/stdlib/MB_CUR_MAX.c \
-	src/9899-1990/stdlib/RAND_MAX.c \
-	src/9899-1990/stdlib/abort.c \
-	src/9899-1990/stdlib/abs.c \
-	src/9899-1990/stdlib/atexit.c \
-	src/9899-1990/stdlib/atof.c \
-	src/9899-1990/stdlib/atoi.c \
-	src/9899-1990/stdlib/atol.c \
-	src/9899-1990/stdlib/bsearch.c \
-	src/9899-1990/stdlib/calloc.c \
-	src/9899-1990/stdlib/div.c \
-	src/9899-1990/stdlib/div_t.c \
-	src/9899-1990/stdlib/exit.c \
-	src/9899-1990/stdlib/free.c \
-	src/9899-1990/stdlib/getenv.c \
-	src/9899-1990/stdlib/labs.c \
-	src/9899-1990/stdlib/ldiv.c \
-	src/9899-1990/stdlib/ldiv_t.c \
-	src/9899-1990/stdlib/malloc.c \
-	src/9899-1990/stdlib/mblen.c \
-	src/9899-1990/stdlib/mbstowcs.c \
-	src/9899-1990/stdlib/mbtowc.c \
-	src/9899-1990/stdlib/qsort.c \
-	src/9899-1990/stdlib/rand.c \
-	src/9899-1990/stdlib/realloc.c \
-	src/9899-1990/stdlib/srand.c \
-	src/9899-1990/stdlib/strtod.c \
-	src/9899-1990/stdlib/strtol.c \
-	src/9899-1990/stdlib/strtoul.c \
-	src/9899-1990/stdlib/system.c \
-	src/9899-1990/stdlib/wcstombs.c \
-	src/9899-1990/stdlib/wctomb.c \
-	src/9899-1990/stdlib/NULL.ref \
-	src/9899-1990/stddef/NULL.c \
-	src/9899-1990/stdlib/size_t.ref \
-	src/9899-1990/stddef/size_t.c \
-	src/9899-1990/stdlib/wchar_t.ref \
-	src/9899-1990/stddef/wchar_t.c
-
-$(INCDIR)/stdlib.h: $(stdlib_h_SOURCES)
-	sh mkh.sh $@ $(stdlib_h_SOURCES)
-
-string_h_SOURCES =  \
-	src/9899-1990/string/memchr.c \
-	src/9899-1990/string/memcmp.c \
-	src/9899-1990/string/memcpy.c \
-	src/9899-1990/string/memmove.c \
-	src/9899-1990/string/memset.c \
-	src/9899-1990/string/strcat.c \
-	src/9899-1990/string/strchr.c \
-	src/9899-1990/string/strcmp.c \
-	src/9899-1990/string/strcoll.c \
-	src/9899-1990/string/strcpy.c \
-	src/9899-1990/string/strcspn.c \
-	src/9899-1990/string/strerror.c \
-	src/9899-1990/string/strlen.c \
-	src/9899-1990/string/strncat.c \
-	src/9899-1990/string/strncmp.c \
-	src/9899-1990/string/strncpy.c \
-	src/9899-1990/string/strpbrk.c \
-	src/9899-1990/string/strrchr.c \
-	src/9899-1990/string/strspn.c \
-	src/9899-1990/string/strstr.c \
-	src/9899-1990/string/strtok.c \
-	src/9899-1990/string/strxfrm.c \
-	src/9899-1990/string/NULL.ref \
-	src/9899-1990/stddef/NULL.c \
-	src/9899-1990/string/size_t.ref \
-	src/9899-1990/stddef/size_t.c
-
-$(INCDIR)/string.h: $(string_h_SOURCES)
-	sh mkh.sh $@ $(string_h_SOURCES)
-
-sys_stat_h_SOURCES =  \
-	src/POSIX.1-1988/sys/stat/S_IRGRP.c \
-	src/POSIX.1-1988/sys/stat/S_IROTH.c \
-	src/POSIX.1-1988/sys/stat/S_IRUSR.c \
-	src/POSIX.1-1988/sys/stat/S_IRWXG.c \
-	src/POSIX.1-1988/sys/stat/S_IRWXO.c \
-	src/POSIX.1-1988/sys/stat/S_IRWXU.c \
-	src/POSIX.1-1988/sys/stat/S_ISCHR.c \
-	src/POSIX.1-1988/sys/stat/S_ISDIR.c \
-	src/POSIX.1-1988/sys/stat/S_ISFIFO.c \
-	src/POSIX.1-1988/sys/stat/S_ISGID.c \
-	src/POSIX.1-1988/sys/stat/S_ISREG.c \
-	src/POSIX.1-1988/sys/stat/S_ISUID.c \
-	src/POSIX.1-1988/sys/stat/S_IWGRP.c \
-	src/POSIX.1-1988/sys/stat/S_IWOTH.c \
-	src/POSIX.1-1988/sys/stat/S_IWUSR.c \
-	src/POSIX.1-1988/sys/stat/S_IXGRP.c \
-	src/POSIX.1-1988/sys/stat/S_IXOTH.c \
-	src/POSIX.1-1988/sys/stat/S_IXUSR.c \
-	src/POSIX.1-1988/sys/stat/chmod.c \
-	src/POSIX.1-1988/sys/stat/fstat.c \
-	src/POSIX.1-1988/sys/stat/mkdir.c \
-	src/POSIX.1-1988/sys/stat/mkfifo.c \
-	src/POSIX.1-1988/sys/stat/stat.c \
-	src/POSIX.1-1988/sys/stat/struct_stat.c \
-	src/POSIX.1-1988/sys/stat/umask.c
-
-$(INCDIR)/sys/stat.h: $(sys_stat_h_SOURCES)
-	sh mkh.sh $@ $(sys_stat_h_SOURCES)
-
-sys_times_h_SOURCES =  \
-	src/POSIX.1-1988/sys/times/struct_tms.c \
-	src/POSIX.1-1988/sys/times/times.c
-
-$(INCDIR)/sys/times.h: $(sys_times_h_SOURCES)
-	sh mkh.sh $@ $(sys_times_h_SOURCES)
-
-sys_types_h_SOURCES =  \
-	src/POSIX.1-1988/sys/types/dev_t.c \
-	src/POSIX.1-1988/sys/types/gid_t.c \
-	src/POSIX.1-1988/sys/types/ino_t.c \
-	src/POSIX.1-1988/sys/types/mode_t.c \
-	src/POSIX.1-1988/sys/types/nlink_t.c \
-	src/POSIX.1-1988/sys/types/off_t.c \
-	src/POSIX.1-1988/sys/types/pid_t.c \
-	src/POSIX.1-1988/sys/types/uid_t.c \
-	src/POSIX.1-1990/sys/types/ssize_t.c
-
-$(INCDIR)/sys/types.h: $(sys_types_h_SOURCES)
-	sh mkh.sh $@ $(sys_types_h_SOURCES)
-
-sys_utsname_h_SOURCES =  \
-	src/POSIX.1-1988/sys/utsname/struct_utsname.c \
-	src/POSIX.1-1988/sys/utsname/uname.c
-
-$(INCDIR)/sys/utsname.h: $(sys_utsname_h_SOURCES)
-	sh mkh.sh $@ $(sys_utsname_h_SOURCES)
-
-sys_wait_h_SOURCES =  \
-	src/POSIX.1-1988/sys/wait/WEXITSTATUS.c \
-	src/POSIX.1-1988/sys/wait/WIFEXITED.c \
-	src/POSIX.1-1988/sys/wait/WIFSIGNALED.c \
-	src/POSIX.1-1988/sys/wait/WIFSTOPPED.c \
-	src/POSIX.1-1988/sys/wait/WNOHANG.c \
-	src/POSIX.1-1988/sys/wait/WSTOPSIG.c \
-	src/POSIX.1-1988/sys/wait/WTERMSIG.c \
-	src/POSIX.1-1988/sys/wait/WUNTRACED.c \
-	src/POSIX.1-1988/sys/wait/wait.c \
-	src/POSIX.1-1988/sys/wait/waitpid.c
-
-$(INCDIR)/sys/wait.h: $(sys_wait_h_SOURCES)
-	sh mkh.sh $@ $(sys_wait_h_SOURCES)
-
-tar_h_SOURCES =  \
-	src/POSIX.1-1988/tar/AREGTYPE.c \
-	src/POSIX.1-1988/tar/BLKTYPE.c \
-	src/POSIX.1-1988/tar/CHRTYPE.c \
-	src/POSIX.1-1988/tar/CONTTYPE.c \
-	src/POSIX.1-1988/tar/DIRTYPE.c \
-	src/POSIX.1-1988/tar/FIFOTYPE.c \
-	src/POSIX.1-1988/tar/LNKTYPE.c \
-	src/POSIX.1-1988/tar/REGTYPE.c \
-	src/POSIX.1-1988/tar/SYMTYPE.c \
-	src/POSIX.1-1988/tar/TGEXEC.c \
-	src/POSIX.1-1988/tar/TGREAD.c \
-	src/POSIX.1-1988/tar/TGWRITE.c \
-	src/POSIX.1-1988/tar/TMAGIC.c \
-	src/POSIX.1-1988/tar/TMAGLEN.c \
-	src/POSIX.1-1988/tar/TOEXEC.c \
-	src/POSIX.1-1988/tar/TOREAD.c \
-	src/POSIX.1-1988/tar/TOWRITE.c \
-	src/POSIX.1-1988/tar/TSGID.c \
-	src/POSIX.1-1988/tar/TSUID.c \
-	src/POSIX.1-1988/tar/TSVTX.c \
-	src/POSIX.1-1988/tar/TUEXEC.c \
-	src/POSIX.1-1988/tar/TUREAD.c \
-	src/POSIX.1-1988/tar/TUWRITE.c \
-	src/POSIX.1-1988/tar/TVERSION.c \
-	src/POSIX.1-1988/tar/TVERSLEN.c
-
-$(INCDIR)/tar.h: $(tar_h_SOURCES)
-	sh mkh.sh $@ $(tar_h_SOURCES)
-
-termios_h_SOURCES =  \
-	src/POSIX.1-1988/termios/B0.c \
-	src/POSIX.1-1988/termios/B110.c \
-	src/POSIX.1-1988/termios/B1200.c \
-	src/POSIX.1-1988/termios/B134.c \
-	src/POSIX.1-1988/termios/B150.c \
-	src/POSIX.1-1988/termios/B1800.c \
-	src/POSIX.1-1988/termios/B19200.c \
-	src/POSIX.1-1988/termios/B200.c \
-	src/POSIX.1-1988/termios/B2400.c \
-	src/POSIX.1-1988/termios/B300.c \
-	src/POSIX.1-1988/termios/B38400.c \
-	src/POSIX.1-1988/termios/B4800.c \
-	src/POSIX.1-1988/termios/B50.c \
-	src/POSIX.1-1988/termios/B600.c \
-	src/POSIX.1-1988/termios/B75.c \
-	src/POSIX.1-1988/termios/B9600.c \
-	src/POSIX.1-1988/termios/BRKINT.c \
-	src/POSIX.1-1988/termios/CLOCAL.c \
-	src/POSIX.1-1988/termios/CREAD.c \
-	src/POSIX.1-1988/termios/CS5.c \
-	src/POSIX.1-1988/termios/CS6.c \
-	src/POSIX.1-1988/termios/CS7.c \
-	src/POSIX.1-1988/termios/CS8.c \
-	src/POSIX.1-1988/termios/CSIZE.c \
-	src/POSIX.1-1988/termios/CSTOPB.c \
-	src/POSIX.1-1988/termios/ECHO.c \
-	src/POSIX.1-1988/termios/ECHOE.c \
-	src/POSIX.1-1988/termios/ECHOK.c \
-	src/POSIX.1-1988/termios/ECHONL.c \
-	src/POSIX.1-1988/termios/HUPCL.c \
-	src/POSIX.1-1988/termios/ICANON.c \
-	src/POSIX.1-1988/termios/ICRNL.c \
-	src/POSIX.1-1988/termios/IEXTEN.c \
-	src/POSIX.1-1988/termios/IGNBRK.c \
-	src/POSIX.1-1988/termios/IGNCR.c \
-	src/POSIX.1-1988/termios/IGNPAR.c \
-	src/POSIX.1-1988/termios/INLCR.c \
-	src/POSIX.1-1988/termios/INPCK.c \
-	src/POSIX.1-1988/termios/ISIG.c \
-	src/POSIX.1-1988/termios/ISTRIP.c \
-	src/POSIX.1-1988/termios/IXOFF.c \
-	src/POSIX.1-1988/termios/IXON.c \
-	src/POSIX.1-1988/termios/NCCS.c \
-	src/POSIX.1-1988/termios/NOFLSH.c \
-	src/POSIX.1-1988/termios/OPOST.c \
-	src/POSIX.1-1988/termios/PARENB.c \
-	src/POSIX.1-1988/termios/PARMRK.c \
-	src/POSIX.1-1988/termios/PARODD.c \
-	src/POSIX.1-1988/termios/TCIFLUSH.c \
-	src/POSIX.1-1988/termios/TCIOFF.c \
-	src/POSIX.1-1988/termios/TCIOFLUSH.c \
-	src/POSIX.1-1988/termios/TCION.c \
-	src/POSIX.1-1988/termios/TCOFLUSH.c \
-	src/POSIX.1-1988/termios/TCOOFF.c \
-	src/POSIX.1-1988/termios/TCOON.c \
-	src/POSIX.1-1988/termios/TCSADRAIN.c \
-	src/POSIX.1-1988/termios/TCSAFLUSH.c \
-	src/POSIX.1-1988/termios/TCSANOW.c \
-	src/POSIX.1-1988/termios/TOSTOP.c \
-	src/POSIX.1-1988/termios/VEOF.c \
-	src/POSIX.1-1988/termios/VEOL.c \
-	src/POSIX.1-1988/termios/VERASE.c \
-	src/POSIX.1-1988/termios/VINTR.c \
-	src/POSIX.1-1988/termios/VKILL.c \
-	src/POSIX.1-1988/termios/VMIN.c \
-	src/POSIX.1-1988/termios/VQUIT.c \
-	src/POSIX.1-1988/termios/VSTART.c \
-	src/POSIX.1-1988/termios/VSTOP.c \
-	src/POSIX.1-1988/termios/VSUSP.c \
-	src/POSIX.1-1988/termios/VTIME.c \
-	src/POSIX.1-1988/termios/cc_t.c \
-	src/POSIX.1-1988/termios/cfgetispeed.c \
-	src/POSIX.1-1988/termios/cfgetospeed.c \
-	src/POSIX.1-1988/termios/cfsetispeed.c \
-	src/POSIX.1-1988/termios/cfsetospeed.c \
-	src/POSIX.1-1988/termios/speed_t.c \
-	src/POSIX.1-1988/termios/struct_termios.c \
-	src/POSIX.1-1988/termios/tcdrain.c \
-	src/POSIX.1-1988/termios/tcflag_t.c \
-	src/POSIX.1-1988/termios/tcflow.c \
-	src/POSIX.1-1988/termios/tcflush.c \
-	src/POSIX.1-1988/termios/tcgetattr.c \
-	src/POSIX.1-1988/termios/tcsendbreak.c \
-	src/POSIX.1-1988/termios/tcsetattr.c
-
-$(INCDIR)/termios.h: $(termios_h_SOURCES)
-	sh mkh.sh $@ $(termios_h_SOURCES)
-
-time_h_SOURCES =  \
-	src/9899-1990/time/CLOCKS_PER_SEC.c \
-	src/9899-1990/time/asctime.c \
-	src/9899-1990/time/clock.c \
-	src/9899-1990/time/clock_t.c \
-	src/9899-1990/time/ctime.c \
-	src/9899-1990/time/difftime.c \
-	src/9899-1990/time/gmtime.c \
-	src/9899-1990/time/localtime.c \
-	src/9899-1990/time/mktime.c \
-	src/9899-1990/time/strftime.c \
-	src/9899-1990/time/struct_tm.c \
-	src/9899-1990/time/time.c \
-	src/9899-1990/time/time_t.c \
-	src/9899-1990/time/NULL.ref \
-	src/9899-1990/stddef/NULL.c \
-	src/9899-1990/time/size_t.ref \
-	src/9899-1990/stddef/size_t.c \
-	src/POSIX.1-1988/time/CLK_TCK.c \
-	src/POSIX.1-1988/time/tzname.c \
-	src/POSIX.1-1988/time/tzset.c
-
-$(INCDIR)/time.h: $(time_h_SOURCES)
-	sh mkh.sh $@ $(time_h_SOURCES)
-
-unistd_h_SOURCES =  \
-	src/POSIX.1-1988/unistd/F_OK.c \
-	src/POSIX.1-1988/unistd/R_OK.c \
-	src/POSIX.1-1988/unistd/STDERR_FILENO.c \
-	src/POSIX.1-1988/unistd/STDIN_FILENO.c \
-	src/POSIX.1-1988/unistd/STDOUT_FILENO.c \
-	src/POSIX.1-1988/unistd/W_OK.c \
-	src/POSIX.1-1988/unistd/X_OK.c \
-	src/POSIX.1-1988/unistd/_PC_CHOWN_RESTRICTED.c \
-	src/POSIX.1-1988/unistd/_PC_LINK_MAX.c \
-	src/POSIX.1-1988/unistd/_PC_MAX_CANON.c \
-	src/POSIX.1-1988/unistd/_PC_MAX_INPUT.c \
-	src/POSIX.1-1988/unistd/_PC_NAME_MAX.c \
-	src/POSIX.1-1988/unistd/_PC_NO_TRUNC.c \
-	src/POSIX.1-1988/unistd/_PC_PATH_MAX.c \
-	src/POSIX.1-1988/unistd/_PC_PIPE_BUF.c \
-	src/POSIX.1-1988/unistd/_PC_VDISABLE.c \
-	src/POSIX.1-1988/unistd/_POSIX_CHOWN_RESTRICTED.c \
-	src/POSIX.1-1988/unistd/_POSIX_JOB_CONTROL.c \
-	src/POSIX.1-1988/unistd/_POSIX_NO_TRUNC.c \
-	src/POSIX.1-1988/unistd/_POSIX_SAVED_IDS.c \
-	src/POSIX.1-1988/unistd/_POSIX_VDISABLE.c \
-	src/POSIX.1-1988/unistd/_POSIX_VERSION.c \
-	src/POSIX.1-1988/unistd/_SC_ARG_MAX.c \
-	src/POSIX.1-1988/unistd/_SC_CHILD_MAX.c \
-	src/POSIX.1-1988/unistd/_SC_CLK_TCK.c \
-	src/POSIX.1-1988/unistd/_SC_JOB_CONTROL.c \
-	src/POSIX.1-1988/unistd/_SC_NGROUPS_MAX.c \
-	src/POSIX.1-1988/unistd/_SC_OPEN_MAX.c \
-	src/POSIX.1-1988/unistd/_SC_SAVED_IDS.c \
-	src/POSIX.1-1988/unistd/_SC_VERSION.c \
-	src/POSIX.1-1988/unistd/_exit.c \
-	src/POSIX.1-1988/unistd/access.c \
-	src/POSIX.1-1988/unistd/alarm.c \
-	src/POSIX.1-1988/unistd/chdir.c \
-	src/POSIX.1-1988/unistd/chown.c \
-	src/POSIX.1-1988/unistd/close.c \
-	src/POSIX.1-1988/unistd/ctermid.c \
-	src/POSIX.1-1988/unistd/cuserid.c \
-	src/POSIX.1-1988/unistd/dup.c \
-	src/POSIX.1-1988/unistd/dup2.c \
-	src/POSIX.1-1988/unistd/execl.c \
-	src/POSIX.1-1988/unistd/execle.c \
-	src/POSIX.1-1988/unistd/execlp.c \
-	src/POSIX.1-1988/unistd/execv.c \
-	src/POSIX.1-1988/unistd/execve.c \
-	src/POSIX.1-1988/unistd/execvp.c \
-	src/POSIX.1-1988/unistd/fork.c \
-	src/POSIX.1-1988/unistd/fpathconf.c \
-	src/POSIX.1-1988/unistd/getcwd.c \
-	src/POSIX.1-1988/unistd/getegid.c \
-	src/POSIX.1-1988/unistd/geteuid.c \
-	src/POSIX.1-1988/unistd/getgid.c \
-	src/POSIX.1-1988/unistd/getgroups.c \
-	src/POSIX.1-1988/unistd/getlogin.c \
-	src/POSIX.1-1988/unistd/getpgrp.c \
-	src/POSIX.1-1988/unistd/getpid.c \
-	src/POSIX.1-1988/unistd/getppid.c \
-	src/POSIX.1-1988/unistd/getuid.c \
-	src/POSIX.1-1988/unistd/isatty.c \
-	src/POSIX.1-1988/unistd/link.c \
-	src/POSIX.1-1988/unistd/lseek.c \
-	src/POSIX.1-1988/unistd/pathconf.c \
-	src/POSIX.1-1988/unistd/pause.c \
-	src/POSIX.1-1988/unistd/pipe.c \
-	src/POSIX.1-1988/unistd/read.c \
-	src/POSIX.1-1988/unistd/rmdir.c \
-	src/POSIX.1-1988/unistd/setgid.c \
-	src/POSIX.1-1988/unistd/setpgid.c \
-	src/POSIX.1-1988/unistd/setsid.c \
-	src/POSIX.1-1988/unistd/setuid.c \
-	src/POSIX.1-1988/unistd/sleep.c \
-	src/POSIX.1-1988/unistd/sysconf.c \
-	src/POSIX.1-1988/unistd/tcgetpgrp.c \
-	src/POSIX.1-1988/unistd/tcsetpgrp.c \
-	src/POSIX.1-1988/unistd/ttyname.c \
-	src/POSIX.1-1988/unistd/unlink.c \
-	src/POSIX.1-1988/unistd/write.c \
-	src/POSIX.1-1990/unistd/_SC_STREAM_MAX.c \
-	src/POSIX.1-1990/unistd/_SC_TZNAME_MAX.c
-
-$(INCDIR)/unistd.h: $(unistd_h_SOURCES)
-	sh mkh.sh $@ $(unistd_h_SOURCES)
-
-utime_h_SOURCES =  \
-	src/POSIX.1-1988/utime/struct_utimbuf.c \
-	src/POSIX.1-1988/utime/utime.c
-
-$(INCDIR)/utime.h: $(utime_h_SOURCES)
-	sh mkh.sh $@ $(utime_h_SOURCES)
-
-wchar_h_SOURCES =  \
-	src/9899-1990-AMD1/wchar/WCHAR_MAX.c \
-	src/9899-1990-AMD1/wchar/WCHAR_MIN.c \
-	src/9899-1990-AMD1/wchar/btowc.c \
-	src/9899-1990-AMD1/wchar/fgetwc.c \
-	src/9899-1990-AMD1/wchar/fgetws.c \
-	src/9899-1990-AMD1/wchar/fputwc.c \
-	src/9899-1990-AMD1/wchar/fputws.c \
-	src/9899-1990-AMD1/wchar/fwide.c \
-	src/9899-1990-AMD1/wchar/fwprintf.c \
-	src/9899-1990-AMD1/wchar/fwscanf.c \
-	src/9899-1990-AMD1/wchar/getwc.c \
-	src/9899-1990-AMD1/wchar/getwchar.c \
-	src/9899-1990-AMD1/wchar/mbrlen.c \
-	src/9899-1990-AMD1/wchar/mbrtowc.c \
-	src/9899-1990-AMD1/wchar/mbsinit.c \
-	src/9899-1990-AMD1/wchar/mbsrtowcs.c \
-	src/9899-1990-AMD1/wchar/mbstate_t.c \
-	src/9899-1990-AMD1/wchar/putwc.c \
-	src/9899-1990-AMD1/wchar/putwchar.c \
-	src/9899-1990-AMD1/wchar/struct_tm.c \
-	src/9899-1990-AMD1/wchar/swprintf.c \
-	src/9899-1990-AMD1/wchar/swscanf.c \
-	src/9899-1990-AMD1/wchar/ungetwc.c \
-	src/9899-1990-AMD1/wchar/vfwprintf.c \
-	src/9899-1990-AMD1/wchar/vswprintf.c \
-	src/9899-1990-AMD1/wchar/vwprintf.c \
-	src/9899-1990-AMD1/wchar/wcrtomb.c \
-	src/9899-1990-AMD1/wchar/wcscat.c \
-	src/9899-1990-AMD1/wchar/wcschr.c \
-	src/9899-1990-AMD1/wchar/wcscmp.c \
-	src/9899-1990-AMD1/wchar/wcscoll.c \
-	src/9899-1990-AMD1/wchar/wcscpy.c \
-	src/9899-1990-AMD1/wchar/wcscspn.c \
-	src/9899-1990-AMD1/wchar/wcsftime.c \
-	src/9899-1990-AMD1/wchar/wcslen.c \
-	src/9899-1990-AMD1/wchar/wcsncat.c \
-	src/9899-1990-AMD1/wchar/wcsncmp.c \
-	src/9899-1990-AMD1/wchar/wcsncpy.c \
-	src/9899-1990-AMD1/wchar/wcspbrk.c \
-	src/9899-1990-AMD1/wchar/wcsrchr.c \
-	src/9899-1990-AMD1/wchar/wcsrtombs.c \
-	src/9899-1990-AMD1/wchar/wcsspn.c \
-	src/9899-1990-AMD1/wchar/wcsstr.c \
-	src/9899-1990-AMD1/wchar/wcstod.c \
-	src/9899-1990-AMD1/wchar/wcstok.c \
-	src/9899-1990-AMD1/wchar/wcstol.c \
-	src/9899-1990-AMD1/wchar/wcstoul.c \
-	src/9899-1990-AMD1/wchar/wcsxfrm.c \
-	src/9899-1990-AMD1/wchar/wctob.c \
-	src/9899-1990-AMD1/wchar/wmemchr.c \
-	src/9899-1990-AMD1/wchar/wmemcmp.c \
-	src/9899-1990-AMD1/wchar/wmemcpy.c \
-	src/9899-1990-AMD1/wchar/wmemmove.c \
-	src/9899-1990-AMD1/wchar/wmemset.c \
-	src/9899-1990-AMD1/wchar/wprintf.c \
-	src/9899-1990-AMD1/wchar/wscanf.c \
-	src/9899-1990-AMD1/wchar/FILE.ref \
-	src/9899-1990/stdio/FILE.c \
-	src/9899-1990-AMD1/wchar/NULL.ref \
-	src/9899-1990/stddef/NULL.c \
-	src/9899-1990-AMD1/wchar/WEOF.ref \
-	src/9899-1990-AMD1/wctype/WEOF.c \
-	src/9899-1990-AMD1/wchar/size_t.ref \
-	src/9899-1990/stddef/size_t.c \
-	src/9899-1990-AMD1/wchar/va_list.ref \
-	src/9899-1990/stdarg/va_list.c \
-	src/9899-1990-AMD1/wchar/wchar_t.ref \
-	src/9899-1990/stddef/wchar_t.c \
-	src/9899-1990-AMD1/wchar/wint_t.ref \
-	src/9899-1990-AMD1/wctype/wint_t.c
-
-$(INCDIR)/wchar.h: $(wchar_h_SOURCES)
-	sh mkh.sh $@ $(wchar_h_SOURCES)
-
-wctype_h_SOURCES =  \
-	src/9899-1990-AMD1/wctype/WEOF.c \
-	src/9899-1990-AMD1/wctype/iswalnum.c \
-	src/9899-1990-AMD1/wctype/iswalpha.c \
-	src/9899-1990-AMD1/wctype/iswcntrl.c \
-	src/9899-1990-AMD1/wctype/iswctype.c \
-	src/9899-1990-AMD1/wctype/iswdigit.c \
-	src/9899-1990-AMD1/wctype/iswgraph.c \
-	src/9899-1990-AMD1/wctype/iswlower.c \
-	src/9899-1990-AMD1/wctype/iswprint.c \
-	src/9899-1990-AMD1/wctype/iswpunct.c \
-	src/9899-1990-AMD1/wctype/iswspace.c \
-	src/9899-1990-AMD1/wctype/iswupper.c \
-	src/9899-1990-AMD1/wctype/iswxdigit.c \
-	src/9899-1990-AMD1/wctype/towctrans.c \
-	src/9899-1990-AMD1/wctype/towlower.c \
-	src/9899-1990-AMD1/wctype/towupper.c \
-	src/9899-1990-AMD1/wctype/wctrans.c \
-	src/9899-1990-AMD1/wctype/wctrans_t.c \
-	src/9899-1990-AMD1/wctype/wctype.c \
-	src/9899-1990-AMD1/wctype/wctype_t.c \
-	src/9899-1990-AMD1/wctype/wint_t.c
-
-$(INCDIR)/wctype.h: $(wctype_h_SOURCES)
-	sh mkh.sh $@ $(wctype_h_SOURCES)
-
-headers: $(INCDIR)/assert.h $(INCDIR)/cpio.h $(INCDIR)/ctype.h $(INCDIR)/dirent.h $(INCDIR)/errno.h $(INCDIR)/fcntl.h $(INCDIR)/float.h $(INCDIR)/grp.h $(INCDIR)/iso646.h $(INCDIR)/limits.h $(INCDIR)/locale.h $(INCDIR)/math.h $(INCDIR)/pwd.h $(INCDIR)/setjmp.h $(INCDIR)/signal.h $(INCDIR)/stdarg.h $(INCDIR)/stddef.h $(INCDIR)/stdio.h $(INCDIR)/stdlib.h $(INCDIR)/string.h $(INCDIR)/sys/stat.h $(INCDIR)/sys/times.h $(INCDIR)/sys/types.h $(INCDIR)/sys/utsname.h $(INCDIR)/sys/wait.h $(INCDIR)/tar.h $(INCDIR)/termios.h $(INCDIR)/time.h $(INCDIR)/unistd.h $(INCDIR)/utime.h $(INCDIR)/wchar.h $(INCDIR)/wctype.h
+$(INCDIR)/assert.h: mkh.sh $(SRCDIR)/assert/__assert.c $(SRCDIR)/assert/assert.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/complex.h: mkh.sh $(SRCDIR)/complex/I.c $(SRCDIR)/complex/_Complex_I.c $(SRCDIR)/complex/_Imaginary_I.c $(SRCDIR)/complex/cabs.c $(SRCDIR)/complex/cacos.c $(SRCDIR)/complex/cacosh.c $(SRCDIR)/complex/carg.c $(SRCDIR)/complex/casin.c $(SRCDIR)/complex/casinh.c $(SRCDIR)/complex/catan.c $(SRCDIR)/complex/catanh.c $(SRCDIR)/complex/ccos.c $(SRCDIR)/complex/ccosh.c $(SRCDIR)/complex/cexp.c $(SRCDIR)/complex/cimag.c $(SRCDIR)/complex/clog.c $(SRCDIR)/complex/complex.c $(SRCDIR)/complex/conj.c $(SRCDIR)/complex/cpow.c $(SRCDIR)/complex/cproj.c $(SRCDIR)/complex/creal.c $(SRCDIR)/complex/csin.c $(SRCDIR)/complex/csinh.c $(SRCDIR)/complex/csqrt.c $(SRCDIR)/complex/ctan.c $(SRCDIR)/complex/ctanh.c $(SRCDIR)/complex/imaginary.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/cpio.h: mkh.sh $(SRCDIR)/cpio/C_IRGRP.c $(SRCDIR)/cpio/C_IROTH.c $(SRCDIR)/cpio/C_IRUSR.c $(SRCDIR)/cpio/C_ISBLK.c $(SRCDIR)/cpio/C_ISCHR.c $(SRCDIR)/cpio/C_ISCTG.c $(SRCDIR)/cpio/C_ISDIR.c $(SRCDIR)/cpio/C_ISFIFO.c $(SRCDIR)/cpio/C_ISGID.c $(SRCDIR)/cpio/C_ISLNK.c $(SRCDIR)/cpio/C_ISREG.c $(SRCDIR)/cpio/C_ISSOCK.c $(SRCDIR)/cpio/C_ISUID.c $(SRCDIR)/cpio/C_ISVTX.c $(SRCDIR)/cpio/C_IWGRP.c $(SRCDIR)/cpio/C_IWOTH.c $(SRCDIR)/cpio/C_IWUSR.c $(SRCDIR)/cpio/C_IXGRP.c $(SRCDIR)/cpio/C_IXOTH.c $(SRCDIR)/cpio/C_IXUSR.c $(SRCDIR)/cpio/MAGIC.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/ctype.h: mkh.sh $(SRCDIR)/ctype/_tolower.c $(SRCDIR)/ctype/_toupper.c $(SRCDIR)/ctype/isalnum.c $(SRCDIR)/ctype/isalpha.c $(SRCDIR)/ctype/isascii.c $(SRCDIR)/ctype/isblank.c $(SRCDIR)/ctype/iscntrl.c $(SRCDIR)/ctype/isdigit.c $(SRCDIR)/ctype/isgraph.c $(SRCDIR)/ctype/islower.c $(SRCDIR)/ctype/isprint.c $(SRCDIR)/ctype/ispunct.c $(SRCDIR)/ctype/isspace.c $(SRCDIR)/ctype/isupper.c $(SRCDIR)/ctype/isxdigit.c $(SRCDIR)/ctype/toascii.c $(SRCDIR)/ctype/tolower.c $(SRCDIR)/ctype/toupper.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/dirent.h: mkh.sh $(SRCDIR)/dirent/DIR.c $(SRCDIR)/dirent/closedir.c $(SRCDIR)/dirent/opendir.c $(SRCDIR)/dirent/readdir.c $(SRCDIR)/dirent/rewinddir.c $(SRCDIR)/dirent/seekdir.c $(SRCDIR)/dirent/struct_dirent.c $(SRCDIR)/dirent/telldir.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/errno.h: mkh.sh $(SRCDIR)/errno/E2BIG.c $(SRCDIR)/errno/EACCES.c $(SRCDIR)/errno/EADDRINUSE.c $(SRCDIR)/errno/EADDRNOTAVAIL.c $(SRCDIR)/errno/EAFNOSUPPORT.c $(SRCDIR)/errno/EAGAIN.c $(SRCDIR)/errno/EALREADY.c $(SRCDIR)/errno/EBADF.c $(SRCDIR)/errno/EBADMSG.c $(SRCDIR)/errno/EBUSY.c $(SRCDIR)/errno/ECHILD.c $(SRCDIR)/errno/ECONNABORTED.c $(SRCDIR)/errno/ECONNREFUSED.c $(SRCDIR)/errno/ECONNRESET.c $(SRCDIR)/errno/EDEADLK.c $(SRCDIR)/errno/EDESTADDRREQ.c $(SRCDIR)/errno/EDOM.c $(SRCDIR)/errno/EDQUOT.c $(SRCDIR)/errno/EEXIST.c $(SRCDIR)/errno/EFAULT.c $(SRCDIR)/errno/EFBIG.c $(SRCDIR)/errno/EHOSTUNREACH.c $(SRCDIR)/errno/EIDRM.c $(SRCDIR)/errno/EILSEQ.c $(SRCDIR)/errno/EINPROGRESS.c $(SRCDIR)/errno/EINTR.c $(SRCDIR)/errno/EINVAL.c $(SRCDIR)/errno/EIO.c $(SRCDIR)/errno/EISCONN.c $(SRCDIR)/errno/EISDIR.c $(SRCDIR)/errno/ELOOP.c $(SRCDIR)/errno/EMFILE.c $(SRCDIR)/errno/EMLINK.c $(SRCDIR)/errno/EMSGSIZE.c $(SRCDIR)/errno/EMULTIHOP.c $(SRCDIR)/errno/ENAMETOOLONG.c $(SRCDIR)/errno/ENETDOWN.c $(SRCDIR)/errno/ENETUNREACH.c $(SRCDIR)/errno/ENFILE.c $(SRCDIR)/errno/ENOBUFS.c $(SRCDIR)/errno/ENODATA.c $(SRCDIR)/errno/ENODEV.c $(SRCDIR)/errno/ENOENT.c $(SRCDIR)/errno/ENOEXEC.c $(SRCDIR)/errno/ENOLCK.c $(SRCDIR)/errno/ENOLINK.c $(SRCDIR)/errno/ENOMEM.c $(SRCDIR)/errno/ENOMSG.c $(SRCDIR)/errno/ENOPROTOOPT.c $(SRCDIR)/errno/ENOSPC.c $(SRCDIR)/errno/ENOSR.c $(SRCDIR)/errno/ENOSTR.c $(SRCDIR)/errno/ENOSYS.c $(SRCDIR)/errno/ENOTCONN.c $(SRCDIR)/errno/ENOTDIR.c $(SRCDIR)/errno/ENOTEMPTY.c $(SRCDIR)/errno/ENOTSOCK.c $(SRCDIR)/errno/ENOTTY.c $(SRCDIR)/errno/ENXIO.c $(SRCDIR)/errno/EOPNOTSUPP.c $(SRCDIR)/errno/EOVERFLOW.c $(SRCDIR)/errno/EPERM.c $(SRCDIR)/errno/EPIPE.c $(SRCDIR)/errno/EPROTO.c $(SRCDIR)/errno/EPROTONOSUPPORT.c $(SRCDIR)/errno/EPROTOTYPE.c $(SRCDIR)/errno/ERANGE.c $(SRCDIR)/errno/EROFS.c $(SRCDIR)/errno/ESRCH.c $(SRCDIR)/errno/ESTALE.c $(SRCDIR)/errno/ETIME.c $(SRCDIR)/errno/ETIMEDOUT.c $(SRCDIR)/errno/ETXTBSY.c $(SRCDIR)/errno/EWOULDBLOCK.c $(SRCDIR)/errno/EXDEV.c $(SRCDIR)/errno/__errno.c $(SRCDIR)/errno/errno.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/fcntl.h: mkh.sh $(SRCDIR)/fcntl/FD_CLOEXEC.c $(SRCDIR)/fcntl/F_DUPFD.c $(SRCDIR)/fcntl/F_GETFD.c $(SRCDIR)/fcntl/F_GETFL.c $(SRCDIR)/fcntl/F_GETLK.c $(SRCDIR)/fcntl/F_RDLCK.c $(SRCDIR)/fcntl/F_SETFD.c $(SRCDIR)/fcntl/F_SETFL.c $(SRCDIR)/fcntl/F_SETLK.c $(SRCDIR)/fcntl/F_SETLKW.c $(SRCDIR)/fcntl/F_UNLCK.c $(SRCDIR)/fcntl/F_WRLCK.c $(SRCDIR)/fcntl/O_ACCMODE.c $(SRCDIR)/fcntl/O_APPEND.c $(SRCDIR)/fcntl/O_CREAT.c $(SRCDIR)/fcntl/O_EXCL.c $(SRCDIR)/fcntl/O_NOCTTY.c $(SRCDIR)/fcntl/O_NONBLOCK.c $(SRCDIR)/fcntl/O_RDONLY.c $(SRCDIR)/fcntl/O_RDWR.c $(SRCDIR)/fcntl/O_SYNC.c $(SRCDIR)/fcntl/O_TRUNC.c $(SRCDIR)/fcntl/O_WRONLY.c $(SRCDIR)/fcntl/creat.c $(SRCDIR)/fcntl/fcntl.c $(SRCDIR)/fcntl/open.c $(SRCDIR)/fcntl/struct_flock.c $(SRCDIR)/fcntl/SEEK_CUR.ref $(SRCDIR)/fcntl/SEEK_END.ref $(SRCDIR)/fcntl/SEEK_SET.ref $(SRCDIR)/fcntl/mode_t.ref $(SRCDIR)/fcntl/off_t.ref $(SRCDIR)/fcntl/pid_t.ref 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/fenv.h: mkh.sh $(SRCDIR)/fenv/FE_ALL_EXCEPT.c $(SRCDIR)/fenv/FE_DFL_ENV.c $(SRCDIR)/fenv/FE_DIVBYZERO.c $(SRCDIR)/fenv/FE_DOWNWARD.c $(SRCDIR)/fenv/FE_INEXACT.c $(SRCDIR)/fenv/FE_INVALID.c $(SRCDIR)/fenv/FE_OVERFLOW.c $(SRCDIR)/fenv/FE_TONEAREST.c $(SRCDIR)/fenv/FE_TOWARDZERO.c $(SRCDIR)/fenv/FE_UNDERFLOW.c $(SRCDIR)/fenv/FE_UPWARD.c $(SRCDIR)/fenv/feclearexcept.c $(SRCDIR)/fenv/fegetenv.c $(SRCDIR)/fenv/fegetexceptflag.c $(SRCDIR)/fenv/fegetround.c $(SRCDIR)/fenv/feholdexcept.c $(SRCDIR)/fenv/fenv_t.c $(SRCDIR)/fenv/feraiseexcept.c $(SRCDIR)/fenv/fesetenv.c $(SRCDIR)/fenv/fesetexceptflag.c $(SRCDIR)/fenv/fesetround.c $(SRCDIR)/fenv/fetestexcept.c $(SRCDIR)/fenv/feupdateenv.c $(SRCDIR)/fenv/fexcept_t.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/float.h: mkh.sh $(SRCDIR)/float/DBL_DIG.c $(SRCDIR)/float/DBL_EPSILON.c $(SRCDIR)/float/DBL_MANT_DIG.c $(SRCDIR)/float/DBL_MAX.c $(SRCDIR)/float/DBL_MAX_10_EXP.c $(SRCDIR)/float/DBL_MAX_EXP.c $(SRCDIR)/float/DBL_MIN.c $(SRCDIR)/float/DBL_MIN_10_EXP.c $(SRCDIR)/float/DBL_MIN_EXP.c $(SRCDIR)/float/DECIMAL_DIG.c $(SRCDIR)/float/FLT_DIG.c $(SRCDIR)/float/FLT_EPSILON.c $(SRCDIR)/float/FLT_EVAL_METHOD.c $(SRCDIR)/float/FLT_MANT_DIG.c $(SRCDIR)/float/FLT_MAX.c $(SRCDIR)/float/FLT_MAX_10_EXP.c $(SRCDIR)/float/FLT_MAX_EXP.c $(SRCDIR)/float/FLT_MIN.c $(SRCDIR)/float/FLT_MIN_10_EXP.c $(SRCDIR)/float/FLT_MIN_EXP.c $(SRCDIR)/float/FLT_RADIX.c $(SRCDIR)/float/FLT_ROUNDS.c $(SRCDIR)/float/LDBL_DIG.c $(SRCDIR)/float/LDBL_EPSILON.c $(SRCDIR)/float/LDBL_MANT_DIG.c $(SRCDIR)/float/LDBL_MAX.c $(SRCDIR)/float/LDBL_MAX_10_EXP.c $(SRCDIR)/float/LDBL_MAX_EXP.c $(SRCDIR)/float/LDBL_MIN.c $(SRCDIR)/float/LDBL_MIN_10_EXP.c $(SRCDIR)/float/LDBL_MIN_EXP.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/fmtmsg.h: mkh.sh $(SRCDIR)/fmtmsg/MM_APPL.c $(SRCDIR)/fmtmsg/MM_CONSOLE.c $(SRCDIR)/fmtmsg/MM_ERROR.c $(SRCDIR)/fmtmsg/MM_FIRM.c $(SRCDIR)/fmtmsg/MM_HALT.c $(SRCDIR)/fmtmsg/MM_HARD.c $(SRCDIR)/fmtmsg/MM_INFO.c $(SRCDIR)/fmtmsg/MM_NOCON.c $(SRCDIR)/fmtmsg/MM_NOMSG.c $(SRCDIR)/fmtmsg/MM_NOSEV.c $(SRCDIR)/fmtmsg/MM_NOTOK.c $(SRCDIR)/fmtmsg/MM_NRECOV.c $(SRCDIR)/fmtmsg/MM_NULLACT.c $(SRCDIR)/fmtmsg/MM_NULLLBL.c $(SRCDIR)/fmtmsg/MM_NULLMC.c $(SRCDIR)/fmtmsg/MM_NULLSEV.c $(SRCDIR)/fmtmsg/MM_NULLTAG.c $(SRCDIR)/fmtmsg/MM_NULLTXT.c $(SRCDIR)/fmtmsg/MM_OK.c $(SRCDIR)/fmtmsg/MM_OPSYS.c $(SRCDIR)/fmtmsg/MM_PRINT.c $(SRCDIR)/fmtmsg/MM_RECOVER.c $(SRCDIR)/fmtmsg/MM_SOFT.c $(SRCDIR)/fmtmsg/MM_UTIL.c $(SRCDIR)/fmtmsg/MM_WARNING.c $(SRCDIR)/fmtmsg/fmtmsg.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/fnmatch.h: mkh.sh $(SRCDIR)/fnmatch/FNM_NOESCAPE.c $(SRCDIR)/fnmatch/FNM_NOMATCH.c $(SRCDIR)/fnmatch/FNM_NOSYS.c $(SRCDIR)/fnmatch/FNM_PATHNAME.c $(SRCDIR)/fnmatch/FNM_PERIOD.c $(SRCDIR)/fnmatch/fnmatch.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/ftw.h: mkh.sh $(SRCDIR)/ftw/FTW_CHDIR.c $(SRCDIR)/ftw/FTW_D.c $(SRCDIR)/ftw/FTW_DEPTH.c $(SRCDIR)/ftw/FTW_DNR.c $(SRCDIR)/ftw/FTW_F.c $(SRCDIR)/ftw/FTW_MOUNT.c $(SRCDIR)/ftw/FTW_NS.c $(SRCDIR)/ftw/FTW_PHYS.c $(SRCDIR)/ftw/FTW_SL.c $(SRCDIR)/ftw/FTW_SLN.c $(SRCDIR)/ftw/ftw.c $(SRCDIR)/ftw/nftw.c $(SRCDIR)/ftw/struct_FTW.c $(SRCDIR)/ftw/struct_stat.ref 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/glob.h: mkh.sh $(SRCDIR)/glob/GLOB_ABORTED.c $(SRCDIR)/glob/GLOB_APPEND.c $(SRCDIR)/glob/GLOB_DOOFFS.c $(SRCDIR)/glob/GLOB_ERR.c $(SRCDIR)/glob/GLOB_MARK.c $(SRCDIR)/glob/GLOB_NOCHECK.c $(SRCDIR)/glob/GLOB_NOESCAPE.c $(SRCDIR)/glob/GLOB_NOMATCH.c $(SRCDIR)/glob/GLOB_NOSORT.c $(SRCDIR)/glob/GLOB_NOSPACE.c $(SRCDIR)/glob/GLOB_NOSYS.c $(SRCDIR)/glob/glob.c $(SRCDIR)/glob/glob_t.c $(SRCDIR)/glob/globfree.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/grp.h: mkh.sh $(SRCDIR)/grp/endgrent.c $(SRCDIR)/grp/getgrent.c $(SRCDIR)/grp/getgrgid.c $(SRCDIR)/grp/getgrnam.c $(SRCDIR)/grp/setgrent.c $(SRCDIR)/grp/struct_group.c $(SRCDIR)/grp/gid_t.ref 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/iconv.h: mkh.sh $(SRCDIR)/iconv/iconv.c $(SRCDIR)/iconv/iconv_close.c $(SRCDIR)/iconv/iconv_open.c $(SRCDIR)/iconv/iconv_t.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/inttypes.h: mkh.sh $(SRCDIR)/inttypes/PRIX16.c $(SRCDIR)/inttypes/PRIX32.c $(SRCDIR)/inttypes/PRIX64.c $(SRCDIR)/inttypes/PRIX8.c $(SRCDIR)/inttypes/PRIXFAST16.c $(SRCDIR)/inttypes/PRIXFAST32.c $(SRCDIR)/inttypes/PRIXFAST64.c $(SRCDIR)/inttypes/PRIXFAST8.c $(SRCDIR)/inttypes/PRIXLEAST16.c $(SRCDIR)/inttypes/PRIXLEAST32.c $(SRCDIR)/inttypes/PRIXLEAST64.c $(SRCDIR)/inttypes/PRIXLEAST8.c $(SRCDIR)/inttypes/PRIXMAX.c $(SRCDIR)/inttypes/PRIXPTR.c $(SRCDIR)/inttypes/PRId16.c $(SRCDIR)/inttypes/PRId32.c $(SRCDIR)/inttypes/PRId64.c $(SRCDIR)/inttypes/PRId8.c $(SRCDIR)/inttypes/PRIdFAST16.c $(SRCDIR)/inttypes/PRIdFAST32.c $(SRCDIR)/inttypes/PRIdFAST64.c $(SRCDIR)/inttypes/PRIdFAST8.c $(SRCDIR)/inttypes/PRIdLEAST16.c $(SRCDIR)/inttypes/PRIdLEAST32.c $(SRCDIR)/inttypes/PRIdLEAST64.c $(SRCDIR)/inttypes/PRIdLEAST8.c $(SRCDIR)/inttypes/PRIdMAX.c $(SRCDIR)/inttypes/PRIdPTR.c $(SRCDIR)/inttypes/PRIi16.c $(SRCDIR)/inttypes/PRIi32.c $(SRCDIR)/inttypes/PRIi64.c $(SRCDIR)/inttypes/PRIi8.c $(SRCDIR)/inttypes/PRIiFAST16.c $(SRCDIR)/inttypes/PRIiFAST32.c $(SRCDIR)/inttypes/PRIiFAST64.c $(SRCDIR)/inttypes/PRIiFAST8.c $(SRCDIR)/inttypes/PRIiLEAST16.c $(SRCDIR)/inttypes/PRIiLEAST32.c $(SRCDIR)/inttypes/PRIiLEAST64.c $(SRCDIR)/inttypes/PRIiLEAST8.c $(SRCDIR)/inttypes/PRIiMAX.c $(SRCDIR)/inttypes/PRIiPTR.c $(SRCDIR)/inttypes/PRIo16.c $(SRCDIR)/inttypes/PRIo32.c $(SRCDIR)/inttypes/PRIo64.c $(SRCDIR)/inttypes/PRIo8.c $(SRCDIR)/inttypes/PRIoFAST16.c $(SRCDIR)/inttypes/PRIoFAST32.c $(SRCDIR)/inttypes/PRIoFAST64.c $(SRCDIR)/inttypes/PRIoFAST8.c $(SRCDIR)/inttypes/PRIoLEAST16.c $(SRCDIR)/inttypes/PRIoLEAST32.c $(SRCDIR)/inttypes/PRIoLEAST64.c $(SRCDIR)/inttypes/PRIoLEAST8.c $(SRCDIR)/inttypes/PRIoMAX.c $(SRCDIR)/inttypes/PRIoPTR.c $(SRCDIR)/inttypes/PRIu16.c $(SRCDIR)/inttypes/PRIu32.c $(SRCDIR)/inttypes/PRIu64.c $(SRCDIR)/inttypes/PRIu8.c $(SRCDIR)/inttypes/PRIuFAST16.c $(SRCDIR)/inttypes/PRIuFAST32.c $(SRCDIR)/inttypes/PRIuFAST64.c $(SRCDIR)/inttypes/PRIuFAST8.c $(SRCDIR)/inttypes/PRIuLEAST16.c $(SRCDIR)/inttypes/PRIuLEAST32.c $(SRCDIR)/inttypes/PRIuLEAST64.c $(SRCDIR)/inttypes/PRIuLEAST8.c $(SRCDIR)/inttypes/PRIuMAX.c $(SRCDIR)/inttypes/PRIuPTR.c $(SRCDIR)/inttypes/PRIx16.c $(SRCDIR)/inttypes/PRIx32.c $(SRCDIR)/inttypes/PRIx64.c $(SRCDIR)/inttypes/PRIx8.c $(SRCDIR)/inttypes/PRIxFAST16.c $(SRCDIR)/inttypes/PRIxFAST32.c $(SRCDIR)/inttypes/PRIxFAST64.c $(SRCDIR)/inttypes/PRIxFAST8.c $(SRCDIR)/inttypes/PRIxLEAST16.c $(SRCDIR)/inttypes/PRIxLEAST32.c $(SRCDIR)/inttypes/PRIxLEAST64.c $(SRCDIR)/inttypes/PRIxLEAST8.c $(SRCDIR)/inttypes/PRIxMAX.c $(SRCDIR)/inttypes/PRIxPTR.c $(SRCDIR)/inttypes/SCNX16.c $(SRCDIR)/inttypes/SCNX32.c $(SRCDIR)/inttypes/SCNX64.c $(SRCDIR)/inttypes/SCNX8.c $(SRCDIR)/inttypes/SCNXFAST16.c $(SRCDIR)/inttypes/SCNXFAST32.c $(SRCDIR)/inttypes/SCNXFAST64.c $(SRCDIR)/inttypes/SCNXFAST8.c $(SRCDIR)/inttypes/SCNXLEAST16.c $(SRCDIR)/inttypes/SCNXLEAST32.c $(SRCDIR)/inttypes/SCNXLEAST64.c $(SRCDIR)/inttypes/SCNXLEAST8.c $(SRCDIR)/inttypes/SCNXMAX.c $(SRCDIR)/inttypes/SCNXPTR.c $(SRCDIR)/inttypes/SCNd16.c $(SRCDIR)/inttypes/SCNd32.c $(SRCDIR)/inttypes/SCNd64.c $(SRCDIR)/inttypes/SCNd8.c $(SRCDIR)/inttypes/SCNdFAST16.c $(SRCDIR)/inttypes/SCNdFAST32.c $(SRCDIR)/inttypes/SCNdFAST64.c $(SRCDIR)/inttypes/SCNdFAST8.c $(SRCDIR)/inttypes/SCNdLEAST16.c $(SRCDIR)/inttypes/SCNdLEAST32.c $(SRCDIR)/inttypes/SCNdLEAST64.c $(SRCDIR)/inttypes/SCNdLEAST8.c $(SRCDIR)/inttypes/SCNdMAX.c $(SRCDIR)/inttypes/SCNdPTR.c $(SRCDIR)/inttypes/SCNi16.c $(SRCDIR)/inttypes/SCNi32.c $(SRCDIR)/inttypes/SCNi64.c $(SRCDIR)/inttypes/SCNi8.c $(SRCDIR)/inttypes/SCNiFAST16.c $(SRCDIR)/inttypes/SCNiFAST32.c $(SRCDIR)/inttypes/SCNiFAST64.c $(SRCDIR)/inttypes/SCNiFAST8.c $(SRCDIR)/inttypes/SCNiLEAST16.c $(SRCDIR)/inttypes/SCNiLEAST32.c $(SRCDIR)/inttypes/SCNiLEAST64.c $(SRCDIR)/inttypes/SCNiLEAST8.c $(SRCDIR)/inttypes/SCNiMAX.c $(SRCDIR)/inttypes/SCNiPTR.c $(SRCDIR)/inttypes/SCNo16.c $(SRCDIR)/inttypes/SCNo32.c $(SRCDIR)/inttypes/SCNo64.c $(SRCDIR)/inttypes/SCNo8.c $(SRCDIR)/inttypes/SCNoFAST16.c $(SRCDIR)/inttypes/SCNoFAST32.c $(SRCDIR)/inttypes/SCNoFAST64.c $(SRCDIR)/inttypes/SCNoFAST8.c $(SRCDIR)/inttypes/SCNoLEAST16.c $(SRCDIR)/inttypes/SCNoLEAST32.c $(SRCDIR)/inttypes/SCNoLEAST64.c $(SRCDIR)/inttypes/SCNoLEAST8.c $(SRCDIR)/inttypes/SCNoMAX.c $(SRCDIR)/inttypes/SCNoPTR.c $(SRCDIR)/inttypes/SCNu16.c $(SRCDIR)/inttypes/SCNu32.c $(SRCDIR)/inttypes/SCNu64.c $(SRCDIR)/inttypes/SCNu8.c $(SRCDIR)/inttypes/SCNuFAST16.c $(SRCDIR)/inttypes/SCNuFAST32.c $(SRCDIR)/inttypes/SCNuFAST64.c $(SRCDIR)/inttypes/SCNuFAST8.c $(SRCDIR)/inttypes/SCNuLEAST16.c $(SRCDIR)/inttypes/SCNuLEAST32.c $(SRCDIR)/inttypes/SCNuLEAST64.c $(SRCDIR)/inttypes/SCNuLEAST8.c $(SRCDIR)/inttypes/SCNuMAX.c $(SRCDIR)/inttypes/SCNuPTR.c $(SRCDIR)/inttypes/SCNx16.c $(SRCDIR)/inttypes/SCNx32.c $(SRCDIR)/inttypes/SCNx64.c $(SRCDIR)/inttypes/SCNx8.c $(SRCDIR)/inttypes/SCNxFAST16.c $(SRCDIR)/inttypes/SCNxFAST32.c $(SRCDIR)/inttypes/SCNxFAST64.c $(SRCDIR)/inttypes/SCNxFAST8.c $(SRCDIR)/inttypes/SCNxLEAST16.c $(SRCDIR)/inttypes/SCNxLEAST32.c $(SRCDIR)/inttypes/SCNxLEAST64.c $(SRCDIR)/inttypes/SCNxLEAST8.c $(SRCDIR)/inttypes/SCNxMAX.c $(SRCDIR)/inttypes/SCNxPTR.c $(SRCDIR)/inttypes/imaxabs.c $(SRCDIR)/inttypes/imaxdiv.c $(SRCDIR)/inttypes/imaxdiv_t.c $(SRCDIR)/inttypes/intmax_t.c $(SRCDIR)/inttypes/strtoimax.c $(SRCDIR)/inttypes/strtoumax.c $(SRCDIR)/inttypes/uintmax_t.c $(SRCDIR)/inttypes/wcstoimax.c $(SRCDIR)/inttypes/wcstoumax.c $(SRCDIR)/inttypes/stdint.ref 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/iso646.h: mkh.sh $(SRCDIR)/iso646/and.c $(SRCDIR)/iso646/and_eq.c $(SRCDIR)/iso646/bitand.c $(SRCDIR)/iso646/bitor.c $(SRCDIR)/iso646/compl.c $(SRCDIR)/iso646/not.c $(SRCDIR)/iso646/not_eq.c $(SRCDIR)/iso646/or.c $(SRCDIR)/iso646/or_eq.c $(SRCDIR)/iso646/xor.c $(SRCDIR)/iso646/xor_eq.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/langinfo.h: mkh.sh $(SRCDIR)/langinfo/ABDAY_1.c $(SRCDIR)/langinfo/ABDAY_2.c $(SRCDIR)/langinfo/ABDAY_3.c $(SRCDIR)/langinfo/ABDAY_4.c $(SRCDIR)/langinfo/ABDAY_5.c $(SRCDIR)/langinfo/ABDAY_6.c $(SRCDIR)/langinfo/ABDAY_7.c $(SRCDIR)/langinfo/ABMON_1.c $(SRCDIR)/langinfo/ABMON_10.c $(SRCDIR)/langinfo/ABMON_11.c $(SRCDIR)/langinfo/ABMON_12.c $(SRCDIR)/langinfo/ABMON_2.c $(SRCDIR)/langinfo/ABMON_3.c $(SRCDIR)/langinfo/ABMON_4.c $(SRCDIR)/langinfo/ABMON_5.c $(SRCDIR)/langinfo/ABMON_6.c $(SRCDIR)/langinfo/ABMON_7.c $(SRCDIR)/langinfo/ABMON_8.c $(SRCDIR)/langinfo/ABMON_9.c $(SRCDIR)/langinfo/ALT_DIGITS.c $(SRCDIR)/langinfo/AM_STR.c $(SRCDIR)/langinfo/CODESET.c $(SRCDIR)/langinfo/CRNCYSTR.c $(SRCDIR)/langinfo/DAY_1.c $(SRCDIR)/langinfo/DAY_2.c $(SRCDIR)/langinfo/DAY_3.c $(SRCDIR)/langinfo/DAY_4.c $(SRCDIR)/langinfo/DAY_5.c $(SRCDIR)/langinfo/DAY_6.c $(SRCDIR)/langinfo/DAY_7.c $(SRCDIR)/langinfo/D_FMT.c $(SRCDIR)/langinfo/D_T_FMT.c $(SRCDIR)/langinfo/ERA.c $(SRCDIR)/langinfo/ERA_D_FMT.c $(SRCDIR)/langinfo/ERA_D_T_FMT.c $(SRCDIR)/langinfo/ERA_T_FMT.c $(SRCDIR)/langinfo/MON_1.c $(SRCDIR)/langinfo/MON_10.c $(SRCDIR)/langinfo/MON_11.c $(SRCDIR)/langinfo/MON_12.c $(SRCDIR)/langinfo/MON_2.c $(SRCDIR)/langinfo/MON_3.c $(SRCDIR)/langinfo/MON_4.c $(SRCDIR)/langinfo/MON_5.c $(SRCDIR)/langinfo/MON_6.c $(SRCDIR)/langinfo/MON_7.c $(SRCDIR)/langinfo/MON_8.c $(SRCDIR)/langinfo/MON_9.c $(SRCDIR)/langinfo/NOEXPR.c $(SRCDIR)/langinfo/NOSTR.c $(SRCDIR)/langinfo/PM_STR.c $(SRCDIR)/langinfo/RADIXCHAR.c $(SRCDIR)/langinfo/THOUSEP.c $(SRCDIR)/langinfo/T_FMT.c $(SRCDIR)/langinfo/T_FMT_AMPM.c $(SRCDIR)/langinfo/YESEXPR.c $(SRCDIR)/langinfo/YESSTR.c $(SRCDIR)/langinfo/nl_langinfo.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/libgen.h: mkh.sh $(SRCDIR)/libgen/__loc1.c $(SRCDIR)/libgen/basename.c $(SRCDIR)/libgen/dirname.c $(SRCDIR)/libgen/regcmp.c $(SRCDIR)/libgen/regex.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/limits.h: mkh.sh $(SRCDIR)/limits/ARG_MAX.c $(SRCDIR)/limits/ATEXIT_MAX.c $(SRCDIR)/limits/BC_BASE_MAX.c $(SRCDIR)/limits/BC_DIM_MAX.c $(SRCDIR)/limits/BC_SCALE_MAX.c $(SRCDIR)/limits/BC_STRING_MAX.c $(SRCDIR)/limits/CHARCLASS_NAME_MAX.c $(SRCDIR)/limits/CHAR_BIT.c $(SRCDIR)/limits/CHAR_MAX.c $(SRCDIR)/limits/CHAR_MIN.c $(SRCDIR)/limits/CHILD_MAX.c $(SRCDIR)/limits/COLL_WEIGHTS_MAX.c $(SRCDIR)/limits/EXPR_NEST_MAX.c $(SRCDIR)/limits/INT_MAX.c $(SRCDIR)/limits/INT_MIN.c $(SRCDIR)/limits/IOV_MAX.c $(SRCDIR)/limits/LINE_MAX.c $(SRCDIR)/limits/LINK_MAX.c $(SRCDIR)/limits/LLONG_MAX.c $(SRCDIR)/limits/LLONG_MIN.c $(SRCDIR)/limits/LONG_BIT.c $(SRCDIR)/limits/LONG_MAX.c $(SRCDIR)/limits/LONG_MIN.c $(SRCDIR)/limits/MAX_CANON.c $(SRCDIR)/limits/MAX_INPUT.c $(SRCDIR)/limits/MB_LEN_MAX.c $(SRCDIR)/limits/NAME_MAX.c $(SRCDIR)/limits/NGROUPS_MAX.c $(SRCDIR)/limits/NL_ARGMAX.c $(SRCDIR)/limits/NL_LANGMAX.c $(SRCDIR)/limits/NL_MSGMAX.c $(SRCDIR)/limits/NL_NMAX.c $(SRCDIR)/limits/NL_SETMAX.c $(SRCDIR)/limits/NL_TEXTMAX.c $(SRCDIR)/limits/NZERO.c $(SRCDIR)/limits/OPEN_MAX.c $(SRCDIR)/limits/PAGESIZE.c $(SRCDIR)/limits/PAGE_SIZE.c $(SRCDIR)/limits/PASS_MAX.c $(SRCDIR)/limits/PATH_MAX.c $(SRCDIR)/limits/PIPE_BUF.c $(SRCDIR)/limits/RE_DUP_MAX.c $(SRCDIR)/limits/SCHAR_MAX.c $(SRCDIR)/limits/SCHAR_MIN.c $(SRCDIR)/limits/SHRT_MAX.c $(SRCDIR)/limits/SHRT_MIN.c $(SRCDIR)/limits/SSIZE_MAX.c $(SRCDIR)/limits/STREAM_MAX.c $(SRCDIR)/limits/TMP_MAX.c $(SRCDIR)/limits/TZNAME_MAX.c $(SRCDIR)/limits/UCHAR_MAX.c $(SRCDIR)/limits/UINT_MAX.c $(SRCDIR)/limits/ULLONG_MAX.c $(SRCDIR)/limits/ULONG_MAX.c $(SRCDIR)/limits/USHRT_MAX.c $(SRCDIR)/limits/WORD_BIT.c $(SRCDIR)/limits/_POSIX2_BC_BASE_MAX.c $(SRCDIR)/limits/_POSIX2_BC_DIM_MAX.c $(SRCDIR)/limits/_POSIX2_BC_SCALE_MAX.c $(SRCDIR)/limits/_POSIX2_BC_STRING_MAX.c $(SRCDIR)/limits/_POSIX2_COLL_WEIGHTS_MAX.c $(SRCDIR)/limits/_POSIX2_EXPR_NEST_MAX.c $(SRCDIR)/limits/_POSIX2_LINE_MAX.c $(SRCDIR)/limits/_POSIX2_RE_DUP_MAX.c $(SRCDIR)/limits/_POSIX_ARG_MAX.c $(SRCDIR)/limits/_POSIX_CHILD_MAX.c $(SRCDIR)/limits/_POSIX_LINK_MAX.c $(SRCDIR)/limits/_POSIX_MAX_CANON.c $(SRCDIR)/limits/_POSIX_MAX_INPUT.c $(SRCDIR)/limits/_POSIX_NAME_MAX.c $(SRCDIR)/limits/_POSIX_NGROUPS_MAX.c $(SRCDIR)/limits/_POSIX_OPEN_MAX.c $(SRCDIR)/limits/_POSIX_PATH_MAX.c $(SRCDIR)/limits/_POSIX_PIPE_BUF.c $(SRCDIR)/limits/_POSIX_SSIZE_MAX.c $(SRCDIR)/limits/_POSIX_STREAM_MAX.c $(SRCDIR)/limits/_POSIX_TZNAME_MAX.c $(SRCDIR)/limits/_XOPEN_IOV_MAX.c $(SRCDIR)/limits/DBL_DIG.ref $(SRCDIR)/limits/DBL_MAX.ref $(SRCDIR)/limits/FLT_DIG.ref $(SRCDIR)/limits/FLT_MAX.ref 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/locale.h: mkh.sh $(SRCDIR)/locale/LC_ALL.c $(SRCDIR)/locale/LC_COLLATE.c $(SRCDIR)/locale/LC_CTYPE.c $(SRCDIR)/locale/LC_MESSAGES.c $(SRCDIR)/locale/LC_MONETARY.c $(SRCDIR)/locale/LC_NUMERIC.c $(SRCDIR)/locale/LC_TIME.c $(SRCDIR)/locale/localeconv.c $(SRCDIR)/locale/setlocale.c $(SRCDIR)/locale/struct_lconv.c $(SRCDIR)/locale/NULL.ref 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/math.h: mkh.sh $(SRCDIR)/math/FP_FAST_FMA.c $(SRCDIR)/math/FP_FAST_FMAF.c $(SRCDIR)/math/FP_FAST_FMAL.c $(SRCDIR)/math/FP_ILOGB0.c $(SRCDIR)/math/FP_ILOGBNAN.c $(SRCDIR)/math/FP_INFINITE.c $(SRCDIR)/math/FP_NAN.c $(SRCDIR)/math/FP_NORMAL.c $(SRCDIR)/math/FP_SUBNORMAL.c $(SRCDIR)/math/FP_ZERO.c $(SRCDIR)/math/HUGE_VAL.c $(SRCDIR)/math/HUGE_VALF.c $(SRCDIR)/math/HUGE_VALL.c $(SRCDIR)/math/INFINITY.c $(SRCDIR)/math/MATH_ERREXCEPT.c $(SRCDIR)/math/MATH_ERRNO.c $(SRCDIR)/math/MAXFLOAT.c $(SRCDIR)/math/M_1_PI.c $(SRCDIR)/math/M_2_PI.c $(SRCDIR)/math/M_2_SQRTPI.c $(SRCDIR)/math/M_E.c $(SRCDIR)/math/M_LN10.c $(SRCDIR)/math/M_LN2.c $(SRCDIR)/math/M_LOG10E.c $(SRCDIR)/math/M_LOG2E.c $(SRCDIR)/math/M_PI.c $(SRCDIR)/math/M_PI_2.c $(SRCDIR)/math/M_PI_4.c $(SRCDIR)/math/M_SQRT1_2.c $(SRCDIR)/math/M_SQRT2.c $(SRCDIR)/math/NAN.c $(SRCDIR)/math/acos.c $(SRCDIR)/math/acosh.c $(SRCDIR)/math/asin.c $(SRCDIR)/math/asinh.c $(SRCDIR)/math/atan.c $(SRCDIR)/math/atan2.c $(SRCDIR)/math/atanh.c $(SRCDIR)/math/cbrt.c $(SRCDIR)/math/ceil.c $(SRCDIR)/math/copysign.c $(SRCDIR)/math/cos.c $(SRCDIR)/math/cosh.c $(SRCDIR)/math/double_t.c $(SRCDIR)/math/erf.c $(SRCDIR)/math/erfc.c $(SRCDIR)/math/exp.c $(SRCDIR)/math/exp2.c $(SRCDIR)/math/expm1.c $(SRCDIR)/math/fabs.c $(SRCDIR)/math/fdim.c $(SRCDIR)/math/float_t.c $(SRCDIR)/math/floor.c $(SRCDIR)/math/fma.c $(SRCDIR)/math/fmax.c $(SRCDIR)/math/fmin.c $(SRCDIR)/math/fmod.c $(SRCDIR)/math/fpclassify.c $(SRCDIR)/math/frexp.c $(SRCDIR)/math/gamma.c $(SRCDIR)/math/hypot.c $(SRCDIR)/math/ilogb.c $(SRCDIR)/math/isfinite.c $(SRCDIR)/math/isgreater.c $(SRCDIR)/math/isgreaterequal.c $(SRCDIR)/math/isinf.c $(SRCDIR)/math/isless.c $(SRCDIR)/math/islessequal.c $(SRCDIR)/math/islessgreater.c $(SRCDIR)/math/isnan.c $(SRCDIR)/math/isnormal.c $(SRCDIR)/math/isunordered.c $(SRCDIR)/math/j0.c $(SRCDIR)/math/j1.c $(SRCDIR)/math/jn.c $(SRCDIR)/math/ldexp.c $(SRCDIR)/math/lgamma.c $(SRCDIR)/math/llrint.c $(SRCDIR)/math/llround.c $(SRCDIR)/math/log.c $(SRCDIR)/math/log10.c $(SRCDIR)/math/log1p.c $(SRCDIR)/math/log2.c $(SRCDIR)/math/logb.c $(SRCDIR)/math/lrint.c $(SRCDIR)/math/lround.c $(SRCDIR)/math/math_errhandling.c $(SRCDIR)/math/modf.c $(SRCDIR)/math/nan.c $(SRCDIR)/math/nearbyint.c $(SRCDIR)/math/nextafter.c $(SRCDIR)/math/nexttoward.c $(SRCDIR)/math/pow.c $(SRCDIR)/math/remainder.c $(SRCDIR)/math/remquo.c $(SRCDIR)/math/rint.c $(SRCDIR)/math/round.c $(SRCDIR)/math/scalb.c $(SRCDIR)/math/scalbln.c $(SRCDIR)/math/scalbn.c $(SRCDIR)/math/signbit.c $(SRCDIR)/math/signgam.c $(SRCDIR)/math/sin.c $(SRCDIR)/math/sinh.c $(SRCDIR)/math/sqrt.c $(SRCDIR)/math/tan.c $(SRCDIR)/math/tanh.c $(SRCDIR)/math/tgamma.c $(SRCDIR)/math/trunc.c $(SRCDIR)/math/y0.c $(SRCDIR)/math/y1.c $(SRCDIR)/math/yn.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/monetary.h: mkh.sh $(SRCDIR)/monetary/strfmon.c $(SRCDIR)/monetary/size_t.ref $(SRCDIR)/monetary/ssize_t.ref 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/ndbm.h: mkh.sh $(SRCDIR)/ndbm/DBM.c $(SRCDIR)/ndbm/DBM_INSERT.c $(SRCDIR)/ndbm/DBM_REPLACE.c $(SRCDIR)/ndbm/datum.c $(SRCDIR)/ndbm/dbm_clearerr.c $(SRCDIR)/ndbm/dbm_close.c $(SRCDIR)/ndbm/dbm_delete.c $(SRCDIR)/ndbm/dbm_error.c $(SRCDIR)/ndbm/dbm_fetch.c $(SRCDIR)/ndbm/dbm_firstkey.c $(SRCDIR)/ndbm/dbm_nextkey.c $(SRCDIR)/ndbm/dbm_open.c $(SRCDIR)/ndbm/dbm_store.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/nl_types.h: mkh.sh $(SRCDIR)/nl_types/NL_CAT_LOCALE.c $(SRCDIR)/nl_types/NL_SETD.c $(SRCDIR)/nl_types/catclose.c $(SRCDIR)/nl_types/catgets.c $(SRCDIR)/nl_types/catopen.c $(SRCDIR)/nl_types/nl_catd.c $(SRCDIR)/nl_types/nl_item.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/nonstd/assert.h: mkh.sh $(SRCDIR)/nonstd/ASSERT_NONNULL.c $(SRCDIR)/nonstd/ASSERT_NONZERO.c $(SRCDIR)/nonstd/ASSERT_NOOVERLAP.c $(SRCDIR)/nonstd/ASSERT_REPRESENTABLE.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/nonstd/ctype.h: mkh.sh $(SRCDIR)/nonstd/ctype_t.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/nonstd/internal.h: mkh.sh $(SRCDIR)/nonstd/LIBC_INTERNAL.c $(SRCDIR)/nonstd/__libc.c $(SRCDIR)/nonstd/struct_atexit.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/nonstd/io.h: mkh.sh $(SRCDIR)/nonstd/__printf.c $(SRCDIR)/nonstd/__scanf.c $(SRCDIR)/nonstd/flockfile.c $(SRCDIR)/nonstd/ftrylockfile.c $(SRCDIR)/nonstd/funlockfile.c $(SRCDIR)/nonstd/getc_unlocked.c $(SRCDIR)/nonstd/struct_FILE.c $(SRCDIR)/nonstd/struct_io_options.c $(SRCDIR)/nonstd/BUFSIZ.ref $(SRCDIR)/nonstd/NULL.ref $(SRCDIR)/nonstd/fpos_t.ref $(SRCDIR)/nonstd/pid_t.ref $(SRCDIR)/nonstd/size_t.ref $(SRCDIR)/nonstd/va_list.ref 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/nonstd/locale.h: mkh.sh $(SRCDIR)/nonstd/struct_locale_t.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/nonstd/syscall.h: mkh.sh $(SRCDIR)/nonstd/SYSCALL.c $(SRCDIR)/nonstd/SYSCALL0.c $(SRCDIR)/nonstd/SYSCALL_NOFAIL.c $(SRCDIR)/nonstd/SYSCALL_NUMBER.c $(SRCDIR)/nonstd/__syscall.c $(SRCDIR)/nonstd/syscall_lookup_t.c $(SRCDIR)/nonstd/ENOSYS.ref 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/poll.h: mkh.sh $(SRCDIR)/poll/POLLERR.c $(SRCDIR)/poll/POLLHUP.c $(SRCDIR)/poll/POLLIN.c $(SRCDIR)/poll/POLLNVAL.c $(SRCDIR)/poll/POLLOUT.c $(SRCDIR)/poll/POLLPRI.c $(SRCDIR)/poll/POLLRDBAND.c $(SRCDIR)/poll/POLLRDNORM.c $(SRCDIR)/poll/POLLWRBAND.c $(SRCDIR)/poll/POLLWRNORM.c $(SRCDIR)/poll/nfds_t.c $(SRCDIR)/poll/poll.c $(SRCDIR)/poll/struct_pollfd.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/pwd.h: mkh.sh $(SRCDIR)/pwd/endpwent.c $(SRCDIR)/pwd/getpwent.c $(SRCDIR)/pwd/getpwnam.c $(SRCDIR)/pwd/getpwuid.c $(SRCDIR)/pwd/setpwent.c $(SRCDIR)/pwd/struct_passwd.c $(SRCDIR)/pwd/gid_t.ref $(SRCDIR)/pwd/uid_t.ref 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/re_comp.h: mkh.sh $(SRCDIR)/re_comp/re_comp.c $(SRCDIR)/re_comp/re_exec.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/regex.h: mkh.sh $(SRCDIR)/regex/REG_BADBR.c $(SRCDIR)/regex/REG_BADPAT.c $(SRCDIR)/regex/REG_BADRPT.c $(SRCDIR)/regex/REG_EBRACE.c $(SRCDIR)/regex/REG_EBRACK.c $(SRCDIR)/regex/REG_ECOLLATE.c $(SRCDIR)/regex/REG_ECTYPE.c $(SRCDIR)/regex/REG_EESCAPE.c $(SRCDIR)/regex/REG_ENOSYS.c $(SRCDIR)/regex/REG_EPAREN.c $(SRCDIR)/regex/REG_ERANGE.c $(SRCDIR)/regex/REG_ESPACE.c $(SRCDIR)/regex/REG_ESUBREG.c $(SRCDIR)/regex/REG_EXTENDED.c $(SRCDIR)/regex/REG_ICASE.c $(SRCDIR)/regex/REG_NEWLINE.c $(SRCDIR)/regex/REG_NOMATCH.c $(SRCDIR)/regex/REG_NOSUB.c $(SRCDIR)/regex/REG_NOTBOL.c $(SRCDIR)/regex/REG_NOTEOL.c $(SRCDIR)/regex/regcomp.c $(SRCDIR)/regex/regerror.c $(SRCDIR)/regex/regex_t.c $(SRCDIR)/regex/regexec.c $(SRCDIR)/regex/regfree.c $(SRCDIR)/regex/regmatch_t.c $(SRCDIR)/regex/regoff_t.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/regexp.h: mkh.sh $(SRCDIR)/regexp/advance.c $(SRCDIR)/regexp/compile.c $(SRCDIR)/regexp/loc1.c $(SRCDIR)/regexp/loc2.c $(SRCDIR)/regexp/locs.c $(SRCDIR)/regexp/step.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/search.h: mkh.sh $(SRCDIR)/search/ACTION.c $(SRCDIR)/search/ENTRY.c $(SRCDIR)/search/VISIT.c $(SRCDIR)/search/hcreate.c $(SRCDIR)/search/hdestroy.c $(SRCDIR)/search/hsearch.c $(SRCDIR)/search/insque.c $(SRCDIR)/search/lfind.c $(SRCDIR)/search/lsearch.c $(SRCDIR)/search/remque.c $(SRCDIR)/search/tdelete.c $(SRCDIR)/search/tfind.c $(SRCDIR)/search/tsearch.c $(SRCDIR)/search/twalk.c $(SRCDIR)/search/size_t.ref 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/setjmp.h: mkh.sh $(SRCDIR)/setjmp/_longjmp.c $(SRCDIR)/setjmp/_setjmp.c $(SRCDIR)/setjmp/jmp_buf.c $(SRCDIR)/setjmp/longjmp.c $(SRCDIR)/setjmp/setjmp.c $(SRCDIR)/setjmp/sigjmp_buf.c $(SRCDIR)/setjmp/siglongjmp.c $(SRCDIR)/setjmp/sigsetjmp.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/signal.h: mkh.sh $(SRCDIR)/signal/BUS_ADRALN.c $(SRCDIR)/signal/BUS_ADRERR.c $(SRCDIR)/signal/BUS_OBJERR.c $(SRCDIR)/signal/CLD_CONTINUED.c $(SRCDIR)/signal/CLD_DUMPED.c $(SRCDIR)/signal/CLD_EXITED.c $(SRCDIR)/signal/CLD_KILLED.c $(SRCDIR)/signal/CLD_STOPPED.c $(SRCDIR)/signal/CLD_TRAPPED.c $(SRCDIR)/signal/FPE_FLTDIV.c $(SRCDIR)/signal/FPE_FLTINV.c $(SRCDIR)/signal/FPE_FLTOVF.c $(SRCDIR)/signal/FPE_FLTRES.c $(SRCDIR)/signal/FPE_FLTSUB.c $(SRCDIR)/signal/FPE_FLTUND.c $(SRCDIR)/signal/FPE_INTDIV.c $(SRCDIR)/signal/FPE_INTOVF.c $(SRCDIR)/signal/ILL_BADSTK.c $(SRCDIR)/signal/ILL_COPROC.c $(SRCDIR)/signal/ILL_ILLADR.c $(SRCDIR)/signal/ILL_ILLOPC.c $(SRCDIR)/signal/ILL_ILLOPN.c $(SRCDIR)/signal/ILL_ILLTRP.c $(SRCDIR)/signal/ILL_PRVOPC.c $(SRCDIR)/signal/ILL_PRVREG.c $(SRCDIR)/signal/MINSIGSTKSZ.c $(SRCDIR)/signal/POLL_ERR.c $(SRCDIR)/signal/POLL_HUP.c $(SRCDIR)/signal/POLL_IN.c $(SRCDIR)/signal/POLL_MSG.c $(SRCDIR)/signal/POLL_OUT.c $(SRCDIR)/signal/POLL_PRI.c $(SRCDIR)/signal/SA_NOCLDSTOP.c $(SRCDIR)/signal/SA_NOCLDWAIT.c $(SRCDIR)/signal/SA_NODEFER.c $(SRCDIR)/signal/SA_ONSTACK.c $(SRCDIR)/signal/SA_RESETHAND.c $(SRCDIR)/signal/SA_RESTART.c $(SRCDIR)/signal/SA_SIGINFO.c $(SRCDIR)/signal/SEGV_ACCERR.c $(SRCDIR)/signal/SEGV_MAPERR.c $(SRCDIR)/signal/SIGABRT.c $(SRCDIR)/signal/SIGALRM.c $(SRCDIR)/signal/SIGBUS.c $(SRCDIR)/signal/SIGCHLD.c $(SRCDIR)/signal/SIGCONT.c $(SRCDIR)/signal/SIGFPE.c $(SRCDIR)/signal/SIGHUP.c $(SRCDIR)/signal/SIGILL.c $(SRCDIR)/signal/SIGINT.c $(SRCDIR)/signal/SIGKILL.c $(SRCDIR)/signal/SIGPIPE.c $(SRCDIR)/signal/SIGPOLL.c $(SRCDIR)/signal/SIGPROF.c $(SRCDIR)/signal/SIGQUIT.c $(SRCDIR)/signal/SIGSEGV.c $(SRCDIR)/signal/SIGSTKSZ.c $(SRCDIR)/signal/SIGSTOP.c $(SRCDIR)/signal/SIGSYS.c $(SRCDIR)/signal/SIGTERM.c $(SRCDIR)/signal/SIGTRAP.c $(SRCDIR)/signal/SIGTSTP.c $(SRCDIR)/signal/SIGTTIN.c $(SRCDIR)/signal/SIGTTOU.c $(SRCDIR)/signal/SIGURG.c $(SRCDIR)/signal/SIGUSR1.c $(SRCDIR)/signal/SIGUSR2.c $(SRCDIR)/signal/SIGVTALRM.c $(SRCDIR)/signal/SIGXCPU.c $(SRCDIR)/signal/SIGXFSZ.c $(SRCDIR)/signal/SIG_BLOCK.c $(SRCDIR)/signal/SIG_DFL.c $(SRCDIR)/signal/SIG_ERR.c $(SRCDIR)/signal/SIG_HOLD.c $(SRCDIR)/signal/SIG_IGN.c $(SRCDIR)/signal/SIG_SETMASK.c $(SRCDIR)/signal/SIG_UNBLOCK.c $(SRCDIR)/signal/SS_DISABLE.c $(SRCDIR)/signal/SS_ONSTACK.c $(SRCDIR)/signal/TRAP_BRKPT.c $(SRCDIR)/signal/TRAP_TRACE.c $(SRCDIR)/signal/bsd_signal.c $(SRCDIR)/signal/kill.c $(SRCDIR)/signal/killpg.c $(SRCDIR)/signal/raise.c $(SRCDIR)/signal/sig_atomic_t.c $(SRCDIR)/signal/sigaction.c $(SRCDIR)/signal/sigaddset.c $(SRCDIR)/signal/sigaltstack.c $(SRCDIR)/signal/sigdelset.c $(SRCDIR)/signal/sigemptyset.c $(SRCDIR)/signal/sigfillset.c $(SRCDIR)/signal/sighold.c $(SRCDIR)/signal/sigignore.c $(SRCDIR)/signal/siginfo_t.c $(SRCDIR)/signal/siginterrupt.c $(SRCDIR)/signal/sigismember.c $(SRCDIR)/signal/sigmask.c $(SRCDIR)/signal/signal.c $(SRCDIR)/signal/sigpause.c $(SRCDIR)/signal/sigpending.c $(SRCDIR)/signal/sigprocmask.c $(SRCDIR)/signal/sigrelse.c $(SRCDIR)/signal/sigset.c $(SRCDIR)/signal/sigset_t.c $(SRCDIR)/signal/sigstack.c $(SRCDIR)/signal/sigsuspend.c $(SRCDIR)/signal/stack_t.c $(SRCDIR)/signal/struct_sigaction.c $(SRCDIR)/signal/struct_sigstack.c $(SRCDIR)/signal/pid_t.ref $(SRCDIR)/signal/ucontext_t.ref 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/stdarg.h: mkh.sh $(SRCDIR)/stdarg/va_arg.c $(SRCDIR)/stdarg/va_copy.c $(SRCDIR)/stdarg/va_end.c $(SRCDIR)/stdarg/va_list.c $(SRCDIR)/stdarg/va_start.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/stdbool.h: mkh.sh $(SRCDIR)/stdbool/__bool_true_false_are_defined.c $(SRCDIR)/stdbool/bool.c $(SRCDIR)/stdbool/false.c $(SRCDIR)/stdbool/true.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/stddef.h: mkh.sh $(SRCDIR)/stddef/NULL.c $(SRCDIR)/stddef/offsetof.c $(SRCDIR)/stddef/ptrdiff_t.c $(SRCDIR)/stddef/size_t.c $(SRCDIR)/stddef/wchar_t.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/stdint.h: mkh.sh $(SRCDIR)/stdint/INT16_C.c $(SRCDIR)/stdint/INT16_MAX.c $(SRCDIR)/stdint/INT16_MIN.c $(SRCDIR)/stdint/INT32_C.c $(SRCDIR)/stdint/INT32_MAX.c $(SRCDIR)/stdint/INT32_MIN.c $(SRCDIR)/stdint/INT64_C.c $(SRCDIR)/stdint/INT64_MAX.c $(SRCDIR)/stdint/INT64_MIN.c $(SRCDIR)/stdint/INT8_C.c $(SRCDIR)/stdint/INT8_MAX.c $(SRCDIR)/stdint/INT8_MIN.c $(SRCDIR)/stdint/INTMAX_C.c $(SRCDIR)/stdint/INTMAX_MAX.c $(SRCDIR)/stdint/INTMAX_MIN.c $(SRCDIR)/stdint/INTPTR_MAX.c $(SRCDIR)/stdint/INTPTR_MIN.c $(SRCDIR)/stdint/INT_FAST16_MAX.c $(SRCDIR)/stdint/INT_FAST16_MIN.c $(SRCDIR)/stdint/INT_FAST32_MAX.c $(SRCDIR)/stdint/INT_FAST32_MIN.c $(SRCDIR)/stdint/INT_FAST64_MAX.c $(SRCDIR)/stdint/INT_FAST64_MIN.c $(SRCDIR)/stdint/INT_FAST8_MAX.c $(SRCDIR)/stdint/INT_FAST8_MIN.c $(SRCDIR)/stdint/INT_LEAST16_MAX.c $(SRCDIR)/stdint/INT_LEAST16_MIN.c $(SRCDIR)/stdint/INT_LEAST32_MAX.c $(SRCDIR)/stdint/INT_LEAST32_MIN.c $(SRCDIR)/stdint/INT_LEAST64_MAX.c $(SRCDIR)/stdint/INT_LEAST64_MIN.c $(SRCDIR)/stdint/INT_LEAST8_MAX.c $(SRCDIR)/stdint/INT_LEAST8_MIN.c $(SRCDIR)/stdint/PTRDIFF_MAX.c $(SRCDIR)/stdint/PTRDIFF_MIN.c $(SRCDIR)/stdint/SIG_ATOMIC_MAX.c $(SRCDIR)/stdint/SIG_ATOMIC_MIN.c $(SRCDIR)/stdint/SIZE_MAX.c $(SRCDIR)/stdint/UINT16_C.c $(SRCDIR)/stdint/UINT16_MAX.c $(SRCDIR)/stdint/UINT32_C.c $(SRCDIR)/stdint/UINT32_MAX.c $(SRCDIR)/stdint/UINT64_C.c $(SRCDIR)/stdint/UINT64_MAX.c $(SRCDIR)/stdint/UINT8_C.c $(SRCDIR)/stdint/UINT8_MAX.c $(SRCDIR)/stdint/UINTMAX_C.c $(SRCDIR)/stdint/UINTMAX_MAX.c $(SRCDIR)/stdint/UINTPTR_MAX.c $(SRCDIR)/stdint/UINT_FAST16_MAX.c $(SRCDIR)/stdint/UINT_FAST32_MAX.c $(SRCDIR)/stdint/UINT_FAST64_MAX.c $(SRCDIR)/stdint/UINT_FAST8_MAX.c $(SRCDIR)/stdint/UINT_LEAST16_MAX.c $(SRCDIR)/stdint/UINT_LEAST32_MAX.c $(SRCDIR)/stdint/UINT_LEAST64_MAX.c $(SRCDIR)/stdint/UINT_LEAST8_MAX.c $(SRCDIR)/stdint/WCHAR_MAX.c $(SRCDIR)/stdint/WCHAR_MIN.c $(SRCDIR)/stdint/WINT_MAX.c $(SRCDIR)/stdint/WINT_MIN.c $(SRCDIR)/stdint/int16_t.c $(SRCDIR)/stdint/int32_t.c $(SRCDIR)/stdint/int64_t.c $(SRCDIR)/stdint/int8_t.c $(SRCDIR)/stdint/int_fast16_t.c $(SRCDIR)/stdint/int_fast32_t.c $(SRCDIR)/stdint/int_fast64_t.c $(SRCDIR)/stdint/int_fast8_t.c $(SRCDIR)/stdint/int_least16_t.c $(SRCDIR)/stdint/int_least32_t.c $(SRCDIR)/stdint/int_least64_t.c $(SRCDIR)/stdint/int_least8_t.c $(SRCDIR)/stdint/intmax_t.c $(SRCDIR)/stdint/intptr_t.c $(SRCDIR)/stdint/uint16_t.c $(SRCDIR)/stdint/uint32_t.c $(SRCDIR)/stdint/uint64_t.c $(SRCDIR)/stdint/uint8_t.c $(SRCDIR)/stdint/uint_fast16_t.c $(SRCDIR)/stdint/uint_fast32_t.c $(SRCDIR)/stdint/uint_fast64_t.c $(SRCDIR)/stdint/uint_fast8_t.c $(SRCDIR)/stdint/uint_least16_t.c $(SRCDIR)/stdint/uint_least32_t.c $(SRCDIR)/stdint/uint_least64_t.c $(SRCDIR)/stdint/uint_least8_t.c $(SRCDIR)/stdint/uintmax_t.c $(SRCDIR)/stdint/uintptr_t.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/stdio.h: mkh.sh $(SRCDIR)/stdio/BUFSIZ.c $(SRCDIR)/stdio/EOF.c $(SRCDIR)/stdio/FILE.c $(SRCDIR)/stdio/FILENAME_MAX.c $(SRCDIR)/stdio/FOPEN_MAX.c $(SRCDIR)/stdio/L_ctermid.c $(SRCDIR)/stdio/L_cuserid.c $(SRCDIR)/stdio/L_tmpnam.c $(SRCDIR)/stdio/P_tmpdir.c $(SRCDIR)/stdio/SEEK_CUR.c $(SRCDIR)/stdio/SEEK_END.c $(SRCDIR)/stdio/SEEK_SET.c $(SRCDIR)/stdio/TMP_MAX.c $(SRCDIR)/stdio/_IOFBF.c $(SRCDIR)/stdio/_IOLBF.c $(SRCDIR)/stdio/_IONBF.c $(SRCDIR)/stdio/__stderr.c $(SRCDIR)/stdio/__stdin.c $(SRCDIR)/stdio/__stdout.c $(SRCDIR)/stdio/clearerr.c $(SRCDIR)/stdio/fclose.c $(SRCDIR)/stdio/fdopen.c $(SRCDIR)/stdio/feof.c $(SRCDIR)/stdio/ferror.c $(SRCDIR)/stdio/fflush.c $(SRCDIR)/stdio/fgetc.c $(SRCDIR)/stdio/fgetpos.c $(SRCDIR)/stdio/fgets.c $(SRCDIR)/stdio/fileno.c $(SRCDIR)/stdio/fopen.c $(SRCDIR)/stdio/fpos_t.c $(SRCDIR)/stdio/fprintf.c $(SRCDIR)/stdio/fputc.c $(SRCDIR)/stdio/fputs.c $(SRCDIR)/stdio/fread.c $(SRCDIR)/stdio/freopen.c $(SRCDIR)/stdio/fscanf.c $(SRCDIR)/stdio/fseek.c $(SRCDIR)/stdio/fsetpos.c $(SRCDIR)/stdio/ftell.c $(SRCDIR)/stdio/fwrite.c $(SRCDIR)/stdio/getc.c $(SRCDIR)/stdio/getchar.c $(SRCDIR)/stdio/gets.c $(SRCDIR)/stdio/getw.c $(SRCDIR)/stdio/pclose.c $(SRCDIR)/stdio/perror.c $(SRCDIR)/stdio/popen.c $(SRCDIR)/stdio/printf.c $(SRCDIR)/stdio/putc.c $(SRCDIR)/stdio/putchar.c $(SRCDIR)/stdio/puts.c $(SRCDIR)/stdio/putw.c $(SRCDIR)/stdio/remove.c $(SRCDIR)/stdio/rename.c $(SRCDIR)/stdio/rewind.c $(SRCDIR)/stdio/scanf.c $(SRCDIR)/stdio/setbuf.c $(SRCDIR)/stdio/setvbuf.c $(SRCDIR)/stdio/snprintf.c $(SRCDIR)/stdio/sprintf.c $(SRCDIR)/stdio/sscanf.c $(SRCDIR)/stdio/stderr.c $(SRCDIR)/stdio/stdin.c $(SRCDIR)/stdio/stdout.c $(SRCDIR)/stdio/tempnam.c $(SRCDIR)/stdio/tmpfile.c $(SRCDIR)/stdio/tmpnam.c $(SRCDIR)/stdio/ungetc.c $(SRCDIR)/stdio/vfprintf.c $(SRCDIR)/stdio/vfscanf.c $(SRCDIR)/stdio/vprintf.c $(SRCDIR)/stdio/vscanf.c $(SRCDIR)/stdio/vsnprintf.c $(SRCDIR)/stdio/vsprintf.c $(SRCDIR)/stdio/vsscanf.c $(SRCDIR)/stdio/NULL.ref $(SRCDIR)/stdio/ctermid.ref $(SRCDIR)/stdio/cuserid.ref $(SRCDIR)/stdio/getopt.ref $(SRCDIR)/stdio/optarg.ref $(SRCDIR)/stdio/opterr.ref $(SRCDIR)/stdio/optind.ref $(SRCDIR)/stdio/optopt.ref $(SRCDIR)/stdio/size_t.ref $(SRCDIR)/stdio/va_list.ref 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/stdlib.h: mkh.sh $(SRCDIR)/stdlib/EXIT_FAILURE.c $(SRCDIR)/stdlib/EXIT_SUCCESS.c $(SRCDIR)/stdlib/MB_CUR_MAX.c $(SRCDIR)/stdlib/RAND_MAX.c $(SRCDIR)/stdlib/_Exit.c $(SRCDIR)/stdlib/a64l.c $(SRCDIR)/stdlib/abort.c $(SRCDIR)/stdlib/abs.c $(SRCDIR)/stdlib/atexit.c $(SRCDIR)/stdlib/atof.c $(SRCDIR)/stdlib/atoi.c $(SRCDIR)/stdlib/atol.c $(SRCDIR)/stdlib/atoll.c $(SRCDIR)/stdlib/bsearch.c $(SRCDIR)/stdlib/calloc.c $(SRCDIR)/stdlib/div.c $(SRCDIR)/stdlib/div_t.c $(SRCDIR)/stdlib/drand48.c $(SRCDIR)/stdlib/ecvt.c $(SRCDIR)/stdlib/erand48.c $(SRCDIR)/stdlib/exit.c $(SRCDIR)/stdlib/fcvt.c $(SRCDIR)/stdlib/free.c $(SRCDIR)/stdlib/gcvt.c $(SRCDIR)/stdlib/getenv.c $(SRCDIR)/stdlib/getsubopt.c $(SRCDIR)/stdlib/grantpt.c $(SRCDIR)/stdlib/initstate.c $(SRCDIR)/stdlib/jrand48.c $(SRCDIR)/stdlib/l64a.c $(SRCDIR)/stdlib/labs.c $(SRCDIR)/stdlib/lcong48.c $(SRCDIR)/stdlib/ldiv.c $(SRCDIR)/stdlib/ldiv_t.c $(SRCDIR)/stdlib/llabs.c $(SRCDIR)/stdlib/lldiv.c $(SRCDIR)/stdlib/lldiv_t.c $(SRCDIR)/stdlib/lrand48.c $(SRCDIR)/stdlib/malloc.c $(SRCDIR)/stdlib/mblen.c $(SRCDIR)/stdlib/mbstowcs.c $(SRCDIR)/stdlib/mbtowc.c $(SRCDIR)/stdlib/mkstemp.c $(SRCDIR)/stdlib/mktemp.c $(SRCDIR)/stdlib/mrand48.c $(SRCDIR)/stdlib/nrand48.c $(SRCDIR)/stdlib/ptsname.c $(SRCDIR)/stdlib/putenv.c $(SRCDIR)/stdlib/qsort.c $(SRCDIR)/stdlib/rand.c $(SRCDIR)/stdlib/random.c $(SRCDIR)/stdlib/realloc.c $(SRCDIR)/stdlib/realpath.c $(SRCDIR)/stdlib/seed48.c $(SRCDIR)/stdlib/setkey.c $(SRCDIR)/stdlib/setstate.c $(SRCDIR)/stdlib/srand.c $(SRCDIR)/stdlib/srand48.c $(SRCDIR)/stdlib/srandom.c $(SRCDIR)/stdlib/strtod.c $(SRCDIR)/stdlib/strtof.c $(SRCDIR)/stdlib/strtol.c $(SRCDIR)/stdlib/strtold.c $(SRCDIR)/stdlib/strtoll.c $(SRCDIR)/stdlib/strtoul.c $(SRCDIR)/stdlib/strtoull.c $(SRCDIR)/stdlib/system.c $(SRCDIR)/stdlib/ttyslot.c $(SRCDIR)/stdlib/unlockpt.c $(SRCDIR)/stdlib/valloc.c $(SRCDIR)/stdlib/wcstombs.c $(SRCDIR)/stdlib/wctomb.c $(SRCDIR)/stdlib/NULL.ref $(SRCDIR)/stdlib/WEXITSTATUS.ref $(SRCDIR)/stdlib/WIFEXITED.ref $(SRCDIR)/stdlib/WIFSIGNALED.ref $(SRCDIR)/stdlib/WIFSTOPPED.ref $(SRCDIR)/stdlib/WNOHANG.ref $(SRCDIR)/stdlib/WSTOPSIG.ref $(SRCDIR)/stdlib/WTERMSIG.ref $(SRCDIR)/stdlib/WUNTRACED.ref $(SRCDIR)/stdlib/size_t.ref $(SRCDIR)/stdlib/wchar_t.ref 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/string.h: mkh.sh $(SRCDIR)/string/memccpy.c $(SRCDIR)/string/memchr.c $(SRCDIR)/string/memcmp.c $(SRCDIR)/string/memcpy.c $(SRCDIR)/string/memmove.c $(SRCDIR)/string/memset.c $(SRCDIR)/string/strcat.c $(SRCDIR)/string/strchr.c $(SRCDIR)/string/strcmp.c $(SRCDIR)/string/strcoll.c $(SRCDIR)/string/strcpy.c $(SRCDIR)/string/strcspn.c $(SRCDIR)/string/strdup.c $(SRCDIR)/string/strerror.c $(SRCDIR)/string/strlen.c $(SRCDIR)/string/strncat.c $(SRCDIR)/string/strncmp.c $(SRCDIR)/string/strncpy.c $(SRCDIR)/string/strpbrk.c $(SRCDIR)/string/strrchr.c $(SRCDIR)/string/strspn.c $(SRCDIR)/string/strstr.c $(SRCDIR)/string/strtok.c $(SRCDIR)/string/strxfrm.c $(SRCDIR)/string/NULL.ref $(SRCDIR)/string/size_t.ref 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/strings.h: mkh.sh $(SRCDIR)/strings/bcmp.c $(SRCDIR)/strings/bcopy.c $(SRCDIR)/strings/bzero.c $(SRCDIR)/strings/ffs.c $(SRCDIR)/strings/index.c $(SRCDIR)/strings/rindex.c $(SRCDIR)/strings/strcasecmp.c $(SRCDIR)/strings/strncasecmp.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/stropts.h: mkh.sh $(SRCDIR)/stropts/ANYMARK.c $(SRCDIR)/stropts/FLUSHR.c $(SRCDIR)/stropts/FLUSHRW.c $(SRCDIR)/stropts/FLUSHW.c $(SRCDIR)/stropts/FMNAMESZ.c $(SRCDIR)/stropts/I_ATMARK.c $(SRCDIR)/stropts/I_CANPUT.c $(SRCDIR)/stropts/I_CKBAND.c $(SRCDIR)/stropts/I_FDINSERT.c $(SRCDIR)/stropts/I_FIND.c $(SRCDIR)/stropts/I_FLUSH.c $(SRCDIR)/stropts/I_FLUSHBAND.c $(SRCDIR)/stropts/I_GETBAND.c $(SRCDIR)/stropts/I_GETCLTIME.c $(SRCDIR)/stropts/I_GETSIG.c $(SRCDIR)/stropts/I_GRDOPT.c $(SRCDIR)/stropts/I_GWROPT.c $(SRCDIR)/stropts/I_LINK.c $(SRCDIR)/stropts/I_LIST.c $(SRCDIR)/stropts/I_LOOK.c $(SRCDIR)/stropts/I_NREAD.c $(SRCDIR)/stropts/I_PEEK.c $(SRCDIR)/stropts/I_PLINK.c $(SRCDIR)/stropts/I_POP.c $(SRCDIR)/stropts/I_PUNLINK.c $(SRCDIR)/stropts/I_PUSH.c $(SRCDIR)/stropts/I_RECVFD.c $(SRCDIR)/stropts/I_SENDFD.c $(SRCDIR)/stropts/I_SETCLTIME.c $(SRCDIR)/stropts/I_SETSIG.c $(SRCDIR)/stropts/I_SRDOPT.c $(SRCDIR)/stropts/I_STR.c $(SRCDIR)/stropts/I_SWROPT.c $(SRCDIR)/stropts/I_UNLINK.c $(SRCDIR)/stropts/LASTMARK.c $(SRCDIR)/stropts/MORECTL.c $(SRCDIR)/stropts/MOREDATA.c $(SRCDIR)/stropts/MSG_ANY.c $(SRCDIR)/stropts/MSG_BAND.c $(SRCDIR)/stropts/MSG_HIPRI.c $(SRCDIR)/stropts/MUXID_ALL.c $(SRCDIR)/stropts/RMSGD.c $(SRCDIR)/stropts/RMSGN.c $(SRCDIR)/stropts/RNORM.c $(SRCDIR)/stropts/RPOTNORM.c $(SRCDIR)/stropts/RPROTDAT.c $(SRCDIR)/stropts/RPROTDIS.c $(SRCDIR)/stropts/RS_HIPRI.c $(SRCDIR)/stropts/SNDZERO.c $(SRCDIR)/stropts/S_BANDURG.c $(SRCDIR)/stropts/S_ERROR.c $(SRCDIR)/stropts/S_HANGUP.c $(SRCDIR)/stropts/S_HIPRI.c $(SRCDIR)/stropts/S_INPUT.c $(SRCDIR)/stropts/S_MSG.c $(SRCDIR)/stropts/S_OUTPUT.c $(SRCDIR)/stropts/S_RDBAND.c $(SRCDIR)/stropts/S_RDNORM.c $(SRCDIR)/stropts/S_WRBAND.c $(SRCDIR)/stropts/S_WRNORM.c $(SRCDIR)/stropts/fattach.c $(SRCDIR)/stropts/fdetach.c $(SRCDIR)/stropts/getmsg.c $(SRCDIR)/stropts/getpmsg.c $(SRCDIR)/stropts/ioctl.c $(SRCDIR)/stropts/isastream.c $(SRCDIR)/stropts/putmsg.c $(SRCDIR)/stropts/putpmsg.c $(SRCDIR)/stropts/struct_bandinfo.c $(SRCDIR)/stropts/struct_str_list.c $(SRCDIR)/stropts/struct_str_mlist.c $(SRCDIR)/stropts/struct_strbuf.c $(SRCDIR)/stropts/struct_strfdinsert.c $(SRCDIR)/stropts/struct_strioctl.c $(SRCDIR)/stropts/struct_strpeek.c $(SRCDIR)/stropts/struct_strrecvfd.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/sys/ipc.h: mkh.sh $(SRCDIR)/sys/ipc/IPC_CREAT.c $(SRCDIR)/sys/ipc/IPC_EXCL.c $(SRCDIR)/sys/ipc/IPC_NOWAIT.c $(SRCDIR)/sys/ipc/IPC_PRIVATE.c $(SRCDIR)/sys/ipc/IPC_RMID.c $(SRCDIR)/sys/ipc/IPC_SET.c $(SRCDIR)/sys/ipc/IPC_STAT.c $(SRCDIR)/sys/ipc/ftok.c $(SRCDIR)/sys/ipc/struct_ipc_perm.c $(SRCDIR)/sys/ipc/gid_t.ref $(SRCDIR)/sys/ipc/key_t.ref $(SRCDIR)/sys/ipc/mode_t.ref $(SRCDIR)/sys/ipc/uid_t.ref 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/syslog.h: mkh.sh $(SRCDIR)/syslog/LOG_ALERT.c $(SRCDIR)/syslog/LOG_CONS.c $(SRCDIR)/syslog/LOG_CRIT.c $(SRCDIR)/syslog/LOG_CRON.c $(SRCDIR)/syslog/LOG_DAEMON.c $(SRCDIR)/syslog/LOG_DEBUG.c $(SRCDIR)/syslog/LOG_EMERG.c $(SRCDIR)/syslog/LOG_ERR.c $(SRCDIR)/syslog/LOG_INFO.c $(SRCDIR)/syslog/LOG_KERN.c $(SRCDIR)/syslog/LOG_LOCAL0.c $(SRCDIR)/syslog/LOG_LOCAL1.c $(SRCDIR)/syslog/LOG_LOCAL2.c $(SRCDIR)/syslog/LOG_LOCAL3.c $(SRCDIR)/syslog/LOG_LOCAL4.c $(SRCDIR)/syslog/LOG_LOCAL5.c $(SRCDIR)/syslog/LOG_LOCAL6.c $(SRCDIR)/syslog/LOG_LOCAL7.c $(SRCDIR)/syslog/LOG_LPR.c $(SRCDIR)/syslog/LOG_MAIL.c $(SRCDIR)/syslog/LOG_MASK.c $(SRCDIR)/syslog/LOG_NDELAY.c $(SRCDIR)/syslog/LOG_NEWS.c $(SRCDIR)/syslog/LOG_NOTICE.c $(SRCDIR)/syslog/LOG_NOWAIT.c $(SRCDIR)/syslog/LOG_ODELAY.c $(SRCDIR)/syslog/LOG_PID.c $(SRCDIR)/syslog/LOG_UPTO.c $(SRCDIR)/syslog/LOG_USER.c $(SRCDIR)/syslog/LOG_UUCP.c $(SRCDIR)/syslog/LOG_WARNING.c $(SRCDIR)/syslog/closelog.c $(SRCDIR)/syslog/openlog.c $(SRCDIR)/syslog/setlogmask.c $(SRCDIR)/syslog/syslog.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/sys/mman.h: mkh.sh $(SRCDIR)/sys/mman/MAP_FIXED.c $(SRCDIR)/sys/mman/MAP_PRIVATE.c $(SRCDIR)/sys/mman/MAP_SHARED.c $(SRCDIR)/sys/mman/MS_ASYNC.c $(SRCDIR)/sys/mman/MS_INVALIDATE.c $(SRCDIR)/sys/mman/MS_SYNC.c $(SRCDIR)/sys/mman/PROT_EXEC.c $(SRCDIR)/sys/mman/PROT_NONE.c $(SRCDIR)/sys/mman/PROT_READ.c $(SRCDIR)/sys/mman/PROT_WRITE.c $(SRCDIR)/sys/mman/mmap.c $(SRCDIR)/sys/mman/mprotect.c $(SRCDIR)/sys/mman/msync.c $(SRCDIR)/sys/mman/munmap.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/sys/msg.h: mkh.sh $(SRCDIR)/sys/msg/MSG_NOERROR.c $(SRCDIR)/sys/msg/msgctl.c $(SRCDIR)/sys/msg/msgget.c $(SRCDIR)/sys/msg/msglen_t.c $(SRCDIR)/sys/msg/msgqnum_t.c $(SRCDIR)/sys/msg/msgrcv.c $(SRCDIR)/sys/msg/msgsnd.c $(SRCDIR)/sys/msg/struct_msqid_ds.c $(SRCDIR)/sys/msg/ipc.ref $(SRCDIR)/sys/msg/key_t.ref $(SRCDIR)/sys/msg/pid_t.ref $(SRCDIR)/sys/msg/size_t.ref $(SRCDIR)/sys/msg/time_t.ref 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/sys/resource.h: mkh.sh $(SRCDIR)/sys/resource/PRIO_PGRP.c $(SRCDIR)/sys/resource/PRIO_PROCESS.c $(SRCDIR)/sys/resource/PRIO_USER.c $(SRCDIR)/sys/resource/RLIMIT_AS.c $(SRCDIR)/sys/resource/RLIMIT_CORE.c $(SRCDIR)/sys/resource/RLIMIT_CPU.c $(SRCDIR)/sys/resource/RLIMIT_DATA.c $(SRCDIR)/sys/resource/RLIMIT_FSIZE.c $(SRCDIR)/sys/resource/RLIMIT_NOFILE.c $(SRCDIR)/sys/resource/RLIMIT_STACK.c $(SRCDIR)/sys/resource/RLIM_INFINITY.c $(SRCDIR)/sys/resource/RUSAGE_CHILDREN.c $(SRCDIR)/sys/resource/RUSAGE_SELF.c $(SRCDIR)/sys/resource/getpriority.c $(SRCDIR)/sys/resource/getrlimit.c $(SRCDIR)/sys/resource/getrusage.c $(SRCDIR)/sys/resource/rlim_t.c $(SRCDIR)/sys/resource/setpriority.c $(SRCDIR)/sys/resource/setrlimit.c $(SRCDIR)/sys/resource/struct_rlimit.c $(SRCDIR)/sys/resource/struct_rusage.c $(SRCDIR)/sys/resource/struct_timeval.ref 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/sys/sem.h: mkh.sh $(SRCDIR)/sys/sem/GETALL.c $(SRCDIR)/sys/sem/GETNCNT.c $(SRCDIR)/sys/sem/GETPID.c $(SRCDIR)/sys/sem/GETVAL.c $(SRCDIR)/sys/sem/GETZCNT.c $(SRCDIR)/sys/sem/SEM_UNDO.c $(SRCDIR)/sys/sem/SETALL.c $(SRCDIR)/sys/sem/SETVAL.c $(SRCDIR)/sys/sem/semctl.c $(SRCDIR)/sys/sem/semget.c $(SRCDIR)/sys/sem/semop.c $(SRCDIR)/sys/sem/struct_sem_anonymous.c $(SRCDIR)/sys/sem/struct_sembuf.c $(SRCDIR)/sys/sem/struct_semid_ds.c $(SRCDIR)/sys/sem/ipc.ref $(SRCDIR)/sys/sem/key_t.ref $(SRCDIR)/sys/sem/pid_t.ref $(SRCDIR)/sys/sem/size_t.ref $(SRCDIR)/sys/sem/time_t.ref 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/sys/shm.h: mkh.sh $(SRCDIR)/sys/shm/SHMLBA.c $(SRCDIR)/sys/shm/SHM_RDONLY.c $(SRCDIR)/sys/shm/SHM_RND.c $(SRCDIR)/sys/shm/shmat.c $(SRCDIR)/sys/shm/shmatt_t.c $(SRCDIR)/sys/shm/shmctl.c $(SRCDIR)/sys/shm/shmdt.c $(SRCDIR)/sys/shm/shmget.c $(SRCDIR)/sys/shm/struct_shmid_ds.c $(SRCDIR)/sys/shm/ipc.ref $(SRCDIR)/sys/shm/key_t.ref $(SRCDIR)/sys/shm/pid_t.ref $(SRCDIR)/sys/shm/size_t.ref $(SRCDIR)/sys/shm/time_t.ref 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/sys/stat.h: mkh.sh $(SRCDIR)/sys/stat/S_IFBLK.c $(SRCDIR)/sys/stat/S_IFCHR.c $(SRCDIR)/sys/stat/S_IFDIR.c $(SRCDIR)/sys/stat/S_IFIFO.c $(SRCDIR)/sys/stat/S_IFLNK.c $(SRCDIR)/sys/stat/S_IFMT.c $(SRCDIR)/sys/stat/S_IFREG.c $(SRCDIR)/sys/stat/S_IRGRP.c $(SRCDIR)/sys/stat/S_IROTH.c $(SRCDIR)/sys/stat/S_IRUSR.c $(SRCDIR)/sys/stat/S_IRWXG.c $(SRCDIR)/sys/stat/S_IRWXO.c $(SRCDIR)/sys/stat/S_IRWXU.c $(SRCDIR)/sys/stat/S_ISBLK.c $(SRCDIR)/sys/stat/S_ISCHR.c $(SRCDIR)/sys/stat/S_ISDIR.c $(SRCDIR)/sys/stat/S_ISFIFO.c $(SRCDIR)/sys/stat/S_ISGID.c $(SRCDIR)/sys/stat/S_ISLNK.c $(SRCDIR)/sys/stat/S_ISREG.c $(SRCDIR)/sys/stat/S_ISUID.c $(SRCDIR)/sys/stat/S_ISVTX.c $(SRCDIR)/sys/stat/S_IWGRP.c $(SRCDIR)/sys/stat/S_IWOTH.c $(SRCDIR)/sys/stat/S_IWUSR.c $(SRCDIR)/sys/stat/S_IXGRP.c $(SRCDIR)/sys/stat/S_IXOTH.c $(SRCDIR)/sys/stat/S_IXUSR.c $(SRCDIR)/sys/stat/chmod.c $(SRCDIR)/sys/stat/fchmod.c $(SRCDIR)/sys/stat/fstat.c $(SRCDIR)/sys/stat/lstat.c $(SRCDIR)/sys/stat/mkdir.c $(SRCDIR)/sys/stat/mkfifo.c $(SRCDIR)/sys/stat/mknod.c $(SRCDIR)/sys/stat/stat.c $(SRCDIR)/sys/stat/struct_stat.c $(SRCDIR)/sys/stat/umask.c $(SRCDIR)/sys/stat/dev_t.ref $(SRCDIR)/sys/stat/gid_t.ref $(SRCDIR)/sys/stat/ino_t.ref $(SRCDIR)/sys/stat/mode_t.ref $(SRCDIR)/sys/stat/nlink_t.ref $(SRCDIR)/sys/stat/off_t.ref $(SRCDIR)/sys/stat/time_t.ref $(SRCDIR)/sys/stat/uid_t.ref 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/sys/statvfs.h: mkh.sh $(SRCDIR)/sys/statvfs/ST_NOSUID.c $(SRCDIR)/sys/statvfs/ST_RDONLY.c $(SRCDIR)/sys/statvfs/fstatvfs.c $(SRCDIR)/sys/statvfs/statvfs.c $(SRCDIR)/sys/statvfs/struct_statvfs.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/sys/timeb.h: mkh.sh $(SRCDIR)/sys/timeb/ftime.c $(SRCDIR)/sys/timeb/struct_timeb.c $(SRCDIR)/sys/timeb/time_t.ref 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/sys/time.h: mkh.sh $(SRCDIR)/sys/time/FD_CLR.c $(SRCDIR)/sys/time/FD_ISSET.c $(SRCDIR)/sys/time/FD_SET.c $(SRCDIR)/sys/time/FD_SETSIZE.c $(SRCDIR)/sys/time/FD_ZERO.c $(SRCDIR)/sys/time/ITIMER_PROF.c $(SRCDIR)/sys/time/ITIMER_REAL.c $(SRCDIR)/sys/time/ITIMER_VIRTUAL.c $(SRCDIR)/sys/time/fd_set.c $(SRCDIR)/sys/time/getitimer.c $(SRCDIR)/sys/time/gettimeofday.c $(SRCDIR)/sys/time/select.c $(SRCDIR)/sys/time/setitimer.c $(SRCDIR)/sys/time/struct_itimerval.c $(SRCDIR)/sys/time/struct_timeval.c $(SRCDIR)/sys/time/utimes.c $(SRCDIR)/sys/time/time_t.ref 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/sys/times.h: mkh.sh $(SRCDIR)/sys/times/struct_tms.c $(SRCDIR)/sys/times/times.c $(SRCDIR)/sys/times/clock_t.ref 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/sys/types.h: mkh.sh $(SRCDIR)/sys/types/dev_t.c $(SRCDIR)/sys/types/gid_t.c $(SRCDIR)/sys/types/id_t.c $(SRCDIR)/sys/types/ino_t.c $(SRCDIR)/sys/types/key_t.c $(SRCDIR)/sys/types/mode_t.c $(SRCDIR)/sys/types/nlink_t.c $(SRCDIR)/sys/types/off_t.c $(SRCDIR)/sys/types/pid_t.c $(SRCDIR)/sys/types/ssize_t.c $(SRCDIR)/sys/types/uid_t.c $(SRCDIR)/sys/types/useconds_t.c $(SRCDIR)/sys/types/clock_t.ref $(SRCDIR)/sys/types/size_t.ref $(SRCDIR)/sys/types/time_t.ref 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/sys/uio.h: mkh.sh $(SRCDIR)/sys/uio/readv.c $(SRCDIR)/sys/uio/struct_iovec.c $(SRCDIR)/sys/uio/writev.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/sys/utsname.h: mkh.sh $(SRCDIR)/sys/utsname/struct_utsname.c $(SRCDIR)/sys/utsname/uname.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/sys/wait.h: mkh.sh $(SRCDIR)/sys/wait/WCONTINUED.c $(SRCDIR)/sys/wait/WEXITED.c $(SRCDIR)/sys/wait/WEXITSTATUS.c $(SRCDIR)/sys/wait/WIFCONTINUED.c $(SRCDIR)/sys/wait/WIFEXITED.c $(SRCDIR)/sys/wait/WIFSIGNALED.c $(SRCDIR)/sys/wait/WIFSTOPPED.c $(SRCDIR)/sys/wait/WNOHANG.c $(SRCDIR)/sys/wait/WNOWAIT.c $(SRCDIR)/sys/wait/WSTOPPED.c $(SRCDIR)/sys/wait/WSTOPSIG.c $(SRCDIR)/sys/wait/WTERMSIG.c $(SRCDIR)/sys/wait/WUNTRACED.c $(SRCDIR)/sys/wait/idtype_t.c $(SRCDIR)/sys/wait/wait.c $(SRCDIR)/sys/wait/wait3.c $(SRCDIR)/sys/wait/waitid.c $(SRCDIR)/sys/wait/waitpid.c $(SRCDIR)/sys/wait/id_t.ref $(SRCDIR)/sys/wait/pid_t.ref $(SRCDIR)/sys/wait/siginfo_t.ref $(SRCDIR)/sys/wait/struct_rusage.ref 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/tar.h: mkh.sh $(SRCDIR)/tar/AREGTYPE.c $(SRCDIR)/tar/BLKTYPE.c $(SRCDIR)/tar/CHRTYPE.c $(SRCDIR)/tar/CONTTYPE.c $(SRCDIR)/tar/DIRTYPE.c $(SRCDIR)/tar/FIFOTYPE.c $(SRCDIR)/tar/LNKTYPE.c $(SRCDIR)/tar/REGTYPE.c $(SRCDIR)/tar/SYMTYPE.c $(SRCDIR)/tar/TGEXEC.c $(SRCDIR)/tar/TGREAD.c $(SRCDIR)/tar/TGWRITE.c $(SRCDIR)/tar/TMAGIC.c $(SRCDIR)/tar/TMAGLEN.c $(SRCDIR)/tar/TOEXEC.c $(SRCDIR)/tar/TOREAD.c $(SRCDIR)/tar/TOWRITE.c $(SRCDIR)/tar/TSGID.c $(SRCDIR)/tar/TSUID.c $(SRCDIR)/tar/TSVTX.c $(SRCDIR)/tar/TUEXEC.c $(SRCDIR)/tar/TUREAD.c $(SRCDIR)/tar/TUWRITE.c $(SRCDIR)/tar/TVERSION.c $(SRCDIR)/tar/TVERSLEN.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/termios.h: mkh.sh $(SRCDIR)/termios/B0.c $(SRCDIR)/termios/B110.c $(SRCDIR)/termios/B1200.c $(SRCDIR)/termios/B134.c $(SRCDIR)/termios/B150.c $(SRCDIR)/termios/B1800.c $(SRCDIR)/termios/B19200.c $(SRCDIR)/termios/B200.c $(SRCDIR)/termios/B2400.c $(SRCDIR)/termios/B300.c $(SRCDIR)/termios/B38400.c $(SRCDIR)/termios/B4800.c $(SRCDIR)/termios/B50.c $(SRCDIR)/termios/B600.c $(SRCDIR)/termios/B75.c $(SRCDIR)/termios/B9600.c $(SRCDIR)/termios/BRKINT.c $(SRCDIR)/termios/BS0.c $(SRCDIR)/termios/BS1.c $(SRCDIR)/termios/BSDLY.c $(SRCDIR)/termios/CLOCAL.c $(SRCDIR)/termios/CR0.c $(SRCDIR)/termios/CR1.c $(SRCDIR)/termios/CR3.c $(SRCDIR)/termios/CRDLY.c $(SRCDIR)/termios/CREAD.c $(SRCDIR)/termios/CS5.c $(SRCDIR)/termios/CS6.c $(SRCDIR)/termios/CS7.c $(SRCDIR)/termios/CS8.c $(SRCDIR)/termios/CSIZE.c $(SRCDIR)/termios/CSTOPB.c $(SRCDIR)/termios/ECHO.c $(SRCDIR)/termios/ECHOE.c $(SRCDIR)/termios/ECHOK.c $(SRCDIR)/termios/ECHONL.c $(SRCDIR)/termios/FF0.c $(SRCDIR)/termios/FF1.c $(SRCDIR)/termios/FFDLY.c $(SRCDIR)/termios/HUPCL.c $(SRCDIR)/termios/ICANON.c $(SRCDIR)/termios/ICRNL.c $(SRCDIR)/termios/IEXTEN.c $(SRCDIR)/termios/IGNBRK.c $(SRCDIR)/termios/IGNCR.c $(SRCDIR)/termios/IGNPAR.c $(SRCDIR)/termios/INLCR.c $(SRCDIR)/termios/INPCK.c $(SRCDIR)/termios/ISIG.c $(SRCDIR)/termios/ISTRIP.c $(SRCDIR)/termios/IUCLC.c $(SRCDIR)/termios/IXANY.c $(SRCDIR)/termios/IXOFF.c $(SRCDIR)/termios/IXON.c $(SRCDIR)/termios/NCCS.c $(SRCDIR)/termios/NL0.c $(SRCDIR)/termios/NL1.c $(SRCDIR)/termios/NLDLY.c $(SRCDIR)/termios/NOFLSH.c $(SRCDIR)/termios/OCRNL.c $(SRCDIR)/termios/OFILL.c $(SRCDIR)/termios/OLCUC.c $(SRCDIR)/termios/ONLCR.c $(SRCDIR)/termios/ONLRET.c $(SRCDIR)/termios/ONOCR.c $(SRCDIR)/termios/OPOST.c $(SRCDIR)/termios/PARENB.c $(SRCDIR)/termios/PARMRK.c $(SRCDIR)/termios/PARODD.c $(SRCDIR)/termios/TAB0.c $(SRCDIR)/termios/TAB1.c $(SRCDIR)/termios/TAB2.c $(SRCDIR)/termios/TAB3.c $(SRCDIR)/termios/TABDLY.c $(SRCDIR)/termios/TCIFLUSH.c $(SRCDIR)/termios/TCIOFF.c $(SRCDIR)/termios/TCIOFLUSH.c $(SRCDIR)/termios/TCION.c $(SRCDIR)/termios/TCOFLUSH.c $(SRCDIR)/termios/TCOOFF.c $(SRCDIR)/termios/TCOON.c $(SRCDIR)/termios/TCSADRAIN.c $(SRCDIR)/termios/TCSAFLUSH.c $(SRCDIR)/termios/TCSANOW.c $(SRCDIR)/termios/TOSTOP.c $(SRCDIR)/termios/VEOF.c $(SRCDIR)/termios/VEOL.c $(SRCDIR)/termios/VERASE.c $(SRCDIR)/termios/VINTR.c $(SRCDIR)/termios/VKILL.c $(SRCDIR)/termios/VMIN.c $(SRCDIR)/termios/VQUIT.c $(SRCDIR)/termios/VSTART.c $(SRCDIR)/termios/VSTOP.c $(SRCDIR)/termios/VSUSP.c $(SRCDIR)/termios/VT0.c $(SRCDIR)/termios/VT1.c $(SRCDIR)/termios/VTDLY.c $(SRCDIR)/termios/VTIME.c $(SRCDIR)/termios/XCASE.c $(SRCDIR)/termios/cc_t.c $(SRCDIR)/termios/cfgetispeed.c $(SRCDIR)/termios/cfgetospeed.c $(SRCDIR)/termios/cfsetispeed.c $(SRCDIR)/termios/cfsetospeed.c $(SRCDIR)/termios/speed_t.c $(SRCDIR)/termios/struct_termios.c $(SRCDIR)/termios/tcdrain.c $(SRCDIR)/termios/tcflag_t.c $(SRCDIR)/termios/tcflow.c $(SRCDIR)/termios/tcflush.c $(SRCDIR)/termios/tcgetattr.c $(SRCDIR)/termios/tcgetsid.c $(SRCDIR)/termios/tcsendbreak.c $(SRCDIR)/termios/tcsetattr.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/time.h: mkh.sh $(SRCDIR)/time/CLK_TCK.c $(SRCDIR)/time/CLOCKS_PER_SEC.c $(SRCDIR)/time/asctime.c $(SRCDIR)/time/clock.c $(SRCDIR)/time/clock_t.c $(SRCDIR)/time/ctime.c $(SRCDIR)/time/daylight.c $(SRCDIR)/time/difftime.c $(SRCDIR)/time/getdate.c $(SRCDIR)/time/getdate_err.c $(SRCDIR)/time/gmtime.c $(SRCDIR)/time/localtime.c $(SRCDIR)/time/mktime.c $(SRCDIR)/time/strftime.c $(SRCDIR)/time/strptime.c $(SRCDIR)/time/struct_tm.c $(SRCDIR)/time/time.c $(SRCDIR)/time/time_t.c $(SRCDIR)/time/timezone.c $(SRCDIR)/time/tzname.c $(SRCDIR)/time/tzset.c $(SRCDIR)/time/NULL.ref $(SRCDIR)/time/size_t.ref 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/ucontext.h: mkh.sh $(SRCDIR)/ucontext/getcontext.c $(SRCDIR)/ucontext/makecontext.c $(SRCDIR)/ucontext/mcontext_t.c $(SRCDIR)/ucontext/setcontext.c $(SRCDIR)/ucontext/swapcontext.c $(SRCDIR)/ucontext/ucontext_t.c $(SRCDIR)/ucontext/sigset_t.ref $(SRCDIR)/ucontext/stack_t.ref 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/ulimit.h: mkh.sh $(SRCDIR)/ulimit/UL_GETFSIZE.c $(SRCDIR)/ulimit/UL_SETFSIZE.c $(SRCDIR)/ulimit/ulimit.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/unistd.h: mkh.sh $(SRCDIR)/unistd/F_LOCK.c $(SRCDIR)/unistd/F_OK.c $(SRCDIR)/unistd/F_TEST.c $(SRCDIR)/unistd/F_TLOCK.c $(SRCDIR)/unistd/F_ULOCK.c $(SRCDIR)/unistd/R_OK.c $(SRCDIR)/unistd/STDERR_FILENO.c $(SRCDIR)/unistd/STDIN_FILENO.c $(SRCDIR)/unistd/STDOUT_FILENO.c $(SRCDIR)/unistd/W_OK.c $(SRCDIR)/unistd/X_OK.c $(SRCDIR)/unistd/_CS_PATH.c $(SRCDIR)/unistd/_PC_CHOWN_RESTRICTED.c $(SRCDIR)/unistd/_PC_LINK_MAX.c $(SRCDIR)/unistd/_PC_MAX_CANON.c $(SRCDIR)/unistd/_PC_MAX_INPUT.c $(SRCDIR)/unistd/_PC_NAME_MAX.c $(SRCDIR)/unistd/_PC_NO_TRUNC.c $(SRCDIR)/unistd/_PC_PATH_MAX.c $(SRCDIR)/unistd/_PC_PIPE_BUF.c $(SRCDIR)/unistd/_PC_VDISABLE.c $(SRCDIR)/unistd/_POSIX2_CHAR_TERM.c $(SRCDIR)/unistd/_POSIX2_C_BIND.c $(SRCDIR)/unistd/_POSIX2_C_DEV.c $(SRCDIR)/unistd/_POSIX2_C_VERSION.c $(SRCDIR)/unistd/_POSIX2_FORT_DEV.c $(SRCDIR)/unistd/_POSIX2_FORT_RUN.c $(SRCDIR)/unistd/_POSIX2_LOCALEDEF.c $(SRCDIR)/unistd/_POSIX2_SW_DEV.c $(SRCDIR)/unistd/_POSIX2_UPE.c $(SRCDIR)/unistd/_POSIX2_VERSION.c $(SRCDIR)/unistd/_POSIX_CHOWN_RESTRICTED.c $(SRCDIR)/unistd/_POSIX_JOB_CONTROL.c $(SRCDIR)/unistd/_POSIX_NO_TRUNC.c $(SRCDIR)/unistd/_POSIX_SAVED_IDS.c $(SRCDIR)/unistd/_POSIX_VDISABLE.c $(SRCDIR)/unistd/_POSIX_VERSION.c $(SRCDIR)/unistd/_SC_2_C_BIND.c $(SRCDIR)/unistd/_SC_2_C_DEV.c $(SRCDIR)/unistd/_SC_2_C_VERSION.c $(SRCDIR)/unistd/_SC_2_FORT_DEV.c $(SRCDIR)/unistd/_SC_2_FORT_RUN.c $(SRCDIR)/unistd/_SC_2_LOCALEDEF.c $(SRCDIR)/unistd/_SC_2_SW_DEV.c $(SRCDIR)/unistd/_SC_2_UPE.c $(SRCDIR)/unistd/_SC_2_VERSION.c $(SRCDIR)/unistd/_SC_ARG_MAX.c $(SRCDIR)/unistd/_SC_ATEXIT_MAX.c $(SRCDIR)/unistd/_SC_BC_BASE_MAX.c $(SRCDIR)/unistd/_SC_BC_DIM_MAX.c $(SRCDIR)/unistd/_SC_BC_SCALE_MAX.c $(SRCDIR)/unistd/_SC_BC_STRING_MAX.c $(SRCDIR)/unistd/_SC_CHILD_MAX.c $(SRCDIR)/unistd/_SC_CLK_TCK.c $(SRCDIR)/unistd/_SC_COLL_WEIGHTS_MAX.c $(SRCDIR)/unistd/_SC_EXPR_NEST_MAX.c $(SRCDIR)/unistd/_SC_IOV_MAX.c $(SRCDIR)/unistd/_SC_JOB_CONTROL.c $(SRCDIR)/unistd/_SC_LINE_MAX.c $(SRCDIR)/unistd/_SC_NGROUPS_MAX.c $(SRCDIR)/unistd/_SC_OPEN_MAX.c $(SRCDIR)/unistd/_SC_PAGESIZE.c $(SRCDIR)/unistd/_SC_PAGE_SIZE.c $(SRCDIR)/unistd/_SC_PASS_MAX.c $(SRCDIR)/unistd/_SC_RE_DUP_MAX.c $(SRCDIR)/unistd/_SC_SAVED_IDS.c $(SRCDIR)/unistd/_SC_STREAM_MAX.c $(SRCDIR)/unistd/_SC_TZNAME_MAX.c $(SRCDIR)/unistd/_SC_VERSION.c $(SRCDIR)/unistd/_SC_XOPEN_CRYPT.c $(SRCDIR)/unistd/_SC_XOPEN_ENH_I18N.c $(SRCDIR)/unistd/_SC_XOPEN_SHM.c $(SRCDIR)/unistd/_SC_XOPEN_UNIX.c $(SRCDIR)/unistd/_SC_XOPEN_VERSION.c $(SRCDIR)/unistd/_SC_XOPEN_XCU_VERSION.c $(SRCDIR)/unistd/_XOPEN_CRYPT.c $(SRCDIR)/unistd/_XOPEN_ENH_I18N.c $(SRCDIR)/unistd/_XOPEN_SHM.c $(SRCDIR)/unistd/_XOPEN_UNIX.c $(SRCDIR)/unistd/_XOPEN_VERSION.c $(SRCDIR)/unistd/_XOPEN_XCU_VERSION.c $(SRCDIR)/unistd/_exit.c $(SRCDIR)/unistd/access.c $(SRCDIR)/unistd/alarm.c $(SRCDIR)/unistd/brk.c $(SRCDIR)/unistd/chdir.c $(SRCDIR)/unistd/chown.c $(SRCDIR)/unistd/chroot.c $(SRCDIR)/unistd/close.c $(SRCDIR)/unistd/confstr.c $(SRCDIR)/unistd/crypt.c $(SRCDIR)/unistd/ctermid.c $(SRCDIR)/unistd/cuserid.c $(SRCDIR)/unistd/dup.c $(SRCDIR)/unistd/dup2.c $(SRCDIR)/unistd/encrypt.c $(SRCDIR)/unistd/execl.c $(SRCDIR)/unistd/execle.c $(SRCDIR)/unistd/execlp.c $(SRCDIR)/unistd/execv.c $(SRCDIR)/unistd/execve.c $(SRCDIR)/unistd/execvp.c $(SRCDIR)/unistd/fchdir.c $(SRCDIR)/unistd/fchown.c $(SRCDIR)/unistd/fork.c $(SRCDIR)/unistd/fpathconf.c $(SRCDIR)/unistd/fsync.c $(SRCDIR)/unistd/ftruncate.c $(SRCDIR)/unistd/getcwd.c $(SRCDIR)/unistd/getdtablesize.c $(SRCDIR)/unistd/getegid.c $(SRCDIR)/unistd/geteuid.c $(SRCDIR)/unistd/getgid.c $(SRCDIR)/unistd/getgroups.c $(SRCDIR)/unistd/gethostid.c $(SRCDIR)/unistd/getlogin.c $(SRCDIR)/unistd/getopt.c $(SRCDIR)/unistd/getpagesize.c $(SRCDIR)/unistd/getpass.c $(SRCDIR)/unistd/getpgid.c $(SRCDIR)/unistd/getpgrp.c $(SRCDIR)/unistd/getpid.c $(SRCDIR)/unistd/getppid.c $(SRCDIR)/unistd/getsid.c $(SRCDIR)/unistd/getuid.c $(SRCDIR)/unistd/getwd.c $(SRCDIR)/unistd/isatty.c $(SRCDIR)/unistd/lchown.c $(SRCDIR)/unistd/link.c $(SRCDIR)/unistd/lockf.c $(SRCDIR)/unistd/lseek.c $(SRCDIR)/unistd/nice.c $(SRCDIR)/unistd/optarg.c $(SRCDIR)/unistd/opterr.c $(SRCDIR)/unistd/optind.c $(SRCDIR)/unistd/optopt.c $(SRCDIR)/unistd/pathconf.c $(SRCDIR)/unistd/pause.c $(SRCDIR)/unistd/pipe.c $(SRCDIR)/unistd/read.c $(SRCDIR)/unistd/readlink.c $(SRCDIR)/unistd/rmdir.c $(SRCDIR)/unistd/sbrk.c $(SRCDIR)/unistd/setgid.c $(SRCDIR)/unistd/setpgid.c $(SRCDIR)/unistd/setpgrp.c $(SRCDIR)/unistd/setregid.c $(SRCDIR)/unistd/setreuid.c $(SRCDIR)/unistd/setsid.c $(SRCDIR)/unistd/setuid.c $(SRCDIR)/unistd/sleep.c $(SRCDIR)/unistd/swab.c $(SRCDIR)/unistd/symlink.c $(SRCDIR)/unistd/sync.c $(SRCDIR)/unistd/sysconf.c $(SRCDIR)/unistd/tcgetpgrp.c $(SRCDIR)/unistd/tcsetpgrp.c $(SRCDIR)/unistd/truncate.c $(SRCDIR)/unistd/ttyname.c $(SRCDIR)/unistd/ualarm.c $(SRCDIR)/unistd/unlink.c $(SRCDIR)/unistd/usleep.c $(SRCDIR)/unistd/vfork.c $(SRCDIR)/unistd/write.c $(SRCDIR)/unistd/NULL.ref $(SRCDIR)/unistd/SEEK_CUR.ref $(SRCDIR)/unistd/SEEK_END.ref $(SRCDIR)/unistd/SEEK_SET.ref $(SRCDIR)/unistd/gid_t.ref $(SRCDIR)/unistd/off_t.ref $(SRCDIR)/unistd/pid_t.ref $(SRCDIR)/unistd/size_t.ref $(SRCDIR)/unistd/ssize_t.ref $(SRCDIR)/unistd/uid_t.ref $(SRCDIR)/unistd/useconds_t.ref 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/utime.h: mkh.sh $(SRCDIR)/utime/struct_utimbuf.c $(SRCDIR)/utime/utime.c $(SRCDIR)/utime/time_t.ref 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/utmpx.h: mkh.sh $(SRCDIR)/utmpx/BOOT_TIME.c $(SRCDIR)/utmpx/DEAD_PROCESS.c $(SRCDIR)/utmpx/EMPTY.c $(SRCDIR)/utmpx/INIT_PROCESS.c $(SRCDIR)/utmpx/LOGIN_PROCESS.c $(SRCDIR)/utmpx/NEW_TIME.c $(SRCDIR)/utmpx/OLD_TIME.c $(SRCDIR)/utmpx/USER_PROCESS.c $(SRCDIR)/utmpx/endutxent.c $(SRCDIR)/utmpx/getutxent.c $(SRCDIR)/utmpx/getutxid.c $(SRCDIR)/utmpx/getutxline.c $(SRCDIR)/utmpx/pututxline.c $(SRCDIR)/utmpx/setutxent.c $(SRCDIR)/utmpx/struct_utmpx.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/varargs.h: mkh.sh $(SRCDIR)/varargs/va_alist.c $(SRCDIR)/varargs/va_arg.c $(SRCDIR)/varargs/va_dcl.c $(SRCDIR)/varargs/va_end.c $(SRCDIR)/varargs/va_list.c $(SRCDIR)/varargs/va_start.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/wchar.h: mkh.sh $(SRCDIR)/wchar/WCHAR_MAX.c $(SRCDIR)/wchar/WCHAR_MIN.c $(SRCDIR)/wchar/btowc.c $(SRCDIR)/wchar/fgetwc.c $(SRCDIR)/wchar/fgetws.c $(SRCDIR)/wchar/fputwc.c $(SRCDIR)/wchar/fputws.c $(SRCDIR)/wchar/fwide.c $(SRCDIR)/wchar/fwprintf.c $(SRCDIR)/wchar/fwscanf.c $(SRCDIR)/wchar/getwc.c $(SRCDIR)/wchar/getwchar.c $(SRCDIR)/wchar/mbrlen.c $(SRCDIR)/wchar/mbrtowc.c $(SRCDIR)/wchar/mbsinit.c $(SRCDIR)/wchar/mbsrtowcs.c $(SRCDIR)/wchar/mbstate_t.c $(SRCDIR)/wchar/putwc.c $(SRCDIR)/wchar/putwchar.c $(SRCDIR)/wchar/struct_tm.c $(SRCDIR)/wchar/swprintf.c $(SRCDIR)/wchar/swscanf.c $(SRCDIR)/wchar/ungetwc.c $(SRCDIR)/wchar/vfwprintf.c $(SRCDIR)/wchar/vfwscanf.c $(SRCDIR)/wchar/vswprintf.c $(SRCDIR)/wchar/vswscanf.c $(SRCDIR)/wchar/vwprintf.c $(SRCDIR)/wchar/vwscanf.c $(SRCDIR)/wchar/wcrtomb.c $(SRCDIR)/wchar/wcscat.c $(SRCDIR)/wchar/wcschr.c $(SRCDIR)/wchar/wcscmp.c $(SRCDIR)/wchar/wcscoll.c $(SRCDIR)/wchar/wcscpy.c $(SRCDIR)/wchar/wcscspn.c $(SRCDIR)/wchar/wcsftime.c $(SRCDIR)/wchar/wcslen.c $(SRCDIR)/wchar/wcsncat.c $(SRCDIR)/wchar/wcsncmp.c $(SRCDIR)/wchar/wcsncpy.c $(SRCDIR)/wchar/wcspbrk.c $(SRCDIR)/wchar/wcsrchr.c $(SRCDIR)/wchar/wcsrtombs.c $(SRCDIR)/wchar/wcsspn.c $(SRCDIR)/wchar/wcsstr.c $(SRCDIR)/wchar/wcstod.c $(SRCDIR)/wchar/wcstof.c $(SRCDIR)/wchar/wcstok.c $(SRCDIR)/wchar/wcstol.c $(SRCDIR)/wchar/wcstold.c $(SRCDIR)/wchar/wcstoll.c $(SRCDIR)/wchar/wcstoul.c $(SRCDIR)/wchar/wcstoull.c $(SRCDIR)/wchar/wcswcs.c $(SRCDIR)/wchar/wcswidth.c $(SRCDIR)/wchar/wcsxfrm.c $(SRCDIR)/wchar/wctob.c $(SRCDIR)/wchar/wcwidth.c $(SRCDIR)/wchar/wmemchr.c $(SRCDIR)/wchar/wmemcmp.c $(SRCDIR)/wchar/wmemcpy.c $(SRCDIR)/wchar/wmemmove.c $(SRCDIR)/wchar/wmemset.c $(SRCDIR)/wchar/wprintf.c $(SRCDIR)/wchar/wscanf.c $(SRCDIR)/wchar/FILE.ref $(SRCDIR)/wchar/NULL.ref $(SRCDIR)/wchar/WEOF.ref $(SRCDIR)/wchar/iswalnum.ref $(SRCDIR)/wchar/iswalpha.ref $(SRCDIR)/wchar/iswblank.ref $(SRCDIR)/wchar/iswcntrl.ref $(SRCDIR)/wchar/iswdigit.ref $(SRCDIR)/wchar/iswgraph.ref $(SRCDIR)/wchar/iswlower.ref $(SRCDIR)/wchar/iswprint.ref $(SRCDIR)/wchar/iswpunct.ref $(SRCDIR)/wchar/iswspace.ref $(SRCDIR)/wchar/iswupper.ref $(SRCDIR)/wchar/iswxdigit.ref $(SRCDIR)/wchar/size_t.ref $(SRCDIR)/wchar/towctrans.ref $(SRCDIR)/wchar/towlower.ref $(SRCDIR)/wchar/towupper.ref $(SRCDIR)/wchar/va_list.ref $(SRCDIR)/wchar/wchar_t.ref $(SRCDIR)/wchar/wctype.ref $(SRCDIR)/wchar/wctype_t.ref $(SRCDIR)/wchar/wint_t.ref 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/wctype.h: mkh.sh $(SRCDIR)/wctype/WEOF.c $(SRCDIR)/wctype/iswalnum.c $(SRCDIR)/wctype/iswalpha.c $(SRCDIR)/wctype/iswblank.c $(SRCDIR)/wctype/iswcntrl.c $(SRCDIR)/wctype/iswctype.c $(SRCDIR)/wctype/iswdigit.c $(SRCDIR)/wctype/iswgraph.c $(SRCDIR)/wctype/iswlower.c $(SRCDIR)/wctype/iswprint.c $(SRCDIR)/wctype/iswpunct.c $(SRCDIR)/wctype/iswspace.c $(SRCDIR)/wctype/iswupper.c $(SRCDIR)/wctype/iswxdigit.c $(SRCDIR)/wctype/towctrans.c $(SRCDIR)/wctype/towlower.c $(SRCDIR)/wctype/towupper.c $(SRCDIR)/wctype/wctrans.c $(SRCDIR)/wctype/wctrans_t.c $(SRCDIR)/wctype/wctype.c $(SRCDIR)/wctype/wctype_t.c $(SRCDIR)/wctype/wint_t.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+$(INCDIR)/wordexp.h: mkh.sh $(SRCDIR)/wordexp/WRDE_APPEND.c $(SRCDIR)/wordexp/WRDE_BADCHAR.c $(SRCDIR)/wordexp/WRDE_BADVAL.c $(SRCDIR)/wordexp/WRDE_CMDSUB.c $(SRCDIR)/wordexp/WRDE_DOOFFS.c $(SRCDIR)/wordexp/WRDE_NOCMD.c $(SRCDIR)/wordexp/WRDE_NOSPACE.c $(SRCDIR)/wordexp/WRDE_NOSYS.c $(SRCDIR)/wordexp/WRDE_REUSE.c $(SRCDIR)/wordexp/WRDE_SHOWERR.c $(SRCDIR)/wordexp/WRDE_SYNTAX.c $(SRCDIR)/wordexp/WRDE_UNDEF.c $(SRCDIR)/wordexp/wordexp.c $(SRCDIR)/wordexp/wordexp_t.c $(SRCDIR)/wordexp/wordfree.c 
+	INCDIR=$(INCDIR) sh mkh.sh $@
+
+headers:  \
+	$(INCDIR)/assert.h \
+	$(INCDIR)/complex.h \
+	$(INCDIR)/cpio.h \
+	$(INCDIR)/ctype.h \
+	$(INCDIR)/dirent.h \
+	$(INCDIR)/errno.h \
+	$(INCDIR)/fcntl.h \
+	$(INCDIR)/fenv.h \
+	$(INCDIR)/float.h \
+	$(INCDIR)/fmtmsg.h \
+	$(INCDIR)/fnmatch.h \
+	$(INCDIR)/ftw.h \
+	$(INCDIR)/glob.h \
+	$(INCDIR)/grp.h \
+	$(INCDIR)/iconv.h \
+	$(INCDIR)/inttypes.h \
+	$(INCDIR)/iso646.h \
+	$(INCDIR)/langinfo.h \
+	$(INCDIR)/libgen.h \
+	$(INCDIR)/limits.h \
+	$(INCDIR)/locale.h \
+	$(INCDIR)/math.h \
+	$(INCDIR)/monetary.h \
+	$(INCDIR)/ndbm.h \
+	$(INCDIR)/nl_types.h \
+	$(INCDIR)/nonstd/assert.h \
+	$(INCDIR)/nonstd/ctype.h \
+	$(INCDIR)/nonstd/internal.h \
+	$(INCDIR)/nonstd/io.h \
+	$(INCDIR)/nonstd/locale.h \
+	$(INCDIR)/nonstd/syscall.h \
+	$(INCDIR)/poll.h \
+	$(INCDIR)/pwd.h \
+	$(INCDIR)/re_comp.h \
+	$(INCDIR)/regex.h \
+	$(INCDIR)/regexp.h \
+	$(INCDIR)/search.h \
+	$(INCDIR)/setjmp.h \
+	$(INCDIR)/signal.h \
+	$(INCDIR)/stdarg.h \
+	$(INCDIR)/stdbool.h \
+	$(INCDIR)/stddef.h \
+	$(INCDIR)/stdint.h \
+	$(INCDIR)/stdio.h \
+	$(INCDIR)/stdlib.h \
+	$(INCDIR)/string.h \
+	$(INCDIR)/strings.h \
+	$(INCDIR)/stropts.h \
+	$(INCDIR)/sys/ipc.h \
+	$(INCDIR)/syslog.h \
+	$(INCDIR)/sys/mman.h \
+	$(INCDIR)/sys/msg.h \
+	$(INCDIR)/sys/resource.h \
+	$(INCDIR)/sys/sem.h \
+	$(INCDIR)/sys/shm.h \
+	$(INCDIR)/sys/stat.h \
+	$(INCDIR)/sys/statvfs.h \
+	$(INCDIR)/sys/timeb.h \
+	$(INCDIR)/sys/time.h \
+	$(INCDIR)/sys/times.h \
+	$(INCDIR)/sys/types.h \
+	$(INCDIR)/sys/uio.h \
+	$(INCDIR)/sys/utsname.h \
+	$(INCDIR)/sys/wait.h \
+	$(INCDIR)/tar.h \
+	$(INCDIR)/termios.h \
+	$(INCDIR)/time.h \
+	$(INCDIR)/ucontext.h \
+	$(INCDIR)/ulimit.h \
+	$(INCDIR)/unistd.h \
+	$(INCDIR)/utime.h \
+	$(INCDIR)/utmpx.h \
+	$(INCDIR)/varargs.h \
+	$(INCDIR)/wchar.h \
+	$(INCDIR)/wctype.h \
+	$(INCDIR)/wordexp.h
