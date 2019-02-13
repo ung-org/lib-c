@@ -1,5 +1,5 @@
 #include <termios.h>
-#define PARENB /* TBD */
+#define PARENB                                                            (1<<4)
 /*
 POSIX(1)
 */

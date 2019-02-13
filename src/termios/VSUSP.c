@@ -1,5 +1,5 @@
 #include <termios.h>
-#define VSUSP /* TBD */
+#define VSUSP                                                                (9)
 /*
 POSIX(1)
 */

@@ -1,5 +1,5 @@
 #include <termios.h>
-#define HUPCL /* TBD */
+#define HUPCL                                                             (1<<6)
 /*
 POSIX(1)
 */

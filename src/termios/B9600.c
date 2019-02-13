@@ -1,5 +1,5 @@
 #include <termios.h>
-#define B9600                                                             (9600)
+#define B9600                                                              (0xD)
 /*
 POSIX(1)
 */

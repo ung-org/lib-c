@@ -1,5 +1,5 @@
 #include <termios.h>
-#define FF0 /* TODO */
+#define FF0                                                                  (0)
 /*
 XOPEN(4)
 */

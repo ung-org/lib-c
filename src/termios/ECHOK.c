@@ -1,5 +1,5 @@
 #include <termios.h>
-#define ECHOK /* TBD */
+#define ECHOK                                                             (1<<2)
 /*
 POSIX(1)
 */

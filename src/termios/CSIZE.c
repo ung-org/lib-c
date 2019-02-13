@@ -1,5 +1,5 @@
 #include <termios.h>
-#define CSIZE /* TBD */
+#define CSIZE                                                              (0x3)
 /*
 POSIX(1)
 */

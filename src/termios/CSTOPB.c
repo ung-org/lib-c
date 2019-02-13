@@ -1,5 +1,5 @@
 #include <termios.h>
-#define CSTOPB /* TBD */
+#define CSTOPB                                                            (1<<2)
 /*
 POSIX(1)
 */

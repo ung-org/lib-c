@@ -1,5 +1,5 @@
 #include <termios.h>
-#define TCOON /* TBD */
+#define TCOON                                                                (4)
 /*
 POSIX(1)
 */

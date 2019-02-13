@@ -1,5 +1,5 @@
 #include <termios.h>
-#define TCIFLUSH /* TBD */
+#define TCIFLUSH                                                             (0)
 /*
 POSIX(1)
 */

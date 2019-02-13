@@ -21,7 +21,8 @@ int cfsetospeed(struct termios *termios_p, speed_t speed)
 	case B9600:
 	case B19200:
 	case B38400:
-		termios_p->c_oflag = speed; /* FIXME */
+		termios_p->c_oflag &= ~B38400;
+		termios_p->c_oflag |= speed;
 		return 0;
 
 	default:

@@ -1,5 +1,5 @@
 #include <termios.h>
-#define INPCK                                                             (1<<6)
+#define INPCK                                                            (1<<10)
 /*
 POSIX(1)
 */

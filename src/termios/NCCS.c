@@ -1,5 +1,5 @@
 #include <termios.h>
-#define NCCS /* TBD */
+#define NCCS                                                                (11)
 /*
 POSIX(1)
 */

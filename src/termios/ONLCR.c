@@ -1,5 +1,5 @@
 #include <termios.h>
-#define ONLCR /* TODO */
+#define ONLCR                                                             (1<<6)
 /*
 XOPEN(4)
 */

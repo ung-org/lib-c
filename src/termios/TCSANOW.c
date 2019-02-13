@@ -1,5 +1,5 @@
 #include <termios.h>
-#define TCSANOW /* TBD */
+#define TCSANOW                                                              (0)
 /*
 POSIX(1)
 */

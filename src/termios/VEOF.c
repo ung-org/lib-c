@@ -1,5 +1,5 @@
 #include <termios.h>
-#define VEOF /* TBD */
+#define VEOF                                                                 (0)
 /*
 POSIX(1)
 */

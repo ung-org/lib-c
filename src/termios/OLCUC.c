@@ -1,5 +1,5 @@
 #include <termios.h>
-#define OLCUC /* TODO */
+#define OLCUC                                                             (1<<5)
 /*
 XOPEN(4)
 */

@@ -1,5 +1,5 @@
 #include <termios.h>
-#define FFDLY /* TODO */
+#define FFDLY                                                            (1<<18)
 /*
 XOPEN(4)
 */

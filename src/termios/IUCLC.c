@@ -1,5 +1,5 @@
 #include <termios.h>
-#define IUCLC /* TODO */
+#define IUCLC                                                            (1<<15)
 /*
 XOPEN(4)
 */

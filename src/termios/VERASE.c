@@ -1,5 +1,5 @@
 #include <termios.h>
-#define VERASE /* TBD */
+#define VERASE                                                               (2)
 /*
 POSIX(1)
 */

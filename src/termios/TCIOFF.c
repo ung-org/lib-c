@@ -1,5 +1,5 @@
 #include <termios.h>
-#define TCIOFF /* TBD */
+#define TCIOFF                                                               (0)
 /*
 POSIX(1)
 */

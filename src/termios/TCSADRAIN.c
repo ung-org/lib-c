@@ -1,5 +1,5 @@
 #include <termios.h>
-#define TCSADRAIN /* TBD */
+#define TCSADRAIN                                                            (1)
 /*
 POSIX(1)
 */

@@ -1,5 +1,5 @@
 #include <termios.h>
-#define XCASE /* TODO */
+#define XCASE                                                             (1<<9)
 /*
 XOPEN(4)
 */

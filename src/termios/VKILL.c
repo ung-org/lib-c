@@ -1,5 +1,5 @@
 #include <termios.h>
-#define VKILL /* TBD */
+#define VKILL                                                                (4)
 /*
 POSIX(1)
 */

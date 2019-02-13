@@ -1,5 +1,5 @@
 #include <termios.h>
-#define ECHO /* TBD */
+#define ECHO                                                              (1<<0)
 /*
 POSIX(1)
 */

@@ -1,5 +1,5 @@
 #include <termios.h>
-#define ICRNL                                                             (1<<1)
+#define ICRNL                                                             (1<<5)
 /*
 POSIX(1)
 */

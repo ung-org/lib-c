@@ -1,5 +1,5 @@
 #include <termios.h>
-#define BRKINT                                                            (1<<0)
+#define BRKINT                                                            (1<<4)
 /*
 POSIX(1)
 */

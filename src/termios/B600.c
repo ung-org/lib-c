@@ -1,5 +1,5 @@
 #include <termios.h>
-#define B600                                                               (600)
+#define B600                                                               (0x8)
 /*
 POSIX(1)
 */

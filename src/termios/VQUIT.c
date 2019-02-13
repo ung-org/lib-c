@@ -1,5 +1,5 @@
 #include <termios.h>
-#define VQUIT /* TBD */
+#define VQUIT                                                                (6)
 /*
 POSIX(1)
 */

@@ -1,5 +1,5 @@
 #include <termios.h>
-#define IEXTEN /* TBD */
+#define IEXTEN                                                            (1<<5)
 /*
 POSIX(1)
 */

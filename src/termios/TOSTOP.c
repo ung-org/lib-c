@@ -1,5 +1,5 @@
 #include <termios.h>
-#define TOSTOP /* TBD */
+#define TOSTOP                                                            (1<<8)
 /*
 POSIX(1)
 */

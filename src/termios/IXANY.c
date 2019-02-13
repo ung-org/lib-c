@@ -1,5 +1,5 @@
 #include <termios.h>
-#define IXANY /* TODO */
+#define IXANY                                                            (1<<16)
 /*
 XOPEN(4)
 */

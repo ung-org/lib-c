@@ -1,5 +1,5 @@
 #include <termios.h>
-#define ECHOE /* TBD */
+#define ECHOE                                                             (1<<1)
 /*
 POSIX(1)
 */

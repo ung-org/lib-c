@@ -1,5 +1,5 @@
 #include <termios.h>
-#define VTIME /* TBD */
+#define VTIME                                                               (10)
 /*
 POSIX(1)
 */

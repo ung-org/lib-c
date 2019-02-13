@@ -1,5 +1,5 @@
 #include <termios.h>
-#define ISIG /* TBD */
+#define ISIG                                                              (1<<6)
 /*
 POSIX(1)
 */

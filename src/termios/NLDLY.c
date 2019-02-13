@@ -1,5 +1,5 @@
 #include <termios.h>
-#define NLDLY /* TODO */
+#define NLDLY                                                            (1<<11)
 /*
 XOPEN(4)
 */

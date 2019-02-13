@@ -1,5 +1,5 @@
 #include <termios.h>
-#define ISTRIP                                                            (1<<7)
+#define ISTRIP                                                           (1<<11)
 /*
 POSIX(1)
 */

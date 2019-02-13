@@ -1,5 +1,5 @@
 #include <termios.h>
-#define OPOST /* TBD */
+#define OPOST                                                             (1<<4)
 /*
 POSIX(1)
 */

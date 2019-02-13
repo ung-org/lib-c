@@ -1,5 +1,5 @@
 #include <termios.h>
-#define PARODD /* TBD */
+#define PARODD                                                            (1<<5)
 /*
 POSIX(1)
 */

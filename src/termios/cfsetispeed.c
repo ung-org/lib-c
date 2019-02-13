@@ -22,7 +22,8 @@ int cfsetispeed(struct termios *termios_p, speed_t speed)
 	case B9600:
 	case B19200:
 	case B38400:
-		termios_p->c_iflag = speed; /* FIXME */
+		termios_p->c_iflag &= ~B38400;
+		termios_p->c_iflag |= speed;
 		return 0;
 
 	default:

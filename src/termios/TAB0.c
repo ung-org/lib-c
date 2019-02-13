@@ -1,5 +1,5 @@
 #include <termios.h>
-#define TAB0 /* TODO */
+#define TAB0                                                                 (0)
 /*
 XOPEN(4)
 */

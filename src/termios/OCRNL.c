@@ -1,5 +1,5 @@
 #include <termios.h>
-#define OCRNL /* TODO */
+#define OCRNL                                                             (1<<7)
 /*
 XOPEN(4)
 */

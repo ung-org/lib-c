@@ -1,5 +1,5 @@
 #include <termios.h>
-#define TCION /* TBD */
+#define TCION                                                                (1)
 /*
 POSIX(1)
 */

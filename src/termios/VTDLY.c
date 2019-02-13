@@ -1,5 +1,5 @@
 #include <termios.h>
-#define VTDLY /* TODO */
+#define VTDLY                                                            (1<<17)
 /*
 XOPEN(4)
 */

@@ -1,5 +1,5 @@
 #include <termios.h>
-#define IXON /* TBD */
+#define IXON                                                             (1<<13)
 /*
 POSIX(1)
 */

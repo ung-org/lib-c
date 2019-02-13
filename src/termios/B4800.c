@@ -1,5 +1,5 @@
 #include <termios.h>
-#define B4800                                                             (4800)
+#define B4800                                                              (0xC)
 /*
 POSIX(1)
 */

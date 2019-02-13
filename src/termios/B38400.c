@@ -1,5 +1,5 @@
 #include <termios.h>
-#define B38400                                                           (38400)
+#define B38400                                                             (0xF)
 /*
 POSIX(1)
 */

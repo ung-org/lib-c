@@ -1,5 +1,5 @@
 #include <termios.h>
-#define VMIN /* TBD */
+#define VMIN                                                                 (5)
 /*
 POSIX(1)
 */

@@ -1,5 +1,5 @@
 #include <termios.h>
-#define VINTR /* TBD */
+#define VINTR                                                                (3)
 /*
 POSIX(1)
 */
