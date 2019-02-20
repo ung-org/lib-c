@@ -7,5 +7,5 @@ void *mmap(void *addr, size_t len, int prot, int flags, int fildes, off_t off)
 
 /*
 XOPEN(400)
-POSIX(19xxyy)
+POSIX(199309)
 */

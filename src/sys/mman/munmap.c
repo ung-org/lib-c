@@ -7,5 +7,5 @@ int munmap(void*addr, size_t len)
 
 /*
 XOPEN(400)
-POSIX(19xxyy)
+POSIX(199309)
 */

@@ -2,5 +2,5 @@
 #define MS_SYNC /* TODO */
 /*
 XOPEN(400)
-POSIX(19xxyy)
+POSIX(199309)
 */

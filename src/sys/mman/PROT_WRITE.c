@@ -2,5 +2,5 @@
 #define PROT_WRITE /* TODO */
 /*
 XOPEN(400)
-POSIX(19xxyy)
+POSIX(199309)
 */

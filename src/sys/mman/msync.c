@@ -7,5 +7,5 @@ int msync(void * addr , size_t len , int flags )
 
 /*
 XOPEN(400)
-POSIX(19xxyy)
+POSIX(199309)
 */

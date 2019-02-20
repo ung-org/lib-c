@@ -14,5 +14,5 @@ typedef struct {
 
 /*
 XOPEN(400)
-POSIX(200112)
+POSIX(199309)
 */
