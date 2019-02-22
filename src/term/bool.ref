@@ -1,0 +1,3 @@
+#include <term.h>
+REFERENCE(curses/bool.c)
+XOPEN(400)
