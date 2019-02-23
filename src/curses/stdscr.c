@@ -1,5 +1,5 @@
 #include <curses.h>
-SCREEN *stdscr;
+WINDOW *stdscr;
 /*
 XOPEN(4)
 LINK(curses)
