@@ -23,9 +23,37 @@ ABMON_6	src/langinfo/ABMON_6.c	2;"	d	file:
 ABMON_7	src/langinfo/ABMON_7.c	2;"	d	file:
 ABMON_8	src/langinfo/ABMON_8.c	2;"	d	file:
 ABMON_9	src/langinfo/ABMON_9.c	2;"	d	file:
-ACTION	src/search/ACTION.c	/^} ACTION;$/;"	t	typeref:enum:__anon13	file:
-ALLOCED	src/nonstd/struct_FILE.c	/^	enum { SUPPLIED, ALLOCED, UNSET } buftype;$/;"	e	enum:__FILE::__anon6	file:
-ALPHA	src/nonstd/ctype_t.c	/^	ALPHA = (1 << 0),$/;"	e	enum:__anon5	file:
+ACS_BLOCK	src/curses/ACS_BLOCK.c	2;"	d	file:
+ACS_BOARD	src/curses/ACS_BOARD.c	2;"	d	file:
+ACS_BTEE	src/curses/ACS_BTEE.c	2;"	d	file:
+ACS_BULLET	src/curses/ACS_BULLET.c	2;"	d	file:
+ACS_CKBOARD	src/curses/ACS_CKBOARD.c	2;"	d	file:
+ACS_DARROW	src/curses/ACS_DARROW.c	2;"	d	file:
+ACS_DEGREE	src/curses/ACS_DEGREE.c	2;"	d	file:
+ACS_DIAMOND	src/curses/ACS_DIAMOND.c	2;"	d	file:
+ACS_HLINE	src/curses/ACS_HLINE.c	2;"	d	file:
+ACS_LANTERN	src/curses/ACS_LANTERN.c	2;"	d	file:
+ACS_LARROW	src/curses/ACS_LARROW.c	2;"	d	file:
+ACS_LLCORNER	src/curses/ACS_LLCORNER.c	2;"	d	file:
+ACS_LRCORNER	src/curses/ACS_LRCORNER.c	2;"	d	file:
+ACS_LTEE	src/curses/ACS_LTEE.c	2;"	d	file:
+ACS_PLMINUS	src/curses/ACS_PLMINUS.c	2;"	d	file:
+ACS_PLUS	src/curses/ACS_PLUS.c	2;"	d	file:
+ACS_RARROW	src/curses/ACS_RARROW.c	2;"	d	file:
+ACS_RTEE	src/curses/ACS_RTEE.c	2;"	d	file:
+ACS_S1	src/curses/ACS_S1.c	2;"	d	file:
+ACS_S9	src/curses/ACS_S9.c	2;"	d	file:
+ACS_TTEE	src/curses/ACS_TTEE.c	2;"	d	file:
+ACS_UARROW	src/curses/ACS_UARROW.c	2;"	d	file:
+ACS_ULCORNER	src/curses/ACS_ULCORNER.c	2;"	d	file:
+ACS_URCORNER	src/curses/ACS_URCORNER.c	2;"	d	file:
+ACS_VLINE	src/curses/ACS_VLINE.c	2;"	d	file:
+ACTION	src/search/ACTION.c	/^} ACTION;$/;"	t	typeref:enum:__anon11	file:
+AIO_ALLDONE	src/aio/AIO_ALLDONE.c	2;"	d	file:
+AIO_CANCELED	src/aio/AIO_CANCELED.c	2;"	d	file:
+AIO_NOTCANCELED	src/aio/AIO_NOTCANCELED.c	2;"	d	file:
+ALLOCED	src/nonstd/struct_FILE.c	/^	enum { SUPPLIED, ALLOCED, UNSET } buftype;$/;"	e	enum:__FILE::__anon4	file:
+ALPHA	src/nonstd/ctype_t.c	/^	ALPHA = (1 << 0),$/;"	e	enum:__anon6	file:
 ALT_DIGITS	src/langinfo/ALT_DIGITS.c	2;"	d	file:
 AM_STR	src/langinfo/AM_STR.c	2;"	d	file:
 ANYMARK	src/stropts/ANYMARK.c	2;"	d	file:
@@ -38,7 +66,19 @@ ASSERT_NOOVERLAP	src/nonstd/ASSERT_NOOVERLAP.c	4;"	d	file:
 ASSERT_NOOVERLAP	src/nonstd/ASSERT_NOOVERLAP.c	8;"	d	file:
 ASSERT_REPRESENTABLE	src/nonstd/ASSERT_REPRESENTABLE.c	20;"	d	file:
 ASSERT_REPRESENTABLE	src/nonstd/ASSERT_REPRESENTABLE.c	4;"	d	file:
-ATEXIT	src/nonstd/LIBC_INTERNAL.c	/^	ATEXIT,$/;"	e	enum:__anon4	file:
+ATEXIT	src/nonstd/LIBC_INTERNAL.c	/^	ATEXIT,$/;"	e	enum:__anon7	file:
+A_ALTCHARSET	src/curses/A_ALTCHARSET.c	2;"	d	file:
+A_ATTRIBUTES	src/curses/A_ATTRIBUTES.c	2;"	d	file:
+A_BLINK	src/curses/A_BLINK.c	2;"	d	file:
+A_BOLD	src/curses/A_BOLD.c	2;"	d	file:
+A_CHARTEXT	src/curses/A_CHARTEXT.c	2;"	d	file:
+A_COLOR	src/curses/A_COLOR.c	2;"	d	file:
+A_DIM	src/curses/A_DIM.c	2;"	d	file:
+A_INVIS	src/curses/A_INVIS.c	2;"	d	file:
+A_PROTECT	src/curses/A_PROTECT.c	2;"	d	file:
+A_REVERSE	src/curses/A_REVERSE.c	2;"	d	file:
+A_STANDOUT	src/curses/A_STANDOUT.c	2;"	d	file:
+A_UNDERLINE	src/curses/A_UNDERLINE.c	2;"	d	file:
 B0	src/termios/B0.c	2;"	d	file:
 B110	src/termios/B110.c	2;"	d	file:
 B1200	src/termios/B1200.c	2;"	d	file:
@@ -59,7 +99,7 @@ BC_BASE_MAX	src/limits/BC_BASE_MAX.c	2;"	d	file:
 BC_DIM_MAX	src/limits/BC_DIM_MAX.c	2;"	d	file:
 BC_SCALE_MAX	src/limits/BC_SCALE_MAX.c	2;"	d	file:
 BC_STRING_MAX	src/limits/BC_STRING_MAX.c	2;"	d	file:
-BLANK	src/nonstd/ctype_t.c	/^	BLANK = (1 << 10),$/;"	e	enum:__anon5	file:
+BLANK	src/nonstd/ctype_t.c	/^	BLANK = (1 << 10),$/;"	e	enum:__anon6	file:
 BLKTYPE	src/tar/BLKTYPE.c	3;"	d	file:
 BOOT_TIME	src/utmpx/BOOT_TIME.c	2;"	d	file:
 BRKINT	src/termios/BRKINT.c	2;"	d	file:
@@ -86,9 +126,22 @@ CLD_TRAPPED	src/signal/CLD_TRAPPED.c	2;"	d	file:
 CLK_TCK	src/time/CLK_TCK.c	2;"	d	file:
 CLOCAL	src/termios/CLOCAL.c	2;"	d	file:
 CLOCKS_PER_SEC	src/time/CLOCKS_PER_SEC.c	2;"	d	file:
-CNTRL	src/nonstd/ctype_t.c	/^	CNTRL = (1 << 1),$/;"	e	enum:__anon5	file:
+CLOCK_REALTIME	src/time/CLOCK_REALTIME.c	2;"	d	file:
+CNTRL	src/nonstd/ctype_t.c	/^	CNTRL = (1 << 1),$/;"	e	enum:__anon6	file:
 CODESET	src/langinfo/CODESET.c	2;"	d	file:
 COLL_WEIGHTS_MAX	src/limits/COLL_WEIGHTS_MAX.c	2;"	d	file:
+COLORS	src/curses/COLORS.c	/^int COLORS;$/;"	v
+COLOR_BLACK	src/curses/COLOR_BLACK.c	2;"	d	file:
+COLOR_BLUE	src/curses/COLOR_BLUE.c	2;"	d	file:
+COLOR_CYAN	src/curses/COLOR_CYAN.c	2;"	d	file:
+COLOR_GREEN	src/curses/COLOR_GREEN.c	2;"	d	file:
+COLOR_MAGENTA	src/curses/COLOR_MAGENTA.c	2;"	d	file:
+COLOR_PAIR	src/curses/COLOR_PAIR.c	2;"	d	file:
+COLOR_PAIRS	src/curses/COLOR_PAIRS.c	/^int COLOR_PAIRS;$/;"	v
+COLOR_RED	src/curses/COLOR_RED.c	2;"	d	file:
+COLOR_WHITE	src/curses/COLOR_WHITE.c	2;"	d	file:
+COLOR_YELLOW	src/curses/COLOR_YELLOW.c	2;"	d	file:
+COLS	src/curses/COLS.c	/^int COLS;$/;"	v
 CONTTYPE	src/tar/CONTTYPE.c	3;"	d	file:
 CR0	src/termios/CR0.c	2;"	d	file:
 CR1	src/termios/CR1.c	2;"	d	file:
@@ -103,7 +156,7 @@ CS7	src/termios/CS7.c	2;"	d	file:
 CS8	src/termios/CS8.c	2;"	d	file:
 CSIZE	src/termios/CSIZE.c	2;"	d	file:
 CSTOPB	src/termios/CSTOPB.c	2;"	d	file:
-CTYPE	src/nonstd/LIBC_INTERNAL.c	/^	CTYPE,$/;"	e	enum:__anon4	file:
+CTYPE	src/nonstd/LIBC_INTERNAL.c	/^	CTYPE,$/;"	e	enum:__anon7	file:
 C_IRGRP	src/cpio/C_IRGRP.c	2;"	d	file:
 C_IROTH	src/cpio/C_IROTH.c	2;"	d	file:
 C_IRUSR	src/cpio/C_IRUSR.c	2;"	d	file:
@@ -146,7 +199,7 @@ DBM_INSERT	src/ndbm/DBM_INSERT.c	2;"	d	file:
 DBM_REPLACE	src/ndbm/DBM_REPLACE.c	2;"	d	file:
 DEAD_PROCESS	src/utmpx/DEAD_PROCESS.c	2;"	d	file:
 DECIMAL_DIG	src/float/DECIMAL_DIG.c	3;"	d	file:
-DIGIT	src/nonstd/ctype_t.c	/^	DIGIT = (1 << 2),$/;"	e	enum:__anon5	file:
+DIGIT	src/nonstd/ctype_t.c	/^	DIGIT = (1 << 2),$/;"	e	enum:__anon6	file:
 DIR	src/dirent/DIR.c	/^typedef struct __DIR                                                        DIR;$/;"	t	typeref:struct:__DIR	file:
 DIRTYPE	src/tar/DIRTYPE.c	3;"	d	file:
 D_FMT	src/langinfo/D_FMT.c	2;"	d	file:
@@ -161,6 +214,7 @@ EALREADY	src/errno/EALREADY.c	2;"	d	file:
 EBADF	src/errno/EBADF.c	3;"	d	file:
 EBADMSG	src/errno/EBADMSG.c	2;"	d	file:
 EBUSY	src/errno/EBUSY.c	3;"	d	file:
+ECANCELED	src/errno/ECANCELED.c	2;"	d	file:
 ECHILD	src/errno/ECHILD.c	3;"	d	file:
 ECHO	src/termios/ECHO.c	2;"	d	file:
 ECHOE	src/termios/ECHOE.c	2;"	d	file:
@@ -213,9 +267,10 @@ ENOTCONN	src/errno/ENOTCONN.c	2;"	d	file:
 ENOTDIR	src/errno/ENOTDIR.c	3;"	d	file:
 ENOTEMPTY	src/errno/ENOTEMPTY.c	3;"	d	file:
 ENOTSOCK	src/errno/ENOTSOCK.c	2;"	d	file:
+ENOTSUP	src/errno/ENOTSUP.c	2;"	d	file:
 ENOTTY	src/errno/ENOTTY.c	3;"	d	file:
-ENTER	src/search/ACTION.c	/^	ENTER$/;"	e	enum:__anon13	file:
-ENTRY	src/search/ENTRY.c	/^} ENTRY;$/;"	t	typeref:struct:__anon14	file:
+ENTER	src/search/ACTION.c	/^	ENTER$/;"	e	enum:__anon11	file:
+ENTRY	src/search/ENTRY.c	/^} ENTRY;$/;"	t	typeref:struct:__anon12	file:
 ENXIO	src/errno/ENXIO.c	3;"	d	file:
 EOF	src/stdio/EOF.c	2;"	d	file:
 EOPNOTSUPP	src/errno/EOPNOTSUPP.c	2;"	d	file:
@@ -232,7 +287,8 @@ ERA_D_FMT	src/langinfo/ERA_D_FMT.c	2;"	d	file:
 ERA_D_T_FMT	src/langinfo/ERA_D_T_FMT.c	2;"	d	file:
 ERA_T_FMT	src/langinfo/ERA_T_FMT.c	2;"	d	file:
 EROFS	src/errno/EROFS.c	3;"	d	file:
-ERRNO	src/nonstd/LIBC_INTERNAL.c	/^	ERRNO,$/;"	e	enum:__anon4	file:
+ERR	src/curses/ERR.c	2;"	d	file:
+ERRNO	src/nonstd/LIBC_INTERNAL.c	/^	ERRNO,$/;"	e	enum:__anon7	file:
 ERROR	src/regexp/ERROR.c	1;"	d	file:
 ESPIPE	src/errno/ESPIPE.c	3;"	d	file:
 ESRCH	src/errno/ESRCH.c	3;"	d	file:
@@ -245,6 +301,7 @@ EXDEV	src/errno/EXDEV.c	3;"	d	file:
 EXIT_FAILURE	src/stdlib/EXIT_FAILURE.c	5;"	d	file:
 EXIT_SUCCESS	src/stdlib/EXIT_SUCCESS.c	5;"	d	file:
 EXPR_NEST_MAX	src/limits/EXPR_NEST_MAX.c	2;"	d	file:
+FALSE	src/curses/FALSE.c	2;"	d	file:
 FD_CLOEXEC	src/fcntl/FD_CLOEXEC.c	3;"	d	file:
 FD_CLR	src/sys/time/FD_CLR.c	2;"	d	file:
 FD_ISSET	src/sys/time/FD_ISSET.c	2;"	d	file:
@@ -268,8 +325,8 @@ FFDLY	src/termios/FFDLY.c	2;"	d	file:
 FIFOTYPE	src/tar/FIFOTYPE.c	3;"	d	file:
 FILE	src/stdio/FILE.c	/^typedef struct __FILE                                                      FILE;$/;"	t	typeref:struct:__FILE	file:
 FILENAME_MAX	src/stdio/FILENAME_MAX.c	2;"	d	file:
-FILE_TAIL	src/nonstd/LIBC_INTERNAL.c	/^	FILE_TAIL,$/;"	e	enum:__anon4	file:
-FIND	src/search/ACTION.c	/^	FIND,$/;"	e	enum:__anon13	file:
+FILE_TAIL	src/nonstd/LIBC_INTERNAL.c	/^	FILE_TAIL,$/;"	e	enum:__anon7	file:
+FIND	src/search/ACTION.c	/^	FIND,$/;"	e	enum:__anon11	file:
 FLT_DIG	src/float/FLT_DIG.c	2;"	d	file:
 FLT_EPSILON	src/float/FLT_EPSILON.c	2;"	d	file:
 FLT_EVAL_METHOD	src/float/FLT_EVAL_METHOD.c	3;"	d	file:
@@ -291,7 +348,7 @@ FNM_NOMATCH	src/fnmatch/FNM_NOMATCH.c	2;"	d	file:
 FNM_NOSYS	src/fnmatch/FNM_NOSYS.c	2;"	d	file:
 FNM_PATHNAME	src/fnmatch/FNM_PATHNAME.c	2;"	d	file:
 FNM_PERIOD	src/fnmatch/FNM_PERIOD.c	2;"	d	file:
-FOPEN	src/nonstd/LIBC_INTERNAL.c	/^	FOPEN,$/;"	e	enum:__anon4	file:
+FOPEN	src/nonstd/LIBC_INTERNAL.c	/^	FOPEN,$/;"	e	enum:__anon7	file:
 FOPEN_MAX	src/stdio/FOPEN_MAX.c	2;"	d	file:
 FPE_FLTDIV	src/signal/FPE_FLTDIV.c	2;"	d	file:
 FPE_FLTINV	src/signal/FPE_FLTINV.c	2;"	d	file:
@@ -344,7 +401,7 @@ GETNCNT	src/sys/sem/GETNCNT.c	2;"	d	file:
 GETPID	src/sys/sem/GETPID.c	2;"	d	file:
 GETVAL	src/sys/sem/GETVAL.c	2;"	d	file:
 GETZCNT	src/sys/sem/GETZCNT.c	2;"	d	file:
-GLOBAL_LOCALE	src/nonstd/LIBC_INTERNAL.c	/^	GLOBAL_LOCALE,$/;"	e	enum:__anon4	file:
+GLOBAL_LOCALE	src/nonstd/LIBC_INTERNAL.c	/^	GLOBAL_LOCALE,$/;"	e	enum:__anon7	file:
 GLOB_ABORTED	src/glob/GLOB_ABORTED.c	2;"	d	file:
 GLOB_APPEND	src/glob/GLOB_APPEND.c	2;"	d	file:
 GLOB_DOOFFS	src/glob/GLOB_DOOFFS.c	2;"	d	file:
@@ -356,7 +413,7 @@ GLOB_NOMATCH	src/glob/GLOB_NOMATCH.c	2;"	d	file:
 GLOB_NOSORT	src/glob/GLOB_NOSORT.c	2;"	d	file:
 GLOB_NOSPACE	src/glob/GLOB_NOSPACE.c	2;"	d	file:
 GLOB_NOSYS	src/glob/GLOB_NOSYS.c	2;"	d	file:
-GRAPH	src/nonstd/ctype_t.c	/^	GRAPH = (1 << 3),$/;"	e	enum:__anon5	file:
+GRAPH	src/nonstd/ctype_t.c	/^	GRAPH = (1 << 3),$/;"	e	enum:__anon6	file:
 HR_PER_DAY	src/time/gmtime.c	7;"	d	file:
 HUGE_VAL	src/math/HUGE_VAL.c	2;"	d	file:
 HUGE_VALF	src/math/HUGE_VALF.c	2;"	d	file:
@@ -466,6 +523,96 @@ I_SRDOPT	src/stropts/I_SRDOPT.c	2;"	d	file:
 I_STR	src/stropts/I_STR.c	2;"	d	file:
 I_SWROPT	src/stropts/I_SWROPT.c	2;"	d	file:
 I_UNLINK	src/stropts/I_UNLINK.c	2;"	d	file:
+KEY_A1	src/curses/KEY_A1.c	2;"	d	file:
+KEY_A3	src/curses/KEY_A3.c	2;"	d	file:
+KEY_B2	src/curses/KEY_B2.c	2;"	d	file:
+KEY_BACKSPACE	src/curses/KEY_BACKSPACE.c	2;"	d	file:
+KEY_BEG	src/curses/KEY_BEG.c	2;"	d	file:
+KEY_BREAK	src/curses/KEY_BREAK.c	2;"	d	file:
+KEY_BTAB	src/curses/KEY_BTAB.c	2;"	d	file:
+KEY_C1	src/curses/KEY_C1.c	2;"	d	file:
+KEY_C3	src/curses/KEY_C3.c	2;"	d	file:
+KEY_CANCEL	src/curses/KEY_CANCEL.c	2;"	d	file:
+KEY_CATAB	src/curses/KEY_CATAB.c	2;"	d	file:
+KEY_CLEAR	src/curses/KEY_CLEAR.c	2;"	d	file:
+KEY_CLOSE	src/curses/KEY_CLOSE.c	2;"	d	file:
+KEY_CODE_YES	src/curses/KEY_CODE_YES.c	2;"	d	file:
+KEY_COMMAND	src/curses/KEY_COMMAND.c	2;"	d	file:
+KEY_COPY	src/curses/KEY_COPY.c	2;"	d	file:
+KEY_CREATE	src/curses/KEY_CREATE.c	2;"	d	file:
+KEY_CTAB	src/curses/KEY_CTAB.c	2;"	d	file:
+KEY_DC	src/curses/KEY_DC.c	2;"	d	file:
+KEY_DL	src/curses/KEY_DL.c	2;"	d	file:
+KEY_DOWN	src/curses/KEY_DOWN.c	2;"	d	file:
+KEY_EIC	src/curses/KEY_EIC.c	2;"	d	file:
+KEY_END	src/curses/KEY_END.c	2;"	d	file:
+KEY_ENTER	src/curses/KEY_ENTER.c	2;"	d	file:
+KEY_EOL	src/curses/KEY_EOL.c	2;"	d	file:
+KEY_EOS	src/curses/KEY_EOS.c	2;"	d	file:
+KEY_EXIT	src/curses/KEY_EXIT.c	2;"	d	file:
+KEY_F0	src/curses/KEY_F0.c	2;"	d	file:
+KEY_FIND	src/curses/KEY_FIND.c	2;"	d	file:
+KEY_HELP	src/curses/KEY_HELP.c	2;"	d	file:
+KEY_HOME	src/curses/KEY_HOME.c	2;"	d	file:
+KEY_IC	src/curses/KEY_IC.c	2;"	d	file:
+KEY_IL	src/curses/KEY_IL.c	2;"	d	file:
+KEY_LEFT	src/curses/KEY_LEFT.c	2;"	d	file:
+KEY_LL	src/curses/KEY_LL.c	2;"	d	file:
+KEY_MARK	src/curses/KEY_MARK.c	2;"	d	file:
+KEY_MESSAGE	src/curses/KEY_MESSAGE.c	2;"	d	file:
+KEY_MOVE	src/curses/KEY_MOVE.c	2;"	d	file:
+KEY_NEXT	src/curses/KEY_NEXT.c	2;"	d	file:
+KEY_NPAGE	src/curses/KEY_NPAGE.c	2;"	d	file:
+KEY_OPEN	src/curses/KEY_OPEN.c	2;"	d	file:
+KEY_OPTIONS	src/curses/KEY_OPTIONS.c	2;"	d	file:
+KEY_PPAGE	src/curses/KEY_PPAGE.c	2;"	d	file:
+KEY_PREVIOUS	src/curses/KEY_PREVIOUS.c	2;"	d	file:
+KEY_PRINT	src/curses/KEY_PRINT.c	2;"	d	file:
+KEY_REDO	src/curses/KEY_REDO.c	2;"	d	file:
+KEY_REFERENCE	src/curses/KEY_REFERENCE.c	2;"	d	file:
+KEY_REFRESH	src/curses/KEY_REFRESH.c	2;"	d	file:
+KEY_REPLACE	src/curses/KEY_REPLACE.c	2;"	d	file:
+KEY_RESET	src/curses/KEY_RESET.c	2;"	d	file:
+KEY_RESTART	src/curses/KEY_RESTART.c	2;"	d	file:
+KEY_RESUME	src/curses/KEY_RESUME.c	2;"	d	file:
+KEY_RIGHT	src/curses/KEY_RIGHT.c	2;"	d	file:
+KEY_SAVE	src/curses/KEY_SAVE.c	2;"	d	file:
+KEY_SBEG	src/curses/KEY_SBEG.c	2;"	d	file:
+KEY_SCANCEL	src/curses/KEY_SCANCEL.c	2;"	d	file:
+KEY_SCOMMAND	src/curses/KEY_SCOMMAND.c	2;"	d	file:
+KEY_SCOPY	src/curses/KEY_SCOPY.c	2;"	d	file:
+KEY_SCREATE	src/curses/KEY_SCREATE.c	2;"	d	file:
+KEY_SDC	src/curses/KEY_SDC.c	2;"	d	file:
+KEY_SDL	src/curses/KEY_SDL.c	2;"	d	file:
+KEY_SELECT	src/curses/KEY_SELECT.c	2;"	d	file:
+KEY_SEND	src/curses/KEY_SEND.c	2;"	d	file:
+KEY_SEOL	src/curses/KEY_SEOL.c	2;"	d	file:
+KEY_SEXIT	src/curses/KEY_SEXIT.c	2;"	d	file:
+KEY_SF	src/curses/KEY_SF.c	2;"	d	file:
+KEY_SFIND	src/curses/KEY_SFIND.c	2;"	d	file:
+KEY_SHELP	src/curses/KEY_SHELP.c	2;"	d	file:
+KEY_SHOME	src/curses/KEY_SHOME.c	2;"	d	file:
+KEY_SIX	src/curses/KEY_SIX.c	2;"	d	file:
+KEY_SLEFT	src/curses/KEY_SLEFT.c	2;"	d	file:
+KEY_SMESSAGE	src/curses/KEY_SMESSAGE.c	2;"	d	file:
+KEY_SMOVE	src/curses/KEY_SMOVE.c	2;"	d	file:
+KEY_SNEXT	src/curses/KEY_SNEXT.c	2;"	d	file:
+KEY_SOPTIONS	src/curses/KEY_SOPTIONS.c	2;"	d	file:
+KEY_SPREVIOUS	src/curses/KEY_SPREVIOUS.c	2;"	d	file:
+KEY_SPRINT	src/curses/KEY_SPRINT.c	2;"	d	file:
+KEY_SR	src/curses/KEY_SR.c	2;"	d	file:
+KEY_SREDO	src/curses/KEY_SREDO.c	2;"	d	file:
+KEY_SREPLACE	src/curses/KEY_SREPLACE.c	2;"	d	file:
+KEY_SRESET	src/curses/KEY_SRESET.c	2;"	d	file:
+KEY_SRIGHT	src/curses/KEY_SRIGHT.c	2;"	d	file:
+KEY_SRSUME	src/curses/KEY_SRSUME.c	2;"	d	file:
+KEY_SSAVE	src/curses/KEY_SSAVE.c	2;"	d	file:
+KEY_SSUSPEND	src/curses/KEY_SSUSPEND.c	2;"	d	file:
+KEY_STAB	src/curses/KEY_STAB.c	2;"	d	file:
+KEY_SUNDO	src/curses/KEY_SUNDO.c	2;"	d	file:
+KEY_SUSPEND	src/curses/KEY_SUSPEND.c	2;"	d	file:
+KEY_UNDO	src/curses/KEY_UNDO.c	2;"	d	file:
+KEY_UP	src/curses/KEY_UP.c	2;"	d	file:
 LASTMARK	src/stropts/LASTMARK.c	2;"	d	file:
 LC_ALL	src/locale/LC_ALL.c	2;"	d	file:
 LC_COLLATE	src/locale/LC_COLLATE.c	2;"	d	file:
@@ -483,8 +630,14 @@ LDBL_MAX_EXP	src/float/LDBL_MAX_EXP.c	2;"	d	file:
 LDBL_MIN	src/float/LDBL_MIN.c	2;"	d	file:
 LDBL_MIN_10_EXP	src/float/LDBL_MIN_10_EXP.c	2;"	d	file:
 LDBL_MIN_EXP	src/float/LDBL_MIN_EXP.c	2;"	d	file:
-LIBC_INTERNAL	src/nonstd/LIBC_INTERNAL.c	/^} LIBC_INTERNAL;$/;"	t	typeref:enum:__anon4	file:
+LIBC_INTERNAL	src/nonstd/LIBC_INTERNAL.c	/^} LIBC_INTERNAL;$/;"	t	typeref:enum:__anon7	file:
+LINES	src/curses/LINES.c	/^int LINES;$/;"	v
 LINE_MAX	src/limits/LINE_MAX.c	2;"	d	file:
+LIO_NOP	src/aio/LIO_NOP.c	2;"	d	file:
+LIO_NOWAIT	src/aio/LIO_NOWAIT.c	2;"	d	file:
+LIO_READ	src/aio/LIO_READ.c	2;"	d	file:
+LIO_WAIT	src/aio/LIO_WAIT.c	2;"	d	file:
+LIO_WRITE	src/aio/LIO_WRITE.c	2;"	d	file:
 LLONG_MAX	src/limits/LLONG_MAX.c	3;"	d	file:
 LLONG_MIN	src/limits/LLONG_MIN.c	2;"	d	file:
 LNKTYPE	src/tar/LNKTYPE.c	3;"	d	file:
@@ -525,11 +678,12 @@ LONG_BIT	src/limits/LONG_BIT.c	2;"	d	file:
 LONG_MAX	src/limits/LONG_MAX.c	3;"	d	file:
 LONG_MAX	src/limits/LONG_MAX.c	5;"	d	file:
 LONG_MIN	src/limits/LONG_MIN.c	2;"	d	file:
-LOWER	src/nonstd/ctype_t.c	/^	LOWER = (1 << 4),$/;"	e	enum:__anon5	file:
+LOWER	src/nonstd/ctype_t.c	/^	LOWER = (1 << 4),$/;"	e	enum:__anon6	file:
 L_ctermid	src/stdio/L_ctermid.c	2;"	d	file:
 L_cuserid	src/stdio/L_cuserid.c	2;"	d	file:
 L_tmpnam	src/stdio/L_tmpnam.c	2;"	d	file:
 MAGIC	src/cpio/MAGIC.c	2;"	d	file:
+MAP_FAILED	src/sys/mman/MAP_FAILED.c	3;"	d	file:
 MAP_FIXED	src/sys/mman/MAP_FIXED.c	2;"	d	file:
 MAP_PRIVATE	src/sys/mman/MAP_PRIVATE.c	2;"	d	file:
 MAP_SHARED	src/sys/mman/MAP_SHARED.c	2;"	d	file:
@@ -538,6 +692,8 @@ MATH_ERRNO	src/math/MATH_ERRNO.c	2;"	d	file:
 MAXFLOAT	src/math/MAXFLOAT.c	2;"	d	file:
 MB_CUR_MAX	src/stdlib/MB_CUR_MAX.c	5;"	d	file:
 MB_LEN_MAX	src/limits/MB_LEN_MAX.c	2;"	d	file:
+MCL_CURRENT	src/sys/mman/MCL_CURRENT.c	3;"	d	file:
+MCL_FUTURE	src/sys/mman/MCL_FUTURE.c	3;"	d	file:
 MINSIGSTKSZ	src/signal/MINSIGSTKSZ.c	2;"	d	file:
 MIN_PER_HR	src/time/gmtime.c	5;"	d	file:
 MM_APPL	src/fmtmsg/MM_APPL.c	2;"	d	file:
@@ -623,6 +779,7 @@ NULL	src/stddef/NULL.c	2;"	d	file:
 NZERO	src/limits/NZERO.c	2;"	d	file:
 OCRNL	src/termios/OCRNL.c	2;"	d	file:
 OFILL	src/termios/OFILL.c	2;"	d	file:
+OK	src/curses/OK.c	2;"	d	file:
 OLCUC	src/termios/OLCUC.c	2;"	d	file:
 OLD_TIME	src/utmpx/OLD_TIME.c	2;"	d	file:
 ONLCR	src/termios/ONLCR.c	2;"	d	file:
@@ -632,15 +789,18 @@ OPOST	src/termios/OPOST.c	2;"	d	file:
 O_ACCMODE	src/fcntl/O_ACCMODE.c	3;"	d	file:
 O_APPEND	src/fcntl/O_APPEND.c	3;"	d	file:
 O_CREAT	src/fcntl/O_CREAT.c	3;"	d	file:
+O_DSYNC	src/fcntl/O_DSYNC.c	2;"	d	file:
 O_EXCL	src/fcntl/O_EXCL.c	3;"	d	file:
 O_NOCTTY	src/fcntl/O_NOCTTY.c	3;"	d	file:
 O_NONBLOCK	src/fcntl/O_NONBLOCK.c	3;"	d	file:
 O_RDONLY	src/fcntl/O_RDONLY.c	3;"	d	file:
 O_RDWR	src/fcntl/O_RDWR.c	3;"	d	file:
+O_RSYNC	src/fcntl/O_RSYNC.c	2;"	d	file:
 O_SYNC	src/fcntl/O_SYNC.c	3;"	d	file:
 O_TRUNC	src/fcntl/O_TRUNC.c	3;"	d	file:
 O_WRONLY	src/fcntl/O_WRONLY.c	3;"	d	file:
 PAGESIZE	src/limits/PAGESIZE.c	2;"	d	file:
+PAIR_NUMBER	src/curses/PAIR_NUMBER.c	2;"	d	file:
 PARENB	src/termios/PARENB.c	2;"	d	file:
 PARMRK	src/termios/PARMRK.c	2;"	d	file:
 PARODD	src/termios/PARODD.c	2;"	d	file:
@@ -662,8 +822,8 @@ POLL_IN	src/signal/POLL_IN.c	2;"	d	file:
 POLL_MSG	src/signal/POLL_MSG.c	2;"	d	file:
 POLL_OUT	src/signal/POLL_OUT.c	2;"	d	file:
 POLL_PRI	src/signal/POLL_PRI.c	2;"	d	file:
-PRINT	src/nonstd/ctype_t.c	/^	PRINT = (1 << 5),$/;"	e	enum:__anon5	file:
-PRINTF	src/nonstd/LIBC_INTERNAL.c	/^	PRINTF,$/;"	e	enum:__anon4	file:
+PRINT	src/nonstd/ctype_t.c	/^	PRINT = (1 << 5),$/;"	e	enum:__anon6	file:
+PRINTF	src/nonstd/LIBC_INTERNAL.c	/^	PRINTF,$/;"	e	enum:__anon7	file:
 PRIO_PGRP	src/sys/resource/PRIO_PGRP.c	2;"	d	file:
 PRIO_PROCESS	src/sys/resource/PRIO_PROCESS.c	2;"	d	file:
 PRIO_USER	src/sys/resource/PRIO_USER.c	2;"	d	file:
@@ -763,13 +923,13 @@ PROT_READ	src/sys/mman/PROT_READ.c	2;"	d	file:
 PROT_WRITE	src/sys/mman/PROT_WRITE.c	2;"	d	file:
 PTRDIFF_MAX	src/stdint/PTRDIFF_MAX.c	2;"	d	file:
 PTRDIFF_MIN	src/stdint/PTRDIFF_MIN.c	2;"	d	file:
-PUNCT	src/nonstd/ctype_t.c	/^	PUNCT = (1 << 6),$/;"	e	enum:__anon5	file:
-P_ALL	src/sys/wait/idtype_t.c	/^	P_ALL,$/;"	e	enum:__anon22	file:
-P_PGID	src/sys/wait/idtype_t.c	/^	P_PGID,$/;"	e	enum:__anon22	file:
-P_PID	src/sys/wait/idtype_t.c	/^	P_PID$/;"	e	enum:__anon22	file:
+PUNCT	src/nonstd/ctype_t.c	/^	PUNCT = (1 << 6),$/;"	e	enum:__anon6	file:
+P_ALL	src/sys/wait/idtype_t.c	/^	P_ALL,$/;"	e	enum:__anon18	file:
+P_PGID	src/sys/wait/idtype_t.c	/^	P_PGID,$/;"	e	enum:__anon18	file:
+P_PID	src/sys/wait/idtype_t.c	/^	P_PID$/;"	e	enum:__anon18	file:
 P_tmpdir	src/stdio/P_tmpdir.c	2;"	d	file:
 RADIXCHAR	src/langinfo/RADIXCHAR.c	2;"	d	file:
-RAND	src/nonstd/LIBC_INTERNAL.c	/^	RAND,$/;"	e	enum:__anon4	file:
+RAND	src/nonstd/LIBC_INTERNAL.c	/^	RAND,$/;"	e	enum:__anon7	file:
 RAND_MAX	src/stdlib/RAND_MAX.c	5;"	d	file:
 REGTYPE	src/tar/REGTYPE.c	3;"	d	file:
 REG_BADBR	src/regex/REG_BADBR.c	2;"	d	file:
@@ -819,9 +979,12 @@ SA_ONSTACK	src/signal/SA_ONSTACK.c	2;"	d	file:
 SA_RESETHAND	src/signal/SA_RESETHAND.c	2;"	d	file:
 SA_RESTART	src/signal/SA_RESTART.c	2;"	d	file:
 SA_SIGINFO	src/signal/SA_SIGINFO.c	2;"	d	file:
-SCANF	src/nonstd/LIBC_INTERNAL.c	/^	SCANF,$/;"	e	enum:__anon4	file:
+SCANF	src/nonstd/LIBC_INTERNAL.c	/^	SCANF,$/;"	e	enum:__anon7	file:
 SCHAR_MAX	src/limits/SCHAR_MAX.c	2;"	d	file:
 SCHAR_MIN	src/limits/SCHAR_MIN.c	2;"	d	file:
+SCHED_FIFO	src/sched/SCHED_FIFO.c	2;"	d	file:
+SCHED_OTHER	src/sched/SCHED_OTHER.c	2;"	d	file:
+SCHED_RR	src/sched/SCHED_RR.c	2;"	d	file:
 SCNX16	src/inttypes/SCNX16.c	2;"	d	file:
 SCNX32	src/inttypes/SCNX32.c	2;"	d	file:
 SCNX64	src/inttypes/SCNX64.c	2;"	d	file:
@@ -912,6 +1075,7 @@ SCNxLEAST8	src/inttypes/SCNxLEAST8.c	2;"	d	file:
 SCNxMAX	src/inttypes/SCNxMAX.c	2;"	d	file:
 SCNxPTR	src/inttypes/SCNxPTR.c	3;"	d	file:
 SCNxPTR	src/inttypes/SCNxPTR.c	5;"	d	file:
+SCREEN	src/curses/SCREEN.c	/^typedef struct __SCREEN SCREEN;$/;"	t	typeref:struct:__SCREEN	file:
 SEC_PER_DAY	src/time/gmtime.c	8;"	d	file:
 SEC_PER_HR	src/time/gmtime.c	6;"	d	file:
 SEC_PER_MIN	src/time/gmtime.c	4;"	d	file:
@@ -934,6 +1098,8 @@ SIGALRM	src/signal/SIGALRM.c	2;"	d	file:
 SIGBUS	src/signal/SIGBUS.c	2;"	d	file:
 SIGCHLD	src/signal/SIGCHLD.c	2;"	d	file:
 SIGCONT	src/signal/SIGCONT.c	2;"	d	file:
+SIGEV_NONE	src/signal/SIGEV_NONE.c	2;"	d	file:
+SIGEV_SIGNAL	src/signal/SIGEV_SIGNAL.c	2;"	d	file:
 SIGFPE	src/signal/SIGFPE.c	2;"	d	file:
 SIGHUP	src/signal/SIGHUP.c	2;"	d	file:
 SIGILL	src/signal/SIGILL.c	2;"	d	file:
@@ -943,6 +1109,8 @@ SIGPIPE	src/signal/SIGPIPE.c	2;"	d	file:
 SIGPOLL	src/signal/SIGPOLL.c	2;"	d	file:
 SIGPROF	src/signal/SIGPROF.c	2;"	d	file:
 SIGQUIT	src/signal/SIGQUIT.c	2;"	d	file:
+SIGRTMAX	src/signal/SIGRTMAX.c	2;"	d	file:
+SIGRTMIN	src/signal/SIGRTMIN.c	2;"	d	file:
 SIGSEGV	src/signal/SIGSEGV.c	2;"	d	file:
 SIGSTKSZ	src/signal/SIGSTKSZ.c	2;"	d	file:
 SIGSTOP	src/signal/SIGSTOP.c	2;"	d	file:
@@ -968,8 +1136,13 @@ SIG_IGN	src/signal/SIG_IGN.c	2;"	d	file:
 SIG_SETMASK	src/signal/SIG_SETMASK.c	2;"	d	file:
 SIG_UNBLOCK	src/signal/SIG_UNBLOCK.c	2;"	d	file:
 SIZE_MAX	src/stdint/SIZE_MAX.c	2;"	d	file:
+SI_ASYNCIO	src/signal/SI_ASYNCIO.c	2;"	d	file:
+SI_MESGQ	src/signal/SI_MESGQ.c	2;"	d	file:
+SI_QUEUE	src/signal/SI_QUEUE.c	2;"	d	file:
+SI_TIMER	src/signal/SI_TIMER.c	2;"	d	file:
+SI_USER	src/signal/SI_USER.c	2;"	d	file:
 SNDZERO	src/stropts/SNDZERO.c	2;"	d	file:
-SPACE	src/nonstd/ctype_t.c	/^	SPACE = (1 << 7),$/;"	e	enum:__anon5	file:
+SPACE	src/nonstd/ctype_t.c	/^	SPACE = (1 << 7),$/;"	e	enum:__anon6	file:
 SSIZE_MAX	src/limits/SSIZE_MAX.c	3;"	d	file:
 SS_DISABLE	src/signal/SS_DISABLE.c	2;"	d	file:
 SS_ONSTACK	src/signal/SS_ONSTACK.c	2;"	d	file:
@@ -978,11 +1151,11 @@ STDIN_FILENO	src/unistd/STDIN_FILENO.c	2;"	d	file:
 STDOUT_FILENO	src/unistd/STDOUT_FILENO.c	2;"	d	file:
 ST_NOSUID	src/sys/statvfs/ST_NOSUID.c	2;"	d	file:
 ST_RDONLY	src/sys/statvfs/ST_RDONLY.c	2;"	d	file:
-SUPPLIED	src/nonstd/struct_FILE.c	/^	enum { SUPPLIED, ALLOCED, UNSET } buftype;$/;"	e	enum:__FILE::__anon6	file:
+SUPPLIED	src/nonstd/struct_FILE.c	/^	enum { SUPPLIED, ALLOCED, UNSET } buftype;$/;"	e	enum:__FILE::__anon4	file:
 SYMTYPE	src/tar/SYMTYPE.c	3;"	d	file:
 SYSCALL	src/nonstd/SYSCALL.c	3;"	d	file:
 SYSCALL0	src/nonstd/SYSCALL0.c	3;"	d	file:
-SYSCALL_LOOKUP	src/nonstd/LIBC_INTERNAL.c	/^	SYSCALL_LOOKUP,$/;"	e	enum:__anon4	file:
+SYSCALL_LOOKUP	src/nonstd/LIBC_INTERNAL.c	/^	SYSCALL_LOOKUP,$/;"	e	enum:__anon7	file:
 SYSCALL_NOFAIL	src/nonstd/SYSCALL_NOFAIL.c	3;"	d	file:
 SYSCALL_NUMBER	src/nonstd/SYSCALL_NUMBER.c	3;"	d	file:
 S_BANDURG	src/stropts/S_BANDURG.c	2;"	d	file:
@@ -1023,6 +1196,9 @@ S_MSG	src/stropts/S_MSG.c	2;"	d	file:
 S_OUTPUT	src/stropts/S_OUTPUT.c	2;"	d	file:
 S_RDBAND	src/stropts/S_RDBAND.c	2;"	d	file:
 S_RDNORM	src/stropts/S_RDNORM.c	2;"	d	file:
+S_TYPEISMQ	src/sys/stat/S_TYPEISMQ.c	2;"	d	file:
+S_TYPEISSEM	src/sys/stat/S_TYPEISSEM.c	2;"	d	file:
+S_TYPEISSHM	src/sys/stat/S_TYPEISSHM.c	2;"	d	file:
 S_WRBAND	src/stropts/S_WRBAND.c	2;"	d	file:
 S_WRNORM	src/stropts/S_WRNORM.c	2;"	d	file:
 TAB0	src/termios/TAB0.c	2;"	d	file:
@@ -1040,6 +1216,7 @@ TCOON	src/termios/TCOON.c	2;"	d	file:
 TCSADRAIN	src/termios/TCSADRAIN.c	2;"	d	file:
 TCSAFLUSH	src/termios/TCSAFLUSH.c	2;"	d	file:
 TCSANOW	src/termios/TCSANOW.c	2;"	d	file:
+TERMINAL	src/term/TERMINAL.c	/^typdef struct __TERMINAL TERMINAL;$/;"	v	typeref:struct:__TERMINAL
 TGEXEC	src/tar/TGEXEC.c	3;"	d	file:
 TGREAD	src/tar/TGREAD.c	3;"	d	file:
 TGSOURCE	src/complex/cabs.c	1;"	d	file:
@@ -1125,19 +1302,21 @@ TGWRITE	src/tar/TGWRITE.c	3;"	d	file:
 THOUSEP	src/langinfo/THOUSEP.c	2;"	d	file:
 THREAD_LOCAL	src/nonstd/__libc_per_thread.c	6;"	d	file:
 THREAD_LOCAL	src/nonstd/__libc_per_thread.c	8;"	d	file:
-THREAD_LOCALE	src/nonstd/LIBC_INTERNAL.c	/^	THREAD_LOCALE,$/;"	e	enum:__anon4	file:
+THREAD_LOCALE	src/nonstd/LIBC_INTERNAL.c	/^	THREAD_LOCALE,$/;"	e	enum:__anon7	file:
+TIMER_ABSTIME	src/time/TIMER_ABSTIME.c	2;"	d	file:
 TMAGIC	src/tar/TMAGIC.c	3;"	d	file:
 TMAGLEN	src/tar/TMAGLEN.c	3;"	d	file:
 TMP_MAX	src/limits/TMP_MAX.c	2;"	d	file:
 TMP_MAX	src/stdio/TMP_MAX.c	2;"	d	file:
 TOEXEC	src/tar/TOEXEC.c	3;"	d	file:
-TOLOWER	src/nonstd/LIBC_INTERNAL.c	/^	TOLOWER,$/;"	e	enum:__anon4	file:
+TOLOWER	src/nonstd/LIBC_INTERNAL.c	/^	TOLOWER,$/;"	e	enum:__anon7	file:
 TOREAD	src/tar/TOREAD.c	3;"	d	file:
 TOSTOP	src/termios/TOSTOP.c	2;"	d	file:
-TOUPPER	src/nonstd/LIBC_INTERNAL.c	/^	TOUPPER,$/;"	e	enum:__anon4	file:
+TOUPPER	src/nonstd/LIBC_INTERNAL.c	/^	TOUPPER,$/;"	e	enum:__anon7	file:
 TOWRITE	src/tar/TOWRITE.c	3;"	d	file:
 TRAP_BRKPT	src/signal/TRAP_BRKPT.c	2;"	d	file:
 TRAP_TRACE	src/signal/TRAP_TRACE.c	2;"	d	file:
+TRUE	src/curses/TRUE.c	2;"	d	file:
 TSGID	src/tar/TSGID.c	3;"	d	file:
 TSUID	src/tar/TSUID.c	3;"	d	file:
 TSVTX	src/tar/TSVTX.c	3;"	d	file:
@@ -1177,8 +1356,8 @@ ULONG_MAX	src/limits/ULONG_MAX.c	5;"	d	file:
 UL_GETFSIZE	src/ulimit/UL_GETFSIZE.c	2;"	d	file:
 UL_SETFSIZE	src/ulimit/UL_SETFSIZE.c	2;"	d	file:
 UNGETC	src/regexp/UNGETC.c	1;"	d	file:
-UNSET	src/nonstd/struct_FILE.c	/^	enum { SUPPLIED, ALLOCED, UNSET } buftype;$/;"	e	enum:__FILE::__anon6	file:
-UPPER	src/nonstd/ctype_t.c	/^	UPPER = (1 << 8),$/;"	e	enum:__anon5	file:
+UNSET	src/nonstd/struct_FILE.c	/^	enum { SUPPLIED, ALLOCED, UNSET } buftype;$/;"	e	enum:__FILE::__anon4	file:
+UPPER	src/nonstd/ctype_t.c	/^	UPPER = (1 << 8),$/;"	e	enum:__anon6	file:
 USER_PROCESS	src/utmpx/USER_PROCESS.c	2;"	d	file:
 USE_FORK	src/stdlib/system.c	8;"	d	file:
 USHRT_MAX	src/limits/USHRT_MAX.c	2;"	d	file:
@@ -1186,7 +1365,7 @@ VEOF	src/termios/VEOF.c	2;"	d	file:
 VEOL	src/termios/VEOL.c	2;"	d	file:
 VERASE	src/termios/VERASE.c	2;"	d	file:
 VINTR	src/termios/VINTR.c	2;"	d	file:
-VISIT	src/search/VISIT.c	/^} VISIT;$/;"	t	typeref:enum:__anon15	file:
+VISIT	src/search/VISIT.c	/^} VISIT;$/;"	t	typeref:enum:__anon13	file:
 VKILL	src/termios/VKILL.c	2;"	d	file:
 VMIN	src/termios/VMIN.c	2;"	d	file:
 VQUIT	src/termios/VQUIT.c	2;"	d	file:
@@ -1197,6 +1376,45 @@ VT0	src/termios/VT0.c	2;"	d	file:
 VT1	src/termios/VT1.c	2;"	d	file:
 VTDLY	src/termios/VTDLY.c	2;"	d	file:
 VTIME	src/termios/VTIME.c	2;"	d	file:
+WACS_BLOCK	src/curses/WACS_BLOCK.c	2;"	d	file:
+WACS_BOARD	src/curses/WACS_BOARD.c	2;"	d	file:
+WACS_BTEE	src/curses/WACS_BTEE.c	2;"	d	file:
+WACS_BULLET	src/curses/WACS_BULLET.c	2;"	d	file:
+WACS_CKBOARD	src/curses/WACS_CKBOARD.c	2;"	d	file:
+WACS_DARROW	src/curses/WACS_DARROW.c	2;"	d	file:
+WACS_DEGREE	src/curses/WACS_DEGREE.c	2;"	d	file:
+WACS_DIAMOND	src/curses/WACS_DIAMOND.c	2;"	d	file:
+WACS_HLINE	src/curses/WACS_HLINE.c	2;"	d	file:
+WACS_LANTERN	src/curses/WACS_LANTERN.c	2;"	d	file:
+WACS_LARROW	src/curses/WACS_LARROW.c	2;"	d	file:
+WACS_LLCORNER	src/curses/WACS_LLCORNER.c	2;"	d	file:
+WACS_LRCORNER	src/curses/WACS_LRCORNER.c	2;"	d	file:
+WACS_LTEE	src/curses/WACS_LTEE.c	2;"	d	file:
+WACS_PLMINUS	src/curses/WACS_PLMINUS.c	2;"	d	file:
+WACS_PLUS	src/curses/WACS_PLUS.c	2;"	d	file:
+WACS_RARROW	src/curses/WACS_RARROW.c	2;"	d	file:
+WACS_RTEE	src/curses/WACS_RTEE.c	2;"	d	file:
+WACS_S1	src/curses/WACS_S1.c	2;"	d	file:
+WACS_S9	src/curses/WACS_S9.c	2;"	d	file:
+WACS_TTEE	src/curses/WACS_TTEE.c	2;"	d	file:
+WACS_UARROW	src/curses/WACS_UARROW.c	2;"	d	file:
+WACS_ULCORNER	src/curses/WACS_ULCORNER.c	2;"	d	file:
+WACS_URCORNER	src/curses/WACS_URCORNER.c	2;"	d	file:
+WACS_VLINE	src/curses/WACS_VLINE.c	2;"	d	file:
+WA_ALTCHARSET	src/curses/WA_ALTCHARSET.c	2;"	d	file:
+WA_BLINK	src/curses/WA_BLINK.c	2;"	d	file:
+WA_BOLD	src/curses/WA_BOLD.c	2;"	d	file:
+WA_DIM	src/curses/WA_DIM.c	2;"	d	file:
+WA_HORIZONTAL	src/curses/WA_HORIZONTAL.c	2;"	d	file:
+WA_INVIS	src/curses/WA_INVIS.c	2;"	d	file:
+WA_LEFT	src/curses/WA_LEFT.c	2;"	d	file:
+WA_LOW	src/curses/WA_LOW.c	2;"	d	file:
+WA_PROTECT	src/curses/WA_PROTECT.c	2;"	d	file:
+WA_REVERSE	src/curses/WA_REVERSE.c	2;"	d	file:
+WA_RIGHT	src/curses/WA_RIGHT.c	2;"	d	file:
+WA_STANDOUT	src/curses/WA_STANDOUT.c	2;"	d	file:
+WA_TOP	src/curses/WA_TOP.c	2;"	d	file:
+WA_UNDERLINE	src/curses/WA_UNDERLINE.c	2;"	d	file:
 WCHAR_MAX	src/stdint/WCHAR_MAX.c	2;"	d	file:
 WCHAR_MAX	src/wchar/WCHAR_MAX.c	2;"	d	file:
 WCHAR_MIN	src/stdint/WCHAR_MIN.c	2;"	d	file:
@@ -1209,6 +1427,7 @@ WIFCONTINUED	src/sys/wait/WIFCONTINUED.c	2;"	d	file:
 WIFEXITED	src/sys/wait/WIFEXITED.c	3;"	d	file:
 WIFSIGNALED	src/sys/wait/WIFSIGNALED.c	3;"	d	file:
 WIFSTOPPED	src/sys/wait/WIFSTOPPED.c	3;"	d	file:
+WINDOW	src/curses/WINDOW.c	/^typedef struct __WINDOW WINDOW;$/;"	t	typeref:struct:__WINDOW	file:
 WINT_MAX	src/stdint/WINT_MAX.c	2;"	d	file:
 WINT_MIN	src/stdint/WINT_MIN.c	2;"	d	file:
 WNOHANG	src/sys/wait/WNOHANG.c	3;"	d	file:
@@ -1232,7 +1451,7 @@ WTERMSIG	src/sys/wait/WTERMSIG.c	3;"	d	file:
 WUNTRACED	src/sys/wait/WUNTRACED.c	3;"	d	file:
 W_OK	src/unistd/W_OK.c	2;"	d	file:
 XCASE	src/termios/XCASE.c	2;"	d	file:
-XDIGIT	src/nonstd/ctype_t.c	/^	XDIGIT = (1 << 9),$/;"	e	enum:__anon5	file:
+XDIGIT	src/nonstd/ctype_t.c	/^	XDIGIT = (1 << 9),$/;"	e	enum:__anon6	file:
 X_OK	src/unistd/X_OK.c	2;"	d	file:
 YESEXPR	src/langinfo/YESEXPR.c	2;"	d	file:
 YESSTR	src/langinfo/YESSTR.c	2;"	d	file:
@@ -1243,6 +1462,7 @@ _IOFBF	src/stdio/_IOFBF.c	2;"	d	file:
 _IOLBF	src/stdio/_IOLBF.c	2;"	d	file:
 _IONBF	src/stdio/_IONBF.c	2;"	d	file:
 _Imaginary_I	src/complex/_Imaginary_I.c	4;"	d	file:
+_PC_ASYNC_IO	src/unistd/_PC_ASYNC_IO.c	2;"	d	file:
 _PC_CHOWN_RESTRICTED	src/unistd/_PC_CHOWN_RESTRICTED.c	2;"	d	file:
 _PC_LINK_MAX	src/unistd/_PC_LINK_MAX.c	2;"	d	file:
 _PC_MAX_CANON	src/unistd/_PC_MAX_CANON.c	2;"	d	file:
@@ -1251,6 +1471,8 @@ _PC_NAME_MAX	src/unistd/_PC_NAME_MAX.c	2;"	d	file:
 _PC_NO_TRUNC	src/unistd/_PC_NO_TRUNC.c	2;"	d	file:
 _PC_PATH_MAX	src/unistd/_PC_PATH_MAX.c	2;"	d	file:
 _PC_PIPE_BUF	src/unistd/_PC_PIPE_BUF.c	2;"	d	file:
+_PC_PRIO_IO	src/unistd/_PC_PRIO_IO.c	2;"	d	file:
+_PC_SYNC_IO	src/unistd/_PC_SYNC_IO.c	2;"	d	file:
 _PC_VDISABLE	src/unistd/_PC_VDISABLE.c	2;"	d	file:
 _POSIX2_BC_BASE_MAX	src/limits/_POSIX2_BC_BASE_MAX.c	2;"	d	file:
 _POSIX2_BC_DIM_MAX	src/limits/_POSIX2_BC_DIM_MAX.c	2;"	d	file:
@@ -1258,17 +1480,9 @@ _POSIX2_BC_SCALE_MAX	src/limits/_POSIX2_BC_SCALE_MAX.c	2;"	d	file:
 _POSIX2_BC_STRING_MAX	src/limits/_POSIX2_BC_STRING_MAX.c	2;"	d	file:
 _POSIX2_CHAR_TERM	src/unistd/_POSIX2_CHAR_TERM.c	2;"	d	file:
 _POSIX2_COLL_WEIGHTS_MAX	src/limits/_POSIX2_COLL_WEIGHTS_MAX.c	2;"	d	file:
+_POSIX2_C_BIND	src/unistd/_POSIX2_C_BIND.c	2;"	d	file:
 _POSIX2_C_DEV	src/unistd/_POSIX2_C_DEV.c	2;"	d	file:
-_POSIX2_C_VERSION	src/unistd/_POSIX2_C_BIND.c	11;"	d	file:
-_POSIX2_C_VERSION	src/unistd/_POSIX2_C_BIND.c	13;"	d	file:
-_POSIX2_C_VERSION	src/unistd/_POSIX2_C_BIND.c	5;"	d	file:
-_POSIX2_C_VERSION	src/unistd/_POSIX2_C_BIND.c	7;"	d	file:
-_POSIX2_C_VERSION	src/unistd/_POSIX2_C_BIND.c	9;"	d	file:
-_POSIX2_C_VERSION	src/unistd/_POSIX2_C_VERSION.c	11;"	d	file:
-_POSIX2_C_VERSION	src/unistd/_POSIX2_C_VERSION.c	13;"	d	file:
-_POSIX2_C_VERSION	src/unistd/_POSIX2_C_VERSION.c	5;"	d	file:
-_POSIX2_C_VERSION	src/unistd/_POSIX2_C_VERSION.c	7;"	d	file:
-_POSIX2_C_VERSION	src/unistd/_POSIX2_C_VERSION.c	9;"	d	file:
+_POSIX2_C_VERSION	src/unistd/_POSIX2_C_VERSION.c	2;"	d	file:
 _POSIX2_EXPR_NEST_MAX	src/limits/_POSIX2_EXPR_NEST_MAX.c	2;"	d	file:
 _POSIX2_FORT_DEV	src/unistd/_POSIX2_FORT_DEV.c	2;"	d	file:
 _POSIX2_FORT_RUN	src/unistd/_POSIX2_FORT_RUN.c	2;"	d	file:
@@ -1282,23 +1496,51 @@ _POSIX2_VERSION	src/unistd/_POSIX2_VERSION.c	13;"	d	file:
 _POSIX2_VERSION	src/unistd/_POSIX2_VERSION.c	5;"	d	file:
 _POSIX2_VERSION	src/unistd/_POSIX2_VERSION.c	7;"	d	file:
 _POSIX2_VERSION	src/unistd/_POSIX2_VERSION.c	9;"	d	file:
+_POSIX_AIO_LISTIO_MAX	src/limits/_POSIX_AIO_LISTIO_MAX.c	2;"	d	file:
+_POSIX_AIO_MAX	src/limits/_POSIX_AIO_MAX.c	2;"	d	file:
 _POSIX_ARG_MAX	src/limits/_POSIX_ARG_MAX.c	2;"	d	file:
+_POSIX_ASYNCHRONOUS_IO	src/unistd/_POSIX_ASYNCHRONOUS_IO.c	2;"	d	file:
+_POSIX_ASYNC_IO	src/unistd/_POSIX_ASYNC_IO.c	2;"	d	file:
 _POSIX_CHILD_MAX	src/limits/_POSIX_CHILD_MAX.c	2;"	d	file:
 _POSIX_CHOWN_RESTRICTED	src/unistd/_POSIX_CHOWN_RESTRICTED.c	2;"	d	file:
+_POSIX_CLOCKRES_MIN	src/limits/_POSIX_CLOCKRES_MIN.c	2;"	d	file:
+_POSIX_DELAYTIMER_MAX	src/limits/_POSIX_DELAYTIMER_MAX.c	2;"	d	file:
+_POSIX_FSYNC	src/unistd/_POSIX_FSYNC.c	2;"	d	file:
 _POSIX_JOB_CONTROL	src/unistd/_POSIX_JOB_CONTROL.c	2;"	d	file:
 _POSIX_LINK_MAX	src/limits/_POSIX_LINK_MAX.c	2;"	d	file:
+_POSIX_MAPPED_FILES	src/unistd/_POSIX_MAPPED_FILES.c	2;"	d	file:
 _POSIX_MAX_CANON	src/limits/_POSIX_MAX_CANON.c	2;"	d	file:
 _POSIX_MAX_INPUT	src/limits/_POSIX_MAX_INPUT.c	2;"	d	file:
+_POSIX_MEMLOCK	src/unistd/_POSIX_MEMLOCK.c	2;"	d	file:
+_POSIX_MEMLOCK_RANGE	src/unistd/_POSIX_MEMLOCK_RANGE.c	2;"	d	file:
+_POSIX_MEMORY_PROTECTION	src/unistd/_POSIX_MEMORY_PROTECTION.c	2;"	d	file:
+_POSIX_MESSAGE_PASSING	src/unistd/_POSIX_MESSAGE_PASSING.c	2;"	d	file:
+_POSIX_MQ_OPEN_MAX	src/limits/_POSIX_MQ_OPEN_MAX.c	2;"	d	file:
+_POSIX_MQ_PRIO_MAX	src/limits/_POSIX_MQ_PRIO_MAX.c	2;"	d	file:
 _POSIX_NAME_MAX	src/limits/_POSIX_NAME_MAX.c	2;"	d	file:
 _POSIX_NGROUPS_MAX	src/limits/_POSIX_NGROUPS_MAX.c	2;"	d	file:
 _POSIX_NO_TRUNC	src/unistd/_POSIX_NO_TRUNC.c	2;"	d	file:
 _POSIX_OPEN_MAX	src/limits/_POSIX_OPEN_MAX.c	2;"	d	file:
 _POSIX_PATH_MAX	src/limits/_POSIX_PATH_MAX.c	2;"	d	file:
 _POSIX_PIPE_BUF	src/limits/_POSIX_PIPE_BUF.c	2;"	d	file:
+_POSIX_PRIORITIZED_IO	src/unistd/_POSIX_PRIORITIZED_IO.c	2;"	d	file:
+_POSIX_PRIORITY_SCHEDULING	src/unistd/_POSIX_PRIORITY_SCHEDULING.c	2;"	d	file:
+_POSIX_PRIO_IO	src/unistd/_POSIX_PRIO_IO.c	2;"	d	file:
+_POSIX_REALTIME_SIGNALS	src/unistd/_POSIX_REALTIME_SIGNALS.c	2;"	d	file:
+_POSIX_RTSIG_MAX	src/limits/_POSIX_RTSIG_MAX.c	2;"	d	file:
 _POSIX_SAVED_IDS	src/unistd/_POSIX_SAVED_IDS.c	2;"	d	file:
+_POSIX_SEMAPHORES	src/unistd/_POSIX_SEMAPHORES.c	2;"	d	file:
+_POSIX_SEM_NSEMS_MAX	src/limits/_POSIX_SEM_NSEMS_MAX.c	2;"	d	file:
+_POSIX_SEM_VALUE_MAX	src/limits/_POSIX_SEM_VALUE_MAX.c	2;"	d	file:
+_POSIX_SHARED_MEMORY_OBJECTS	src/unistd/_POSIX_SHARED_MEMORY_OBJECTS.c	2;"	d	file:
+_POSIX_SIGQUEUE_MAX	src/limits/_POSIX_SIGQUEUE_MAX.c	2;"	d	file:
 _POSIX_SOURCE	src/nonstd/_FTM/_POSIX_SOURCE.c	1;"	d	file:
 _POSIX_SSIZE_MAX	src/limits/_POSIX_SSIZE_MAX.c	3;"	d	file:
 _POSIX_STREAM_MAX	src/limits/_POSIX_STREAM_MAX.c	2;"	d	file:
+_POSIX_SYNCHRONIZED_IO	src/unistd/_POSIX_SYNCHRONIZED_IO.c	2;"	d	file:
+_POSIX_SYNC_IO	src/unistd/_POSIX_SYNC_IO.c	2;"	d	file:
+_POSIX_TIMERS	src/unistd/_POSIX_TIMERS.c	2;"	d	file:
+_POSIX_TIMER_MAX	src/limits/_POSIX_TIMER_MAX.c	2;"	d	file:
 _POSIX_TZNAME_MAX	src/limits/_POSIX_TZNAME_MAX.c	3;"	d	file:
 _POSIX_VDISABLE	src/unistd/_POSIX_VDISABLE.c	2;"	d	file:
 _POSIX_VERISON	src/unistd/_POSIX_VERSION.c	3;"	d	file:
@@ -1317,7 +1559,11 @@ _SC_2_LOCALEDEF	src/unistd/_SC_2_LOCALEDEF.c	2;"	d	file:
 _SC_2_SW_DEV	src/unistd/_SC_2_SW_DEV.c	2;"	d	file:
 _SC_2_UPE	src/unistd/_SC_2_UPE.c	2;"	d	file:
 _SC_2_VERSION	src/unistd/_SC_2_VERSION.c	2;"	d	file:
+_SC_AIO_LISTIO_MAX	src/unistd/_SC_AIO_LISTIO_MAX.c	2;"	d	file:
+_SC_AIO_MAX	src/unistd/_SC_AIO_MAX.c	2;"	d	file:
+_SC_AIO_PRIO_DELTA_MAX	src/unistd/_SC_AIO_PRIO_DELTA_MAX.c	2;"	d	file:
 _SC_ARG_MAX	src/unistd/_SC_ARG_MAX.c	2;"	d	file:
+_SC_ASYNCHRONOUS_IO	src/unistd/_SC_ASYNCHRONOUS_IO.c	2;"	d	file:
 _SC_ATEXIT_MAX	src/unistd/_SC_ATEXIT_MAX.c	2;"	d	file:
 _SC_BC_BASE_MAX	src/unistd/_SC_BC_BASE_MAX.c	2;"	d	file:
 _SC_BC_DIM_MAX	src/unistd/_SC_BC_DIM_MAX.c	2;"	d	file:
@@ -1326,18 +1572,39 @@ _SC_BC_STRING_MAX	src/unistd/_SC_BC_STRING_MAX.c	2;"	d	file:
 _SC_CHILD_MAX	src/unistd/_SC_CHILD_MAX.c	2;"	d	file:
 _SC_CLK_TCK	src/unistd/_SC_CLK_TCK.c	2;"	d	file:
 _SC_COLL_WEIGHTS_MAX	src/unistd/_SC_COLL_WEIGHTS_MAX.c	2;"	d	file:
+_SC_DELAYTIMER_MAX	src/unistd/_SC_DELAYTIMER_MAX.c	2;"	d	file:
 _SC_EXPR_NEST_MAX	src/unistd/_SC_EXPR_NEST_MAX.c	2;"	d	file:
+_SC_FSYNC	src/unistd/_SC_FSYNC.c	2;"	d	file:
 _SC_IOV_MAX	src/unistd/_SC_IOV_MAX.c	2;"	d	file:
 _SC_JOB_CONTROL	src/unistd/_SC_JOB_CONTROL.c	2;"	d	file:
 _SC_LINE_MAX	src/unistd/_SC_LINE_MAX.c	2;"	d	file:
+_SC_MAPPED_FILES	src/unistd/_SC_MAPPED_FILES.c	2;"	d	file:
+_SC_MEMLOCK	src/unistd/_SC_MEMLOCK.c	2;"	d	file:
+_SC_MEMLOCK_RANGE	src/unistd/_SC_MEMLOCK_RANGE.c	2;"	d	file:
+_SC_MEMORY_PROTECTION	src/unistd/_SC_MEMORY_PROTECTION.c	2;"	d	file:
+_SC_MESSAGE_PASSING	src/unistd/_SC_MESSAGE_PASSING.c	2;"	d	file:
+_SC_MQ_OPEN_MAX	src/unistd/_SC_MQ_OPEN_MAX.c	2;"	d	file:
+_SC_MQ_PRIO_MAX	src/unistd/_SC_MQ_PRIO_MAX.c	2;"	d	file:
 _SC_NGROUPS_MAX	src/unistd/_SC_NGROUPS_MAX.c	2;"	d	file:
 _SC_OPEN_MAX	src/unistd/_SC_OPEN_MAX.c	2;"	d	file:
 _SC_PAGESIZE	src/unistd/_SC_PAGESIZE.c	2;"	d	file:
 _SC_PAGE_SIZE	src/unistd/_SC_PAGE_SIZE.c	2;"	d	file:
 _SC_PASS_MAX	src/unistd/_SC_PASS_MAX.c	2;"	d	file:
+_SC_PRIORITIZED_IO	src/unistd/_SC_PRIORITIZED_IO.c	2;"	d	file:
+_SC_PRIORITY_SCHEDULING	src/unistd/_SC_PRIORITY_SCHEDULING.c	2;"	d	file:
+_SC_REALTIME_SIGNALS	src/unistd/_SC_REALTIME_SIGNALS.c	2;"	d	file:
 _SC_RE_DUP_MAX	src/unistd/_SC_RE_DUP_MAX.c	2;"	d	file:
+_SC_RTSIG_MAX	src/unistd/_SC_RTSIG_MAX.c	2;"	d	file:
 _SC_SAVED_IDS	src/unistd/_SC_SAVED_IDS.c	2;"	d	file:
+_SC_SEMAPHORES	src/unistd/_SC_SEMAPHORES.c	2;"	d	file:
+_SC_SEM_NSEMS_MAX	src/unistd/_SC_SEM_NSEMS_MAX.c	2;"	d	file:
+_SC_SEM_VALUE_MAX	src/unistd/_SC_SEM_VALUE_MAX.c	2;"	d	file:
+_SC_SHARED_MEMORY_OBJECTS	src/unistd/_SC_SHARED_MEMORY_OBJECTS.c	2;"	d	file:
+_SC_SIGQUEUE_MAX	src/unistd/_SC_SIGQUEUE_MAX.c	2;"	d	file:
 _SC_STREAM_MAX	src/unistd/_SC_STREAM_MAX.c	3;"	d	file:
+_SC_SYNCHRONIZED_IO	src/unistd/_SC_SYNCHRONIZED_IO.c	2;"	d	file:
+_SC_TIMERS	src/unistd/_SC_TIMERS.c	2;"	d	file:
+_SC_TIMER_MAX	src/unistd/_SC_TIMER_MAX.c	2;"	d	file:
 _SC_TZNAME_MAX	src/unistd/_SC_TZNAME_MAX.c	3;"	d	file:
 _SC_VERSION	src/unistd/_SC_VERSION.c	2;"	d	file:
 _SC_XOPEN_CRYPT	src/unistd/_SC_XOPEN_CRYPT.c	2;"	d	file:
@@ -1347,6 +1614,7 @@ _SC_XOPEN_UNIX	src/unistd/_SC_XOPEN_UNIX.c	2;"	d	file:
 _SC_XOPEN_VERSION	src/unistd/_SC_XOPEN_VERSION.c	2;"	d	file:
 _SC_XOPEN_XCU_VERSION	src/unistd/_SC_XOPEN_XCU_VERSION.c	2;"	d	file:
 _XOPEN_CRYPT	src/unistd/_XOPEN_CRYPT.c	2;"	d	file:
+_XOPEN_CURSES	src/curses/_XOPEN_CURSES.c	2;"	d	file:
 _XOPEN_ENH_I18N	src/unistd/_XOPEN_ENH_I18N.c	2;"	d	file:
 _XOPEN_IOV_MAX	src/limits/_XOPEN_IOV_MAX.c	2;"	d	file:
 _XOPEN_LEGACY	src/re_comp/re_exec.c	3;"	d	file:
@@ -1405,20 +1673,37 @@ _setjmp	src/setjmp/_setjmp.c	/^int _setjmp(jmp_buf env)$/;"	f
 _tolower	src/ctype/_tolower.c	2;"	d	file:
 _toupper	src/ctype/_toupper.c	2;"	d	file:
 a64l	src/stdlib/a64l.c	/^long a64l(const char *s)$/;"	f
-abday	src/nonstd/struct_locale_t.c	/^		char *abday[7];$/;"	m	struct:__locale_t::__anon9	file:
-abmon	src/nonstd/struct_locale_t.c	/^		char *abmon[12];$/;"	m	struct:__locale_t::__anon9	file:
+abday	src/nonstd/struct_locale_t.c	/^		char *abday[7];$/;"	m	struct:__locale_t::__anon2	file:
+abmon	src/nonstd/struct_locale_t.c	/^		char *abmon[12];$/;"	m	struct:__locale_t::__anon2	file:
 abort	src/stdlib/abort.c	/^_Noreturn void abort(void)$/;"	f
 abs	src/stdlib/abs.c	/^int abs(int j)$/;"	f
 access	src/unistd/access.c	/^int access(const char *path, int amode)$/;"	f
 acos	src/math/acos.c	/^TYPE TGFN(acos)(TYPE x)$/;"	f
 acosh	src/math/acosh.c	/^TYPE TGFN(acosh)(TYPE x)$/;"	f
+acs_chars	src/term/acs_chars.c	3;"	d	file:
 actime	src/utime/struct_utimbuf.c	/^	time_t actime;$/;"	m	struct:utimbuf	file:
 advance	src/regexp/advance.c	/^int advance(const char *string, const char *expbuf)$/;"	f
+aio_buf	src/aio/struct_aiocb.c	/^	volatile void *	aio_buf;$/;"	m	struct:aiocb	file:
+aio_cancel	src/aio/aio_cancel.c	/^int aio_cancel(int fildes, struct aiocb *aiocbp)$/;"	f
+aio_error	src/aio/aio_error.c	/^int aio_error(const struct aiocb * aiocbp)$/;"	f
+aio_fildes	src/aio/struct_aiocb.c	/^	int		aio_fildes;$/;"	m	struct:aiocb	file:
+aio_fsync	src/aio/aio_fsync.c	/^int aio_fsync(int op, struct aiocb * aiocbp)$/;"	f
+aio_lio_opcode	src/aio/struct_aiocb.c	/^	int		aio_lio_opcode;$/;"	m	struct:aiocb	file:
+aio_nbytes	src/aio/struct_aiocb.c	/^	size_t		aio_nbytes;$/;"	m	struct:aiocb	file:
+aio_offset	src/aio/struct_aiocb.c	/^	off_t		aio_offset;$/;"	m	struct:aiocb	file:
+aio_read	src/aio/aio_read.c	/^int aio_read(struct aiocb * aiocbp)$/;"	f
+aio_reqprio	src/aio/struct_aiocb.c	/^	int		aio_reqprio;$/;"	m	struct:aiocb	file:
+aio_return	src/aio/aio_return.c	/^ssize_t aio_return(struct aiocb *aiocbp)$/;"	f
+aio_sigevent	src/aio/struct_aiocb.c	/^	struct sigevent	aio_sigevent;$/;"	m	struct:aiocb	typeref:struct:aiocb::sigevent	file:
+aio_suspend	src/aio/aio_suspend.c	/^int aio_suspend(const struct aiocb * const list[], int nent, const struct timespec * timeout)$/;"	f
+aio_write	src/aio/aio_write.c	/^int aio_write(struct aiocb * aiocbp)$/;"	f
+aiocb	src/aio/struct_aiocb.c	/^struct aiocb {$/;"	s	file:
 alarm	src/unistd/alarm.c	/^unsigned alarm(unsigned seconds)$/;"	f
 all	src/nonstd/struct_locale_t.c	/^	char *all;$/;"	m	struct:__locale_t	file:
-allocated	src/nonstd/struct_FILE.c	/^		int allocated;$/;"	m	struct:__FILE::__anon7	file:
-alt_digits	src/nonstd/struct_locale_t.c	/^		char *alt_digits;$/;"	m	struct:__locale_t::__anon9	file:
-am_pm	src/nonstd/struct_locale_t.c	/^		char *am_pm[2];$/;"	m	struct:__locale_t::__anon9	file:
+allocated	src/nonstd/struct_FILE.c	/^		int allocated;$/;"	m	struct:__FILE::__anon5	file:
+alt_digits	src/nonstd/struct_locale_t.c	/^		char *alt_digits;$/;"	m	struct:__locale_t::__anon2	file:
+alt_scancode_esc	src/term/alt_scancode_esc.c	3;"	d	file:
+am_pm	src/nonstd/struct_locale_t.c	/^		char *am_pm[2];$/;"	m	struct:__locale_t::__anon2	file:
 and	src/iso646/and.c	2;"	d	file:
 and_eq	src/iso646/and_eq.c	2;"	d	file:
 asctime	src/time/asctime.c	/^char * asctime(const struct tm * timeptr)$/;"	f
@@ -1436,27 +1721,46 @@ atof	src/stdlib/atof.c	/^double atof(const char * nptr)$/;"	f
 atoi	src/stdlib/atoi.c	/^int atoi(const char * nptr)$/;"	f
 atol	src/stdlib/atol.c	/^long int atol(const char * nptr)$/;"	f
 atoll	src/stdlib/atoll.c	/^long long int atoll(const char *nptr)$/;"	f
+attr_t	src/curses/attr_t.c	/^typedef unsigned int attr_t;$/;"	t	file:
+auto_left_margin	src/term/auto_left_margin.c	3;"	d	file:
+auto_right_margin	src/term/auto_right_margin.c	3;"	d	file:
+back_color_erase	src/term/back_color_erase.c	3;"	d	file:
+back_tab	src/term/back_tab.c	3;"	d	file:
 bandinfo	src/stropts/struct_bandinfo.c	/^struct bandinfo {$/;"	s	file:
 base	src/ftw/struct_FTW.c	/^	int base;$/;"	m	struct:FTW	file:
 basename	src/libgen/basename.c	/^char * basename(char * path)$/;"	f
+baudrate	src/curses/baudrate.c	/^int baudrate(void)$/;"	f
 bcmp	src/strings/bcmp.c	/^int bcmp(const void *s1, const void *s2, size_t n)$/;"	f
 bcopy	src/strings/bcopy.c	/^int bcopy(const void *s1, void *s2, size_t n)$/;"	f
+beep	src/curses/beep.c	/^int beep(void)$/;"	f
+bell	src/term/bell.c	3;"	d	file:
 bi_flag	src/stropts/struct_bandinfo.c	/^	int bi_flag;$/;"	m	struct:bandinfo	file:
 bi_pri	src/stropts/struct_bandinfo.c	/^	unsigned char bi_pri;$/;"	m	struct:bandinfo	file:
+bit_image_carriage_return	src/term/bit_image_carriage_return.c	3;"	d	file:
+bit_image_entwining	src/term/bit_image_entwining.c	3;"	d	file:
+bit_image_newline	src/term/bit_image_newline.c	3;"	d	file:
+bit_image_repeat	src/term/bit_image_repeat.c	3;"	d	file:
+bit_image_type	src/term/bit_image_type.c	3;"	d	file:
 bitand	src/iso646/bitand.c	2;"	d	file:
 bitor	src/iso646/bitor.c	2;"	d	file:
+bool	src/curses/bool.c	/^typedef _Bool bool;$/;"	t	file:
+bool	src/curses/bool.c	/^typedef int bool;$/;"	t	file:
 bool	src/stdbool/bool.c	2;"	d	file:
+box	src/curses/box.c	/^int box(WINDOW * win, chtype verch, chtype horch)$/;"	f
+box_set	src/curses/box_set.c	/^int box_set(WINDOW * win, const cchar_t * verch, const cchar_t * horch)$/;"	f
 brk	src/unistd/brk.c	/^int brk(void *addr)$/;"	f
 bsd_signal	src/signal/bsd_signal.c	/^void (*bsd_signal(int sig, void (*func)(int)))(int)$/;"	f
 bsearch	src/stdlib/bsearch.c	/^void * bsearch(const void * key, const void * base, size_t nmemb, size_t size, int (*compar)(const void *, const void*))$/;"	f
 bsize	src/nonstd/struct_FILE.c	/^	int bsize;$/;"	m	struct:__FILE	file:
 btowc	src/wchar/btowc.c	/^wint_t btowc(int c)$/;"	f
-buf	src/nonstd/struct_FILE.c	/^		char *buf;$/;"	m	struct:__FILE::__anon7	file:
+buf	src/nonstd/struct_FILE.c	/^		char *buf;$/;"	m	struct:__FILE::__anon5	file:
 buf	src/nonstd/struct_FILE.c	/^	char *buf;$/;"	m	struct:__FILE	file:
 buf	src/stropts/struct_strbuf.c	/^	char *buf;$/;"	m	struct:strbuf	file:
 buf	src/stropts/struct_strpeek.c	/^	char *buf;$/;"	m	struct:strpeek	file:
+buffer_capacity	src/term/buffer_capacity.c	3;"	d	file:
 buffering	src/nonstd/struct_FILE.c	/^	int buffering;$/;"	m	struct:__FILE	file:
-buftype	src/nonstd/struct_FILE.c	/^	enum { SUPPLIED, ALLOCED, UNSET } buftype;$/;"	m	struct:__FILE	typeref:enum:__FILE::__anon6	file:
+buftype	src/nonstd/struct_FILE.c	/^	enum { SUPPLIED, ALLOCED, UNSET } buftype;$/;"	m	struct:__FILE	typeref:enum:__FILE::__anon4	file:
+buttons	src/term/buttons.c	3;"	d	file:
 bzero	src/strings/bzero.c	/^void bzero(void*s, size_t n)$/;"	f
 c_cc	src/termios/struct_termios.c	/^	cc_t c_cc[NCCS];$/;"	m	struct:termios	file:
 c_cflag	src/termios/struct_termios.c	/^	tcflag_t c_cflag;$/;"	m	struct:termios	file:
@@ -1467,7 +1771,10 @@ cabs	src/complex/cabs.c	/^TYPE TGFN(cabs)(TYPE complex z)$/;"	f
 cacos	src/complex/cacos.c	/^TYPE complex TGFN(cacos)(TYPE complex z)$/;"	f
 cacosh	src/complex/cacosh.c	/^TYPE complex TGFN(cacosh)(TYPE complex z)$/;"	f
 calloc	src/stdlib/calloc.c	/^void * calloc(size_t nmemb, size_t size)$/;"	f
+can_change	src/term/can_change.c	3;"	d	file:
+can_change_color	src/curses/can_change_color.c	/^bool can_change_color(void)$/;"	f
 carg	src/complex/carg.c	/^TYPE TGFN(carg)(TYPE complex z)$/;"	f
+carriage_return	src/term/carriage_return.c	3;"	d	file:
 casin	src/complex/casin.c	/^TYPE complex TGFN(casin)(TYPE complex z)$/;"	f
 casinh	src/complex/casinh.c	/^TYPE complex TGFN(casinh)(TYPE complex z)$/;"	f
 catan	src/complex/catan.c	/^TYPE complex TGFN(catan)(TYPE complex z)$/;"	f
@@ -1475,44 +1782,77 @@ catanh	src/complex/catanh.c	/^TYPE complex TGFN(catanh)(TYPE complex z)$/;"	f
 catclose	src/nl_types/catclose.c	/^int catclose(nl_catd catd)$/;"	f
 catgets	src/nl_types/catgets.c	/^char * catgets(nl_catd catd, int set_id, int msg_id, const char * s)$/;"	f
 catopen	src/nl_types/catopen.c	/^nl_catd catopen(const char* name, int oflag)$/;"	f
+cbreak	src/curses/cbreak.c	/^int cbreak(void)$/;"	f
 cbrt	src/math/cbrt.c	/^TYPE TGFN(cbrt)(TYPE x)$/;"	f
 cc_t	src/termios/cc_t.c	/^typedef int                                                                cc_t;$/;"	t	file:
+cchar_t	src/curses/cchar_t.c	/^typedef wchar_t * cchar_t;$/;"	t	file:
 ccos	src/complex/ccos.c	/^TYPE complex TGFN(ccos)(TYPE complex z)$/;"	f
 ccosh	src/complex/ccosh.c	/^TYPE complex TGFN(ccosh)(TYPE complex z)$/;"	f
 ceil	src/math/ceil.c	/^TYPE TGFN(ceil)(TYPE x)$/;"	f
+ceol_standout_glitch	src/term/ceol_standout_glitch.c	3;"	d	file:
 cexp	src/complex/cexp.c	/^TYPE complex TGFN(cexp)(TYPE complex z)$/;"	f
 cfgetispeed	src/termios/cfgetispeed.c	/^speed_t cfgetispeed(const struct termios *termios_p)$/;"	f
 cfgetospeed	src/termios/cfgetospeed.c	/^speed_t cfgetospeed(const struct termios *termios_p)$/;"	f
 cfsetispeed	src/termios/cfsetispeed.c	/^int cfsetispeed(struct termios *termios_p, speed_t speed)$/;"	f
 cfsetospeed	src/termios/cfsetospeed.c	/^int cfsetospeed(struct termios *termios_p, speed_t speed)$/;"	f
 cgid	src/sys/ipc/struct_ipc_perm.c	/^	uid_t cgid;	\/* Creator's group ID *\/$/;"	m	struct:ipc_perm	file:
+change_char_pitch	src/term/change_char_pitch.c	3;"	d	file:
+change_line_pitch	src/term/change_line_pitch.c	3;"	d	file:
+change_res_horz	src/term/change_res_horz.c	3;"	d	file:
+change_res_vert	src/term/change_res_vert.c	3;"	d	file:
+change_scroll_region	src/term/change_scroll_region.c	3;"	d	file:
+char_padding	src/term/char_padding.c	3;"	d	file:
+char_set_names	src/term/char_set_names.c	3;"	d	file:
 chdir	src/unistd/chdir.c	/^int chdir(const char *path)$/;"	f
 chmod	src/sys/stat/chmod.c	/^int chmod(const char *path, mode_t mode)$/;"	f
 chown	src/unistd/chown.c	/^int chown(const char *path, uid_t owner, gid_t group)$/;"	f
 chroot	src/unistd/chroot.c	/^int chroot(const char *path)$/;"	f
+chtype	src/curses/chtype.c	/^typedef unsigned int chtype;$/;"	t	file:
 cimag	src/complex/cimag.c	/^TYPE TGFN(cimag)(TYPE complex z)$/;"	f
+clear_all_tabs	src/term/clear_all_tabs.c	3;"	d	file:
+clear_margins	src/term/clear_margins.c	3;"	d	file:
+clear_screen	src/term/clear_screen.c	3;"	d	file:
 clearerr	src/stdio/clearerr.c	/^void clearerr(FILE * stream)$/;"	f
+clearok	src/curses/clearok.c	/^int clearok(WINDOW * win, bool bf)$/;"	f
 clock	src/time/clock.c	/^clock_t clock(void)$/;"	f
+clock_getres	src/time/clock_getres.c	/^int clock_getres(clockid_t clock_id, struct timespec *res)$/;"	f
+clock_gettime	src/time/clock_gettime.c	/^int clock_gettime(clockid_t clock_id, struct timespec *tp)$/;"	f
+clock_settime	src/time/clock_settime.c	/^int clock_settime(clockid_t clock_id, const struct timespec *tp)$/;"	f
 clock_t	src/time/clock_t.c	/^typedef long int                                                        clock_t;$/;"	t	file:
+clockid_t	src/sys/types/clockid_t.c	/^typedef unsigned long int                                             clockid_t;$/;"	t	file:
 clog	src/complex/clog.c	/^TYPE complex TGFN(clog)(TYPE complex z)$/;"	f
 close	src/stdio/fclose.c	8;"	d	file:
 close	src/unistd/close.c	/^int close(int fildes)$/;"	f
 closedir	src/dirent/closedir.c	/^int closedir(DIR *dirp)$/;"	f
 closelog	src/syslog/closelog.c	/^void closelog(void)$/;"	f
+clr_bol	src/term/clr_bol.c	3;"	d	file:
+clr_eol	src/term/clr_eol.c	3;"	d	file:
+clr_eos	src/term/clr_eos.c	3;"	d	file:
+code_set_init	src/term/code_set_init.c	3;"	d	file:
+col_addr_glitch	src/term/col_addr_glitch.c	3;"	d	file:
 collate	src/nonstd/struct_locale_t.c	/^	char *collate;$/;"	m	struct:__locale_t	file:
 collation	src/nonstd/struct_locale_t.c	/^	unsigned char *collation;$/;"	m	struct:__locale_t	file:
+color_content	src/curses/color_content.c	/^int color_content(short color, short * red, short * green, short * blue)$/;"	f
+color_names	src/term/color_names.c	3;"	d	file:
+column_address	src/term/column_address.c	3;"	d	file:
+columns	src/term/columns.c	3;"	d	file:
+command_character	src/term/command_character.c	3;"	d	file:
 compile	src/regexp/compile.c	/^char *compile(char *instring, char *expbuf, const char *endbuf, int eof)$/;"	f
 compl	src/iso646/compl.c	2;"	d	file:
 complex	src/complex/complex.c	2;"	d	file:
 confstr	src/unistd/confstr.c	/^size_t confstr(int name, char *buf, size_t len)$/;"	f
 conj	src/complex/conj.c	/^TYPE complex TGFN(conj)(TYPE complex z)$/;"	f
 copysign	src/math/copysign.c	/^TYPE TGFN(copysign)(TYPE x, TYPE y)$/;"	f
+copywin	src/curses/copywin.c	/^int copywin(const WINDOW * srcwin, WINDOW * dstwin, int sminrow, int smincol, int dminrow, int dmincol, int dmaxrow, int dmaxcol, int overlay)$/;"	f
 cos	src/math/cos.c	/^TYPE TGFN(cos)(TYPE x)$/;"	f
 cosh	src/math/cosh.c	/^TYPE TGFN(cosh)(TYPE x)$/;"	f
+cpi_change_res	src/term/cpi_change_res.c	3;"	d	file:
 cpow	src/complex/cpow.c	/^TYPE complex TGFN(cpow)(TYPE complex x, TYPE complex y)$/;"	f
 cproj	src/complex/cproj.c	/^TYPE complex TGFN(cproj)(TYPE complex z)$/;"	f
+cr_cancles_micro_mode	src/term/cr_cancles_micro_mode.c	3;"	d	file:
 creal	src/complex/creal.c	/^TYPE TGFN(creal)(TYPE complex z)$/;"	f
 creat	src/fcntl/creat.c	/^int creat(const char *path, mode_t mode)$/;"	f
+create_window	src/term/create_window.c	3;"	d	file:
 crypt	src/unistd/crypt.c	/^char * crypt( const char *key, const char *salt)$/;"	f
 csin	src/complex/csin.c	/^TYPE complex TGFN(csin)(TYPE complex z)$/;"	f
 csinh	src/complex/csinh.c	/^TYPE complex TGFN(csinh)(TYPE complex z)$/;"	f
@@ -1526,18 +1866,32 @@ ctlbuf	src/stropts/struct_strfdinsert.c	/^	struct strbuf ctlbuf;$/;"	m	struct:st
 ctolower	src/nonstd/struct_locale_t.c	/^	unsigned char *ctolower;$/;"	m	struct:__locale_t	file:
 ctoupper	src/nonstd/struct_locale_t.c	/^	unsigned char *ctoupper;$/;"	m	struct:__locale_t	file:
 ctype	src/nonstd/struct_locale_t.c	/^	char *ctype;$/;"	m	struct:__locale_t	file:
-ctype_t	src/nonstd/ctype_t.c	/^} ctype_t;$/;"	t	typeref:enum:__anon5	file:
+ctype_t	src/nonstd/ctype_t.c	/^} ctype_t;$/;"	t	typeref:enum:__anon6	file:
 cuid	src/sys/ipc/struct_ipc_perm.c	/^	uid_t cuid;	\/* Creator's user ID *\/$/;"	m	struct:ipc_perm	file:
+cur_term	src/term/cur_term.c	/^TERMINAL * cur_term;$/;"	v
 currency_symbol	src/locale/struct_lconv.c	/^	char *currency_symbol;		\/* "" *\/$/;"	m	struct:lconv	file:
+curs_set	src/curses/curs_set.c	/^int curs_set(int visibility)$/;"	f
+curscr	src/curses/curscr.c	/^SCREEN *curscr;$/;"	v
+cursor_address	src/term/cursor_address.c	3;"	d	file:
+cursor_down	src/term/cursor_down.c	3;"	d	file:
+cursor_home	src/term/cursor_home.c	3;"	d	file:
+cursor_invisible	src/term/cursor_invisible.c	3;"	d	file:
+cursor_left	src/term/cursor_left.c	3;"	d	file:
+cursor_mem_address	src/term/cursor_mem_address.c	3;"	d	file:
+cursor_normal	src/term/cursor_normal.c	3;"	d	file:
+cursor_right	src/term/cursor_right.c	3;"	d	file:
+cursor_to_ll	src/term/cursor_to_ll.c	3;"	d	file:
+cursor_up	src/term/cursor_up.c	3;"	d	file:
+cursor_visible	src/term/cursor_visible.c	3;"	d	file:
 cuserid	src/unistd/cuserid.c	/^char *cuserid(char *s)$/;"	f
-d_fmt	src/nonstd/struct_locale_t.c	/^		char *d_fmt;$/;"	m	struct:__locale_t::__anon9	file:
+d_fmt	src/nonstd/struct_locale_t.c	/^		char *d_fmt;$/;"	m	struct:__locale_t::__anon2	file:
 d_ino	src/dirent/struct_dirent.c	/^	ino_t d_ino;$/;"	m	struct:dirent	file:
 d_name	src/dirent/struct_dirent.c	/^	char d_name[];$/;"	m	struct:dirent	file:
-d_t_fmt	src/nonstd/struct_locale_t.c	/^		char *d_t_fmt;$/;"	m	struct:__locale_t::__anon9	file:
-data	src/search/ENTRY.c	/^	void *	data;$/;"	m	struct:__anon14	file:
+d_t_fmt	src/nonstd/struct_locale_t.c	/^		char *d_t_fmt;$/;"	m	struct:__locale_t::__anon2	file:
+data	src/search/ENTRY.c	/^	void *	data;$/;"	m	struct:__anon12	file:
 databuf	src/stropts/struct_strfdinsert.c	/^	struct strbuf databuf;$/;"	m	struct:strfdinsert	typeref:struct:strfdinsert::strbuf	file:
-datum	src/ndbm/datum.c	/^} datum;$/;"	t	typeref:struct:__anon3	file:
-day	src/nonstd/struct_locale_t.c	/^		char *day[7];$/;"	m	struct:__locale_t::__anon9	file:
+datum	src/ndbm/datum.c	/^} datum;$/;"	t	typeref:struct:__anon16	file:
+day	src/nonstd/struct_locale_t.c	/^		char *day[7];$/;"	m	struct:__locale_t::__anon2	file:
 daylight	src/time/daylight.c	/^int daylight;$/;"	v
 dbm_clearerr	src/ndbm/dbm_clearerr.c	/^int dbm_clearerr(DBM * db)$/;"	f
 dbm_close	src/ndbm/dbm_close.c	/^void dbm_close(DBM * db)$/;"	f
@@ -1549,39 +1903,103 @@ dbm_nextkey	src/ndbm/dbm_nextkey.c	/^datum dbm_nextkey(DBM * db)$/;"	f
 dbm_open	src/ndbm/dbm_open.c	/^DBM *dbm_open(const char * file, int open_flags, mode_t file_mode)$/;"	f
 dbm_store	src/ndbm/dbm_store.c	/^int dbm_store(DBM * db, datum key, datum content, int store_mode)$/;"	f
 decimal_point	src/locale/struct_lconv.c	/^	char *decimal_point;		\/* "." *\/$/;"	m	struct:lconv	file:
+def_prog_mode	src/curses/def_prog_mode.c	/^int def_prog_mode(void)$/;"	f
+def_shell_mode	src/curses/def_shell_mode.c	/^int def_shell_mode(void)$/;"	f
+define_bit_image_region	src/term/define_bit_image_region.c	3;"	d	file:
+define_char	src/term/define_char.c	3;"	d	file:
+del_curterm	src/term/del_curterm.c	/^int del_curterm(TERMINAL * oterm)$/;"	f
+delay_output	src/curses/delay_output.c	/^int delay_output(int ms)$/;"	f
+delete_character	src/term/delete_character.c	3;"	d	file:
+delete_line	src/term/delete_line.c	3;"	d	file:
+delscreen	src/curses/delscreen.c	/^void delscreen(SCREEN * sp)$/;"	f
+delwin	src/curses/delwin.c	/^void delwin(WINDOW * win)$/;"	f
+derwin	src/curses/derwin.c	/^WINDOW * derwin(WINDOW * orig, int nlines, int ncols, int begin_y, int begin_x)$/;"	f
+dest_tabs_magic_smso	src/term/dest_tabs_magic_smso.c	3;"	d	file:
 dev_t	src/sys/types/dev_t.c	/^typedef unsigned long long int                                            dev_t;$/;"	t	file:
+device_type	src/term/device_type.c	3;"	d	file:
+dial_phone	src/term/dial_phone.c	3;"	d	file:
 difftime	src/time/difftime.c	/^double difftime(time_t time1, time_t time0)$/;"	f
-direction	src/nonstd/struct_locale_t.c	/^			char direction;$/;"	m	struct:__locale_t::__anon9::__anon10	file:
+direction	src/nonstd/struct_locale_t.c	/^			char direction;$/;"	m	struct:__locale_t::__anon2::__anon3	file:
 dirent	src/dirent/struct_dirent.c	/^struct dirent {$/;"	s	file:
 dirname	src/libgen/dirname.c	/^char * dirname(char * path)$/;"	f
+dis_status_line	src/term/dis_status_line.c	3;"	d	file:
+display_clock	src/term/display_clock.c	3;"	d	file:
+display_pc_char	src/term/display_pc_char.c	3;"	d	file:
 div	src/stdlib/div.c	/^div_t div(int numer, int denom)$/;"	f
-div_t	src/stdlib/div_t.c	/^} div_t;$/;"	t	typeref:struct:__anon18	file:
+div_t	src/stdlib/div_t.c	/^} div_t;$/;"	t	typeref:struct:__anon21	file:
+dot_horz_spacing	src/term/dot_horz_spacing.c	3;"	d	file:
+dot_vert_spacing	src/term/dot_vert_spacing.c	3;"	d	file:
 double_t	src/math/double_t.c	/^typedef double double_t;$/;"	t	file:
 double_t	src/math/double_t.c	/^typedef long double double_t;$/;"	t	file:
-dptr	src/ndbm/datum.c	/^	void *	dptr;$/;"	m	struct:__anon3	file:
+doupdate	src/curses/doupdate.c	/^int doupdate(void)$/;"	f
+down_half_line	src/term/down_half_line.c	3;"	d	file:
+dptr	src/ndbm/datum.c	/^	void *	dptr;$/;"	m	struct:__anon16	file:
 drand48	src/stdlib/drand48.c	/^double drand48(void)$/;"	f
-dsize	src/ndbm/datum.c	/^	size_t	dsize;$/;"	m	struct:__anon3	file:
+dsize	src/ndbm/datum.c	/^	size_t	dsize;$/;"	m	struct:__anon16	file:
 dstflag	src/sys/timeb/struct_timeb.c	/^	short dstflag;$/;"	m	struct:timeb	file:
 dup	src/unistd/dup.c	/^int dup(int fildes)$/;"	f
 dup2	src/unistd/dup2.c	/^int dup2(int fildes, int fildes2)$/;"	f
+dupwin	src/curses/dupwin.c	/^WINDOW * dupwin(WINDOW * win)$/;"	f
+eat_newline_glitch	src/term/eat_newline_glitch.c	3;"	d	file:
+echo	src/curses/echo.c	/^int echo(void)$/;"	f
 ecvt	src/stdlib/ecvt.c	/^char *ecvt(double value, int ndigit, int *decpt, int *sign)$/;"	f
+ena_acs	src/term/ena_acs.c	3;"	d	file:
 encrypt	src/unistd/encrypt.c	/^void encrypt(char block[64], int edflag)$/;"	f
-end_day	src/nonstd/struct_locale_t.c	/^			int end_day;$/;"	m	struct:__locale_t::__anon9::__anon10	file:
-end_month	src/nonstd/struct_locale_t.c	/^			int end_month;$/;"	m	struct:__locale_t::__anon9::__anon10	file:
-end_year	src/nonstd/struct_locale_t.c	/^			int end_year;$/;"	m	struct:__locale_t::__anon9::__anon10	file:
+end_bit_image_region	src/term/end_bit_image_region.c	3;"	d	file:
+end_day	src/nonstd/struct_locale_t.c	/^			int end_day;$/;"	m	struct:__locale_t::__anon2::__anon3	file:
+end_month	src/nonstd/struct_locale_t.c	/^			int end_month;$/;"	m	struct:__locale_t::__anon2::__anon3	file:
+end_year	src/nonstd/struct_locale_t.c	/^			int end_year;$/;"	m	struct:__locale_t::__anon2::__anon3	file:
 endgrent	src/grp/endgrent.c	/^void endgrent(void)$/;"	f
-endorder	src/search/VISIT.c	/^	endorder,$/;"	e	enum:__anon15	file:
+endorder	src/search/VISIT.c	/^	endorder,$/;"	e	enum:__anon13	file:
 endpwent	src/pwd/endpwent.c	/^void endpwent(void)$/;"	f
 endutxent	src/utmpx/endutxent.c	/^void endutxent(void)$/;"	f
+endwin	src/curses/endwin.c	/^int endwin(void)$/;"	f
+enter_alt_charset_mode	src/term/enter_alt_charset_mode.c	3;"	d	file:
+enter_am_mode	src/term/enter_am_mode.c	3;"	d	file:
+enter_blink_mode	src/term/enter_blink_mode.c	3;"	d	file:
+enter_bold_mode	src/term/enter_bold_mode.c	3;"	d	file:
+enter_ca_mode	src/term/enter_ca_mode.c	3;"	d	file:
+enter_delete_mode	src/term/enter_delete_mode.c	3;"	d	file:
+enter_dim_mode	src/term/enter_dim_mode.c	3;"	d	file:
+enter_doublewide_mode	src/term/enter_doublewide_mode.c	3;"	d	file:
+enter_draft_quality	src/term/enter_draft_quality.c	3;"	d	file:
+enter_horizontal_hl_mode	src/term/enter_horizontal_hl_mode.c	3;"	d	file:
+enter_insert_mode	src/term/enter_insert_mode.c	3;"	d	file:
+enter_italics_mode	src/term/enter_italics_mode.c	3;"	d	file:
+enter_left_hl_mode	src/term/enter_left_hl_mode.c	3;"	d	file:
+enter_leftward_mode	src/term/enter_leftward_mode.c	3;"	d	file:
+enter_low_hl_mode	src/term/enter_low_hl_mode.c	3;"	d	file:
+enter_micro_code	src/term/enter_micro_code.c	3;"	d	file:
+enter_near_letter_quality	src/term/enter_near_letter_quality.c	3;"	d	file:
+enter_normal_quality	src/term/enter_normal_quality.c	3;"	d	file:
+enter_pc_charset_mode	src/term/enter_pc_charset_mode.c	3;"	d	file:
+enter_protected_mode	src/term/enter_protected_mode.c	3;"	d	file:
+enter_reverse_mode	src/term/enter_reverse_mode.c	3;"	d	file:
+enter_right_hl_mode	src/term/enter_right_hl_mode.c	3;"	d	file:
+enter_scancode_mode	src/term/enter_scancode_mode.c	3;"	d	file:
+enter_secure_mode	src/term/enter_secure_mode.c	3;"	d	file:
+enter_shadow_mode	src/term/enter_shadow_mode.c	3;"	d	file:
+enter_standout_mode	src/term/enter_standout_mode.c	3;"	d	file:
+enter_subscript_mode	src/term/enter_subscript_mode.c	3;"	d	file:
+enter_superscript_mode	src/term/enter_superscript_mode.c	3;"	d	file:
+enter_top_hl_mode	src/term/enter_top_hl_mode.c	3;"	d	file:
+enter_underline_mode	src/term/enter_underline_mode.c	3;"	d	file:
+enter_upward_mode	src/term/enter_upward_mode.c	3;"	d	file:
+enter_vertical_hl_mode	src/term/enter_vertical_hl_mode.c	3;"	d	file:
+enter_xon_mode	src/term/enter_xon_mode.c	3;"	d	file:
 environ	src/environ.c	/^char **environ;$/;"	v
 eof	src/nonstd/struct_FILE.c	/^	int eof;$/;"	m	struct:__FILE	file:
-era	src/nonstd/struct_locale_t.c	/^		} era;$/;"	m	struct:__locale_t::__anon9	typeref:struct:__locale_t::__anon9::__anon10	file:
-era_d_fmt	src/nonstd/struct_locale_t.c	/^		char *era_d_fmt;$/;"	m	struct:__locale_t::__anon9	file:
-era_d_t_fmt	src/nonstd/struct_locale_t.c	/^		char *era_d_t_fmt;$/;"	m	struct:__locale_t::__anon9	file:
-era_format	src/nonstd/struct_locale_t.c	/^			char *era_format;$/;"	m	struct:__locale_t::__anon9::__anon10	file:
-era_name	src/nonstd/struct_locale_t.c	/^			char *era_name;$/;"	m	struct:__locale_t::__anon9::__anon10	file:
-era_t_fmt	src/nonstd/struct_locale_t.c	/^		char *era_t_fmt;$/;"	m	struct:__locale_t::__anon9	file:
+era	src/nonstd/struct_locale_t.c	/^		} era;$/;"	m	struct:__locale_t::__anon2	typeref:struct:__locale_t::__anon2::__anon3	file:
+era_d_fmt	src/nonstd/struct_locale_t.c	/^		char *era_d_fmt;$/;"	m	struct:__locale_t::__anon2	file:
+era_d_t_fmt	src/nonstd/struct_locale_t.c	/^		char *era_d_t_fmt;$/;"	m	struct:__locale_t::__anon2	file:
+era_format	src/nonstd/struct_locale_t.c	/^			char *era_format;$/;"	m	struct:__locale_t::__anon2::__anon3	file:
+era_name	src/nonstd/struct_locale_t.c	/^			char *era_name;$/;"	m	struct:__locale_t::__anon2::__anon3	file:
+era_t_fmt	src/nonstd/struct_locale_t.c	/^		char *era_t_fmt;$/;"	m	struct:__locale_t::__anon2	file:
 erand48	src/stdlib/erand48.c	/^double erand48(unsigned short xsubi[3])$/;"	f
+erase_chars	src/term/erase_chars.c	3;"	d	file:
+erase_overstrick	src/term/erase_overstrick.c	3;"	d	file:
+erasechar	src/curses/erasechar.c	/^char erasechar(void)$/;"	f
+erasewchar	src/curses/erasewchar.c	/^int erasewchar(wchar_t * ch)$/;"	f
 erf	src/math/erf.c	/^TYPE TGFN(erf)(TYPE x)$/;"	f
 erfc	src/math/erfc.c	/^TYPE TGFN(erfc)(TYPE x)$/;"	f
 err	src/nonstd/struct_FILE.c	/^	int err;$/;"	m	struct:__FILE	file:
@@ -1594,6 +2012,25 @@ execv	src/unistd/execv.c	/^int execv(const char *path, char *const argv[])$/;"	f
 execve	src/unistd/execve.c	/^int execve(const char *path, char *const argv[], char *const envp[])$/;"	f
 execvp	src/unistd/execvp.c	/^int execvp(const char *file, char *const argv[])$/;"	f
 exit	src/stdlib/exit.c	/^_Noreturn void exit(int status)$/;"	f
+exit_alt_charset_mode	src/term/exit_alt_charset_mode.c	3;"	d	file:
+exit_am_mode	src/term/exit_am_mode.c	3;"	d	file:
+exit_attribute_mode	src/term/exit_attribute_mode.c	3;"	d	file:
+exit_ca_mode	src/term/exit_ca_mode.c	3;"	d	file:
+exit_delete_mode	src/term/exit_delete_mode.c	3;"	d	file:
+exit_doublewide_mode	src/term/exit_doublewide_mode.c	3;"	d	file:
+exit_insert_mode	src/term/exit_insert_mode.c	3;"	d	file:
+exit_italics_mode	src/term/exit_italics_mode.c	3;"	d	file:
+exit_leftword_mode	src/term/exit_leftword_mode.c	3;"	d	file:
+exit_micro_mode	src/term/exit_micro_mode.c	3;"	d	file:
+exit_pc_charset_mode	src/term/exit_pc_charset_mode.c	3;"	d	file:
+exit_scancode_mode	src/term/exit_scancode_mode.c	3;"	d	file:
+exit_shadow_mode	src/term/exit_shadow_mode.c	3;"	d	file:
+exit_standout_mode	src/term/exit_standout_mode.c	3;"	d	file:
+exit_subscript_mode	src/term/exit_subscript_mode.c	3;"	d	file:
+exit_superscript_mode	src/term/exit_superscript_mode.c	3;"	d	file:
+exit_underline_mode	src/term/exit_underline_mode.c	3;"	d	file:
+exit_upward_mode	src/term/exit_upward_mode.c	3;"	d	file:
+exit_xon_mode	src/term/exit_xon_mode.c	3;"	d	file:
 exp	src/math/exp.c	/^TYPE TGFN(exp)(TYPE x)$/;"	f
 exp2	src/math/exp2.c	/^TYPE TGFN(exp2)(TYPE x)$/;"	f
 expm1	src/math/expm1.c	/^TYPE TGFN(expm1)(TYPE x)$/;"	f
@@ -1621,11 +2058,12 @@ fd	src/nonstd/struct_FILE.c	/^	int fd;$/;"	m	struct:__FILE	file:
 fd	src/nonstd/struct_io_options.c	/^	int fd;$/;"	m	struct:io_options	file:
 fd	src/poll/struct_pollfd.c	/^	int fd;$/;"	m	struct:pollfd	file:
 fd	src/stropts/struct_strrecvfd.c	/^	int fd;$/;"	m	struct:strrecvfd	file:
-fd_set	src/sys/time/fd_set.c	/^} fd_set;$/;"	t	typeref:struct:__anon21	file:
+fd_set	src/sys/time/fd_set.c	/^} fd_set;$/;"	t	typeref:struct:__anon19	file:
+fdatasync	src/unistd/fdatasync.c	/^int fdatasync(int fildes)$/;"	f
 fdetach	src/stropts/fdetach.c	/^int fdetach(const char * path )$/;"	f
 fdim	src/math/fdim.c	/^TYPE TGFN(fdim)(TYPE x, TYPE y)$/;"	f
 fdopen	src/stdio/fdopen.c	/^FILE * fdopen(int fildes, const char * mode)$/;"	f
-fds_bits	src/sys/time/fd_set.c	/^	long fds_bits[];$/;"	m	struct:__anon21	file:
+fds_bits	src/sys/time/fd_set.c	/^	long fds_bits[];$/;"	m	struct:__anon19	file:
 feclearexcept	src/fenv/feclearexcept.c	/^int feclearexcept(int excepts)$/;"	f
 fegetenv	src/fenv/fegetenv.c	/^int fegetenv(fenv_t *envp)$/;"	f
 fegetexceptflag	src/fenv/fegetexceptflag.c	/^int fegetexceptflag(fexcept_t *flagp, int excepts)$/;"	f
@@ -1650,15 +2088,21 @@ fgetwc	src/wchar/fgetwc.c	/^wint_t fgetwc(FILE * stream)$/;"	f
 fgetws	src/wchar/fgetws.c	/^wchar_t * fgetws(wchar_t * restrict s, int n, FILE * restrict stream)$/;"	f
 fildes	src/stropts/struct_strfdinsert.c	/^	int fildes;$/;"	m	struct:strfdinsert	file:
 fileno	src/stdio/fileno.c	/^int fileno(FILE * stream)$/;"	f
+filter	src/curses/filter.c	/^void filter(void)$/;"	f
+fixed_pause	src/term/fixed_pause.c	3;"	d	file:
 flags	src/nonstd/struct_FILE.c	/^	int flags;$/;"	m	struct:__FILE	file:
 flags	src/nonstd/struct_io_options.c	/^	int flags;$/;"	m	struct:io_options	file:
 flags	src/stropts/struct_strfdinsert.c	/^	long flags;$/;"	m	struct:strfdinsert	file:
+flash	src/curses/flash.c	/^int flash(void)$/;"	f
+flash_hook	src/term/flash_hook.c	3;"	d	file:
+flash_screen	src/term/flash_screen.c	3;"	d	file:
 float_t	src/math/float_t.c	/^typedef double float_t;$/;"	t	file:
 float_t	src/math/float_t.c	/^typedef float float_t;$/;"	t	file:
 float_t	src/math/float_t.c	/^typedef long double float_t;$/;"	t	file:
 flock	src/fcntl/struct_flock.c	/^struct flock {$/;"	s	file:
 flockfile	src/nonstd/flockfile.c	4;"	d	file:
 floor	src/math/floor.c	/^TYPE TGFN(floor)(TYPE x)$/;"	f
+flushinp	src/curses/flushinp.c	/^int flushinp(void)$/;"	f
 fma	src/math/fma.c	/^TYPE TGFN(fma)(TYPE x, TYPE y, TYPE z)$/;"	f
 fmax	src/math/fmax.c	/^TYPE TGFN(fmax)(TYPE x, TYPE y)$/;"	f
 fmin	src/math/fmin.c	/^TYPE TGFN(fmin)(TYPE x, TYPE y)$/;"	f
@@ -1669,6 +2113,7 @@ fnname	src/nonstd/struct_io_options.c	/^	const char *fnname;$/;"	m	struct:io_opt
 fns	src/nonstd/struct_atexit.c	/^	void (*fns[32])(void);$/;"	m	struct:atexit	file:
 fopen	src/stdio/fopen.c	/^FILE * fopen(const char * restrict filename, const char * restrict mode)$/;"	f
 fork	src/unistd/fork.c	/^pid_t fork(void)$/;"	f
+form_feed	src/term/form_feed.c	3;"	d	file:
 fpathconf	src/unistd/fpathconf.c	/^long fpathconf(int fildes, int name)$/;"	f
 fpclassify	src/math/fpclassify.c	6;"	d	file:
 fpos_t	src/stdio/fpos_t.c	/^typedef struct __fpos_t *                                                fpos_t;$/;"	t	typeref:struct:__fpos_t	file:
@@ -1682,6 +2127,7 @@ fread	src/stdio/fread.c	/^size_t fread(void * restrict ptr, size_t size, size_t 
 free	src/stdlib/free.c	/^void free(void * ptr)$/;"	f
 freopen	src/stdio/freopen.c	/^FILE * freopen(const char * restrict filename, const char * restrict mode, FILE * restrict stream)$/;"	f
 frexp	src/math/frexp.c	/^TYPE TGFN(frexp)(TYPE value, int *exp)$/;"	f
+from_status_line	src/term/from_status_line.c	3;"	d	file:
 fscanf	src/stdio/fscanf.c	/^int fscanf(FILE * restrict stream, const char * restrict format, ...)$/;"	f
 fseek	src/stdio/fseek.c	/^int fseek(FILE *stream, long int offset, int whence)$/;"	f
 fsetpos	src/stdio/fsetpos.c	/^int fsetpos(FILE *stream, const fpos_t *pos)$/;"	f
@@ -1701,8 +2147,13 @@ fwrite	src/stdio/fwrite.c	/^size_t fwrite(const void * restrict ptr, size_t size
 fwscanf	src/wchar/fwscanf.c	/^int fwscanf(FILE * restrict stream, const wchar_t * restrict format, ...)$/;"	f
 gamma	src/math/gamma.c	/^double gamma(double x)$/;"	f
 gcvt	src/stdlib/gcvt.c	/^char *gcvt(double value, int ndigit, char *buf)$/;"	f
+generic_type	src/term/generic_type.c	3;"	d	file:
+get_mouse	src/term/get_mouse.c	3;"	d	file:
+getbegyx	src/curses/getbegyx.c	2;"	d	file:
+getbkgd	src/curses/getbkgd.c	/^chtype getbkgd(WINDOW * win)$/;"	f
 getc	src/stdio/getc.c	/^int getc(FILE *stream)$/;"	f
 getc_unlocked	src/nonstd/getc_unlocked.c	4;"	d	file:
+getcchar	src/curses/getcchar.c	/^int getcchar(const cchar_t * wcval, wchar_t * wch, attr_t * attrs, short * color_pair, void * opts)$/;"	f
 getchar	src/stdio/getchar.c	/^int getchar(void)$/;"	f
 getcontext	src/ucontext/getcontext.c	/^int getcontext(ucontext_t *ucp)$/;"	f
 getcwd	src/unistd/getcwd.c	/^char * getcwd(char *buf, size_t size)$/;"	f
@@ -1720,9 +2171,11 @@ getgroups	src/unistd/getgroups.c	/^int getgroups(int gidsetsize, gid_t grouplist
 gethostid	src/unistd/gethostid.c	/^long gethostid(void)$/;"	f
 getitimer	src/sys/time/getitimer.c	/^int getitimer(int which, struct itimerval *value)$/;"	f
 getlogin	src/unistd/getlogin.c	/^char * getlogin(void)$/;"	f
+getmaxyx	src/curses/getmaxyx.c	2;"	d	file:
 getmsg	src/stropts/getmsg.c	/^int getmsg(int fd , struct strbuf * ctlptr , struct strbuf * dataptr , int * flagsp )$/;"	f
 getopt	src/unistd/getopt.c	/^int getopt(int argc, char * const argv[], const char *optstring)$/;"	f
 getpagesize	src/unistd/getpagesize.c	/^int getpagesize(void)$/;"	f
+getparyx	src/curses/getparyx.c	2;"	d	file:
 getpass	src/unistd/getpass.c	/^char *getpass(const char *prompt)$/;"	f
 getpgid	src/unistd/getpgid.c	/^pid_t getpgid(pid_t pid)$/;"	f
 getpgrp	src/unistd/getpgrp.c	/^pid_t getpgrp(void)$/;"	f
@@ -1747,25 +2200,39 @@ getw	src/stdio/getw.c	/^int getw(FILE *stream)$/;"	f
 getwc	src/wchar/getwc.c	/^wint_t getwc(FILE * stream)$/;"	f
 getwchar	src/wchar/getwchar.c	/^wint_t getwchar(void)$/;"	f
 getwd	src/unistd/getwd.c	/^char *getwd(char *path_name)$/;"	f
+getwin	src/curses/getwin.c	/^WINDOW * getwin(FILE * filep)$/;"	f
+getyx	src/curses/getyx.c	2;"	d	file:
 gid	src/stropts/struct_strrecvfd.c	/^	gid_t gid;$/;"	m	struct:strrecvfd	file:
 gid	src/sys/ipc/struct_ipc_perm.c	/^	gid_t gid;	\/* Owner's group ID *\/$/;"	m	struct:ipc_perm	file:
 gid_t	src/sys/types/gid_t.c	/^typedef unsigned long long int                                            gid_t;$/;"	t	file:
-gl_offs	src/glob/glob_t.c	/^	size_t	gl_offs;$/;"	m	struct:__anon1	file:
-gl_pathc	src/glob/glob_t.c	/^	size_t	gl_pathc;$/;"	m	struct:__anon1	file:
-gl_pathv	src/glob/glob_t.c	/^	char **	gl_pathv;$/;"	m	struct:__anon1	file:
+gl_offs	src/glob/glob_t.c	/^	size_t	gl_offs;$/;"	m	struct:__anon17	file:
+gl_pathc	src/glob/glob_t.c	/^	size_t	gl_pathc;$/;"	m	struct:__anon17	file:
+gl_pathv	src/glob/glob_t.c	/^	char **	gl_pathv;$/;"	m	struct:__anon17	file:
 glob	src/glob/glob.c	/^int glob(const char * restrict pattern, int flags, int (*errfunc) (const char * epath, int eerrno), glob_t * restrict pglob)$/;"	f
-glob_t	src/glob/glob_t.c	/^} glob_t;$/;"	t	typeref:struct:__anon1	file:
+glob_t	src/glob/glob_t.c	/^} glob_t;$/;"	t	typeref:struct:__anon17	file:
 globfree	src/glob/globfree.c	/^void globfree(glob_t * pglob)$/;"	f
 gmtime	src/time/gmtime.c	/^struct tm * gmtime(const time_t * timer)$/;"	f
+goto_window	src/term/goto_window.c	3;"	d	file:
 gr_gid	src/grp/struct_group.c	/^	gid_t	gr_gid;$/;"	m	struct:group	file:
 gr_mem	src/grp/struct_group.c	/^	char **	gr_mem;$/;"	m	struct:group	file:
 gr_name	src/grp/struct_group.c	/^	char *	gr_name;$/;"	m	struct:group	file:
 grantpt	src/stdlib/grantpt.c	/^int grantpt(int fildes)$/;"	f
 group	src/grp/struct_group.c	/^struct group {$/;"	s	file:
 grouping	src/locale/struct_lconv.c	/^	char *grouping;			\/* "" *\/$/;"	m	struct:lconv	file:
+halfdelay	src/curses/halfdelay.c	/^int halfdelay(int tenths)$/;"	f
+hangup	src/term/hangup.c	3;"	d	file:
+hard_copy	src/term/hard_copy.c	3;"	d	file:
+hard_cursor	src/term/hard_cursor.c	3;"	d	file:
+has_colors	src/curses/has_colors.c	/^bool has_colors(void)$/;"	f
+has_ic	src/curses/has_ic.c	/^bool has_ic(void)$/;"	f
+has_il	src/curses/has_il.c	/^bool has_il(void)$/;"	f
+has_meta_key	src/term/has_meta_key.c	3;"	d	file:
+has_print_wheel	src/term/has_print_wheel.c	3;"	d	file:
+has_status_line	src/term/has_status_line.c	3;"	d	file:
 hcreate	src/search/hcreate.c	/^int hcreate(size_t nel)$/;"	f
 hdestroy	src/search/hdestroy.c	/^void hdestroy(void)$/;"	f
 hsearch	src/search/hsearch.c	/^ENTRY * hsearch(ENTRY item, ACTION action)$/;"	f
+hue_lightness_saturation	src/term/hue_lightness_saturation.c	3;"	d	file:
 hypot	src/math/hypot.c	/^TYPE TGFN(hypot)(TYPE x, TYPE y)$/;"	f
 ic_cmd	src/stropts/struct_strioctl.c	/^	int ic_cmd;$/;"	m	struct:strioctl	file:
 ic_dp	src/stropts/struct_strioctl.c	/^	char *ic_dp;$/;"	m	struct:strioctl	file:
@@ -1776,15 +2243,36 @@ iconv_close	src/iconv/iconv_close.c	/^int iconv_close(iconv_t cd)$/;"	f
 iconv_open	src/iconv/iconv_open.c	/^iconv_t iconv_open(const char * tocode, const char * fromcode)$/;"	f
 iconv_t	src/iconv/iconv_t.c	/^typedef unsigned long int                                               iconv_t;$/;"	t	file:
 id_t	src/sys/types/id_t.c	/^typedef unsigned long long int                                             id_t;$/;"	t	file:
-idtype_t	src/sys/wait/idtype_t.c	/^} idtype_t;$/;"	t	typeref:enum:__anon22	file:
+idcok	src/curses/idcok.c	/^void idcok(WINDOW * win, bool bf)$/;"	f
+idlok	src/curses/idlok.c	/^int idlok(WINDOW * win, bool bf)$/;"	f
+idtype_t	src/sys/wait/idtype_t.c	/^} idtype_t;$/;"	t	typeref:enum:__anon18	file:
 ilogb	src/math/ilogb.c	/^TYPE TGFN(ilogb)(TYPE x)$/;"	f
 imaginary	src/complex/imaginary.c	4;"	d	file:
 imaxabs	src/inttypes/imaxabs.c	/^intmax_t imaxabs(intmax_t j)$/;"	f
 imaxdiv	src/inttypes/imaxdiv.c	/^imaxdiv_t imaxdiv(intmax_t numer, intmax_t denom)$/;"	f
-imaxdiv_t	src/inttypes/imaxdiv_t.c	/^} imaxdiv_t;$/;"	t	typeref:struct:__anon2	file:
+imaxdiv_t	src/inttypes/imaxdiv_t.c	/^} imaxdiv_t;$/;"	t	typeref:struct:__anon10	file:
+immedok	src/curses/immedok.c	/^void immedok(WINDOW * win, bool bf)$/;"	f
 index	src/strings/index.c	/^char *index(const char *s, int c)$/;"	f
+init_1string	src/term/init_1string.c	3;"	d	file:
+init_2string	src/term/init_2string.c	3;"	d	file:
+init_3string	src/term/init_3string.c	3;"	d	file:
+init_color	src/curses/init_color.c	/^int init_color(short color, short red, short green, short blue)$/;"	f
+init_file	src/term/init_file.c	3;"	d	file:
+init_pair	src/curses/init_pair.c	/^int init_pair(short pai, short f, short b)$/;"	f
+init_prog	src/term/init_prog.c	3;"	d	file:
+init_tabs	src/term/init_tabs.c	3;"	d	file:
+initialize_color	src/term/initialize_color.c	3;"	d	file:
+initialize_pair	src/term/initialize_pair.c	3;"	d	file:
+initscr	src/curses/initscr.c	/^WINDOW * initscr(void)$/;"	f
 initstate	src/stdlib/initstate.c	/^char * initstate(unsigned seed, char * state, size_t size)$/;"	f
 ino_t	src/sys/types/ino_t.c	/^typedef unsigned long long int                                            ino_t;$/;"	t	file:
+ins_nwstr	src/curses/ins_nwstr.c	/^int ins_nwstr(WINDOW * win, const wchar_t * wstr, int n)$/;"	f
+ins_wch	src/curses/ins_wch.c	/^int ins_wch(WINDOW * win, const cchar_t * wch)$/;"	f
+ins_wstr	src/curses/ins_wstr.c	/^int ins_wstr(WINDOW * win, const wchar_t * wstr)$/;"	f
+insert_character	src/term/insert_character.c	3;"	d	file:
+insert_line	src/term/insert_line.c	3;"	d	file:
+insert_null_glitch	src/term/insert_null_glitch.c	3;"	d	file:
+insert_padding	src/term/insert_padding.c	3;"	d	file:
 insque	src/search/insque.c	/^void insque(void * element, void * pred)$/;"	f
 int16_t	src/stdint/int16_t.c	/^typedef short int                                                       int16_t;$/;"	t	file:
 int32_t	src/stdint/int32_t.c	/^typedef int                                                             int32_t;$/;"	t	file:
@@ -1806,15 +2294,19 @@ int_n_sign_posn	src/locale/struct_lconv.c	/^	char int_n_sign_posn;		\/* CHAR_MAX
 int_p_cs_precedes	src/locale/struct_lconv.c	/^	char int_p_cs_precedes;		\/* CHAR_MAX *\/$/;"	m	struct:lconv	file:
 int_p_sep_by_space	src/locale/struct_lconv.c	/^	char int_p_sep_by_space;	\/* CHAR_MAX *\/$/;"	m	struct:lconv	file:
 int_p_sign_posn	src/locale/struct_lconv.c	/^	char int_p_sign_posn;		\/* CHAR_MAX *\/$/;"	m	struct:lconv	file:
+intmax_t	src/inttypes/intmax_t.c	/^typedef long long int intmax_t;$/;"	t	file:
 intmax_t	src/stdint/intmax_t.c	/^typedef long long int                                                  intmax_t;$/;"	t	file:
 intmax_t	src/stdlib/strtol.c	/^typedef long intmax_t;$/;"	t	file:
 intptr_t	src/stdint/intptr_t.c	/^typedef unsigned long int                                              intptr_t;$/;"	t	file:
+intrflush	src/curses/intrflush.c	/^int intrflush(WINDOW * win, bool bf)$/;"	f
 io_options	src/nonstd/struct_io_options.c	/^struct io_options {$/;"	s	file:
 ioctl	src/stropts/ioctl.c	/^int ioctl(int fildes , int request , ... )$/;"	f
 iov_base	src/sys/uio/struct_iovec.c	/^	void * iov_base;$/;"	m	struct:iovec	file:
 iov_len	src/sys/uio/struct_iovec.c	/^	size_t iov_len;$/;"	m	struct:iovec	file:
 iovec	src/sys/uio/struct_iovec.c	/^struct iovec {$/;"	s	file:
 ipc_perm	src/sys/ipc/struct_ipc_perm.c	/^struct ipc_perm {$/;"	s	file:
+is_linetouched	src/curses/is_linetouched.c	/^bool is_linetouched(WINDOW * win, int line)$/;"	f
+is_wintouched	src/curses/is_wintouched.c	/^bool is_wintouched(WINDOW * win)$/;"	f
 isalnum	src/ctype/isalnum.c	/^int isalnum(int c)$/;"	f
 isalpha	src/ctype/isalpha.c	/^int isalpha(int c)$/;"	f
 isascii	src/ctype/isascii.c	/^int isascii(int c)$/;"	f
@@ -1823,6 +2315,7 @@ isatty	src/unistd/isatty.c	/^int isatty(int fildes)$/;"	f
 isblank	src/ctype/isblank.c	/^int isblank(int c)$/;"	f
 iscntrl	src/ctype/iscntrl.c	/^int iscntrl(int c)$/;"	f
 isdigit	src/ctype/isdigit.c	/^int isdigit(int c)$/;"	f
+isendwin	src/curses/isendwin.c	/^bool isendwin(void)$/;"	f
 isfinite	src/math/isfinite.c	6;"	d	file:
 isgraph	src/ctype/isgraph.c	/^int isgraph(int c)$/;"	f
 isgreater	src/math/isgreater.c	2;"	d	file:
@@ -1855,18 +2348,178 @@ iswupper	src/wctype/iswupper.c	/^int iswupper(wint_t wc)$/;"	f
 iswxdigit	src/wctype/iswxdigit.c	/^int iswxdigit(wint_t wc)$/;"	f
 isxdigit	src/ctype/isxdigit.c	/^int isxdigit(int c)$/;"	f
 it_interval	src/sys/time/struct_itimerval.c	/^	struct timeval it_interval;$/;"	m	struct:itimerval	typeref:struct:itimerval::timeval	file:
+it_interval	src/time/struct_itimerspec.c	/^	struct timespec it_interval;$/;"	m	struct:itimerspec	typeref:struct:itimerspec::timespec	file:
 it_value	src/sys/time/struct_itimerval.c	/^	struct timeval it_value;$/;"	m	struct:itimerval	typeref:struct:itimerval::timeval	file:
+it_value	src/time/struct_itimerspec.c	/^	struct timespec it_value;$/;"	m	struct:itimerspec	typeref:struct:itimerspec::timespec	file:
+itimerspec	src/time/struct_itimerspec.c	/^struct itimerspec {$/;"	s	file:
 itimerval	src/sys/time/struct_itimerval.c	/^struct itimerval {$/;"	s	file:
 j0	src/math/j0.c	/^double j0(double x)$/;"	f
 j1	src/math/j1.c	/^double j1(double x)$/;"	f
 jmp_buf	src/setjmp/jmp_buf.c	/^typedef unsigned long int                                           jmp_buf[32];$/;"	t	file:
 jn	src/math/jn.c	/^double jn(int n, double x)$/;"	f
 jrand48	src/stdlib/jrand48.c	/^long jrand48(unsigned short xsub[3])$/;"	f
-key	src/search/ENTRY.c	/^	char *	key;$/;"	m	struct:__anon14	file:
+key	src/search/ENTRY.c	/^	char *	key;$/;"	m	struct:__anon12	file:
+key_a1	src/term/key_a1.c	3;"	d	file:
+key_a3	src/term/key_a3.c	3;"	d	file:
+key_b2	src/term/key_b2.c	3;"	d	file:
+key_backspace	src/term/key_backspace.c	3;"	d	file:
+key_beg	src/term/key_beg.c	3;"	d	file:
+key_btab	src/term/key_btab.c	3;"	d	file:
+key_c1	src/term/key_c1.c	3;"	d	file:
+key_c3	src/term/key_c3.c	3;"	d	file:
+key_cancel	src/term/key_cancel.c	3;"	d	file:
+key_catab	src/term/key_catab.c	3;"	d	file:
+key_clear	src/term/key_clear.c	3;"	d	file:
+key_close	src/term/key_close.c	3;"	d	file:
+key_command	src/term/key_command.c	3;"	d	file:
+key_copy	src/term/key_copy.c	3;"	d	file:
+key_create	src/term/key_create.c	3;"	d	file:
+key_ctab	src/term/key_ctab.c	3;"	d	file:
+key_dc	src/term/key_dc.c	3;"	d	file:
+key_dl	src/term/key_dl.c	3;"	d	file:
+key_down	src/term/key_down.c	3;"	d	file:
+key_eic	src/term/key_eic.c	3;"	d	file:
+key_end	src/term/key_end.c	3;"	d	file:
+key_enter	src/term/key_enter.c	3;"	d	file:
+key_eol	src/term/key_eol.c	3;"	d	file:
+key_eos	src/term/key_eos.c	3;"	d	file:
+key_exit	src/term/key_exit.c	3;"	d	file:
+key_f0	src/term/key_f0.c	3;"	d	file:
+key_f1	src/term/key_f1.c	3;"	d	file:
+key_f10	src/term/key_f10.c	3;"	d	file:
+key_f11	src/term/key_f11.c	3;"	d	file:
+key_f12	src/term/key_f12.c	3;"	d	file:
+key_f13	src/term/key_f13.c	3;"	d	file:
+key_f14	src/term/key_f14.c	3;"	d	file:
+key_f15	src/term/key_f15.c	3;"	d	file:
+key_f16	src/term/key_f16.c	3;"	d	file:
+key_f17	src/term/key_f17.c	3;"	d	file:
+key_f18	src/term/key_f18.c	3;"	d	file:
+key_f19	src/term/key_f19.c	3;"	d	file:
+key_f2	src/term/key_f2.c	3;"	d	file:
+key_f20	src/term/key_f20.c	3;"	d	file:
+key_f21	src/term/key_f21.c	3;"	d	file:
+key_f22	src/term/key_f22.c	3;"	d	file:
+key_f23	src/term/key_f23.c	3;"	d	file:
+key_f24	src/term/key_f24.c	3;"	d	file:
+key_f25	src/term/key_f25.c	3;"	d	file:
+key_f26	src/term/key_f26.c	3;"	d	file:
+key_f27	src/term/key_f27.c	3;"	d	file:
+key_f28	src/term/key_f28.c	3;"	d	file:
+key_f29	src/term/key_f29.c	3;"	d	file:
+key_f3	src/term/key_f3.c	3;"	d	file:
+key_f30	src/term/key_f30.c	3;"	d	file:
+key_f31	src/term/key_f31.c	3;"	d	file:
+key_f32	src/term/key_f32.c	3;"	d	file:
+key_f33	src/term/key_f33.c	3;"	d	file:
+key_f34	src/term/key_f34.c	3;"	d	file:
+key_f35	src/term/key_f35.c	3;"	d	file:
+key_f36	src/term/key_f36.c	3;"	d	file:
+key_f37	src/term/key_f37.c	3;"	d	file:
+key_f38	src/term/key_f38.c	3;"	d	file:
+key_f39	src/term/key_f39.c	3;"	d	file:
+key_f4	src/term/key_f4.c	3;"	d	file:
+key_f40	src/term/key_f40.c	3;"	d	file:
+key_f41	src/term/key_f41.c	3;"	d	file:
+key_f42	src/term/key_f42.c	3;"	d	file:
+key_f43	src/term/key_f43.c	3;"	d	file:
+key_f44	src/term/key_f44.c	3;"	d	file:
+key_f45	src/term/key_f45.c	3;"	d	file:
+key_f46	src/term/key_f46.c	3;"	d	file:
+key_f47	src/term/key_f47.c	3;"	d	file:
+key_f48	src/term/key_f48.c	3;"	d	file:
+key_f49	src/term/key_f49.c	3;"	d	file:
+key_f5	src/term/key_f5.c	3;"	d	file:
+key_f50	src/term/key_f50.c	3;"	d	file:
+key_f51	src/term/key_f51.c	3;"	d	file:
+key_f52	src/term/key_f52.c	3;"	d	file:
+key_f53	src/term/key_f53.c	3;"	d	file:
+key_f54	src/term/key_f54.c	3;"	d	file:
+key_f55	src/term/key_f55.c	3;"	d	file:
+key_f56	src/term/key_f56.c	3;"	d	file:
+key_f57	src/term/key_f57.c	3;"	d	file:
+key_f58	src/term/key_f58.c	3;"	d	file:
+key_f59	src/term/key_f59.c	3;"	d	file:
+key_f6	src/term/key_f6.c	3;"	d	file:
+key_f60	src/term/key_f60.c	3;"	d	file:
+key_f61	src/term/key_f61.c	3;"	d	file:
+key_f62	src/term/key_f62.c	3;"	d	file:
+key_f63	src/term/key_f63.c	3;"	d	file:
+key_f7	src/term/key_f7.c	3;"	d	file:
+key_f8	src/term/key_f8.c	3;"	d	file:
+key_f9	src/term/key_f9.c	3;"	d	file:
+key_find	src/term/key_find.c	3;"	d	file:
+key_help	src/term/key_help.c	3;"	d	file:
+key_home	src/term/key_home.c	3;"	d	file:
+key_ic	src/term/key_ic.c	3;"	d	file:
+key_il	src/term/key_il.c	3;"	d	file:
+key_left	src/term/key_left.c	3;"	d	file:
+key_ll	src/term/key_ll.c	3;"	d	file:
+key_mark	src/term/key_mark.c	3;"	d	file:
+key_message	src/term/key_message.c	3;"	d	file:
+key_mouse	src/term/key_mouse.c	3;"	d	file:
+key_move	src/term/key_move.c	3;"	d	file:
+key_name	src/curses/key_name.c	/^char * key_name(wchar_t c)$/;"	f
+key_next	src/term/key_next.c	3;"	d	file:
+key_npage	src/term/key_npage.c	3;"	d	file:
+key_open	src/term/key_open.c	3;"	d	file:
+key_options	src/term/key_options.c	3;"	d	file:
+key_ppage	src/term/key_ppage.c	3;"	d	file:
+key_previous	src/term/key_previous.c	3;"	d	file:
+key_print	src/term/key_print.c	3;"	d	file:
+key_redo	src/term/key_redo.c	3;"	d	file:
+key_reference	src/term/key_reference.c	3;"	d	file:
+key_refresh	src/term/key_refresh.c	3;"	d	file:
+key_replace	src/term/key_replace.c	3;"	d	file:
+key_restart	src/term/key_restart.c	3;"	d	file:
+key_resume	src/term/key_resume.c	3;"	d	file:
+key_right	src/term/key_right.c	3;"	d	file:
+key_save	src/term/key_save.c	3;"	d	file:
+key_sbeg	src/term/key_sbeg.c	3;"	d	file:
+key_scancel	src/term/key_scancel.c	3;"	d	file:
+key_scommand	src/term/key_scommand.c	3;"	d	file:
+key_scopy	src/term/key_scopy.c	3;"	d	file:
+key_screate	src/term/key_screate.c	3;"	d	file:
+key_sdc	src/term/key_sdc.c	3;"	d	file:
+key_sdl	src/term/key_sdl.c	3;"	d	file:
+key_select	src/term/key_select.c	3;"	d	file:
+key_send	src/term/key_send.c	3;"	d	file:
+key_seol	src/term/key_seol.c	3;"	d	file:
+key_sexit	src/term/key_sexit.c	3;"	d	file:
+key_sf	src/term/key_sf.c	3;"	d	file:
+key_sfind	src/term/key_sfind.c	3;"	d	file:
+key_shelp	src/term/key_shelp.c	3;"	d	file:
+key_shome	src/term/key_shome.c	3;"	d	file:
+key_sic	src/term/key_sic.c	3;"	d	file:
+key_sleft	src/term/key_sleft.c	3;"	d	file:
+key_smessage	src/term/key_smessage.c	3;"	d	file:
+key_smove	src/term/key_smove.c	3;"	d	file:
+key_snext	src/term/key_snext.c	3;"	d	file:
+key_soptions	src/term/key_soptions.c	3;"	d	file:
+key_sprevious	src/term/key_sprevious.c	3;"	d	file:
+key_sprint	src/term/key_sprint.c	3;"	d	file:
+key_sr	src/term/key_sr.c	3;"	d	file:
+key_sredo	src/term/key_sredo.c	3;"	d	file:
+key_sreplace	src/term/key_sreplace.c	3;"	d	file:
+key_sright	src/term/key_sright.c	3;"	d	file:
+key_srsume	src/term/key_srsume.c	3;"	d	file:
+key_ssave	src/term/key_ssave.c	3;"	d	file:
+key_ssuspend	src/term/key_ssuspend.c	3;"	d	file:
+key_stab	src/term/key_stab.c	3;"	d	file:
+key_sundo	src/term/key_sundo.c	3;"	d	file:
+key_suspend	src/term/key_suspend.c	3;"	d	file:
 key_t	src/sys/types/key_t.c	/^typedef unsigned long long int                                            key_t;$/;"	t	file:
+key_undo	src/term/key_undo.c	3;"	d	file:
+key_up	src/term/key_up.c	3;"	d	file:
+keyname	src/curses/keyname.c	/^char * keyname(int c)$/;"	f
+keypad	src/curses/keypad.c	/^int keypad(WINDOW * win, bool bf)$/;"	f
+keypad_local	src/term/keypad_local.c	3;"	d	file:
+keypad_xmit	src/term/keypad_xmit.c	3;"	d	file:
 kill	src/signal/kill.c	/^int kill(pid_t pid, int sig)$/;"	f
 kill	src/signal/raise.c	5;"	d	file:
+killchar	src/curses/killchar.c	/^char killchar(void)$/;"	f
 killpg	src/signal/killpg.c	/^int killpg(pid_t pgrp, int sig)$/;"	f
+killwchar	src/curses/killwchar.c	/^int killwchar(wchar_t * ch)$/;"	f
 l64a	src/stdlib/l64a.c	/^char * l64a(long value)$/;"	f
 l_len	src/fcntl/struct_flock.c	/^	off_t l_len;$/;"	m	struct:flock	file:
 l_name	src/stropts/struct_str_mlist.c	/^	char l_name[FMNAMESZ+1];$/;"	m	struct:str_mlist	file:
@@ -1874,26 +2527,46 @@ l_pid	src/fcntl/struct_flock.c	/^	pid_t l_pid;$/;"	m	struct:flock	file:
 l_start	src/fcntl/struct_flock.c	/^	off_t l_start;$/;"	m	struct:flock	file:
 l_type	src/fcntl/struct_flock.c	/^	short l_type;$/;"	m	struct:flock	file:
 l_whence	src/fcntl/struct_flock.c	/^	short l_whence;$/;"	m	struct:flock	file:
+lab_f0	src/term/lab_f0.c	3;"	d	file:
+lab_f1	src/term/lab_f1.c	3;"	d	file:
+lab_f10	src/term/lab_f10.c	3;"	d	file:
+lab_f2	src/term/lab_f2.c	3;"	d	file:
+lab_f3	src/term/lab_f3.c	3;"	d	file:
+lab_f4	src/term/lab_f4.c	3;"	d	file:
+lab_f5	src/term/lab_f5.c	3;"	d	file:
+lab_f6	src/term/lab_f6.c	3;"	d	file:
+lab_f7	src/term/lab_f7.c	3;"	d	file:
+lab_f8	src/term/lab_f8.c	3;"	d	file:
+lab_f9	src/term/lab_f9.c	3;"	d	file:
+label_format	src/term/label_format.c	3;"	d	file:
+label_height	src/term/label_height.c	3;"	d	file:
+label_off	src/term/label_off.c	3;"	d	file:
+label_on	src/term/label_on.c	3;"	d	file:
+label_width	src/term/label_width.c	3;"	d	file:
 labs	src/stdlib/labs.c	/^long int labs(long int j)$/;"	f
 lastop	src/nonstd/struct_FILE.c	/^	int lastop;$/;"	m	struct:__FILE	file:
-lc_messages	src/nonstd/struct_locale_t.c	/^	} lc_messages;$/;"	m	struct:__locale_t	typeref:struct:__locale_t::__anon8	file:
-lc_time	src/nonstd/struct_locale_t.c	/^	} lc_time;$/;"	m	struct:__locale_t	typeref:struct:__locale_t::__anon9	file:
+lc_messages	src/nonstd/struct_locale_t.c	/^	} lc_messages;$/;"	m	struct:__locale_t	typeref:struct:__locale_t::__anon1	file:
+lc_time	src/nonstd/struct_locale_t.c	/^	} lc_time;$/;"	m	struct:__locale_t	typeref:struct:__locale_t::__anon2	file:
 lchown	src/unistd/lchown.c	/^int lchown(const char *path, uid_t owner, gid_t group)$/;"	f
 lcong48	src/stdlib/lcong48.c	/^void lcong48(unsigned short param[7])$/;"	f
 lconv	src/locale/struct_lconv.c	/^struct lconv {$/;"	s	file:
 ldexp	src/math/ldexp.c	/^TYPE TGFN(ldexp)(TYPE x, int exp)$/;"	f
 ldiv	src/stdlib/ldiv.c	/^ldiv_t ldiv(long int numer, long int denom)$/;"	f
-ldiv_t	src/stdlib/ldiv_t.c	/^} ldiv_t;$/;"	t	typeref:struct:__anon19	file:
-leaf	src/search/VISIT.c	/^	leaf$/;"	e	enum:__anon15	file:
+ldiv_t	src/stdlib/ldiv_t.c	/^} ldiv_t;$/;"	t	typeref:struct:__anon22	file:
+leaf	src/search/VISIT.c	/^	leaf$/;"	e	enum:__anon13	file:
+leaveok	src/curses/leaveok.c	/^int leaveok(WINDOW * win, bool bf)$/;"	f
 len	src/stropts/struct_strbuf.c	/^	int len;$/;"	m	struct:strbuf	file:
 len	src/stropts/struct_strpeek.c	/^	int len;$/;"	m	struct:strpeek	file:
 level	src/ftw/struct_FTW.c	/^	int level;$/;"	m	struct:FTW	file:
 lfind	src/search/lfind.c	/^void * lfind(const void * key, const void * base, size_t * nelp, size_t width, int (*compar) (const void *, const void *))$/;"	f
 lgamma	src/math/lgamma.c	/^TYPE TGFN(lgamma)(TYPE x)$/;"	f
+lines	src/term/lines.c	3;"	d	file:
+lines_of_memory	src/term/lines_of_memory.c	3;"	d	file:
 link	src/unistd/link.c	/^int link(const char *path1, const char *path2)$/;"	f
+lio_listio	src/aio/lio_listio.c	/^int lio_listio(int mode, struct aiocb * const list[restrict], int nent, struct sigevent * restrict sig)$/;"	f
 llabs	src/stdlib/llabs.c	/^long long int llabs(long long int j)$/;"	f
 lldiv	src/stdlib/lldiv.c	/^lldiv_t lldiv(long long int numer, long long int denom)$/;"	f
-lldiv_t	src/stdlib/lldiv_t.c	/^} lldiv_t;$/;"	t	typeref:struct:__anon20	file:
+lldiv_t	src/stdlib/lldiv_t.c	/^} lldiv_t;$/;"	t	typeref:struct:__anon23	file:
 llrint	src/math/llrint.c	/^long long int TGFN(llrint)(TYPE x)$/;"	f
 llround	src/math/llround.c	/^long long int TGFN(llround)(TYPE x)$/;"	f
 loc1	src/regexp/loc1.c	/^char *loc1;$/;"	v
@@ -1908,6 +2581,8 @@ log1p	src/math/log1p.c	/^TYPE TGFN(log1p)(TYPE x)$/;"	f
 log2	src/math/log2.c	/^TYPE TGFN(log2)(TYPE x)$/;"	f
 logb	src/math/logb.c	/^TYPE TGFN(logb)(TYPE x)$/;"	f
 longjmp	src/setjmp/longjmp.c	/^_Noreturn void longjmp(jmp_buf env, int val)$/;"	f
+longname	src/curses/longname.c	/^char * longname(void)$/;"	f
+lpi_changes_res	src/term/lpi_changes_res.c	3;"	d	file:
 lrand48	src/stdlib/lrand48.c	/^long lrand48(void)$/;"	f
 lrint	src/math/lrint.c	/^long int TGFN(lrint)(TYPE x)$/;"	f
 lround	src/math/lround.c	/^long int TGFN(lround)(TYPE x)$/;"	f
@@ -1915,10 +2590,17 @@ lsearch	src/search/lsearch.c	/^void * lsearch(const void * key, void * base, siz
 lseek	src/unistd/lseek.c	/^off_t lseek(int fildes, off_t offset, int whence)$/;"	f
 lstat	src/sys/stat/lstat.c	/^int lstat(const char * restrict path, struct stat * restrict buf)$/;"	f
 machine	src/sys/utsname/struct_utsname.c	/^	char machine[100];$/;"	m	struct:utsname	file:
+magic_cookie_glitch	src/term/magic_cookie_glitch.c	3;"	d	file:
 makecontext	src/ucontext/makecontext.c	/^void makecontext(ucontext_t *ucp, void (*func)(), int argc, ...)$/;"	f
 malloc	src/stdlib/malloc.c	/^void * malloc(size_t size)$/;"	f
 mask	src/nonstd/struct_locale_t.c	/^	int mask;$/;"	m	struct:__locale_t	file:
 math_errhandling	src/math/math_errhandling.c	2;"	d	file:
+max_attributes	src/term/max_attributes.c	3;"	d	file:
+max_colors	src/term/max_colors.c	3;"	d	file:
+max_micro_address	src/term/max_micro_address.c	3;"	d	file:
+max_micro_jump	src/term/max_micro_jump.c	3;"	d	file:
+max_pairs	src/term/max_pairs.c	3;"	d	file:
+maximum_windows	src/term/maximum_windows.c	3;"	d	file:
 maxlen	src/nonstd/struct_io_options.c	/^	size_t maxlen;$/;"	m	struct:io_options	file:
 maxlen	src/stropts/struct_strbuf.c	/^	int maxlen;$/;"	m	struct:strbuf	file:
 maxlen	src/stropts/struct_strpeek.c	/^	int maxlen;$/;"	m	struct:strpeek	file:
@@ -1931,14 +2613,27 @@ mbstate_t	src/wchar/mbstate_t.c	/^typedef int                                   
 mbstowcs	src/stdlib/mbstowcs.c	/^size_t mbstowcs(wchar_t * restrict pwcs, const char * restrict s, size_t n)$/;"	f
 mbtowc	src/stdlib/mbtowc.c	/^int mbtowc(wchar_t * restrict pwc, const char * restrict s, size_t n)$/;"	f
 mcontext_t	src/ucontext/mcontext_t.c	/^typedef unsigned long mcontext_t;$/;"	t	file:
-mem	src/nonstd/struct_FILE.c	/^	} mem;$/;"	m	struct:__FILE	typeref:struct:__FILE::__anon7	file:
+mem	src/nonstd/struct_FILE.c	/^	} mem;$/;"	m	struct:__FILE	typeref:struct:__FILE::__anon5	file:
 memccpy	src/string/memccpy.c	/^void *memccpy(void * restrict s1, const void * restrict s2, int c, size_t n)$/;"	f
 memchr	src/string/memchr.c	/^void * memchr(const void *s, int c, size_t n)$/;"	f
 memcmp	src/string/memcmp.c	/^int memcmp(const void *s1, const void *s2, size_t n)$/;"	f
 memcpy	src/string/memcpy.c	/^void * memcpy(void * restrict s1, const void * restrict s2, size_t n)$/;"	f
 memmove	src/string/memmove.c	/^void * memmove(void *s1, const void *s2, size_t n)$/;"	f
+memory_above	src/term/memory_above.c	3;"	d	file:
+memory_below	src/term/memory_below.c	3;"	d	file:
 memset	src/string/memset.c	/^void * memset(void *s, int c, size_t n)$/;"	f
 message	src/nonstd/struct_locale_t.c	/^	char *message;$/;"	m	struct:__locale_t	file:
+meta	src/curses/meta.c	/^int meta(WINDOW * win, bool bf)$/;"	f
+meta_off	src/term/meta_off.c	3;"	d	file:
+meta_on	src/term/meta_on.c	3;"	d	file:
+micro_col_size	src/term/micro_col_size.c	3;"	d	file:
+micro_colum_address	src/term/micro_colum_address.c	3;"	d	file:
+micro_down	src/term/micro_down.c	3;"	d	file:
+micro_left	src/term/micro_left.c	3;"	d	file:
+micro_line_size	src/term/micro_line_size.c	3;"	d	file:
+micro_right	src/term/micro_right.c	3;"	d	file:
+micro_row_address	src/term/micro_row_address.c	3;"	d	file:
+micro_up	src/term/micro_up.c	3;"	d	file:
 millitm	src/sys/timeb/struct_timeb.c	/^	unsigned short millitm;$/;"	m	struct:timeb	file:
 mkdir	src/sys/stat/mkdir.c	/^int mkdir(const char *path, mode_t mode)$/;"	f
 mkfifo	src/sys/stat/mkfifo.c	/^int mkfifo(const char *path, mode_t mode)$/;"	f
@@ -1946,17 +2641,36 @@ mknod	src/sys/stat/mknod.c	/^int mknod(const char *path, mode_t mode, dev_t dev)
 mkstemp	src/stdlib/mkstemp.c	/^int mkstemp(char * template)$/;"	f
 mktemp	src/stdlib/mktemp.c	/^char *mktemp(char *template)$/;"	f
 mktime	src/time/mktime.c	/^time_t mktime(struct tm * timeptr)$/;"	f
+mlock	src/sys/mman/mlock.c	/^int mlock(const void *addr, size_t len)$/;"	f
+mlockall	src/sys/mman/mlockall.c	/^int mlockall(int flags)$/;"	f
 mmap	src/sys/mman/mmap.c	/^void *mmap(void *addr, size_t len, int prot, int flags, int fildes, off_t off)$/;"	f
 mn	src/nonstd/struct_locale_t.c	/^	struct lconv mn;$/;"	m	struct:__locale_t	typeref:struct:__locale_t::lconv	file:
 mode	src/sys/ipc/struct_ipc_perm.c	/^	mode_t mode;	\/* Read\/write permission *\/$/;"	m	struct:ipc_perm	file:
 mode_t	src/sys/types/mode_t.c	/^typedef unsigned long int                                                mode_t;$/;"	t	file:
 modf	src/math/modf.c	/^TYPE TGFN(modf)(TYPE value, TYPE *iptr)$/;"	f
 modtime	src/utime/struct_utimbuf.c	/^	time_t modtime;$/;"	m	struct:utimbuf	file:
-mon	src/nonstd/struct_locale_t.c	/^		char *mon[12];$/;"	m	struct:__locale_t::__anon9	file:
+mon	src/nonstd/struct_locale_t.c	/^		char *mon[12];$/;"	m	struct:__locale_t::__anon2	file:
 mon_decimal_point	src/locale/struct_lconv.c	/^	char *mon_decimal_point;	\/* "" *\/$/;"	m	struct:lconv	file:
 mon_grouping	src/locale/struct_lconv.c	/^	char *mon_grouping;		\/* "" *\/$/;"	m	struct:lconv	file:
 mon_thousands_sep	src/locale/struct_lconv.c	/^	char *mon_thousands_sep;	\/* "" *\/$/;"	m	struct:lconv	file:
 monetary	src/nonstd/struct_locale_t.c	/^	char *monetary;$/;"	m	struct:__locale_t	file:
+mouse_info	src/term/mouse_info.c	3;"	d	file:
+move_insert_mode	src/term/move_insert_mode.c	3;"	d	file:
+move_standout_mode	src/term/move_standout_mode.c	3;"	d	file:
+mq_attr	src/mqueue/struct_mq_attr.c	/^struct mq_attr {$/;"	s	file:
+mq_close	src/mqueue/mq_close.c	/^int mq_close(mqd_t mqdes)$/;"	f
+mq_curmsgs	src/mqueue/struct_mq_attr.c	/^	long mq_curmsgs;$/;"	m	struct:mq_attr	file:
+mq_flags	src/mqueue/struct_mq_attr.c	/^	long mq_flags;$/;"	m	struct:mq_attr	file:
+mq_getattr	src/mqueue/mq_getattr.c	/^int mq_getattr(mqd_t mqdes, struct mq_attr * mqstat)$/;"	f
+mq_maxmsg	src/mqueue/struct_mq_attr.c	/^	long mq_maxmsg;$/;"	m	struct:mq_attr	file:
+mq_msgsize	src/mqueue/struct_mq_attr.c	/^	long mq_msgsize;$/;"	m	struct:mq_attr	file:
+mq_notify	src/mqueue/mq_notify.c	/^int mq_notify(mqd_t mqdes, const struct sigevent * notification)$/;"	f
+mq_open	src/mqueue/mq_open.c	/^mqd_t mq_open(const char * name, int oflag, ...)$/;"	f
+mq_receive	src/mqueue/mq_receive.c	/^ssize_t mq_receive(mqd_t mqdes, char * msg_ptr, size_t msg_len, unsigned * msg_prio)$/;"	f
+mq_send	src/mqueue/mq_send.c	/^int mq_send(mqd_t mqdes, const char * msg_ptr, size_t msg_len, unsigned msg_prio)$/;"	f
+mq_setattr	src/mqueue/mq_setattr.c	/^int mq_setattr(mqd_t mqdes, const struct mq_attr * restrict mqstat, struct mq_attr * restrict omqstat)$/;"	f
+mq_unlink	src/mqueue/mq_unlink.c	/^int mq_unlink(const char * name)$/;"	f
+mqd_t	src/mqueue/mqd_t.c	/^typedef unsigned long int                                                 mqd_t;$/;"	t	file:
 mrand48	src/stdlib/mrand48.c	/^long mrand48(void)$/;"	f
 msg_ctime	src/sys/msg/struct_msqid_ds.c	/^	time_t msg_ctime;		\/* time of last change *\/$/;"	m	struct:msqid_ds	file:
 msg_lrpid	src/sys/msg/struct_msqid_ds.c	/^	pid_t msg_lrpid;		\/* PID of last msgrcg() *\/$/;"	m	struct:msqid_ds	file:
@@ -1974,13 +2688,29 @@ msgrcv	src/sys/msg/msgrcv.c	/^ssize_t msgrcv(int msqid, void *msgp, size_t msgsz
 msgsnd	src/sys/msg/msgsnd.c	/^int msgsnd(int msqid, const void *msgp, size_t msgsz, int msgflg)$/;"	f
 msqid_ds	src/sys/msg/struct_msqid_ds.c	/^struct msqid_ds {$/;"	s	file:
 msync	src/sys/mman/msync.c	/^int msync(void * addr , size_t len , int flags )$/;"	f
+munlock	src/sys/mman/munlock.c	/^int munlock(const void *addr, size_t len)$/;"	f
+munlockall	src/sys/mman/munlockall.c	/^int munlockall(void)$/;"	f
 munmap	src/sys/mman/munmap.c	/^int munmap(void*addr, size_t len)$/;"	f
+mvcur	src/curses/mvcur.c	/^int mvcur(int oldrow, int oldcol, int newrow, int newcol)$/;"	f
+mvderwin	src/curses/mvderwin.c	/^WINDOW * mvderwin(WINDOW * orig, int par_y, int par_x)$/;"	f
+mvprintw	src/curses/mvprintw.c	/^int mvprintw(int y, int x, const char * fmt, ...)$/;"	f
+mvscanw	src/curses/mvscanw.c	/^int mvscanw(int y, int x, const char * fmt, ...)$/;"	f
+mvwin	src/curses/mvwin.c	/^int mvwin(WINDOW * win, int y, int x)$/;"	f
+mvwprintw	src/curses/mvwprintw.c	/^int mvwprintw(WINDOW * win, int y, int x, const char * fmt, ...)$/;"	f
+mvwscanw	src/curses/mvwscanw.c	/^int mvwscanw(WINDOW * win, int y, int x, const char * fmt, ...)$/;"	f
 n_cs_precedes	src/locale/struct_lconv.c	/^	char n_cs_precedes;		\/* CHAR_MAX *\/$/;"	m	struct:lconv	file:
 n_sep_by_space	src/locale/struct_lconv.c	/^	char n_sep_by_space;		\/* CHAR_MAX *\/$/;"	m	struct:lconv	file:
 n_sign_posn	src/locale/struct_lconv.c	/^	char n_sign_posn;		\/* CHAR_MAX *\/$/;"	m	struct:lconv	file:
 nan	src/math/nan.c	/^TYPE TGFN(nan)(const char *tagp)$/;"	f
+nanosleep	src/time/nanosleep.c	/^int nanosleep(const struct timespec *rqtp, struct timespec *rmtp)$/;"	f
+napms	src/curses/napms.c	/^int napms(int ms)$/;"	f
 nearbyint	src/math/nearbyint.c	/^TYPE TGFN(nearbyint)(TYPE x)$/;"	f
+needs_xon_xoff	src/term/needs_xon_xoff.c	3;"	d	file:
 negative_sign	src/locale/struct_lconv.c	/^	char *negative_sign;		\/* "" *\/$/;"	m	struct:lconv	file:
+newline	src/term/newline.c	3;"	d	file:
+newpad	src/curses/newpad.c	/^WINDOW * newpad(int nlines, int ncols)$/;"	f
+newterm	src/curses/newterm.c	/^SCREEN * newterm(const char * type, FILE * outfile, FILE * infile)$/;"	f
+newwin	src/curses/newwin.c	/^WINDOW * newwin(int nlines, int ncols, int begin_y, int begin_x)$/;"	f
 next	src/nonstd/struct_FILE.c	/^	struct __FILE *next;$/;"	m	struct:__FILE	typeref:struct:__FILE::__FILE	file:
 next	src/nonstd/struct_atexit.c	/^	struct atexit *next;$/;"	m	struct:atexit	typeref:struct:atexit::atexit	file:
 nextafter	src/math/nextafter.c	/^TYPE TGFN(nextafter)(TYPE x, TYPE y)$/;"	f
@@ -1989,19 +2719,34 @@ nfds_t	src/poll/nfds_t.c	/^typedef unsigned int                                 
 nfns	src/nonstd/struct_atexit.c	/^	int nfns;$/;"	m	struct:atexit	file:
 nftw	src/ftw/nftw.c	/^int nftw(const char * path, int (*fn) (const char *, const struct stat *, int, struct FTW *), int fd_limit, int flags)$/;"	f
 nice	src/unistd/nice.c	/^int nice(int incr)$/;"	f
+nl	src/curses/nl.c	/^int nl(void)$/;"	f
 nl_catd	src/nl_types/nl_catd.c	/^typedef unsigned long int                                               nl_catd;$/;"	t	file:
 nl_item	src/nl_types/nl_item.c	/^typedef int                                                             nl_item;$/;"	t	file:
 nl_langinfo	src/langinfo/nl_langinfo.c	/^char * nl_langinfo(nl_item item)$/;"	f
 nlink_t	src/sys/types/nlink_t.c	/^typedef unsigned long long int                                          nlink_t;$/;"	t	file:
 nlocks	src/nonstd/struct_FILE.c	/^	int nlocks;$/;"	m	struct:__FILE	file:
+no_color_video	src/term/no_color_video.c	3;"	d	file:
+no_esc_ctlc	src/term/no_esc_ctlc.c	3;"	d	file:
+no_pad_char	src/term/no_pad_char.c	3;"	d	file:
+nocbreak	src/curses/nocbreak.c	/^int nocbreak(void)$/;"	f
+nodelay	src/curses/nodelay.c	/^int nodelay(WINDOW * win, bool bf)$/;"	f
 nodename	src/sys/utsname/struct_utsname.c	/^	char nodename[100];$/;"	m	struct:utsname	file:
-noexpr	src/nonstd/struct_locale_t.c	/^		char *noexpr;$/;"	m	struct:__locale_t::__anon8	file:
+noecho	src/curses/noecho.c	/^int noecho(void)$/;"	f
+noexpr	src/nonstd/struct_locale_t.c	/^		char *noexpr;$/;"	m	struct:__locale_t::__anon1	file:
+non_dest_scroll_region	src/term/non_dest_scroll_region.c	3;"	d	file:
+non_rev_rmcup	src/term/non_rev_rmcup.c	3;"	d	file:
+nonl	src/curses/nonl.c	/^int nonl(void)$/;"	f
+noqiflush	src/curses/noqiflush.c	/^void noqiflush(void)$/;"	f
+noraw	src/curses/noraw.c	/^int noraw(void)$/;"	f
 not	src/iso646/not.c	2;"	d	file:
 not_eq	src/iso646/not_eq.c	2;"	d	file:
+notimeout	src/curses/notimeout.c	/^int notimeout(WINDOW * win, bool bf)$/;"	f
 nrand48	src/stdlib/nrand48.c	/^long nrand48(unsigned short xsubi[3])$/;"	f
+num_labels	src/term/num_labels.c	3;"	d	file:
+number_of_pins	src/term/number_of_pins.c	3;"	d	file:
 numeric	src/nonstd/struct_locale_t.c	/^	char *numeric;$/;"	m	struct:__locale_t	file:
 off_t	src/sys/types/off_t.c	/^typedef long long int                                                     off_t;$/;"	t	file:
-offset	src/nonstd/struct_locale_t.c	/^			int offset;$/;"	m	struct:__locale_t::__anon9::__anon10	file:
+offset	src/nonstd/struct_locale_t.c	/^			int offset;$/;"	m	struct:__locale_t::__anon2::__anon3	file:
 offset	src/stropts/struct_strfdinsert.c	/^	int offset;$/;"	m	struct:strfdinsert	file:
 offsetof	src/stddef/offsetof.c	2;"	d	file:
 oflag	src/nonstd/struct_FILE.c	/^	int oflag;$/;"	m	struct:__FILE	file:
@@ -2015,100 +2760,168 @@ optind	src/unistd/optind.c	/^int optind;$/;"	v
 optopt	src/unistd/optopt.c	/^int optopt;$/;"	v
 or	src/iso646/or.c	2;"	d	file:
 or_eq	src/iso646/or_eq.c	2;"	d	file:
+order_of_pins	src/term/order_of_pins.c	3;"	d	file:
 orientation	src/nonstd/struct_FILE.c	/^	int orientation;$/;"	m	struct:__FILE	file:
+orig_colors	src/term/orig_colors.c	3;"	d	file:
+orig_pair	src/term/orig_pair.c	3;"	d	file:
+output_res_char	src/term/output_res_char.c	3;"	d	file:
+output_res_horz_inch	src/term/output_res_horz_inch.c	3;"	d	file:
+output_res_line	src/term/output_res_line.c	3;"	d	file:
+output_res_vert_inch	src/term/output_res_vert_inch.c	3;"	d	file:
+over_strike	src/term/over_strike.c	3;"	d	file:
+overlay	src/curses/overlay.c	/^int overlay(const WINDOW * srcwin, WINDOW * dstwin)$/;"	f
+overwrite	src/curses/overwrite.c	/^int overwrite(const WINDOW * srcwin, WINDOW * dstwin)$/;"	f
 p_cs_precedes	src/locale/struct_lconv.c	/^	char p_cs_precedes;		\/* CHAR_MAX *\/$/;"	m	struct:lconv	file:
 p_sep_by_space	src/locale/struct_lconv.c	/^	char p_sep_by_space;		\/* CHAR_MAX *\/$/;"	m	struct:lconv	file:
 p_sign_posn	src/locale/struct_lconv.c	/^	char p_sign_posn;		\/* CHAR_MAX *\/$/;"	m	struct:lconv	file:
+pad_char	src/term/pad_char.c	3;"	d	file:
+padding_baud_rate	src/term/padding_baud_rate.c	3;"	d	file:
+pair_content	src/curses/pair_content.c	/^int pair_content(short pair, short * f, short * b)$/;"	f
+parm_dch	src/term/parm_dch.c	3;"	d	file:
+parm_delete_line	src/term/parm_delete_line.c	3;"	d	file:
+parm_down_cursor	src/term/parm_down_cursor.c	3;"	d	file:
+parm_down_micro	src/term/parm_down_micro.c	3;"	d	file:
+parm_ich	src/term/parm_ich.c	3;"	d	file:
+parm_index	src/term/parm_index.c	3;"	d	file:
+parm_insert_line	src/term/parm_insert_line.c	3;"	d	file:
+parm_left_cursor	src/term/parm_left_cursor.c	3;"	d	file:
+parm_left_micro	src/term/parm_left_micro.c	3;"	d	file:
+parm_right_cursor	src/term/parm_right_cursor.c	3;"	d	file:
+parm_right_micro	src/term/parm_right_micro.c	3;"	d	file:
+parm_rindex	src/term/parm_rindex.c	3;"	d	file:
+parm_up_cursor	src/term/parm_up_cursor.c	3;"	d	file:
+parm_up_micro	src/term/parm_up_micro.c	3;"	d	file:
 passwd	src/pwd/struct_passwd.c	/^struct passwd {$/;"	s	file:
 pathconf	src/unistd/pathconf.c	/^long pathconf(const char *path, int name)$/;"	f
 pause	src/unistd/pause.c	/^int pause(void)$/;"	f
+pc_term_options	src/term/pc_term_options.c	3;"	d	file:
 pclose	src/stdio/pclose.c	/^int pclose(FILE * stream)$/;"	f
+pecho_wchar	src/curses/pecho_wchar.c	/^int pecho_wchar(WINDOW * pad, const cchar_t * wch)$/;"	f
+pechochar	src/curses/pechochar.c	/^int pechochar(WINDOW * pad, chtype ch)$/;"	f
 per_thread	src/nonstd/__pthread_per_thread.c	/^static struct per_thread *per_thread(void)$/;"	f	file:
 perror	src/stdio/perror.c	/^void perror(const char *s)$/;"	f
 pid_t	src/sys/types/pid_t.c	/^typedef long int                                                          pid_t;$/;"	t	file:
 pipe	src/unistd/pipe.c	/^int pipe(int fildes[2])$/;"	f
 pipe_pid	src/nonstd/struct_FILE.c	/^	long int pipe_pid;$/;"	m	struct:__FILE	file:
 pipe_pid	src/nonstd/struct_FILE.c	/^	pid_t pipe_pid;$/;"	m	struct:__FILE	file:
+pkey_key	src/term/pkey_key.c	3;"	d	file:
+pkey_local	src/term/pkey_local.c	3;"	d	file:
+pkey_plab	src/term/pkey_plab.c	3;"	d	file:
+pkey_xmit	src/term/pkey_xmit.c	3;"	d	file:
+plab_norm	src/term/plab_norm.c	3;"	d	file:
+pnoutrefresh	src/curses/pnoutrefresh.c	/^int pnoutrefresh(WINDOW * pad, int pminrow, int pmincol, int sminrow, int smincol, int smaxrow, int smaxcol)$/;"	f
 poll	src/poll/poll.c	/^int poll(struct pollfd fds[], nfds_t nfds, int timeout)$/;"	f
 pollfd	src/poll/struct_pollfd.c	/^struct pollfd {$/;"	s	file:
 popen	src/stdio/popen.c	/^FILE * popen(const char * command, const char * mode)$/;"	f
 pos	src/nonstd/struct_FILE.c	/^	fpos_t pos;$/;"	m	struct:__FILE	file:
 positive_sign	src/locale/struct_lconv.c	/^	char *positive_sign;		\/* "" *\/$/;"	m	struct:lconv	file:
-postorder	src/search/VISIT.c	/^	postorder,$/;"	e	enum:__anon15	file:
+postorder	src/search/VISIT.c	/^	postorder,$/;"	e	enum:__anon13	file:
 pow	src/math/pow.c	/^TYPE TGFN(pow)(TYPE x, TYPE y)$/;"	f
-preorder	src/search/VISIT.c	/^	preorder,$/;"	e	enum:__anon15	file:
+prefresh	src/curses/prefresh.c	/^int prefresh(WINDOW * pad, int pminrow, int pmincol, int sminrow, int smincol, int smaxrow, int smaxcol)$/;"	f
+preorder	src/search/VISIT.c	/^	preorder,$/;"	e	enum:__anon13	file:
 prev	src/nonstd/struct_FILE.c	/^	struct __FILE *prev;$/;"	m	struct:__FILE	typeref:struct:__FILE::__FILE	file:
 prev	src/nonstd/struct_atexit.c	/^	struct atexit *prev;$/;"	m	struct:atexit	typeref:struct:atexit::atexit	file:
+print_rate	src/term/print_rate.c	3;"	d	file:
+print_screen	src/term/print_screen.c	3;"	d	file:
 printf	src/stdio/printf.c	/^int printf(const char *format, ...)$/;"	f
+printw	src/curses/printw.c	/^int printw(const char * fmt, ...)$/;"	f
+prtr_non	src/term/prtr_non.c	3;"	d	file:
+prtr_off	src/term/prtr_off.c	3;"	d	file:
+prtr_on	src/term/prtr_on.c	3;"	d	file:
+prtr_silent	src/term/prtr_silent.c	3;"	d	file:
 ptrdiff_t	src/stddef/ptrdiff_t.c	/^typedef __int64                                                       ptrdiff_t;$/;"	t	file:
 ptrdiff_t	src/stddef/ptrdiff_t.c	/^typedef long int                                                      ptrdiff_t;$/;"	t	file:
 ptrdiff_t	src/stddef/ptrdiff_t.c	/^typedef long long int                                                 ptrdiff_t;$/;"	t	file:
 ptsname	src/stdlib/ptsname.c	/^char * ptsname(int fildes)$/;"	f
+pulse	src/term/pulse.c	3;"	d	file:
 putc	src/stdio/putc.c	/^int putc(int c, FILE *stream)$/;"	f
 putchar	src/stdio/putchar.c	/^int putchar(int c)$/;"	f
 putenv	src/stdlib/putenv.c	/^int putenv(char * string)$/;"	f
 putmsg	src/stropts/putmsg.c	/^int putmsg(int fd , const struct strbuf * ctlptr , const struct strbuf * dataptr , int flags )$/;"	f
+putp	src/curses/putp.c	/^int putp(const char * str)$/;"	f
+putp	src/term/putp.c	/^int putp(const char * str)$/;"	f
 putpmsg	src/stropts/putpmsg.c	/^int putpmsg(int fd , const struct strbuf * ctlptr , const struct strbuf * dataptr , int band , int flags )$/;"	f
 puts	src/stdio/puts.c	/^int puts(const char *s)$/;"	f
 pututxline	src/utmpx/pututxline.c	/^struct utmpx * pututxline(const struct utmpx *utmpx)$/;"	f
 putw	src/stdio/putw.c	/^int putw(int w, FILE *stream)$/;"	f
 putwc	src/wchar/putwc.c	/^wint_t putwc(wchar_t c, FILE * stream)$/;"	f
 putwchar	src/wchar/putwchar.c	/^wint_t putwchar(wchar_t c)$/;"	f
+putwin	src/curses/putwin.c	/^int putwin(WINDOW * win, FILE * filep)$/;"	f
 pw_dir	src/pwd/struct_passwd.c	/^	char *	pw_dir;$/;"	m	struct:passwd	file:
 pw_gid	src/pwd/struct_passwd.c	/^	gid_t	pw_gid;$/;"	m	struct:passwd	file:
 pw_name	src/pwd/struct_passwd.c	/^	char *	pw_name;$/;"	m	struct:passwd	file:
 pw_shell	src/pwd/struct_passwd.c	/^	char *	pw_shell;$/;"	m	struct:passwd	file:
 pw_uid	src/pwd/struct_passwd.c	/^	uid_t	pw_uid;$/;"	m	struct:passwd	file:
+qiflush	src/curses/qiflush.c	/^void qiflush(void)$/;"	f
 qsort	src/stdlib/qsort.c	/^void qsort(void * base, size_t nmemb, size_t size, int (*compar)(const void *, const void *))$/;"	f
-quot	src/inttypes/imaxdiv_t.c	/^	intmax_t quot;$/;"	m	struct:__anon2	file:
-quot	src/stdlib/div_t.c	/^	int quot;$/;"	m	struct:__anon18	file:
-quot	src/stdlib/ldiv_t.c	/^	long int quot;$/;"	m	struct:__anon19	file:
-quot	src/stdlib/lldiv_t.c	/^	long long int quot;$/;"	m	struct:__anon20	file:
+quick_dial	src/term/quick_dial.c	3;"	d	file:
+quot	src/inttypes/imaxdiv_t.c	/^	intmax_t quot;$/;"	m	struct:__anon10	file:
+quot	src/stdlib/div_t.c	/^	int quot;$/;"	m	struct:__anon21	file:
+quot	src/stdlib/ldiv_t.c	/^	long int quot;$/;"	m	struct:__anon22	file:
+quot	src/stdlib/lldiv_t.c	/^	long long int quot;$/;"	m	struct:__anon23	file:
 raise	src/signal/raise.c	/^int raise(int sig)$/;"	f
 rand	src/stdlib/rand.c	/^int rand(void)$/;"	f
 random	src/stdlib/random.c	/^long random(void)$/;"	f
+raw	src/curses/raw.c	/^int raw(void)$/;"	f
 re_comp	src/re_comp/re_comp.c	/^char *re_comp(const char *string)$/;"	f
 re_exec	src/re_comp/re_exec.c	/^int re_exec(const char *string)$/;"	f
-re_nsub	src/regex/regex_t.c	/^	size_t re_nsub;$/;"	m	struct:__anon11	file:
+re_nsub	src/regex/regex_t.c	/^	size_t re_nsub;$/;"	m	struct:__anon15	file:
 read	src/unistd/read.c	/^ssize_t read(int fildes, void *buf, size_t nbyte)$/;"	f
 readdir	src/dirent/readdir.c	/^struct dirent * readdir(DIR * dirp)$/;"	f
 readlink	src/unistd/readlink.c	/^ssize_t readlink(const char * restrict path, char * restrict buf, size_t bufsize)$/;"	f
 readv	src/sys/uio/readv.c	/^ssize_t readv(int fildes, const struct iovec * iov, int iovcnt)$/;"	f
 realloc	src/stdlib/realloc.c	/^void * realloc(void * ptr, size_t size)$/;"	f
 realpath	src/stdlib/realpath.c	/^char * realpath(const char * restrict file_name, char * restrict resolved_name)$/;"	f
+redrawwin	src/curses/redrawwin.c	/^int redrawwin(WINDOW * win)$/;"	f
 regcmp	src/libgen/regcmp.c	/^char *regcmp(const char *string1, ... \/*, (char*)0 *\/)$/;"	f
 regcomp	src/regex/regcomp.c	/^int regcomp(regex_t * restrict preg, const char * restrict pattern, int cflags)$/;"	f
 regerror	src/regex/regerror.c	/^size_t regerror(int errcode, const regex_t * restrict preg, char * restrict errbuf, size_t errbuf_size)$/;"	f
 regex	src/libgen/regex.c	/^char *regex(const char *re, const char *subject, ...)$/;"	f
-regex_t	src/regex/regex_t.c	/^} regex_t;$/;"	t	typeref:struct:__anon11	file:
+regex_t	src/regex/regex_t.c	/^} regex_t;$/;"	t	typeref:struct:__anon15	file:
 regexec	src/regex/regexec.c	/^int regexec(const regex_t * restrict preg, const char * restrict string, size_t nmatch, regmatch_t pmatch[restrict], int eflags)$/;"	f
 regfree	src/regex/regfree.c	/^void regfree(regex_t * preg)$/;"	f
-regmatch_t	src/regex/regmatch_t.c	/^} regmatch_t;$/;"	t	typeref:struct:__anon12	file:
+regmatch_t	src/regex/regmatch_t.c	/^} regmatch_t;$/;"	t	typeref:struct:__anon14	file:
 regoff_t	src/regex/regoff_t.c	/^typedef long long int                                                  regoff_t;$/;"	t	file:
 release	src/sys/utsname/struct_utsname.c	/^	char release[100];$/;"	m	struct:utsname	file:
-rem	src/inttypes/imaxdiv_t.c	/^	intmax_t rem;$/;"	m	struct:__anon2	file:
-rem	src/stdlib/div_t.c	/^	int rem;$/;"	m	struct:__anon18	file:
-rem	src/stdlib/ldiv_t.c	/^	long int rem;$/;"	m	struct:__anon19	file:
-rem	src/stdlib/lldiv_t.c	/^	long long int rem;$/;"	m	struct:__anon20	file:
+rem	src/inttypes/imaxdiv_t.c	/^	intmax_t rem;$/;"	m	struct:__anon10	file:
+rem	src/stdlib/div_t.c	/^	int rem;$/;"	m	struct:__anon21	file:
+rem	src/stdlib/ldiv_t.c	/^	long int rem;$/;"	m	struct:__anon22	file:
+rem	src/stdlib/lldiv_t.c	/^	long long int rem;$/;"	m	struct:__anon23	file:
 remainder	src/math/remainder.c	/^TYPE TGFN(remainder)(TYPE x, TYPE y)$/;"	f
 remove	src/stdio/remove.c	/^int remove(const char *filename)$/;"	f
+remove_clock	src/term/remove_clock.c	3;"	d	file:
 remque	src/search/remque.c	/^void remque(void * element)$/;"	f
 remquo	src/math/remquo.c	/^TYPE TGFN(remquo)(TYPE x, TYPE y, int *quo)$/;"	f
 rename	src/stdio/rename.c	/^int rename(const char *old, const char *new)$/;"	f
+repeat_char	src/term/repeat_char.c	3;"	d	file:
+req_for_input	src/term/req_for_input.c	3;"	d	file:
+req_mouse_pos	src/term/req_mouse_pos.c	3;"	d	file:
+reset_1string	src/term/reset_1string.c	3;"	d	file:
+reset_2string	src/term/reset_2string.c	3;"	d	file:
+reset_3string	src/term/reset_3string.c	3;"	d	file:
+reset_file	src/term/reset_file.c	3;"	d	file:
+reset_prog_mode	src/curses/reset_prog_mode.c	/^int reset_prog_mode(void)$/;"	f
+reset_shell_mode	src/curses/reset_shell_mode.c	/^int reset_shell_mode(void)$/;"	f
+resetty	src/curses/resetty.c	/^int resetty(void)$/;"	f
+restartterm	src/term/restartterm.c	/^int restartterm(const char * term, int fildes, int * errret)$/;"	f
+restore_cursor	src/term/restore_cursor.c	3;"	d	file:
 revents	src/poll/struct_pollfd.c	/^	short revents;$/;"	m	struct:pollfd	file:
 rewind	src/stdio/rewind.c	/^void rewind(FILE *stream)$/;"	f
 rewinddir	src/dirent/rewinddir.c	/^void rewinddir(DIR * dirp)$/;"	f
 rindex	src/strings/rindex.c	/^char *rindex(const char *s, int c)$/;"	f
 rint	src/math/rint.c	/^TYPE TGFN(rint)(TYPE x)$/;"	f
+ripoffline	src/curses/ripoffline.c	/^int ripoffline(int line, int (*init)(WINDOW * win, int columns))$/;"	f
 rlim_cur	src/sys/resource/struct_rlimit.c	/^	rlim_t rlim_cur;$/;"	m	struct:rlimit	file:
 rlim_max	src/sys/resource/struct_rlimit.c	/^	rlim_t rlim_max;$/;"	m	struct:rlimit	file:
 rlim_t	src/sys/resource/rlim_t.c	/^typedef unsigned long long int                                           rlim_t;$/;"	t	file:
 rlimit	src/sys/resource/struct_rlimit.c	/^struct rlimit {$/;"	s	file:
-rm_eo	src/regex/regmatch_t.c	/^	regoff_t rm_eo;$/;"	m	struct:__anon12	file:
-rm_so	src/regex/regmatch_t.c	/^	regoff_t rm_so;$/;"	m	struct:__anon12	file:
+rm_eo	src/regex/regmatch_t.c	/^	regoff_t rm_eo;$/;"	m	struct:__anon14	file:
+rm_so	src/regex/regmatch_t.c	/^	regoff_t rm_so;$/;"	m	struct:__anon14	file:
 rmdir	src/stdio/remove.c	11;"	d	file:
 rmdir	src/unistd/rmdir.c	/^int rmdir(const char *path)$/;"	f
 round	src/math/round.c	/^TYPE TGFN(round)(TYPE x)$/;"	f
+row_addr_glitch	src/term/row_addr_glitch.c	3;"	d	file:
+row_address	src/term/row_address.c	3;"	d	file:
 ru_stime	src/sys/resource/struct_rusage.c	/^	struct timeval ru_stime;$/;"	m	struct:rusage	typeref:struct:rusage::timeval	file:
 ru_utime	src/sys/resource/struct_rusage.c	/^	struct timeval ru_utime;$/;"	m	struct:rusage	typeref:struct:rusage::timeval	file:
 rusage	src/sys/resource/struct_rusage.c	/^struct rusage {$/;"	s	file:
@@ -2116,31 +2929,98 @@ sa_flags	src/signal/struct_sigaction.c	/^	int sa_flags;$/;"	m	struct:sigaction	f
 sa_handler	src/signal/struct_sigaction.c	/^	void (*sa_handler)(int);$/;"	m	struct:sigaction	file:
 sa_mask	src/signal/struct_sigaction.c	/^	sigset_t sa_mask;$/;"	m	struct:sigaction	file:
 sa_sigaction	src/signal/struct_sigaction.c	/^	void (*sa_sigaction)(int, siginfo_t *, void *);	$/;"	m	struct:sigaction	file:
+save_cursor	src/term/save_cursor.c	3;"	d	file:
+savetty	src/curses/savetty.c	/^int savetty(void)$/;"	f
 sbrk	src/unistd/sbrk.c	/^void *sbrk(int incr)$/;"	f
 scalb	src/math/scalb.c	/^double scalb(double x, double n)$/;"	f
 scalbln	src/math/scalbln.c	/^TYPE TGFN(scalbln)(TYPE x, long int n)$/;"	f
 scalbn	src/math/scalbn.c	/^TYPE TGFN(scalbn)(TYPE x, int n)$/;"	f
+scancode_escape	src/term/scancode_escape.c	3;"	d	file:
 scanf	src/stdio/scanf.c	/^int scanf(const char * restrict format, ...)$/;"	f
+scanw	src/curses/scanw.c	/^int scanw(const char * fmt, ...)$/;"	f
+sched_get_priority_max	src/sched/sched_get_priority_max.c	/^int sched_get_priority_max(int policy)$/;"	f
+sched_get_priority_min	src/sched/sched_get_priority_min.c	/^int sched_get_priority_min(int policy)$/;"	f
+sched_getparam	src/sched/sched_getparam.c	/^int sched_getparam(pid_t pid, struct sched_param * param)$/;"	f
+sched_getscheduler	src/sched/sched_getscheduler.c	/^int sched_getscheduler(pid_t pid)$/;"	f
+sched_param	src/sched/struct_sched_param.c	/^struct sched_param {$/;"	s	file:
+sched_priority	src/sched/struct_sched_param.c	/^	int sched_priority;$/;"	m	struct:sched_param	file:
+sched_rr_get_interval	src/sched/sched_rr_get_interval.c	/^int sched_rr_get_interval(pid_t pid, struct timespec * interval)$/;"	f
+sched_setparam	src/sched/sched_setparam.c	/^int sched_setparam(pid_t pid, const struct sched_param * param)$/;"	f
+sched_setscheduler	src/sched/sched_setscheduler.c	/^int sched_setscheduler(pid_t pid, int policy, const struct sched_param * param)$/;"	f
+sched_ss_init_budget	src/sched/struct_sched_param.c	/^	struct timespec sched_ss_init_budget;$/;"	m	struct:sched_param	typeref:struct:sched_param::timespec	file:
+sched_ss_low_priority	src/sched/struct_sched_param.c	/^	int sched_ss_low_priority;$/;"	m	struct:sched_param	file:
+sched_ss_max_repl	src/sched/struct_sched_param.c	/^	int sched_ss_max_repl;$/;"	m	struct:sched_param	file:
+sched_ss_repl_period	src/sched/struct_sched_param.c	/^	struct timespec sched_ss_repl_period;$/;"	m	struct:sched_param	typeref:struct:sched_param::timespec	file:
+sched_yield	src/sched/sched_yield.c	/^int sched_yield(void)$/;"	f
+scr_dump	src/curses/scr_dump.c	/^int scr_dump(const char * filename)$/;"	f
+scr_init	src/curses/scr_init.c	/^int scr_init(const char * filename)$/;"	f
+scr_restore	src/curses/scr_restore.c	/^int scr_restore(const char * filename)$/;"	f
+scr_set	src/curses/scr_set.c	/^int scr_set(const char * filename)$/;"	f
+scroll_forward	src/term/scroll_forward.c	3;"	d	file:
+scroll_reverse	src/term/scroll_reverse.c	3;"	d	file:
+scrollok	src/curses/scrollok.c	/^int scrollok(WINDOW * win, bool bf)$/;"	f
+seT_top_margin	src/term/seT_top_margin.c	3;"	d	file:
 seed48	src/stdlib/seed48.c	/^unsigned short * seed48(unsigned short seed16v[3])$/;"	f
 seekdir	src/dirent/seekdir.c	/^void seekdir(DIR * dirp, long loc)$/;"	f
 select	src/sys/time/select.c	/^int select(int nfds , fd_set * readfds , fd_set * writefds , fd_set * errorfds , struct timeval * timeout )$/;"	f
+select_char_set	src/term/select_char_set.c	3;"	d	file:
+sem_close	src/semaphore/sem_close.c	/^int sem_close(sem_t *sem)$/;"	f
 sem_ctime	src/sys/sem/struct_semid_ds.c	/^	time_t sem_ctime;$/;"	m	struct:semid_ds	file:
+sem_destroy	src/semaphore/sem_destroy.c	/^int sem_destroy(sem_t * sem)$/;"	f
 sem_flg	src/sys/sem/struct_sembuf.c	/^	short sem_flg;$/;"	m	struct:sembuf	file:
+sem_getvalue	src/semaphore/sem_getvalue.c	/^int sem_getvalue(sem_t * restrict sem, int * restrict sval)$/;"	f
+sem_init	src/semaphore/sem_init.c	/^int sem_init(sem_t * sem, int pshared, unsigned value)$/;"	f
 sem_nsems	src/sys/sem/struct_semid_ds.c	/^	unsigned short sem_nsems;$/;"	m	struct:semid_ds	file:
 sem_num	src/sys/sem/struct_sembuf.c	/^	unsigned short sem_num;$/;"	m	struct:sembuf	file:
 sem_op	src/sys/sem/struct_sembuf.c	/^	short sem_op;$/;"	m	struct:sembuf	file:
+sem_open	src/semaphore/sem_open.c	/^sem_t * sem_open(const char * name, int oflag, ...)$/;"	f
 sem_otime	src/sys/sem/struct_semid_ds.c	/^	time_t sem_otime;$/;"	m	struct:semid_ds	file:
 sem_perm	src/sys/sem/struct_semid_ds.c	/^	struct ipc_perm sem_perm;$/;"	m	struct:semid_ds	typeref:struct:semid_ds::ipc_perm	file:
+sem_post	src/semaphore/sem_post.c	/^int sem_post(sem_t * sem)$/;"	f
+sem_t	src/semaphore/sem_t.c	/^typedef struct __sem_t                                                    sem_t;$/;"	t	typeref:struct:__sem_t	file:
+sem_trywait	src/semaphore/sem_trywait.c	/^int sem_trywait(sem_t * sem)$/;"	f
+sem_unlink	src/semaphore/sem_unlink.c	/^int sem_unlink(const char * name)$/;"	f
+sem_wait	src/semaphore/sem_wait.c	/^int sem_wait(sem_t * sem)$/;"	f
 sembuf	src/sys/sem/struct_sembuf.c	/^struct sembuf {$/;"	s	file:
 semctl	src/sys/sem/semctl.c	/^int semctl(int semid, int semnum, int cmd, ...)$/;"	f
 semget	src/sys/sem/semget.c	/^int semget(key_t, int nsems, int semflg)$/;"	f
+semi_auto_right_margin	src/term/semi_auto_right_margin.c	3;"	d	file:
 semid_ds	src/sys/sem/struct_semid_ds.c	/^struct semid_ds {$/;"	s	file:
 semncnt	src/sys/sem/struct_sem_anonymous.c	/^	unsigned short semncnt;$/;"	m	struct:__sem_anonymous	file:
 semop	src/sys/sem/semop.c	/^int semop(int semid, struct sembuf *sops, size_t nsops)$/;"	f
 sempid	src/sys/sem/struct_sem_anonymous.c	/^	pid_t sempid;$/;"	m	struct:__sem_anonymous	file:
 semval	src/sys/sem/struct_sem_anonymous.c	/^	unsigned short semval;$/;"	m	struct:__sem_anonymous	file:
 semzcnt	src/sys/sem/struct_sem_anonymous.c	/^	unsigned short semzcnt;$/;"	m	struct:__sem_anonymous	file:
+set0_des_seq	src/term/set0_des_seq.c	3;"	d	file:
+set1_des_seq	src/term/set1_des_seq.c	3;"	d	file:
+set2_des_seq	src/term/set2_des_seq.c	3;"	d	file:
+set3_des_seq	src/term/set3_des_seq.c	3;"	d	file:
+set_a_attributes	src/term/set_a_attributes.c	3;"	d	file:
+set_a_background	src/term/set_a_background.c	3;"	d	file:
+set_a_foreground	src/term/set_a_foreground.c	3;"	d	file:
+set_attributes	src/term/set_attributes.c	3;"	d	file:
+set_background	src/term/set_background.c	3;"	d	file:
+set_bottom_margin	src/term/set_bottom_margin.c	3;"	d	file:
+set_bottom_margin_parm	src/term/set_bottom_margin_parm.c	3;"	d	file:
+set_clock	src/term/set_clock.c	3;"	d	file:
+set_color_band	src/term/set_color_band.c	3;"	d	file:
+set_color_pair	src/term/set_color_pair.c	3;"	d	file:
+set_curterm	src/term/set_curterm.c	/^TERMINAL * set_curterm(TERMINAL * nterm)$/;"	f
+set_foreground	src/term/set_foreground.c	3;"	d	file:
+set_left_margin	src/term/set_left_margin.c	3;"	d	file:
+set_left_margin_parm	src/term/set_left_margin_parm.c	3;"	d	file:
+set_lr_margin	src/term/set_lr_margin.c	3;"	d	file:
+set_page_length	src/term/set_page_length.c	3;"	d	file:
+set_pglen_inch	src/term/set_pglen_inch.c	3;"	d	file:
+set_right_margin	src/term/set_right_margin.c	3;"	d	file:
+set_right_margin_parm	src/term/set_right_margin_parm.c	3;"	d	file:
+set_tab	src/term/set_tab.c	3;"	d	file:
+set_tb_margin	src/term/set_tb_margin.c	3;"	d	file:
+set_term	src/curses/set_term.c	/^SCREEN * set_term(SCREEN * new)$/;"	f
+set_top_margin_parm	src/term/set_top_margin_parm.c	3;"	d	file:
+set_window	src/term/set_window.c	3;"	d	file:
 setbuf	src/stdio/setbuf.c	/^void setbuf(FILE * restrict stream, char * restrict buf)$/;"	f
+setcchar	src/curses/setcchar.c	/^int setcchar(cchar_t * wcval, const wchar_t * wch, const attr_t attrs, short color_pair, const void * opts)$/;"	f
 setcontext	src/ucontext/setcontext.c	/^int setcontext(const ucontext_t *ucp)$/;"	f
 setgid	src/unistd/setgid.c	/^int setgid(gid_t gid)$/;"	f
 setgrent	src/grp/setgrent.c	/^void setgrent(void)$/;"	f
@@ -2159,6 +3039,7 @@ setrlimit	src/sys/resource/setrlimit.c	/^int setrlimit(int resource, const struc
 setsid	src/unistd/setsid.c	/^pid_t setsid(void)$/;"	f
 setstate	src/stdlib/setstate.c	/^char * setstate(char * state)$/;"	f
 setuid	src/unistd/setuid.c	/^int setuid(uid_t uid)$/;"	f
+setupterm	src/term/setupterm.c	/^int setupterm(char * term, int fildes, int * erret)$/;"	f
 setutxent	src/utmpx/setutxent.c	/^void setutxent(void)$/;"	f
 setvbuf	src/stdio/setvbuf.c	/^int setvbuf(FILE *stream, char *buf, int mode, size_t size)$/;"	f
 shm_atime	src/sys/shm/struct_shmid_ds.c	/^	time_t shm_atime;$/;"	m	struct:shmid_ds	file:
@@ -2167,23 +3048,26 @@ shm_ctime	src/sys/shm/struct_shmid_ds.c	/^	time_t shm_ctime;$/;"	m	struct:shmid_
 shm_dtime	src/sys/shm/struct_shmid_ds.c	/^	time_t shm_dtime;$/;"	m	struct:shmid_ds	file:
 shm_lpid	src/sys/shm/struct_shmid_ds.c	/^	pid_t shm_lpid;$/;"	m	struct:shmid_ds	file:
 shm_nattach	src/sys/shm/struct_shmid_ds.c	/^	shmatt_t shm_nattach;$/;"	m	struct:shmid_ds	file:
+shm_open	src/sys/mman/shm_open.c	/^int shm_open(const char *name, int oflag, mode_t mode)$/;"	f
 shm_perm	src/sys/shm/struct_shmid_ds.c	/^	struct ipc_perm shm_perm;$/;"	m	struct:shmid_ds	typeref:struct:shmid_ds::ipc_perm	file:
 shm_segsz	src/sys/shm/struct_shmid_ds.c	/^	size_t shm_segsz;$/;"	m	struct:shmid_ds	file:
+shm_unlink	src/sys/mman/shm_unlink.c	/^int shm_unlink(const char *name)$/;"	f
 shmat	src/sys/shm/shmat.c	/^void * shmat(int shmid, const void *shmaddr, int shmflg)$/;"	f
 shmatt_t	src/sys/shm/shmatt_t.c	/^typedef unsigned short                                                 shmatt_t;$/;"	t	file:
 shmctl	src/sys/shm/shmctl.c	/^int shmctl(int shmid, int cmd, struct shmid_ds *buf)$/;"	f
 shmdt	src/sys/shm/shmdt.c	/^int shmdt(const void *shmaddr)$/;"	f
 shmget	src/sys/shm/shmget.c	/^int shmget(key_t key, size_t size, int shmflg)$/;"	f
 shmid_ds	src/sys/shm/struct_shmid_ds.c	/^struct shmid_ds {$/;"	s	file:
-si_addr	src/signal/siginfo_t.c	/^	void *si_addr;$/;"	m	struct:__anon16	file:
-si_band	src/signal/siginfo_t.c	/^	long si_band;$/;"	m	struct:__anon16	file:
-si_code	src/signal/siginfo_t.c	/^	int si_code;$/;"	m	struct:__anon16	file:
-si_errno	src/signal/siginfo_t.c	/^	int si_errno;$/;"	m	struct:__anon16	file:
-si_pid	src/signal/siginfo_t.c	/^	pid_t si_pid;$/;"	m	struct:__anon16	file:
-si_signo	src/signal/siginfo_t.c	/^	int si_signo;$/;"	m	struct:__anon16	file:
-si_status	src/signal/siginfo_t.c	/^	int si_status;$/;"	m	struct:__anon16	file:
-si_uid	src/signal/siginfo_t.c	/^	uid_t si_uid;$/;"	m	struct:__anon16	file:
-si_value	src/signal/siginfo_t.c	/^	union sigval si_value;$/;"	m	struct:__anon16	typeref:union:__anon16::sigval	file:
+si_addr	src/signal/siginfo_t.c	/^	void *si_addr;$/;"	m	struct:__anon8	file:
+si_band	src/signal/siginfo_t.c	/^	long si_band;$/;"	m	struct:__anon8	file:
+si_code	src/signal/siginfo_t.c	/^	int si_code;$/;"	m	struct:__anon8	file:
+si_errno	src/signal/siginfo_t.c	/^	int si_errno;$/;"	m	struct:__anon8	file:
+si_pid	src/signal/siginfo_t.c	/^	pid_t si_pid;$/;"	m	struct:__anon8	file:
+si_signo	src/signal/siginfo_t.c	/^	int si_signo;$/;"	m	struct:__anon8	file:
+si_status	src/signal/siginfo_t.c	/^	int si_status;$/;"	m	struct:__anon8	file:
+si_uid	src/signal/siginfo_t.c	/^	uid_t si_uid;$/;"	m	struct:__anon8	file:
+si_value	src/signal/siginfo_t.c	/^	union sigval si_value;$/;"	m	struct:__anon8	typeref:union:__anon8::sigval	file:
+siegev_notify_attributes	src/signal/struct_sigevent.c	/^	pthread_attr_t *siegev_notify_attributes;$/;"	m	struct:sigevent	file:
 sig_atomic_t	src/signal/sig_atomic_t.c	/^typedef volatile int                                               sig_atomic_t;$/;"	t	file:
 sigaction	src/signal/sigaction.c	/^int sigaction(int sig, const struct sigaction * restrict act, struct sigaction * restrict oact)$/;"	f
 sigaction	src/signal/struct_sigaction.c	/^struct sigaction {$/;"	s	file:
@@ -2191,10 +3075,15 @@ sigaddset	src/signal/sigaddset.c	/^int sigaddset(sigset_t * set, int signo)$/;"	
 sigaltstack	src/signal/sigaltstack.c	/^int sigaltstack(const stack_t * restrict ss, stack_t * restrict oss)$/;"	f
 sigdelset	src/signal/sigdelset.c	/^int sigdelset(sigset_t * set, int signo)$/;"	f
 sigemptyset	src/signal/sigemptyset.c	/^int sigemptyset(sigset_t * set)$/;"	f
+sigev_notify	src/signal/struct_sigevent.c	/^	int sigev_notify;$/;"	m	struct:sigevent	file:
+sigev_notify_function	src/signal/struct_sigevent.c	/^	void (*sigev_notify_function)(union sigval);$/;"	m	struct:sigevent	file:
+sigev_signo	src/signal/struct_sigevent.c	/^	int sigev_signo;$/;"	m	struct:sigevent	file:
+sigev_value	src/signal/struct_sigevent.c	/^	union sigval sigev_value;$/;"	m	struct:sigevent	typeref:union:sigevent::sigval	file:
+sigevent	src/signal/struct_sigevent.c	/^struct sigevent {$/;"	s	file:
 sigfillset	src/signal/sigfillset.c	/^int sigfillset(sigset_t * set)$/;"	f
 sighold	src/signal/sighold.c	/^int sighold(int sig)$/;"	f
 sigignore	src/signal/sigignore.c	/^int sigignore(int sig)$/;"	f
-siginfo_t	src/signal/siginfo_t.c	/^} siginfo_t;$/;"	t	typeref:struct:__anon16	file:
+siginfo_t	src/signal/siginfo_t.c	/^} siginfo_t;$/;"	t	typeref:struct:__anon8	file:
 siginterrupt	src/signal/siginterrupt.c	/^int siginterrupt(int sig, int flag)$/;"	f
 sigismember	src/signal/sigismember.c	/^int sigismember(const sigset_t * set, int signo)$/;"	f
 sigjmp_buf	src/setjmp/sigjmp_buf.c	/^typedef jmp_buf                                                      sigjmp_buf;$/;"	t	file:
@@ -2206,6 +3095,7 @@ signgam	src/math/signgam.c	/^int signgam;$/;"	v
 sigpause	src/signal/sigpause.c	/^int sigpause(int sig)$/;"	f
 sigpending	src/signal/sigpending.c	/^int sigpending(sigset_t * set)$/;"	f
 sigprocmask	src/signal/sigprocmask.c	/^int sigprocmask(int how, const sigset_t * restrict set, sigset_t * restrict oset)$/;"	f
+sigqueue	src/signal/sigqueue.c	/^int sigqueue(pid_t pid, int signo, const union sigval value)$/;"	f
 sigrelse	src/signal/sigrelse.c	/^int sigrelse(int sig)$/;"	f
 sigset	src/signal/sigset.c	/^void (*sigset(int sig, void (*disp)(int)))(int)$/;"	f
 sigset_t	src/signal/sigset_t.c	/^typedef unsigned int                                                   sigset_t;$/;"	t	file:
@@ -2213,15 +3103,36 @@ sigsetjmp	src/setjmp/sigsetjmp.c	/^int sigsetjmp(sigjmp_buf env, int savemask)$/
 sigstack	src/signal/sigstack.c	/^int sigstack(struct sigstack *ss, struct sigstack *oss)$/;"	f
 sigstack	src/signal/struct_sigstack.c	/^struct sigstack {$/;"	s	file:
 sigsuspend	src/signal/sigsuspend.c	/^int sigsuspend(const sigset_t * sigmask)$/;"	f
+sigtimedwait	src/signal/sigtimedwait.c	/^int sigtimedwait(const sigset_t * restrict set, siginfo_t * restrict info, const struct timespec * restrict timeout)$/;"	f
+sigval	src/signal/union_sigval.c	/^union sigval {$/;"	u	file:
+sigwaitinfo	src/signal/sigwaitinfo.c	/^int sigwaitinfo(const sigset_t * restrict set, siginfo_t * restrict info)$/;"	f
 sin	src/math/sin.c	/^TYPE TGFN(sin)(TYPE x)$/;"	f
 sinh	src/math/sinh.c	/^TYPE TGFN(sinh)(TYPE x)$/;"	f
-size	src/nonstd/struct_FILE.c	/^		size_t size;$/;"	m	struct:__FILE::__anon7	file:
+sival_int	src/signal/union_sigval.c	/^	int sival_int;$/;"	m	union:sigval	file:
+sival_ptr	src/signal/union_sigval.c	/^	void *sival_ptr;$/;"	m	union:sigval	file:
+size	src/nonstd/struct_FILE.c	/^		size_t size;$/;"	m	struct:__FILE::__anon5	file:
 size_t	src/stddef/size_t.c	/^typedef unsigned __int64                                                 size_t;$/;"	t	file:
 size_t	src/stddef/size_t.c	/^typedef unsigned long int                                                size_t;$/;"	t	file:
 size_t	src/stddef/size_t.c	/^typedef unsigned long long int                                           size_t;$/;"	t	file:
 sl_modlist	src/stropts/struct_str_list.c	/^	struct str_mlist *sl_modlist;$/;"	m	struct:str_list	typeref:struct:str_list::str_mlist	file:
 sl_nmods	src/stropts/struct_str_list.c	/^	int sl_nmods;$/;"	m	struct:str_list	file:
 sleep	src/unistd/sleep.c	/^unsigned sleep(unsigned seconds)$/;"	f
+slk_attr_off	src/curses/slk_attr_off.c	/^int slk_attr_off(const chtype attrs, void * opts)$/;"	f
+slk_attr_on	src/curses/slk_attr_on.c	/^int slk_attr_on(const chtype attrs, void * opts)$/;"	f
+slk_attr_set	src/curses/slk_attr_set.c	/^int slk_attr_set(const chtype attrs, short color_pair_number, void * opts)$/;"	f
+slk_attroff	src/curses/slk_attroff.c	/^int slk_attroff(const chtype attrs)$/;"	f
+slk_attron	src/curses/slk_attron.c	/^int slk_attron(const chtype attrs)$/;"	f
+slk_attrset	src/curses/slk_attrset.c	/^int slk_attrset(const chtype attrs)$/;"	f
+slk_clear	src/curses/slk_clear.c	/^int slk_clear(void)$/;"	f
+slk_color	src/curses/slk_color.c	/^int slk_color(short color_pair_number)$/;"	f
+slk_init	src/curses/slk_init.c	/^int slk_init(int fmt)$/;"	f
+slk_label	src/curses/slk_label.c	/^char * slk_label(int labnum)$/;"	f
+slk_noutrefresh	src/curses/slk_noutrefresh.c	/^int slk_noutrefresh(void)$/;"	f
+slk_refresh	src/curses/slk_refresh.c	/^int slk_refresh(void)$/;"	f
+slk_restore	src/curses/slk_restore.c	/^int slk_restore(void)$/;"	f
+slk_set	src/curses/slk_set.c	/^int slk_set(int labnum, const char * label, int justify)$/;"	f
+slk_touch	src/curses/slk_touch.c	/^int slk_touch(void)$/;"	f
+slk_wset	src/curses/slk_wset.c	/^int slk_wset(int labnum, const wchar_t * label, int justify)$/;"	f
 snprintf	src/stdio/snprintf.c	/^int snprintf(char * restrict s, size_t n, const char * restrict format, ...)$/;"	f
 speed_t	src/termios/speed_t.c	/^typedef int                                                             speed_t;$/;"	t	file:
 sprintf	src/stdio/sprintf.c	/^int sprintf(char * restrict s, const char * restrict format, ...)$/;"	f
@@ -2229,10 +3140,10 @@ sqrt	src/math/sqrt.c	/^TYPE TGFN(sqrt)(TYPE x)$/;"	f
 srand	src/stdlib/srand.c	/^void srand(unsigned int seed)$/;"	f
 srand48	src/stdlib/srand48.c	/^void srand48(long seedval)$/;"	f
 srandom	src/stdlib/srandom.c	/^void srandom(unsigned seed)$/;"	f
-ss_flags	src/signal/stack_t.c	/^	int ss_flags;	\/* Flags *\/$/;"	m	struct:__anon17	file:
+ss_flags	src/signal/stack_t.c	/^	int ss_flags;	\/* Flags *\/$/;"	m	struct:__anon9	file:
 ss_onstack	src/signal/struct_sigstack.c	/^	int ss_onstack;$/;"	m	struct:sigstack	file:
-ss_size	src/signal/stack_t.c	/^	size_t ss_size;	\/* Stack size *\/$/;"	m	struct:__anon17	file:
-ss_sp	src/signal/stack_t.c	/^	void *ss_sp;	\/* Stack base or pointer *\/$/;"	m	struct:__anon17	file:
+ss_size	src/signal/stack_t.c	/^	size_t ss_size;	\/* Stack size *\/$/;"	m	struct:__anon9	file:
+ss_sp	src/signal/stack_t.c	/^	void *ss_sp;	\/* Stack base or pointer *\/$/;"	m	struct:__anon9	file:
 ss_sp	src/signal/struct_sigstack.c	/^	void *ss_sp;$/;"	m	struct:sigstack	file:
 sscanf	src/stdio/sscanf.c	/^int sscanf(const char * restrict s, const char * restrict format, ...)$/;"	f
 ssize_t	src/sys/types/ssize_t.c	/^typedef long int                                                        ssize_t;$/;"	t	file:
@@ -2245,20 +3156,27 @@ st_nlink	src/sys/stat/struct_stat.c	/^	nlink_t st_nlink;$/;"	m	struct:stat	file:
 st_rdev	src/sys/stat/struct_stat.c	/^	dev_t st_rdev;$/;"	m	struct:stat	file:
 st_size	src/sys/stat/struct_stat.c	/^	off_t st_size;$/;"	m	struct:stat	file:
 st_uid	src/sys/stat/struct_stat.c	/^	uid_t st_uid;$/;"	m	struct:stat	file:
-stack_t	src/signal/stack_t.c	/^} stack_t;$/;"	t	typeref:struct:__anon17	file:
-start_day	src/nonstd/struct_locale_t.c	/^			int start_day;$/;"	m	struct:__locale_t::__anon9::__anon10	file:
-start_month	src/nonstd/struct_locale_t.c	/^			int start_month;$/;"	m	struct:__locale_t::__anon9::__anon10	file:
-start_year	src/nonstd/struct_locale_t.c	/^			int start_year;$/;"	m	struct:__locale_t::__anon9::__anon10	file:
+stack_t	src/signal/stack_t.c	/^} stack_t;$/;"	t	typeref:struct:__anon9	file:
+start_bit_image	src/term/start_bit_image.c	3;"	d	file:
+start_char_set_def	src/term/start_char_set_def.c	3;"	d	file:
+start_color	src/curses/start_color.c	/^int start_color(void)$/;"	f
+start_day	src/nonstd/struct_locale_t.c	/^			int start_day;$/;"	m	struct:__locale_t::__anon2::__anon3	file:
+start_month	src/nonstd/struct_locale_t.c	/^			int start_month;$/;"	m	struct:__locale_t::__anon2::__anon3	file:
+start_year	src/nonstd/struct_locale_t.c	/^			int start_year;$/;"	m	struct:__locale_t::__anon2::__anon3	file:
 stat	src/stdio/remove.c	/^ struct stat { int st_mode; };$/;"	s	file:
 stat	src/stdio/remove.c	9;"	d	file:
 stat	src/sys/stat/stat.c	/^int stat(const char * restrict path, struct stat * restrict buf)$/;"	f
 stat	src/sys/stat/struct_stat.c	/^struct stat {$/;"	s	file:
+status_line_esc_ok	src/term/status_line_esc_ok.c	3;"	d	file:
 statvfs	src/sys/statvfs/statvfs.c	/^int statvfs(const char * restrict path, struct statvfs * restrict buf)$/;"	f
 statvfs	src/sys/statvfs/struct_statvfs.c	/^struct statvfs {$/;"	s	file:
 stderr	src/stdio/stderr.c	2;"	d	file:
 stdin	src/stdio/stdin.c	2;"	d	file:
 stdout	src/stdio/stdout.c	2;"	d	file:
+stdscr	src/curses/stdscr.c	/^WINDOW *stdscr;$/;"	v
 step	src/regexp/step.c	/^int step(const char *string, const char *expbuf)$/;"	f
+stop_bit_image	src/term/stop_bit_image.c	3;"	d	file:
+stop_char_set_def	src/term/stop_char_set_def.c	3;"	d	file:
 str_list	src/stropts/struct_str_list.c	/^struct str_list {$/;"	s	file:
 str_mlist	src/stropts/struct_str_mlist.c	/^struct str_mlist {$/;"	s	file:
 strbuf	src/stropts/struct_strbuf.c	/^struct strbuf {$/;"	s	file:
@@ -2302,19 +3220,25 @@ strtoull	src/stdlib/strtoull.c	/^unsigned long long int strtoull(const char * re
 strtoumax	src/inttypes/strtoumax.c	/^uintmax_t strtoumax(const char *restrict nptr, char ** restrict endptr, int base)$/;"	f
 strtoumax	src/stdlib/strtoul.c	9;"	d	file:
 strxfrm	src/string/strxfrm.c	/^size_t strxfrm(char * restrict s1, const char * restrict s2, size_t n)$/;"	f
+subpad	src/curses/subpad.c	/^WINDOW * subpad(WINDOW * orig, int nlines, int ncols, int begin_y, int begin_x)$/;"	f
+subscript_characters	src/term/subscript_characters.c	3;"	d	file:
+subwin	src/curses/subwin.c	/^WINDOW * subwin(WINDOW * orig, int nlines, int ncols, int begin_y, int begin_x)$/;"	f
+superscript_characters	src/term/superscript_characters.c	3;"	d	file:
 swab	src/unistd/swab.c	/^void swab(const void * restrict src, void * restrict dest, ssize_t nbytes)$/;"	f
 swapcontext	src/ucontext/swapcontext.c	/^void swapcontext(ucontext_t *oucp, const ucontext_t *ucp)$/;"	f
 swprintf	src/wchar/swprintf.c	/^int swprintf(wchar_t * restrict s, size_t n, const wchar_t * restrict format, ...)$/;"	f
 swscanf	src/wchar/swscanf.c	/^int swscanf(const wchar_t * restrict s, const wchar_t * restrict format, ...)$/;"	f
 symlink	src/unistd/symlink.c	/^int symlink(const char*path1, const char *path2)$/;"	f
 sync	src/unistd/sync.c	/^void sync(void)$/;"	f
+syncok	src/curses/syncok.c	/^int syncok(WINDOW * win, bool bf)$/;"	f
 syscall_lookup_t	src/nonstd/syscall_lookup_t.c	/^typedef long (*syscall_lookup_t)(const char *);$/;"	t	file:
 sysconf	src/unistd/sysconf.c	/^long sysconf(int name)$/;"	f
 syslog	src/syslog/syslog.c	/^void syslog(int priority, const char * message, ...)$/;"	f
 sysname	src/sys/utsname/struct_utsname.c	/^	char sysname[100];$/;"	m	struct:utsname	file:
 system	src/stdlib/system.c	/^int system(const char * string)$/;"	f
-t_fmt	src/nonstd/struct_locale_t.c	/^		char *t_fmt;$/;"	m	struct:__locale_t::__anon9	file:
-t_fmt_ampm	src/nonstd/struct_locale_t.c	/^		char *t_fmt_ampm;$/;"	m	struct:__locale_t::__anon9	file:
+t_fmt	src/nonstd/struct_locale_t.c	/^		char *t_fmt;$/;"	m	struct:__locale_t::__anon2	file:
+t_fmt_ampm	src/nonstd/struct_locale_t.c	/^		char *t_fmt_ampm;$/;"	m	struct:__locale_t::__anon2	file:
+tab	src/term/tab.c	3;"	d	file:
 tan	src/math/tan.c	/^TYPE TGFN(tan)(TYPE x)$/;"	f
 tanh	src/math/tanh.c	/^TYPE TGFN(tanh)(TYPE x)$/;"	f
 tcdrain	src/termios/tcdrain.c	/^int tcdrain(int fildes)$/;"	f
@@ -2330,20 +3254,42 @@ tcsetpgrp	src/unistd/tcsetpgrp.c	/^int tcsetpgrp(int fildes, pid_t pgid_id)$/;"	
 tdelete	src/search/tdelete.c	/^void *tdelete(const void * restrict key, void ** restrict rootp, int (*compar) (const void *, const void *))$/;"	f
 telldir	src/dirent/telldir.c	/^long telldir(DIR * dirp)$/;"	f
 tempnam	src/stdio/tempnam.c	/^char * tempnam(const char * dir, const char * pfx)$/;"	f
+terma_ttrs	src/curses/term_attrs.c	/^attr_t terma_ttrs(void)$/;"	f
+termattrs	src/curses/termattrs.c	/^chtype termattrs(void)$/;"	f
 termios	src/termios/struct_termios.c	/^struct termios {$/;"	s	file:
+termname	src/curses/termname.c	/^char * termname(void)$/;"	f
 tfind	src/search/tfind.c	/^void *tfind(const void * key, void * const * rootp, int (*compar) (const void *, const void *))$/;"	f
 tgamma	src/math/tgamma.c	/^TYPE TGFN(tgamma)(TYPE x)$/;"	f
+tgetent	src/term/tgetent.c	/^int tgetent(char * bp, const char * name)$/;"	f
+tgetflag	src/term/tgetflag.c	/^int tgetflag(char id[2])$/;"	f
+tgetnum	src/term/tgetnum.c	/^int tgetnum(char id[2])$/;"	f
+tgetstr	src/term/tgetstr.c	/^char * tgetstr(char id[2], char ** area)$/;"	f
+tgoto	src/term/tgoto.c	/^char * tgoto(char * cap, int col, int row)$/;"	f
+these_cause_cr	src/term/these_cause_cr.c	3;"	d	file:
 thousands_sep	src/locale/struct_lconv.c	/^	char *thousands_sep;		\/* "" *\/$/;"	m	struct:lconv	file:
 thread	src/nonstd/struct_FILE.c	/^	int thread;$/;"	m	struct:__FILE	file:
+tigetflag	src/term/tigetflag.c	/^int tigetflag(const char * capname)$/;"	f
+tigetnum	src/term/tigetnum.c	/^int tigetnum(const char * capname)$/;"	f
+tigetstr	src/term/tigetstr.c	/^char * tigetstr(const char * capname)$/;"	f
+tilde_glitch	src/term/tilde_glitch.c	3;"	d	file:
 time	src/nonstd/struct_locale_t.c	/^	char *time;$/;"	m	struct:__locale_t	file:
 time	src/sys/timeb/struct_timeb.c	/^	time_t time;$/;"	m	struct:timeb	file:
 time	src/time/time.c	/^time_t time(time_t * timer)$/;"	f
 time_t	src/time/time_t.c	/^typedef long int                                                         time_t;$/;"	t	file:
 timeb	src/sys/timeb/struct_timeb.c	/^struct timeb {$/;"	s	file:
+timer_create	src/time/timer_create.c	/^int timer_create(clockid_t clockid, struct sigevent *restrict evp, timer_t *restrict timerid)$/;"	f
+timer_delete	src/time/timer_delete.c	/^int timer_delete(timer_t timerid)$/;"	f
+timer_getoverrun	src/time/timer_getoverrun.c	/^int timer_getoverrun(timer_t timerid)$/;"	f
+timer_gettime	src/time/timer_gettime.c	/^int timer_gettime(timer_t timerid, struct itimerspec *value)$/;"	f
+timer_settime	src/time/timer_settime.c	/^int timer_settime(timer_t timerid, int flags, const struct itimerspec * restrict value, struct itimerspec * restrict ovalue)$/;"	f
+timer_t	src/sys/types/timer_t.c	/^typedef unsigned long int                                               timer_t;$/;"	t	file:
 times	src/sys/times/times.c	/^clock_t times(struct tms *buffer)$/;"	f
+timespec	src/time/struct_timespec.c	/^struct timespec {$/;"	s	file:
 timeval	src/sys/time/struct_timeval.c	/^struct timeval {$/;"	s	file:
 timezone	src/sys/timeb/struct_timeb.c	/^	short timezone;$/;"	m	struct:timeb	file:
 timezone	src/time/timezone.c	/^long timezone;$/;"	v
+tiparm	src/term/tiparm.c	/^char * tiparm(const char * cap, ...)$/;"	f
+tiparm	src/term/tparm.c	/^char * tiparm(const char * cap, long p1, long p2, long p3, long p4, long p5, long p6, long p7, long p8, long p9)$/;"	f
 tm	src/time/struct_tm.c	/^struct tm {$/;"	s	file:
 tm_hour	src/time/struct_tm.c	/^	int tm_hour;	\/* Hour [0,23] *\/$/;"	m	struct:tm	file:
 tm_isdst	src/time/struct_tm.c	/^	int tm_isdst;	\/* Daylight Saving Time flag *\/$/;"	m	struct:tm	file:
@@ -2361,21 +3307,31 @@ tms_cstime	src/sys/times/struct_tms.c	/^	clock_t tms_cstime;$/;"	m	struct:tms	fi
 tms_cutime	src/sys/times/struct_tms.c	/^	clock_t tms_cutime;$/;"	m	struct:tms	file:
 tms_stime	src/sys/times/struct_tms.c	/^	clock_t tms_stime;$/;"	m	struct:tms	file:
 tms_utime	src/sys/times/struct_tms.c	/^	clock_t tms_utime;$/;"	m	struct:tms	file:
+to_status_line	src/term/to_status_line.c	3;"	d	file:
 toascii	src/ctype/toascii.c	/^int toascii(int c)$/;"	f
 tolower	src/ctype/tolower.c	/^int tolower(int c)$/;"	f
+tone	src/term/tone.c	3;"	d	file:
+touchline	src/curses/touchline.c	/^int touchline(WINDOW * win, int start, int count)$/;"	f
+touchwin	src/curses/touchwin.c	/^int touchwin(WINDOW * win)$/;"	f
 toupper	src/ctype/toupper.c	/^int toupper(int c)$/;"	f
 towctrans	src/wctype/towctrans.c	/^wint_t towctrans(wint_t wc, wctrans_t desc)$/;"	f
 towlower	src/wctype/towlower.c	/^wint_t towlower(wint_t wc)$/;"	f
 towupper	src/wctype/towupper.c	/^wint_t towupper(wint_t wc)$/;"	f
+tputs	src/curses/tputs.c	/^int tputs(const char * str, int affcnt, int (*putfunc)(int))$/;"	f
+tputs	src/term/tputs.c	/^int tputs(const char * str, int affcnt, int (*putfunc)(int))$/;"	f
+transparent_underline	src/term/transparent_underline.c	3;"	d	file:
 true	src/stdbool/true.c	2;"	d	file:
 trunc	src/math/trunc.c	/^TYPE TGFN(trunc)(TYPE x)$/;"	f
 truncate	src/unistd/truncate.c	/^int truncate(const char *path, off_t length)$/;"	f
 tsearch	src/search/tsearch.c	/^void *tsearch(const void * key, void ** rootp, int (*compar) (const void *, const void *))$/;"	f
 ttyname	src/unistd/ttyname.c	/^char *ttyname(int fildes)$/;"	f
 ttyslot	src/stdlib/ttyslot.c	/^int ttyslot(void)$/;"	f
+tv_nsec	src/time/struct_timespec.c	/^	long tv_nsec;	\/* Nanoseonds *\/$/;"	m	struct:timespec	file:
 tv_sec	src/sys/time/struct_timeval.c	/^	time_t tv_sec;$/;"	m	struct:timeval	file:
+tv_sec	src/time/struct_timespec.c	/^	time_t tv_sec;	\/* Seconds *\/$/;"	m	struct:timespec	file:
 tv_usec	src/sys/time/struct_timeval.c	/^	suseconds_t tv_usec;$/;"	m	struct:timeval	file:
 twalk	src/search/twalk.c	/^void twalk(const void * root, void (*action) (const void *, VISIT, int))$/;"	f
+typeahead	src/curses/typeahead.c	/^int typeahead(int fildes)$/;"	f
 tzname	src/time/tzname.c	/^char * tzname[2];$/;"	v
 tzset	src/time/tzset.c	/^void tzset(void)$/;"	f
 ualarm	src/unistd/ualarm.c	/^useconds_t ualarm(useconds_t useconds, useconds_t interval)$/;"	f
@@ -2400,18 +3356,36 @@ uint_least16_t	src/stdint/uint_least16_t.c	/^typedef unsigned short int         
 uint_least32_t	src/stdint/uint_least32_t.c	/^typedef unsigned long int                                        uint_least32_t;$/;"	t	file:
 uint_least64_t	src/stdint/uint_least64_t.c	/^typedef unsigned long long int                                   uint_least64_t;$/;"	t	file:
 uint_least8_t	src/stdint/uint_least8_t.c	/^typedef unsigned char                                             uint_least8_t;$/;"	t	file:
+uintmax_t	src/inttypes/uintmax_t.c	/^typedef unsigned long long int uintmax_t;$/;"	t	file:
 uintmax_t	src/stdint/uintmax_t.c	/^typedef unsigned long long int                                        uintmax_t;$/;"	t	file:
 uintmax_t	src/stdlib/strtoul.c	/^typedef unsigned long uintmax_t;$/;"	t	file:
 uintptr_t	src/stdint/uintptr_t.c	/^typedef unsigned long long int                                        uintptr_t;$/;"	t	file:
 ulimit	src/ulimit/ulimit.c	/^long ulimit(int cmd, ...)$/;"	f
 umask	src/sys/stat/umask.c	/^mode_t umask(mode_t cmask)$/;"	f
 uname	src/sys/utsname/uname.c	/^int uname(struct utsname *name)$/;"	f
+unctrl	src/unctrl/unctrl.c	/^char * unctrl(chtype c)$/;"	f
+underline_char	src/term/underline_char.c	3;"	d	file:
+unget_wch	src/curses/unget_wch.c	/^int unget_wch(const wchar_t wch)$/;"	f
 ungetc	src/stdio/ungetc.c	/^int ungetc(int c, FILE *stream)$/;"	f
+ungetch	src/curses/ungetch.c	/^int ungetch(int ch)$/;"	f
 ungetwc	src/wchar/ungetwc.c	/^wint_t ungetwc(wint_t c, FILE * stream)$/;"	f
 unlink	src/stdio/remove.c	12;"	d	file:
 unlink	src/unistd/unlink.c	/^int unlink(const char *path)$/;"	f
 unlockpt	src/stdlib/unlockpt.c	/^int unlockpt(int fildes)$/;"	f
+untouchwin	src/curses/untouchwin.c	/^int untouchwin(WINDOW * win)$/;"	f
+up_half_line	src/term/up_half_line.c	3;"	d	file:
+use_env	src/curses/use_env.c	/^void use_env(bool boolval)$/;"	f
 useconds_t	src/sys/types/useconds_t.c	/^typedef unsigned int                                                 useconds_t;$/;"	t	file:
+user0	src/term/user0.c	3;"	d	file:
+user1	src/term/user1.c	3;"	d	file:
+user2	src/term/user2.c	3;"	d	file:
+user3	src/term/user3.c	3;"	d	file:
+user4	src/term/user4.c	3;"	d	file:
+user5	src/term/user5.c	3;"	d	file:
+user6	src/term/user6.c	3;"	d	file:
+user7	src/term/user7.c	3;"	d	file:
+user8	src/term/user8.c	3;"	d	file:
+user9	src/term/user9.c	3;"	d	file:
 usleep	src/unistd/usleep.c	/^int usleep(useconds_t useconds)$/;"	f
 ut_id	src/utmpx/struct_utmpx.c	/^	char ut_id[];$/;"	m	struct:utmpx	file:
 ut_line	src/utmpx/struct_utmpx.c	/^	char ut_line[];$/;"	m	struct:utmpx	file:
@@ -2436,6 +3410,11 @@ vfprintf	src/stdio/vfprintf.c	/^int vfprintf(FILE * restrict stream, const char 
 vfscanf	src/stdio/vfscanf.c	/^int vfscanf(FILE * restrict stream, const char * restrict format, va_list arg)$/;"	f
 vfwprintf	src/wchar/vfwprintf.c	/^int vfwprintf(FILE * restrict stream, const wchar_t * restrict format, va_list arg)$/;"	f
 vfwscanf	src/wchar/vfwscanf.c	/^int vfwscanf(FILE * restrict stream, const wchar_t * restrict format, va_list arg)$/;"	f
+vid_puts	src/curses/vid_puts.c	/^int vid_puts(attr_t attr, short color_pair_number, void * opt, int (*putfunc)(int))$/;"	f
+vid_ttr	src/curses/vid_attr.c	/^int vid_ttr(attr_t attr, short color_pair_number, void * opt)$/;"	f
+vidattr	src/curses/vidattr.c	/^int vidattr(chtype attr)$/;"	f
+vidputs	src/curses/vidputs.c	/^int vidputs(chtype attr, int (*putfunc)(int))$/;"	f
+virtual_terminal	src/term/virtual_terminal.c	3;"	d	file:
 vprintf	src/stdio/vprintf.c	/^int vprintf(const char * restrict format, va_list arg)$/;"	f
 vscanf	src/stdio/vscanf.c	/^int vscanf(const char * restrict format, va_list arg)$/;"	f
 vsnprintf	src/stdio/vsnprintf.c	/^int vsnprintf(char * restrict s, size_t n, va_list ap)$/;"	f
@@ -2443,12 +3422,43 @@ vsprintf	src/stdio/vsprintf.c	/^int vsprintf(char *s, const char *format, va_lis
 vsscanf	src/stdio/vsscanf.c	/^int vsscanf(const char * restrict s, const char * restrict format, va_list arg)$/;"	f
 vswprintf	src/wchar/vswprintf.c	/^int vswprintf(wchar_t * restrict s, size_t n, const wchar_t * restrict format, va_list arg)$/;"	f
 vswscanf	src/wchar/vswscanf.c	/^int vswscanf(const wchar_t * restrict s, const wchar_t * restrict format, va_list arg)$/;"	f
+vw_printw	src/curses/vw_printw.c	/^int vw_printw(WINDOW * win, const char * fmt, va_list varglist)$/;"	f
+vw_scanw	src/curses/vw_scanw.c	/^int vw_scanw(WINDOW * win, const char * fmt, va_list varglist)$/;"	f
 vwprintf	src/wchar/vwprintf.c	/^int vwprintf(const wchar_t * restrict format, va_list arg)$/;"	f
 vwscanf	src/wchar/vwscanf.c	/^int vwscanf(const wchar_t * restrict format, va_list arg)$/;"	f
+wadd_wch	src/curses/add_wch.c	/^int wadd_wch(WINDOW * win, const cchar_t * wch)$/;"	f
+wadd_wchnstr	src/curses/add_wchnstr.c	/^int wadd_wchnstr(WINDOW * win, const cchar_t * wchstr, int n)$/;"	f
+wadd_wchstr	src/curses/add_wchstr.c	/^int wadd_wchstr(WINDOW * win, const cchar_t * wchstr)$/;"	f
+waddch	src/curses/addch.c	/^int waddch(WINDOW * win, const chtype ch)$/;"	f
+waddchnstr	src/curses/addchnstr.c	/^int waddchnstr(WINDOW * win, const chtype * chstr, int n)$/;"	f
+waddchstr	src/curses/addchstr.c	/^int waddchstr(WINDOW * win, const chtype * chstr)$/;"	f
+waddnstr	src/curses/addnstr.c	/^int waddnstr(WINDOW * win, const char * str, int n)$/;"	f
+waddnwstr	src/curses/addnwstr.c	/^int waddnwstr(WINDOW * win, const wchar_t * wstr, int n)$/;"	f
+waddstr	src/curses/addstr.c	/^int waddstr(WINDOW *win, const char * str)$/;"	f
+waddwstr	src/curses/addwstr.c	/^int waddwstr(WINDOW * win, const wchar_t * wstr)$/;"	f
 wait	src/sys/wait/wait.c	/^pid_t wait(int *stat_loc)$/;"	f
 wait3	src/sys/wait/wait3.c	/^pid_t wait3(int *state_loc, int options, struct rusage *resource_usage)$/;"	f
+wait_tone	src/term/wait_tone.c	3;"	d	file:
 waitid	src/sys/wait/waitid.c	/^int waitid(idtype_t idtype, id_t id, siginfo_t *infop, int options)$/;"	f
 waitpid	src/sys/wait/waitpid.c	/^pid_t waitpid(pid_t pid, int *stat_loc, int options)$/;"	f
+wattr_get	src/curses/attr_get.c	/^int wattr_get(WINDOW * win, attr_t * attrs, short * color_pair_number, void * opts)$/;"	f
+wattr_off	src/curses/attr_off.c	/^int wattr_off(WINDOW * win, attr_t attrs, void * opts)$/;"	f
+wattr_on	src/curses/attr_on.c	/^int wattr_on(WINDOW * win, attr_t attrs, void * opts)$/;"	f
+wattr_set	src/curses/attr_set.c	/^int wattr_set(WINDOW * win, attr_t attrs, short color_pair_number, void * opts)$/;"	f
+wattroff	src/curses/attroff.c	/^int wattroff(WINDOW * win, int attrs)$/;"	f
+wattron	src/curses/attron.c	/^int wattron(WINDOW * win, int attrs)$/;"	f
+wattrset	src/curses/attrset.c	/^int wattrset(WINDOW * win, int attrs)$/;"	f
+wbkgd	src/curses/bkgd.c	/^int wbkgd(WINDOW * win, chtype ch)$/;"	f
+wbkgdset	src/curses/bkgdset.c	/^void wbkgdset(WINDOW * win, chtype ch)$/;"	f
+wbkgrnd	src/curses/bkgrnd.c	/^int wbkgrnd(WINDOW * win, const cchar_t * wch)$/;"	f
+wbkgrndset	src/curses/bkgrndset.c	/^void wbkgrndset(WINDOW * win, const cchar_t * wch)$/;"	f
+wborder	src/curses/border.c	/^int wborder(WINDOW * win, chtype ls, chtype rs, chtype ts, chtype bs, chtype tl, chtype tr, chtype bl, chtype br)$/;"	f
+wborder_set	src/curses/border_set.c	/^int wborder_set(WINDOW * win, const cchar_t * ls, const cchar_t * rs, const cchar_t * ts, const cchar_t * bs, const cchar_t * tl, const cchar_t * tr, const cchar_t * bl, const cchar_t * br)$/;"	f
+wchgat	src/curses/chgat.c	/^int wchgat(WINDOW * win, int n, attr_t attr, short color, const void * opts)$/;"	f
+wclear	src/curses/clear.c	/^int wclear(WINDOW * win)$/;"	f
+wclrtobot	src/curses/clrtobot.c	/^int wclrtobot(WINDOW * win)$/;"	f
+wclrtoeol	src/curses/clrtoeol.c	/^int wclrtoeol(WINDOW * win)$/;"	f
+wcolor_set	src/curses/color_set.c	/^int wcolor_set(WINDOW * win, short color_pair_number, void * opts)$/;"	f
 wcrtomb	src/wchar/wcrtomb.c	/^size_t wcrtomb(char * restrict s, wchar_t wc, mbstate_t * restrict ps)$/;"	f
 wcscat	src/wchar/wcscat.c	/^wchar_t * wcscat(wchar_t * restrict s1, const wchar_t * restrict s2)$/;"	f
 wcschr	src/wchar/wcschr.c	/^wchar_t * wcschr(const wchar_t * s, wchar_t c)$/;"	f
@@ -2486,27 +3496,80 @@ wctrans	src/wctype/wctrans.c	/^wctrans_t wctrans(const char * property)$/;"	f
 wctrans_t	src/wctype/wctrans_t.c	/^typedef int                                                           wctrans_t;$/;"	t	file:
 wctype	src/wctype/wctype.c	/^wctype_t wctype(const char * property)$/;"	f
 wctype_t	src/wctype/wctype_t.c	/^typedef int                                                            wctype_t;$/;"	t	file:
+wcursyncup	src/curses/wcursyncup.c	/^void wcursyncup(WINDOW * win)$/;"	f
 wcwidth	src/wchar/wcwidth.c	/^int wcwidth(wchar_t wc)$/;"	f
-we_offs	src/wordexp/wordexp_t.c	/^	size_t	we_offs;$/;"	m	struct:__anon23	file:
-we_wordc	src/wordexp/wordexp_t.c	/^	size_t	we_wordc;$/;"	m	struct:__anon23	file:
-we_wordv	src/wordexp/wordexp_t.c	/^	char **	we_wordv;$/;"	m	struct:__anon23	file:
+wdelch	src/curses/delch.c	/^int wdelch(WINDOW * win)$/;"	f
+wdeleteln	src/curses/deleteln.c	/^int wdeleteln(WINDOW * win)$/;"	f
+we_offs	src/wordexp/wordexp_t.c	/^	size_t	we_offs;$/;"	m	struct:__anon20	file:
+we_wordc	src/wordexp/wordexp_t.c	/^	size_t	we_wordc;$/;"	m	struct:__anon20	file:
+we_wordv	src/wordexp/wordexp_t.c	/^	char **	we_wordv;$/;"	m	struct:__anon20	file:
+wecho_wchar	src/curses/echo_wchar.c	/^int wecho_wchar(WINDOW * win, const cchar_t * wch)$/;"	f
+wechochar	src/curses/echochar.c	/^int wechochar(WINDOW * win, const chtype wch)$/;"	f
+werase	src/curses/erase.c	/^int werase(WINDOW * win)$/;"	f
+wget_wch	src/curses/get_wch.c	/^int wget_wch(WINDOW * win, wint_t * ch)$/;"	f
+wget_wstr	src/curses/get_wstr.c	/^int wget_wstr(WINDOW * win, wint_t * wstr)$/;"	f
+wgetbkgrnd	src/curses/getbkgrnd.c	/^chtype wgetbkgrnd(WINDOW * win, cchar_t * wch)$/;"	f
+wgetch	src/curses/getch.c	/^int wgetch(WINDOW * win)$/;"	f
+wgetn_wstr	src/curses/getn_wstr.c	/^int wgetn_wstr(WINDOW * win, wint_t * wstr, int n)$/;"	f
+wgetnstr	src/curses/getnstr.c	/^int wgetnstr(WINDOW * win, char * str, int n)$/;"	f
+wgetstr	src/curses/getstr.c	/^int wgetstr(WINDOW * win, char * str)$/;"	f
+whline	src/curses/hline.c	/^int whline(WINDOW * win, chtype ch, int n)$/;"	f
+whline_set	src/curses/hline_set.c	/^int whline_set(WINDOW * win, const cchar_t * wch, int n)$/;"	f
+wide_char_size	src/term/wide_char_size.c	3;"	d	file:
+width_status_line	src/term/width_status_line.c	3;"	d	file:
+win_wch	src/curses/in_wch.c	/^int win_wch(WINDOW * win, cchar_t * wcval)$/;"	f
+win_wchnstr	src/curses/in_wchnstr.c	/^int win_wchnstr(WINDOW * win, cchar_t * wcstr, int n)$/;"	f
+win_wchstr	src/curses/in_wchstr.c	/^int win_wchstr(WINDOW * win, cchar_t * wcstr)$/;"	f
+winch	src/curses/inch.c	/^chtype winch(WINDOW * win)$/;"	f
+winchnstr	src/curses/inchnstr.c	/^int winchnstr(WINDOW * win, chtype * chstr, int n)$/;"	f
+winchstr	src/curses/inchstr.c	/^int winchstr(WINDOW * win, chtype * chstr)$/;"	f
+winnstr	src/curses/innstr.c	/^int winnstr(WINDOW * win, char * str, int n)$/;"	f
+winnwstr	src/curses/innwstr.c	/^int winnwstr(WINDOW * win, wchar_t * wstr, int n)$/;"	f
+winsch	src/curses/insch.c	/^int winsch(WINDOW * win, chtype ch)$/;"	f
+winsdelln	src/curses/insdelln.c	/^int winsdelln(WINDOW * win, int n)$/;"	f
+winsertln	src/curses/insertln.c	/^int winsertln(WINDOW * win)$/;"	f
+winsnstr	src/curses/insnstr.c	/^int winsnstr(WINDOW * win, const char * str, int n)$/;"	f
+winsstr	src/curses/insstr.c	/^int winsstr(WINDOW * win, const char * str)$/;"	f
+winstr	src/curses/instr.c	/^int winstr(WINDOW * win, char * str)$/;"	f
 wint_t	src/wctype/wint_t.c	/^typedef int                                                              wint_t;$/;"	t	file:
+winwstr	src/curses/inwstr.c	/^int winwstr(WINDOW * win, wchar_t * wstr)$/;"	f
 wmemchr	src/wchar/wmemchr.c	/^wchar_t * wmemchr(const wchar_t * s, wchar_t c, size_t n)$/;"	f
 wmemcmp	src/wchar/wmemcmp.c	/^int wmemcmp(const wchar_t * s1, const wchar_t * s2, size_t n)$/;"	f
 wmemcpy	src/wchar/wmemcpy.c	/^wchar_t * wmemcpy(wchar_t * restrict s1, const wchar_t * restrict s2, size_t n)$/;"	f
 wmemmove	src/wchar/wmemmove.c	/^wchar_t * wmemmove(wchar_t * s1, const wchar_t * s2, size_t n)$/;"	f
 wmemset	src/wchar/wmemset.c	/^wchar_t * wmemset(wchar_t * s, wchar_t c, size_t n)$/;"	f
+wmove	src/curses/move.c	/^int wmove(WINDOW * win, int y, int x)$/;"	f
+wnoutrefresh	src/curses/wnoutrefresh.c	/^int wnoutrefresh(WINDOW * win)$/;"	f
 wordexp	src/wordexp/wordexp.c	/^int wordexp(const char *restrict words, wordexp_t *restrict pwordexp, int flags)$/;"	f
-wordexp_t	src/wordexp/wordexp_t.c	/^} wordexp_t;$/;"	t	typeref:struct:__anon23	file:
+wordexp_t	src/wordexp/wordexp_t.c	/^} wordexp_t;$/;"	t	typeref:struct:__anon20	file:
 wordfree	src/wordexp/wordfree.c	/^void wordfree(wordexp_t *pwordexp)$/;"	f
 wprintf	src/wchar/wprintf.c	/^int wprintf(const wchar_t * restrict format, ...)$/;"	f
+wprintw	src/curses/wprintw.c	/^int wprintw(WINDOW * win, const char * fmt, ...)$/;"	f
+wredrawln	src/curses/wredrawln.c	/^int wredrawln(WINDOW * win, int beg_line, int num_lines)$/;"	f
+wrefresh	src/curses/refresh.c	/^int wrefresh(WINDOW * win)$/;"	f
 write	src/stdio/fputc.c	7;"	d	file:
 write	src/unistd/write.c	/^ssize_t write(int fildes, const void *buf, size_t nbyte)$/;"	f
 writev	src/sys/uio/writev.c	/^ssize_t writev(int fildes, const struct iovec * iov, int iovcnt)$/;"	f
 wscanf	src/wchar/wscanf.c	/^int wscanf(const wchar_t * restrict format, ...)$/;"	f
+wscanw	src/curses/wscanw.c	/^int wscanw(WINDOW * win, const char * fmt, ...)$/;"	f
+wscrl	src/curses/scrl.c	/^int wscrl(WINDOW * win, int n)$/;"	f
+wsetscrreg	src/curses/setscrreg.c	/^int wsetscrreg(WINDOW * win, int top, int bot)$/;"	f
+wstandend	src/curses/standend.c	/^int wstandend(WINDOW * win)$/;"	f
+wstandout	src/curses/standout.c	/^int wstandout(WINDOW * win)$/;"	f
+wsyncdown	src/curses/wsyncdown.c	/^void wsyncdown(WINDOW * win)$/;"	f
+wsyncup	src/curses/wsyncup.c	/^void wsyncup(WINDOW * win)$/;"	f
+wtimeout	src/curses/timeout.c	/^void wtimeout(int delay)$/;"	f
+wtouchln	src/curses/wtouchln.c	/^int wtouchln(WINDOW * win, int y, int x, int changed)$/;"	f
+wunctrl	src/curses/wunctrl.c	/^wchar_t * wunctrl(cchar_t * wc)$/;"	f
+wvline	src/curses/vline.c	/^int wvline(WINDOW * win, chtype ch, int n)$/;"	f
+wvline_set	src/curses/vline_set.c	/^int wvline_set(WINDOW * win, const cchar_t * wch, int n)$/;"	f
+xoff_character	src/term/xoff_character.c	3;"	d	file:
+xon_character	src/term/xon_character.c	3;"	d	file:
+xon_xoff	src/term/xon_xoff.c	3;"	d	file:
 xor	src/iso646/xor.c	2;"	d	file:
 xor_eq	src/iso646/xor_eq.c	2;"	d	file:
 y0	src/math/y0.c	/^double y0(double x)$/;"	f
 y1	src/math/y1.c	/^double y1(double x)$/;"	f
-yesexpr	src/nonstd/struct_locale_t.c	/^		char *yesexpr;$/;"	m	struct:__locale_t::__anon8	file:
+yesexpr	src/nonstd/struct_locale_t.c	/^		char *yesexpr;$/;"	m	struct:__locale_t::__anon1	file:
 yn	src/math/yn.c	/^double yn(int n, double x)$/;"	f
+zero_motion	src/term/zero_motion.c	3;"	d	file:
