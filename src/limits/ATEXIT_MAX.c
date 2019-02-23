@@ -1,5 +1,5 @@
 #include <limits.h>
-/* #undefine ATEXIT_MAX */
+/* #undef ATEXIT_MAX */
 /* MIN: 32 */
 /* MAY-BE-UNDEFINED */
 /** maximum number of functions fn(atexit) can register **/

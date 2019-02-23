@@ -1,5 +1,5 @@
 #include <limits.h>
-/* #undefine TIMER_MAX */
+/* #undef TIMER_MAX */
 /* MIN: _POSIX_TIMER_MAX */
 /* MAY-BE-UNEFINED */
 /*
