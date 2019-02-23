@@ -1,16 +1,9 @@
 #ifndef __NONSTD_CURSES_H__
 #define __NONSTD_CURSES_H__
 
-typedef char chtype;
-typedef int cchar_t;
-typedef int wchar_t;
-typedef int attr_t;
-typedef struct { int n; } WINDOW;
-static WINDOW *stdscr;
-extern int wmove(WINDOW *, int, int);
-
-#define OK 0
-#define ERR -1
+struct __WINDOW {
+	int y, x;
+};
 
 #define CURSES_FUNCTION0(_rt, _fn) \
 _rt mvw##_fn(WINDOW *_w, int _y, int _x) { \
