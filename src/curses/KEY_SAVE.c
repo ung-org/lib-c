@@ -1,4 +1,5 @@
 #include <curses.h>
 #define KEY_SAVE /* TODO */
-/*\/XOPEN(400)
+/*
+XOPEN(400)
 */

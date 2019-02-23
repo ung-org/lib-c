@@ -1,4 +1,5 @@
 #include <curses.h>
 #define KEY_REDO /* TODO */
-/*\/XOPEN(400)
+/*
+XOPEN(400)
 */

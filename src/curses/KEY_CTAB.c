@@ -1,4 +1,5 @@
 #include <curses.h>
 #define KEY_CTAB /* TODO */
-/*\/XOPEN(4)
+/*
+XOPEN(4)
 */

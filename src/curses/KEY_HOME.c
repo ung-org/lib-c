@@ -1,4 +1,5 @@
 #include <curses.h>
 #define KEY_HOME /* TODO */
-/*\/XOPEN(4)
+/*
+XOPEN(4)
 */
