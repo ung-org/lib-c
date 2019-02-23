@@ -1,7 +1,7 @@
 #include <curses.h>
 #include "_curses.h"
 
-int wattr_get(WINDW * win, attr_t * attrs, short * color_pair_number, void * opts)
+int wattr_get(WINDOW * win, attr_t * attrs, short * color_pair_number, void * opts)
 {
 	return ERR;
 }
