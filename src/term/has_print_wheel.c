@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define has_print_wheel tigetflag("daisy")
 

@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define quick_dial tigetstr("qdial")
 

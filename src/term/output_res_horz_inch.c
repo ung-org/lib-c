@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define output_res_horz_inch tigetnum("orhi")
 

@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define change_res_vert tigetstr("cvr")
 

@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define save_cursor tigetstr("sc")
 

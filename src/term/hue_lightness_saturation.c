@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define hue_lightness_saturation tigetflag("hls")
 

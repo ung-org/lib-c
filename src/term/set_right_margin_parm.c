@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define set_right_margin_parm tigetstr("smgrp")
 

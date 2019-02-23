@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define non_rev_rmcup tigetflag("nrrmc")
 

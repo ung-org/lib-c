@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define memory_below tigetflag("db")
 

@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define display_clock tigetstr("dclk")
 

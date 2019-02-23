@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define meta_on tigetstr("smm")
 

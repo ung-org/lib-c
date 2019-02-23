@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define needs_xon_xoff tigetflag("nxon")
 

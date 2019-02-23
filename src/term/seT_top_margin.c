@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define seT_top_margin tigetstr("smgt")
 

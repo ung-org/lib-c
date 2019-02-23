@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define max_colors tigetnum("colors")
 

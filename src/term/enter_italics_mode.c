@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define enter_italics_mode tigetstr("sitm")
 

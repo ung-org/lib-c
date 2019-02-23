@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define number_of_pins tigetnum("npins")
 

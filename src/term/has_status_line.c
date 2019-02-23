@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define has_status_line tigetflag("hs")
 

@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define dot_vert_spacing tigetnum("spinv")
 

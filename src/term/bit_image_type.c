@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define bit_image_type tigetnum("bitype")
 

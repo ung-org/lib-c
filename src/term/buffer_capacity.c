@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define buffer_capacity tigetnum("bufsz")
 

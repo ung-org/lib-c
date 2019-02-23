@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define enter_alt_charset_mode tigetstr("smacs")
 

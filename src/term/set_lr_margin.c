@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define set_lr_margin tigetstr("smglr")
 

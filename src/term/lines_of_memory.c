@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define lines_of_memory tigetnum("lm")
 

@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define display_pc_char tigetstr("dispc")
 

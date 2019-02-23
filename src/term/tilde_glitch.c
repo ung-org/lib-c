@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define tilde_glitch tigetflag("hz")
 

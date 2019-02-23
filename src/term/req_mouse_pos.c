@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define req_mouse_pos tigetstr("reqmp")
 

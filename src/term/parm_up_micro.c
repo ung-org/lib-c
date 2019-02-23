@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define parm_up_micro tigetstr("mcuu")
 

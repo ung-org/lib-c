@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define non_dest_scroll_region tigetflag("ndscr")
 

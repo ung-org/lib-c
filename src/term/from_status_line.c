@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define from_status_line tigetstr("fsl")
 

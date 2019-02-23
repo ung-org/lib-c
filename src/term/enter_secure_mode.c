@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define enter_secure_mode tigetstr("invis")
 

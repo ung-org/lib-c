@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define set_top_margin_parm tigetstr("smgtp")
 

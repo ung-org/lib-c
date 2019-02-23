@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define wide_char_size tigetnum("widcs")
 

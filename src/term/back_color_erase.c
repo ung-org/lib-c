@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define back_color_erase tigetflag("bce")
 

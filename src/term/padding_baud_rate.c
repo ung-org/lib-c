@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define padding_baud_rate tigetnum("pb")
 

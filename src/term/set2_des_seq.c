@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define set2_des_seq tigetstr("s2ds")
 

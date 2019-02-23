@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define set3_des_seq tigetstr("s3ds")
 

@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define code_set_init tigetstr("csin")
 

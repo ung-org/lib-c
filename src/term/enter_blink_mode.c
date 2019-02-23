@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define enter_blink_mode tigetstr("blink")
 

@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define change_scroll_region tigetstr("csr")
 

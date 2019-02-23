@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define col_addr_glitch tigetflag("xhpa")
 

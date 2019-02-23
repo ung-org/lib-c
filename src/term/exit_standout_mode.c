@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define exit_standout_mode tigetstr("rmso")
 

@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define dis_status_line tigetstr("dsl")
 

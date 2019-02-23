@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define enter_low_hl_mode tigetstr("elohlm")
 

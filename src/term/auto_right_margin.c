@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define auto_right_margin tigetflag("am")
 

@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define print_rate tigetnum("cps")
 

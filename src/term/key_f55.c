@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define key_f55 tigetstr("kf55")
 

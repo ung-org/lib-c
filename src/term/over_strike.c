@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define over_strike tigetflag("os")
 

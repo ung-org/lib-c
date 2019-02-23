@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define auto_left_margin tigetflag("bw")
 

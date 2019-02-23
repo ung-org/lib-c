@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define insert_null_glitch tigetflag("in")
 

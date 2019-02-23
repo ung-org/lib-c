@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define status_line_esc_ok tigetflag("eslok")
 

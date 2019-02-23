@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define no_color_video tigetnum("ncv")
 

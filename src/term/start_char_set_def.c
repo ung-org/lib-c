@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define start_char_set_def tigetstr("scsd")
 

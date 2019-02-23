@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define lab_f7 tigetstr("lf7")
 

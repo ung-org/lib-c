@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define dot_horz_spacing tigetnum("spinh")
 

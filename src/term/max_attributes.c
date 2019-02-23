@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define max_attributes tigetnum("ma")
 

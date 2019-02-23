@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define stop_bit_image tigetstr("rbim")
 

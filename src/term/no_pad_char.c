@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define no_pad_char tigetflag("npc")
 

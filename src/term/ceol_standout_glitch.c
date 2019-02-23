@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define ceol_standout_glitch tigetflag("xhp")
 

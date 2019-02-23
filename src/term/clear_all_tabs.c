@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define clear_all_tabs tigetstr("tbc")
 

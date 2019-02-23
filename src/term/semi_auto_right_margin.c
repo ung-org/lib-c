@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define semi_auto_right_margin tigetflag("sam")
 

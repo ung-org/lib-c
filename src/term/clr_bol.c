@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define clr_bol tigetstr("el1")
 

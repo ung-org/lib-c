@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define exit_xon_mode tigetstr("rmxon")
 

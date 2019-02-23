@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define prtr_non tigetstr("mc5p")
 

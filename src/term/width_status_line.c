@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define width_status_line tigetnum("wsl")
 

@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define reset_3string tigetstr("rs3")
 

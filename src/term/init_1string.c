@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define init_1string tigetstr("is1")
 

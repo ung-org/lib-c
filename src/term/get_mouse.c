@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define get_mouse tigetstr("getm")
 

@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define select_char_set tigetstr("scs")
 

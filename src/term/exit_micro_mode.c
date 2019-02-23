@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define exit_micro_mode tigetstr("rmicm")
 

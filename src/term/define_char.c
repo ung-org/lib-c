@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define define_char tigetstr("defc")
 

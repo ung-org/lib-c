@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define down_half_line tigetstr("hd")
 

@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define define_bit_image_region tigetstr("defbi")
 

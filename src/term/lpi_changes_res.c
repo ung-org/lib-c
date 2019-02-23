@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define lpi_changes_res tigetflag("lpix")
 

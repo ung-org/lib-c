@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define these_cause_cr tigetstr("docr")
 

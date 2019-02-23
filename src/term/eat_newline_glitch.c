@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define eat_newline_glitch tigetflag("xenl")
 

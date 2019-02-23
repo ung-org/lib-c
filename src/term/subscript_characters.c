@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define subscript_characters tigetstr("subcs")
 

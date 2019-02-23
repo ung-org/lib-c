@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define init_prog tigetstr("iprog")
 

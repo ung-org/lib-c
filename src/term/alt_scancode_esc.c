@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define alt_scancode_esc tigetstr("scesa")
 

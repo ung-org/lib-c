@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define user7 tigetstr("u7")
 

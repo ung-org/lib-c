@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define up_half_line tigetstr("hu")
 

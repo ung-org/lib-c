@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define key_f40 tigetstr("kf40")
 

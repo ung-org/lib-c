@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define cpi_change_res tigetflag("cpix")
 

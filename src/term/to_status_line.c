@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define to_status_line tigetstr("tsl")
 

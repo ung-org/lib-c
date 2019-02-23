@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define req_for_input tigetstr("rfi")
 

@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define virtual_terminal tigetnum("vt")
 

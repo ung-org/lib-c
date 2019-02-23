@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define move_standout_mode tigetflag("msgr")
 

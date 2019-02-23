@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define flash_hook tigetstr("hook")
 

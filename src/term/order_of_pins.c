@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define order_of_pins tigetstr("porder")
 

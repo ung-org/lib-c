@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define cr_cancles_micro_mode tigetflag("crxm")
 

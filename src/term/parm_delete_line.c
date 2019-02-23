@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define parm_delete_line tigetstr("dl")
 

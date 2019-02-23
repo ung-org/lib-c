@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define enter_top_hl_mode tigetstr("ethlm")
 

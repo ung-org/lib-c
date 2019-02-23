@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define output_res_vert_inch tigetnum("orvi")
 

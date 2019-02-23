@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define change_line_pitch tigetstr("lpi")
 

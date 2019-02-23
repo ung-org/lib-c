@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define dest_tabs_magic_smso tigetflag("xt")
 

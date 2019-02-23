@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define micro_up tigetstr("mcuul")
 

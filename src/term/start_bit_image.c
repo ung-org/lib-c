@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <term.h>
 
 #define start_bit_image tigetstr("sbim")
 
