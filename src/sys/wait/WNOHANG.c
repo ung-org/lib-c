@@ -1,6 +1,5 @@
 #include <sys/wait.h>
-
-#define WNOHANG                                                                5
+#define WNOHANG                                                           (1<<0)
 /*
 POSIX(1)
 */

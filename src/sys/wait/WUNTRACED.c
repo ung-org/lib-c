@@ -1,6 +1,5 @@
 #include <sys/wait.h>
-
-#define WUNTRACED                                                              8
+#define WUNTRACED                                                         (1<<1)
 /*
 POSIX(1)
 */
