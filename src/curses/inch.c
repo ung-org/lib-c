@@ -6,7 +6,7 @@ chtype winch(WINDOW * win)
 	return ERR;
 }
 
-CURSES_FUNCTION0(chtype, in_wch)
+CURSES_FUNCTION0(chtype, inch)
 
 /*
 XOPEN(4)
