@@ -6,7 +6,7 @@ int wgetnstr(WINDOW * win, char * str, int n)
 	return 0;
 }
 
-CURSES_FUNCTION2(int, getch, char *, int)
+CURSES_FUNCTION2(int, getnstr, char *, int)
 
 /*
 XOPEN(4)
