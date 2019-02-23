@@ -2,7 +2,7 @@
 
 WINDOW * newpad(int nlines, int ncols)
 {
-	return ERR;
+	return NULL;
 }
 
 /*
