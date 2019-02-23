@@ -66,7 +66,9 @@ get_declaration () {
 		;;
 
 	MACRO)
-		grep -E '^(#(if|def|undef|el|end)|	)' $1
+		if ! (grep -q '#undef' $1 && grep -q 'MAY-BE-UNDEF' $1); then
+			grep -E '^(#(if|def|undef|el|end)|	)' $1
+		fi
 		;;
 
 	TYPE|TYPE_LONG|RECORD|FNTYPE)
