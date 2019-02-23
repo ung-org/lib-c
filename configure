@@ -1,0 +1,114 @@
+#!/bin/sh
+
+CONFIGDIR="$(dirname $0)/config"
+
+show_help() {
+	cat <<-EOF
+	usage: ./configure [-c version] [-p version | -x version]
+
+	Options:
+	  -c version	Specify the version of ISO/IEC 9899 to conform to
+	  -p version	Specify the version of IEEE 1003.1/ISO/IED 9945-1 to
+	                conform to
+	  -x version	Specify the version of the Single Unix Specification
+	                (aka X/Open System Interface) to conform to
+
+	Valid options for -c are:
+	$(cat ${CONFIGDIR}/versions.c)
+
+	Valid options for -p are:
+	$(cat ${CONFIGDIR}/versions.posix)
+
+	Valid options for -x are:
+	$(cat ${CONFIGDIR}/versions.xopen)
+	EOF
+}
+
+validate_version() {
+	versfile="${CONFIGDIR}/versions.$1"
+
+	for ver in $(awk '/^[0-9]/ { print $1 }' "${versfile}"); do
+		if [ "$2" = "${ver}" ]; then
+			echo $2
+			return 0
+		fi
+	done
+
+	echo 0
+}
+
+double_check_version() {
+	if [ "$2" = "0" ]; then
+		printf 'Invalid version "%s". Valid versions are:\n' $3
+		cat "${CONFIGDIR}/versions.$1"
+		exit 1
+	fi
+}
+
+option=
+standard_c=
+posix=
+xopen=
+
+while getopts hc:p:x: option; do
+	case ${option} in
+	c)	standard_c=$(validate_version c ${OPTARG})
+		double_check_version c ${standard_c} ${OPTARG}
+		;;
+
+	p)	posix=$(validate_version posix ${OPTARG})
+		double_check_version posix ${posix} ${OPTARG}
+		;;
+
+	x)	xopen=$(validate_version xopen ${OPTARG})
+		double_check_version xopen ${xopen} ${OPTARG}
+		;;
+
+	h)	show_help
+		exit 0
+		;;
+
+	?)	printf 'Unknown option "%c". Try "-h" for help.\n' $option
+		exit 1
+		;;
+	esac
+done
+
+if [ -z "${standard_c}" ] && [ -z "${posix}" ] && [ -z "${xopen}" ]; then
+	xopen=700
+fi
+
+if [ -n "${posix}" ] && [ -n "${xopen}" ]; then
+	printf 'Specify only one of "-x" or "-p".\n'
+	exit 1
+fi
+
+if [ -n "${xopen}" ]; then
+	if [ $xopen -eq 700 ]; then
+		posix=200809
+	elif [ $xopen -eq 600 ]; then
+		posix=200112
+	elif [ $xopen -eq 500 ]; then
+		posix=199506
+	else
+		posix=2
+	fi
+fi
+
+if [ -z "${standard_c}" ] && [ -n "${posix}" ]; then
+	if [ $posix -ge 200112 ]; then
+		standard_c=199901
+	else
+		standard_c=1
+	fi
+fi
+
+if [ ${posix:-0} -ge 200112 ] && [ $standard_c -lt 199901 ]; then
+	printf 'POSIX.1-2001 and newer require C99 or newer.\n'
+	exit 1
+fi
+
+printf 'ISO C:  %d\n' ${standard_c}
+printf 'POSIX:  %d\n' ${posix}
+printf 'X/OPEN: %d\n' ${xopen}
+
