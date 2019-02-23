@@ -7,7 +7,7 @@
 
 int open(const char *path, int oflag, ...)
 {
-	SCNO(scno, "open", -1);
+	SYSCALL_NUMBER(scno, "open", -1);
 
 	mode_t mode = 0;
 	if (oflag & O_CREAT) {
@@ -17,7 +17,7 @@ int open(const char *path, int oflag, ...)
 		va_end(ap);
 	}
 
-	int r = __libc.syscall(scno, path, oflag, mode);
+	int r = __syscall(scno, path, oflag, mode);
 	if (r < 0) {
 		errno = -r;
 		return -1;

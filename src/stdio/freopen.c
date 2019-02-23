@@ -2,7 +2,8 @@
 #include "errno.h"
 #include "nonstd/io.h"
 
-#ifdef _POSIX_SOURCE
+#if defined _POSIX_SOURCE || defined _POSIX_C_SOURCE || defined _XOPEN_SOURCE
+#include "sys/types.h"
 #include "fcntl.h"
 #else
 #define open(fname, flags, mode) (filename ? -1 : -1)

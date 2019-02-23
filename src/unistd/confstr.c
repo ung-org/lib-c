@@ -1,13 +1,15 @@
+#include "sys/types.h"
 #include <unistd.h>
 #include "errno.h"
 #include "string.h"
+#include "nonstd/assert.h"
 
 size_t confstr(int name, char *buf, size_t len)
 {
 	char *value = NULL;
 
 	if (len > 0) {
-		__ASSERT_NONNULL(buf);
+		ASSERT_NONNULL(buf);
 	}
 
 	switch (name) {

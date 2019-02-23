@@ -2,7 +2,8 @@
 #include "stdlib.h"
 #include "nonstd/io.h"
 
-#ifdef _POSIX_SOURCE
+#if defined _POSIX_SOURCE || defined _POSIX_C_SOURCE || defined _XOPEN_SOURCE
+#include "sys/types.h"
 #include "unistd.h"
 #else
 #define close(fd) -1

@@ -6,13 +6,7 @@
 
 int isatty(int fildes)
 {
-	SCNO(scno, "isatty", 0);
-	int r = __libc.syscall(scno, fildes);
-	if (r < 0) {
-		errno = -r;
-		return 0;
-	}
-	return r;
+	SYSCALL("isatty", int, -1, fildes, 0, 0, 0, 0, 0);
 }
 /*
 POSIX(1)

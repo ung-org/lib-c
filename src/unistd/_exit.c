@@ -5,7 +5,7 @@
 
 void _exit(int status)
 {
-	__libc.syscall(__libc.syscall_lookup("exit"), status);
+	__syscall(((syscall_lookup_t)__libc(SYSCALL_LOOKUP))("exit"), status);
 	for (;;);
 }
 /*

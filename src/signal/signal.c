@@ -1,4 +1,4 @@
-#if defined _POSIX_SOURCE
+#if defined _POSIX_SOURCE || defined _POSIX_C_SOURCE || defined _XOPEN_SOURCE
 #include "sys/types.h"
 #endif
 

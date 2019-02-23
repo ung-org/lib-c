@@ -1,14 +1,17 @@
 #include <stdio.h>
 #include "string.h"
 #include "errno.h"
+
+#include "sys/types.h"
 #include "unistd.h"
-#include "wchar.h"
-#include "__nonstd.h"
+
+#include "nonstd/assert.h"
+#include "nonstd/io.h"
 
 FILE * popen(const char * command, const char * mode)
 {
-	__ASSERT_NONNULL(command);
-	__ASSERT_NONNULL(mode);
+	ASSERT_NONNULL(command);
+	ASSERT_NONNULL(mode);
 	
 	int direction = 0;
 	if (!strcmp(mode, "w")) {
@@ -52,7 +55,7 @@ FILE * popen(const char * command, const char * mode)
 	}
 
 	fwide(p, -1);
-	p->pipe_pid = pid;
+	p->pipe_pid = child;
 	return p;
 }
 

@@ -5,7 +5,7 @@
 
 pid_t setsid(void)
 {
-	SC0(pid_t);
+	SYSCALL("setsid", pid_t, -1, 0, 0, 0, 0, 0, 0);
 }
 /*
 POSIX(1)

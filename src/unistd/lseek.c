@@ -5,7 +5,7 @@
 
 off_t lseek(int fildes, off_t offset, int whence)
 {
-	SC(off_t, fildes, offset, whence);
+	SYSCALL("lseek", off_t, -1, fildes, offset, whence, 0, 0, 0);
 }
 /*
 POSIX(1)

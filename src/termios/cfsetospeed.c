@@ -1,4 +1,5 @@
 #include <termios.h>
+#include "errno.h"
 #include "nonstd/assert.h"
 
 int cfsetospeed(struct termios *termios_p, speed_t speed)

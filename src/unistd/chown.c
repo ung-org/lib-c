@@ -5,7 +5,7 @@
 
 int chown(const char *path, uid_t owner, gid_t group)
 {
-	SC(int, path, owner, group);
+	SYSCALL("chown", int, -1, path, owner, group, 0, 0, 0);
 }
 /*
 POSIX(1)

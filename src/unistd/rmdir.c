@@ -6,7 +6,7 @@
 
 int rmdir(const char *path)
 {
-	SC(int, path);
+	SYSCALL("rmdir", int, -1, path, 0, 0, 0, 0, 0);
 }
 /*
 POSIX(1)

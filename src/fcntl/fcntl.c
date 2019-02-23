@@ -2,12 +2,11 @@
 #include <fcntl.h>
 #include "errno.h"
 #include "stdarg.h"
-#include "nonstd/types.h"
 #include "nonstd/syscall.h"
 
 int fcntl(int fildes, int cmd, ...)
 {
-	SCNO(scno, "fcntl", -1);
+	SYSCALL_NUMBER(scno, "fcntl", -1);
 
 	int r = -ENOSYS;
 	enum { NONE, INT, FLOCK } arg = NONE;
@@ -35,16 +34,16 @@ int fcntl(int fildes, int cmd, ...)
 	}
 
 	if (arg == NONE) {
-		r = __libc.syscall(scno, fildes);
+		r = __syscall(scno, fildes);
 	} else {
 		va_list ap;
 		va_start(ap, cmd);
 		if (arg == INT) {
 			int n = va_arg(ap, int);
-			r = __libc.syscall(scno, fildes, n);
+			r = __syscall(scno, fildes, n);
 		} else if (arg == FLOCK) {
 			struct flock *fl = va_arg(ap, struct flock *);
-			r = __libc.syscall(scno, fildes, fl);
+			r = __syscall(scno, fildes, fl);
 		}
 		va_end(ap);
 	}

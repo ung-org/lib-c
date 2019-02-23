@@ -1,3 +1,4 @@
+#include "sys/types.h"
 #include <glob.h>
 #include "stdlib.h"
 #include "string.h"
@@ -5,14 +6,18 @@
 #include "fnmatch.h"
 #include "errno.h"
 #include "unistd.h"
-#include "__nonstd.h"
+#include "nonstd/assert.h"
 
 int glob(const char * restrict pattern, int flags, int (*errfunc) (const char * epath, int eerrno), glob_t * restrict pglob)
 {
-	__ASSERT_NONNULL(pattern);
-	__ASSERT_NONNULL(pglob);
+	ASSERT_NONNULL(pattern);
+	ASSERT_NONNULL(pglob);
+
+	int slashes = 0;
+	size_t i;
 
 	int fnmatch_flags = FNM_PATHNAME | FNM_PERIOD;
+
 	if (flags & GLOB_NOESCAPE) {
 		fnmatch_flags |= FNM_NOESCAPE;
 	}
@@ -32,9 +37,8 @@ int glob(const char * restrict pattern, int flags, int (*errfunc) (const char * 
 	}
 
 	char *path = strdup(pattern);
-	int slashes = 0;
 
-	for (size_t i = 0; path[i]; i++) {
+	for (i = 0; path[i]; i++) {
 		if (path[i] == '/') {
 			slashes++;
 			path[i] = '\0';

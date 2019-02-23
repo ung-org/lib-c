@@ -1,5 +1,7 @@
 #include <stdio.h>
+#include "sys/types.h"
 #include "sys/wait.h"
+#include "nonstd/io.h"
 
 int pclose(FILE * stream)
 {
@@ -11,7 +13,7 @@ int pclose(FILE * stream)
 
 	fclose(stream);
 
-	waitpid(pid, &status, 0);
+	waitpid(child, &status, 0);
 	return status;
 }
 

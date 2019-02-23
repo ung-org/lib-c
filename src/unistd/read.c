@@ -6,7 +6,7 @@
 
 ssize_t read(int fildes, void *buf, size_t nbyte)
 {
-	SC(ssize_t, fildes, buf, nbyte);
+	SYSCALL("read", ssize_t, -1, fildes, buf, nbyte, 0, 0, 0);
 }
 /*
 POSIX(1)

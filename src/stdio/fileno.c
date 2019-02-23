@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "nonstd/FILE.h"
+#include "nonstd/io.h"
 #include "nonstd/assert.h"
 
 int fileno(FILE * stream)
