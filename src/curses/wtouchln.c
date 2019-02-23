@@ -1,6 +1,6 @@
 #include <curses.h>
 
-int wtouchln(WINDOW * win, int y, int, int changed)
+int wtouchln(WINDOW * win, int y, int x, int changed)
 {
 	return ERR
 }
