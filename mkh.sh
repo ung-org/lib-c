@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -x
+
 TOPDIR=$(dirname $0)
 if [ -z "${INCDIR}" ]; then
 	INCDIR="${TOPDIR}/include"
@@ -40,11 +42,11 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 EOF
 
 rm -rf $HEADER.*
-for i in $(grep -l "#include <$HEADERNAME>" $(cat "${TOPDIR}/.deps/all.c" "${TOPDIR}/.deps/all.ref") | sort -u); do
+for i in $(cat "${TOPDIR}/.deps/${HEADERNAME}.deps" | sort -u); do
 	# TODO: refs
 	type=$(classify_source $i)
 	source=$i
-	if [ $type = "REFERENCE" ]; then
+	if [ $type = "REFERENCE" ] && ! grep -Fq 'REFERENCE(<' $source; then
 		source=src/$(grep REFERENCE $i | m4 -DREFERENCE='$1')
 		type=$(classify_source $source)
 	fi
@@ -81,7 +83,7 @@ cat <<-EOF
 EOF
 fi
 
-for type in MACRO TYPE TYPE_LONG RECORD FNTYPE EXTERN; do
+for type in REFERENCE MACRO TYPE TYPE_LONG RECORD FNTYPE EXTERN; do
 	if [ -d $HEADER.$type ]; then
 		for v in $HEADER.$type/*; do
 			version=$(cat $(dirname $0)/.deps/ftm/$(basename $v | sed -e 's/^.*\.//'))
@@ -90,6 +92,7 @@ for type in MACRO TYPE TYPE_LONG RECORD FNTYPE EXTERN; do
 			fi
 
 			for i in $(sort -u $v); do
+				printf '/* %s */\n' $i
 				get_declaration $i
 			done
 
@@ -111,6 +114,7 @@ if [ -d $HEADER.TGFN ]; then
 		fi
 
 		for i in $(sort -u $v); do
+				printf '/* %s */\n' $i
 			get_declaration $i TGFN
 		done
 
@@ -125,7 +129,7 @@ fi
 
 if [ -d $HEADER.FUNCTION ]; then
 	if grep -q restrict $(cat $HEADER.FUNCTION/*); then
-		if grep -Fq -e 'STDC(1)' -e 'STDC(1,' -e 'STDC(199409' $(grep -l restrict $(cat $HEADER.FUNCTION/*)); then
+		if grep -Fq -e 'STDC(1)' -e 'STDC(1,' -e 'STDC(199409' $(grep -l restrict $(cat $HEADER.FUNCTION/*)) || ! grep -Fq 'STDC(' $(grep -l restrict $(cat $HEADER.FUNCTION/*)); then
 			printf '#if (!defined __STDC_VERSION__) || (__STDC_VERSION__ < 199901L)\n'
 			printf '#define restrict\n'
 			printf '#endif\n\n'
@@ -146,6 +150,7 @@ if [ -d $HEADER.FUNCTION ]; then
 		fi
 
 		for i in $(sort -u $v); do
+				printf '/* %s */\n' $i
 			get_declaration $i FUNCTION | sed -e 's/\([a-zA-Z_][a-zA-Z_0-9]*\)\([,)]\)/__\1\2/g;s/(__\([a-zA-Z_][a-zA-Z_0-9]*\))/(\1)/g'
 		done
 
