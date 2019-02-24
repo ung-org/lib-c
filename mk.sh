@@ -59,7 +59,7 @@ get_declaration () {
 	REFERENCE)
 		ref="$(grep -F 'REFERENCE(' $1 | m4 -DREFERENCE='$1')"
 		if (echo "$ref" | grep -q '<.*>'); then
-			echo "$ref"
+			echo "#include $ref"
 		else
 			get_declaration "src/${ref}"
 		fi
@@ -154,13 +154,16 @@ make_headers_mk() {
 	fi
 
 	rm -f "${TOPDIR}/.headers.mk"
-	printf '.POSIX:\n.DEFAULT: headers\ninclude config.mk\n\n' > "${TOPDIR}/.headers.mk"
+	printf '.POSIX:\n.DEFAULT: headers\n\n' > "${TOPDIR}/.headers.mk"
+	printf 'include .config.mk\n\n' > "${TOPDIR}/.headers.mk"
 
 	for header in $(cat "${DEPS}/all.h"); do
 		printf 'Building dependencies for <%s>\n' "$header"
 		printf '$(INCDIR)/%s: mkh.sh ' "$header" >> "${TOPDIR}/.headers.mk"
-		grep -l "#include <${header}>" $(cat "${DEPS}/all.c" "${DEPS}/all.ref") | sed -e "s#${SRCDIR}#\$(SRCDIR)#" | tr '\n' ' ' >> "${TOPDIR}/.headers.mk"
-		printf '\n\tINCDIR=$(INCDIR) sh mkh.sh $@\n\n' >> "${TOPDIR}/.headers.mk"
+		mkdir -p $(dirname "${TOPDIR}/.deps/${header}.deps")
+		grep -l "#include <${header}>" $(cat "${DEPS}/all.c" "${DEPS}/all.ref") > "${TOPDIR}/.deps/${header}.deps"
+		sed -e "s#${SRCDIR}#\$(SRCDIR)#" < "${TOPDIR}/.deps/${header}.deps" | tr '\n' ' ' >> "${TOPDIR}/.headers.mk"
+		printf '\n\tINCDIR=$(INCDIR) sh mkh.sh $(INCDIR)/%s\n\n' "${header}" >> "${TOPDIR}/.headers.mk"
 	done
 
 	printf 'headers: ' >> "${TOPDIR}/.headers.mk"
@@ -180,8 +183,7 @@ make_deps_mk() {
 	rm -f "${DEPS}"/lib*
 
 	printf '.POSIX:\ndefault: all\n\n' > "${TOPDIR}/.deps.mk"
-	printf 'include config.mk\n\n' >> "${TOPDIR}/.deps.mk"
-	printf '$(OBJDIR):;mkdir -p $@\n' >> "${TOPDIR}/.deps.mk"
+	printf 'include .config.mk\n\n' > "${TOPDIR}/.deps.mk"
 	printf 'BASE_CFLAGS=-I$(INCDIR) -fno-builtin -nostdinc\n' >> "${TOPDIR}/.deps.mk"
 	printf '\n' >> "${TOPDIR}/.deps.mk"
 
@@ -234,11 +236,11 @@ make_deps_mk() {
 		LIB=$(basename $libdep | sed -e 's/\..*$//')
 		VER=$(basename $libdep | sed -e 's/^.*\.//')
 		echo adding dependencies for $LIB v $VER
-		printf 'include .deps/%s\n' $(basename $libdep) >> "${TOPDIR}/.deps.mk"
+		printf 'include $(TOPDIR)/.deps/%s\n' $(basename $libdep) >> "${TOPDIR}/.deps.mk"
 
 		if ! [ -f "${DEPS}/${LIB}.mk" ]; then
 			printf '.POSIX:\n%s.a:' "${LIB}" > "${DEPS}/${LIB}.mk"
-			printf 'include .deps/%s.mk\n' "${LIB}" >> .deps.mk
+			printf 'include $(TOPDIR)/.deps/%s.mk\n' "${LIB}" >> .deps.mk
 		fi
 		printf ' \\\n\t$(%s_%s_OBJS)' $LIB $VER >> ${DEPS}/${LIB}.mk
 	done
