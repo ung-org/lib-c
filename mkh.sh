@@ -1,7 +1,5 @@
 #!/bin/sh
 
-set -x
-
 TOPDIR=$(dirname $0)
 if [ -z "${INCDIR}" ]; then
 	INCDIR="${TOPDIR}/include"
