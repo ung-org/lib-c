@@ -1,0 +1,43 @@
+.POSIX:
+librt_POSIX_199309_OBJS= \
+	librt.a(sched_get_priority_min.o) \
+	librt.a(sched_rr_get_interval.o) \
+	librt.a(sched_yield.o) \
+	librt.a(sched_setparam.o) \
+	librt.a(sched_getscheduler.o) \
+	librt.a(sched_setscheduler.o) \
+	librt.a(sched_getparam.o) \
+	librt.a(sched_get_priority_max.o) \
+	librt.a(mq_setattr.o) \
+	librt.a(mq_close.o) \
+	librt.a(mq_receive.o) \
+	librt.a(mq_unlink.o) \
+	librt.a(mq_open.o) \
+	librt.a(mq_getattr.o) \
+	librt.a(mq_notify.o) \
+	librt.a(mq_send.o) \
+	librt.a(clock_gettime.o) \
+	librt.a(timer_settime.o) \
+	librt.a(clock_getres.o) \
+	librt.a(timer_delete.o) \
+	librt.a(clock_settime.o) \
+	librt.a(timer_gettime.o) \
+	librt.a(timer_create.o) \
+	librt.a(timer_getoverrun.o) \
+	librt.a(lio_listio.o) \
+	librt.a(aio_error.o) \
+	librt.a(aio_fsync.o) \
+	librt.a(aio_cancel.o) \
+	librt.a(aio_read.o) \
+	librt.a(aio_suspend.o) \
+	librt.a(aio_write.o) \
+	librt.a(aio_return.o) \
+	librt.a(sem_init.o) \
+	librt.a(sem_open.o) \
+	librt.a(sem_destroy.o) \
+	librt.a(sem_getvalue.o) \
+	librt.a(sem_close.o) \
+	librt.a(sem_wait.o) \
+	librt.a(sem_post.o) \
+	librt.a(sem_trywait.o) \
+	librt.a(sem_unlink.o)

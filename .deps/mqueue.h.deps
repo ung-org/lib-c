@@ -1,0 +1,10 @@
+./src/mqueue/mq_setattr.c
+./src/mqueue/mq_close.c
+./src/mqueue/mqd_t.c
+./src/mqueue/mq_receive.c
+./src/mqueue/mq_unlink.c
+./src/mqueue/mq_open.c
+./src/mqueue/mq_getattr.c
+./src/mqueue/mq_notify.c
+./src/mqueue/mq_send.c
+./src/mqueue/struct_mq_attr.c

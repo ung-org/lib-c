@@ -1,0 +1,34 @@
+.POSIX:
+libc_C_199901_OBJS= \
+	libc.a(__STDC_HOSTED__.o) \
+	libc.a(__STDC_ISO_10646__.o) \
+	libc.a(__STDC_IEC_559_COMPLEX__.o) \
+	libc.a(__STDC_IEC_559__.o) \
+	libc.a(imaxdiv.o) \
+	libc.a(imaxabs.o) \
+	libc.a(wcstoimax.o) \
+	libc.a(wcstoumax.o) \
+	libc.a(strtoimax.o) \
+	libc.a(strtoumax.o) \
+	libc.a(wcstoll.o) \
+	libc.a(vwscanf.o) \
+	libc.a(vfwscanf.o) \
+	libc.a(wcstoull.o) \
+	libc.a(wcstof.o) \
+	libc.a(wcstold.o) \
+	libc.a(vswscanf.o) \
+	libc.a(vsscanf.o) \
+	libc.a(vsnprintf.o) \
+	libc.a(vscanf.o) \
+	libc.a(vfscanf.o) \
+	libc.a(snprintf.o) \
+	libc.a(isblank.o) \
+	libc.a(iswblank.o) \
+	libc.a(lldiv.o) \
+	libc.a(_Exit.o) \
+	libc.a(strtold.o) \
+	libc.a(strtoll.o) \
+	libc.a(strtof.o) \
+	libc.a(atoll.o) \
+	libc.a(strtoull.o) \
+	libc.a(llabs.o)

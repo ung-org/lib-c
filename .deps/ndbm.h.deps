@@ -1,0 +1,13 @@
+./src/ndbm/DBM.c
+./src/ndbm/dbm_store.c
+./src/ndbm/dbm_close.c
+./src/ndbm/DBM_REPLACE.c
+./src/ndbm/dbm_error.c
+./src/ndbm/dbm_firstkey.c
+./src/ndbm/dbm_fetch.c
+./src/ndbm/dbm_open.c
+./src/ndbm/dbm_clearerr.c
+./src/ndbm/dbm_nextkey.c
+./src/ndbm/datum.c
+./src/ndbm/dbm_delete.c
+./src/ndbm/DBM_INSERT.c

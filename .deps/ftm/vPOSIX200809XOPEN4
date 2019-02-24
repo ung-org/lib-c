@@ -1,0 +1,2 @@
+#if	(defined _POSIX_C_SOURCE && 200809 <= _POSIX_C_SOURCE) || \
+	(defined _XOPEN_SOURCE)

@@ -1,0 +1,6 @@
+.POSIX:
+libc_POSIX_200112_OBJS= \
+	libc.a(lstat.o) \
+	libc.a(readlink.o) \
+	libc.a(fchown.o) \
+	libc.a(symlink.o)

@@ -1,0 +1,14 @@
+.POSIX:
+libm_XOPEN_400_OBJS= \
+	libm.a(cbrt.o) \
+	libm.a(remainder.o) \
+	libm.a(asinh.o) \
+	libm.a(expm1.o) \
+	libm.a(rint.o) \
+	libm.a(ilogb.o) \
+	libm.a(atanh.o) \
+	libm.a(scalb.o) \
+	libm.a(log1p.o) \
+	libm.a(acosh.o) \
+	libm.a(nextafter.o) \
+	libm.a(logb.o)

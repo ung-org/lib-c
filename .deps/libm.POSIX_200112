@@ -1,0 +1,3 @@
+.POSIX:
+libm_POSIX_200112_OBJS= \
+	libm.a(remainder.o)

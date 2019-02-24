@@ -1,0 +1,8 @@
+./src/pwd/getpwuid.c
+./src/pwd/struct_passwd.c
+./src/pwd/setpwent.c
+./src/pwd/getpwent.c
+./src/pwd/getpwnam.c
+./src/pwd/endpwent.c
+./src/pwd/uid_t.ref
+./src/pwd/gid_t.ref

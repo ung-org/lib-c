@@ -1,0 +1,5 @@
+./src/libgen/basename.c
+./src/libgen/__loc1.c
+./src/libgen/regex.c
+./src/libgen/dirname.c
+./src/libgen/regcmp.c

@@ -1,0 +1,14 @@
+./src/nonstd/struct_io_options.c
+./src/nonstd/flockfile.c
+./src/nonstd/__printf.c
+./src/nonstd/struct_FILE.c
+./src/nonstd/funlockfile.c
+./src/nonstd/ftrylockfile.c
+./src/nonstd/getc_unlocked.c
+./src/nonstd/__scanf.c
+./src/nonstd/fpos_t.ref
+./src/nonstd/BUFSIZ.ref
+./src/nonstd/NULL.ref
+./src/nonstd/pid_t.ref
+./src/nonstd/size_t.ref
+./src/nonstd/va_list.ref

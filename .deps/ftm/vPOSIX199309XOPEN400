@@ -1,0 +1,2 @@
+#if	(defined _POSIX_C_SOURCE && 199309 <= _POSIX_C_SOURCE) || \
+	(defined _XOPEN_SOURCE && ((defined _XOPEN_SOURCE_EXTENDED && _XOPEN_SOURCE_EXTENDED == 1) || 500 <= _XOPEN_SOURCE))

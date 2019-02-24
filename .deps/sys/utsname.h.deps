@@ -1,0 +1,2 @@
+./src/sys/utsname/struct_utsname.c
+./src/sys/utsname/uname.c

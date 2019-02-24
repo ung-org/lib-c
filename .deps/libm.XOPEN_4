@@ -1,0 +1,14 @@
+.POSIX:
+libm_XOPEN_4_OBJS= \
+	libm.a(yn.o) \
+	libm.a(gamma.o) \
+	libm.a(jn.o) \
+	libm.a(y1.o) \
+	libm.a(erfc.o) \
+	libm.a(signgam.o) \
+	libm.a(y0.o) \
+	libm.a(j1.o) \
+	libm.a(hypot.o) \
+	libm.a(j0.o) \
+	libm.a(erf.o) \
+	libm.a(lgamma.o)

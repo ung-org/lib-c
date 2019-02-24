@@ -1,0 +1,15 @@
+./src/search/tdelete.c
+./src/search/twalk.c
+./src/search/lfind.c
+./src/search/tsearch.c
+./src/search/tfind.c
+./src/search/ACTION.c
+./src/search/hcreate.c
+./src/search/lsearch.c
+./src/search/ENTRY.c
+./src/search/remque.c
+./src/search/insque.c
+./src/search/hdestroy.c
+./src/search/VISIT.c
+./src/search/hsearch.c
+./src/search/size_t.ref

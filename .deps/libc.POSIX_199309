@@ -1,0 +1,20 @@
+.POSIX:
+libc_POSIX_199309_OBJS= \
+	libc.a(sigqueue.o) \
+	libc.a(sigtimedwait.o) \
+	libc.a(sigwaitinfo.o) \
+	libc.a(munlockall.o) \
+	libc.a(munmap.o) \
+	libc.a(mlock.o) \
+	libc.a(mmap.o) \
+	libc.a(mlockall.o) \
+	libc.a(mprotect.o) \
+	libc.a(munlock.o) \
+	libc.a(shm_unlink.o) \
+	libc.a(msync.o) \
+	libc.a(shm_open.o) \
+	libc.a(fchmod.o) \
+	libc.a(nanosleep.o) \
+	libc.a(fsync.o) \
+	libc.a(fdatasync.o) \
+	libc.a(ftruncate.o)

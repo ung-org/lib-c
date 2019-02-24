@@ -1,0 +1,11 @@
+./src/locale/struct_lconv.c
+./src/locale/LC_TIME.c
+./src/locale/LC_NUMERIC.c
+./src/locale/LC_CTYPE.c
+./src/locale/LC_ALL.c
+./src/locale/LC_MESSAGES.c
+./src/locale/LC_COLLATE.c
+./src/locale/setlocale.c
+./src/locale/localeconv.c
+./src/locale/LC_MONETARY.c
+./src/locale/NULL.ref

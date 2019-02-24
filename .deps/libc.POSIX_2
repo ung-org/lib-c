@@ -1,0 +1,19 @@
+.POSIX:
+libc_POSIX_2_OBJS= \
+	libc.a(regerror.o) \
+	libc.a(regexec.o) \
+	libc.a(regfree.o) \
+	libc.a(regcomp.o) \
+	libc.a(popen.o) \
+	libc.a(pclose.o) \
+	libc.a(globfree.o) \
+	libc.a(glob.o) \
+	libc.a(wordexp.o) \
+	libc.a(wordfree.o) \
+	libc.a(optopt.o) \
+	libc.a(optind.o) \
+	libc.a(opterr.o) \
+	libc.a(confstr.o) \
+	libc.a(optarg.o) \
+	libc.a(getopt.o) \
+	libc.a(fnmatch.o)

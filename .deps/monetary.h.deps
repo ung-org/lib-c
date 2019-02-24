@@ -1,0 +1,3 @@
+./src/monetary/strfmon.c
+./src/monetary/ssize_t.ref
+./src/monetary/size_t.ref

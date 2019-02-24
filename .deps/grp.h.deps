@@ -1,0 +1,7 @@
+./src/grp/getgrent.c
+./src/grp/endgrent.c
+./src/grp/setgrent.c
+./src/grp/getgrgid.c
+./src/grp/getgrnam.c
+./src/grp/struct_group.c
+./src/grp/gid_t.ref

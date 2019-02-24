@@ -1,0 +1,2 @@
+#if	(defined __STDC_VERSION__ && 199901 <= __STDC_VERSION__) || \
+	(defined _XOPEN_SOURCE)

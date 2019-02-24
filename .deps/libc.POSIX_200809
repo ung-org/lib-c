@@ -1,0 +1,22 @@
+.POSIX:
+libc_POSIX_200809_OBJS= \
+	libc.a(iconv_open.o) \
+	libc.a(iconv_close.o) \
+	libc.a(iconv.o) \
+	libc.a(poll.o) \
+	libc.a(strfmon.o) \
+	libc.a(nl_langinfo.o) \
+	libc.a(waitid.o) \
+	libc.a(fstatvfs.o) \
+	libc.a(statvfs.o) \
+	libc.a(strcasecmp.o) \
+	libc.a(strncasecmp.o) \
+	libc.a(tcgetsid.o) \
+	libc.a(strdup.o) \
+	libc.a(truncate.o) \
+	libc.a(getsid.o) \
+	libc.a(getpgid.o) \
+	libc.a(fchdir.o) \
+	libc.a(lchown.o) \
+	libc.a(mkstemp.o) \
+	libc.a(getsubopt.o)

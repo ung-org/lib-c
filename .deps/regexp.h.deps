@@ -1,0 +1,6 @@
+./src/regexp/loc1.c
+./src/regexp/step.c
+./src/regexp/advance.c
+./src/regexp/loc2.c
+./src/regexp/locs.c
+./src/regexp/compile.c

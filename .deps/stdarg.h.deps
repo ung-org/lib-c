@@ -1,0 +1,5 @@
+./src/stdarg/va_arg.c
+./src/stdarg/va_start.c
+./src/stdarg/va_end.c
+./src/stdarg/va_list.c
+./src/stdarg/va_copy.c
