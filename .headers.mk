@@ -93,7 +93,7 @@ $(INCDIR)/nonstd/ctype.h: mkh.sh $(SRCDIR)/nonstd/ctype_t.c
 $(INCDIR)/nonstd/internal.h: mkh.sh $(SRCDIR)/nonstd/__libc.c $(SRCDIR)/nonstd/struct_atexit.c $(SRCDIR)/nonstd/LIBC_INTERNAL.c 
 	INCDIR=$(INCDIR) sh mkh.sh $(INCDIR)/nonstd/internal.h
 
-$(INCDIR)/nonstd/io.h: mkh.sh $(SRCDIR)/nonstd/struct_io_options.c $(SRCDIR)/nonstd/flockfile.c $(SRCDIR)/nonstd/__printf.c $(SRCDIR)/nonstd/struct_FILE.c $(SRCDIR)/nonstd/funlockfile.c $(SRCDIR)/nonstd/ftrylockfile.c $(SRCDIR)/nonstd/getc_unlocked.c $(SRCDIR)/nonstd/__scanf.c $(SRCDIR)/nonstd/fpos_t.ref $(SRCDIR)/nonstd/BUFSIZ.ref $(SRCDIR)/nonstd/NULL.ref $(SRCDIR)/nonstd/pid_t.ref $(SRCDIR)/nonstd/size_t.ref $(SRCDIR)/nonstd/va_list.ref 
+$(INCDIR)/nonstd/io.h: mkh.sh $(SRCDIR)/nonstd/struct_io_options.c $(SRCDIR)/nonstd/flockfile.c $(SRCDIR)/nonstd/__printf.c $(SRCDIR)/nonstd/struct_FILE.c $(SRCDIR)/nonstd/funlockfile.c $(SRCDIR)/nonstd/ftrylockfile.c $(SRCDIR)/nonstd/getc_unlocked.c $(SRCDIR)/nonstd/__scanf.c $(SRCDIR)/nonstd/pid_t.ref $(SRCDIR)/nonstd/stdio.ref 
 	INCDIR=$(INCDIR) sh mkh.sh $(INCDIR)/nonstd/io.h
 
 $(INCDIR)/nonstd/locale.h: mkh.sh $(SRCDIR)/nonstd/struct_locale_t.c 

@@ -1,2 +1,0 @@
-#include <nonstd/io.h>
-REFERENCE(stddef/size_t.c)

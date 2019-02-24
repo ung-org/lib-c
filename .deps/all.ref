@@ -1,11 +1,7 @@
-./src/nonstd/fpos_t.ref
 ./src/nonstd/nonstd-inernal.ref
-./src/nonstd/BUFSIZ.ref
-./src/nonstd/NULL.ref
 ./src/nonstd/pid_t.ref
 ./src/nonstd/ENOSYS.ref
-./src/nonstd/size_t.ref
-./src/nonstd/va_list.ref
+./src/nonstd/stdio.ref
 ./src/nonstd/errno.ref
 ./src/signal/ucontext_t.ref
 ./src/signal/pid_t.ref
