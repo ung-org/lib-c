@@ -36,7 +36,8 @@ int glob(const char * restrict pattern, int flags, int (*errfunc) (const char * 
 		}
 	}
 
-	char *path = strdup(pattern);
+	char *path = malloc(strlen(pattern) + 1);
+	strcpt(path, pattern);
 
 	for (i = 0; path[i]; i++) {
 		if (path[i] == '/') {
@@ -81,7 +82,8 @@ int glob(const char * restrict pattern, int flags, int (*errfunc) (const char * 
 
 				pglob->gl_pathv = tmp;
 				/* FIXME: add path to front */
-				pglob->gl_pathv[pglob->gl_pathc - 1] = strdup(de->d_name);
+				pglob->gl_pathv[pglob->gl_pathc - 1] = malloc(strlen(de->d_name) + 1);
+				strcat(pglob->gl_pathv[pglob->gl_pathc - 1], de->d_name);
 				/* TODO: MARK */
 			}
 		}
@@ -97,7 +99,8 @@ int glob(const char * restrict pattern, int flags, int (*errfunc) (const char * 
 			/* TODO: DOOFFS */
 			pglob->gl_pathc = 1;
 			pglob->gl_pathv = malloc(sizeof(char*));
-			pglob->gl_pathv[0] = strdup(pattern);
+			pglob->gl_pathv[0] = malloc(strlen(pattern) + 1);
+			strcpy(pglob->gl_pathv[0], pattern);
 		} else {
 			return GLOB_NOMATCH;
 		}
