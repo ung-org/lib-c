@@ -2,7 +2,7 @@
 
 int putp(const char * str)
 {
-	return -1;
+	return tputs(str, 1, putchar);
 }
 
 /*
