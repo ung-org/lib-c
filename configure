@@ -1,67 +1,68 @@
 #!/bin/sh
 
+set -e
+
 CONFIGDIR="$(dirname $0)/config"
 
 show_help() {
 	cat <<-EOF
-	usage: ./configure [-c version] [-p version | -x version]
+	usage: ./configure [options...]
 
 	Options:
-	  -c version	Specify the version of ISO/IEC 9899 to conform to
-	  -p version	Specify the version of IEEE 1003.1/ISO/IED 9945-1 to
-	                conform to
-	  -x version	Specify the version of the Single Unix Specification
-	                (aka X/Open System Interface) to conform to
+	   -a arch	Choose the underlying architecture to build for:
+	$(awk '{ printf("\t%s\n", $0); }' ${CONFIGDIR}/architecture)
 
-	Valid options for -c are:
-	$(cat ${CONFIGDIR}/versions.c)
+	   -c version	Conform to:
+	$(awk '{ printf("\t%s\n", $0); }' ${CONFIGDIR}/versions.c)
 
-	Valid options for -p are:
-	$(cat ${CONFIGDIR}/versions.posix)
+	   -p version	Conform to:
+	$(awk '{ printf("\t%s\n", $0); }' ${CONFIGDIR}/versions.posix)
 
-	Valid options for -x are:
-	$(cat ${CONFIGDIR}/versions.xopen)
+	   -w wordsize	Choose a word size for the architecuture:
+	$(awk '{ printf("\t%s\n", $0); }' ${CONFIGDIR}/wordsize)
+
+	   -x version	Conform to:
+	$(awk '{ printf("\t%s\n", $0); }' ${CONFIGDIR}/versions.xopen)
+
 	EOF
 }
 
-validate_version() {
-	versfile="${CONFIGDIR}/versions.$1"
+validate_option() {
+	option="${CONFIGDIR}/$1"
 
-	for ver in $(awk '/^[0-9]/ { print $1 }' "${versfile}"); do
-		if [ "$2" = "${ver}" ]; then
-			echo $2
+	for opt in $(awk '/^[0-9]/ { print $1 }' "${option}"); do
+		if [ "$2" = "${opt}" ]; then
+			echo "$2"
 			return 0
 		fi
 	done
 
-	echo 0
-}
-
-double_check_version() {
-	if [ "$2" = "0" ]; then
-		printf 'Invalid version "%s". Valid versions are:\n' $3
-		cat "${CONFIGDIR}/versions.$1"
-		exit 1
-	fi
+	printf 'Invalid option '%s'. Valid options are:\n' "$2" >&2
+	cat "${option}" >&2
+	exit 1
 }
 
 option=
+
+architecture=x86
+wordsize=64
+
 standard_c=
 posix=
 xopen=
 
 while getopts hc:p:x: option; do
 	case ${option} in
-	c)	standard_c=$(validate_version c ${OPTARG})
-		double_check_version c ${standard_c} ${OPTARG}
+	a)	architecture=$(validate_option architecture ${OPTARG})
 		;;
 
-	p)	posix=$(validate_version posix ${OPTARG})
-		double_check_version posix ${posix} ${OPTARG}
+	c)	standard_c=$(validate_option c ${OPTARG})
 		;;
 
-	x)	xopen=$(validate_version xopen ${OPTARG})
-		double_check_version xopen ${xopen} ${OPTARG}
+	p)	posix=$(validate_option posix ${OPTARG})
+		;;
+
+	x)	xopen=$(validate_option xopen ${OPTARG})
 		;;
 
 	h)	show_help
@@ -108,7 +109,66 @@ if [ ${posix:-0} -ge 200112 ] && [ $standard_c -lt 199901 ]; then
 	exit 1
 fi
 
+printf 'C library configured to conform to the following standards:\n'
 printf 'ISO C:  %d\n' ${standard_c}
-printf 'POSIX:  %d\n' ${posix}
-printf 'X/OPEN: %d\n' ${xopen}
+test -n "${posix}" && printf 'POSIX:  %d\n' ${posix}
+test -n "${xopen}" && printf 'X/OPEN: %d\n' ${xopen}
 
+printf 'Building for %d-bit %s architecture\n' "${wordsize}" "${architecture}"
+
+exec > Makefile
+
+cat <<-EOF
+	.POSIX:
+	.DEFAULT:;\$(MAKE) all
+
+	ARCHITECTURE=${architecture}
+	WORDSIZE=${WORDSIZE}
+	SRCDIR=$(dirname $0)/src
+	INCDIR=$(dirname $0)/include
+	OBJDIR=$(pwd)/obj
+
+EOF
+
+if [ ${standard_c:-1} -lt 199901 ]; then
+	printf 'CC=c89\n'
+else
+	printf 'CC=c%02d\n' $(( (standard_c / 100) % 100 ))
+fi
+
+if [ -n "${xopen}" ]; then
+	if [ $xopen -eq 400 ]; then
+		printf 'CFLAGS=-D_XOPEN_SOURCE -D_XOPEN_SOURCE_EXTENDED=1\n'
+	else
+		printf 'CFLAGS=-D_XOPEN_SOURCE=%d\n' "${xopen}"
+	fi
+elif [ -n "${posix}" ]; then
+	printf 'CFLAGS=-D_POSIX_C_SOURCE=%d\n' "${posix}"
+fi
+
+cat <<EOF
+
+all: .deps.mk include
+	@mkdir -p \$(OBJDIR)
+	\$(MAKE) -f .deps.mk $@
+
+deps: .headers.mk .deps.mk
+
+.deps.mk: mk.sh
+	sh -c '. ./mk.sh; make_deps_mk'
+
+.headers.mk: mk.sh
+	sh -c '. ./mk.sh; make_headers_mk'
+
+headers include: .headers.mk mkh.sh
+	\$(MAKE) -f .headers.mk headers
+
+ctags:
+	ctags \$\$(find src -name \*.c)
+
+clean:
+	rm -rf \$(OBJDIR) *.a
+
+extra-clean: clean
+	rm -rf .deps .*.mk \$(INCDIR)
+EOF
