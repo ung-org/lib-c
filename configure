@@ -53,17 +53,11 @@ xopen=
 
 while getopts hc:p:x: option; do
 	case ${option} in
-	a)	architecture=$(validate_option architecture ${OPTARG})
-		;;
-
-	c)	standard_c=$(validate_option c ${OPTARG})
-		;;
-
-	p)	posix=$(validate_option posix ${OPTARG})
-		;;
-
-	x)	xopen=$(validate_option xopen ${OPTARG})
-		;;
+	a)	architecture=$(validate_option architecture ${OPTARG})	;;
+	c)	standard_c=$(validate_option c ${OPTARG})		;;
+	p)	posix=$(validate_option posix ${OPTARG})		;;
+	w)	wordsize=$(validate_option wordsize ${OPTARG})		;;
+	x)	xopen=$(validate_option xopen ${OPTARG})		;;
 
 	h)	show_help
 		exit 0
@@ -109,59 +103,69 @@ if [ ${posix:-0} -ge 200112 ] && [ $standard_c -lt 199901 ]; then
 	exit 1
 fi
 
-printf 'C library configured to conform to the following standards:\n'
+printf 'Building C library for %d-bit %s conforming to:\n' "${wordsize}" "${architecture}"
 printf 'ISO C:  %d\n' ${standard_c}
 test -n "${posix}" && printf 'POSIX:  %d\n' ${posix}
 test -n "${xopen}" && printf 'X/OPEN: %d\n' ${xopen}
 
-printf 'Building for %d-bit %s architecture\n' "${wordsize}" "${architecture}"
-
-exec > Makefile
-
-cat <<-EOF
+cat <<-EOF > .config.mk
 	.POSIX:
-	.DEFAULT:;\$(MAKE) all
 
 	ARCHITECTURE=${architecture}
-	WORDSIZE=${WORDSIZE}
-	SRCDIR=$(dirname $0)/src
-	INCDIR=$(dirname $0)/include
-	OBJDIR=$(pwd)/obj
+	WORDSIZE=${wordsize}
+	TOPDIR=$(dirname $0)
+	SRCDIR=\$(TOPDIR)/src
+	INCDIR=\$(TOPDIR)/include
+	OBJDIR=./obj
 
 EOF
 
 if [ ${standard_c:-1} -lt 199901 ]; then
-	printf 'CC=c89\n'
+	printf 'CC=c89\n' >> .config.mk
 else
-	printf 'CC=c%02d\n' $(( (standard_c / 100) % 100 ))
+	printf 'CC=c%02d\n' $(( (standard_c / 100) % 100 )) >> .config.mk
 fi
 
 if [ -n "${xopen}" ]; then
 	if [ $xopen -eq 400 ]; then
-		printf 'CFLAGS=-D_XOPEN_SOURCE -D_XOPEN_SOURCE_EXTENDED=1\n'
+		printf 'CFLAGS=-D_XOPEN_SOURCE -D_XOPEN_SOURCE_EXTENDED=1\n' >> .config.mk
 	else
-		printf 'CFLAGS=-D_XOPEN_SOURCE=%d\n' "${xopen}"
+		printf 'CFLAGS=-D_XOPEN_SOURCE=%d\n' "${xopen}" >> .config.mk
 	fi
 elif [ -n "${posix}" ]; then
-	printf 'CFLAGS=-D_POSIX_C_SOURCE=%d\n' "${posix}"
+	printf 'CFLAGS=-D_POSIX_C_SOURCE=%d\n' "${posix}" >> .config.mk
 fi
 
-cat <<EOF
+cat <<EOF > .build.mk
+.POSIX:
+default: all
 
-all: .deps.mk include
+include .config.mk
+include \$(TOPDIR)/.deps.mk
+
+all: libc.a
+EOF
+
+cat <<EOF > Makefile
+.POSIX:
+.DEFAULT:;\$(MAKE) all
+
+include .config.mk
+
+all: \$(TOPDIR)/.deps.mk \$(INCDIR)
 	@mkdir -p \$(OBJDIR)
-	\$(MAKE) -f .deps.mk $@
+	\$(MAKE) -f .build.mk
 
-deps: .headers.mk .deps.mk
+deps: \$(TOPDIR)/.headers.mk \$(TOPDIR)/.deps.mk
 
-.deps.mk: mk.sh
-	sh -c '. ./mk.sh; make_deps_mk'
+\$(TOPDIR)/.deps.mk: \$(TOPDIR)/mk.sh
+	sh -c '. \$(TOPDIR)/mk.sh; cd \$(TOPDIR); make_deps_mk'
 
-.headers.mk: mk.sh
-	sh -c '. ./mk.sh; make_headers_mk'
+\$(TOPDIR)/.headers.mk: \$(TOPDIR)/mk.sh
+	sh -c '. \$(TOPDIR)/mk.sh; cd \$(TOPDIR); make_headers_mk'
 
-headers include: .headers.mk mkh.sh
-	\$(MAKE) -f .headers.mk headers
+headers \$(INCDIR): \$(TOPDIR)/.headers.mk \$(TOPDIR)/mkh.sh
+	\$(MAKE) -f \$(TOPDIR)/.headers.mk headers
 
 ctags:
 	ctags \$\$(find src -name \*.c)
@@ -170,5 +174,5 @@ clean:
 	rm -rf \$(OBJDIR) *.a
 
 extra-clean: clean
-	rm -rf .deps .*.mk \$(INCDIR)
+	rm -rf .deps .deps.mk .headers.mk \$(INCDIR)
 EOF
