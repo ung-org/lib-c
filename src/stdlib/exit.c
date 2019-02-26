@@ -26,7 +26,7 @@ _Noreturn void exit(int status)
 	*/
 	
 	(void)status;
-	/* __syscall(__libc(SYSCALL_LOOKUP)("exit"), status); */
+	__syscall(((long (*)(char*))__libc(SYSCALL_LOOKUP))("exit"), status);
 	for (;;); /* quiet _Noreturn functions returns warning */
 }
 
