@@ -1,5 +1,5 @@
-# define TGSOURCE "creal.c"
-#include "nonstd/tgmath.h"
+# define TGSOURCE "../complex/creal.c"
+#include "_tgmath.h"
 
 #include <complex.h>
 

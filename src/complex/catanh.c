@@ -1,5 +1,5 @@
-# define TGSOURCE "catanh.c"
-#include "nonstd/tgmath.h"
+# define TGSOURCE "../complex/catanh.c"
+#include "_tgmath.h"
 
 #include <complex.h>
 

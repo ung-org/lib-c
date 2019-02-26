@@ -1,5 +1,5 @@
-# define TGSOURCE "conj.c"
-#include "nonstd/tgmath.h"
+# define TGSOURCE "../complex/conj.c"
+#include "_tgmath.h"
 
 #include <complex.h>
 

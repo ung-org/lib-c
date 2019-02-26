@@ -1,5 +1,5 @@
-# define TGSOURCE "cimag.c"
-#include "nonstd/tgmath.h"
+# define TGSOURCE "../complex/cimag.c"
+#include "_tgmath.h"
 
 #include <complex.h>
 

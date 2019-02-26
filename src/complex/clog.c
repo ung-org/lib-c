@@ -1,5 +1,5 @@
-# define TGSOURCE "clog.c"
-#include "nonstd/tgmath.h"
+# define TGSOURCE "../complex/clog.c"
+#include "_tgmath.h"
 
 #include <complex.h>
 

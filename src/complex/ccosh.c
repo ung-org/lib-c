@@ -1,5 +1,5 @@
-# define TGSOURCE "ccosh.c"
-#include "nonstd/tgmath.h"
+# define TGSOURCE "../complex/ccosh.c"
+#include "_tgmath.h"
 
 #include <complex.h>
 

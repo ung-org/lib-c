@@ -1,5 +1,5 @@
-# define TGSOURCE "csqrt.c"
-#include "nonstd/tgmath.h"
+# define TGSOURCE "../complex/csqrt.c"
+#include "_tgmath.h"
 
 #include <complex.h>
 

@@ -1,5 +1,5 @@
-# define TGSOURCE "casinh.c"
-#include "nonstd/tgmath.h"
+# define TGSOURCE "../complex/casinh.c"
+#include "_tgmath.h"
 
 #include <complex.h>
 

@@ -1,5 +1,5 @@
-# define TGSOURCE "cproj.c"
-#include "nonstd/tgmath.h"
+# define TGSOURCE "../complex/cproj.c"
+#include "_tgmath.h"
 
 #include <complex.h>
 

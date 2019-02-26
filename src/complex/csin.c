@@ -1,5 +1,5 @@
-# define TGSOURCE "csin.c"
-#include "nonstd/tgmath.h"
+# define TGSOURCE "../complex/csin.c"
+#include "_tgmath.h"
 
 #include <complex.h>
 

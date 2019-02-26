@@ -1,5 +1,5 @@
-# define TGSOURCE "cabs.c"
-#include "nontstd/tgmath.h"
+# define TGSOURCE "../complex/cabs.c"
+#include "_tgmath.h"
 
 #include <complex.h>
 

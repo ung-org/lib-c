@@ -1,5 +1,5 @@
-# define TGSOURCE "catan.c"
-#include "nonstd/tgmath.h"
+# define TGSOURCE "../complex/catan.c"
+#include "_tgmath.h"
 
 #include <complex.h>
 

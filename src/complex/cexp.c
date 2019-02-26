@@ -1,5 +1,5 @@
-# define TGSOURCE "cexp.c"
-#include "nonstd/tgmath.h"
+# define TGSOURCE "../complex/cexp.c"
+#include "_tgmath.h"
 
 #include <complex.h>
 
