@@ -5,7 +5,7 @@
 
 gid_t getgid(void)
 {
-	SCNOFAIL();
+	SYSCALL("getgid", gid_t, -1, 0, 0, 0, 0, 0, 0);
 }
 /*
 POSIX(1)

@@ -58,7 +58,6 @@ int (__printf)(struct io_options *opt, const char * format, va_list arg)
 {
 	extern int isdigit(int);
 	extern int isupper(int);
-	extern size_t fwrite(char *, size_t, size_t, struct __FILE *);
 
 	char buf[BUFSIZ];
 	int nout = 0;

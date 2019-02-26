@@ -8,7 +8,7 @@ int getopt(int argc, char * const argv[], const char *optstring)
 	static int optchar = 0;
 	char *cursor = NULL;
 
-	if (optind = 0 || argv[optind][optchar] == '\0') {
+	if (optind == 0 || argv[optind][optchar] == '\0') {
 		optind++;
 		optchar = 0;
 	}

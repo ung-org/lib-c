@@ -54,7 +54,10 @@ FILE * popen(const char * command, const char * mode)
 		return NULL;
 	}
 
+	#if defined __STDC_VERSION__
 	fwide(p, -1);
+	#endif
+
 	p->pipe_pid = child;
 	return p;
 }

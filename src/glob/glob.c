@@ -37,7 +37,7 @@ int glob(const char * restrict pattern, int flags, int (*errfunc) (const char * 
 	}
 
 	char *path = malloc(strlen(pattern) + 1);
-	strcpt(path, pattern);
+	strcpy(path, pattern);
 
 	for (i = 0; path[i]; i++) {
 		if (path[i] == '/') {

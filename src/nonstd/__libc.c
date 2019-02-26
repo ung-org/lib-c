@@ -1,3 +1,4 @@
+#include "sys/types.h"
 #include <nonstd/internal.h>
 #include "locale.h"
 #include "nonstd/locale.h"
