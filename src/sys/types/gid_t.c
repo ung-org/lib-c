@@ -1,6 +1,7 @@
 #include <sys/types.h>
 
-typedef unsigned long long int                                            gid_t;
+typedef                                                        unsigned long int
+	gid_t;
 /*
 POSIX(1)
 */
