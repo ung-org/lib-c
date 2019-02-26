@@ -90,14 +90,6 @@ int (__printf)(struct io_options *opt, const char * format, va_list arg)
 	}
 
 	for (i = 0; format[i] != 0; i++) {
-		if (format[i] != '%') {
-			if (nout < (int)n) {
-				s[nout] = format[i];
-			}
-			nout++;
-			continue;
-		}
-
 		/*
 		// zero of more flags "-+ #0"
 		// optional width "*" or decimal integer
@@ -112,6 +104,14 @@ int (__printf)(struct io_options *opt, const char * format, va_list arg)
 		int precision = 0;
 		int base = 10;
 		enum { def, hh, h, l, ll, j, z, t, L } length = def;
+
+		if (format[i] != '%') {
+			if (nout < (int)n) {
+				s[nout] = format[i];
+			}
+			nout++;
+			continue;
+		}
 
 		while (step == 0) {
 			i++;
@@ -197,7 +197,11 @@ int (__printf)(struct io_options *opt, const char * format, va_list arg)
 			case hh:	argint = (signed char)va_arg(arg, int); break;
 			case h:		argint = (short int)va_arg(arg, int); break;
 			case l:		argint = va_arg(arg, long int); break;
+
+			#if defined __STDC_VERSION__ && 199901L <= __STDC_VERSION__
 			case ll:	argint = va_arg(arg, long long int); break;
+			#endif
+
 			case j:		argint = va_arg(arg, intmax_t); break;
 			case z:		argint = va_arg(arg, size_t); break;
 			case t:		argint = va_arg(arg, ptrdiff_t); break;
