@@ -13,5 +13,5 @@ typedef enum {
 	TOUPPER,
 	FILE_TAIL,
 	ATEXIT,
-	RAND,
+	RAND
 } LIBC_INTERNAL;
