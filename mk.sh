@@ -227,6 +227,13 @@ make_deps_mk() {
 				fi
 				printf ' \\\n\t%s.a($(OBJDIR)/%s)' $LIB $OBJ >> "${DEPS}/${LIB}.XOPEN_${xver}"
 			fi
+
+			if [ -z "$cver" ] && [ -z "$pver" ] && [ -z "$xver" ]; then
+				if ! [ -f "${DEPS}/${LIB}.C_0" ]; then
+					printf '.POSIX:\n%s_C_0_OBJS=' "${LIB}" > "${DEPS}/${LIB}.C_0"
+				fi
+				printf ' \\\n\t%s.a($(OBJDIR)/%s)' $LIB $OBJ >> "${DEPS}/${LIB}.C_0"
+			fi
 		fi
 	done
 

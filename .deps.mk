@@ -3779,6 +3779,7 @@ $(OBJDIR)/compile.o: ./src/regexp/compile.c
 	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/regexp/compile.c -o $@
 
 
+include $(TOPDIR)/.deps/libc.C_0
 include $(TOPDIR)/.deps/libc.C_1
 include $(TOPDIR)/.deps/libc.C_199409
 include $(TOPDIR)/.deps/libc.C_199901
@@ -3796,5 +3797,6 @@ include $(TOPDIR)/.deps/libm.C_199901
 include $(TOPDIR)/.deps/libm.POSIX_200112
 include $(TOPDIR)/.deps/libm.XOPEN_4
 include $(TOPDIR)/.deps/libm.XOPEN_400
+include $(TOPDIR)/.deps/libpthread.C_0
 include $(TOPDIR)/.deps/librt.POSIX_199309
 
