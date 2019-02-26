@@ -1,22 +1,22 @@
 .POSIX:
 libc_POSIX_200809_OBJS= \
-	libc.a(iconv_open.o) \
-	libc.a(iconv_close.o) \
-	libc.a(iconv.o) \
-	libc.a(poll.o) \
-	libc.a(strfmon.o) \
-	libc.a(nl_langinfo.o) \
-	libc.a(waitid.o) \
-	libc.a(fstatvfs.o) \
-	libc.a(statvfs.o) \
-	libc.a(strcasecmp.o) \
-	libc.a(strncasecmp.o) \
-	libc.a(tcgetsid.o) \
-	libc.a(strdup.o) \
-	libc.a(truncate.o) \
-	libc.a(getsid.o) \
-	libc.a(getpgid.o) \
-	libc.a(fchdir.o) \
-	libc.a(lchown.o) \
-	libc.a(mkstemp.o) \
-	libc.a(getsubopt.o)
+	libc.a($(OBJDIR)/iconv_open.o) \
+	libc.a($(OBJDIR)/iconv_close.o) \
+	libc.a($(OBJDIR)/iconv.o) \
+	libc.a($(OBJDIR)/poll.o) \
+	libc.a($(OBJDIR)/strfmon.o) \
+	libc.a($(OBJDIR)/nl_langinfo.o) \
+	libc.a($(OBJDIR)/waitid.o) \
+	libc.a($(OBJDIR)/fstatvfs.o) \
+	libc.a($(OBJDIR)/statvfs.o) \
+	libc.a($(OBJDIR)/strcasecmp.o) \
+	libc.a($(OBJDIR)/strncasecmp.o) \
+	libc.a($(OBJDIR)/tcgetsid.o) \
+	libc.a($(OBJDIR)/strdup.o) \
+	libc.a($(OBJDIR)/truncate.o) \
+	libc.a($(OBJDIR)/getsid.o) \
+	libc.a($(OBJDIR)/getpgid.o) \
+	libc.a($(OBJDIR)/fchdir.o) \
+	libc.a($(OBJDIR)/lchown.o) \
+	libc.a($(OBJDIR)/mkstemp.o) \
+	libc.a($(OBJDIR)/getsubopt.o)

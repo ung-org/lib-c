@@ -136,16 +136,61 @@ elif [ -n "${posix}" ]; then
 	printf 'CFLAGS=-D_POSIX_C_SOURCE=%d\n' "${posix}" >> .config.mk
 fi
 
+
+### generate .build.mk
 cat <<EOF > .build.mk
 .POSIX:
+
+# work-around GNU ar's default "deterministic" mode
+ARFLAGS=rvU
+
 default: all
 
 include .config.mk
 include \$(TOPDIR)/.deps.mk
 
-all: libc.a
 EOF
 
+rm -f .build.all.mk
+
+for lib in $(ls $(dirname $0)/.deps/lib* | sed -e 's#^.*/\(lib.*\)\..*$#\1#g' | grep -v '\.h$' | sort -u); do
+	printf '%s.a:' "${lib}"
+
+	for cver in $(ls $(dirname $0)/.deps/${lib}.C_* 2>/dev/null | sed -e 's#^.*\.C_##g'); do
+		if [ $cver -le ${standard_c:-1} ]; then
+			printf ' $(%s_C_%d_OBJS)' "${lib}" "${cver}"
+			printf '%s\n' "${lib}" >> .build.all.mk
+		fi
+	done
+
+	for pver in $(ls $(dirname $0)/.deps/${lib}.POSIX_* 2>/dev/null | sed -e 's#^.*\.POSIX_##g'); do
+		if [ $pver -le ${posix:-0} ]; then
+			printf ' $(%s_POSIX_%d_OBJS)' "${lib}" "${pver}"
+			printf '%s\n' "${lib}" >> .build.all.mk
+		fi
+	done
+
+	for xver in $(ls $(dirname $0)/.deps/${lib}.XOPEN_* 2>/dev/null | sed -e 's#^.*\.XOPEN_##g'); do
+		if [ $xver -le ${xopen:-0} ]; then
+			printf ' $(%s_XOPEN_%d_OBJS)' "${lib}" "${xver}"
+			printf '%s\n' "${lib}" >> .build.all.mk
+		fi
+	done
+
+	printf '\n\t$(AR) $(ARFLAGS) $@ $^\n\n'
+done >> .build.mk
+
+printf 'all:' >> .build.mk
+sort -u .build.all.mk | awk '{printf(" %s.a", $0);}' >> .build.mk
+printf '\n' >> .build.mk
+rm -f .build.all.mk
+
+for i in $libs; do
+	echo $i
+done >> .build.mk
+
+### generate main Makefile
+### FIXME: this can probably be kept as a fixed file
 cat <<EOF > Makefile
 .POSIX:
 .DEFAULT:;\$(MAKE) all

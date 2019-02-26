@@ -3780,11 +3780,21 @@ $(OBJDIR)/compile.o: ./src/regexp/compile.c
 
 
 include $(TOPDIR)/.deps/libc.C_1
+include $(TOPDIR)/.deps/libc.C_199409
+include $(TOPDIR)/.deps/libc.C_199901
 include $(TOPDIR)/.deps/libc.POSIX_1
+include $(TOPDIR)/.deps/libc.POSIX_199309
 include $(TOPDIR)/.deps/libc.POSIX_2
+include $(TOPDIR)/.deps/libc.POSIX_200112
+include $(TOPDIR)/.deps/libc.POSIX_200809
+include $(TOPDIR)/.deps/libc.XOPEN_4
+include $(TOPDIR)/.deps/libc.XOPEN_400
+include $(TOPDIR)/.deps/libcurses.XOPEN_4
+include $(TOPDIR)/.deps/libcurses.XOPEN_400
 include $(TOPDIR)/.deps/libm.C_1
-include $(TOPDIR)/.deps/libm.mk
+include $(TOPDIR)/.deps/libm.C_199901
+include $(TOPDIR)/.deps/libm.POSIX_200112
+include $(TOPDIR)/.deps/libm.XOPEN_4
+include $(TOPDIR)/.deps/libm.XOPEN_400
+include $(TOPDIR)/.deps/librt.POSIX_199309
 
-include $(TOPDIR)/.deps/libc.mk
-
-all: libc.a libm.a

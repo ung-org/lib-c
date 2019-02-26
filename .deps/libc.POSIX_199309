@@ -1,20 +1,20 @@
 .POSIX:
 libc_POSIX_199309_OBJS= \
-	libc.a(sigqueue.o) \
-	libc.a(sigtimedwait.o) \
-	libc.a(sigwaitinfo.o) \
-	libc.a(munlockall.o) \
-	libc.a(munmap.o) \
-	libc.a(mlock.o) \
-	libc.a(mmap.o) \
-	libc.a(mlockall.o) \
-	libc.a(mprotect.o) \
-	libc.a(munlock.o) \
-	libc.a(shm_unlink.o) \
-	libc.a(msync.o) \
-	libc.a(shm_open.o) \
-	libc.a(fchmod.o) \
-	libc.a(nanosleep.o) \
-	libc.a(fsync.o) \
-	libc.a(fdatasync.o) \
-	libc.a(ftruncate.o)
+	libc.a($(OBJDIR)/sigqueue.o) \
+	libc.a($(OBJDIR)/sigtimedwait.o) \
+	libc.a($(OBJDIR)/sigwaitinfo.o) \
+	libc.a($(OBJDIR)/munlockall.o) \
+	libc.a($(OBJDIR)/munmap.o) \
+	libc.a($(OBJDIR)/mlock.o) \
+	libc.a($(OBJDIR)/mmap.o) \
+	libc.a($(OBJDIR)/mlockall.o) \
+	libc.a($(OBJDIR)/mprotect.o) \
+	libc.a($(OBJDIR)/munlock.o) \
+	libc.a($(OBJDIR)/shm_unlink.o) \
+	libc.a($(OBJDIR)/msync.o) \
+	libc.a($(OBJDIR)/shm_open.o) \
+	libc.a($(OBJDIR)/fchmod.o) \
+	libc.a($(OBJDIR)/nanosleep.o) \
+	libc.a($(OBJDIR)/fsync.o) \
+	libc.a($(OBJDIR)/fdatasync.o) \
+	libc.a($(OBJDIR)/ftruncate.o)

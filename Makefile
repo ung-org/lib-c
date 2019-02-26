@@ -1,29 +1,22 @@
 .POSIX:
 .DEFAULT:;$(MAKE) all
 
-ARCHITECTURE=x86
-WORDSIZE=
-SRCDIR=./src
-INCDIR=./include
-OBJDIR=/home/jkk/c/obj
+include .config.mk
 
-CC=c99
-CFLAGS=-D_XOPEN_SOURCE=700
-
-all: .deps.mk include
+all: $(TOPDIR)/.deps.mk $(INCDIR)
 	@mkdir -p $(OBJDIR)
-	$(MAKE) -f .deps.mk 
+	$(MAKE) -f .build.mk
 
-deps: .headers.mk .deps.mk
+deps: $(TOPDIR)/.headers.mk $(TOPDIR)/.deps.mk
 
-.deps.mk: mk.sh
-	sh -c '. ./mk.sh; make_deps_mk'
+$(TOPDIR)/.deps.mk: $(TOPDIR)/mk.sh
+	sh -c '. $(TOPDIR)/mk.sh; cd $(TOPDIR); make_deps_mk'
 
-.headers.mk: mk.sh
-	sh -c '. ./mk.sh; make_headers_mk'
+$(TOPDIR)/.headers.mk: $(TOPDIR)/mk.sh
+	sh -c '. $(TOPDIR)/mk.sh; cd $(TOPDIR); make_headers_mk'
 
-headers include: .headers.mk mkh.sh
-	$(MAKE) -f .headers.mk headers
+headers $(INCDIR): $(TOPDIR)/.headers.mk $(TOPDIR)/mkh.sh
+	$(MAKE) -f $(TOPDIR)/.headers.mk headers
 
 ctags:
 	ctags $$(find src -name \*.c)
@@ -32,4 +25,4 @@ clean:
 	rm -rf $(OBJDIR) *.a
 
 extra-clean: clean
-	rm -rf .deps .*.mk $(INCDIR)
+	rm -rf .deps .deps.mk .headers.mk $(INCDIR)

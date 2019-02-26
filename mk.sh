@@ -211,21 +211,21 @@ make_deps_mk() {
 				if ! [ -f "${DEPS}/${LIB}.C_${cver}" ]; then
 					printf '.POSIX:\n%s_C_%s_OBJS=' "${LIB}" "${cver}" > "${DEPS}/${LIB}.C_${cver}"
 				fi
-				printf ' \\\n\t%s.a(%s)' $LIB $OBJ >> "${DEPS}/${LIB}.C_${cver}"
+				printf ' \\\n\t%s.a($(OBJDIR)/%s)' $LIB $OBJ >> "${DEPS}/${LIB}.C_${cver}"
 			fi
 
 			if [ -n "$pver" ]; then
 				if ! [ -f "${DEPS}/${LIB}.POSIX_${pver}" ]; then
 					printf '.POSIX:\n%s_POSIX_%s_OBJS=' "${LIB}" "${pver}" > "${DEPS}/${LIB}.POSIX_${pver}"
 				fi
-				printf ' \\\n\t%s.a(%s)' $LIB $OBJ >> "${DEPS}/${LIB}.POSIX_${pver}"
+				printf ' \\\n\t%s.a($(OBJDIR)/%s)' $LIB $OBJ >> "${DEPS}/${LIB}.POSIX_${pver}"
 			fi
 
 			if [ -n "$xver" ]; then
 				if ! [ -f "${DEPS}/${LIB}.XOPEN_${xver}" ]; then
 					printf '.POSIX:\n%s_XOPEN_%s_OBJS=' "${LIB}" "${xver}" > "${DEPS}/${LIB}.XOPEN_${xver}"
 				fi
-				printf ' \\\n\t%s.a(%s)' $LIB $OBJ >> "${DEPS}/${LIB}.XOPEN_${xver}"
+				printf ' \\\n\t%s.a($(OBJDIR)/%s)' $LIB $OBJ >> "${DEPS}/${LIB}.XOPEN_${xver}"
 			fi
 		fi
 	done
@@ -237,16 +237,7 @@ make_deps_mk() {
 		VER=$(basename $libdep | sed -e 's/^.*\.//')
 		echo adding dependencies for $LIB v $VER
 		printf 'include $(TOPDIR)/.deps/%s\n' $(basename $libdep) >> "${TOPDIR}/.deps.mk"
-
-		if ! [ -f "${DEPS}/${LIB}.mk" ]; then
-			printf '.POSIX:\n%s.a:' "${LIB}" > "${DEPS}/${LIB}.mk"
-			printf 'include $(TOPDIR)/.deps/%s.mk\n' "${LIB}" >> .deps.mk
-		fi
-		printf ' \\\n\t$(%s_%s_OBJS)' $LIB $VER >> ${DEPS}/${LIB}.mk
 	done
 
-	printf '\n\nall:' >> "${TOPDIR}/.deps.mk"
-	for lib in ${DEPS}/lib*.mk; do
-		printf ' %s.a' $(basename $lib .mk) >> "${TOPDIR}/.deps.mk"
-	done
+	printf '\n' >> "${TOPDIR}/.deps.mk"
 }

@@ -1,24 +1,24 @@
 .POSIX:
 libm_C_1_OBJS= \
-	libm.a(fmod.o) \
-	libm.a(log10.o) \
-	libm.a(modf.o) \
-	libm.a(acos.o) \
-	libm.a(sin.o) \
-	libm.a(floor.o) \
-	libm.a(asin.o) \
-	libm.a(frexp.o) \
-	libm.a(cos.o) \
-	libm.a(log.o) \
-	libm.a(tan.o) \
-	libm.a(sqrt.o) \
-	libm.a(sinh.o) \
-	libm.a(atan2.o) \
-	libm.a(pow.o) \
-	libm.a(atan.o) \
-	libm.a(ceil.o) \
-	libm.a(exp.o) \
-	libm.a(tanh.o) \
-	libm.a(fabs.o) \
-	libm.a(ldexp.o) \
-	libm.a(cosh.o)
+	libm.a($(OBJDIR)/fmod.o) \
+	libm.a($(OBJDIR)/log10.o) \
+	libm.a($(OBJDIR)/modf.o) \
+	libm.a($(OBJDIR)/acos.o) \
+	libm.a($(OBJDIR)/sin.o) \
+	libm.a($(OBJDIR)/floor.o) \
+	libm.a($(OBJDIR)/asin.o) \
+	libm.a($(OBJDIR)/frexp.o) \
+	libm.a($(OBJDIR)/cos.o) \
+	libm.a($(OBJDIR)/log.o) \
+	libm.a($(OBJDIR)/tan.o) \
+	libm.a($(OBJDIR)/sqrt.o) \
+	libm.a($(OBJDIR)/sinh.o) \
+	libm.a($(OBJDIR)/atan2.o) \
+	libm.a($(OBJDIR)/pow.o) \
+	libm.a($(OBJDIR)/atan.o) \
+	libm.a($(OBJDIR)/ceil.o) \
+	libm.a($(OBJDIR)/exp.o) \
+	libm.a($(OBJDIR)/tanh.o) \
+	libm.a($(OBJDIR)/fabs.o) \
+	libm.a($(OBJDIR)/ldexp.o) \
+	libm.a($(OBJDIR)/cosh.o)

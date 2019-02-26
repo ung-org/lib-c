@@ -1,14 +1,14 @@
 .POSIX:
 libm_XOPEN_400_OBJS= \
-	libm.a(cbrt.o) \
-	libm.a(remainder.o) \
-	libm.a(asinh.o) \
-	libm.a(expm1.o) \
-	libm.a(rint.o) \
-	libm.a(ilogb.o) \
-	libm.a(atanh.o) \
-	libm.a(scalb.o) \
-	libm.a(log1p.o) \
-	libm.a(acosh.o) \
-	libm.a(nextafter.o) \
-	libm.a(logb.o)
+	libm.a($(OBJDIR)/cbrt.o) \
+	libm.a($(OBJDIR)/remainder.o) \
+	libm.a($(OBJDIR)/asinh.o) \
+	libm.a($(OBJDIR)/expm1.o) \
+	libm.a($(OBJDIR)/rint.o) \
+	libm.a($(OBJDIR)/ilogb.o) \
+	libm.a($(OBJDIR)/atanh.o) \
+	libm.a($(OBJDIR)/scalb.o) \
+	libm.a($(OBJDIR)/log1p.o) \
+	libm.a($(OBJDIR)/acosh.o) \
+	libm.a($(OBJDIR)/nextafter.o) \
+	libm.a($(OBJDIR)/logb.o)
