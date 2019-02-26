@@ -15,11 +15,11 @@ classify_source () {
 		echo MACRO
 	elif grep -q '^typedef .*(\*' $1; then
 		echo FNTYPE
-	elif grep -q "^typedef .*${NAME}.*;" $1; then
+	elif grep -q "^typedef " $1; then
 		echo TYPE
 	elif grep -q "^struct .*;$" $1; then
 		echo TYPE
-	elif grep -q "^typedef.*{$" $1; then
+	elif grep -q "^typedef .*{$" $1; then
 		echo TYPE_LONG
 	elif grep -q "^struct.*{" $1; then
 		echo RECORD
@@ -76,6 +76,8 @@ get_declaration () {
 			sed -ne '/^#if/,/#endif/p' $1
 		elif grep -qE '^(typedef|struct|union) .*{' $1; then
 			sed -ne '/{$/,/^}/p' $1
+		elif grep -qE '^(typedef|struct|union) .*[^;]$' $1; then
+			grep -E '^(typedef|struct|union|	)' $1
 		else
 			grep -E '^(typedef|struct|union) ' $1
 		fi
