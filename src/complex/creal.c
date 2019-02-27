@@ -5,7 +5,11 @@
 
 TYPE TGFN(creal)(TYPE complex z)
 {
-	return 0.0;
+	union {
+		complex TYPE c;
+		TYPE f[2];
+	} u = { .c = z };
+	return z[0];
 }
 
 /*d

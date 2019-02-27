@@ -5,7 +5,7 @@
 
 TYPE complex TGFN(conj)(TYPE complex z)
 {
-	return 0.0;
+	return TGFN(creal)(z) - TGFN(cimag)(z);
 }
 
 /*d
