@@ -1,12 +1,11 @@
 #include <stdlib.h>
 #include "nonstd/internal.h"
+#include "_rand.h"
 
 /** get a pseudo-random number **/
 int rand(void)
 {
-	/* FIXME: forward dependency on POSIX.1c-1995 */
-	extern int rand_r(unsigned int*);
-	return rand_r(__libc(RAND));
+	return _rand(*(unsigned*)__libc(RAND));
 }
 
 /***
