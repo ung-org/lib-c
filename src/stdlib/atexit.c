@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include "errno.h"
-#include "nonstd/internal.h"
+#include "nonstd/lib.h"
 
 /** register a function to run at program exit **/
 

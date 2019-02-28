@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include "nonstd/internal.h"
+#include "nonstd/lib.h"
 #include "_rand.h"
 
 /** get a pseudo-random number **/
