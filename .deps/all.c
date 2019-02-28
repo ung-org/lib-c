@@ -22,6 +22,7 @@
 ./src/nonstd/struct_FILE.c
 ./src/nonstd/SYSCALL_NUMBER.c
 ./src/nonstd/__syscall.c
+./src/nonstd/__lookup.c
 ./src/nonstd/ctype_t.c
 ./src/nonstd/funlockfile.c
 ./src/nonstd/ASSERT_NONNULL.c
