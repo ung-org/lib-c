@@ -5,7 +5,8 @@
 #include "sys/types.h"
 #include "unistd.h"
 #else
-#define write(fd, buf, size) -1
+#include "nonstd/syscall.h"
+#define write(_fd, _buf, _size) __syscall(__lookup("write"), _fd, _buf, _size)
 #endif
 
 /** write a character to a file stream **/
@@ -24,10 +25,7 @@ int fputc(int c, FILE *stream)
 	}
 
 	funlockfile(stream);
-	/*
-	RETURN_SUCCESS(ARGUMENT(c));
-	RETURN_FAILURE(CONSTANT(EOF));
-	*/
+
 	return ch;
 }
 
@@ -38,6 +36,9 @@ file position indicator, which is advanced. If ARGUMENT(stream) does not support
 seeking or was opened in append mode, the character is written to the end of
 the stream.
 ***/
+
 /*
+RETURN_SUCCESS(ARGUMENT(c))
+RETURN_FAILURE(CONSTANT(EOF))
 STDC(1)
 */
