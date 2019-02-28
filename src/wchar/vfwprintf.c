@@ -10,7 +10,7 @@ int vfwprintf(FILE * restrict stream, const wchar_t * restrict format, va_list a
 	struct io_options opt = {0};
 	opt.fnname = "vfwprintf";
 	opt.stream = stream;
-	ret = __printf(&opt, NULL /* format */, arg);
+	ret = __printf(&opt, (const char*)format, arg);
 	return ret;
 }
 
