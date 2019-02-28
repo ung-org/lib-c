@@ -5,7 +5,7 @@
 
 void _exit(int status)
 {
-	long scno = ((syscall_lookup_t)__libc(SYSCALL_LOOKUP))("exit");
+	long scno = __lookup("exit");
 	for (;;) {
 		__syscall(scno, status);
 	}
