@@ -4,8 +4,8 @@
 /** split string into tokens **/
 char * strtok(char * restrict s1, const char * restrict s2)
 {
-	extern char * strtok_r(char *restr, const char *restrict, char **);
-	static char *current;
+	static char *current = 0;
+	static char **state = &current;
 
 	/* TODO */
 	ASSERT_NONNULL(s2);
@@ -15,7 +15,9 @@ char * strtok(char * restrict s1, const char * restrict s2)
 	RETURN(NONNULL, a pointer to the first character of the next token);
 	*/
 
-	return strtok_r (s1, s2, &current);
+	#include "_strtok.h"
+
+	return current;
 }
 
 /***
