@@ -1,7 +1,7 @@
 #include "sys/types.h"
 #include <nonstd/internal.h>
-#include "locale.h"
 #include "nonstd/locale.h"
+#include "nonstd/io.h"
 
 #include "_printf.h"
 #include "_scanf.h"
