@@ -2,6 +2,7 @@
 
 int fesetenv(const fenv_t *envp)
 {
+	(void)envp;
 	return 0;
 }
 

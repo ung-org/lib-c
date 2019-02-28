@@ -5,7 +5,7 @@
 
 TYPE complex TGFN(casin)(TYPE complex z)
 {
-	return 0;
+	return z;
 }
 
 /*d

@@ -2,6 +2,7 @@
 
 int fesetexceptflag(const fexcept_t *flagp, int excepts)
 {
+	(void)flagp; (void)excepts;
 	return 0;
 }
 

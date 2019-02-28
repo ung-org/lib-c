@@ -5,7 +5,7 @@
 
 TYPE complex TGFN(cacos)(TYPE complex z)
 {
-	return I;
+	return z;
 }
 
 /*d

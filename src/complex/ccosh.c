@@ -5,7 +5,7 @@
 
 TYPE complex TGFN(ccosh)(TYPE complex z)
 {
-	return 0.0;
+	return z;
 }
 
 /*d

@@ -5,7 +5,7 @@
 
 TYPE TGFN(cabs)(TYPE complex z)
 {
-	return 0.0;
+	return z;
 }
 
 /*d

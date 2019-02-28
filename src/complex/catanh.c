@@ -5,7 +5,7 @@
 
 TYPE complex TGFN(catanh)(TYPE complex z)
 {
-	return 0.0;
+	return z;
 }
 
 /*d

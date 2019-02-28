@@ -4,7 +4,7 @@
 
 TYPE TGFN(atanh)(TYPE x)
 {
-	return 0.0;
+	return x;
 }
 
 /*

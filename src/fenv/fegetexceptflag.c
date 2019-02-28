@@ -2,7 +2,8 @@
 
 int fegetexceptflag(fexcept_t *flagp, int excepts)
 {
-	return excepts;
+	(void)flagp; (void)excepts;
+	return 0;
 }
 
 /*d

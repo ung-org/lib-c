@@ -4,6 +4,7 @@
 
 TYPE TGFN(remquo)(TYPE x, TYPE y, int *quo)
 {
+	(void)quo;
 	return x - y;
 }
 

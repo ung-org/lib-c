@@ -4,6 +4,7 @@
 
 TYPE TGFN(nan)(const char *tagp)
 {
+	(void)tagp;
 	return 0.0;
 }
 

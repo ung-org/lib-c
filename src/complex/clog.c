@@ -5,7 +5,7 @@
 
 TYPE complex TGFN(clog)(TYPE complex z)
 {
-	return 0.0;
+	return z;
 }
 
 /*d

@@ -2,6 +2,7 @@
 
 int feholdexcept(fenv_t *envp)
 {
+	(void)envp;
 	return 0;
 }
 

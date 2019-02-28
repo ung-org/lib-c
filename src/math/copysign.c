@@ -4,7 +4,7 @@
 
 TYPE TGFN(copysign)(TYPE x, TYPE y)
 {
-	return 0.0;
+	return x - y;
 }
 
 /*

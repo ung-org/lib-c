@@ -5,7 +5,7 @@
 
 TYPE complex TGFN(cpow)(TYPE complex x, TYPE complex y)
 {
-	return 0.0;
+	return x * y;
 }
 
 /*d
