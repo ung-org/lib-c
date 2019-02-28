@@ -1,6 +1,4 @@
-#define __STDC_ISO_10646__
-
-/** supported UCS version **/
+#define __STDC_ISO_10646__                         /** supported UCS version **/
 
 /***
 is defined if TYPE(wchar_t) represents characters encoded
