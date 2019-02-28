@@ -2,7 +2,6 @@
 #include "limits.h"
 #include "nonstd/assert.h"
 #include "nonstd/ctype.h"
-#include "nonstd/internal.h"
 
 /** test whether a character is punctuation **/
 int ispunct(int c)
@@ -15,7 +14,7 @@ int ispunct(int c)
 	RETURN(0, ARGUMENT(c) is not a punctuation character);
 	*/
 
-	return map[c] & PUNCT;
+	return map[c] & CT_PUNCT;
 }
 
 /***

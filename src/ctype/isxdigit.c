@@ -2,7 +2,6 @@
 #include "limits.h"
 #include "nonstd/assert.h"
 #include "nonstd/ctype.h"
-#include "nonstd/internal.h"
 
 /** test whether a character is a hexadecimal digit **/
 int isxdigit(int c)
@@ -14,7 +13,7 @@ int isxdigit(int c)
 	RETURN(NONZERO, ARGUMENT(c) is a hexadecimal digit);
 	RETURN(0, ARGUMENT(c) is not a hexadecimal digit);
 	*/
-	return map[c] & XDIGIT;
+	return map[c] & CT_XDIGIT;
 }
 
 /***

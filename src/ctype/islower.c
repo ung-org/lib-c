@@ -1,7 +1,6 @@
 #include <ctype.h>
 #include "limits.h"
 #include "nonstd/assert.h"
-#include "nonstd/internal.h"
 #include "nonstd/ctype.h"
 
 /** test whether a character is a lowercase letter **/
@@ -14,7 +13,7 @@ int islower(int c)
 	RETURN(NONZERO, ARGUMENT(c) is a lowercase letter);
 	RETURN(0, ARGUMENT(c) is not a lowercase letter);
 	*/
-	return map[c] & LOWER;
+	return map[c] & CT_LOWER;
 }
 
 /***

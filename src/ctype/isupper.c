@@ -2,7 +2,6 @@
 #include "limits.h"
 #include "nonstd/assert.h"
 #include "nonstd/ctype.h"
-#include "nonstd/internal.h"
 
 /** test whether a character is an uppercase letter **/
 int isupper(int c)
@@ -15,7 +14,7 @@ int isupper(int c)
 	RETURN(0, ARGUMENT(c) is not an uppercase letter);
 	*/
 
-	return map[c] & UPPER;
+	return map[c] & CT_UPPER;
 }
 
 /***

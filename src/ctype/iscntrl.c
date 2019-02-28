@@ -2,7 +2,6 @@
 #include "limits.h"
 #include "nonstd/assert.h"
 #include "nonstd/ctype.h"
-#include "nonstd/internal.h"
 
 /** test whether a character is a control character */
 int iscntrl(int c)
@@ -15,7 +14,7 @@ int iscntrl(int c)
 	RETURN(0, ARGUMENT(c) is not a control character);
 	*/
 
-	return map[c] == 0 || (map[c] == SPACE && c != ' ');
+	return map[c] == 0 || (map[c] == CT_SPACE && c != ' ');
 }
 
 /***

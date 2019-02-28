@@ -2,7 +2,6 @@
 #include "limits.h"
 #include "locale.h"
 #include "nonstd/ctype.h"
-#include "nonstd/internal.h"
 #include "nonstd/assert.h"
 
 /** test whether a character is blank **/
@@ -12,7 +11,7 @@ int isblank(int c)
 
 	unsigned int *map = __libc(CTYPE);
 
-	return map[c] & BLANK;
+	return map[c] & CT_BLANK;
 }
 
 /***

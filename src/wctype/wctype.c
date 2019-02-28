@@ -9,27 +9,27 @@ wctype_t wctype(const char * property)
 	ASSERT_NONNULL(property);
 
 	if (!strcmp(property, "alnum")) {
-		return ALPHA | DIGIT;
+		return CT_ALPHA | CT_DIGIT;
 	} else if (!strcmp(property, "alpha")) {
-		return ALPHA;
+		return CT_ALPHA;
 	} else if (!strcmp(property, "cntrl")) {
-		return CNTRL;
+		return CT_CNTRL;
 	} else if (!strcmp(property, "digit")) {
-		return DIGIT;
+		return CT_DIGIT;
 	} else if (!strcmp(property, "graph")) {
-		return GRAPH;
+		return CT_GRAPH;
 	} else if (!strcmp(property, "lower")) {
-		return LOWER;
+		return CT_LOWER;
 	} else if (!strcmp(property, "print")) {
-		return PRINT;
+		return CT_PRINT;
 	} else if (!strcmp(property, "punct")) {
-		return PUNCT;
+		return CT_PUNCT;
 	} else if (!strcmp(property, "space")) {
-		return SPACE;
+		return CT_SPACE;
 	} else if (!strcmp(property, "upper")) {
-		return UPPER;
+		return CT_UPPER;
 	} else if (!strcmp(property, "xdigit")) {
-		return XDIGIT;
+		return CT_XDIGIT;
 	}
 
 	return 0;

@@ -9,9 +9,9 @@ wctrans_t wctrans(const char * property)
 	ASSERT_NONNULL(property);
 
 	if (!strcmp(property, "tolower")) {
-		return LOWER;
+		return CT_LOWER;
 	} else if (!strcmp(property, "toupper")) {
-		return UPPER;
+		return CT_UPPER;
 	}
 
 	return 0;

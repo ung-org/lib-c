@@ -1,7 +1,7 @@
 #include <ctype.h>
 #include "limits.h"
 #include "nonstd/assert.h"
-#include "nonstd/internal.h"
+#include "nonstd/ctype.h"
 
 /** convert a lowercase letter to uppercase **/
 int toupper(int c)

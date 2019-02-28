@@ -2,7 +2,6 @@
 #include "limits.h"
 #include "nonstd/assert.h"
 #include "nonstd/ctype.h"
-#include "nonstd/internal.h"
 
 /** test whether a character is graphic **/
 int isgraph(int c)
@@ -15,7 +14,7 @@ int isgraph(int c)
 	RETURN(0, ARGUMENT(c) is not a graphic character);
 	*/
 
-	return map[c] & ~SPACE;
+	return map[c] & ~CT_SPACE;
 }
 
 /***
