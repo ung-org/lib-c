@@ -29,6 +29,14 @@ void *__libc(LIBC_INTERNAL variable)
 		r = &locale;
 		break;
 
+	case CTYPE:
+		r = __libc_per_thread(THREAD_LOCALE);
+		if (!r) {
+			r = &locale;
+		}
+		r = ((struct __locale_t*)r)->ctype;
+		break;
+
 	case SYSCALL_LOOKUP:
 		r = (void*)__syscall_lookup;
 		break;
