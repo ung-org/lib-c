@@ -2,22 +2,16 @@
 #include "stdio.h"
 #include "stdarg.h"
 #include "stdlib.h"
+#include "nonstd/io.h"
 
 int vfwprintf(FILE * restrict stream, const wchar_t * restrict format, va_list arg)
 {
-	/*
-	va_list ap;
-	va_copy(ap, arg);
-	int len = vsnwprintf(NULL, 0, format, arg);
-	wchar_t *buf = malloc((len + 1) * sizeof(wchar_t));
-	len = vsnwprintf(buf, len, format, ap);
-	va_end(ap);
-	len = (int)fwrite(buf, sizeof(*buf), len, stream);
-	free(buf);
-	return len;
-	*/
-	(void)stream; (void)format; (void)arg;
-	return 0;
+	int ret = 0;
+	struct io_options opt = {0};
+	opt.fnname = "vfwprintf";
+	opt.stream = stream;
+	ret = __printf(&opt, NULL /* format */, arg);
+	return ret;
 }
 
 /*
