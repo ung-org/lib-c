@@ -1,8 +1,8 @@
 #include <limits.h>
-#ifdef __CHAR_IS_SIGNED
-#define CHAR_MAX                                                           (127)
-#else
+#ifdef __CHAR_IS_UNSIGNED__
 #define CHAR_MAX                                                           (255)
+#else
+#define CHAR_MAX                                                           (127)
 #endif
 
 /** char maximum **/

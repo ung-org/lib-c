@@ -1,8 +1,8 @@
 #include <limits.h>
-#ifdef __CHAR_IS_SIGNED
-#define CHAR_MIN                                                          (-128)
-#else
+#ifdef __CHAR_IS_UNSIGNED__
 #define CHAR_MIN                                                             (0)
+#else
+#define CHAR_MIN                                                          (-128)
 #endif
 
 /** char minimum **/
