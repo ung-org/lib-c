@@ -177,7 +177,7 @@ for lib in $(ls $(dirname $0)/.deps/lib* | sed -e 's#^.*/\(lib.*\)\..*$#\1#g' | 
 		fi
 	done
 
-	printf '\n\t$(AR) $(ARFLAGS) $@ $^\n\n'
+	printf '\n\t$(AR) $(ARFLAGS) $@ $?\n\n'
 done >> .build.mk
 
 printf 'all:' >> .build.mk
