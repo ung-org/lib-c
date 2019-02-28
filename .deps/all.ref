@@ -1,6 +1,7 @@
 ./src/nonstd/syscall-internal.ref
 ./src/nonstd/io-internal.ref
 ./src/nonstd/lib-internal.ref
+./src/nonstd/locale-limits.ref
 ./src/nonstd/locale-internal.ref
 ./src/nonstd/pid_t.ref
 ./src/nonstd/ENOSYS.ref

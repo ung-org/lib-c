@@ -99,7 +99,7 @@ $(INCDIR)/nonstd/io.h: mkh.sh $(SRCDIR)/nonstd/struct_io_options.c $(SRCDIR)/non
 $(INCDIR)/nonstd/lib.h: mkh.sh $(SRCDIR)/nonstd/lib-internal.ref 
 	INCDIR=$(INCDIR) sh mkh.sh $(INCDIR)/nonstd/lib.h
 
-$(INCDIR)/nonstd/locale.h: mkh.sh $(SRCDIR)/nonstd/struct_locale_t.c $(SRCDIR)/nonstd/__load_locale.c $(SRCDIR)/nonstd/locale-internal.ref 
+$(INCDIR)/nonstd/locale.h: mkh.sh $(SRCDIR)/nonstd/struct_locale_t.c $(SRCDIR)/nonstd/__load_locale.c $(SRCDIR)/nonstd/locale-limits.ref $(SRCDIR)/nonstd/locale-internal.ref 
 	INCDIR=$(INCDIR) sh mkh.sh $(INCDIR)/nonstd/locale.h
 
 $(INCDIR)/nonstd/syscall.h: mkh.sh $(SRCDIR)/nonstd/SYSCALL_NUMBER.c $(SRCDIR)/nonstd/__syscall.c $(SRCDIR)/nonstd/__lookup.c $(SRCDIR)/nonstd/syscall_lookup_t.c $(SRCDIR)/nonstd/SYSCALL.c $(SRCDIR)/nonstd/syscall-internal.ref $(SRCDIR)/nonstd/ENOSYS.ref $(SRCDIR)/nonstd/errno.ref 
