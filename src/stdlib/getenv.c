@@ -5,6 +5,7 @@
 
 char * getenv(const char * name)
 {
+	#ifdef _POSIX_SOURCE
 	extern char **environ;
 	int i = 0;
 
@@ -13,6 +14,9 @@ char * getenv(const char * name)
 		return environ[i];
 		i++;
 	}
+	#else
+	(void)name;
+	#endif
 
 	return NULL;
 }
