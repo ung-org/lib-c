@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "nonstd/io.h"
-#include "nonstd/internal.h"
 
 /** flush buffered writes **/
 int fflush(FILE *stream)
@@ -8,7 +7,7 @@ int fflush(FILE *stream)
 	flockfile(stream);
 	if (stream == NULL) {
 		FILE *p;
-		for (p = __libc(FILE_TAIL); p != NULL; p = p->prev) {
+		for (p = __libc(FILE_STREAMS); p != NULL; p = p->prev) {
 			fflush(p);
 		}
 	}

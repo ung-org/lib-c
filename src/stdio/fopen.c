@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "stdlib.h"
-#include "nonstd/internal.h"
 #include "nonstd/io.h"
 
 /** open a file stream **/
@@ -13,12 +12,12 @@ FILE * fopen(const char * restrict filename, const char * restrict mode)
 		return NULL;
 	}
 
-	if (__libc(FILE_TAIL)) {
-		f->prev = __libc(FILE_TAIL);
+	if (__libc(FILE_STREAMS)) {
+		f->prev = __libc(FILE_STREAMS);
 		f->prev->next = f;
 	}
 
-	/* __libc(FILE_TAIL) = f; */
+	/* __libc(FILE_STREAMS) = f; */
 
 	/*
 	RETURN_SUCCESS(a pointer to the new file stream);

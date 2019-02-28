@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include "errno.h"
 #include "nonstd/syscall.h"
-#include "nonstd/internal.h"
 
 /** rename a file **/
 int rename(const char *old, const char *new)

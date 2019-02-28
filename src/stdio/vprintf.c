@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include "stdarg.h"
 #include "nonstd/io.h"
-#include "nonstd/internal.h"
 
 /** write formatted output **/
 int vprintf(const char * restrict format, va_list arg)

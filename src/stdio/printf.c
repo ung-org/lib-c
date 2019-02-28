@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "stdarg.h"
-#include "nonstd/internal.h"
 #include "nonstd/io.h"
 
 /** write formatted output **/

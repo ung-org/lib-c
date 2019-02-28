@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include "stdarg.h"
 #include "nonstd/io.h"
-#include "nonstd/internal.h"
 
 /** write formatted output to a string **/
 int vsprintf(char *s, const char *format, va_list arg)
