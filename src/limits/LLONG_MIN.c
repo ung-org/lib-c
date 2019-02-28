@@ -1,5 +1,5 @@
 #include <limits.h>
-#define LLONG_MIN                                       (-9223372036854775808LL)
+#define LLONG_MIN                                             (-LLONG_MAX - 1LL)
 
 /* MIN: -9223372036854775807 */
 /** minimum value of a type(long long int) **/

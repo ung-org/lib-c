@@ -1,5 +1,5 @@
 #include <stdint.h>
-#define INTMAX_MIN                                      (-9223372036854775808LL)
+#define INTMAX_MIN                                           (-INTMAX_MAX - 1LL)
 
 /*
 STDC(199901)
