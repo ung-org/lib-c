@@ -1,1 +1,3 @@
 ./src/nonstd/struct_locale_t.c
+./src/nonstd/__load_locale.c
+./src/nonstd/locale-internal.ref

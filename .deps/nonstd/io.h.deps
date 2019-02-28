@@ -6,5 +6,6 @@
 ./src/nonstd/ftrylockfile.c
 ./src/nonstd/getc_unlocked.c
 ./src/nonstd/__scanf.c
+./src/nonstd/io-internal.ref
 ./src/nonstd/pid_t.ref
 ./src/nonstd/stdio.ref

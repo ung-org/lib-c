@@ -3,6 +3,6 @@
 ./src/nonstd/__lookup.c
 ./src/nonstd/syscall_lookup_t.c
 ./src/nonstd/SYSCALL.c
-./src/nonstd/nonstd-inernal.ref
+./src/nonstd/syscall-internal.ref
 ./src/nonstd/ENOSYS.ref
 ./src/nonstd/errno.ref

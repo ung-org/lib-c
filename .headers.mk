@@ -87,19 +87,22 @@ $(INCDIR)/nl_types.h: mkh.sh $(SRCDIR)/nl_types/nl_catd.c $(SRCDIR)/nl_types/NL_
 $(INCDIR)/nonstd/assert.h: mkh.sh $(SRCDIR)/nonstd/ASSERT_REPRESENTABLE.c $(SRCDIR)/nonstd/ASSERT_NONNULL.c $(SRCDIR)/nonstd/ASSERT_NOOVERLAP.c $(SRCDIR)/nonstd/ASSERT_NONZERO.c 
 	INCDIR=$(INCDIR) sh mkh.sh $(INCDIR)/nonstd/assert.h
 
-$(INCDIR)/nonstd/ctype.h: mkh.sh $(SRCDIR)/nonstd/ctype_t.c 
+$(INCDIR)/nonstd/ctype.h: mkh.sh $(SRCDIR)/nonstd/ctype_t.c $(SRCDIR)/nonstd/ctype-internal.ref 
 	INCDIR=$(INCDIR) sh mkh.sh $(INCDIR)/nonstd/ctype.h
 
 $(INCDIR)/nonstd/internal.h: mkh.sh $(SRCDIR)/nonstd/__libc.c $(SRCDIR)/nonstd/struct_atexit.c $(SRCDIR)/nonstd/LIBC_INTERNAL.c 
 	INCDIR=$(INCDIR) sh mkh.sh $(INCDIR)/nonstd/internal.h
 
-$(INCDIR)/nonstd/io.h: mkh.sh $(SRCDIR)/nonstd/struct_io_options.c $(SRCDIR)/nonstd/flockfile.c $(SRCDIR)/nonstd/__printf.c $(SRCDIR)/nonstd/struct_FILE.c $(SRCDIR)/nonstd/funlockfile.c $(SRCDIR)/nonstd/ftrylockfile.c $(SRCDIR)/nonstd/getc_unlocked.c $(SRCDIR)/nonstd/__scanf.c $(SRCDIR)/nonstd/pid_t.ref $(SRCDIR)/nonstd/stdio.ref 
+$(INCDIR)/nonstd/io.h: mkh.sh $(SRCDIR)/nonstd/struct_io_options.c $(SRCDIR)/nonstd/flockfile.c $(SRCDIR)/nonstd/__printf.c $(SRCDIR)/nonstd/struct_FILE.c $(SRCDIR)/nonstd/funlockfile.c $(SRCDIR)/nonstd/ftrylockfile.c $(SRCDIR)/nonstd/getc_unlocked.c $(SRCDIR)/nonstd/__scanf.c $(SRCDIR)/nonstd/io-internal.ref $(SRCDIR)/nonstd/pid_t.ref $(SRCDIR)/nonstd/stdio.ref 
 	INCDIR=$(INCDIR) sh mkh.sh $(INCDIR)/nonstd/io.h
 
-$(INCDIR)/nonstd/locale.h: mkh.sh $(SRCDIR)/nonstd/struct_locale_t.c 
+$(INCDIR)/nonstd/lib.h: mkh.sh $(SRCDIR)/nonstd/lib-internal.ref 
+	INCDIR=$(INCDIR) sh mkh.sh $(INCDIR)/nonstd/lib.h
+
+$(INCDIR)/nonstd/locale.h: mkh.sh $(SRCDIR)/nonstd/struct_locale_t.c $(SRCDIR)/nonstd/__load_locale.c $(SRCDIR)/nonstd/locale-internal.ref 
 	INCDIR=$(INCDIR) sh mkh.sh $(INCDIR)/nonstd/locale.h
 
-$(INCDIR)/nonstd/syscall.h: mkh.sh $(SRCDIR)/nonstd/SYSCALL_NUMBER.c $(SRCDIR)/nonstd/__syscall.c $(SRCDIR)/nonstd/__lookup.c $(SRCDIR)/nonstd/syscall_lookup_t.c $(SRCDIR)/nonstd/SYSCALL.c $(SRCDIR)/nonstd/nonstd-inernal.ref $(SRCDIR)/nonstd/ENOSYS.ref $(SRCDIR)/nonstd/errno.ref 
+$(INCDIR)/nonstd/syscall.h: mkh.sh $(SRCDIR)/nonstd/SYSCALL_NUMBER.c $(SRCDIR)/nonstd/__syscall.c $(SRCDIR)/nonstd/__lookup.c $(SRCDIR)/nonstd/syscall_lookup_t.c $(SRCDIR)/nonstd/SYSCALL.c $(SRCDIR)/nonstd/syscall-internal.ref $(SRCDIR)/nonstd/ENOSYS.ref $(SRCDIR)/nonstd/errno.ref 
 	INCDIR=$(INCDIR) sh mkh.sh $(INCDIR)/nonstd/syscall.h
 
 $(INCDIR)/poll.h: mkh.sh $(SRCDIR)/poll/POLLIN.c $(SRCDIR)/poll/POLLWRBAND.c $(SRCDIR)/poll/POLLPRI.c $(SRCDIR)/poll/POLLRDBAND.c $(SRCDIR)/poll/POLLNVAL.c $(SRCDIR)/poll/POLLWRNORM.c $(SRCDIR)/poll/struct_pollfd.c $(SRCDIR)/poll/POLLRDNORM.c $(SRCDIR)/poll/nfds_t.c $(SRCDIR)/poll/POLLERR.c $(SRCDIR)/poll/poll.c $(SRCDIR)/poll/POLLHUP.c $(SRCDIR)/poll/POLLOUT.c 
@@ -282,6 +285,7 @@ headers:  \
 	$(INCDIR)/nonstd/ctype.h \
 	$(INCDIR)/nonstd/internal.h \
 	$(INCDIR)/nonstd/io.h \
+	$(INCDIR)/nonstd/lib.h \
 	$(INCDIR)/nonstd/locale.h \
 	$(INCDIR)/nonstd/syscall.h \
 	$(INCDIR)/poll.h \

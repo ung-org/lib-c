@@ -30,6 +30,7 @@ nonstd/assert.h
 nonstd/ctype.h
 nonstd/internal.h
 nonstd/io.h
+nonstd/lib.h
 nonstd/locale.h
 nonstd/syscall.h
 poll.h

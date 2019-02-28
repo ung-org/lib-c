@@ -1,8 +1,12 @@
-./src/nonstd/nonstd-inernal.ref
+./src/nonstd/syscall-internal.ref
+./src/nonstd/io-internal.ref
+./src/nonstd/lib-internal.ref
+./src/nonstd/locale-internal.ref
 ./src/nonstd/pid_t.ref
 ./src/nonstd/ENOSYS.ref
 ./src/nonstd/stdio.ref
 ./src/nonstd/errno.ref
+./src/nonstd/ctype-internal.ref
 ./src/signal/ucontext_t.ref
 ./src/signal/pid_t.ref
 ./src/term/bool.ref

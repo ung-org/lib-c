@@ -19,6 +19,7 @@
 ./src/nonstd/_FTM/_POSIX_C_SOURCE.c
 ./src/nonstd/_FTM/_POSIX_SOURCE.c
 ./src/nonstd/_FTM/_XOPEN_SOURCE_EXTENDED.c
+./src/nonstd/__load_locale.c
 ./src/nonstd/struct_FILE.c
 ./src/nonstd/SYSCALL_NUMBER.c
 ./src/nonstd/__syscall.c
