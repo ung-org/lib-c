@@ -9,7 +9,7 @@ TYPE TGFN(creal)(TYPE complex z)
 		complex TYPE c;
 		TYPE f[2];
 	} u = { .c = z };
-	return z[0];
+	return u.f[0];
 }
 
 /*d

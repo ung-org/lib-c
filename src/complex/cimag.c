@@ -9,7 +9,7 @@ TYPE TGFN(cimag)(TYPE complex z)
 		complex TYPE c;
 		TYPE f[2];
 	} u = { .c = z };
-	return z[1];
+	return u.f[1];
 }
 
 /*d
