@@ -1,23 +1,27 @@
+#include "stdio.h"
+#include "locale.h"
+
+#include "nonstd/io.h"
+
 void __libc_start(int argc, char **argv)
 {
-	/*
-        struct __fopen_options fo = {0};
+	struct __FILE sin, sout, serr;
 
-        fo.fd = 0;
-        stdin = __libc.stdio.fopen(&fo);
+	sin.fd = 0;
+	stdin = &sin;
 
-        fo.fd = 1;
-        stdout = __libc.stdio.fopen(&fo);
+	sout.fd = 1;
+	stdout = &sout;
 
-        fo.fd = 2;
-        stderr = __libc.stdio.fopen(&fo);
+	serr.fd = 2;
+	stderr = &serr;
 
-        #if defined _POSIX_SOURCE || defined _POSIX_C_SOURCE || defined _XOPEN_SOURCE
+        #if defined _POSIX_SOURCE
         setlocale(LC_ALL, "POSIX");
         #else
         setlocale(LC_ALL, "C");
         #endif
-	*/
+
 	extern void exit(int);
 	extern int main(int, char*[]);
 
