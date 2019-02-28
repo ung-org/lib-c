@@ -5,24 +5,44 @@
 /** open a file stream **/
 FILE * fopen(const char * restrict filename, const char * restrict mode)
 {
-	FILE *f = calloc(1, sizeof(*f));
-	f->fd = -1;
-	if (freopen(filename, mode, f) == NULL) {
-		free(f);
+	struct __FILE *base = __libc(FILE_STREAMS);
+	struct __FILE *f = base;
+
+	/* find the next available stream */
+	while (f->next != NULL) {
+		f = f->next;
+	}
+
+	/* use a stream from the guaranteed space if possible */
+	/* otherwise, allocate a new stream */
+	if (f < base + FOPEN_MAX) {
+		f->next = f + 1;
+	} else {
+		f->next = malloc(sizeof(*f->next));
+	}
+
+	/* if we had to allocate, but that failed, we're out of memory */
+	if (f->next == NULL) {
 		return NULL;
 	}
 
-	if (__libc(FILE_STREAMS)) {
-		f->prev = __libc(FILE_STREAMS);
-		f->prev->next = f;
+	/* open the new stream */
+	f->next->prev = f;
+	f = f->next;
+	f->fd = -1;
+	if (freopen(filename, mode, f) == NULL) {
+		if (f < base + FOPEN_MAX) {
+		} else {
+			free(f);
+		}
+		return NULL;
 	}
-
-	/* __libc(FILE_STREAMS) = f; */
 
 	/*
 	RETURN_SUCCESS(a pointer to the new file stream);
 	RETURN_FAILURE(CONSTANT(NULL));
 	*/
+
 	return f;
 }
 
