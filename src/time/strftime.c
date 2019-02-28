@@ -1,7 +1,6 @@
 #include <time.h>
 #include "stdio.h"
 #include "nonstd/assert.h"
-#include "nonstd/internal.h"
 #include "locale.h"
 #include "nonstd/locale.h"
 
