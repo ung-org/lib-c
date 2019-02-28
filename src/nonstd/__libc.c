@@ -4,15 +4,17 @@
 #include "nonstd/locale.h"
 
 #include "_printf.h"
+#include "_scanf.h"
+#include "_locale.h"
 #include "_syscall.h"
 
 void *__libc(LIBC_INTERNAL variable)
 {
 	extern void *__libc_per_thread(LIBC_INTERNAL __variable);
+	static struct __locale_t locale;
+	static struct __FILE file_streams[FOPEN_MAX];
 
 	void *r = (void*)0;
-
-	static struct __locale_t locale;
 
 	switch (variable) {
 	case ERRNO:
@@ -43,6 +45,14 @@ void *__libc(LIBC_INTERNAL variable)
 
 	case PRINTF:
 		r = (void*)(__printf);
+		break;
+
+	case FILE_STREAMS:
+		r = file_streams;
+		break;
+
+	case LOAD_LOCALE:
+		r = (void*)(__load_locale);
 		break;
 
 	default:
