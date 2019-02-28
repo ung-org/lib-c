@@ -12,6 +12,8 @@ wctype_t wctype(const char * property)
 		return CT_ALPHA | CT_DIGIT;
 	} else if (!strcmp(property, "alpha")) {
 		return CT_ALPHA;
+	} else if (!strcmp(property, "blank")) {
+		return CT_BLANK;
 	} else if (!strcmp(property, "cntrl")) {
 		return CT_CNTRL;
 	} else if (!strcmp(property, "digit")) {
