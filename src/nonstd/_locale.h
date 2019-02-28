@@ -13,15 +13,8 @@
 #define LC_NUMERIC_MASK (1<<3)
 #define LC_TIME_MASK (1<<4)
 #define LC_MESSAGES_MASK (1<<5)
+#define LC_ALL_MASK (0xff)
 */
-
-#define stringreplace(_old, _new) do { \
-	_old = realloc(_old, strlen(_new) + 1); \
-	if (_old == NULL) { \
-		return NULL; \
-	} \
-	strcpy(_old, _new); \
-} while (0)
 
 static char * (__load_locale)(struct __locale_t *loc, int mask, const char *name)
 {
@@ -34,80 +27,108 @@ static char * (__load_locale)(struct __locale_t *loc, int mask, const char *name
 	}
 
 	if (mask & LC_COLLATE_MASK) {
-		stringreplace(loc->collate, name);
+		strcpy(loc->collate, name);
 
 		/* read from file */
-		loc->collation = NULL;
+		loc->lc_collate = NULL;
 	}
 
 	if (mask & LC_CTYPE_MASK) {
-		stringreplace(loc->ctype, name);
+		strcpy(loc->ctype, name);
 
 		if (localefile == NULL) {
 			int i;
-			loc->ctattr = realloc(loc->ctattr, CHAR_MAX);
 
 			for (i = 0; i < 32; i++) {
-				loc->ctattr[i] = CT_CNTRL;
+				loc->lc_ctype.ctattr[i] = CT_CNTRL;
 			}
 			for (i = 'a'; i < 'z'; i++) {
-				loc->ctattr[i] = CT_LOWER;
+				loc->lc_ctype.ctattr[i] = CT_LOWER;
 			}
 			for (i = 'A'; i < 'Z'; i++) {
-				loc->ctattr[i] = CT_UPPER;
+				loc->lc_ctype.ctattr[i] = CT_UPPER;
 			}
 			for (i = '0'; i < '9'; i++) {
-				loc->ctattr[i] = CT_DIGIT | CT_XDIGIT;
+				loc->lc_ctype.ctattr[i] = CT_DIGIT | CT_XDIGIT;
 			}
 			/* others */
-
-			loc->ctoupper = realloc(loc->ctoupper, CHAR_MAX);
 			for (i = 0; i < CHAR_MAX; i++) {
-				loc->ctoupper[i] = ('a' <= i && i <= 'z') ? i + 32 : i;
+				loc->lc_ctype.ctoupper[i] = ('a' <= i && i <= 'z') ? i + 32 : i;
 			}
 
-			loc->ctolower = realloc(loc->ctolower, CHAR_MAX);
 			for (i = 0; i < CHAR_MAX; i++) {
-				loc->ctolower[i] = ('A' <= i && i <= 'Z') ? i - 32 : i;
+				loc->lc_ctype.ctolower[i] = ('A' <= i && i <= 'Z') ? i - 32 : i;
 			}
 		} else {
 			/* read from file */
-			loc->ctattr = NULL;
-			loc->ctoupper = NULL;
-			loc->ctolower = NULL;
+			/*
+			loc->lc_ctype.ctattr
+			loc->lc_ctype.ctoupper
+			loc->lc_ctype.ctolower
+			*/
 		}
 	}
 
 	if (mask & LC_MONETARY_MASK) {
-		stringreplace(loc->monetary, name);
+		strcpy(loc->monetary, name);
 
-		/*
-		loc->mn.monetary fields;
-		*/
+		if (localefile == NULL) {
+			loc->mn.mon_decimal_point = "";
+			loc->mn.mon_thousands_sep = "";
+			loc->mn.mon_grouping = "";
+			loc->mn.positive_sign = "";
+			loc->mn.negative_sign =  "";
+			loc->mn.currency_symbol = "";
+			loc->mn.frac_digits = CHAR_MAX;
+			loc->mn.p_cs_precedes = CHAR_MAX;
+			loc->mn.n_cs_precedes = CHAR_MAX;
+			loc->mn.p_sep_by_space = CHAR_MAX;
+			loc->mn.n_sep_by_space = CHAR_MAX;
+			loc->mn.p_sign_posn = CHAR_MAX;
+			loc->mn.n_sign_posn = CHAR_MAX;
+			loc->mn.int_curr_symbol = "";
+			loc->mn.int_frac_digits = CHAR_MAX;
+			loc->mn.int_p_cs_precedes = CHAR_MAX;
+			loc->mn.int_n_cs_precedes = CHAR_MAX;
+			loc->mn.int_p_sep_by_space = CHAR_MAX;
+			loc->mn.int_n_sep_by_space = CHAR_MAX;
+			loc->mn.int_p_sign_posn = CHAR_MAX;
+			loc->mn.int_n_sign_posn = CHAR_MAX;
+		} else {
+			/*
+			loc->mn.monetary fields;
+			*/
+		}
 	}
 
 	if (mask & LC_NUMERIC_MASK) {
-		stringreplace(loc->numeric, name);
+		strcpy(loc->numeric, name);
 
-		/*
-		loc->mn.numeric fields
-		*/
+		if (localefile == NULL) {
+			loc->mn.decimal_point = ".";
+			loc->mn.thousands_sep = "";
+			loc->mn.grouping = "";
+		} else {
+			/*
+			loc->mn.numeric fields
+			*/
+		}
 	}
 
 	if (mask & LC_TIME_MASK) {
-		stringreplace(loc->time, name);
+		strcpy(loc->time, name);
 
 		/* read from file */
 		/* loc->lc_time */
 	}
 
 	if (mask & LC_MESSAGES_MASK) {
-		stringreplace(loc->messages, name);
+		strcpy(loc->messages, name);
 
 		/* read */
 		loc->lc_messages.yesexpr = NULL;
 		loc->lc_messages.noexpr = NULL;
 	}
 
-	return name;
+	return (char*)name;
 }
