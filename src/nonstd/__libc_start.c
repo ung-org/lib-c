@@ -5,16 +5,22 @@
 
 void __libc_start(int argc, char **argv)
 {
-	struct __FILE sin, sout, serr;
+	struct __FILE *files = __libc(FILE_STREAMS);
 
-	sin.fd = 0;
-	stdin = &sin;
+	stdin = files + 0;
+	stdin->fd = 0;
 
-	sout.fd = 1;
-	stdout = &sout;
+	stdout = files + 1;
+	stdout->fd = 1;
 
-	serr.fd = 2;
-	stderr = &serr;
+	stderr = files + 2;
+	stderr->fd = 2;
+
+	stdin->next = stdout;
+	stdout->next = stderr;
+
+	stdout->prev = stdin;
+	stderr->prev = stdout;
 
         #if defined _POSIX_SOURCE
         setlocale(LC_ALL, "POSIX");
