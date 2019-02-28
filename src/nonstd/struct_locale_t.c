@@ -5,7 +5,7 @@ struct __locale_t {
 
 	char ctype[UCHAR_MAX];
 	struct {
-		unsigned char ctattr[UCHAR_MAX + 1];
+		unsigned int ctattr[UCHAR_MAX + 1];
 		unsigned char ctoupper[UCHAR_MAX + 1];
 		unsigned char ctolower[UCHAR_MAX + 1];
 	} lc_ctype;
