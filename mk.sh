@@ -72,6 +72,9 @@ get_declaration () {
 		;;
 
 	TYPE|TYPE_LONG|RECORD|FNTYPE)
+		base=$(basename $1 .c)
+		printf '#ifndef __TYPE_%s_DEFINED__\n#define __TYPE_%s_DEFINED__\n' "$base" "$base"
+
 		if grep -q '^#if' $1; then
 			sed -ne '/^#if/,/#endif/p' $1
 		elif grep -qE '^(typedef|struct|union) .*{' $1; then
@@ -81,6 +84,8 @@ get_declaration () {
 		else
 			grep -E '^(typedef|struct|union) ' $1
 		fi
+
+		printf '#endif\n\n'
 		;;
 
 	EXTERN)
