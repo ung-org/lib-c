@@ -1,19 +1,16 @@
+#include "stddef.h"
 #include <inttypes.h>
+#include "errno.h"
 
 intmax_t wcstoimax(const wchar_t * restrict nptr, wchar_t ** restrict endptr, int base)
 {
-  /* like wcstoll */
+	intmax_t ret = 0;
+	intmax_t max = INTMAX_MAX;
+	intmax_t min = INTMAX_MIN;
 
-  /* if > INTMAX_MAX */
-  /* errno = ERANGE; */
-  /* return INTMAX_MAX */
+	#include "../stdlib/_strtoi.h"
 
-  /* if < INTMAX_MIN */
-  /* errno = ERANGE; */
-  /* return INTMAX_MIN; */
-
-  /* if no conversion */
-  return 0;
+	return ret;
 }
 
 /*

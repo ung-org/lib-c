@@ -1,19 +1,16 @@
+#include "stddef.h"
 #include <inttypes.h>
+#include "errno.h"
 
 intmax_t strtoimax(const char * restrict nptr, char ** restrict endptr, int base)
 {
-  /* like strotoll */
+	intmax_t ret = 0;
+	intmax_t max = INTMAX_MAX;
+	intmax_t min = INTMAX_MIN;
 
-  /* if > INTMAX_MAX */
-  /* errno = ERANGE; */
-  /* return INTMAX_MAX */
+	#include "../stdlib/_strtoi.h"
 
-  /* if < INTMAX_MIN */
-  /* errno = ERANGE; */
-  /* return INTMAX_MIN; */
-
-  /* if no conversion */
-  return 0;
+	return ret;
 }
 
 /*

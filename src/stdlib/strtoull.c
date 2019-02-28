@@ -1,11 +1,16 @@
 #include <stdlib.h>
+#include "limits.h"
+#include "errno.h"
 
 unsigned long long int strtoull(const char * restrict nptr, char ** restrict endptr, int base)
 {
-	uintmax_t ret = strtoumax(nptr, endptr, base);
-	if (ret > ULLONG_MAX) {
-	}
-	return (unsigned long long int)ret;
+	unsigned long long int ret = 0;
+	unsigned long long int max = ULLONG_MAX;
+	unsigned long long int min = 0;
+
+	#include "_strtoi.h"
+
+	return ret;
 }
 
 /*

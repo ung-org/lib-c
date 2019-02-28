@@ -2,31 +2,17 @@
 #include "limits.h"
 #include "errno.h"
 
-#if defined __STDC_VERSION__ && 199912L <= __STDC_VERSION__
-#include "inttypes.h"
-#else
-typedef long intmax_t;
-#define strtoimax(n, e, b) ((long)n & (long)e & (long)b) ? 0 : 0
-#endif
-
 /** convert string to long integer **/
 
 long int strtol(const char * restrict nptr, char ** restrict endptr, int base)
 {
-	/* FIXME: forward dependency on 9899-1999 */
-	intmax_t ret = strtoimax(nptr, endptr, base);
+	long int ret = 0;
+	long int max = LONG_MAX;
+	long int min = LONG_MIN;
 
-	if (ret < LONG_MIN) {
-		ret = LONG_MIN;
-		errno = ERANGE;	/* converted value out of range */
-	}
+	#include "_strtoi.h"
 
-	if (ret > LONG_MAX) {
-		ret = LONG_MAX;
-		errno = ERANGE; /* converted value out of range */
-	}
-
-	return (long int)ret;
+	return ret;
 }
 
 /***

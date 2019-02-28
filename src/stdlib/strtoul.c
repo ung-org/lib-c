@@ -2,25 +2,17 @@
 #include "errno.h"
 #include "limits.h"
 
-#if defined __STDC_VERSION__ && 199912L <= __STDC_VERSION__
-#include "inttypes.h"
-#else
-typedef unsigned long uintmax_t;
-#define strtoumax(n, e, b) ((long)n & (long)e & (long)b ? 0 : 0)
-#endif
-
 /** convert string to unsigned long integer **/
+
 unsigned long int strtoul(const char * nptr, char ** endptr, int base)
 {
-	/* FIXME: forward dependency on 9899-1999 */
-	uintmax_t ret = strtoumax(nptr, endptr, base);
+        unsigned long int ret = 0;
+        unsigned long int max = ULONG_MAX;
+        unsigned long int min = 0;
 
-	if (ret > ULONG_MAX) {
-		ret = ULONG_MAX;
-		errno = ERANGE;	/* converted value too large */
-	}
+        #include "_strtoi.h"
 
-	return (unsigned long int)ret;
+        return ret;
 }
 
 /***

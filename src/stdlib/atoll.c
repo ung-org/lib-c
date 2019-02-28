@@ -2,7 +2,7 @@
 
 long long int atoll(const char *nptr)
 {
-	return strtoll(str, (char**)NULL, 10);
+	return strtoll(nptr, (char**)NULL, 10);
 }
 
 /*
