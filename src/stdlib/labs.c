@@ -2,17 +2,19 @@
 #include "limits.h"
 
 /** absolute value **/
+
 long int labs(long int j)
 {
 	if (j == LONG_MIN) {
 		/* undefined */
+		return LONG_MIN;
 	}
 
 	return j < 0 ? -j : j;
 }
 
 /***
-function computes the absolute value of ARGUMENT(j).
+computes the absolute value of ARGUMENT(j).
 ***/
 
 /*

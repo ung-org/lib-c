@@ -1,28 +1,24 @@
 #include "stddef.h"
 #include <inttypes.h>
 
+/** absolute value **/
+
 intmax_t imaxabs(intmax_t j)
 {
-  /* returns the absolute value of j */
-  /* if imaxabs(j) can't be representeted (i.e. imaxabs(INTMAX_MIN), behavior is undefined */
-/*
-  if (j == INTMAX_MIN) {
-    __ungol_libc_undefined("Cannot represent absolute value of %" PRIxMAX "\n", j);
-  }
-*/
 	if (j == INTMAX_MIN) {
 		/* undefined behavior */
 		return INTMAX_MIN;
 	}
 	
-	if (j < 0) {
-		return -j;
-	}
-
-	return j;
+	return j < 0 ? -j : j;
 }
 
+/***
+computes the absolute value of ARGUMENT(j).
+***/
 
 /*
+UNDEFINED(ABS(ARGUMENT(j)) cannot be represented
+RETURN_SUCCESS(ABS(ARGUMENT(j))
 STDC(199901)
 */
