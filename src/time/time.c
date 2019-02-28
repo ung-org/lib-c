@@ -1,6 +1,5 @@
 #include <time.h>
 #include "errno.h"
-#include "nonstd/internal.h"
 #include "nonstd/syscall.h"
 
 /** get current time **/
