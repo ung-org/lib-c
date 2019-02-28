@@ -4,8 +4,10 @@
 /** cause normal program termination without handlers **/
 _Noreturn void _Exit(int status)
 {
-	__syscall("_exit", status);
-	for (;;);
+	long scno = ((syscall_lookup_t)__libc(SYSCALL_LOOKUP))("exit");
+	for (;;) {
+		__syscall(scno, status);
+	}
 }
 
 /***

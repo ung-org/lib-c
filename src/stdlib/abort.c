@@ -8,8 +8,9 @@
 
 _Noreturn void abort(void)
 {
-	raise(SIGABRT);
-	for(;;); /* silence gcc warning about returning */
+	for (;;) {
+		raise(SIGABRT);
+	}
 }
 
 /***
