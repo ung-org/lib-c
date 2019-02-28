@@ -1,62 +1,42 @@
 #include <locale.h>
 #include "string.h"
 #include "stdlib.h"
+#include "nonstd/locale.h"
 
 char * setlocale(int category, const char *locale)
 {
-	static struct {
-		char *lc_collate;
-		char *lc_ctype;
-		char *lc_messages;
-		char *lc_monetary;
-		char *lc_numeric;
-		char *lc_time;
-	} current = { 0 };
-
-	char *desired = NULL;
-
-	switch (category) {
-	case LC_COLLATE:	desired = current.lc_collate; break;
-	case LC_CTYPE:		desired = current.lc_ctype; break;
-	case LC_MONETARY:	desired = current.lc_monetary; break;
-	case LC_NUMERIC:	desired = current.lc_numeric; break;
-	case LC_TIME:		desired = current.lc_time; break;
-	#ifdef LC_MESSAGES
-	case LC_MESSAGES:	desired = current.lc_messages; break;
-	#endif
-	default:		break;
-	}
+	struct __locale_t *l = __libc(GLOBAL_LOCALE);
+	int mask = 0;
 
 	if (locale == NULL) {
-		if (category == LC_ALL) {
-			/* build a string if locale is not heterogenous */
-		}
-		return desired;
-	}
-
-	if (category == LC_ALL) {
-		/* TODO: make sure all these can be honored */
+		switch (category) {
+		case LC_ALL:		return l->all;
+		case LC_COLLATE:	return l->collate;
+		case LC_CTYPE:		return l->ctype;
+		case LC_MONETARY:	return l->monetary;
+		case LC_NUMERIC:	return l->numeric;
+		case LC_TIME:		return l->time;
 		#ifdef LC_MESSAGES
-		setlocale(LC_MESSAGES, locale);
+		case LC_MESSAGES:	return l->messages;
 		#endif
-		setlocale(LC_COLLATE, locale);
-		setlocale(LC_CTYPE, locale);
-		setlocale(LC_MONETARY, locale);
-		setlocale(LC_NUMERIC, locale);
-		return setlocale(LC_TIME, locale);
+		default:		return NULL;
+		}
 	}
 
-	if (desired) {
-		free(desired);
+	switch (category) {
+	case LC_ALL:		mask = LC_ALL_MASK; break;
+	case LC_COLLATE:	mask = LC_COLLATE_MASK; break;
+	case LC_CTYPE:		mask = LC_CTYPE_MASK; break;
+	case LC_MONETARY:	mask = LC_MONETARY_MASK; break;
+	case LC_NUMERIC:	mask = LC_NUMERIC_MASK; break;
+	case LC_TIME:		mask = LC_TIME_MASK; break;
+	#ifdef LC_MESSAGES
+	case LC_MESSAGES:	mask = LC_MESSAGES_MASK; break;
+	#endif
+	default:		return NULL;
 	}
 
-	if (!strcmp(locale, "")) {
-		desired = getenv("");
-	} else {
-		desired = (char*)locale;
-	}
-	
-	return desired;
+	return __load_locale(l, mask, locale);
 }
 
 /** get or set program locale **/

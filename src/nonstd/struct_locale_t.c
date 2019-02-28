@@ -1,22 +1,31 @@
 #include <nonstd/locale.h>
 
 struct __locale_t {
-	int mask;
-	char *all;
-	char *collate;
-	unsigned char *collation;
-	char *ctype;
-	unsigned char *ctattr;
-	unsigned char *ctoupper;
-	unsigned char *ctolower;
-	char *message;
+	char all[UCHAR_MAX];
+
+	char ctype[UCHAR_MAX];
+	struct {
+		unsigned char ctattr[UCHAR_MAX + 1];
+		unsigned char ctoupper[UCHAR_MAX + 1];
+		unsigned char ctolower[UCHAR_MAX + 1];
+	} lc_ctype;
+
+	char collate[UCHAR_MAX];
+	struct collation {
+		char * sequence;
+		int weight;
+	} *lc_collate;
+
+	char messages[UCHAR_MAX];
 	struct {
 		char *yesexpr;
 		char *noexpr;
 	} lc_messages;
+
 	char *monetary;
 	char *numeric;
 	struct lconv mn;
+
 	char *time;
 	struct {
 		char *abday[7];

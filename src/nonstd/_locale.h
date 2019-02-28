@@ -6,12 +6,14 @@
 #include "nonstd/locale.h"
 #include "nonstd/ctype.h"
 
+/*
 #define LC_COLLATE_MASK (1<<0)
 #define LC_CTYPE_MASK (1<<1)
 #define LC_MONETARY_MASK (1<<2)
 #define LC_NUMERIC_MASK (1<<3)
 #define LC_TIME_MASK (1<<4)
 #define LC_MESSAGES_MASK (1<<5)
+*/
 
 #define stringreplace(_old, _new) do { \
 	_old = realloc(_old, strlen(_new) + 1); \
@@ -21,7 +23,7 @@
 	strcpy(_old, _new); \
 } while (0)
 
-char * __load_locale(struct __locale_t *loc, int mask, const char *name)
+static char * (__load_locale)(struct __locale_t *loc, int mask, const char *name)
 {
 	char localepath[FILENAME_MAX] = "/lib/locale/";
 	strcat(localepath, name);
@@ -46,16 +48,16 @@ char * __load_locale(struct __locale_t *loc, int mask, const char *name)
 			loc->ctattr = realloc(loc->ctattr, CHAR_MAX);
 
 			for (i = 0; i < 32; i++) {
-				loc->ctattr[i] = CNTRL;
+				loc->ctattr[i] = CT_CNTRL;
 			}
 			for (i = 'a'; i < 'z'; i++) {
-				loc->ctattr[i] = LOWER;
+				loc->ctattr[i] = CT_LOWER;
 			}
 			for (i = 'A'; i < 'Z'; i++) {
-				loc->ctattr[i] = UPPER;
+				loc->ctattr[i] = CT_UPPER;
 			}
 			for (i = '0'; i < '9'; i++) {
-				loc->ctattr[i] = DIGIT | XDIGIT;
+				loc->ctattr[i] = CT_DIGIT | CT_XDIGIT;
 			}
 			/* others */
 
