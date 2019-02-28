@@ -1,9 +1,5 @@
 .POSIX:
 libc_C_199901_OBJS= \
-	libc.a($(OBJDIR)/__STDC_HOSTED__.o) \
-	libc.a($(OBJDIR)/__STDC_ISO_10646__.o) \
-	libc.a($(OBJDIR)/__STDC_IEC_559_COMPLEX__.o) \
-	libc.a($(OBJDIR)/__STDC_IEC_559__.o) \
 	libc.a($(OBJDIR)/imaxdiv.o) \
 	libc.a($(OBJDIR)/imaxabs.o) \
 	libc.a($(OBJDIR)/wcstoimax.o) \

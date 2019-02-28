@@ -10,22 +10,6 @@ libc.a(__libc.o): $(OBJDIR)/__libc.o
 $(OBJDIR)/__libc.o: ./src/nonstd/__libc.c
 	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/nonstd/__libc.c -o $@
 
-libc.a(__STDC_HOSTED__.o): $(OBJDIR)/__STDC_HOSTED__.o
-$(OBJDIR)/__STDC_HOSTED__.o: ./src/nonstd/_PREDEF/__STDC_HOSTED__.c
-	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/nonstd/_PREDEF/__STDC_HOSTED__.c -o $@
-
-libc.a(__STDC_ISO_10646__.o): $(OBJDIR)/__STDC_ISO_10646__.o
-$(OBJDIR)/__STDC_ISO_10646__.o: ./src/nonstd/_PREDEF/__STDC_ISO_10646__.c
-	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/nonstd/_PREDEF/__STDC_ISO_10646__.c -o $@
-
-libc.a(__STDC_IEC_559_COMPLEX__.o): $(OBJDIR)/__STDC_IEC_559_COMPLEX__.o
-$(OBJDIR)/__STDC_IEC_559_COMPLEX__.o: ./src/nonstd/_PREDEF/__STDC_IEC_559_COMPLEX__.c
-	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/nonstd/_PREDEF/__STDC_IEC_559_COMPLEX__.c -o $@
-
-libc.a(__STDC_IEC_559__.o): $(OBJDIR)/__STDC_IEC_559__.o
-$(OBJDIR)/__STDC_IEC_559__.o: ./src/nonstd/_PREDEF/__STDC_IEC_559__.c
-	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/nonstd/_PREDEF/__STDC_IEC_559__.c -o $@
-
 libc.a(_XOPEN_SOURCE.o): $(OBJDIR)/_XOPEN_SOURCE.o
 $(OBJDIR)/_XOPEN_SOURCE.o: ./src/nonstd/_FTM/_XOPEN_SOURCE.c
 	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/nonstd/_FTM/_XOPEN_SOURCE.c -o $@
