@@ -127,12 +127,22 @@ static char * (__load_locale)(struct __locale_t *loc, int mask, const char *name
 			loc->mn.n_sign_posn = CHAR_MAX;
 			loc->mn.int_curr_symbol = "";
 			loc->mn.int_frac_digits = CHAR_MAX;
+
+			#if defined __STDC_VERSION__ && 199901 <= __STDC_VERSION__
 			loc->mn.int_p_cs_precedes = CHAR_MAX;
 			loc->mn.int_n_cs_precedes = CHAR_MAX;
 			loc->mn.int_p_sep_by_space = CHAR_MAX;
 			loc->mn.int_n_sep_by_space = CHAR_MAX;
 			loc->mn.int_p_sign_posn = CHAR_MAX;
 			loc->mn.int_n_sign_posn = CHAR_MAX;
+			#else
+			loc->mn.__int_p_cs_precedes = CHAR_MAX;
+			loc->mn.__int_n_cs_precedes = CHAR_MAX;
+			loc->mn.__int_p_sep_by_space = CHAR_MAX;
+			loc->mn.__int_n_sep_by_space = CHAR_MAX;
+			loc->mn.__int_p_sign_posn = CHAR_MAX;
+			loc->mn.__int_n_sign_posn = CHAR_MAX;
+			#endif
 		} else {
 			/*
 			loc->mn.monetary fields;
