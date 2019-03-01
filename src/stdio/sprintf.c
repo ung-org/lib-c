@@ -2,6 +2,13 @@
 #include "stdarg.h"
 #include "nonstd/io.h"
 
+#if defined __STDC_VERSION__ && 199901 <= __STDC_VERSION__
+#include "stdint.h"
+#else
+#include "limits.h"
+#define SIZE_MAX INT_MAX
+#endif
+
 /** write formatted output to a string **/
 int sprintf(char * restrict s, const char * restrict format, ...)
 {
@@ -10,7 +17,7 @@ int sprintf(char * restrict s, const char * restrict format, ...)
 	struct io_options opt = {0};
 	opt.fnname = "sprintf";
 	opt.string = s;
-	opt.maxlen = (size_t)-1;
+	opt.maxlen = SIZE_MAX;
 	va_start(ap, format);
 	ret = __printf(&opt, format, ap);
 	va_end(ap);
