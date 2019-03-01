@@ -18,6 +18,9 @@ $(TOPDIR)/.headers.mk: $(TOPDIR)/mk.sh
 headers $(INCDIR): $(TOPDIR)/.headers.mk $(TOPDIR)/mkh.sh
 	$(MAKE) -f $(TOPDIR)/.headers.mk headers
 
+test:
+	cd tests && $(MAKE) && ./testlibc
+
 ctags:
 	ctags $$(find src -name \*.c)
 
