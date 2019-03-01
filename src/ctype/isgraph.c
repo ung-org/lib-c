@@ -14,7 +14,7 @@ int isgraph(int c)
 	RETURN(0, ARGUMENT(c) is not a graphic character);
 	*/
 
-	return map[c] & ~CT_SPACE;
+	return map[c] & CT_GRAPH;
 }
 
 /***

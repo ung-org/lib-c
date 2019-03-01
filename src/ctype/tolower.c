@@ -1,4 +1,5 @@
 #include <ctype.h>
+#include "stdio.h"
 #include "limits.h"
 #include "nonstd/assert.h"
 #include "nonstd/ctype.h"
@@ -13,6 +14,10 @@ int tolower(int c)
 	RETURN_SUCCESS(ARGUMENT(c) converted to lowercase);
 	RETURN_FAILURE(ARGUMENT(c), ARGUMENT(c) was not an uppercase letter or it has no equivalent lowercase letter);
 	*/
+
+	if (c == EOF) {
+		return EOF;
+	}
 
 	return map[c];
 }

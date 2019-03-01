@@ -18,7 +18,7 @@
 
 #define setall(_map, _input, _mask) do { \
 	size_t _i; \
-	for (_i = 0; _i < sizeof(_input); _i++) { \
+	for (_i = 0; _i < sizeof(_input) - 1; _i++) { \
 		_map[(int)_input[_i]] |= _mask; \
 	} \
 } while (0)
@@ -61,7 +61,7 @@ static char * (__load_locale)(struct __locale_t *loc, int mask, const char *name
 			char blank[] = " \t";
 			size_t i;
 
-			memset(loc->lc_ctype.ctattr, 0, CHAR_MAX);
+			memset(loc->lc_ctype.ctattr, 0, sizeof(loc->lc_ctype.ctattr));
 
 			for (i = 0; i < 32; i++) {
 				loc->lc_ctype.ctattr[i] = CT_CNTRL;
@@ -89,7 +89,7 @@ static char * (__load_locale)(struct __locale_t *loc, int mask, const char *name
 
 			loc->lc_ctype.ctattr[' '] |= CT_PRINT;
 
-			for (i = 0; i < CHAR_MAX; i++) {
+			for (i = 0; i < UCHAR_MAX; i++) {
 				loc->lc_ctype.ctoupper[i] = i;
 				loc->lc_ctype.ctolower[i] = i;
 			}

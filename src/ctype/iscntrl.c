@@ -14,7 +14,7 @@ int iscntrl(int c)
 	RETURN(0, ARGUMENT(c) is not a control character);
 	*/
 
-	return map[c] == 0 || (map[c] == CT_SPACE && c != ' ');
+	return map[c] & CT_CNTRL;
 }
 
 /***

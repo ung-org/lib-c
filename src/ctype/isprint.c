@@ -14,7 +14,7 @@ int isprint(int c)
 	RETURN(0, ARGUMENT(c) is not a printable character);
 	*/
 
-	return map[c] & ~CT_SPACE || c == ' ';
+	return map[c] & CT_PRINT;
 }
 
 /***
