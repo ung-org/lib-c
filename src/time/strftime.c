@@ -17,6 +17,9 @@ size_t strftime(char * restrict s, size_t maxsize, const char * restrict format,
 	ASSERT_NONNULL(timeptr);
 
 	lc = __libc(THREAD_LOCALE);
+	if (lc->time[0] == '\0') {
+		lc = __libc(GLOBAL_LOCALE);
+	}
 
 	for (i = 0; format[i] != '\0' && converted < maxsize; i++) {
 		if (format[i] != '%') {
