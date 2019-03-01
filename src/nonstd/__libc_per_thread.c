@@ -11,7 +11,7 @@
 void *__libc_per_thread(LIBC_INTERNAL variable)
 {
 	THREAD_LOCAL int errno;
-	THREAD_LOCAL struct __locale_t *locale;
+	THREAD_LOCAL struct __locale_t locale;
 
 	switch (variable) {
 	case ERRNO:
