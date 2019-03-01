@@ -5,6 +5,7 @@
 ./src/nonstd/locale-internal.ref
 ./src/nonstd/pid_t.ref
 ./src/nonstd/ENOSYS.ref
+./src/nonstd/locale-locale.ref
 ./src/nonstd/stdio.ref
 ./src/nonstd/errno.ref
 ./src/nonstd/ctype-internal.ref
