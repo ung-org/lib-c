@@ -1,17 +1,21 @@
+#include "stdlib.h"
 #include "stdio.h"
 #include "locale.h"
 
 #include "nonstd/io.h"
 
 #ifdef _POSIX_SOURCE
+#define DEFAULT_LOCALE "POSIX"
 #include "unistd.h"
 #else
+#define DEFAULT_LOCALE "C"
 #include "nonstd/syscall.h"
 #define isatty(fd) __syscall(__lookup("tty"), fd)
 #endif
 
 void __libc_start(int argc, char **argv)
 {
+	extern int main(int, char*[]);
 	struct __FILE *files = __libc(FILE_STREAMS);
 
 	stdin = files + 0;
@@ -35,14 +39,8 @@ void __libc_start(int argc, char **argv)
 	stdout->prev = stdin;
 	stderr->prev = stdout;
 
-        #if defined _POSIX_SOURCE
-        setlocale(LC_ALL, "POSIX");
-        #else
-        setlocale(LC_ALL, "C");
-        #endif
+        setlocale(LC_ALL, DEFAULT_LOCALE);
 
-	extern void exit(int);
-	extern int main(int, char*[]);
 
         exit(main(argc, argv));
 }
