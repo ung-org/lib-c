@@ -9,20 +9,22 @@ show_help() {
 	usage: ./configure [options...]
 
 	Options:
+	   -d		Enable debugging symbols and asserts
+
 	   -a arch	Choose the underlying architecture to build for:
 	$(awk '{ printf("\t%s\n", $0); }' ${CONFIGDIR}/architecture)
 
 	   -c version	Conform to:
-	$(awk '{ printf("\t%s\n", $0); }' ${CONFIGDIR}/versions.c)
+	$(awk '{ printf("\t%s\n", $0); }' ${CONFIGDIR}/c)
 
 	   -p version	Conform to:
-	$(awk '{ printf("\t%s\n", $0); }' ${CONFIGDIR}/versions.posix)
+	$(awk '{ printf("\t%s\n", $0); }' ${CONFIGDIR}/posix)
 
 	   -w wordsize	Choose a word size for the architecuture:
 	$(awk '{ printf("\t%s\n", $0); }' ${CONFIGDIR}/wordsize)
 
 	   -x version	Conform to:
-	$(awk '{ printf("\t%s\n", $0); }' ${CONFIGDIR}/versions.xopen)
+	$(awk '{ printf("\t%s\n", $0); }' ${CONFIGDIR}/xopen)
 
 	EOF
 }
@@ -46,18 +48,20 @@ option=
 
 architecture=x86
 wordsize=64
+debug=0
 
 standard_c=
 posix=
 xopen=
 
-while getopts hc:p:x: option; do
+while getopts dhc:p:x: option; do
 	case ${option} in
 	a)	architecture=$(validate_option architecture ${OPTARG})	;;
 	c)	standard_c=$(validate_option c ${OPTARG})		;;
 	p)	posix=$(validate_option posix ${OPTARG})		;;
 	w)	wordsize=$(validate_option wordsize ${OPTARG})		;;
 	x)	xopen=$(validate_option xopen ${OPTARG})		;;
+	d)	debug=1 ;;
 
 	h)	show_help
 		exit 0
@@ -126,16 +130,25 @@ else
 	printf 'CC=c%02d\n' $(( (standard_c / 100) % 100 )) >> .config.mk
 fi
 
-if [ -n "${xopen}" ]; then
-	if [ $xopen -eq 400 ]; then
-		printf 'CFLAGS=-D_XOPEN_SOURCE -D_XOPEN_SOURCE_EXTENDED=1\n' >> .config.mk
-	else
-		printf 'CFLAGS=-D_XOPEN_SOURCE=%d\n' "${xopen}" >> .config.mk
-	fi
-elif [ -n "${posix}" ]; then
-	printf 'CFLAGS=-D_POSIX_C_SOURCE=%d\n' "${posix}" >> .config.mk
+CFLAGS="${CFLAGS}"
+
+if [ $debug -eq 1 ]; then
+	CFLAGS="${CFLAGS} -g"
+else
+	CFLAGS="${CFLAGS} -DNDEBUG"
 fi
 
+if [ -n "${xopen}" ]; then
+	if [ $xopen -eq 400 ]; then
+		CFLAGS="${CFLAGS} -D_XOPEN_SOURCE -D_XOPEN_SOURCE_EXTENDED=1"
+	else
+		CFLAGS="${CFLAGS} -D_XOPEN_SOURCE=${xopen}"
+	fi
+elif [ -n "${posix}" ]; then
+	CFLAGS="${CFLAGS} -D_POSIX_C_SOURCE=${posix}"
+fi
+
+printf 'CFLAGS=%s\n' "${CFLAGS}" >> .config.mk
 
 ### generate .build.mk
 cat <<EOF > .build.mk
@@ -190,34 +203,6 @@ for i in $libs; do
 done >> .build.mk
 
 ### generate main Makefile
-### FIXME: this can probably be kept as a fixed file
-cat <<EOF > Makefile
-.POSIX:
-.DEFAULT:;\$(MAKE) all
-
-include .config.mk
-
-all: \$(TOPDIR)/.deps.mk \$(INCDIR)
-	@mkdir -p \$(OBJDIR)
-	\$(MAKE) -f .build.mk
-
-deps: \$(TOPDIR)/.headers.mk \$(TOPDIR)/.deps.mk
-
-\$(TOPDIR)/.deps.mk: \$(TOPDIR)/mk.sh
-	sh -c '. \$(TOPDIR)/mk.sh; cd \$(TOPDIR); make_deps_mk'
-
-\$(TOPDIR)/.headers.mk: \$(TOPDIR)/mk.sh
-	sh -c '. \$(TOPDIR)/mk.sh; cd \$(TOPDIR); make_headers_mk'
-
-headers \$(INCDIR): \$(TOPDIR)/.headers.mk \$(TOPDIR)/mkh.sh
-	\$(MAKE) -f \$(TOPDIR)/.headers.mk headers
-
-ctags:
-	ctags \$\$(find src -name \*.c)
-
-clean:
-	rm -rf \$(OBJDIR) *.a
-
-extra-clean: clean
-	rm -rf .deps .deps.mk .headers.mk \$(INCDIR)
-EOF
+if ! [ -f Makefile ]; then
+	cp "$(dirname $0)/Makefile" .
+fi
