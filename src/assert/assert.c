@@ -13,7 +13,7 @@
 #endif
 
 #define assert(__exp__) \
-	((void)(__exp__ ? 0 : __assert(#__exp__, __FILE__, __LINE__, __func__)))
+	((void)((__exp__) || (__assert(#__exp__, __FILE__, __LINE__, __func__),  0)))
 
 #endif
 
