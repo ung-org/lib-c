@@ -28,7 +28,6 @@
 ./src/nonstd/funlockfile.c
 ./src/nonstd/ASSERT_NONNULL.c
 ./src/nonstd/struct_atexit.c
-./src/nonstd/syscall_lookup_t.c
 ./src/nonstd/ftrylockfile.c
 ./src/nonstd/ASSERT_NOOVERLAP.c
 ./src/nonstd/getc_unlocked.c
