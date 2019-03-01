@@ -1,7 +1,6 @@
 ./src/nonstd/SYSCALL_NUMBER.c
 ./src/nonstd/__syscall.c
 ./src/nonstd/__lookup.c
-./src/nonstd/syscall_lookup_t.c
 ./src/nonstd/SYSCALL.c
 ./src/nonstd/syscall-internal.ref
 ./src/nonstd/ENOSYS.ref

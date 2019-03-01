@@ -99,10 +99,10 @@ $(INCDIR)/nonstd/io.h: mkh.sh $(SRCDIR)/nonstd/struct_io_options.c $(SRCDIR)/non
 $(INCDIR)/nonstd/lib.h: mkh.sh $(SRCDIR)/nonstd/lib-internal.ref 
 	INCDIR=$(INCDIR) sh mkh.sh $(INCDIR)/nonstd/lib.h
 
-$(INCDIR)/nonstd/locale.h: mkh.sh $(SRCDIR)/nonstd/struct_locale_t.c $(SRCDIR)/nonstd/__load_locale.c $(SRCDIR)/nonstd/locale-limits.ref $(SRCDIR)/nonstd/locale-internal.ref 
+$(INCDIR)/nonstd/locale.h: mkh.sh $(SRCDIR)/nonstd/struct_locale_t.c $(SRCDIR)/nonstd/__load_locale.c $(SRCDIR)/nonstd/locale-limits.ref $(SRCDIR)/nonstd/locale-internal.ref $(SRCDIR)/nonstd/locale-locale.ref 
 	INCDIR=$(INCDIR) sh mkh.sh $(INCDIR)/nonstd/locale.h
 
-$(INCDIR)/nonstd/syscall.h: mkh.sh $(SRCDIR)/nonstd/SYSCALL_NUMBER.c $(SRCDIR)/nonstd/__syscall.c $(SRCDIR)/nonstd/__lookup.c $(SRCDIR)/nonstd/syscall_lookup_t.c $(SRCDIR)/nonstd/SYSCALL.c $(SRCDIR)/nonstd/syscall-internal.ref $(SRCDIR)/nonstd/ENOSYS.ref $(SRCDIR)/nonstd/errno.ref 
+$(INCDIR)/nonstd/syscall.h: mkh.sh $(SRCDIR)/nonstd/SYSCALL_NUMBER.c $(SRCDIR)/nonstd/__syscall.c $(SRCDIR)/nonstd/__lookup.c $(SRCDIR)/nonstd/SYSCALL.c $(SRCDIR)/nonstd/syscall-internal.ref $(SRCDIR)/nonstd/ENOSYS.ref $(SRCDIR)/nonstd/errno.ref 
 	INCDIR=$(INCDIR) sh mkh.sh $(INCDIR)/nonstd/syscall.h
 
 $(INCDIR)/poll.h: mkh.sh $(SRCDIR)/poll/POLLIN.c $(SRCDIR)/poll/POLLWRBAND.c $(SRCDIR)/poll/POLLPRI.c $(SRCDIR)/poll/POLLRDBAND.c $(SRCDIR)/poll/POLLNVAL.c $(SRCDIR)/poll/POLLWRNORM.c $(SRCDIR)/poll/struct_pollfd.c $(SRCDIR)/poll/POLLRDNORM.c $(SRCDIR)/poll/nfds_t.c $(SRCDIR)/poll/POLLERR.c $(SRCDIR)/poll/poll.c $(SRCDIR)/poll/POLLHUP.c $(SRCDIR)/poll/POLLOUT.c 
