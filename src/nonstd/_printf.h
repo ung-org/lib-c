@@ -38,6 +38,10 @@ static void __itos(char *s, intmax_t n, int flags, int precision, int base)
 	}
 	*out = '\0';
 	out--;
+	if (n == 0) {
+		*out = '0';
+		out--;
+	}
 	while (n > 0) {
 		precision--;
 		*out = digits[n % base];
