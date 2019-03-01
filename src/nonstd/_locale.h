@@ -16,8 +16,19 @@
 #define LC_ALL_MASK (0xff)
 */
 
+#define setall(_map, _input, _mask) do { \
+	size_t _i; \
+	for (_i = 0; _i < sizeof(_input); _i++) { \
+		_map[(int)_input[_i]] |= _mask; \
+	} \
+} while (0)
+
 static char * (__load_locale)(struct __locale_t *loc, int mask, const char *name)
 {
+	if (name == NULL) {
+		name = "";
+	}
+
 	char localepath[FILENAME_MAX] = "/lib/locale/";
 	strcat(localepath, name);
 
@@ -29,35 +40,63 @@ static char * (__load_locale)(struct __locale_t *loc, int mask, const char *name
 	if (mask & LC_COLLATE_MASK) {
 		strcpy(loc->collate, name);
 
-		/* read from file */
-		loc->lc_collate = NULL;
+		if (localefile == NULL) {
+			/* TODO: POSIX/C locale collation */
+		} else {
+			/* read from file */
+			loc->lc_collate = NULL;
+		}
 	}
 
 	if (mask & LC_CTYPE_MASK) {
 		strcpy(loc->ctype, name);
 
 		if (localefile == NULL) {
-			int i;
+			char upper[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+			char lower[] = "abcdefghijklmnopqrstuvwxyz";
+			char digit[] = "0123456789";
+			char xdigit[] = "0123456789ABCDEFabcdef";
+			char space[] = " \f\n\r\t\v";
+			char punct[] = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
+			char blank[] = " \t";
+			size_t i;
+
+			memset(loc->lc_ctype.ctattr, 0, CHAR_MAX);
 
 			for (i = 0; i < 32; i++) {
 				loc->lc_ctype.ctattr[i] = CT_CNTRL;
 			}
-			for (i = 'a'; i < 'z'; i++) {
-				loc->lc_ctype.ctattr[i] = CT_LOWER;
-			}
-			for (i = 'A'; i < 'Z'; i++) {
-				loc->lc_ctype.ctattr[i] = CT_UPPER;
-			}
-			for (i = '0'; i < '9'; i++) {
-				loc->lc_ctype.ctattr[i] = CT_DIGIT | CT_XDIGIT;
-			}
-			/* others */
-			for (i = 0; i < CHAR_MAX; i++) {
-				loc->lc_ctype.ctoupper[i] = ('a' <= i && i <= 'z') ? i + 32 : i;
-			}
+			loc->lc_ctype.ctattr[127] = CT_CNTRL;
+
+			setall(loc->lc_ctype.ctattr, upper, CT_UPPER);
+			setall(loc->lc_ctype.ctattr, upper, CT_ALPHA);
+			setall(loc->lc_ctype.ctattr, lower, CT_LOWER);
+			setall(loc->lc_ctype.ctattr, lower, CT_ALPHA);
+			setall(loc->lc_ctype.ctattr, digit, CT_DIGIT);
+			setall(loc->lc_ctype.ctattr, xdigit, CT_XDIGIT);
+			setall(loc->lc_ctype.ctattr, space, CT_SPACE);
+			setall(loc->lc_ctype.ctattr, punct, CT_PUNCT);
+			setall(loc->lc_ctype.ctattr, blank, CT_BLANK);
 
 			for (i = 0; i < CHAR_MAX; i++) {
-				loc->lc_ctype.ctolower[i] = ('A' <= i && i <= 'Z') ? i - 32 : i;
+				if (loc->lc_ctype.ctattr[i] &
+					(CT_UPPER | CT_ALPHA | CT_LOWER |
+					 CT_DIGIT | CT_XDIGIT | CT_PUNCT)) {
+					loc->lc_ctype.ctattr[i] |= CT_GRAPH;
+					loc->lc_ctype.ctattr[i] |= CT_PRINT;
+				}
+			}
+
+			loc->lc_ctype.ctattr[' '] |= CT_PRINT;
+
+			for (i = 0; i < CHAR_MAX; i++) {
+				loc->lc_ctype.ctoupper[i] = i;
+				loc->lc_ctype.ctolower[i] = i;
+			}
+
+			for (i = 0; i < sizeof(upper); i++) {
+				loc->lc_ctype.ctolower[(int)upper[i]] = lower[i];
+				loc->lc_ctype.ctoupper[(int)lower[i]] = upper[i];
 			}
 		} else {
 			/* read from file */
@@ -118,16 +157,70 @@ static char * (__load_locale)(struct __locale_t *loc, int mask, const char *name
 	if (mask & LC_TIME_MASK) {
 		strcpy(loc->time, name);
 
-		/* read from file */
-		/* loc->lc_time */
+		if (localefile == NULL) {
+			memset(&loc->lc_time, 0, sizeof(loc->lc_time));
+
+			loc->lc_time.d_t_fmt = "%a %b %e %H:%M:%S %Y";
+			loc->lc_time.d_fmt = "%m/%d/%y";
+			loc->lc_time.t_fmt = "%H:%M:%S";
+			loc->lc_time.am_pm[0] = "AM";
+			loc->lc_time.am_pm[1] = "PM";
+			loc->lc_time.t_fmt_ampm = "%I:%M:%S %p";
+			loc->lc_time.day[0] = "Sunday";
+			loc->lc_time.day[1] = "Monday";
+			loc->lc_time.day[2] = "Tuesday";
+			loc->lc_time.day[3] = "Wednesday";
+			loc->lc_time.day[4] = "Thursday";
+			loc->lc_time.day[5] = "Friday";
+			loc->lc_time.day[6] = "Saturday";
+			loc->lc_time.abday[0] = "Sun";
+			loc->lc_time.abday[1] = "Mon";
+			loc->lc_time.abday[2] = "Tue";
+			loc->lc_time.abday[3] = "Wed";
+			loc->lc_time.abday[4] = "Thu";
+			loc->lc_time.abday[5] = "Fri";
+			loc->lc_time.abday[6] = "Sat";
+			loc->lc_time.mon[0] = "January";
+			loc->lc_time.mon[1] = "February";
+			loc->lc_time.mon[2] = "March";
+			loc->lc_time.mon[3] = "April";
+			loc->lc_time.mon[4] = "May";
+			loc->lc_time.mon[5] = "June";
+			loc->lc_time.mon[6] = "July";
+			loc->lc_time.mon[7] = "August";
+			loc->lc_time.mon[8] = "September";
+			loc->lc_time.mon[9] = "October";
+			loc->lc_time.mon[10] = "November";
+			loc->lc_time.mon[11] = "December";
+			loc->lc_time.abmon[0] = "Jan";
+			loc->lc_time.abmon[1] = "Feb";
+			loc->lc_time.abmon[2] = "Mar";
+			loc->lc_time.abmon[3] = "Apr";
+			loc->lc_time.abmon[4] = "May";
+			loc->lc_time.abmon[5] = "Jun";
+			loc->lc_time.abmon[6] = "Jul";
+			loc->lc_time.abmon[7] = "Aug";
+			loc->lc_time.abmon[8] = "Sep";
+			loc->lc_time.abmon[9] = "Oct";
+			loc->lc_time.abmon[10] = "Nov";
+			loc->lc_time.abmon[11] = "Dec";
+		} else {
+			/* read from file */
+			/* loc->lc_time */
+		}
 	}
 
 	if (mask & LC_MESSAGES_MASK) {
 		strcpy(loc->messages, name);
 
-		/* read */
-		loc->lc_messages.yesexpr = NULL;
-		loc->lc_messages.noexpr = NULL;
+		if (localefile == NULL) {
+			loc->lc_messages.yesexpr = "^[yY]";
+			loc->lc_messages.noexpr = "^[nN]";
+		} else {
+			/* read */
+			loc->lc_messages.yesexpr = NULL;
+			loc->lc_messages.noexpr = NULL;
+		}
 	}
 
 	return (char*)name;

@@ -22,11 +22,11 @@ struct __locale_t {
 		char *noexpr;
 	} lc_messages;
 
-	char *monetary;
-	char *numeric;
+	char monetary[UCHAR_MAX];
+	char numeric[UCHAR_MAX];
 	struct lconv mn;
 
-	char *time;
+	char time[UCHAR_MAX];
 	struct {
 		char *abday[7];
 		char *day[7];
