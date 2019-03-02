@@ -10,7 +10,12 @@
 #else
 #define DEFAULT_LOCALE "C"
 #include "nonstd/syscall.h"
-#define isatty(fd) __syscall(__lookup("tty"), fd)
+#include "../termios/NCCS.c"
+#include "../termios/cc_t.c"
+#include "../termios/tcflag_t.c"
+#include "../termios/struct_termios.c"
+static struct termios __tios;
+#define isatty(fd) (__syscall(__lookup("tcgetattr"), fd, &__tios) == 0)
 #endif
 
 void __libc_start(int argc, char **argv)
