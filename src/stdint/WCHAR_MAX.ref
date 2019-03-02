@@ -1,0 +1,3 @@
+#include <stdint.h>
+REFERENCE(wchar/WCHAR_MAX.c)
+STDC(199901)
