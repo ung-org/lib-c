@@ -1,16 +1,15 @@
 #include <iso646.h>
+
+/** alternate spelling for ~ **/
+
 #define compl                                                                  ~
 
-/** alternate spelling of ~ **/
-
 /***
-is an alternate spelling of the bitwise complement operator (OPERATOR(~)).
+provides an alternative means of specifying the unary bitwise-compliment
+operator (OPERATOR(~)).
 ***/
 
 /*
-VALUE_FIXED(~)
-*/
-
-/*
+VALUE_FIXED(OPERATOR(~))
 STDC(199409)
 */
