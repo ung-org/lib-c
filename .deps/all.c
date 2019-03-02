@@ -2398,7 +2398,6 @@
 ./src/stdint/INTPTR_MAX.c
 ./src/stdint/INT16_MAX.c
 ./src/stdint/SIG_ATOMIC_MAX.c
-./src/stdint/WCHAR_MAX.c
 ./src/stdint/UINT_LEAST64_MAX.c
 ./src/stdint/UINT64_MAX.c
 ./src/stdint/INT8_MIN.c
@@ -2470,7 +2469,6 @@
 ./src/stdint/UINT_LEAST32_MAX.c
 ./src/stdint/INT8_C.c
 ./src/stdint/UINT16_C.c
-./src/stdint/WCHAR_MIN.c
 ./src/stdint/int8_t.c
 ./src/stdint/int_least16_t.c
 ./src/stdint/UINT32_MAX.c

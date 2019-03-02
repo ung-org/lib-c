@@ -111,6 +111,8 @@
 ./src/string/size_t.ref
 ./src/ftw/struct_stat.ref
 ./src/grp/gid_t.ref
+./src/stdint/WCHAR_MIN.ref
+./src/stdint/WCHAR_MAX.ref
 ./src/unistd/off_t.ref
 ./src/unistd/uid_t.ref
 ./src/unistd/SEEK_CUR.ref
