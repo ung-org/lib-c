@@ -5,34 +5,27 @@
 #include "nonstd/assert.h"
 
 /** test whether a character is blank **/
+
 int isblank(int c)
 {
-	ASSERT_REPRESENTABLE(c, 0, UCHAR_MAX, "unsigned char", EOF);
-
 	unsigned int *map = __libc(CTYPE);
+
+	ASSERT_REPRESENTABLE(c, 0, UCHAR_MAX, "unsigned char", EOF);
 
 	return map[c] & CT_BLANK;
 }
 
 /***
-The fn(isblank) functions tests whether a character is a of the character
-class cclass(blank) in the current locale.
-
-In the locale(C) and locale(POSIX) locales, only the standard blank characters
-space (char( )) horizontal tab (char(\t)) are blank.
-
-In other locales, fn(isblank) will return true for the standard blank characters
-as well as other characters for which fn(isspace) is true and the character is
-used to separate words on a line a text.
+tests whether a character is a of the character class CCLASS(blank) in the
+current locale.
 ***/
 
-/* RETURN(NZ): arg(c) is a blank character */
-/* RETURN(0): arg(c) is not a blank character */
-
-/* UNSPECIFIED: - */
-/* IMPLEMENTATION: - */
-/* LOCALE: LC_CTYPE */
 
 /*
+C_LOCALE(only space (CHAR( )) and tab (CHAR(\t)) are blank)
+OTHER_LOCALES(true for space (CHAR( )), tab (CHAR(\t)), and characters for which FUNCTION(isspace) is true and are used to separate words)
+RETURN(NONZERO, arg(c) is a blank character)
+RETURN(ZERO, arg(c) is not a blank character)
+LC_CTYPE
 STDC(199901)
 */

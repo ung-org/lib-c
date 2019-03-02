@@ -4,15 +4,12 @@
 #include "nonstd/ctype.h"
 
 /** test whether a character is graphic **/
+
 int isgraph(int c)
 {
 	unsigned int *map = __libc(CTYPE);
 
 	ASSERT_REPRESENTABLE(c, 0, UCHAR_MAX, unsigned char, EOF);
-	/*
-	RETURN(NONZERO, ARGUMENT(c) is a graphic character);
-	RETURN(0, ARGUMENT(c) is not a graphic character);
-	*/
 
 	return map[c] & CT_GRAPH;
 }
@@ -23,6 +20,8 @@ in the current locale.
 ***/
 
 /*
+RETURN(NONZERO, ARGUMENT(c) is a graphic character)
+RETURN(0, ARGUMENT(c) is not a graphic character)
 LC_CTYPE
 C_LOCALE(`THIS() is true for all printable characters other than SPACE()')
 STDC(1)

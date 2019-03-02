@@ -1,6 +1,7 @@
 #include <ctype.h>
 
 /** test whether a character is in the ASCII range **/
+
 int isascii(int c)
 {
 	if (0 <= c && c <= 0177) {
@@ -10,17 +11,12 @@ int isascii(int c)
 }
 
 /***
-The fn(isascii) function tests whether arg(c) is a 7-bit US-ASCII character.
+tests whether ARGUMENT(c) is a 7-bit US-ASCII character.
 ***/
 
-/* RETURN(NZ): arg(c) is between 0 and octal 0177 inclusive */
-/* RETURN(0): arg(c) is outside of the ASCII range */
-
-/* UNDEFINED: - */
-/* UNSPECIFIED: - */
-/* IMPLEMENTATION: - */
-/* LOCALE: - */
-
 /*
+RETURN(NONZERO, ARGUMENT(c) is between 0 and octal 0177 inclusive)
+RETURN(ZERO, ARGUMENT(c) is outside of the ASCII range)
+XOBSOLETE(700)
 XOPEN(4)
 */

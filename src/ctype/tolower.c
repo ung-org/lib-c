@@ -5,15 +5,12 @@
 #include "nonstd/ctype.h"
 
 /** convert an uppercase letter to lowercase **/
+
 int tolower(int c)
 {
 	unsigned char *map = __libc(TOLOWER);
 
 	ASSERT_REPRESENTABLE(c, 0, UCHAR_MAX, unsigned char, EOF);
-	/*
-	RETURN_SUCCESS(ARGUMENT(c) converted to lowercase);
-	RETURN_FAILURE(ARGUMENT(c), ARGUMENT(c) was not an uppercase letter or it has no equivalent lowercase letter);
-	*/
 
 	if (c == EOF) {
 		return EOF;
@@ -28,6 +25,8 @@ locale.
 ***/
 
 /*
+RETURN_SUCCESS(ARGUMENT(c) converted to lowercase)
+RETURN_FAILURE(ARGUMENT(c), ARGUMENT(c) was not an uppercase letter or it has no equivalent lowercase letter)
 LC_CTYPE
 STDC(1)
 */
