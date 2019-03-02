@@ -1,6 +1,7 @@
 #include <signal.h>
-#define SIGHUP                                                              (15)
-/*s Hang-up s*/
+#define SIGHUP                                                               (0)
+/** Hang-up **/
+/* Value selected to match requirements for COMMAND(kill) and COMMAND(trap). */
 /*
 POSIX(1)
 */

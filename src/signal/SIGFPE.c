@@ -1,5 +1,5 @@
 #include <signal.h>
-#define SIGFPE                                                               (2)
+#define SIGFPE                                                               (4)
 /** floating point exception **/
 /***
 is a signal that indicates an error resulting from invalid arithmetic

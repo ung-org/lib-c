@@ -1,5 +1,5 @@
 #include <signal.h>
-#define SIGILL                                                               (3)
+#define SIGILL                                                               (5)
 /** illegal instruction **/
 /***
 is a signal indicating that the program has attempted to execute an illegal

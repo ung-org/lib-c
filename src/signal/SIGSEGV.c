@@ -1,5 +1,5 @@
 #include <signal.h>
-#define SIGSEGV                                                              (5)
+#define SIGSEGV                                                              (7)
 /** segmentation fault **/
 /***
 is a signal that indicates the program is attempting to access an invalid
