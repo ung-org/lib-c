@@ -1,5 +1,6 @@
 #include "stddef.h"
 #include <inttypes.h>
+#include "ctype.h"
 #include "errno.h"
 
 intmax_t strtoimax(const char * restrict nptr, char ** restrict endptr, int base)
