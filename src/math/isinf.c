@@ -1,10 +1,6 @@
 #include <math.h>
-                                 int __isinff(float x);
-                                int __isinfd(double x);
-                           int __isinfl(long double x);
 
-#define isinf(x)              ((sizeof (x) == sizeof (float)) ? __isinff(x) : \
-	(sizeof (x) == sizeof (double)) ? __isinfd(x) : __isinfl(x))
+#define isinf(x)                                  (fpclassify(x) == FP_INFINITE)
 
 /*
 STDC(199901)
