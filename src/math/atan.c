@@ -3,6 +3,8 @@
 #include "errno.h"
 #include "_tgmath.h"
 
+#include "M_PI_2.c"
+
 /** arc tangent **/
 TYPE TGFN(atan)(TYPE x)
 {
@@ -10,6 +12,12 @@ TYPE TGFN(atan)(TYPE x)
 	TYPE arctan = 0.0;
 	TYPE power = 1.0;
 	int i;
+
+	switch (fpclassify(x)) {
+	case FP_ZERO:		return x;
+	case FP_INFINITE:	return signbit(x) ? - M_PI_2 : M_PI_2;
+	default:		break;
+	}
 
 	if (0) {
 		errno = ERANGE; /* The result cannot be represented */

@@ -4,7 +4,11 @@
 
 TYPE TGFN(fdim)(TYPE x, TYPE y)
 {
-	return x - y;
+	if (x > y) {
+		return x - y;
+	}
+
+	return 0;
 }
 
 /*

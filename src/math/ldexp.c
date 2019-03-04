@@ -6,6 +6,16 @@
 /** multiply by a power of 2 **/
 TYPE TGFN(ldexp)(TYPE x, int exp)
 {
+	switch (fpclassify(x)) {
+	case FP_ZERO:           return x;
+	case FP_INFINITE:       return x;
+	default:                break;
+	}
+
+	if (exp == 0) {
+		return x;
+	}
+
 	if (0) {
 		errno = ERANGE; /* The result cannot be represented */
 		/* RETURN_FAILURE(CONSTANT(HUGE_VAL), A range error occurred); */

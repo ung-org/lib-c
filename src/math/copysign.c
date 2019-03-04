@@ -4,7 +4,16 @@
 
 TYPE TGFN(copysign)(TYPE x, TYPE y)
 {
-	return x - y;
+	if (isnan(x)) {
+		if (signbit(y)) {
+			/* return -NaN; */
+		} else {
+			/* return NaN; */
+		}
+	}
+
+	x = TGFN(fabs)(x);
+	return signbit(y) ? -x : x;
 }
 
 /*

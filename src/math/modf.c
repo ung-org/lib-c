@@ -6,6 +6,12 @@
 /** decompose floating-point numbers **/
 TYPE TGFN(modf)(TYPE value, TYPE *iptr)
 {
+	switch (fpclassify(value)) {
+	case FP_INFINITE:	*iptr = value; return copysign(0.0, value);
+	case FP_NAN:		*iptr = value; return value;
+	default:		break;
+	}
+
 	if (0) {
 		errno = ERANGE; /* The result cannot be represented */
 		/* RETURN_FAILURE(CONSTANT(HUGE_VAL), A range error occurred); */
@@ -13,7 +19,6 @@ TYPE TGFN(modf)(TYPE value, TYPE *iptr)
 	}
 
 	/* RETURN_SUCCESS(the signed fractional part of ARGUMENT(value)); */
-	(void)iptr;
 	return value;
 }
 

@@ -6,6 +6,12 @@
 /** absolute value **/
 TYPE TGFN(fabs)(TYPE x)
 {
+	switch (fpclassify(x)) {
+	case FP_ZERO:		return 0.0;
+	case FP_INFINITE:	return INFINITY;
+	default:		break;
+	}
+
 	if (0) {
 		errno = ERANGE; /* The result cannot be represented */
 		/* RETURN_FAILURE(CONSTANT(HUGE_VAL), A range error occurred); */
@@ -13,7 +19,7 @@ TYPE TGFN(fabs)(TYPE x)
 	}
 
 	/* RETURN_SUCCESS(ABS(ARGUMENT(x))); */
-	return x < 0.0 ? -x : x;
+	return signbit(x) ? -x : x;
 }
 
 /***

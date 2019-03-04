@@ -2,10 +2,17 @@
 #include <math.h>
 #include "_tgmath.h"
 #include "errno.h"
+#include "fenv.h"
 
 /** tangent **/
 TYPE TGFN(tan)(TYPE x)
 {
+	switch (fpclassify(x)) {
+	case FP_ZERO:		return x;
+	case FP_INFINITE:	feraiseexcept(FE_INVALID); return NAN;
+	default:		break;
+	}
+
 	if (0) {
 		errno = ERANGE; /* The result cannot be represented */
 		/* RETURN_FAILURE(CONSTANT(HUGE_VAL), A range error occurred); */

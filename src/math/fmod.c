@@ -2,10 +2,27 @@
 #include <math.h>
 #include "_tgmath.h"
 #include "errno.h"
+#include "fenv.h"
 
 /** floating-point remainder **/
 TYPE TGFN(fmod)(TYPE x, TYPE y)
 {
+	int classx = fpclassify(x);
+	int classy = fpclassify(y);
+
+	if (classx == FP_ZERO && classy != FP_ZERO) {
+		return x;
+	}
+
+	if (classx == FP_INFINITE && classy == FP_ZERO) {
+		feraiseexcept(FE_INVALID);
+		return NAN;
+	}
+
+	if (classx != FP_INFINITE && classy == FP_INFINITE) {
+		return x;
+	}
+
 	if (y == 0) {
 		return 0;
 	}

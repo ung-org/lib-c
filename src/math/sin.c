@@ -2,6 +2,7 @@
 #include <math.h>
 #include "_tgmath.h"
 #include "errno.h"
+#include "fenv.h"
 
 /** sine **/
 TYPE TGFN(sin)(TYPE x)
@@ -11,6 +12,12 @@ TYPE TGFN(sin)(TYPE x)
 	int i;
 	TYPE sine = 0.0;
 	TYPE power = 1.0;
+
+	switch (fpclassify(x)) {
+	case FP_ZERO:		return x;
+	case FP_INFINITE:	feraiseexcept(FE_INVALID); return NAN;
+	default:		break;
+	}
 
 	if (0) {
 		errno = ERANGE; /* The result cannot be represented */

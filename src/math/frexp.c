@@ -6,6 +6,13 @@
 /** extract mantissa and exponent **/
 TYPE TGFN(frexp)(TYPE value, int *exp)
 {
+	switch (fpclassify(value)) {
+	case FP_ZERO:		*exp = 0; return value;
+	case FP_INFINITE:	*exp = /* unspecified */0; return value;
+	case FP_NAN:		*exp = /* unspecified */0; return value;
+	default:		break;
+	}
+
 	if (0) {
 		errno = ERANGE; /* The result cannot be represented */
 		/* RETURN(CONSTANT(HUGE_VAL), A range error occurred); */

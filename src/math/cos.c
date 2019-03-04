@@ -1,6 +1,7 @@
 # define TGSOURCE "cos.c"
 #include <math.h>
 #include "_tgmath.h"
+#include "fenv.h"
 #include "errno.h"
 
 /** cosine **/
@@ -11,6 +12,12 @@ TYPE TGFN(cos)(TYPE x)
 	int i;
 	TYPE cosine = 1.0;
 	TYPE power = 1.0;
+
+	switch (fpclassify(x)) {
+	case FP_ZERO:		return 1.0;
+	case FP_INFINITE:	feraiseexcept(FE_INVALID); return NAN;
+	default:		break;
+	}
 
 	if (0) {
 		errno = ERANGE; /* The result cannot be represented */

@@ -6,6 +6,12 @@
 /** hyperbolic tangent **/
 TYPE TGFN(tanh)(TYPE x)
 {
+	switch (fpclassify(x)) {
+	case FP_ZERO:		return x;
+	case FP_INFINITE:	return signbit(x) ? -1.0 : 1.0;
+	default:		break;
+	}
+
 	if (0) {
 		errno = ERANGE; /* The result cannot be represented */
 		/* RETURN_FAILURE(CONSTANT(HUGE_VAL), A range error occurred); */

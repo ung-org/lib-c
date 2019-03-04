@@ -4,6 +4,14 @@
 
 TYPE TGFN(hypot)(TYPE x, TYPE y)
 {
+	if (fpclassify(y) == FP_ZERO) {
+		return fabs(x);
+	}
+
+	if (fpclassify(x) == FP_INFINITE) {
+		return INFINITY;
+	}
+
 	return x - y;
 }
 

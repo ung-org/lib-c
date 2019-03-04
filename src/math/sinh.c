@@ -6,6 +6,12 @@
 /** hyperbolic sine **/
 TYPE TGFN(sinh)(TYPE x)
 {
+	switch (fpclassify(x)) {
+	case FP_ZERO:		return x;
+	case FP_INFINITE:	return x;
+	default:		break;
+	}
+
 	if (0) {
 		errno = ERANGE; /* The magnitude of ARGUMENT(x) is too large */
 		/* RETURN_FAILURE(CONSTANT(HUGE_VAL), A range error occurred); */

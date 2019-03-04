@@ -4,6 +4,12 @@
 
 TYPE TGFN(trunc)(TYPE x)
 {
+	switch (fpclassify(x)) {
+	case FP_ZERO:		return x;
+	case FP_INFINITE:	return x;
+	default:		break;
+	}
+
 	return x;
 }
 

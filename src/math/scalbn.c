@@ -4,7 +4,17 @@
 
 TYPE TGFN(scalbn)(TYPE x, int n)
 {
-	return x - n;
+	switch (fpclassify(x)) {
+	case FP_ZERO:		return x;
+	case FP_INFINITE:	return x;
+	default:		break;
+	}
+
+	if (n == 0) {
+		return x;
+	}
+
+	return TGFN(ldexp)(x, n);
 }
 
 /*

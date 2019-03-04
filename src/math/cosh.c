@@ -6,6 +6,12 @@
 /** hyperbolic cosine **/
 TYPE TGFN(cosh)(TYPE x)
 {
+	switch (fpclassify(x)) {
+	case FP_ZERO:		return 1.0;
+	case FP_INFINITE:	return TGFN(fabs)(x);
+	default:		break;
+	}
+
 	if (0) {
 		errno = ERANGE; /* The magnitude of ARGUMENT(x) is too large */
 		/* RETURN_FAILURE(CONSTANT(HUGE_VAL), A range error occurred); */

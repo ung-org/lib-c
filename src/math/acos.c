@@ -1,12 +1,15 @@
 # define TGSOURCE "acos.c"
 #include <math.h>
+#include "fenv.h"
 #include "errno.h"
 #include "_tgmath.h"
 
 /** arc cosine **/
 TYPE TGFN(acos)(TYPE x)
 {
-	if (x < -1 || x > 1) {
+	if (TGFN(fabs)(x) > 1) {
+		feraiseexcept(FE_INVALID);
+		return NAN;
 		errno = EDOM;	/* ARGUMENT(x) not in the range [-1, +1] */
 		return TGHUGE;
 	}
@@ -15,6 +18,10 @@ TYPE TGFN(acos)(TYPE x)
 		errno = ERANGE; /* The result cannot be represented */
 		/* RETURN_FAILURE(CONSTANT(HUGE_VAL), A range error occurred); */
 		return TGHUGE;
+	}
+
+	if (x == 1.0) {
+		return 0.0;
 	}
 
 	/* RETURN_SUCCESS(a value in range `[0, PI()]'); */

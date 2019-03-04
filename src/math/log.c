@@ -2,11 +2,24 @@
 #include <math.h>
 #include "_tgmath.h"
 #include "errno.h"
+#include "fenv.h"
 
 /** natural logarithm **/
 TYPE TGFN(log)(TYPE x)
 {
+	switch (fpclassify(x)) {
+	case FP_ZERO:		feraiseexcept(FE_DIVBYZERO); return - INFINITY;
+	case FP_INFINITE:	if (!signbit(x)) { return x; }
+	default:		break;
+	}
+
+	if (x == 1.0) {
+		return 0.0;
+	}
+
 	if (x < 0) {
+		feraiseexcept(FE_INVALID);
+		return NAN;
 		errno = EDOM; /* ARGUMENT(x) is negative */
 		return TGHUGE;
 	}

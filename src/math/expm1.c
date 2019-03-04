@@ -4,6 +4,12 @@
 
 TYPE TGFN(expm1)(TYPE x)
 {
+	switch (fpclassify(x)) {
+	case FP_ZERO:		return x;
+	case FP_INFINITE:	return signbit(x) ? -1.0 : x;
+	default:		break;
+	}
+
 	return x;
 }
 

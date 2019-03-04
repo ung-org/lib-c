@@ -4,7 +4,13 @@
 
 TYPE TGFN(fmin)(TYPE x, TYPE y)
 {
-	return x - y;
+	if (isnan(x) && !isnan(y)) {
+		return y;
+	} else if (!isnan(x) && isnan(y)) {
+		return x;
+	}
+
+	return x < y ? x : y;
 }
 
 /*

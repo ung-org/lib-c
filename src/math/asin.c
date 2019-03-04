@@ -6,9 +6,13 @@
 /** arc sine **/
 TYPE TGFN(asin)(TYPE x)
 {
-	if (x < -1.0 || x > 1.0) {
+	if (TGFN(fabs)(x) > 1.0) {
 		errno = EDOM;	/* ARGUMENT(x) is not in the range [-1, +1] */
 		return TGHUGE;
+	}
+
+	if (fpclassify(x) == FP_ZERO) {
+		return x;
 	}
 
 	if (0) {
