@@ -5,7 +5,7 @@
 
 TYPE complex TGFN(casin)(TYPE complex z)
 {
-	return z;
+	return TGCMPLX(0.0, -TGFN(casinh)(I * z));
 }
 
 /*d

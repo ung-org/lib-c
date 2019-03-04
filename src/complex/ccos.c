@@ -5,7 +5,7 @@
 
 TYPE complex TGFN(ccos)(TYPE complex z)
 {
-	return z;
+	return TGFN(ccosh)(I * z);
 }
 
 /*d

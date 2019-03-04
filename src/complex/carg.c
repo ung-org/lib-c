@@ -1,11 +1,12 @@
 # define TGSOURCE "../complex/carg.c"
 #include "_tgmath.h"
+#include "math.h"
 
 #include <complex.h>
 
 TYPE TGFN(carg)(TYPE complex z)
 {
-	return z;
+	return TGFN(atan2)(TGFN(cimag)(z), TGFN(creal)(z));
 }
 
 /*d

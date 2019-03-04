@@ -5,7 +5,7 @@
 
 TYPE complex TGFN(catan)(TYPE complex z)
 {
-	return z;
+	return TGCMPLX(0.0, -TGFN(catanh)(I * z));
 }
 
 /*d
