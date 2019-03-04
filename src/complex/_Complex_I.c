@@ -1,7 +1,10 @@
 #include <complex.h>
 
 #define _Complex_I \
-	 (((union { _Complex float __c; float __f[2]; }){.__f = {0., 1.} }).__c)
+	 (((union { \
+		float _Complex __c; \
+		float __f[2]; \
+	}){ .__f = { 0.0, 1.0 } }).__c)
 
 
 /*
