@@ -1,5 +1,5 @@
 #include <stddef.h>
-#define offsetof(type, member)        ((size_t)((void*)&(((type*)0)->##member)))
+#define offsetof(__type, __member)  ((size_t)((void*)&(((__type*)0)->__member)))
 
 /** get offset of a structure member **/
 
