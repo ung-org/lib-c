@@ -4,7 +4,7 @@
 
 #ifdef NDEBUG
 
-#define assert(ignore) ((void)0)
+#define assert(__exp) ((void)0)
 
 #else
 
@@ -12,8 +12,8 @@
 #define __func__ ((char*)0)
 #endif
 
-#define assert(__exp__) \
-	((void)((__exp__) || (__assert(#__exp__, __FILE__, __LINE__, __func__),  0)))
+#define assert(__exp) \
+	((void)((__exp) || (__assert(#__exp, __FILE__, __LINE__, __func__),  0)))
 
 #endif
 
