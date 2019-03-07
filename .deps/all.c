@@ -2476,11 +2476,13 @@
 ./src/assert/assert.c
 ./src/assert/__assert.c
 ./src/assert/NDEBUG.c
+./src/complex/CMPLXL.c
 ./src/complex/clog.c
 ./src/complex/csin.c
 ./src/complex/ctanh.c
 ./src/complex/ctan.c
 ./src/complex/ccosh.c
+./src/complex/CMPLXF.c
 ./src/complex/catan.c
 ./src/complex/imaginary.c
 ./src/complex/cpow.c
@@ -2491,6 +2493,7 @@
 ./src/complex/I.c
 ./src/complex/cacosh.c
 ./src/complex/cproj.c
+./src/complex/CMPLX.c
 ./src/complex/catanh.c
 ./src/complex/casinh.c
 ./src/complex/cabs.c
