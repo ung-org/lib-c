@@ -19,6 +19,7 @@ headers $(INCDIR): $(TOPDIR)/.headers.mk $(TOPDIR)/mkh.sh
 	$(MAKE) -f $(TOPDIR)/.headers.mk headers
 
 test:
+	$(MAKE) all
 	cd tests && $(MAKE) && ./testlibc $(TESTS)
 
 ctags:
