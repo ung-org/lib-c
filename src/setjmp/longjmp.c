@@ -4,13 +4,14 @@
 
 _Noreturn void longjmp(jmp_buf env, int val)
 {
-	(void)env;
-	if (val == 0) {
-		val = 1;
+	extern _Noreturn void __longjmp(jmp_buf);
+
+	/* use val if nonzero, otherwise 1 */
+	env[0] = val ? val : 1;
+	
+	for (;;) {
+		__longjmp(env);
 	}
-	/* Set env.return_register to val */
-	/* Load all registers from env */
-	for (;;); /* silence _Noreturn function returns warning */
 }
 
 /***

@@ -1,16 +1,13 @@
 #include <setjmp.h>
+#include "string.h"
 
 /** save program state **/
 
 int setjmp(jmp_buf env)
 {
-	(void)env;
-	/* extern int setjmp(jmp_buf); */
-	/*
-	RETURN(0, the environment has been saved by THIS())
-	RETURN(NONZERO, the environment has been restored by FUNCTION(longjmp))
-	*/
-	return 0; /* setjmp(env); */
+	extern int __setjmp(jmp_buf);
+	memset(env, 0, sizeof(jmp_buf));
+	return __setjmp(env);
 }
 
 /***
@@ -19,6 +16,9 @@ in the TYPEDEF(jmp_buf) ARGUMENT(env).
 ***/
 
 /*
+RETURN(0, the environment has been saved by THIS())
+RETURN(NONZERO, the environment has been restored by FUNCTION(longjmp))
+
 CONSTRAINT: entire controlling expression of a selection or iteration statement
 CONSTRAINT: one operand of a relational or equality operator which is the entire controlling expression of a selction or iteration statement
 CONSTRAINT: the operand of a unary ! as the entire controlling expression of a selection or iteration statement
