@@ -21,7 +21,7 @@ fi
 printf "/*\nUNG's Not GNU\n\n%s\n*/\n\n" "$(cat LICENSE)"
 
 rm -rf $HEADER.*
-for i in $(cat "${TOPDIR}/.deps/${HEADERNAME}.deps" | sort -u); do
+for i in $(cat "${TOPDIR}/.deps/h/${HEADERNAME}.deps" | sort -u); do
 	# TODO: refs
 	type=$(classify_source $i)
 	source=$i
