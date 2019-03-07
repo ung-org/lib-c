@@ -1,0 +1,3 @@
+.POSIX:
+libm_C_0_OBJS= \
+	libm.a($(OBJDIR)/__fpclassify.o)

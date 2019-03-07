@@ -3622,6 +3622,10 @@ libm.a(erf.o): $(OBJDIR)/erf.o
 $(OBJDIR)/erf.o: ./src/math/erf.c
 	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/math/erf.c -o $@
 
+libm.a(__fpclassify.o): $(OBJDIR)/__fpclassify.o
+$(OBJDIR)/__fpclassify.o: ./src/math/__fpclassify.c
+	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/math/__fpclassify.c -o $@
+
 libm.a(sqrt.o): $(OBJDIR)/sqrt.o
 $(OBJDIR)/sqrt.o: ./src/math/sqrt.c
 	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/math/sqrt.c -o $@
@@ -3776,6 +3780,7 @@ include $(TOPDIR)/.deps/libc.XOPEN_4
 include $(TOPDIR)/.deps/libc.XOPEN_400
 include $(TOPDIR)/.deps/libcurses.XOPEN_4
 include $(TOPDIR)/.deps/libcurses.XOPEN_400
+include $(TOPDIR)/.deps/libm.C_0
 include $(TOPDIR)/.deps/libm.C_1
 include $(TOPDIR)/.deps/libm.C_199901
 include $(TOPDIR)/.deps/libm.POSIX_200112

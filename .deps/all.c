@@ -2928,6 +2928,7 @@
 ./src/math/M_LOG2E.c
 ./src/math/erf.c
 ./src/math/fpclassify.c
+./src/math/__fpclassify.c
 ./src/math/sqrt.c
 ./src/math/FP_INFINITE.c
 ./src/math/sinh.c
