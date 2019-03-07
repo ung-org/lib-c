@@ -1,0 +1,16 @@
+when called with an _Imaginary (not _Complex) argument, the following apply:
+
+cos(iy) = cosh(y)
+sin(iy) = i sinh(y)
+tan(iy) = i tanh(y)
+cosh(iy) = cos(y)
+sinh(iy) = i sin(y)
+tanh(iy) = i tan(y)
+asin(iy) = i asinh(y)
+atan(iy) = i atanh(y)
+asinh(iy) = i asin(y)
+atanh(iy) = i atan(y)
+
+cos, cosh, fabs, carg, cimag, and creal => return real types
+sin, tan, sinh, tanh, asin, atan, asinh, atanh => return _Imaginary types
+all others => return _Complex types
