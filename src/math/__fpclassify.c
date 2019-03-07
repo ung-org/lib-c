@@ -8,6 +8,7 @@
 #include "FP_NORMAL.c"
 #include "FP_SUBNORMAL.c"
 #include "FP_ZERO.c"
+#endif
 
 int TGFN(__fpclassify)(TYPE x)
 {
