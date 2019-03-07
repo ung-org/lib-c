@@ -1,18 +1,23 @@
 #include <stdlib.h>
+#include "ctype.h"
 #include "errno.h"
+#include "float.h"
+#include "math.h"
 
 /** convert string to floating-point **/
 
 double strtod(const char * restrict nptr, char ** restrict endptr)
 {
-	(void)nptr; (void)endptr;
-	/* TODO */
+	double ret = 0.0;
+	double max = DBL_MAX;
+	double min = DBL_MIN;
+	double inf = INFINITY;
+	double nan = NAN;
+	double huge = HUGE_VAL;
 
-	if (0) {
-		errno = ERANGE;	/* converted value out of range */
-	}
+	#include "_strtod.h"
 	
-	return 0.0;
+	return ret;
 }
 
 /***
