@@ -1,5 +1,6 @@
 .POSIX:
 libc_C_0_OBJS= \
+	libc.a($(OBJDIR)/$(ARCHITECTURE)-$(WORDSIZE).o) \
 	libc.a($(OBJDIR)/__libc_start.o) \
 	libc.a($(OBJDIR)/__libc.o) \
 	libc.a($(OBJDIR)/_XOPEN_SOURCE.o) \

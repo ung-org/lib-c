@@ -167,9 +167,9 @@ make_headers_mk() {
 	for header in $(cat "${DEPS}/all.h"); do
 		printf 'Building dependencies for <%s>\n' "$header"
 		printf '$(INCDIR)/%s: mkh.sh ' "$header" >> "${TOPDIR}/.headers.mk"
-		mkdir -p $(dirname "${TOPDIR}/.deps/${header}.deps")
-		grep -l "#include <${header}>" $(cat "${DEPS}/all.c" "${DEPS}/all.ref") > "${TOPDIR}/.deps/${header}.deps"
-		sed -e "s#${SRCDIR}#\$(SRCDIR)#" < "${TOPDIR}/.deps/${header}.deps" | tr '\n' ' ' >> "${TOPDIR}/.headers.mk"
+		mkdir -p $(dirname "${TOPDIR}/.deps/h/${header}.deps")
+		grep -l "#include <${header}>" $(cat "${DEPS}/all.c" "${DEPS}/all.ref") > "${TOPDIR}/.deps/h/${header}.deps"
+		sed -e "s#${SRCDIR}#\$(SRCDIR)#" < "${TOPDIR}/.deps/h/${header}.deps" | tr '\n' ' ' >> "${TOPDIR}/.headers.mk"
 		printf '\n\tINCDIR=$(INCDIR) sh mkh.sh $(INCDIR)/%s\n\n' "${header}" >> "${TOPDIR}/.headers.mk"
 	done
 
@@ -193,6 +193,14 @@ make_deps_mk() {
 	printf 'include .config.mk\n\n' > "${TOPDIR}/.deps.mk"
 	printf 'BASE_CFLAGS=-I$(INCDIR) -fno-builtin -nostdinc\n' >> "${TOPDIR}/.deps.mk"
 	printf '\n' >> "${TOPDIR}/.deps.mk"
+
+	printf 'libc.a($(ARCHITECTURE)-$(WORDSIZE).o): $(OBJDIR)/$(ARCHITECTURE)-$(WORDSIZE).o\n' >> "${TOPDIR}/.deps.mk"
+	printf '$(OBJDIR)/$(ARCHITECTURE)-$(WORDSIZE).o: $(SRCDIR)/nonstd/$(ARCHITECTURE)-$(WORDSIZE).s\n' >> "${TOPDIR}/.deps.mk"
+	printf '\t$(CC) $(BASE_CFLAGS) $(CFLAGS) -c $(SRCDIR)/nonstd/$(ARCHITECTURE)-$(WORDSIZE).s -o $@\n\n' >> "${TOPDIR}/.deps.mk"
+
+	# Make sure the architecture dependent stuff gets in
+	printf '.POSIX:\nlibc_C_0_OBJS= \\\n' > "${DEPS}/libc.C_0"
+	printf '\tlibc.a($(OBJDIR)/$(ARCHITECTURE)-$(WORDSIZE).o)' >> "${DEPS}/libc.C_0"
 
 	for file in $(cat "${DEPS}/all.c"); do
 		printf 'Building dependencies from %s\n' "$file"
