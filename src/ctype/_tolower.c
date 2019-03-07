@@ -2,7 +2,7 @@
 
 /** convert an uppercase letter to lowercase **/
 
-#define _tolower(c)                                                   tolower(c)
+#define _tolower(__c)                                               tolower(__c)
 
 /***
 converts an uppercase letter to its equivalent lowercase letter in the current

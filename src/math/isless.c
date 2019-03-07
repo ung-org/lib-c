@@ -1,5 +1,6 @@
 #include <math.h>
-#define isless(x,y)                                                  ((x) < (y))
+
+#define isless(__x, __y)                                         ((__x) < (__y))
 
 /*
 STDC(199901)

@@ -1,5 +1,6 @@
 #include <math.h>
-#define islessgreater(x,y)                              ((x) < (y) || (x) > (y))
+
+#define islessgreater(__x, __y)                 ((__x) < (__y) || (__x) > (__y))
 
 /*
 STDC(199901)

@@ -1,7 +1,9 @@
 #include <math.h>
 
-#define fpclassify(x)    ((sizeof (x) == sizeof (float)) ? __fpclassifyf(x) : \
-	(sizeof (x) == sizeof (double)) ? __fpclassify(x) :  __fpclassifyl(x))
+#define fpclassify(__x) \
+	              ((sizeof (__x) == sizeof (float)) ? __fpclassifyf(__x) : \
+		       (sizeof (__x) == sizeof (double)) ? __fpclassify(__x) : \
+		                                          __fpclassifyl(__x))
 
 /*
 STDC(199901)

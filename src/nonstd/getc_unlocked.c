@@ -1,5 +1,5 @@
 #include <nonstd/io.h>
 
 #if !(defined _POSIX_C_SOURCE && 199506L <= _POSIX_C_SOURCE) && !(defined _XOPEN_SOURCE && 500 <= _XOPEN_SOURCE)
-#define getc_unlocked(f) getc(f)
+#define getc_unlocked(__f) getc(__f)
 #endif

@@ -2,7 +2,7 @@
 
 /** begin processing unnamed arguments **/
 
-#define va_start(ap, parmN)                        __builtin_va_start(ap, parmN)
+#define va_start(__ap, __parmN)                __builtin_va_start(__ap, __parmN)
 
 /***
 prepares unnamed arguments for use. It initializes ARGUMENT(ap) with the the

@@ -2,7 +2,7 @@
 
 /** end processing unnamed arguments **/
 
-#define va_end(ap)                                          __builtin_va_end(ap)
+#define va_end(__ap)                                      __builtin_va_end(__ap)
 
 /***
 stops processing unnamed arguments that were previously begun with a call to

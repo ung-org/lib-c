@@ -1,5 +1,6 @@
 #include <math.h>
-#define isgreater(x,y)                                               ((x) > (y))
+
+#define isgreater(__x, __y)                                      ((__x) > (__y))
 
 /*
 STDC(199901)

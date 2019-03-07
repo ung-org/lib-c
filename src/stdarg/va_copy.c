@@ -2,7 +2,7 @@
 
 /** copy a va_list **/
 
-#define va_copy(dest, src)                          __builtin_va_copy(dest, src)
+#define va_copy(__dest, __src)                  __builtin_va_copy(__dest, __src)
 
 /***
 copies the TYPE(va_list) ARGUMENT(src) to ARGUMENT(dest), including the current

@@ -2,7 +2,7 @@
 
 /** get an unnamed parameter **/
 
-#define va_arg(ap, type)                              __builtin_va_arg(ap, type)
+#define va_arg(__ap, __type)                      __builtin_va_arg(__ap, __type)
 
 /***
 retrieves the next unnamed parameter for use. The ARGUMENT(ap) parameter must

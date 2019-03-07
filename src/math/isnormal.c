@@ -1,6 +1,6 @@
 #include <math.h>
 
-#define isnormal(x)                                 (fpclassify(x) == FP_NORMAL)
+#define isnormal(__x)                             (fpclassify(__x) == FP_NORMAL)
 
 /*
 STDC(199901)

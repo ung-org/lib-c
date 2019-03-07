@@ -1,6 +1,6 @@
 #include <math.h>
 
-#define isfinite(x)                               (fpclassify(x) != FP_INFINITE)
+#define isfinite(__x)                           (fpclassify(__x) != FP_INFINITE)
 
 /*
 STDC(199901)

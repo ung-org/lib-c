@@ -1,5 +1,6 @@
 #include <stdint.h>
-#define INTMAX_C(value)                                    ((intmax_t)value##LL)
+
+#define INTMAX_C(__value)                                ((intmax_t)__value##LL)
 
 /*
 STDC(199901)

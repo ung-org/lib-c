@@ -1,5 +1,6 @@
 #include <math.h>
-#define isunordered(x,y)                                              /* TODO */
+
+#define isunordered(__x, __y)                                         /* TODO */
 
 /*
 STDC(199901)

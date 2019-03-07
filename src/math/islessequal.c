@@ -1,5 +1,6 @@
 #include <math.h>
-#define islessequal(x,y)                                            ((x) <= (y))
+
+#define islessequal(__x, __y)                                   ((__x) <= (__y))
 
 /*
 STDC(199901)

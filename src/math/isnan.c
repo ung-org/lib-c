@@ -1,5 +1,6 @@
 #include <math.h>
-#define isnan(x)                                       (fpclassify(x) == FP_NAN)
+
+#define isnan(__x)                                   (fpclassify(__x) == FP_NAN)
 
 /*
 STDC(199901)
