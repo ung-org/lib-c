@@ -1,6 +1,9 @@
 #include <wchar.h>
+#include "wctype.h"
 #include "limits.h"
 #include "errno.h"
+
+#define isspace iswspace
 
 unsigned long int wcstoul(const wchar_t * restrict nptr, wchar_t ** restrict endptr, int base)
 {
