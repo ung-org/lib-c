@@ -3,5 +3,5 @@
 
 int mtx_unlock(mtx_t *mtx)
 {
-	return mtx_unlock(mtx);
+	return mtx_unlock(mtx) == 0 ? thrd_success : thrd_error;
 }

@@ -1,5 +1,6 @@
 #include <threads.h>
 #include <pthread.h>
+#include <errno.h>
 
 int mtx_init(mtx_t *mtx, int type)
 {
@@ -10,5 +11,5 @@ int mtx_init(mtx_t *mtx, int type)
 	} else {
 		pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_DEFAULT);
 	}
-	return pthread_mutex_init(mtx, &attr);
+	return pthread_mutex_init(mtx, &attr) == 0 ? thrd_success : thrd_error;
 }

@@ -3,5 +3,5 @@
 
 int thrd_detach(thrd_t thr)
 {
-	return pthread_detach(thr);
+	return pthread_detach(thr) == 0 ? thrd_success : thrd_error;
 }
