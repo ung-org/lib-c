@@ -3,18 +3,31 @@
 #include "stdio.h"
 #include <unistd.h>
 
-int getopt(int argc, char * const argv[], const char *optstring)
+int ung_getopt(int argc, char * const argv[], const char *optstring)
 {
 	static int optchar = 0;
-	char *cursor = NULL;
+	char *option = NULL;
 
-	if (optind == 0 || argv[optind][optchar] == '\0') {
-		optind++;
+	if (optind == 0) {
+		optind = 1;
 		optchar = 0;
+	}
+
+	if (argv[optind] == NULL) {
+		return -1;
+	}
+
+	if (argv[optind][0] != '-') {
+		return -1;
+	}
+
+	if (!strcmp(argv[optind], "-")) {
+		return -1;
 	}
 
 	if (!strcmp(argv[optind], "--")) {
 		optind++;
+		optchar = 0;
 		return -1;
 	}
 
@@ -24,34 +37,47 @@ int getopt(int argc, char * const argv[], const char *optstring)
 
 	optchar++;
 
-	printf("Checking %c\n", argv[optind][optchar]);
+	if (argv[optind][optchar] == '\0') {
+		optind++;
+		optchar = 0;
+		return ung_getopt(argc, argv, optstring);
+	}
 
-	cursor = strchr(optstring, argv[optind][optchar]);
-	if (cursor) {
-		if (cursor[1] == ':') {
-			/* An option-argument is required */
-			/* if (no arg) { */
-			/*	optopt = *cursor; */
-			/*	if (opterr) { */
-			/*		fprintf(stderr, "%s: Missing argument to -%c\n", argv[0], *cursor); */
-			/* 	} */
-			/*	return optstring[0] == ':' ? ':' : '?'; */
-			/* } */
-			/* optarg = argv[++optind]; */
-			/* optchar = 0; */
-			/* optind++; */
+	option = strchr(optstring, argv[optind][optchar]);
+
+	if (!option) {
+		optopt = argv[optind][optchar];
+		if (opterr != 0 && optstring[0] != ':') {
+			fprintf(stderr, "%s: invalid option -%c\n", argv[0],
+			optopt);
 		}
-		return *cursor;
+		return '?';
 	}
-	
-	optopt = argv[optind][optchar];
-	if (opterr) {
-		fprintf(stderr, "%s: Invalid option -%c\n", *cursor);
+
+	if (option[1] != ':') {
+		return *option;
 	}
-	return '?';
+
+	if (argv[optind][optchar + 1] == '\0') {
+		optarg = argv[++optind];
+	} else {
+		optarg = argv[optind] + optchar + 1;
+	}
+
+	optind++;
+	if (optarg == NULL) {
+		optopt = *option;
+		if (opterr != 0 && optstring[0] != ':') {
+			fprintf(stderr, "%s: missing argument to option -%c\n",
+			argv[0], optopt);
+		}
+		return optstring[0] == ':' ? ':' : '?';
+	}
+
+	optchar = 0;
+	return *option;
 }
 
 /*
 POSIX(2)
 */
-
