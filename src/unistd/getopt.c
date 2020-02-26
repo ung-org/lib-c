@@ -3,7 +3,7 @@
 #include "stdio.h"
 #include <unistd.h>
 
-int ung_getopt(int argc, char * const argv[], const char *optstring)
+int getopt(int argc, char * const argv[], const char *optstring)
 {
 	static int optchar = 0;
 	char *option = NULL;
@@ -40,7 +40,7 @@ int ung_getopt(int argc, char * const argv[], const char *optstring)
 	if (argv[optind][optchar] == '\0') {
 		optind++;
 		optchar = 0;
-		return ung_getopt(argc, argv, optstring);
+		return getopt(argc, argv, optstring);
 	}
 
 	option = strchr(optstring, argv[optind][optchar]);
