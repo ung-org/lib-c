@@ -3,8 +3,13 @@
 
 #include <stdarg.h>
 #include <stdio.h>
-#include "../sys/types/pid_t.c"
 #include "nonstd/internal.h"
+
+#ifdef _POSIX_C_SOURCE
+#include <sys/types.h>
+#else
+#include "../sys/types/pid_t.c"
+#endif
 
 struct __FILE {
 	fpos_t pos;
@@ -49,9 +54,9 @@ struct io_options {
 int __printf(struct io_options * restrict, const char * restrict, va_list);
 int __scanf(struct io_options * restrict, const char * restrict, va_list);
 
-#ifndef _POSIX_C_SOURCE
-#define flockfile(...)
-#define funlockfile(...)
+#if !defined _POSIX_C_SOURCE || _POSIX_C_SOURCE < 199506L
+#define flockfile(_file)	(void)(_file)
+#define funlockfile(_file)	(void)(_file)
 #endif
 
 #endif

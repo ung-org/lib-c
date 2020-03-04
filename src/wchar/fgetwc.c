@@ -3,6 +3,12 @@
 #include "../stdio/_stdio.h"
 #include "limits.h"
 
+#if !defined _POSIX_C_SOURCE || _POSIX_C_SOURCE < 199506L
+#include "../unistd/read.c"
+static int getc_unlocked(FILE *);
+#include "../stdio/getc_unlocked.c"
+#endif
+
 wint_t fgetwc(FILE * stream)
 {
 	if (fwide(stream, 1) <= 0) {
