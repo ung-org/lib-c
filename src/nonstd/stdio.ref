@@ -1,2 +1,0 @@
-#include <nonstd/io.h>
-REFERENCE(<stdio.h>)

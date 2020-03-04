@@ -1,5 +1,5 @@
 #include <wchar.h>
-#include "nonstd/io.h"
+#include "../stdio/_stdio.h"
 
 int vswscanf(const wchar_t * restrict s, const wchar_t * restrict format, va_list arg)
 {

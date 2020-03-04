@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "stdarg.h"
-#include "nonstd/io.h"
+#include "_stdio.h"
 
 int snprintf(char * restrict s, size_t n, const char * restrict format, ...)
 {

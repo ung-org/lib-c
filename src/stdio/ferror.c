@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "nonstd/assert.h"
-#include "nonstd/io.h"
+#include "_stdio.h"
 
 /** tests the file stream error indicator **/
 int ferror(FILE *stream)

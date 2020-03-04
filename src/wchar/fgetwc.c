@@ -1,6 +1,6 @@
 #include <wchar.h>
 #include "stdio.h"
-#include "nonstd/io.h"
+#include "../stdio/_stdio.h"
 #include "limits.h"
 
 wint_t fgetwc(FILE * stream)

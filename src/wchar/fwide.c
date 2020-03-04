@@ -1,6 +1,6 @@
 #include <wchar.h>
 #include "stdio.h"
-#include "nonstd/io.h"
+#include "../stdio/_stdio.h"
 #include "nonstd/assert.h"
 
 int fwide(FILE * stream, int mode)

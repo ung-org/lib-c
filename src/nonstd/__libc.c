@@ -1,10 +1,8 @@
 #include "sys/types.h"
 #include <nonstd/internal.h>
 #include "nonstd/locale.h"
-#include "nonstd/io.h"
+#include "../stdio/_stdio.h"
 
-#include "_printf.h"
-#include "_scanf.h"
 #include "_locale.h"
 #include "_syscall.h"
 
@@ -65,10 +63,6 @@ void *__libc(LIBC_INTERNAL variable)
 
 	case SYSCALL_LOOKUP:
 		r = (void*)__syscall_lookup;
-		break;
-
-	case PRINTF:
-		r = (void*)(__printf);
 		break;
 
 	case FILE_STREAMS:

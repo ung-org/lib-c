@@ -1,8 +1,7 @@
 #include "stdlib.h"
 #include "stdio.h"
 #include "locale.h"
-
-#include "nonstd/io.h"
+#include "../stdio/_stdio.h"
 
 #ifdef _POSIX_SOURCE
 #define DEFAULT_LOCALE "POSIX"

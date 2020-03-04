@@ -93,9 +93,6 @@ $(INCDIR)/nonstd/ctype.h: mkh.sh $(SRCDIR)/nonstd/ctype_t.c $(SRCDIR)/nonstd/cty
 $(INCDIR)/nonstd/internal.h: mkh.sh $(SRCDIR)/nonstd/__libc.c $(SRCDIR)/nonstd/struct_atexit.c $(SRCDIR)/nonstd/LIBC_INTERNAL.c 
 	INCDIR=$(INCDIR) sh mkh.sh $(INCDIR)/nonstd/internal.h
 
-$(INCDIR)/nonstd/io.h: mkh.sh $(SRCDIR)/nonstd/struct_io_options.c $(SRCDIR)/nonstd/flockfile.c $(SRCDIR)/nonstd/__printf.c $(SRCDIR)/nonstd/struct_FILE.c $(SRCDIR)/nonstd/funlockfile.c $(SRCDIR)/nonstd/ftrylockfile.c $(SRCDIR)/nonstd/getc_unlocked.c $(SRCDIR)/nonstd/__scanf.c $(SRCDIR)/nonstd/io-internal.ref $(SRCDIR)/nonstd/pid_t.ref $(SRCDIR)/nonstd/stdio.ref 
-	INCDIR=$(INCDIR) sh mkh.sh $(INCDIR)/nonstd/io.h
-
 $(INCDIR)/nonstd/lib.h: mkh.sh $(SRCDIR)/nonstd/lib-internal.ref 
 	INCDIR=$(INCDIR) sh mkh.sh $(INCDIR)/nonstd/lib.h
 
@@ -284,7 +281,6 @@ headers:  \
 	$(INCDIR)/nonstd/assert.h \
 	$(INCDIR)/nonstd/ctype.h \
 	$(INCDIR)/nonstd/internal.h \
-	$(INCDIR)/nonstd/io.h \
 	$(INCDIR)/nonstd/lib.h \
 	$(INCDIR)/nonstd/locale.h \
 	$(INCDIR)/nonstd/syscall.h \

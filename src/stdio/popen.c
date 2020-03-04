@@ -6,7 +6,7 @@
 #include "unistd.h"
 
 #include "nonstd/assert.h"
-#include "nonstd/io.h"
+#include "_stdio.h"
 
 FILE * popen(const char * command, const char * mode)
 {

@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "nonstd/io.h"
+#include "_stdio.h"
 
 /** write a string to a file stream **/
 int fputs(const char * restrict s, FILE * restrict stream)

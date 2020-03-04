@@ -26,10 +26,6 @@ libc.a(_XOPEN_SOURCE_EXTENDED.o): $(OBJDIR)/_XOPEN_SOURCE_EXTENDED.o
 $(OBJDIR)/_XOPEN_SOURCE_EXTENDED.o: ./src/nonstd/_FTM/_XOPEN_SOURCE_EXTENDED.c
 	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/nonstd/_FTM/_XOPEN_SOURCE_EXTENDED.c -o $@
 
-libc.a(crt1.o): $(OBJDIR)/crt1.o
-$(OBJDIR)/crt1.o: ./src/nonstd/crt/crt1.c
-	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/nonstd/crt/crt1.c -o $@
-
 libc.a(__syscall.o): $(OBJDIR)/__syscall.o
 $(OBJDIR)/__syscall.o: ./src/nonstd/__syscall.c
 	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/nonstd/__syscall.c -o $@
