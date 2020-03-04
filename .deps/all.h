@@ -27,7 +27,6 @@ mqueue.h
 ndbm.h
 nl_types.h
 nonstd/assert.h
-nonstd/ctype.h
 nonstd/internal.h
 nonstd/lib.h
 nonstd/locale.h

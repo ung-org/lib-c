@@ -87,9 +87,6 @@ $(INCDIR)/nl_types.h: mkh.sh $(SRCDIR)/nl_types/nl_catd.c $(SRCDIR)/nl_types/NL_
 $(INCDIR)/nonstd/assert.h: mkh.sh $(SRCDIR)/nonstd/ASSERT_REPRESENTABLE.c $(SRCDIR)/nonstd/ASSERT_NONNULL.c $(SRCDIR)/nonstd/ASSERT_NOOVERLAP.c $(SRCDIR)/nonstd/ASSERT_NONZERO.c 
 	INCDIR=$(INCDIR) sh mkh.sh $(INCDIR)/nonstd/assert.h
 
-$(INCDIR)/nonstd/ctype.h: mkh.sh $(SRCDIR)/nonstd/ctype_t.c $(SRCDIR)/nonstd/ctype-internal.ref 
-	INCDIR=$(INCDIR) sh mkh.sh $(INCDIR)/nonstd/ctype.h
-
 $(INCDIR)/nonstd/internal.h: mkh.sh $(SRCDIR)/nonstd/__libc.c $(SRCDIR)/nonstd/struct_atexit.c $(SRCDIR)/nonstd/LIBC_INTERNAL.c 
 	INCDIR=$(INCDIR) sh mkh.sh $(INCDIR)/nonstd/internal.h
 
@@ -279,7 +276,6 @@ headers:  \
 	$(INCDIR)/ndbm.h \
 	$(INCDIR)/nl_types.h \
 	$(INCDIR)/nonstd/assert.h \
-	$(INCDIR)/nonstd/ctype.h \
 	$(INCDIR)/nonstd/internal.h \
 	$(INCDIR)/nonstd/lib.h \
 	$(INCDIR)/nonstd/locale.h \

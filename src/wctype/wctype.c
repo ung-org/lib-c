@@ -1,7 +1,7 @@
 #include <wctype.h>
 #include "string.h"
 #include "nonstd/assert.h"
-#include "nonstd/ctype.h"
+#include "_wctype.h"
 
 /** lookup character class **/
 wctype_t wctype(const char * property)

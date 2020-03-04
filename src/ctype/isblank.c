@@ -1,7 +1,7 @@
 #include <ctype.h>
 #include "limits.h"
 #include "locale.h"
-#include "nonstd/ctype.h"
+#include "../_ctype.h"
 #include "nonstd/assert.h"
 
 /** test whether a character is blank **/

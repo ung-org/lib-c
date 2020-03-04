@@ -4,9 +4,8 @@
 #include <string.h>
 
 #include "nonstd/locale.h"
-#include "nonstd/ctype.h"
+#include "../ctype/_ctype.h"
 
-/*
 #define LC_COLLATE_MASK (1<<0)
 #define LC_CTYPE_MASK (1<<1)
 #define LC_MONETARY_MASK (1<<2)
@@ -14,7 +13,6 @@
 #define LC_TIME_MASK (1<<4)
 #define LC_MESSAGES_MASK (1<<5)
 #define LC_ALL_MASK (0xff)
-*/
 
 #define setall(_map, _input, _mask) do { \
 	size_t _i; \

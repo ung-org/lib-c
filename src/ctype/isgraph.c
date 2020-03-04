@@ -1,7 +1,7 @@
 #include <ctype.h>
 #include "limits.h"
 #include "nonstd/assert.h"
-#include "nonstd/ctype.h"
+#include "_ctype.h"
 
 /** test whether a character is graphic **/
 
