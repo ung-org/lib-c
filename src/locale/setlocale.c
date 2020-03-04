@@ -3,6 +3,14 @@
 #include "stdlib.h"
 #include "nonstd/locale.h"
 
+#include "LC_ALL_MASK.c"
+#include "LC_COLLATE_MASK.c"
+#include "LC_CTYPE_MASK.c"
+#include "LC_NUMERIC_MASK.c"
+#include "LC_TIME_MASK.c"
+#include "LC_MESSAGES_MASK.c"
+#include "LC_MONETARY_MASK.c"
+
 char * setlocale(int category, const char *locale)
 {
 	struct __locale_t *l = __libc(GLOBAL_LOCALE);
