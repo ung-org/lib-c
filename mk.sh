@@ -77,7 +77,7 @@ get_declaration () {
 
 		if grep -q '^#if' $1; then
 			sed -ne '/^#if/,/#endif/p' $1
-		elif grep -qE '^(typedef|struct|union) .*{' $1; then
+		elif grep -qE '^(typedef|struct|union) .*\{' $1; then
 			sed -ne '/{$/,/^}/p' $1
 		elif grep -qE '^(typedef|struct|union) .*[^;]$' $1; then
 			grep -E '^(typedef|struct|union|	)' $1
