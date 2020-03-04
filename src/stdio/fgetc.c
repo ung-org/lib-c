@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include "_stdio.h"
 
-#ifndef _POSIX_C_SOURCE
-#define getc_unlocked(...) 0
+#if !defined _POSIX_C_SOURCE || _POSIX_C_SOURCE < 199506L
+#include "getc_unlocked.c"
 #endif
 
 /** read a character from a file stream **/

@@ -8,6 +8,10 @@
 #include "nonstd/assert.h"
 #include "_stdio.h"
 
+#ifdef __STDC_VERSION__
+#include "wchar.h"
+#endif
+
 FILE * popen(const char * command, const char * mode)
 {
 	ASSERT_NONNULL(command);

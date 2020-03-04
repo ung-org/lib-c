@@ -5,7 +5,6 @@
 
 #if !defined _POSIX_C_SOURCE || _POSIX_C_SOURCE < 199506L
 #include "../unistd/read.c"
-static int getc_unlocked(FILE *);
 #include "../stdio/getc_unlocked.c"
 #endif
 

@@ -1,4 +1,5 @@
 #include <setjmp.h>
+#include "sys/types.h"
 #include "signal.h"
 
 /** save program state with signal mask **/
