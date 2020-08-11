@@ -4,6 +4,14 @@
 #include "float.h"
 #include "math.h"
 
+#ifndef INFINITY
+#include "../math/INFINITY.c"
+#endif
+
+#ifndef NAN
+#include "../math/NAN.c"
+#endif
+
 /** convert string to floating-point **/
 
 double strtod(const char * restrict nptr, char ** restrict endptr)
