@@ -1,11 +1,11 @@
 #include <stdlib.h>
-#include "nonstd/lib.h"
+#include "_stdlib.h"
 
 /** seed the pseudo-random number generator **/
 
 void srand(unsigned int seed)
 {
-	*((int*)__libc(RAND)) = seed;
+	__stdlib.rand = seed;
 }
 
 /***

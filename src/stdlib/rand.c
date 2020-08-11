@@ -1,11 +1,10 @@
 #include <stdlib.h>
-#include "nonstd/lib.h"
-#include "_rand.h"
+#include "_stdlib.h"
 
 /** get a pseudo-random number **/
 int rand(void)
 {
-	return _rand(*(unsigned*)__libc(RAND));
+	return (int)_rand(__stdlib.rand);
 }
 
 /***

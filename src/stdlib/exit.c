@@ -2,12 +2,13 @@
 #include "limits.h"
 #include "stddef.h"
 #include "nonstd/syscall.h"
+#include "_stdlib.h"
 
 /** cause normal program termination **/
 _Noreturn void exit(int status)
 {
 	long scno = __lookup("exit");
-	struct atexit *ae = __libc(ATEXIT);
+	struct atexit *ae = &(__stdlib.atexit);
 
 	/* execute all atexit() registered functions in reverse order */
 	while (ae) {

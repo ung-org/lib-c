@@ -1,12 +1,12 @@
 #include <stdlib.h>
 #include "errno.h"
-#include "nonstd/lib.h"
+#include "_stdlib.h"
 
 /** register a function to run at program exit **/
 
 int atexit(void (*func)(void))
 {
-	struct atexit *ae = __libc(ATEXIT);
+	struct atexit *ae = &(__stdlib.atexit);
 	while (ae->nfns == sizeof(ae->fns) / sizeof(ae->fns[0])) {
 		if (ae->next == NULL) {
 			ae->next = calloc(1, sizeof(*ae->next));
