@@ -1,4 +1,17 @@
 #include "_stdio.h"
+#include "stddef.h"
+#include "wchar.h"
+#include "inttypes.h"
+#include "unistd.h"
+
+#if !defined __STDC_VERSION__ || __STDC_VERSION__ < 199909L
+#include "../stdint/intmax_t.c"
+#include "../stdint/uintmax_t.c"
+#include "../stdint/intptr_t.c"
+#include "../stdint/UINTMAX_MAX.c"
+#define strtoumax __strtoumax
+#include "../inttypes/strtoumax.c"
+#endif
 
 #define NUMBUFLEN 64
 
@@ -311,3 +324,7 @@ int (__printf)(struct io_options *opt, const char * format, va_list arg)
 
 	return nout;
 }
+
+/*
+STDC(0)
+*/
