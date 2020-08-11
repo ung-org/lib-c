@@ -33,4 +33,35 @@
 #define TYPE			double
 #define TGHUGE			HUGE_VAL
 
+#ifndef FP_ZERO
+#include "FP_ZERO.c"
+#endif
+
+#ifndef FP_INFINITE
+#include "FP_INFINITE.c"
+#endif
+
+#ifndef FP_NAN
+#include "FP_NAN.c"
+#endif
+
+#ifndef NAN
+#include "NAN.c"
+#endif
+
+#ifndef INFINITY
+#include "INFINITY.c"
+#endif
+
+#undef feraiseexcept
+#define feraiseexcept(_)
+
+#ifndef fpclassify
+#include "fpclassify.c"
+#endif
+
+#ifndef signbit
+#include "signbit.c"
+#endif
+
 #endif
