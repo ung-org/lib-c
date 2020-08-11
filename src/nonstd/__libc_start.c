@@ -21,17 +21,17 @@ void __libc_start(int argc, char **argv)
 {
 	extern int main(int, char*[]);
 
-	stdin = __FILES + 0;
+	stdin = __stdio.FILES + 0;
 	stdin->fd = 0;
 	/* freopen(", "r", stdin); */
 	setvbuf(stdin, NULL, isatty(0) ? _IOLBF : _IOFBF, BUFSIZ);
 
-	stdout = __FILES + 1;
+	stdout = __stdio.FILES + 1;
 	stdout->fd = 1;
 	/* freopen(NULL, "w", stdout); */
 	setvbuf(stdin, NULL, isatty(1) ? _IOLBF : _IOFBF, BUFSIZ);
 
-	stderr = __FILES + 2;
+	stderr = __stdio.FILES + 2;
 	stderr->fd = 2;
 	/* freopen(NULL, "w", stderr); */
 	setvbuf(stderr, NULL, _IONBF, 0);
@@ -42,7 +42,7 @@ void __libc_start(int argc, char **argv)
 	stdout->prev = stdin;
 	stderr->prev = stdout;
 
-        setlocale(LC_ALL, DEFAULT_LOCALE);
+        /* setlocale(LC_ALL, DEFAULT_LOCALE); */
 
         exit(main(argc, argv));
 }

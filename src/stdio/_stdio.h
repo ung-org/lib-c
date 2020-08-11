@@ -14,7 +14,8 @@
 struct __FILE {
 	fpos_t pos;
 	char *buf;
-	enum { SUPPLIED, ALLOCED, UNSET } buftype;
+	char ibuf[BUFSIZ];
+	enum { INTERNAL, SUPPLIED, ALLOCED, UNSET } buftype;
 	int buffering;
 	int bsize;
 	int isopen;
@@ -54,7 +55,11 @@ struct io_options {
 int __printf(struct io_options * restrict, const char * restrict, va_list);
 int __scanf(struct io_options * restrict, const char * restrict, va_list);
 
-extern struct __FILE __FILES[FOPEN_MAX];
+struct __stdio {
+	struct __FILE FILES[FOPEN_MAX];
+};
+
+extern struct __stdio __stdio;
 
 #if !defined _POSIX_C_SOURCE || _POSIX_C_SOURCE < 199506L
 #define flockfile(_file)	(void)(_file)
