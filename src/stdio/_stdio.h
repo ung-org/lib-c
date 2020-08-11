@@ -54,6 +54,8 @@ struct io_options {
 int __printf(struct io_options * restrict, const char * restrict, va_list);
 int __scanf(struct io_options * restrict, const char * restrict, va_list);
 
+extern struct __FILE __FILES[FOPEN_MAX];
+
 #if !defined _POSIX_C_SOURCE || _POSIX_C_SOURCE < 199506L
 #define flockfile(_file)	(void)(_file)
 #define funlockfile(_file)	(void)(_file)

@@ -10,7 +10,6 @@ void *__libc(LIBC_INTERNAL variable)
 {
 	extern void *__libc_per_thread(LIBC_INTERNAL __variable);
 	static struct __locale_t locale;
-	static struct __FILE file_streams[FOPEN_MAX];
 
 	void *r = (void*)0;
 
@@ -63,10 +62,6 @@ void *__libc(LIBC_INTERNAL variable)
 
 	case SYSCALL_LOOKUP:
 		r = (void*)__syscall_lookup;
-		break;
-
-	case FILE_STREAMS:
-		r = file_streams;
 		break;
 
 	case LOAD_LOCALE:

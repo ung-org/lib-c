@@ -20,21 +20,20 @@ static struct termios __tios;
 void __libc_start(int argc, char **argv)
 {
 	extern int main(int, char*[]);
-	struct __FILE *files = __libc(FILE_STREAMS);
 
-	stdin = files + 0;
+	stdin = __FILES + 0;
 	stdin->fd = 0;
-	freopen(NULL, "r", stdin);
+	/* freopen(", "r", stdin); */
 	setvbuf(stdin, NULL, isatty(0) ? _IOLBF : _IOFBF, BUFSIZ);
 
-	stdout = files + 1;
+	stdout = __FILES + 1;
 	stdout->fd = 1;
-	freopen(NULL, "w", stdout);
+	/* freopen(NULL, "w", stdout); */
 	setvbuf(stdin, NULL, isatty(1) ? _IOLBF : _IOFBF, BUFSIZ);
 
-	stderr = files + 2;
+	stderr = __FILES + 2;
 	stderr->fd = 2;
-	freopen(NULL, "w", stderr);
+	/* freopen(NULL, "w", stderr); */
 	setvbuf(stderr, NULL, _IONBF, 0);
 
 	stdin->next = stdout;
@@ -44,7 +43,6 @@ void __libc_start(int argc, char **argv)
 	stderr->prev = stdout;
 
         setlocale(LC_ALL, DEFAULT_LOCALE);
-
 
         exit(main(argc, argv));
 }
