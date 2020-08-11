@@ -1,4 +1,5 @@
 #include <strings.h>
+#include "string.h"
 
 char *index(const char *s, int c)
 {
