@@ -38,7 +38,7 @@ FILE * freopen(const char * restrict filename, const char * restrict mode, FILE 
 		{ "ab+",	O_RDWR | O_CREAT | O_APPEND },
 		{ "a+b",	O_RDWR | O_CREAT | O_APPEND },
 	};
-	int openmode = 0;
+	int openmode = -1;
 	size_t i;
 	int fd = -1;
 
@@ -51,7 +51,7 @@ FILE * freopen(const char * restrict filename, const char * restrict mode, FILE 
 		}
 	}
 
-	if (openmode == 0) {
+	if (openmode == -1) {
 		#ifdef EINVAL
 		errno = EINVAL;
 		#endif
