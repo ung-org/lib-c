@@ -207,6 +207,7 @@ int (__printf)(struct io_options *opt, const char * format, va_list arg)
 		case 'x':
 		case 'X':
 			flags |= UNSIGNED;
+			/* FALLTHRU */
 
 		case 'd':	/* int */
 		case 'i':
