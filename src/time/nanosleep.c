@@ -1,8 +1,9 @@
 #include <time.h>
+#include "../_syscall.h"
 
 int nanosleep(const struct timespec *rqtp, struct timespec *rmtp)
 {
-	return 0;
+	SYSCALL(nanosleep, int, -1, rqtp, rmtp, 0, 0, 0, 0);
 }
 
 /*
