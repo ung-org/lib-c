@@ -14,7 +14,7 @@ __syscall:
 _start:
 	popq %rdi
 	movq %rsp, %rsi
-	call __libc_start
+	call __main
 
 .global __stack_chk_fail
 __stack_chk_fail:

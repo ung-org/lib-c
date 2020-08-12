@@ -1,25 +1,27 @@
 #include "stdlib.h"
 #include "stdio.h"
 #include "locale.h"
-#include "../stdio/_stdio.h"
+#include "stdio/_stdio.h"
 
 #ifdef _POSIX_SOURCE
 #define DEFAULT_LOCALE "POSIX"
 #include "unistd.h"
 #else
 #define DEFAULT_LOCALE "C"
-#include "../_syscall.h"
-#include "../termios/NCCS.c"
-#include "../termios/cc_t.c"
-#include "../termios/tcflag_t.c"
-#include "../termios/struct_termios.c"
+#include "_syscall.h"
+#include "termios/NCCS.c"
+#include "termios/cc_t.c"
+#include "termios/tcflag_t.c"
+#include "termios/struct_termios.c"
 static struct termios __tios;
 #define isatty(fd) (__syscall(__syscall_lookup(tcgetattr), fd, &__tios) == 0)
 #endif
 
-void __libc_start(int argc, char **argv)
+void __main(int argc, char **argv)
 {
 	extern int main(int, char*[]);
+	extern char **environ;
+	environ = argv + argc + 1;
 
 	stdin = __stdio.FILES + 0;
 	stdin->fd = 0;
