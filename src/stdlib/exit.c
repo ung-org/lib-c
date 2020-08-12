@@ -19,14 +19,8 @@ _Noreturn void exit(int status)
 		ae = ae->prev;
 	}
 
-	/* close all open files */
-	/*
-	while (__libc.stdio.lastfile) {
-		fclose(__libc.stdio.lastfile);
-	}
-	*/
+	/* TODO: close all open files */
 	
-	(void)status;
 	for (;;) {
 		__syscall(scno, status);
 	}
@@ -48,6 +42,7 @@ removed.
 IMPLEMENTATION(The successful termination value returned to the host environment when ARGUMENT(status) is 0 or CONSTANT(EXIT_SUCESS))
 IMPLEMENTATION(The unsuccessful termination value returned to the host environment when ARGUMENT(status) is CONSTANT(EXIT_FAILURE))
 */
+
 /*
 STDC(1)
 */
