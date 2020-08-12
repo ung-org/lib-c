@@ -17,3 +17,7 @@ int cnd_init(cnd_t *cond)
 
 	return thrd_error;
 }
+
+/*
+STDC(201112)
+*/

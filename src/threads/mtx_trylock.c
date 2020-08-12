@@ -17,3 +17,7 @@ int mtx_trylock(mtx_t *mtx)
 
 	return thrd_error;
 }
+
+/*
+STDC(201112)
+*/

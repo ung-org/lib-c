@@ -17,3 +17,7 @@ int mtx_timedlock(mtx_t *restrict mtx, const struct timespec *restrict ts)
 
 	return thrd_error;
 }
+
+/*
+STDC(201112)
+*/

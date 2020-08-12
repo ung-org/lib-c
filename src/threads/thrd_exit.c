@@ -5,3 +5,7 @@ _Noreturn void thrd_exit(int res)
 {
 	pthread_exit(&res);
 }
+
+/*
+STDC(201112)
+*/

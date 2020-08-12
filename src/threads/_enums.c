@@ -11,3 +11,6 @@ enum {
 	thrd_nomem	= 3,
 	thrd_timedout	= 4,
 };
+/*
+STDC(201112)
+*/

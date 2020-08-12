@@ -1,1 +1,4 @@
 #define TSS_DTOR_ITERATIONS (64)
+/*
+STDC(201112)
+*/

@@ -18,3 +18,7 @@ int thrd_create(thrd_t *thr, thrd_start_t func, void *arg)
 
 	return thrd_error;
 }
+
+/*
+STDC(201112)
+*/

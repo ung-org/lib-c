@@ -13,3 +13,7 @@ int mtx_init(mtx_t *mtx, int type)
 	}
 	return pthread_mutex_init(mtx, &attr) == 0 ? thrd_success : thrd_error;
 }
+
+/*
+STDC(201112)
+*/

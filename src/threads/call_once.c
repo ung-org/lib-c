@@ -5,3 +5,7 @@ void call_once(once_flag *flag, void (*func)(void))
 {
 	pthread_once(flag, func);
 }
+
+/*
+STDC(201112)
+*/

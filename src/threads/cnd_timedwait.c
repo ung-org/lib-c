@@ -17,3 +17,7 @@ int cnd_timedwait(cnd_t *restrict cond, mtx_t *restrict mtx, const struct timesp
 
 	return thrd_error;
 }
+
+/*
+STDC(201112)
+*/

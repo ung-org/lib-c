@@ -5,3 +5,7 @@ void mtx_destroy(mtx_t *mtx)
 {
 	pthread_mutex_destroy(mtx);
 }
+
+/*
+STDC(201112)
+*/
