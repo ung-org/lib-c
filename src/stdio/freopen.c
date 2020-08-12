@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "string.h"
 #include "errno.h"
 #include "_stdio.h"
 
@@ -12,10 +13,44 @@
 /** reopen a file stream with a new file **/
 FILE * freopen(const char * restrict filename, const char * restrict mode, FILE * restrict stream)
 {
-	flockfile(stream);
-	(void)mode;
+	struct {
+		char *smode;
+		int omode;
+	} modemap[] = {
+		{ "r",		O_RDONLY },
+		{ "rb",		O_RDONLY },
 
-	int openmode = 0; /* modetoflag(mode); */
+		{ "w",		O_WRONLY | O_CREAT | O_TRUNC },
+		{ "wb",		O_WRONLY | O_CREAT | O_TRUNC },
+
+		{ "a",		O_WRONLY | O_CREAT | O_APPEND },
+		{ "ab",		O_WRONLY | O_CREAT | O_APPEND },
+
+		{ "r+",		O_RDWR },
+		{ "rb+",	O_RDWR },
+		{ "r+b",	O_RDWR },
+
+		{ "w+",		O_RDWR | O_CREAT | O_TRUNC },
+		{ "wb+",	O_RDWR | O_CREAT | O_TRUNC },
+		{ "w+b",	O_RDWR | O_CREAT | O_TRUNC },
+
+		{ "a+",		O_RDWR | O_CREAT | O_APPEND },
+		{ "ab+",	O_RDWR | O_CREAT | O_APPEND },
+		{ "a+b",	O_RDWR | O_CREAT | O_APPEND },
+	};
+	int openmode = 0;
+	size_t i;
+	int fd = -1;
+
+	flockfile(stream);
+
+	for (i = 0; i < sizeof(modemap) / sizeof(modemap[0]); i++) {
+		if (!strcmp(modemap[i].smode, mode)) {
+			openmode = modemap[i].omode;
+			break;
+		}
+	}
+
 	if (openmode == 0) {
 		#ifdef EINVAL
 		errno = EINVAL;
@@ -23,7 +58,7 @@ FILE * freopen(const char * restrict filename, const char * restrict mode, FILE 
 		return NULL;
 	}
 
-	int fd = open(filename, openmode, 0);
+	fd = open(filename, openmode, 0);
 	if (fd == -1) {
 		/* set errno */
 		return NULL;
