@@ -2,6 +2,7 @@
 #include "_stdio.h"
 
 #if !defined _POSIX_C_SOURCE || _POSIX_C_SOURCE < 199506L
+#undef getc_unlocked
 #include "getc_unlocked.c"
 #endif
 

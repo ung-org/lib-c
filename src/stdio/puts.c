@@ -1,21 +1,33 @@
 #include <stdio.h>
+#include "_stdio.h"
 
 /** write a string to stoud **/
 int puts(const char *s)
 {
-	if (fputs(s, stdout) == EOF) {
-		return EOF;
+	int ret = 1;
+
+	flockfile(stdout);
+
+	while (*s) {
+		if (putc_unlocked(*s, stdout) == EOF) {
+			ret = EOF;
+			break;
+		}
+		s++;
 	}
 
-        if (putc('\n', stdout) == EOF) {
-                return EOF;
+        if (putc_unlocked('\n', stdout) == EOF) {
+		ret = EOF;
         }
+
+	funlockfile(stdout);
 
 	/*
 	RETURN_SUCCESS(NONNEGATIVE());
 	RETURN_FAILURE(CONSTANT(EOF));
 	*/
-        return 1;
+
+        return ret;
 }
 
 /***

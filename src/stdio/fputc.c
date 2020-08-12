@@ -1,32 +1,19 @@
 #include <stdio.h>
 #include "_stdio.h"
 
-#if defined _POSIX_SOURCE || defined _POSIX_C_SOURCE || defined _XOPEN_SOURCE
-#include "sys/types.h"
-#include "unistd.h"
-#else
-#include "../_syscall.h"
-#define write(_fd, _buf, _size) __syscall(__syscall_lookup(write), _fd, _buf, _size)
+#if !defined _POSIX_C_SOURCE || _POSIX_C_SOURCE < 199506L
+#undef putc_unlocked
+#include "putc_unlocked.c"
 #endif
 
 /** write a character to a file stream **/
 int fputc(int c, FILE *stream)
 {
-	unsigned char ch = (unsigned char)c;
+	int ret = EOF;
 	flockfile(stream);
-
-	if (!stream) {
-		return EOF;
-	}
-
-	if (write(stream->fd, &ch, sizeof(ch)) != 1) {
-		/* error */
-		return EOF;
-	}
-
+	ret = putc_unlocked(c, stream);
 	funlockfile(stream);
-
-	return ch;
+	return ret;
 }
 
 /***

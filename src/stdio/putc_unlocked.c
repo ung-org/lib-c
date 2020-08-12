@@ -1,10 +1,41 @@
 #include <stdio.h>
+#include "_stdio.h"
 
-int putc_unlocked(int c, FILE * stream)
+#if defined _POSIX_SOURCE || defined _POSIX_C_SOURCE || defined _XOPEN_SOURCE
+#include "sys/types.h"
+#include "unistd.h"
+#else
+#include "../_syscall.h"
+#define write(_fd, _buf, _size) __syscall(__syscall_lookup(write), _fd, _buf, _size)
+#endif
+
+#if !defined _POSIX_C_SOURCE || _POSIX_C_SOURCE < 199506
+#define putc_unlocked __putc_unlocked
+	static
+#endif
+
+/** write a character to a file stream with explicit client locking **/
+int putc_unlocked(int c, FILE *stream)
 {
-	return 0;
+	unsigned char ch = (unsigned char)c;
+
+	if (!stream) {
+		return EOF;
+	}
+
+	if (write(stream->fd, &ch, sizeof(ch)) != 1) {
+		/* error */
+		return EOF;
+	}
+
+	return ch;
 }
 
+/***
+***/
+
 /*
+RETURN_SUCCESS(ARGUMENT(c))
+RETURN_FAILURE(CONSTANT(EOF))
 POSIX(199506)
 */

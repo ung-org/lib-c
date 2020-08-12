@@ -1,6 +1,18 @@
 #include <stdio.h>
 #include "_stdio.h"
+
+#if defined _POSIX_SOURCE || defined _POSIX_C_SOURCE || defined _XOPEN_SOURCE
+#include "sys/types.h"
 #include "unistd.h"
+#else
+#include "../_syscall.h"
+#define read(_fd, _buf, _size) __syscall(__syscall_lookup(read), _fd, _buf, _size)
+#endif
+
+#if !defined _POSIX_C_SOURCE || _POSIX_C_SOURCE < 199506
+#define getc_unlocked __getc_unlocked
+	static
+#endif
 
 int getc_unlocked(FILE * stream)
 {

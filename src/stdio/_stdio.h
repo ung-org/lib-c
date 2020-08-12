@@ -61,8 +61,10 @@ struct __stdio {
 extern struct __stdio __stdio;
 
 #if !defined _POSIX_C_SOURCE || _POSIX_C_SOURCE < 199506L
-#define flockfile(_file)	(void)(_file)
-#define funlockfile(_file)	(void)(_file)
+#define flockfile(_file)		(void)(_file)
+#define funlockfile(_file)		(void)(_file)
+#define putc_unlocked(_c, _stream)	fputc(_c, _stream)
+#define getc_unlocked(_stream)		fgetc(_stream)
 #endif
 
 #endif
