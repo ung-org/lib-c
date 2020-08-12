@@ -32,17 +32,17 @@ void __main(int argc, char **argv)
 
 	stdin = __stdio.FILES + 0;
 	stdin->fd = 0;
-	/* freopen(", "r", stdin); */
+	freopen(NULL, "r", stdin);
 	setvbuf(stdin, NULL, isatty(0) ? _IOLBF : _IOFBF, BUFSIZ);
 
 	stdout = __stdio.FILES + 1;
 	stdout->fd = 1;
-	/* freopen(NULL, "w", stdout); */
+	freopen(NULL, "w", stdout);
 	setvbuf(stdin, NULL, isatty(1) ? _IOLBF : _IOFBF, BUFSIZ);
 
 	stderr = __stdio.FILES + 2;
 	stderr->fd = 2;
-	/* freopen(NULL, "w", stderr); */
+	freopen(NULL, "w", stderr);
 	setvbuf(stderr, NULL, _IONBF, 0);
 
 	stdin->next = stdout;
