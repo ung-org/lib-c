@@ -64,10 +64,12 @@ __longjmp:
 	mov 0x00(%rax), %rax
 	ret
 
-/* FIXME: this seems to be unpossible to put in a shared library */
-/* FIXME: it may be worthwhile to separate this into crt1.s */
 .global _start
 _start:
 	popq %rdi
 	movq %rsp, %rsi
 	call __libc_start
+
+.global __stack_chk_fail
+__stack_chk_fail:
+	ret
