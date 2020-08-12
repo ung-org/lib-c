@@ -17,7 +17,7 @@ classify_source () {
 		echo FNTYPE
 	elif grep -q "^typedef " $1; then
 		echo TYPE
-	elif grep -q "^struct .*;$" $1; then
+	elif grep -q "^struct (^ )*;$" $1; then
 		echo TYPE
 	elif grep -q "^typedef .*{$" $1; then
 		echo TYPE_LONG
