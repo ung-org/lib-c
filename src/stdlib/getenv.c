@@ -1,24 +1,22 @@
 #include <stdlib.h>
 #include "string.h"
+#include "_stdlib.h"
 
 /** get an environment variable **/
 
 char * getenv(const char * name)
 {
-	#ifdef _POSIX_SOURCE
-	extern char **environ;
-	int i = 0;
+	char **environ = __stdlib.environ;
+	size_t len = strlen(name);
+	size_t i = 0;
 
-	while (environ[i] != 0) {
-		if (!strncmp(environ[i], name, strlen(name)) && environ[i][strlen(name)] == '=')
-		return environ[i];
-		i++;
+	for (i = 0; environ[i] != NULL; i++) {
+		if (!strncmp(environ[i], name, len) && environ[i][len] == '=') {
+			break;
+		}
 	}
-	#else
-	(void)name;
-	#endif
 
-	return NULL;
+	return environ[i];
 }
 
 /***

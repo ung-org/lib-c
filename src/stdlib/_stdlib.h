@@ -15,6 +15,7 @@ struct __stdlib {
         	struct atexit *prev;
 	} atexit;
 	unsigned int rand;
+	char **environ;
 };
 
 extern struct __stdlib __stdlib;
