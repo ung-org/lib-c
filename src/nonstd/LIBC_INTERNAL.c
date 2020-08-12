@@ -1,9 +1,6 @@
 #include <nonstd/internal.h>
 
 typedef enum {
-	/* nonstd/syscall.h */
-	SYSCALL_LOOKUP,
-
 	/* errno.h */
 	ERRNO,
 
@@ -17,13 +14,4 @@ typedef enum {
 	CTYPE,
 	TOLOWER,
 	TOUPPER,
-
-	/* stdio.h */
-	FILE_STREAMS,
-	PRINTF,
-	SCANF,
-
-	/* stdlib.h */
-	ATEXIT,
-	RAND
 } LIBC_INTERNAL;
