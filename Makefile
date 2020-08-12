@@ -15,8 +15,8 @@ $(TOPDIR)/.deps.mk: $(TOPDIR)/mk.sh
 $(TOPDIR)/.headers.mk: $(TOPDIR)/mk.sh
 	sh -c '. $(TOPDIR)/mk.sh; cd $(TOPDIR); make_headers_mk'
 
-headers $(INCDIR): $(TOPDIR)/.headers.mk $(TOPDIR)/mkh.sh
-	$(MAKE) -f $(TOPDIR)/.headers.mk headers
+#headers $(INCDIR): $(TOPDIR)/.headers.mk $(TOPDIR)/mkh.sh
+#	$(MAKE) -f $(TOPDIR)/.headers.mk headers
 
 test:
 	$(MAKE) all
