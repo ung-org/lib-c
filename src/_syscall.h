@@ -84,6 +84,8 @@ long __syscall(long __number, ...);
 #define __sys_mmap 9
 #define __sys_modify_ldt 154
 #define __sys_munmap 11
+#define __sys_nanosleep 35
+#define __sys___nanosleep 35
 #define __sys_open 2
 #define __sys_openat 257
 #define __sys_pause 34
