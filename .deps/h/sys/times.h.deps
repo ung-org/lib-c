@@ -1,3 +1,0 @@
-./src/sys/times/struct_tms.c
-./src/sys/times/times.c
-./src/sys/times/clock_t.ref

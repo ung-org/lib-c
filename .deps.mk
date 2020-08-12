@@ -1709,10 +1709,6 @@ libc.a(__libc.o): $(OBJDIR)/__libc.o
 $(OBJDIR)/__libc.o: ./src/nonstd/__libc.c
 	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/nonstd/__libc.c -o $@
 	echo [CC] $@
-libpthread.a(__pthread_per_thread.o): $(OBJDIR)/__pthread_per_thread.o
-$(OBJDIR)/__pthread_per_thread.o: ./src/nonstd/__pthread_per_thread.c
-	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/nonstd/__pthread_per_thread.c -o $@
-	echo [CC] $@
 librt.a(mq_close.o): $(OBJDIR)/mq_close.o
 $(OBJDIR)/mq_close.o: ./src/mqueue/mq_close.c
 	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/mqueue/mq_close.c -o $@
@@ -3947,6 +3943,5 @@ include $(TOPDIR)/.deps/libm.C_199901
 include $(TOPDIR)/.deps/libm.POSIX_200112
 include $(TOPDIR)/.deps/libm.XOPEN_4
 include $(TOPDIR)/.deps/libm.XOPEN_400
-include $(TOPDIR)/.deps/libpthread.POSIX_199506
 include $(TOPDIR)/.deps/librt.POSIX_199309
 

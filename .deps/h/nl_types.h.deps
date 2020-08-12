@@ -1,7 +1,0 @@
-./src/nl_types/nl_catd.c
-./src/nl_types/NL_CAT_LOCALE.c
-./src/nl_types/catopen.c
-./src/nl_types/nl_item.c
-./src/nl_types/catgets.c
-./src/nl_types/NL_SETD.c
-./src/nl_types/catclose.c

@@ -1,3 +1,0 @@
-./src/utime/struct_utimbuf.c
-./src/utime/utime.c
-./src/utime/time_t.ref

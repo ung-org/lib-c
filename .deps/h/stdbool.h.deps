@@ -1,4 +1,0 @@
-./src/stdbool/true.c
-./src/stdbool/bool.c
-./src/stdbool/false.c
-./src/stdbool/__bool_true_false_are_defined.c

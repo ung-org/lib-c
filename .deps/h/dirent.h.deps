@@ -1,8 +1,0 @@
-./src/dirent/telldir.c
-./src/dirent/struct_dirent.c
-./src/dirent/closedir.c
-./src/dirent/opendir.c
-./src/dirent/DIR.c
-./src/dirent/rewinddir.c
-./src/dirent/seekdir.c
-./src/dirent/readdir.c

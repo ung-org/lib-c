@@ -1868,7 +1868,6 @@
 ./src/termios/CS5.c
 ./src/nonstd/__libc_per_thread.c
 ./src/nonstd/__libc.c
-./src/nonstd/__pthread_per_thread.c
 ./src/stdarg/va_copy.c
 ./src/stdarg/va_list.c
 ./src/stdarg/va_arg.c

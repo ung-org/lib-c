@@ -1,3 +1,0 @@
-./src/sys/timeb/struct_timeb.c
-./src/sys/timeb/ftime.c
-./src/sys/timeb/time_t.ref
