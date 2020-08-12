@@ -1,4 +1,5 @@
 #include <term.h>
+#include "curses.h"
 
 int putp(const char * str)
 {
