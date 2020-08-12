@@ -1,6 +1,8 @@
 #include <ulimit.h>
 #include "sys/resource.h"
 #include "stdarg.h"
+#include "stddef.h"
+#include "errno.h"
 
 long ulimit(int cmd, ...)
 {
@@ -13,7 +15,7 @@ long ulimit(int cmd, ...)
 		return -1;
 	} else if (cmd == UL_SETFSIZE) {
 		va_list ap;
-		va_start(cmd);
+		va_start(ap, cmd);
 		rl.rlim_cur = va_arg(ap, rlim_t) * 512;
 		va_end(ap);
 		if (setrlimit(RLIMIT_FSIZE, NULL) == 0) {
