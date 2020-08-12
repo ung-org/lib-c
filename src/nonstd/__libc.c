@@ -4,7 +4,6 @@
 #include "../stdio/_stdio.h"
 
 #include "_locale.h"
-#include "_syscall.h"
 
 void *__libc(LIBC_INTERNAL variable)
 {
@@ -58,10 +57,6 @@ void *__libc(LIBC_INTERNAL variable)
 			r = &locale;
 		}
 		r = &(((struct __locale_t*)r)->mn);
-		break;
-
-	case SYSCALL_LOOKUP:
-		r = (void*)__syscall_lookup;
 		break;
 
 	case LOAD_LOCALE:
