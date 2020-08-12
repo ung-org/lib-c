@@ -1,7 +1,7 @@
 #include "stddef.h"
 #include "sys/types.h"
 #include <unistd.h>
-#include "nonstd/syscall.h"
+#include "../_syscall.h"
 
 int execve(const char *path, char *const argv[], char *const envp[])
 {

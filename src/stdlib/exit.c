@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include "limits.h"
 #include "stddef.h"
-#include "nonstd/syscall.h"
+#include "../_syscall.h"
 #include "_stdlib.h"
 
 /** cause normal program termination **/

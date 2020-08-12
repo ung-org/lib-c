@@ -5,7 +5,7 @@
 #include "sys/types.h"
 #include "unistd.h"
 #else
-#include "nonstd/syscall.h"
+#include "../_syscall.h"
 #define write(_fd, _buf, _size) __syscall(__lookup("write"), _fd, _buf, _size)
 #endif
 

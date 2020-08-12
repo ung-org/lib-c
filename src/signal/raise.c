@@ -2,7 +2,7 @@
 #include "sys/types.h"
 #include "unistd.h"
 #else
-#include "nonstd/syscall.h"
+#include "../_syscall.h"
 #define kill(pid, sig) __syscall(__lookup("kill"), pid, sig)
 #define getpid() __syscall(__lookup("getpid"))
 #endif

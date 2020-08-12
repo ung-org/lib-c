@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include "nonstd/syscall.h"
+#include "../_syscall.h"
 
 /** cause normal program termination without handlers **/
 _Noreturn void _Exit(int status)

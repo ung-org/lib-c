@@ -1,6 +1,6 @@
 #include <dirent.h>
 #include "nonstd/assert.h"
-#include "nonstd/syscall.h"
+#include "../_syscall.h"
 
 int closedir(DIR *dirp)
 {

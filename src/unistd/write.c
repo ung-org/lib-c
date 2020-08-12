@@ -2,7 +2,7 @@
 #include "sys/types.h"
 #include <unistd.h>
 #include "nonstd/assert.h"
-#include "nonstd/syscall.h"
+#include "../_syscall.h"
 
 ssize_t write(int fildes, const void *buf, size_t nbyte)
 {

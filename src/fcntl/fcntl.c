@@ -2,7 +2,7 @@
 #include <fcntl.h>
 #include "errno.h"
 #include "stdarg.h"
-#include "nonstd/syscall.h"
+#include "../_syscall.h"
 
 int fcntl(int fildes, int cmd, ...)
 {

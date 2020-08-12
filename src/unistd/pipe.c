@@ -2,7 +2,7 @@
 #include "sys/types.h"
 #include <unistd.h>
 #include "nonstd/assert.h"
-#include "nonstd/syscall.h"
+#include "../_syscall.h"
 
 int pipe(int fildes[2])
 {

@@ -8,7 +8,7 @@
 #include "unistd.h"
 #else
 #define DEFAULT_LOCALE "C"
-#include "nonstd/syscall.h"
+#include "../_syscall.h"
 #include "../termios/NCCS.c"
 #include "../termios/cc_t.c"
 #include "../termios/tcflag_t.c"
