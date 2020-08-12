@@ -1,5 +1,5 @@
 .POSIX:
-.DEFAULT:;$(MAKE) all
+default: all
 
 include .config.mk
 
