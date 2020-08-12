@@ -3,7 +3,6 @@
 
 #include <stdarg.h>
 #include <stdio.h>
-#include "nonstd/internal.h"
 
 #ifdef _POSIX_C_SOURCE
 #include <sys/types.h>
