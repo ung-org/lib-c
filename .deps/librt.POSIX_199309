@@ -1,43 +1,43 @@
 .POSIX:
 librt_POSIX_199309_OBJS= \
-	librt.a($(OBJDIR)/sched_get_priority_min.o) \
-	librt.a($(OBJDIR)/sched_rr_get_interval.o) \
-	librt.a($(OBJDIR)/sched_yield.o) \
-	librt.a($(OBJDIR)/sched_setparam.o) \
-	librt.a($(OBJDIR)/sched_getscheduler.o) \
-	librt.a($(OBJDIR)/sched_setscheduler.o) \
-	librt.a($(OBJDIR)/sched_getparam.o) \
-	librt.a($(OBJDIR)/sched_get_priority_max.o) \
-	librt.a($(OBJDIR)/mq_setattr.o) \
-	librt.a($(OBJDIR)/mq_close.o) \
-	librt.a($(OBJDIR)/mq_receive.o) \
-	librt.a($(OBJDIR)/mq_unlink.o) \
-	librt.a($(OBJDIR)/mq_open.o) \
-	librt.a($(OBJDIR)/mq_getattr.o) \
-	librt.a($(OBJDIR)/mq_notify.o) \
-	librt.a($(OBJDIR)/mq_send.o) \
-	librt.a($(OBJDIR)/clock_gettime.o) \
-	librt.a($(OBJDIR)/timer_settime.o) \
-	librt.a($(OBJDIR)/clock_getres.o) \
+	librt.a($(OBJDIR)/timer_create.o) \
 	librt.a($(OBJDIR)/timer_delete.o) \
 	librt.a($(OBJDIR)/clock_settime.o) \
 	librt.a($(OBJDIR)/timer_gettime.o) \
-	librt.a($(OBJDIR)/timer_create.o) \
+	librt.a($(OBJDIR)/timer_settime.o) \
+	librt.a($(OBJDIR)/clock_gettime.o) \
 	librt.a($(OBJDIR)/timer_getoverrun.o) \
-	librt.a($(OBJDIR)/lio_listio.o) \
-	librt.a($(OBJDIR)/aio_error.o) \
-	librt.a($(OBJDIR)/aio_fsync.o) \
-	librt.a($(OBJDIR)/aio_cancel.o) \
-	librt.a($(OBJDIR)/aio_read.o) \
-	librt.a($(OBJDIR)/aio_suspend.o) \
-	librt.a($(OBJDIR)/aio_write.o) \
-	librt.a($(OBJDIR)/aio_return.o) \
-	librt.a($(OBJDIR)/sem_init.o) \
+	librt.a($(OBJDIR)/clock_getres.o) \
+	librt.a($(OBJDIR)/mq_close.o) \
+	librt.a($(OBJDIR)/mq_send.o) \
+	librt.a($(OBJDIR)/mq_unlink.o) \
+	librt.a($(OBJDIR)/mq_notify.o) \
+	librt.a($(OBJDIR)/mq_open.o) \
+	librt.a($(OBJDIR)/mq_receive.o) \
+	librt.a($(OBJDIR)/mq_getattr.o) \
+	librt.a($(OBJDIR)/mq_setattr.o) \
+	librt.a($(OBJDIR)/sched_getparam.o) \
+	librt.a($(OBJDIR)/sched_get_priority_max.o) \
+	librt.a($(OBJDIR)/sched_getscheduler.o) \
+	librt.a($(OBJDIR)/sched_rr_get_interval.o) \
+	librt.a($(OBJDIR)/sched_get_priority_min.o) \
+	librt.a($(OBJDIR)/sched_yield.o) \
+	librt.a($(OBJDIR)/sched_setscheduler.o) \
+	librt.a($(OBJDIR)/sched_setparam.o) \
 	librt.a($(OBJDIR)/sem_open.o) \
-	librt.a($(OBJDIR)/sem_destroy.o) \
-	librt.a($(OBJDIR)/sem_getvalue.o) \
-	librt.a($(OBJDIR)/sem_close.o) \
 	librt.a($(OBJDIR)/sem_wait.o) \
+	librt.a($(OBJDIR)/sem_init.o) \
+	librt.a($(OBJDIR)/sem_close.o) \
+	librt.a($(OBJDIR)/sem_getvalue.o) \
 	librt.a($(OBJDIR)/sem_post.o) \
+	librt.a($(OBJDIR)/sem_unlink.o) \
+	librt.a($(OBJDIR)/sem_destroy.o) \
 	librt.a($(OBJDIR)/sem_trywait.o) \
-	librt.a($(OBJDIR)/sem_unlink.o)
+	librt.a($(OBJDIR)/aio_return.o) \
+	librt.a($(OBJDIR)/aio_cancel.o) \
+	librt.a($(OBJDIR)/aio_error.o) \
+	librt.a($(OBJDIR)/lio_listio.o) \
+	librt.a($(OBJDIR)/aio_fsync.o) \
+	librt.a($(OBJDIR)/aio_write.o) \
+	librt.a($(OBJDIR)/aio_read.o) \
+	librt.a($(OBJDIR)/aio_suspend.o)

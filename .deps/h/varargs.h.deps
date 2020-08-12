@@ -1,6 +1,0 @@
-./src/varargs/va_arg.c
-./src/varargs/va_start.c
-./src/varargs/va_end.c
-./src/varargs/va_dcl.c
-./src/varargs/va_list.c
-./src/varargs/va_alist.c

@@ -1,19 +1,19 @@
 .POSIX:
 libc_POSIX_2_OBJS= \
-	libc.a($(OBJDIR)/regerror.o) \
+	libc.a($(OBJDIR)/regcomp.o) \
 	libc.a($(OBJDIR)/regexec.o) \
 	libc.a($(OBJDIR)/regfree.o) \
-	libc.a($(OBJDIR)/regcomp.o) \
-	libc.a($(OBJDIR)/popen.o) \
-	libc.a($(OBJDIR)/pclose.o) \
-	libc.a($(OBJDIR)/globfree.o) \
-	libc.a($(OBJDIR)/glob.o) \
+	libc.a($(OBJDIR)/regerror.o) \
 	libc.a($(OBJDIR)/wordexp.o) \
 	libc.a($(OBJDIR)/wordfree.o) \
-	libc.a($(OBJDIR)/optopt.o) \
-	libc.a($(OBJDIR)/optind.o) \
-	libc.a($(OBJDIR)/opterr.o) \
-	libc.a($(OBJDIR)/confstr.o) \
-	libc.a($(OBJDIR)/optarg.o) \
+	libc.a($(OBJDIR)/fnmatch.o) \
+	libc.a($(OBJDIR)/pclose.o) \
+	libc.a($(OBJDIR)/popen.o) \
 	libc.a($(OBJDIR)/getopt.o) \
-	libc.a($(OBJDIR)/fnmatch.o)
+	libc.a($(OBJDIR)/optopt.o) \
+	libc.a($(OBJDIR)/opterr.o) \
+	libc.a($(OBJDIR)/optarg.o) \
+	libc.a($(OBJDIR)/optind.o) \
+	libc.a($(OBJDIR)/confstr.o) \
+	libc.a($(OBJDIR)/glob.o) \
+	libc.a($(OBJDIR)/globfree.o)

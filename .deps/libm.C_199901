@@ -1,69 +1,69 @@
 .POSIX:
 libm_C_199901_OBJS= \
-	libm.a($(OBJDIR)/clog.o) \
-	libm.a($(OBJDIR)/csin.o) \
-	libm.a($(OBJDIR)/ctanh.o) \
-	libm.a($(OBJDIR)/ctan.o) \
+	libm.a($(OBJDIR)/fetestexcept.o) \
+	libm.a($(OBJDIR)/feholdexcept.o) \
+	libm.a($(OBJDIR)/fegetexceptflag.o) \
+	libm.a($(OBJDIR)/feupdateenv.o) \
+	libm.a($(OBJDIR)/feraiseexcept.o) \
+	libm.a($(OBJDIR)/fesetexceptflag.o) \
+	libm.a($(OBJDIR)/fegetenv.o) \
+	libm.a($(OBJDIR)/fegetround.o) \
+	libm.a($(OBJDIR)/fesetenv.o) \
+	libm.a($(OBJDIR)/feclearexcept.o) \
+	libm.a($(OBJDIR)/fesetround.o) \
+	libm.a($(OBJDIR)/cexp.o) \
+	libm.a($(OBJDIR)/cimag.o) \
 	libm.a($(OBJDIR)/ccosh.o) \
-	libm.a($(OBJDIR)/catan.o) \
-	libm.a($(OBJDIR)/cpow.o) \
-	libm.a($(OBJDIR)/csinh.o) \
-	libm.a($(OBJDIR)/conj.o) \
+	libm.a($(OBJDIR)/catanh.o) \
 	libm.a($(OBJDIR)/cacosh.o) \
 	libm.a($(OBJDIR)/cproj.o) \
-	libm.a($(OBJDIR)/catanh.o) \
-	libm.a($(OBJDIR)/casinh.o) \
-	libm.a($(OBJDIR)/cabs.o) \
-	libm.a($(OBJDIR)/cexp.o) \
-	libm.a($(OBJDIR)/ccos.o) \
-	libm.a($(OBJDIR)/cacos.o) \
-	libm.a($(OBJDIR)/cimag.o) \
 	libm.a($(OBJDIR)/carg.o) \
-	libm.a($(OBJDIR)/casin.o) \
 	libm.a($(OBJDIR)/csqrt.o) \
+	libm.a($(OBJDIR)/csin.o) \
+	libm.a($(OBJDIR)/cpow.o) \
+	libm.a($(OBJDIR)/casin.o) \
 	libm.a($(OBJDIR)/creal.o) \
-	libm.a($(OBJDIR)/fegetenv.o) \
-	libm.a($(OBJDIR)/feholdexcept.o) \
-	libm.a($(OBJDIR)/fesetexceptflag.o) \
-	libm.a($(OBJDIR)/feupdateenv.o) \
-	libm.a($(OBJDIR)/fetestexcept.o) \
-	libm.a($(OBJDIR)/feraiseexcept.o) \
-	libm.a($(OBJDIR)/fegetexceptflag.o) \
-	libm.a($(OBJDIR)/feclearexcept.o) \
-	libm.a($(OBJDIR)/fegetround.o) \
-	libm.a($(OBJDIR)/fesetround.o) \
-	libm.a($(OBJDIR)/fesetenv.o) \
-	libm.a($(OBJDIR)/cbrt.o) \
-	libm.a($(OBJDIR)/nexttoward.o) \
-	libm.a($(OBJDIR)/erfc.o) \
-	libm.a($(OBJDIR)/remquo.o) \
-	libm.a($(OBJDIR)/nan.o) \
-	libm.a($(OBJDIR)/fma.o) \
-	libm.a($(OBJDIR)/llround.o) \
-	libm.a($(OBJDIR)/llrint.o) \
-	libm.a($(OBJDIR)/asinh.o) \
-	libm.a($(OBJDIR)/round.o) \
-	libm.a($(OBJDIR)/hypot.o) \
-	libm.a($(OBJDIR)/lround.o) \
-	libm.a($(OBJDIR)/expm1.o) \
-	libm.a($(OBJDIR)/rint.o) \
-	libm.a($(OBJDIR)/ilogb.o) \
-	libm.a($(OBJDIR)/log2.o) \
-	libm.a($(OBJDIR)/erf.o) \
-	libm.a($(OBJDIR)/fdim.o) \
-	libm.a($(OBJDIR)/atanh.o) \
-	libm.a($(OBJDIR)/fmin.o) \
-	libm.a($(OBJDIR)/copysign.o) \
-	libm.a($(OBJDIR)/lgamma.o) \
+	libm.a($(OBJDIR)/conj.o) \
+	libm.a($(OBJDIR)/ctanh.o) \
+	libm.a($(OBJDIR)/ccos.o) \
+	libm.a($(OBJDIR)/catan.o) \
+	libm.a($(OBJDIR)/ctan.o) \
+	libm.a($(OBJDIR)/cacos.o) \
+	libm.a($(OBJDIR)/casinh.o) \
+	libm.a($(OBJDIR)/csinh.o) \
+	libm.a($(OBJDIR)/cabs.o) \
+	libm.a($(OBJDIR)/clog.o) \
 	libm.a($(OBJDIR)/scalbn.o) \
-	libm.a($(OBJDIR)/fmax.o) \
-	libm.a($(OBJDIR)/scalbln.o) \
-	libm.a($(OBJDIR)/lrint.o) \
-	libm.a($(OBJDIR)/tgamma.o) \
+	libm.a($(OBJDIR)/asinh.o) \
+	libm.a($(OBJDIR)/ilogb.o) \
+	libm.a($(OBJDIR)/llround.o) \
 	libm.a($(OBJDIR)/nearbyint.o) \
-	libm.a($(OBJDIR)/log1p.o) \
-	libm.a($(OBJDIR)/acosh.o) \
-	libm.a($(OBJDIR)/exp2.o) \
-	libm.a($(OBJDIR)/trunc.o) \
+	libm.a($(OBJDIR)/fmax.o) \
 	libm.a($(OBJDIR)/nextafter.o) \
-	libm.a($(OBJDIR)/logb.o)
+	libm.a($(OBJDIR)/remquo.o) \
+	libm.a($(OBJDIR)/erfc.o) \
+	libm.a($(OBJDIR)/log2.o) \
+	libm.a($(OBJDIR)/round.o) \
+	libm.a($(OBJDIR)/fdim.o) \
+	libm.a($(OBJDIR)/exp2.o) \
+	libm.a($(OBJDIR)/acosh.o) \
+	libm.a($(OBJDIR)/scalbln.o) \
+	libm.a($(OBJDIR)/lround.o) \
+	libm.a($(OBJDIR)/lgamma.o) \
+	libm.a($(OBJDIR)/llrint.o) \
+	libm.a($(OBJDIR)/hypot.o) \
+	libm.a($(OBJDIR)/rint.o) \
+	libm.a($(OBJDIR)/tgamma.o) \
+	libm.a($(OBJDIR)/nexttoward.o) \
+	libm.a($(OBJDIR)/copysign.o) \
+	libm.a($(OBJDIR)/logb.o) \
+	libm.a($(OBJDIR)/fmin.o) \
+	libm.a($(OBJDIR)/expm1.o) \
+	libm.a($(OBJDIR)/nan.o) \
+	libm.a($(OBJDIR)/erf.o) \
+	libm.a($(OBJDIR)/trunc.o) \
+	libm.a($(OBJDIR)/log1p.o) \
+	libm.a($(OBJDIR)/atanh.o) \
+	libm.a($(OBJDIR)/lrint.o) \
+	libm.a($(OBJDIR)/fma.o) \
+	libm.a($(OBJDIR)/cbrt.o)

@@ -1,98 +1,98 @@
 .POSIX:
 libc_POSIX_1_OBJS= \
-	libc.a($(OBJDIR)/sigaddset.o) \
-	libc.a($(OBJDIR)/sigdelset.o) \
-	libc.a($(OBJDIR)/kill.o) \
-	libc.a($(OBJDIR)/sigfillset.o) \
-	libc.a($(OBJDIR)/sigemptyset.o) \
-	libc.a($(OBJDIR)/sigpending.o) \
-	libc.a($(OBJDIR)/sigprocmask.o) \
-	libc.a($(OBJDIR)/sigaction.o) \
-	libc.a($(OBJDIR)/sigismember.o) \
-	libc.a($(OBJDIR)/sigsuspend.o) \
-	libc.a($(OBJDIR)/rewinddir.o) \
-	libc.a($(OBJDIR)/readdir.o) \
-	libc.a($(OBJDIR)/closedir.o) \
-	libc.a($(OBJDIR)/opendir.o) \
-	libc.a($(OBJDIR)/fcntl.o) \
-	libc.a($(OBJDIR)/open.o) \
-	libc.a($(OBJDIR)/creat.o) \
-	libc.a($(OBJDIR)/utime.o) \
-	libc.a($(OBJDIR)/getpwuid.o) \
-	libc.a($(OBJDIR)/getpwnam.o) \
-	libc.a($(OBJDIR)/fileno.o) \
-	libc.a($(OBJDIR)/fdopen.o) \
-	libc.a($(OBJDIR)/environ.o) \
+	libc.a($(OBJDIR)/times.o) \
+	libc.a($(OBJDIR)/uname.o) \
 	libc.a($(OBJDIR)/wait.o) \
 	libc.a($(OBJDIR)/waitpid.o) \
-	libc.a($(OBJDIR)/times.o) \
 	libc.a($(OBJDIR)/umask.o) \
-	libc.a($(OBJDIR)/fstat.o) \
-	libc.a($(OBJDIR)/mkdir.o) \
 	libc.a($(OBJDIR)/stat.o) \
 	libc.a($(OBJDIR)/mkfifo.o) \
 	libc.a($(OBJDIR)/chmod.o) \
-	libc.a($(OBJDIR)/uname.o) \
+	libc.a($(OBJDIR)/mkdir.o) \
+	libc.a($(OBJDIR)/fstat.o) \
+	libc.a($(OBJDIR)/sigsetjmp.o) \
+	libc.a($(OBJDIR)/siglongjmp.o) \
+	libc.a($(OBJDIR)/creat.o) \
+	libc.a($(OBJDIR)/open.o) \
+	libc.a($(OBJDIR)/fcntl.o) \
+	libc.a($(OBJDIR)/environ.o) \
+	libc.a($(OBJDIR)/utime.o) \
 	libc.a($(OBJDIR)/tzset.o) \
 	libc.a($(OBJDIR)/tzname.o) \
-	libc.a($(OBJDIR)/tcdrain.o) \
-	libc.a($(OBJDIR)/cfsetispeed.o) \
-	libc.a($(OBJDIR)/cfsetospeed.o) \
-	libc.a($(OBJDIR)/tcflow.o) \
-	libc.a($(OBJDIR)/cfgetospeed.o) \
-	libc.a($(OBJDIR)/cfgetispeed.o) \
-	libc.a($(OBJDIR)/tcgetattr.o) \
-	libc.a($(OBJDIR)/tcflush.o) \
-	libc.a($(OBJDIR)/tcsendbreak.o) \
-	libc.a($(OBJDIR)/tcsetattr.o) \
-	libc.a($(OBJDIR)/getgrgid.o) \
-	libc.a($(OBJDIR)/getgrnam.o) \
+	libc.a($(OBJDIR)/fdopen.o) \
+	libc.a($(OBJDIR)/fileno.o) \
+	libc.a($(OBJDIR)/getegid.o) \
+	libc.a($(OBJDIR)/access.o) \
+	libc.a($(OBJDIR)/getuid.o) \
+	libc.a($(OBJDIR)/fpathconf.o) \
+	libc.a($(OBJDIR)/alarm.o) \
+	libc.a($(OBJDIR)/geteuid.o) \
 	libc.a($(OBJDIR)/getcwd.o) \
-	libc.a($(OBJDIR)/execl.o) \
-	libc.a($(OBJDIR)/chown.o) \
+	libc.a($(OBJDIR)/setsid.o) \
+	libc.a($(OBJDIR)/ttyname.o) \
+	libc.a($(OBJDIR)/execve.o) \
+	libc.a($(OBJDIR)/lseek.o) \
+	libc.a($(OBJDIR)/execv.o) \
+	libc.a($(OBJDIR)/pathconf.o) \
+	libc.a($(OBJDIR)/rmdir.o) \
 	libc.a($(OBJDIR)/getpgrp.o) \
+	libc.a($(OBJDIR)/execl.o) \
+	libc.a($(OBJDIR)/tcgetpgrp.o) \
+	libc.a($(OBJDIR)/chdir.o) \
+	libc.a($(OBJDIR)/read.o) \
+	libc.a($(OBJDIR)/unlink.o) \
+	libc.a($(OBJDIR)/isatty.o) \
+	libc.a($(OBJDIR)/getppid.o) \
+	libc.a($(OBJDIR)/dup2.o) \
+	libc.a($(OBJDIR)/pause.o) \
+	libc.a($(OBJDIR)/execvp.o) \
+	libc.a($(OBJDIR)/setpgid.o) \
+	libc.a($(OBJDIR)/getlogin.o) \
+	libc.a($(OBJDIR)/setgid.o) \
+	libc.a($(OBJDIR)/setuid.o) \
+	libc.a($(OBJDIR)/_exit.o) \
+	libc.a($(OBJDIR)/write.o) \
+	libc.a($(OBJDIR)/execle.o) \
+	libc.a($(OBJDIR)/close.o) \
+	libc.a($(OBJDIR)/ctermid.o) \
+	libc.a($(OBJDIR)/link.o) \
+	libc.a($(OBJDIR)/tcsetpgrp.o) \
+	libc.a($(OBJDIR)/fork.o) \
+	libc.a($(OBJDIR)/execlp.o) \
 	libc.a($(OBJDIR)/pipe.o) \
 	libc.a($(OBJDIR)/cuserid.o) \
-	libc.a($(OBJDIR)/isatty.o) \
-	libc.a($(OBJDIR)/execve.o) \
-	libc.a($(OBJDIR)/dup.o) \
-	libc.a($(OBJDIR)/dup2.o) \
-	libc.a($(OBJDIR)/sysconf.o) \
-	libc.a($(OBJDIR)/setuid.o) \
-	libc.a($(OBJDIR)/setgid.o) \
-	libc.a($(OBJDIR)/getppid.o) \
-	libc.a($(OBJDIR)/write.o) \
-	libc.a($(OBJDIR)/execv.o) \
-	libc.a($(OBJDIR)/sleep.o) \
-	libc.a($(OBJDIR)/geteuid.o) \
-	libc.a($(OBJDIR)/setpgid.o) \
-	libc.a($(OBJDIR)/close.o) \
-	libc.a($(OBJDIR)/link.o) \
-	libc.a($(OBJDIR)/ctermid.o) \
-	libc.a($(OBJDIR)/getpid.o) \
-	libc.a($(OBJDIR)/rmdir.o) \
-	libc.a($(OBJDIR)/execlp.o) \
-	libc.a($(OBJDIR)/chdir.o) \
-	libc.a($(OBJDIR)/pathconf.o) \
-	libc.a($(OBJDIR)/setsid.o) \
-	libc.a($(OBJDIR)/fpathconf.o) \
-	libc.a($(OBJDIR)/lseek.o) \
-	libc.a($(OBJDIR)/fork.o) \
 	libc.a($(OBJDIR)/getgroups.o) \
-	libc.a($(OBJDIR)/ttyname.o) \
-	libc.a($(OBJDIR)/tcgetpgrp.o) \
-	libc.a($(OBJDIR)/_exit.o) \
-	libc.a($(OBJDIR)/read.o) \
-	libc.a($(OBJDIR)/execvp.o) \
-	libc.a($(OBJDIR)/access.o) \
-	libc.a($(OBJDIR)/pause.o) \
-	libc.a($(OBJDIR)/unlink.o) \
-	libc.a($(OBJDIR)/execle.o) \
-	libc.a($(OBJDIR)/getlogin.o) \
+	libc.a($(OBJDIR)/chown.o) \
+	libc.a($(OBJDIR)/getpid.o) \
+	libc.a($(OBJDIR)/sysconf.o) \
+	libc.a($(OBJDIR)/dup.o) \
 	libc.a($(OBJDIR)/getgid.o) \
-	libc.a($(OBJDIR)/alarm.o) \
-	libc.a($(OBJDIR)/getuid.o) \
-	libc.a($(OBJDIR)/getegid.o) \
-	libc.a($(OBJDIR)/tcsetpgrp.o) \
-	libc.a($(OBJDIR)/siglongjmp.o) \
-	libc.a($(OBJDIR)/sigsetjmp.o)
+	libc.a($(OBJDIR)/sleep.o) \
+	libc.a($(OBJDIR)/getgrnam.o) \
+	libc.a($(OBJDIR)/getgrgid.o) \
+	libc.a($(OBJDIR)/closedir.o) \
+	libc.a($(OBJDIR)/opendir.o) \
+	libc.a($(OBJDIR)/rewinddir.o) \
+	libc.a($(OBJDIR)/readdir.o) \
+	libc.a($(OBJDIR)/getpwnam.o) \
+	libc.a($(OBJDIR)/getpwuid.o) \
+	libc.a($(OBJDIR)/cfsetospeed.o) \
+	libc.a($(OBJDIR)/tcsetattr.o) \
+	libc.a($(OBJDIR)/tcsendbreak.o) \
+	libc.a($(OBJDIR)/tcflow.o) \
+	libc.a($(OBJDIR)/tcgetattr.o) \
+	libc.a($(OBJDIR)/cfgetispeed.o) \
+	libc.a($(OBJDIR)/tcdrain.o) \
+	libc.a($(OBJDIR)/cfsetispeed.o) \
+	libc.a($(OBJDIR)/tcflush.o) \
+	libc.a($(OBJDIR)/cfgetospeed.o) \
+	libc.a($(OBJDIR)/sigismember.o) \
+	libc.a($(OBJDIR)/kill.o) \
+	libc.a($(OBJDIR)/sigfillset.o) \
+	libc.a($(OBJDIR)/sigemptyset.o) \
+	libc.a($(OBJDIR)/sigaddset.o) \
+	libc.a($(OBJDIR)/sigsuspend.o) \
+	libc.a($(OBJDIR)/sigpending.o) \
+	libc.a($(OBJDIR)/sigdelset.o) \
+	libc.a($(OBJDIR)/sigprocmask.o) \
+	libc.a($(OBJDIR)/sigaction.o)

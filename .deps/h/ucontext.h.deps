@@ -1,8 +1,0 @@
-./src/ucontext/swapcontext.c
-./src/ucontext/getcontext.c
-./src/ucontext/makecontext.c
-./src/ucontext/setcontext.c
-./src/ucontext/mcontext_t.c
-./src/ucontext/ucontext_t.c
-./src/ucontext/sigset_t.ref
-./src/ucontext/stack_t.ref

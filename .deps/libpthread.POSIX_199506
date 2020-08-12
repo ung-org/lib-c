@@ -1,3 +1,3 @@
 .POSIX:
-libpthread_C_0_OBJS= \
+libpthread_POSIX_199506_OBJS= \
 	libpthread.a($(OBJDIR)/__pthread_per_thread.o)

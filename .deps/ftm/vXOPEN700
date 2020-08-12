@@ -1,1 +1,0 @@
-#if	(defined _XOPEN_SOURCE && 700 <= _XOPEN_SOURCE)

@@ -1,3 +1,0 @@
-./src/nonstd/__libc.c
-./src/nonstd/struct_atexit.c
-./src/nonstd/LIBC_INTERNAL.c

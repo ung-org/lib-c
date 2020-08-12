@@ -1,4 +1,0 @@
-./src/nonstd/ASSERT_REPRESENTABLE.c
-./src/nonstd/ASSERT_NONNULL.c
-./src/nonstd/ASSERT_NOOVERLAP.c
-./src/nonstd/ASSERT_NONZERO.c

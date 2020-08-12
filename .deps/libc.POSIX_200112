@@ -1,6 +1,6 @@
 .POSIX:
 libc_POSIX_200112_OBJS= \
 	libc.a($(OBJDIR)/lstat.o) \
-	libc.a($(OBJDIR)/readlink.o) \
+	libc.a($(OBJDIR)/symlink.o) \
 	libc.a($(OBJDIR)/fchown.o) \
-	libc.a($(OBJDIR)/symlink.o)
+	libc.a($(OBJDIR)/readlink.o)

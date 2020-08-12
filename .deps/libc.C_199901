@@ -1,30 +1,30 @@
 .POSIX:
 libc_C_199901_OBJS= \
-	libc.a($(OBJDIR)/imaxdiv.o) \
-	libc.a($(OBJDIR)/imaxabs.o) \
-	libc.a($(OBJDIR)/wcstoimax.o) \
-	libc.a($(OBJDIR)/wcstoumax.o) \
-	libc.a($(OBJDIR)/strtoimax.o) \
-	libc.a($(OBJDIR)/strtoumax.o) \
-	libc.a($(OBJDIR)/wcstoll.o) \
-	libc.a($(OBJDIR)/vwscanf.o) \
-	libc.a($(OBJDIR)/vfwscanf.o) \
-	libc.a($(OBJDIR)/wcstoull.o) \
-	libc.a($(OBJDIR)/wcstof.o) \
-	libc.a($(OBJDIR)/wcstold.o) \
-	libc.a($(OBJDIR)/vswscanf.o) \
-	libc.a($(OBJDIR)/vsscanf.o) \
 	libc.a($(OBJDIR)/vsnprintf.o) \
-	libc.a($(OBJDIR)/vscanf.o) \
+	libc.a($(OBJDIR)/vsscanf.o) \
 	libc.a($(OBJDIR)/vfscanf.o) \
 	libc.a($(OBJDIR)/snprintf.o) \
+	libc.a($(OBJDIR)/vscanf.o) \
 	libc.a($(OBJDIR)/isblank.o) \
+	libc.a($(OBJDIR)/wcstof.o) \
+	libc.a($(OBJDIR)/wcstoull.o) \
+	libc.a($(OBJDIR)/wcstoll.o) \
+	libc.a($(OBJDIR)/vwscanf.o) \
+	libc.a($(OBJDIR)/vswscanf.o) \
+	libc.a($(OBJDIR)/wcstold.o) \
+	libc.a($(OBJDIR)/vfwscanf.o) \
+	libc.a($(OBJDIR)/wcstoimax.o) \
+	libc.a($(OBJDIR)/imaxdiv.o) \
+	libc.a($(OBJDIR)/wcstoumax.o) \
+	libc.a($(OBJDIR)/strtoumax.o) \
+	libc.a($(OBJDIR)/imaxabs.o) \
+	libc.a($(OBJDIR)/strtoimax.o) \
 	libc.a($(OBJDIR)/iswblank.o) \
-	libc.a($(OBJDIR)/lldiv.o) \
-	libc.a($(OBJDIR)/_Exit.o) \
-	libc.a($(OBJDIR)/strtold.o) \
 	libc.a($(OBJDIR)/strtoll.o) \
+	libc.a($(OBJDIR)/strtold.o) \
+	libc.a($(OBJDIR)/lldiv.o) \
 	libc.a($(OBJDIR)/strtof.o) \
-	libc.a($(OBJDIR)/atoll.o) \
+	libc.a($(OBJDIR)/_Exit.o) \
 	libc.a($(OBJDIR)/strtoull.o) \
-	libc.a($(OBJDIR)/llabs.o)
+	libc.a($(OBJDIR)/llabs.o) \
+	libc.a($(OBJDIR)/atoll.o)

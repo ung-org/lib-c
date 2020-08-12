@@ -26,12 +26,8 @@ monetary.h
 mqueue.h
 ndbm.h
 nl_types.h
-nonstd/assert.h
-nonstd/internal.h
-nonstd/lib.h
-nonstd/locale.h
-nonstd/syscall.h
 poll.h
+pthread.h
 pwd.h
 re_comp.h
 regex.h
@@ -69,6 +65,7 @@ syslog.h
 tar.h
 term.h
 termios.h
+threads.h
 time.h
 ucontext.h
 ulimit.h

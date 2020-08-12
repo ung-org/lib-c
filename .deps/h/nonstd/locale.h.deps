@@ -1,5 +1,0 @@
-./src/nonstd/struct_locale_t.c
-./src/nonstd/__load_locale.c
-./src/nonstd/locale-limits.ref
-./src/nonstd/locale-internal.ref
-./src/nonstd/locale-locale.ref

@@ -1,14 +1,14 @@
 .POSIX:
 libm_XOPEN_4_OBJS= \
-	libm.a($(OBJDIR)/yn.o) \
-	libm.a($(OBJDIR)/gamma.o) \
-	libm.a($(OBJDIR)/jn.o) \
-	libm.a($(OBJDIR)/y1.o) \
-	libm.a($(OBJDIR)/erfc.o) \
-	libm.a($(OBJDIR)/signgam.o) \
 	libm.a($(OBJDIR)/y0.o) \
 	libm.a($(OBJDIR)/j1.o) \
-	libm.a($(OBJDIR)/hypot.o) \
+	libm.a($(OBJDIR)/y1.o) \
+	libm.a($(OBJDIR)/gamma.o) \
+	libm.a($(OBJDIR)/erfc.o) \
+	libm.a($(OBJDIR)/yn.o) \
 	libm.a($(OBJDIR)/j0.o) \
-	libm.a($(OBJDIR)/erf.o) \
-	libm.a($(OBJDIR)/lgamma.o)
+	libm.a($(OBJDIR)/lgamma.o) \
+	libm.a($(OBJDIR)/hypot.o) \
+	libm.a($(OBJDIR)/jn.o) \
+	libm.a($(OBJDIR)/signgam.o) \
+	libm.a($(OBJDIR)/erf.o)

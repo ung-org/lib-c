@@ -1,5 +1,0 @@
-./src/sys/statvfs/struct_statvfs.c
-./src/sys/statvfs/fstatvfs.c
-./src/sys/statvfs/statvfs.c
-./src/sys/statvfs/ST_NOSUID.c
-./src/sys/statvfs/ST_RDONLY.c

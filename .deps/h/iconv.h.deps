@@ -1,4 +1,0 @@
-./src/iconv/iconv_open.c
-./src/iconv/iconv_t.c
-./src/iconv/iconv_close.c
-./src/iconv/iconv.c
