@@ -2,7 +2,7 @@
 #include <math.h>
 #include "_tgmath.h"
 #include "errno.h"
-#include "nonstd/assert.h"
+#include "../_assert.h"
 
 #include "M_PI.c"
 #include "M_PI_2.c"
