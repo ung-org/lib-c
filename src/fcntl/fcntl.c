@@ -6,7 +6,7 @@
 
 int fcntl(int fildes, int cmd, ...)
 {
-	SYSCALL_NUMBER(scno, "fcntl", -1);
+	SYSCALL_NUMBER(scno, fcntl, -1);
 
 	int r = -ENOSYS;
 	enum { NONE, INT, FLOCK } arg = NONE;

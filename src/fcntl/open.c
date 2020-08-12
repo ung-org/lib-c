@@ -7,7 +7,7 @@
 
 int open(const char *path, int oflag, ...)
 {
-	SYSCALL_NUMBER(scno, "open", -1);
+	SYSCALL_NUMBER(scno, open, -1);
 
 	mode_t mode = 0;
 	if (oflag & O_CREAT) {

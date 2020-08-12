@@ -7,7 +7,7 @@
 time_t time(time_t * timer)
 {
 	long int now;
-	SYSCALL_NUMBER(sc, "time", 0);
+	SYSCALL_NUMBER(sc, time, 0);
 
 	now = __syscall(sc);
 

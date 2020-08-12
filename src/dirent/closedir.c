@@ -4,8 +4,11 @@
 
 int closedir(DIR *dirp)
 {
+	/*
 	ASSERT_NONNULL(dirp);
-	SYSCALL("closedir", int, -1, dirp, 0, 0, 0, 0, 0);
+	SYSCALL(closedir, int, -1, dirp, 0, 0, 0, 0, 0);
+	*/
+	return -1;
 }
 /*
 POSIX(1)

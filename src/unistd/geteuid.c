@@ -5,7 +5,7 @@
 
 uid_t geteuid(void)
 {
-	SYSCALL("geteuid", uid_t, -1, 0, 0, 0, 0, 0, 0);
+	SYSCALL(geteuid, uid_t, -1, 0, 0, 0, 0, 0, 0);
 }
 /*
 POSIX(1)

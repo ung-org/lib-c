@@ -5,7 +5,7 @@
 
 int pause(void)
 {
-	SYSCALL("pause", int, -1, 0, 0, 0, 0, 0, 0);
+	SYSCALL(pause, int, -1, 0, 0, 0, 0, 0, 0);
 }
 /*
 POSIX(1)

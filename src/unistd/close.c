@@ -5,7 +5,7 @@
 
 int close(int fildes)
 {
-	SYSCALL("close", int, -1, fildes, 0, 0, 0, 0, 0);
+	SYSCALL(close, int, -1, fildes, 0, 0, 0, 0, 0);
 }
 /*
 POSIX(1)

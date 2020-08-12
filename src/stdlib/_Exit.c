@@ -4,7 +4,7 @@
 /** cause normal program termination without handlers **/
 _Noreturn void _Exit(int status)
 {
-	long scno = __lookup("exit");
+	SYCALL_NUMBER(scno, "exit");
 	for (;;) {
 		__syscall(scno, status);
 	}

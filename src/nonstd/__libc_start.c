@@ -14,7 +14,7 @@
 #include "../termios/tcflag_t.c"
 #include "../termios/struct_termios.c"
 static struct termios __tios;
-#define isatty(fd) (__syscall(__lookup("tcgetattr"), fd, &__tios) == 0)
+#define isatty(fd) (__syscall(__syscall_lookup(tcgetattr), fd, &__tios) == 0)
 #endif
 
 void __libc_start(int argc, char **argv)

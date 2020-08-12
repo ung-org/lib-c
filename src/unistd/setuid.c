@@ -5,7 +5,7 @@
 
 int setuid(uid_t uid)
 {
-	SYSCALL("setuid", int, -1, uid, 0, 0, 0, 0, 0);
+	SYSCALL(setuid, int, -1, uid, 0, 0, 0, 0, 0);
 }
 /*
 POSIX(1)

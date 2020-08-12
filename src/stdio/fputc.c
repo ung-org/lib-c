@@ -6,7 +6,7 @@
 #include "unistd.h"
 #else
 #include "../_syscall.h"
-#define write(_fd, _buf, _size) __syscall(__lookup("write"), _fd, _buf, _size)
+#define write(_fd, _buf, _size) __syscall(__syscall_lookup(write), _fd, _buf, _size)
 #endif
 
 /** write a character to a file stream **/

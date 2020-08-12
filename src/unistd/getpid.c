@@ -5,7 +5,7 @@
 
 pid_t getpid(void)
 {
-	SYSCALL("getpid", pid_t, -1, 0, 0, 0, 0, 0, 0);
+	SYSCALL(getpid, pid_t, -1, 0, 0, 0, 0, 0, 0);
 }
 /*
 POSIX(1)

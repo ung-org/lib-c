@@ -6,7 +6,7 @@
 
 pid_t fork(void)
 {
-	SYSCALL("fork", pid_t, -1, 0, 0, 0, 0, 0, 0);
+	SYSCALL(fork, pid_t, -1, 0, 0, 0, 0, 0, 0);
 }
 /*
 POSIX(1)

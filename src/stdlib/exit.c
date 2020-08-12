@@ -7,7 +7,7 @@
 /** cause normal program termination **/
 _Noreturn void exit(int status)
 {
-	long scno = __lookup("exit");
+	long scno = __syscall_lookup(exit);
 	struct atexit *ae = &(__stdlib.atexit);
 
 	/* execute all atexit() registered functions in reverse order */

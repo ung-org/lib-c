@@ -5,7 +5,7 @@
 
 int chdir(const char *path)
 {
-	SYSCALL("chdir", int, -1, path, 0, 0, 0, 0, 0);
+	SYSCALL(chdir, int, -1, path, 0, 0, 0, 0, 0);
 }
 /*
 POSIX(1)

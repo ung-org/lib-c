@@ -5,7 +5,7 @@
 /** rename a file **/
 int rename(const char *old, const char *new)
 {
-	SYSCALL_NUMBER(sc, "rename", -1);
+	SYSCALL_NUMBER(sc, rename, -1);
 	int err = 0;
 
 	err = __syscall(sc, old, new);

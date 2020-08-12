@@ -5,7 +5,7 @@
 
 int execve(const char *path, char *const argv[], char *const envp[])
 {
-	SYSCALL_NUMBER(scno, "execve", -1);
+	SYSCALL_NUMBER(scno, execve, -1);
 	errno = -__syscall(scno, path, argv, envp);
 	return -1;
 }
