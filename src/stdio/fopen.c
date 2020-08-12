@@ -5,7 +5,7 @@
 /** open a file stream **/
 FILE * fopen(const char * restrict filename, const char * restrict mode)
 {
-	struct __FILE *base = __libc(FILE_STREAMS);
+	struct __FILE *base = __stdio.FILES;
 	struct __FILE *f = base;
 
 	/* find the next available stream */

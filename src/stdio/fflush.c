@@ -7,7 +7,7 @@ int fflush(FILE *stream)
 	flockfile(stream);
 	if (stream == NULL) {
 		FILE *p;
-		for (p = __libc(FILE_STREAMS); p != NULL; p = p->prev) {
+		for (p = __stdio.FILES; p != NULL; p = p->prev) {
 			fflush(p);
 		}
 	}
