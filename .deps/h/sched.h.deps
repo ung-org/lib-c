@@ -1,0 +1,13 @@
+./src/sched/sched_getparam.c
+./src/sched/sched_get_priority_max.c
+./src/sched/struct_sched_param.c
+./src/sched/SCHED_OTHER.c
+./src/sched/sched_getscheduler.c
+./src/sched/sched_rr_get_interval.c
+./src/sched/sched_get_priority_min.c
+./src/sched/SCHED_FIFO.c
+./src/sched/sched_yield.c
+./src/sched/sched_setscheduler.c
+./src/sched/sched_setparam.c
+./src/sched/SCHED_RR.c
+./src/threads/thrd_yield.c

@@ -1,0 +1,6 @@
+./src/fnmatch/FNM_NOSYS.c
+./src/fnmatch/fnmatch.c
+./src/fnmatch/FNM_PATHNAME.c
+./src/fnmatch/FNM_NOMATCH.c
+./src/fnmatch/FNM_NOESCAPE.c
+./src/fnmatch/FNM_PERIOD.c

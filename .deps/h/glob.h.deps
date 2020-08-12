@@ -1,0 +1,14 @@
+./src/glob/GLOB_MARK.c
+./src/glob/glob_t.c
+./src/glob/GLOB_NOSPACE.c
+./src/glob/GLOB_APPEND.c
+./src/glob/glob.c
+./src/glob/GLOB_ERR.c
+./src/glob/GLOB_NOSORT.c
+./src/glob/GLOB_NOCHECK.c
+./src/glob/GLOB_NOSYS.c
+./src/glob/GLOB_ABORTED.c
+./src/glob/globfree.c
+./src/glob/GLOB_DOOFFS.c
+./src/glob/GLOB_NOMATCH.c
+./src/glob/GLOB_NOESCAPE.c

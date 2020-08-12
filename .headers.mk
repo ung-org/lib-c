@@ -1,3 +1,6 @@
+.POSIX:
+.DEFAULT: headers
+
 include .config.mk
 
 $(INCDIR)/aio.h: mkh.sh $(SRCDIR)/aio/struct_aiocb.c $(SRCDIR)/aio/LIO_WRITE.c $(SRCDIR)/aio/AIO_CANCELED.c $(SRCDIR)/aio/LIO_NOWAIT.c $(SRCDIR)/aio/aio_return.c $(SRCDIR)/aio/aio_cancel.c $(SRCDIR)/aio/AIO_NOTCANCELED.c $(SRCDIR)/aio/aio_error.c $(SRCDIR)/aio/lio_listio.c $(SRCDIR)/aio/LIO_WAIT.c $(SRCDIR)/aio/aio_fsync.c $(SRCDIR)/aio/AIO_ALLDONE.c $(SRCDIR)/aio/LIO_NOP.c $(SRCDIR)/aio/aio_write.c $(SRCDIR)/aio/LIO_READ.c $(SRCDIR)/aio/aio_read.c $(SRCDIR)/aio/aio_suspend.c 
@@ -83,15 +86,6 @@ $(INCDIR)/ndbm.h: mkh.sh $(SRCDIR)/ndbm/dbm_nextkey.c $(SRCDIR)/ndbm/dbm_store.c
 
 $(INCDIR)/nl_types.h: mkh.sh $(SRCDIR)/nl_types/nl_catd.c $(SRCDIR)/nl_types/NL_CAT_LOCALE.c $(SRCDIR)/nl_types/catopen.c $(SRCDIR)/nl_types/nl_item.c $(SRCDIR)/nl_types/catgets.c $(SRCDIR)/nl_types/NL_SETD.c $(SRCDIR)/nl_types/catclose.c 
 	INCDIR=$(INCDIR) sh mkh.sh $(INCDIR)/nl_types.h
-
-$(INCDIR)/nonstd/assert.h: mkh.sh $(SRCDIR)/nonstd/ASSERT_NONNULL.c $(SRCDIR)/nonstd/ASSERT_NOOVERLAP.c $(SRCDIR)/nonstd/ASSERT_REPRESENTABLE.c $(SRCDIR)/nonstd/ASSERT_NONZERO.c 
-	INCDIR=$(INCDIR) sh mkh.sh $(INCDIR)/nonstd/assert.h
-
-$(INCDIR)/nonstd/internal.h: mkh.sh $(SRCDIR)/nonstd/LIBC_INTERNAL.c $(SRCDIR)/nonstd/__libc.c 
-	INCDIR=$(INCDIR) sh mkh.sh $(INCDIR)/nonstd/internal.h
-
-$(INCDIR)/nonstd/locale.h: mkh.sh $(SRCDIR)/nonstd/struct_locale_t.c $(SRCDIR)/nonstd/__load_locale.c $(SRCDIR)/nonstd/locale-internal.ref $(SRCDIR)/nonstd/locale-limits.ref $(SRCDIR)/nonstd/locale-locale.ref 
-	INCDIR=$(INCDIR) sh mkh.sh $(INCDIR)/nonstd/locale.h
 
 $(INCDIR)/poll.h: mkh.sh $(SRCDIR)/poll/POLLRDNORM.c $(SRCDIR)/poll/POLLNVAL.c $(SRCDIR)/poll/POLLHUP.c $(SRCDIR)/poll/poll.c $(SRCDIR)/poll/POLLWRNORM.c $(SRCDIR)/poll/POLLOUT.c $(SRCDIR)/poll/struct_pollfd.c $(SRCDIR)/poll/POLLWRBAND.c $(SRCDIR)/poll/POLLERR.c $(SRCDIR)/poll/POLLPRI.c $(SRCDIR)/poll/POLLRDBAND.c $(SRCDIR)/poll/nfds_t.c $(SRCDIR)/poll/POLLIN.c 
 	INCDIR=$(INCDIR) sh mkh.sh $(INCDIR)/poll.h
@@ -275,9 +269,6 @@ headers:  \
 	$(INCDIR)/mqueue.h \
 	$(INCDIR)/ndbm.h \
 	$(INCDIR)/nl_types.h \
-	$(INCDIR)/nonstd/assert.h \
-	$(INCDIR)/nonstd/internal.h \
-	$(INCDIR)/nonstd/locale.h \
 	$(INCDIR)/poll.h \
 	$(INCDIR)/pthread.h \
 	$(INCDIR)/pwd.h \

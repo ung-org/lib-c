@@ -1,0 +1,8 @@
+./src/strings/bzero.c
+./src/strings/index.c
+./src/strings/bcmp.c
+./src/strings/strcasecmp.c
+./src/strings/rindex.c
+./src/strings/strncasecmp.c
+./src/strings/ffs.c
+./src/strings/bcopy.c

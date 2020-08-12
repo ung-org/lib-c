@@ -127,6 +127,7 @@ find_all() {
 	mkdir -p "${DEPS}"
 	find "${SRCDIR}" -name \*.c > "${DEPS}/all.c"
 	find "${SRCDIR}" -name \*.ref > "${DEPS}/all.ref"
+	find "${SRCDIR}" -name \*.s > "${DEPS}/all.s"
 	grep '#include <.*>' $(cat "${DEPS}/all.c" "${DEPS}/all.ref") |
 		sed 's/^.*<\(.*\.h\)>.*/\1/' | sort -u > "${DEPS}/all.h"
 }
@@ -162,7 +163,7 @@ make_headers_mk() {
 
 	rm -f "${TOPDIR}/.headers.mk"
 	printf '.POSIX:\n.DEFAULT: headers\n\n' > "${TOPDIR}/.headers.mk"
-	printf 'include .config.mk\n\n' > "${TOPDIR}/.headers.mk"
+	printf 'include .config.mk\n\n' >> "${TOPDIR}/.headers.mk"
 
 	for header in $(cat "${DEPS}/all.h"); do
 		printf 'Building dependencies for <%s>\n' "$header"
@@ -189,18 +190,22 @@ make_deps_mk() {
 	rm -f "${TOPDIR}/.deps.mk"
 	rm -f "${DEPS}"/lib*
 
-	printf '.POSIX:\ndefault: all\n\n' > "${TOPDIR}/.deps.mk"
-	printf 'include .config.mk\n\n' > "${TOPDIR}/.deps.mk"
+	printf '.POSIX:\n.SILENT:\ndefault: all\n\n' > "${TOPDIR}/.deps.mk"
+	printf 'include .config.mk\n\n' >> "${TOPDIR}/.deps.mk"
 	printf 'BASE_CFLAGS=-I$(INCDIR) -fno-builtin -nostdinc\n' >> "${TOPDIR}/.deps.mk"
 	printf '\n' >> "${TOPDIR}/.deps.mk"
 
-	printf 'libc.a($(ARCHITECTURE)-$(WORDSIZE).o): $(OBJDIR)/$(ARCHITECTURE)-$(WORDSIZE).o\n' >> "${TOPDIR}/.deps.mk"
-	printf '$(OBJDIR)/$(ARCHITECTURE)-$(WORDSIZE).o: $(SRCDIR)/nonstd/$(ARCHITECTURE)-$(WORDSIZE).s\n' >> "${TOPDIR}/.deps.mk"
-	printf '\t$(CC) $(BASE_CFLAGS) $(CFLAGS) -c $(SRCDIR)/nonstd/$(ARCHITECTURE)-$(WORDSIZE).s -o $@\n\n' >> "${TOPDIR}/.deps.mk"
-
-	# Make sure the architecture dependent stuff gets in
-	printf '.POSIX:\nlibc_C_0_OBJS= \\\n' > "${DEPS}/libc.C_0"
-	printf '\tlibc.a($(OBJDIR)/$(ARCHITECTURE)-$(WORDSIZE).o)' >> "${DEPS}/libc.C_0"
+	printf '.POSIX:\nlibc_C_0_OBJS=' > "${DEPS}/libc.C_0"
+	# Assume all assembly is useful regardless of standard version
+	for file in $(sed -e 's/\.[^.]*\.s$/.ARCH.s/g' .deps/all.s | sort -u); do
+		BASE=$(basename $file .ARCH.s)
+		SRC=$(echo $file | sed -e 's/\.ARCH\./.$(ARCHITECTURE)-$(WORDSIZE)./')
+		printf 'libc.a($(OBJDIR)/%s.$(ARCHITECTURE)-$(WORDSIZE).o): $(OBJDIR)/%s.$(ARCHITECTURE)-$(WORDSIZE).o\n' $BASE $BASE >> "${TOPDIR}/.deps.mk"
+		printf ' \\\n\tlibc.a($(OBJDIR)/%s.$(ARCHITECTURE)-$(WORDSIZE).o)' $BASE >> "${DEPS}/libc.C_0"
+		printf '$(OBJDIR)/%s.$(ARCHITECTURE)-$(WORDSIZE).o: %s\n' $BASE $SRC >> "${TOPDIR}/.deps.mk"
+		printf '\t$(CC) $(BASE_CFLAGS) $(CFLAGS) -c %s -o $@\n' $SRC >> "${TOPDIR}/.deps.mk"
+		printf '\t echo [AS] $@\n\n' >> "${TOPDIR}/.deps.mk"
+	done
 
 	for file in $(cat "${DEPS}/all.c"); do
 		printf 'Building dependencies from %s\n' "$file"
@@ -216,7 +221,8 @@ make_deps_mk() {
 			#for header in $(grep '#include' "${file}"); do
 				#printf ' \\\n\t$(INCDIR)/%s' "$header" >> "${TOPDIR}/.deps.mk"
 			#done
-			printf '\n\t$(CC) $(BASE_CFLAGS) $(CFLAGS) -c %s -o $@\n\n' "$file" >> "${TOPDIR}/.deps.mk"
+			printf '\n\t$(CC) $(BASE_CFLAGS) $(CFLAGS) -c %s -o $@\n' "$file" >> "${TOPDIR}/.deps.mk"
+			printf '\techo [CC] $@\n' >> "${TOPDIR}/.deps.mk"
 
 			cver=$(stdc_base $file)
 			pver=$(posix_base $file)

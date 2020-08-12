@@ -1,0 +1,13 @@
+./src/sys/msg/msgrcv.c
+./src/sys/msg/msgget.c
+./src/sys/msg/struct_msqid_ds.c
+./src/sys/msg/msgctl.c
+./src/sys/msg/msgqnum_t.c
+./src/sys/msg/msgsnd.c
+./src/sys/msg/msglen_t.c
+./src/sys/msg/MSG_NOERROR.c
+./src/sys/msg/time_t.ref
+./src/sys/msg/ipc.ref
+./src/sys/msg/key_t.ref
+./src/sys/msg/size_t.ref
+./src/sys/msg/pid_t.ref

@@ -1,0 +1,13 @@
+./src/sys/ipc/IPC_NOWAIT.c
+./src/sys/ipc/IPC_RMID.c
+./src/sys/ipc/ftok.c
+./src/sys/ipc/struct_ipc_perm.c
+./src/sys/ipc/IPC_SET.c
+./src/sys/ipc/IPC_PRIVATE.c
+./src/sys/ipc/IPC_EXCL.c
+./src/sys/ipc/IPC_CREAT.c
+./src/sys/ipc/IPC_STAT.c
+./src/sys/ipc/uid_t.ref
+./src/sys/ipc/gid_t.ref
+./src/sys/ipc/mode_t.ref
+./src/sys/ipc/key_t.ref

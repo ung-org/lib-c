@@ -1,0 +1,14 @@
+./src/ftw/FTW_DEPTH.c
+./src/ftw/FTW_F.c
+./src/ftw/FTW_SL.c
+./src/ftw/FTW_PHYS.c
+./src/ftw/FTW_DNR.c
+./src/ftw/nftw.c
+./src/ftw/FTW_NS.c
+./src/ftw/FTW_D.c
+./src/ftw/ftw.c
+./src/ftw/FTW_SLN.c
+./src/ftw/FTW_CHDIR.c
+./src/ftw/FTW_MOUNT.c
+./src/ftw/struct_FTW.c
+./src/ftw/struct_stat.ref

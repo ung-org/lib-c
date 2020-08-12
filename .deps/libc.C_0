@@ -1,6 +1,11 @@
 .POSIX:
 libc_C_0_OBJS= \
-	libc.a($(OBJDIR)/$(ARCHITECTURE)-$(WORDSIZE).o) \
+	libc.a($(OBJDIR)/_sys.$(ARCHITECTURE)-$(WORDSIZE).o) \
+	libc.a($(OBJDIR)/__longjmp.$(ARCHITECTURE)-$(WORDSIZE).o) \
+	libc.a($(OBJDIR)/__setjmp.$(ARCHITECTURE)-$(WORDSIZE).o) \
+	libc.a($(OBJDIR)/_XOPEN_SOURCE_EXTENDED.o) \
+	libc.a($(OBJDIR)/_XOPEN_SOURCE.o) \
+	libc.a($(OBJDIR)/_POSIX_C_SOURCE.o) \
 	libc.a($(OBJDIR)/__stderr.o) \
 	libc.a($(OBJDIR)/__stdout.o) \
 	libc.a($(OBJDIR)/__stdin.o) \
@@ -9,10 +14,7 @@ libc_C_0_OBJS= \
 	libc.a($(OBJDIR)/__assert.o) \
 	libc.a($(OBJDIR)/__errno.o) \
 	libc.a($(OBJDIR)/__libc_per_thread.o) \
-	libc.a($(OBJDIR)/__libc_start.o) \
 	libc.a($(OBJDIR)/__libc.o) \
-	libc.a($(OBJDIR)/_XOPEN_SOURCE_EXTENDED.o) \
-	libc.a($(OBJDIR)/_XOPEN_SOURCE.o) \
-	libc.a($(OBJDIR)/_POSIX_C_SOURCE.o) \
 	libc.a($(OBJDIR)/__load_locale.o) \
+	libc.a($(OBJDIR)/__main.o) \
 	libc.a($(OBJDIR)/__stdlib.o)

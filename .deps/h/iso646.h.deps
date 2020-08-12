@@ -1,0 +1,11 @@
+./src/iso646/not_eq.c
+./src/iso646/xor_eq.c
+./src/iso646/compl.c
+./src/iso646/or_eq.c
+./src/iso646/bitor.c
+./src/iso646/bitand.c
+./src/iso646/or.c
+./src/iso646/and.c
+./src/iso646/xor.c
+./src/iso646/and_eq.c
+./src/iso646/not.c

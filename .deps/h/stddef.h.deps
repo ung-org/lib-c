@@ -1,0 +1,5 @@
+./src/stddef/wchar_t.c
+./src/stddef/offsetof.c
+./src/stddef/ptrdiff_t.c
+./src/stddef/size_t.c
+./src/stddef/NULL.c

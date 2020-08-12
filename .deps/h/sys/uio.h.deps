@@ -1,0 +1,3 @@
+./src/sys/uio/struct_iovec.c
+./src/sys/uio/readv.c
+./src/sys/uio/writev.c

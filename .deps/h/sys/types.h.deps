@@ -1,0 +1,17 @@
+./src/sys/types/nlink_t.c
+./src/sys/types/mode_t.c
+./src/sys/types/key_t.c
+./src/sys/types/useconds_t.c
+./src/sys/types/ssize_t.c
+./src/sys/types/dev_t.c
+./src/sys/types/id_t.c
+./src/sys/types/gid_t.c
+./src/sys/types/clockid_t.c
+./src/sys/types/timer_t.c
+./src/sys/types/ino_t.c
+./src/sys/types/pid_t.c
+./src/sys/types/uid_t.c
+./src/sys/types/off_t.c
+./src/sys/types/time_t.ref
+./src/sys/types/clock_t.ref
+./src/sys/types/size_t.ref
