@@ -155,7 +155,7 @@ cat <<EOF > .build.mk
 .POSIX:
 
 # work-around GNU ar's default "deterministic" mode
-ARFLAGS=rvU
+ARFLAGS=rU
 
 default: all
 
