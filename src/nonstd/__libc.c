@@ -1,7 +1,5 @@
-#include "sys/types.h"
 #include "../_nonstd.h"
 #include "../locale/_locale.h"
-#include "../stdio/_stdio.h"
 
 void *__libc(LIBC_INTERNAL variable)
 {
@@ -11,9 +9,6 @@ void *__libc(LIBC_INTERNAL variable)
 	void *r = (void*)0;
 
 	switch (variable) {
-	case ERRNO:
-		return __libc_per_thread(ERRNO);
-
 	case THREAD_LOCALE:
 		r = __libc_per_thread(THREAD_LOCALE);
 		if (r) {

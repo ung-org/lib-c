@@ -24,4 +24,5 @@ static struct per_thread *per_thread(void)
 
 /*
 LINK(pthread)
+POSIX(199506)
 */

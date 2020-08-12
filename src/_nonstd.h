@@ -2,9 +2,6 @@
 #define ___NONSTD_H__
 
 typedef enum {
-	/* errno.h */
-	ERRNO,
-
 	/* locale.h */
 	THREAD_LOCALE,
 	GLOBAL_LOCALE,
