@@ -1,0 +1,7 @@
+=======
+[submodule "test"]
+	path = tests
+	url = git@github.com:jkaivo/libc-tests.git
+[submodule "include"]
+	path = include
+	url = git@gitlab.com:ung.org/lib/include.git
