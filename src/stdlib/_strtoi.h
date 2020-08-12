@@ -112,6 +112,10 @@
 		nptr++;
 	}
 
+	if (endptr && (*endptr == NULL)) {
+		*endptr = (void*)nptr;
+	}
+
 	if (overflow) {
 		ret = (sign == 1) ? max : min;
 	} else {
