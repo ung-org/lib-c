@@ -52,6 +52,9 @@
 	if (nptr[0] == '0' && toupper(nptr[1] == 'X')) {
 		return ret;
 	}
+	#else
+	(void)nan;
+	(void)inf;
 	#endif
 
 	while (*nptr) {
