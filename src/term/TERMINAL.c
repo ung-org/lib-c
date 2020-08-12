@@ -1,6 +1,6 @@
 #include <term.h>
 
-typdef struct __TERMINAL TERMINAL;
+typedef struct __TERMINAL TERMINAL;
 
 /*
 XOPEN(400)
