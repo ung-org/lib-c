@@ -5,7 +5,7 @@
 #include "sys/types.h"
 #include "unistd.h"
 
-#include "nonstd/assert.h"
+#include "../_assert.h"
 #include "_stdio.h"
 
 #ifdef __STDC_VERSION__

@@ -1,6 +1,6 @@
 #include <sys/utsname.h>
 #include "string.h"
-#include "nonstd/assert.h"
+#include "../../_assert.h"
 
 # define __PLATFORM__ "x86"
 

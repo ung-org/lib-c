@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "nonstd/assert.h"
+#include "../_assert.h"
 #include "_stdio.h"
 
 /** tests the file stream error indicator **/

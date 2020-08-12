@@ -1,4 +1,8 @@
-#include <nonstd/locale.h>
+#ifndef ___LOCALE_H__
+#define ___LOCALE_H__
+
+#include <locale.h>
+#include <limits.h>
 
 struct __locale_t {
 	char all[UCHAR_MAX];
@@ -55,3 +59,7 @@ struct __locale_t {
 		char *alt_digits;
 	} lc_time;
 };
+
+char * __load_locale(struct __locale_t *, int, const char *);
+
+#endif

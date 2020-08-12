@@ -1,5 +1,5 @@
 #include <time.h>
-#include "nonstd/assert.h"
+#include "../_assert.h"
 
 # define SEC_PER_MIN	(60L)
 # define MIN_PER_HR	(60L)

@@ -1,7 +1,8 @@
 #include <locale.h>
 #include "string.h"
 #include "stdlib.h"
-#include "nonstd/locale.h"
+#include "_locale.h"
+#include "../_nonstd.h"
 
 #include "LC_ALL_MASK.c"
 #include "LC_COLLATE_MASK.c"

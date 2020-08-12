@@ -1,7 +1,7 @@
 #include <wctype.h>
 #include "wchar.h"
 #include "stdlib.h"
-#include "nonstd/assert.h"
+#include "../_assert.h"
 
 /** convert a wide uppercase letter to lowercase **/
 wint_t towlower(wint_t wc)

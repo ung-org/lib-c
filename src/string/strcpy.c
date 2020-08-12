@@ -1,5 +1,5 @@
 #include <string.h>
-#include "nonstd/assert.h"
+#include "../_assert.h"
 
 /** copy string **/
 char * strcpy(char * restrict s1, const char * restrict s2)

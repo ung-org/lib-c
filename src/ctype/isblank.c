@@ -2,7 +2,7 @@
 #include "limits.h"
 #include "locale.h"
 #include "_ctype.h"
-#include "nonstd/assert.h"
+#include "../_assert.h"
 
 /** test whether a character is blank **/
 

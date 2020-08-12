@@ -16,11 +16,19 @@ int setvbuf(FILE *stream, char *buf, int mode, size_t size)
 	stream->buffering = mode;
 	stream->bsize = size;
 
+	if (mode == _IONBF) {
+		/* maybe free buffer */
+		return 0;
+	}
+
 	if (buf != NULL) {
 		stream->buf = buf;
 		stream->buftype = SUPPLIED;
-	} else if (mode != _IONBF) {
-		stream->buf = calloc(size, sizeof(char));
+	} else if (size <= BUFSIZ) {
+		stream->buf = stream->ibuf;
+		stream->buftype = INTERNAL;
+	} else {
+		stream->buf = malloc(size);
 		stream->buftype = ALLOCED;
 	}
 	

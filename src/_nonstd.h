@@ -1,4 +1,5 @@
-#include <nonstd/internal.h>
+#ifndef ___NONSTD_H__
+#define ___NONSTD_H__
 
 typedef enum {
 	/* errno.h */
@@ -15,3 +16,7 @@ typedef enum {
 	TOLOWER,
 	TOUPPER,
 } LIBC_INTERNAL;
+
+void *__libc(LIBC_INTERNAL __variable);
+
+#endif

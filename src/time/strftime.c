@@ -1,8 +1,9 @@
 #include <time.h>
 #include "stdio.h"
-#include "nonstd/assert.h"
+#include "../_assert.h"
 #include "locale.h"
-#include "nonstd/locale.h"
+#include "../locale/_locale.h"
+#include "../_nonstd.h"
 
 /** convert time to a formatted string **/
 

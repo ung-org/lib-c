@@ -1,6 +1,6 @@
-#include "nonstd/internal.h"
+#include "../_nonstd.h"
 #include "locale.h"
-#include "nonstd/locale.h"
+#include "../locale/_locale.h"
 
 #if defined __STDC_VERSION__ && 201112L <= __STDC_VERSION__ && !defined __STDC_NO_THREADS__
 #define THREAD_LOCAL static _Thread_local

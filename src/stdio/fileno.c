@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "_stdio.h"
-#include "nonstd/assert.h"
+#include "../_assert.h"
 
 int fileno(FILE * stream)
 {

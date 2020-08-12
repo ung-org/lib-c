@@ -1,6 +1,6 @@
 #include <wctype.h>
 #include "string.h"
-#include "nonstd/assert.h"
+#include "../_assert.h"
 #include "_wctype.h"
 
 /** lookup character class **/

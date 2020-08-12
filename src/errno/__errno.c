@@ -1,5 +1,5 @@
 #include <errno.h>
-#include "nonstd/internal.h"
+#include "../_nonstd.h"
 
 int *__errno(void)
 {

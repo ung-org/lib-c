@@ -1,9 +1,9 @@
-#include <locale.h>
-#include <limits.h>
-#include <stdio.h>
-#include <string.h>
+#include "locale.h"
+#include "limits.h"
+#include "stdio.h"
+#include "string.h"
 
-#include "nonstd/locale.h"
+#include "_locale.h"
 #include "../ctype/_ctype.h"
 
 #define LC_COLLATE_MASK (1<<0)
@@ -21,7 +21,7 @@
 	} \
 } while (0)
 
-static char * (__load_locale)(struct __locale_t *loc, int mask, const char *name)
+char * __load_locale(struct __locale_t *loc, int mask, const char *name)
 {
 	if (name == NULL) {
 		name = "";
@@ -233,3 +233,7 @@ static char * (__load_locale)(struct __locale_t *loc, int mask, const char *name
 
 	return (char*)name;
 }
+
+/*
+STDC(0)
+*/

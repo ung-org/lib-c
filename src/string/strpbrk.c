@@ -1,5 +1,5 @@
 #include <string.h>
-#include "nonstd/assert.h"
+#include "../_assert.h"
 
 /** count matching characters **/
 char * strpbrk(const char *s1, const char *s2)

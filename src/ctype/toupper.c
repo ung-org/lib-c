@@ -1,7 +1,7 @@
 #include <ctype.h>
 #include "stdio.h"
 #include "limits.h"
-#include "nonstd/assert.h"
+#include "../_assert.h"
 #include "_ctype.h"
 
 /** convert a lowercase letter to uppercase **/

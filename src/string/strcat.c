@@ -1,9 +1,10 @@
 #include <string.h>
-#include "nonstd/assert.h"
+#include "../_assert.h"
 
 /** concatenate strings **/
 char * strcat(char * restrict s1, const char * restrict s2)
 {
+	size_t i = 0;
 	ASSERT_NONNULL(s1);
 	ASSERT_NONNULL(s2);
 	ASSERT_NOOVERLAP(s1, s2, strlen(s1) + strlen(s2));
@@ -11,7 +12,11 @@ char * strcat(char * restrict s1, const char * restrict s2)
 	/*
 	RETURN_ALWAYS(ARGUMENT(s1));
 	*/
-	return strncat(s1, s2, strlen(s2));
+	while (s1[i] != '\0') {
+		i++;
+	}
+
+	return strcpy(s1 + i, s2);
 }
 
 /***

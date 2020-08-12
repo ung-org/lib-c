@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include "errno.h"
 #include "../_syscall.h"
-#include "nonstd/assert.h"
+#include "../_assert.h"
 
 int getgroups(int gidsetsize, gid_t grouplist[])
 {

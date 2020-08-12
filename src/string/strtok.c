@@ -1,5 +1,5 @@
 #include <string.h>
-#include "nonstd/assert.h"
+#include "../_assert.h"
 
 /** split string into tokens **/
 char * strtok(char * restrict s1, const char * restrict s2)

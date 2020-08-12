@@ -1,5 +1,5 @@
 #include <termios.h>
-#include "nonstd/assert.h"
+#include "../_assert.h"
 
 speed_t cfgetispeed(const struct termios *termios_p)
 {

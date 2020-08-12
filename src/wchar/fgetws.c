@@ -1,6 +1,6 @@
 #include <wchar.h>
 #include "stdio.h"
-#include "nonstd/assert.h"
+#include "../_assert.h"
 
 wchar_t * fgetws(wchar_t * restrict s, int n, FILE * restrict stream)
 {

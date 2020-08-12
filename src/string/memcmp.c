@@ -1,5 +1,5 @@
 #include <string.h>
-#include "nonstd/assert.h"
+#include "../_assert.h"
 
 /** compare memory regions **/
 int memcmp(const void *s1, const void *s2, size_t n)

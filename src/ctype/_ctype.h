@@ -1,7 +1,7 @@
 #ifndef ___CTYPE_H__
 #define ___CTYPE_H__
 
-#include "nonstd/internal.h"
+#include "../_nonstd.h"
 
 typedef enum {
 	CT_ALPHA = (1 << 0),

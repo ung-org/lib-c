@@ -1,6 +1,6 @@
 #include <wctype.h>
 #include "wchar.h"
-#include "nonstd/assert.h"
+#include "../_assert.h"
 
 /** test whether a wide character is punctuation **/
 int iswpunct(wint_t wc)

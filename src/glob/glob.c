@@ -6,7 +6,7 @@
 #include "fnmatch.h"
 #include "errno.h"
 #include "unistd.h"
-#include "nonstd/assert.h"
+#include "../_assert.h"
 
 int glob(const char * restrict pattern, int flags, int (*errfunc) (const char * epath, int eerrno), glob_t * restrict pglob)
 {
