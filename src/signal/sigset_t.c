@@ -1,6 +1,8 @@
 #include <signal.h>
 
-typedef unsigned int                                                   sigset_t;
+typedef                                      struct { unsigned char __bits[8]; }
+	sigset_t;
+
 /*
 POSIX(1)
 */
