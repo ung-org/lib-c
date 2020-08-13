@@ -1,8 +1,8 @@
 #include "stddef.h"
 #include "sys/types.h"
 #include <unistd.h>
-#include "../_assert.h"
-#include "../_syscall.h"
+#include "_assert.h"
+#include "_syscall.h"
 
 int pipe(int fildes[2])
 {

@@ -1,6 +1,6 @@
 #include "sys/types.h"
 #include <sys/stat.h>
-#include "../../_syscall.h"
+#include "_syscall.h"
 
 mode_t umask(mode_t cmask)
 {

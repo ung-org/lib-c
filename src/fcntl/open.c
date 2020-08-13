@@ -3,7 +3,7 @@
 #include "sys/stat.h"	/* OH */
 #include "errno.h"
 #include "stdarg.h"
-#include "../_syscall.h"
+#include "_syscall.h"
 
 int open(const char *path, int oflag, ...)
 {

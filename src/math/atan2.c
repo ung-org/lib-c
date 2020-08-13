@@ -2,10 +2,14 @@
 #include <math.h>
 #include "_tgmath.h"
 #include "errno.h"
-#include "../_assert.h"
+#include "_assert.h"
 
 #include "M_PI.c"
 #include "M_PI_2.c"
+
+#ifndef copysign
+#define copysign(_x, _y) _x
+#endif
 
 /** arc tangent **/
 TYPE TGFN(atan2)(TYPE y, TYPE x)

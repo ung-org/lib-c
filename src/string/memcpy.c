@@ -1,5 +1,5 @@
 #include <string.h>
-#include "../_assert.h"
+#include "_assert.h"
 
 /** copy memory **/
 void * memcpy(void * restrict s1, const void * restrict s2, size_t n)

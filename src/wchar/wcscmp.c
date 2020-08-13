@@ -1,5 +1,5 @@
 #include <wchar.h>
-#include "../_assert.h"
+#include "_assert.h"
 
 int wcscmp(const wchar_t * s1, const wchar_t * s2)
 {

@@ -1,6 +1,6 @@
 #include <string.h>
 #include "stdlib.h"
-#include "../_assert.h"
+#include "_assert.h"
 
 /** collate strings **/
 int strcoll(const char *s1, const char *s2)

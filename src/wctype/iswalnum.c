@@ -1,6 +1,6 @@
 #include <wctype.h>
 #include "limits.h"
-#include "../_assert.h"
+#include "_assert.h"
 #include "wchar.h"
 
 /** test whether a wide character is alphanumeric **/

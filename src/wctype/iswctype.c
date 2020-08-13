@@ -1,6 +1,6 @@
 #include <wctype.h>
 #include "wchar.h"
-#include "../_assert.h"
+#include "_assert.h"
 
 /** test whether a wide character is part of a character class **/
 int iswctype(wint_t wc, wctype_t desc)

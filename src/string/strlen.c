@@ -1,5 +1,5 @@
 #include <string.h>
-#include "../_assert.h"
+#include "_assert.h"
 
 /** find string length **/
 size_t strlen(const char *s)

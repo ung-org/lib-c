@@ -1,6 +1,6 @@
 #include "sys/types.h"
 #include <sys/stat.h>
-#include "../../_syscall.h"
+#include "_syscall.h"
 
 #ifndef S_IFIFO
 #include "S_IFIFO.c"

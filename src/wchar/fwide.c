@@ -1,7 +1,7 @@
 #include <wchar.h>
 #include "stdio.h"
-#include "../stdio/_stdio.h"
-#include "../_assert.h"
+#include "stdio/_stdio.h"
+#include "_assert.h"
 
 int fwide(FILE * stream, int mode)
 {

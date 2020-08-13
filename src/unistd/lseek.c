@@ -1,7 +1,7 @@
 #include "stddef.h"
 #include "sys/types.h"
 #include <unistd.h>
-#include "../_syscall.h"
+#include "_syscall.h"
 
 off_t lseek(int fildes, off_t offset, int whence)
 {

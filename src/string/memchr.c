@@ -1,5 +1,5 @@
 #include <string.h>
-#include "../_assert.h"
+#include "_assert.h"
 
 /** search memory **/
 void * memchr(const void *s, int c, size_t n)

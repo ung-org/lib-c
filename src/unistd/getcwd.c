@@ -1,7 +1,7 @@
 #include "sys/types.h"
 #include <unistd.h>
-#include "../_assert.h"
-#include "../_syscall.h"
+#include "_assert.h"
+#include "_syscall.h"
 
 char * getcwd(char *buf, size_t size)
 {

@@ -1,5 +1,5 @@
 #include <time.h>
-#include "../_syscall.h"
+#include "_syscall.h"
 
 int nanosleep(const struct timespec *rqtp, struct timespec *rmtp)
 {

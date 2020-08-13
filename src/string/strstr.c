@@ -1,5 +1,5 @@
 #include <string.h>
-#include "../_assert.h"
+#include "_assert.h"
 
 /** search for substring **/
 char * strstr(const char *s1, const char *s2)

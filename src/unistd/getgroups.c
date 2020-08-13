@@ -2,8 +2,8 @@
 #include "sys/types.h"
 #include <unistd.h>
 #include "errno.h"
-#include "../_syscall.h"
-#include "../_assert.h"
+#include "_syscall.h"
+#include "_assert.h"
 
 int getgroups(int gidsetsize, gid_t grouplist[])
 {

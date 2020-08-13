@@ -1,5 +1,5 @@
 #include <string.h>
-#include "../_assert.h"
+#include "_assert.h"
 
 /** search string from end **/
 char * strrchr(const char *s, int c)

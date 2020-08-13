@@ -5,7 +5,7 @@
 #include "sys/types.h"
 #include "unistd.h"
 #else
-#include "../_syscall.h"
+#include "_syscall.h"
 #define read(_fd, _buf, _size) __syscall(__syscall_lookup(read), _fd, _buf, _size)
 #endif
 

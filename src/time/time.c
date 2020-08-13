@@ -1,6 +1,6 @@
 #include <time.h>
 #include "errno.h"
-#include "../_syscall.h"
+#include "_syscall.h"
 
 /** get current time **/
 

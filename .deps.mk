@@ -4,7 +4,7 @@ default: all
 
 include .config.mk
 
-BASE_CFLAGS=-I$(INCDIR) -fno-builtin -nostdinc
+BASE_CFLAGS=-I$(INCDIR) -Isrc -fno-builtin -nostdinc
 
 libc.a($(OBJDIR)/_sys.$(ARCHITECTURE)-$(WORDSIZE).o): $(OBJDIR)/_sys.$(ARCHITECTURE)-$(WORDSIZE).o
 $(OBJDIR)/_sys.$(ARCHITECTURE)-$(WORDSIZE).o: ./src/_sys.$(ARCHITECTURE)-$(WORDSIZE).s

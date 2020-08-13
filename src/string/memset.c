@@ -1,5 +1,5 @@
 #include <string.h>
-#include "../_assert.h"
+#include "_assert.h"
 
 /** fill memory **/
 void * memset(void *s, int c, size_t n)

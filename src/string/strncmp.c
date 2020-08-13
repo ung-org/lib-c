@@ -1,5 +1,5 @@
 #include <string.h>
-#include "../_assert.h"
+#include "_assert.h"
 
 /** compare bound strings **/
 int strncmp(const char *s1, const char *s2, size_t n)

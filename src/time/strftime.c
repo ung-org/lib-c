@@ -1,9 +1,8 @@
 #include <time.h>
 #include "stdio.h"
-#include "../_assert.h"
+#include "_assert.h"
 #include "locale.h"
-#include "../locale/_locale.h"
-#include "../_nonstd.h"
+#include "locale/_locale.h"
 
 /** convert time to a formatted string **/
 
@@ -11,16 +10,11 @@ size_t strftime(char * restrict s, size_t maxsize, const char * restrict format,
 {
 	size_t converted = 0, i, j;
 	char buf[64];
-	struct __locale_t *lc;
+	struct __locale_t *lc = __get_locale();
 
 	ASSERT_NONNULL(s);
 	ASSERT_NONNULL(format);
 	ASSERT_NONNULL(timeptr);
-
-	lc = __libc(THREAD_LOCALE);
-	if (lc->time[0] == '\0') {
-		lc = __libc(GLOBAL_LOCALE);
-	}
 
 	for (i = 0; format[i] != '\0' && converted < maxsize; i++) {
 		if (format[i] != '%') {

@@ -1,6 +1,6 @@
 #include "sys/types.h"
 #include <sys/mman.h>
-#include "../../_syscall.h"
+#include "_syscall.h"
 
 #ifndef MAP_FAILED
 #include "MAP_FAILED.c"

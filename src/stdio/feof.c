@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "_stdio.h"
-#include "../_assert.h"
+#include "_assert.h"
 
 /** test for end-of-file **/
 int feof(FILE *stream)

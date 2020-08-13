@@ -1,5 +1,5 @@
 #include <string.h>
-#include "../_assert.h"
+#include "_assert.h"
 
 /** transform string **/
 size_t strxfrm(char * restrict s1, const char * restrict s2, size_t n)

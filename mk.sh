@@ -192,7 +192,7 @@ make_deps_mk() {
 
 	printf '.POSIX:\n.SILENT:\ndefault: all\n\n' > "${TOPDIR}/.deps.mk"
 	printf 'include .config.mk\n\n' >> "${TOPDIR}/.deps.mk"
-	printf 'BASE_CFLAGS=-I$(INCDIR) -fno-builtin -nostdinc\n' >> "${TOPDIR}/.deps.mk"
+	printf 'BASE_CFLAGS=-I$(INCDIR) -Isrc -fno-builtin -nostdinc\n' >> "${TOPDIR}/.deps.mk"
 	printf '\n' >> "${TOPDIR}/.deps.mk"
 
 	printf '.POSIX:\nlibc_C_0_OBJS=' > "${DEPS}/libc.C_0"

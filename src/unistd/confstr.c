@@ -2,7 +2,7 @@
 #include <unistd.h>
 #include "errno.h"
 #include "string.h"
-#include "../_assert.h"
+#include "_assert.h"
 
 size_t confstr(int name, char *buf, size_t len)
 {
