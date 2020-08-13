@@ -1866,8 +1866,6 @@
 ./src/termios/NCCS.c
 ./src/termios/TCIOFLUSH.c
 ./src/termios/CS5.c
-./src/nonstd/__libc_per_thread.c
-./src/nonstd/__libc.c
 ./src/stdarg/va_copy.c
 ./src/stdarg/va_list.c
 ./src/stdarg/va_arg.c
@@ -2633,6 +2631,7 @@
 ./src/locale/LC_ALL.c
 ./src/locale/LC_NUMERIC.c
 ./src/locale/LC_ALL_MASK.c
+./src/locale/__get_locale.c
 ./src/locale/struct_lconv.c
 ./src/locale/LC_TIME.c
 ./src/locale/LC_TIME_MASK.c

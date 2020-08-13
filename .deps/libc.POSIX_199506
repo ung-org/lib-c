@@ -3,6 +3,4 @@ libc_POSIX_199506_OBJS= \
 	libc.a($(OBJDIR)/funlockfile.o) \
 	libc.a($(OBJDIR)/getchar_unlocked.o) \
 	libc.a($(OBJDIR)/flockfile.o) \
-	libc.a($(OBJDIR)/putchar_unlocked.o) \
-	libc.a($(OBJDIR)/putc_unlocked.o) \
-	libc.a($(OBJDIR)/getc_unlocked.o)
+	libc.a($(OBJDIR)/putchar_unlocked.o)

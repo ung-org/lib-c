@@ -28,7 +28,7 @@ struct __locale_t {
 
 	char monetary[UCHAR_MAX];
 	char numeric[UCHAR_MAX];
-	struct lconv mn;
+	struct lconv lconv;
 
 	char time[UCHAR_MAX];
 	struct {
@@ -60,6 +60,7 @@ struct __locale_t {
 	} lc_time;
 };
 
-char * __load_locale(struct __locale_t *, int, const char *);
+char * __load_locale(struct __locale_t *loc, int mask, const char *name);
+struct __locale_t * __get_locale(void);
 
 #endif

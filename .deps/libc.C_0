@@ -13,8 +13,7 @@ libc_C_0_OBJS= \
 	libc.a($(OBJDIR)/__printf.o) \
 	libc.a($(OBJDIR)/__assert.o) \
 	libc.a($(OBJDIR)/__errno.o) \
-	libc.a($(OBJDIR)/__libc_per_thread.o) \
-	libc.a($(OBJDIR)/__libc.o) \
+	libc.a($(OBJDIR)/__get_locale.o) \
 	libc.a($(OBJDIR)/__load_locale.o) \
 	libc.a($(OBJDIR)/__main.o) \
 	libc.a($(OBJDIR)/__stdlib.o)

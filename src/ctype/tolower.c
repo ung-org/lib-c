@@ -1,14 +1,13 @@
 #include <ctype.h>
 #include "stdio.h"
 #include "limits.h"
-#include "../_assert.h"
 #include "_ctype.h"
 
 /** convert an uppercase letter to lowercase **/
 
 int tolower(int c)
 {
-	unsigned char *map = __libc(TOLOWER);
+	unsigned char *map = __get_locale()->lc_ctype.ctolower;
 
 	ASSERT_REPRESENTABLE(c, 0, UCHAR_MAX, unsigned char, EOF);
 

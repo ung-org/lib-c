@@ -7,7 +7,7 @@
 
 int isupper(int c)
 {
-	unsigned int *map = __libc(CTYPE);
+	unsigned int *map = __get_locale()->lc_ctype.ctattr;
 
 	ASSERT_REPRESENTABLE(c, 0, UCHAR_MAX, unsigned char, EOF);
 

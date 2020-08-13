@@ -110,40 +110,40 @@ char * __load_locale(struct __locale_t *loc, int mask, const char *name)
 		strcpy(loc->monetary, name);
 
 		if (localefile == NULL) {
-			loc->mn.mon_decimal_point = "";
-			loc->mn.mon_thousands_sep = "";
-			loc->mn.mon_grouping = "";
-			loc->mn.positive_sign = "";
-			loc->mn.negative_sign =  "";
-			loc->mn.currency_symbol = "";
-			loc->mn.frac_digits = CHAR_MAX;
-			loc->mn.p_cs_precedes = CHAR_MAX;
-			loc->mn.n_cs_precedes = CHAR_MAX;
-			loc->mn.p_sep_by_space = CHAR_MAX;
-			loc->mn.n_sep_by_space = CHAR_MAX;
-			loc->mn.p_sign_posn = CHAR_MAX;
-			loc->mn.n_sign_posn = CHAR_MAX;
-			loc->mn.int_curr_symbol = "";
-			loc->mn.int_frac_digits = CHAR_MAX;
+			loc->lconv.mon_decimal_point = "";
+			loc->lconv.mon_thousands_sep = "";
+			loc->lconv.mon_grouping = "";
+			loc->lconv.positive_sign = "";
+			loc->lconv.negative_sign =  "";
+			loc->lconv.currency_symbol = "";
+			loc->lconv.frac_digits = CHAR_MAX;
+			loc->lconv.p_cs_precedes = CHAR_MAX;
+			loc->lconv.n_cs_precedes = CHAR_MAX;
+			loc->lconv.p_sep_by_space = CHAR_MAX;
+			loc->lconv.n_sep_by_space = CHAR_MAX;
+			loc->lconv.p_sign_posn = CHAR_MAX;
+			loc->lconv.n_sign_posn = CHAR_MAX;
+			loc->lconv.int_curr_symbol = "";
+			loc->lconv.int_frac_digits = CHAR_MAX;
 
 			#if defined __STDC_VERSION__ && 199901 <= __STDC_VERSION__
-			loc->mn.int_p_cs_precedes = CHAR_MAX;
-			loc->mn.int_n_cs_precedes = CHAR_MAX;
-			loc->mn.int_p_sep_by_space = CHAR_MAX;
-			loc->mn.int_n_sep_by_space = CHAR_MAX;
-			loc->mn.int_p_sign_posn = CHAR_MAX;
-			loc->mn.int_n_sign_posn = CHAR_MAX;
+			loc->lconv.int_p_cs_precedes = CHAR_MAX;
+			loc->lconv.int_n_cs_precedes = CHAR_MAX;
+			loc->lconv.int_p_sep_by_space = CHAR_MAX;
+			loc->lconv.int_n_sep_by_space = CHAR_MAX;
+			loc->lconv.int_p_sign_posn = CHAR_MAX;
+			loc->lconv.int_n_sign_posn = CHAR_MAX;
 			#else
-			loc->mn.__int_p_cs_precedes = CHAR_MAX;
-			loc->mn.__int_n_cs_precedes = CHAR_MAX;
-			loc->mn.__int_p_sep_by_space = CHAR_MAX;
-			loc->mn.__int_n_sep_by_space = CHAR_MAX;
-			loc->mn.__int_p_sign_posn = CHAR_MAX;
-			loc->mn.__int_n_sign_posn = CHAR_MAX;
+			loc->lconv.__int_p_cs_precedes = CHAR_MAX;
+			loc->lconv.__int_n_cs_precedes = CHAR_MAX;
+			loc->lconv.__int_p_sep_by_space = CHAR_MAX;
+			loc->lconv.__int_n_sep_by_space = CHAR_MAX;
+			loc->lconv.__int_p_sign_posn = CHAR_MAX;
+			loc->lconv.__int_n_sign_posn = CHAR_MAX;
 			#endif
 		} else {
 			/*
-			loc->mn.monetary fields;
+			loc->lconv.monetary fields;
 			*/
 		}
 	}
@@ -152,12 +152,12 @@ char * __load_locale(struct __locale_t *loc, int mask, const char *name)
 		strcpy(loc->numeric, name);
 
 		if (localefile == NULL) {
-			loc->mn.decimal_point = ".";
-			loc->mn.thousands_sep = "";
-			loc->mn.grouping = "";
+			loc->lconv.decimal_point = ".";
+			loc->lconv.thousands_sep = "";
+			loc->lconv.grouping = "";
 		} else {
 			/*
-			loc->mn.numeric fields
+			loc->lconv.numeric fields
 			*/
 		}
 	}

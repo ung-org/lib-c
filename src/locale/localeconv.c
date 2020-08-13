@@ -1,6 +1,5 @@
 #include <locale.h>
 #include "_locale.h"
-#include "../_nonstd.h"
 
 /** return locale-specific information **/
 struct lconv * localeconv(void)
@@ -8,7 +7,7 @@ struct lconv * localeconv(void)
 	/*
 	RETURN_SUCCESS(a pointer to a filled-in STRUCTDEF(lconv) for the current locale);
 	*/
-	return __libc(LCONV);
+	return &(__get_locale()->lconv);
 }
 
 /***

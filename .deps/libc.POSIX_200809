@@ -1,8 +1,5 @@
 .POSIX:
 libc_POSIX_200809_OBJS= \
-	libc.a($(OBJDIR)/fstatvfs.o) \
-	libc.a($(OBJDIR)/statvfs.o) \
-	libc.a($(OBJDIR)/waitid.o) \
 	libc.a($(OBJDIR)/strcasecmp.o) \
 	libc.a($(OBJDIR)/strncasecmp.o) \
 	libc.a($(OBJDIR)/lchown.o) \

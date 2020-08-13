@@ -1,21 +1,13 @@
 .POSIX:
 libc_XOPEN_400_OBJS= \
-	libc.a($(OBJDIR)/fstatvfs.o) \
-	libc.a($(OBJDIR)/statvfs.o) \
 	libc.a($(OBJDIR)/setrlimit.o) \
 	libc.a($(OBJDIR)/setpriority.o) \
 	libc.a($(OBJDIR)/getpriority.o) \
 	libc.a($(OBJDIR)/getrusage.o) \
 	libc.a($(OBJDIR)/getrlimit.o) \
-	libc.a($(OBJDIR)/setitimer.o) \
-	libc.a($(OBJDIR)/gettimeofday.o) \
-	libc.a($(OBJDIR)/utimes.o) \
-	libc.a($(OBJDIR)/getitimer.o) \
-	libc.a($(OBJDIR)/select.o) \
 	libc.a($(OBJDIR)/ftok.o) \
 	libc.a($(OBJDIR)/readv.o) \
 	libc.a($(OBJDIR)/writev.o) \
-	libc.a($(OBJDIR)/waitid.o) \
 	libc.a($(OBJDIR)/wait3.o) \
 	libc.a($(OBJDIR)/mmap.o) \
 	libc.a($(OBJDIR)/mprotect.o) \
@@ -84,10 +76,6 @@ libc_XOPEN_400_OBJS= \
 	libc.a($(OBJDIR)/endgrent.o) \
 	libc.a($(OBJDIR)/getgrent.o) \
 	libc.a($(OBJDIR)/setgrent.o) \
-	libc.a($(OBJDIR)/makecontext.o) \
-	libc.a($(OBJDIR)/swapcontext.o) \
-	libc.a($(OBJDIR)/getcontext.o) \
-	libc.a($(OBJDIR)/setcontext.o) \
 	libc.a($(OBJDIR)/getpwent.o) \
 	libc.a($(OBJDIR)/setpwent.o) \
 	libc.a($(OBJDIR)/endpwent.o) \

@@ -21,14 +21,6 @@ $(OBJDIR)/__setjmp.$(ARCHITECTURE)-$(WORDSIZE).o: ./src/setjmp/__setjmp.$(ARCHIT
 	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/setjmp/__setjmp.$(ARCHITECTURE)-$(WORDSIZE).s -o $@
 	 echo [AS] $@
 
-libc.a(fstatvfs.o): $(OBJDIR)/fstatvfs.o
-$(OBJDIR)/fstatvfs.o: ./src/sys/statvfs/fstatvfs.c
-	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/sys/statvfs/fstatvfs.c -o $@
-	echo [CC] $@
-libc.a(statvfs.o): $(OBJDIR)/statvfs.o
-$(OBJDIR)/statvfs.o: ./src/sys/statvfs/statvfs.c
-	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/sys/statvfs/statvfs.c -o $@
-	echo [CC] $@
 libc.a(times.o): $(OBJDIR)/times.o
 $(OBJDIR)/times.o: ./src/sys/times/times.c
 	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/sys/times/times.c -o $@
@@ -69,26 +61,6 @@ libc.a(shmdt.o): $(OBJDIR)/shmdt.o
 $(OBJDIR)/shmdt.o: ./src/sys/shm/shmdt.c
 	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/sys/shm/shmdt.c -o $@
 	echo [CC] $@
-libc.a(setitimer.o): $(OBJDIR)/setitimer.o
-$(OBJDIR)/setitimer.o: ./src/sys/time/setitimer.c
-	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/sys/time/setitimer.c -o $@
-	echo [CC] $@
-libc.a(gettimeofday.o): $(OBJDIR)/gettimeofday.o
-$(OBJDIR)/gettimeofday.o: ./src/sys/time/gettimeofday.c
-	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/sys/time/gettimeofday.c -o $@
-	echo [CC] $@
-libc.a(utimes.o): $(OBJDIR)/utimes.o
-$(OBJDIR)/utimes.o: ./src/sys/time/utimes.c
-	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/sys/time/utimes.c -o $@
-	echo [CC] $@
-libc.a(getitimer.o): $(OBJDIR)/getitimer.o
-$(OBJDIR)/getitimer.o: ./src/sys/time/getitimer.c
-	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/sys/time/getitimer.c -o $@
-	echo [CC] $@
-libc.a(select.o): $(OBJDIR)/select.o
-$(OBJDIR)/select.o: ./src/sys/time/select.c
-	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/sys/time/select.c -o $@
-	echo [CC] $@
 libc.a(ftok.o): $(OBJDIR)/ftok.o
 $(OBJDIR)/ftok.o: ./src/sys/ipc/ftok.c
 	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/sys/ipc/ftok.c -o $@
@@ -116,10 +88,6 @@ $(OBJDIR)/semop.o: ./src/sys/sem/semop.c
 libc.a(semctl.o): $(OBJDIR)/semctl.o
 $(OBJDIR)/semctl.o: ./src/sys/sem/semctl.c
 	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/sys/sem/semctl.c -o $@
-	echo [CC] $@
-libc.a(waitid.o): $(OBJDIR)/waitid.o
-$(OBJDIR)/waitid.o: ./src/sys/wait/waitid.c
-	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/sys/wait/waitid.c -o $@
 	echo [CC] $@
 libc.a(wait.o): $(OBJDIR)/wait.o
 $(OBJDIR)/wait.o: ./src/sys/wait/wait.c
@@ -753,10 +721,6 @@ libc.a(perror.o): $(OBJDIR)/perror.o
 $(OBJDIR)/perror.o: ./src/stdio/perror.c
 	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/stdio/perror.c -o $@
 	echo [CC] $@
-libc.a(putc_unlocked.o): $(OBJDIR)/putc_unlocked.o
-$(OBJDIR)/putc_unlocked.o: ./src/stdio/putc_unlocked.c
-	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/stdio/putc_unlocked.c -o $@
-	echo [CC] $@
 libc.a(fscanf.o): $(OBJDIR)/fscanf.o
 $(OBJDIR)/fscanf.o: ./src/stdio/fscanf.c
 	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/stdio/fscanf.c -o $@
@@ -788,10 +752,6 @@ $(OBJDIR)/rewind.o: ./src/stdio/rewind.c
 libc.a(ungetc.o): $(OBJDIR)/ungetc.o
 $(OBJDIR)/ungetc.o: ./src/stdio/ungetc.c
 	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/stdio/ungetc.c -o $@
-	echo [CC] $@
-libc.a(getc_unlocked.o): $(OBJDIR)/getc_unlocked.o
-$(OBJDIR)/getc_unlocked.o: ./src/stdio/getc_unlocked.c
-	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/stdio/getc_unlocked.c -o $@
 	echo [CC] $@
 libc.a(putw.o): $(OBJDIR)/putw.o
 $(OBJDIR)/putw.o: ./src/stdio/putw.c
@@ -1401,22 +1361,6 @@ libc.a(setgrent.o): $(OBJDIR)/setgrent.o
 $(OBJDIR)/setgrent.o: ./src/grp/setgrent.c
 	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/grp/setgrent.c -o $@
 	echo [CC] $@
-libc.a(makecontext.o): $(OBJDIR)/makecontext.o
-$(OBJDIR)/makecontext.o: ./src/ucontext/makecontext.c
-	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/ucontext/makecontext.c -o $@
-	echo [CC] $@
-libc.a(swapcontext.o): $(OBJDIR)/swapcontext.o
-$(OBJDIR)/swapcontext.o: ./src/ucontext/swapcontext.c
-	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/ucontext/swapcontext.c -o $@
-	echo [CC] $@
-libc.a(getcontext.o): $(OBJDIR)/getcontext.o
-$(OBJDIR)/getcontext.o: ./src/ucontext/getcontext.c
-	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/ucontext/getcontext.c -o $@
-	echo [CC] $@
-libc.a(setcontext.o): $(OBJDIR)/setcontext.o
-$(OBJDIR)/setcontext.o: ./src/ucontext/setcontext.c
-	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/ucontext/setcontext.c -o $@
-	echo [CC] $@
 libc.a(strfmon.o): $(OBJDIR)/strfmon.o
 $(OBJDIR)/strfmon.o: ./src/monetary/strfmon.c
 	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/monetary/strfmon.c -o $@
@@ -1700,14 +1644,6 @@ $(OBJDIR)/tcflush.o: ./src/termios/tcflush.c
 libc.a(cfgetospeed.o): $(OBJDIR)/cfgetospeed.o
 $(OBJDIR)/cfgetospeed.o: ./src/termios/cfgetospeed.c
 	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/termios/cfgetospeed.c -o $@
-	echo [CC] $@
-libc.a(__libc_per_thread.o): $(OBJDIR)/__libc_per_thread.o
-$(OBJDIR)/__libc_per_thread.o: ./src/nonstd/__libc_per_thread.c
-	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/nonstd/__libc_per_thread.c -o $@
-	echo [CC] $@
-libc.a(__libc.o): $(OBJDIR)/__libc.o
-$(OBJDIR)/__libc.o: ./src/nonstd/__libc.c
-	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/nonstd/__libc.c -o $@
 	echo [CC] $@
 librt.a(mq_close.o): $(OBJDIR)/mq_close.o
 $(OBJDIR)/mq_close.o: ./src/mqueue/mq_close.c
@@ -2976,6 +2912,10 @@ $(OBJDIR)/strtoimax.o: ./src/inttypes/strtoimax.c
 libc.a(localeconv.o): $(OBJDIR)/localeconv.o
 $(OBJDIR)/localeconv.o: ./src/locale/localeconv.c
 	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/locale/localeconv.c -o $@
+	echo [CC] $@
+libc.a(__get_locale.o): $(OBJDIR)/__get_locale.o
+$(OBJDIR)/__get_locale.o: ./src/locale/__get_locale.c
+	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/locale/__get_locale.c -o $@
 	echo [CC] $@
 libc.a(__load_locale.o): $(OBJDIR)/__load_locale.o
 $(OBJDIR)/__load_locale.o: ./src/locale/__load_locale.c

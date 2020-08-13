@@ -2,7 +2,6 @@
 #include "string.h"
 #include "stdlib.h"
 #include "_locale.h"
-#include "../_nonstd.h"
 
 #include "LC_ALL_MASK.c"
 #include "LC_COLLATE_MASK.c"
@@ -14,7 +13,7 @@
 
 char * setlocale(int category, const char *locale)
 {
-	struct __locale_t *l = __libc(GLOBAL_LOCALE);
+	struct __locale_t *l = __get_locale();
 	int mask = 0;
 
 	if (locale == NULL) {
