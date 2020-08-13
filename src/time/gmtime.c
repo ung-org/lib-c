@@ -11,7 +11,7 @@
 # define ISLEAPYEAR(y)	((y) % 4L == 0 && ((y) % 100L != 0 || (y) % 400L == 0))
 # define EPOCH_YEAR	(70)
 
-/** convert arithmetic time to borken down time **/
+/** convert arithmetic time to broken down time **/
 
 struct tm * gmtime(const time_t * timer)
 {
