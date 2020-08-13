@@ -5,7 +5,6 @@
 /** write formatted output **/
 int printf(const char *format, ...)
 {
-
 	int ret = 0;
 	va_list ap;
 	struct io_options opt = {0};

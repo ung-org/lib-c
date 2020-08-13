@@ -3,8 +3,9 @@
 
 #if !defined _POSIX_C_SOURCE || _POSIX_C_SOURCE < 199506L
 #undef putc_unlocked
+#define putc_unlocked fputc
 #include "putc_unlocked.c"
-#endif
+#else
 
 /** write a character to a file stream **/
 int fputc(int c, FILE *stream)
@@ -15,6 +16,8 @@ int fputc(int c, FILE *stream)
 	funlockfile(stream);
 	return ret;
 }
+
+#endif
 
 /***
 writes the character ARGUMENT(c) (converted to an TYPE(unsigned char)) to

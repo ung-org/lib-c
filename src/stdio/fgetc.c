@@ -3,8 +3,9 @@
 
 #if !defined _POSIX_C_SOURCE || _POSIX_C_SOURCE < 199506L
 #undef getc_unlocked
+#define getc_unlocked fgetc
 #include "getc_unlocked.c"
-#endif
+#else
 
 /** read a character from a file stream **/
 int fgetc(FILE *stream)
@@ -18,6 +19,8 @@ int fgetc(FILE *stream)
 	*/
 	return c;
 }
+
+#endif
 
 /***
 reads the next character from ARGUMENT(stream) as an

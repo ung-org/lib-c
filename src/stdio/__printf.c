@@ -1,5 +1,7 @@
 #include "_stdio.h"
 #include "stddef.h"
+#include "../wctype/wint_t.c"
+#include "../wctype/wctrans_t.c"
 #include "wchar.h"
 #include "inttypes.h"
 #include "unistd.h"
