@@ -1,10 +1,10 @@
 #include "sys/types.h"
 #include <sys/stat.h>
+#include "../../_syscall.h"
 
 int fstat(int fildes, struct stat *buf)
 {
-	(void)fildes; (void)buf;
-	return 0;
+	SYSCALL(fstat, int, -1, fildes, buf, 0, 0, 0, 0);
 }
 /*
 POSIX(1)
