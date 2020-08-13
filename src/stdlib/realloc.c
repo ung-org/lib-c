@@ -1,15 +1,20 @@
 #include <stdlib.h>
-#if defined _POSIX_C_SOURCE && 199305L <= _POSIX_C_SOURCE
 #include "sys/types.h"
 #include "fcntl.h"
 #include "sys/mman.h"
+#if defined _POSIX_C_SOURCE && 199305L <= _POSIX_C_SOURCE
+/* mu */
+#else
+#include "../sys/mman/mmap.c"
+#define PROT_READ 0x1
+#define PROT_WRITE 0x2
+#define MAP_PRIVATE 0x2
 #endif
 
 /** change the amount of memory allocated **/
 
 void * realloc(void * ptr, size_t size)
 {
-#if defined _POSIX_C_SOURCE && 199305L <= _POSIX_C_SOURCE
 	/* FIXME: forward dependency on POSIX.1b-1993, non-std /dev/zero */
 	static int backing = -1;
 
@@ -26,9 +31,6 @@ void * realloc(void * ptr, size_t size)
 	}
 
 	/* TODO: reallocate */
-#else
-	(void)size;
-#endif
 
 	return ptr;
 }
