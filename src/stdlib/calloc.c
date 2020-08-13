@@ -6,12 +6,17 @@
 void * calloc(size_t nmemb, size_t size)
 {
 	void *p = NULL;
+	size_t total = nmemb * size;
+
+	if (total < nmemb || total < size) {
+		return NULL;
+	}
 
 	if (nmemb == 0 || size == 0) {
 		return NULL;
 	}
 
-	p = realloc(NULL, size * nmemb);
+	p = malloc(total);
 	if (p != NULL) {
 		memset(p, 0, size * nmemb);
 	}
