@@ -1,10 +1,10 @@
 #include "sys/types.h"
 #include <signal.h>
+#include "_syscall.h"
 
 int sigsuspend(const sigset_t * sigmask)
 {
-	(void)sigmask;
-	return 0;
+	SYSCALL(sigsuspend, int, -1, sigmask, sizeof(*sigmask), 0, 0, 0, 0);
 }
 /*
 POSIX(1)

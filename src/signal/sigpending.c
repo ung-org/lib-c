@@ -1,10 +1,10 @@
 #include "sys/types.h"
 #include <signal.h>
+#include "_syscall.h"
 
 int sigpending(sigset_t * set)
 {
-	(void)set;
-	return 0;
+	SYSCALL(sigpending, int, -1, set, sizeof(*set), 0, 0, 0, 0);
 }
 /*
 POSIX(1)
