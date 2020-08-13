@@ -5,11 +5,7 @@
 
 unsigned alarm(unsigned seconds)
 {
-	#if 0
-	SC(unsigned, seconds);
-	#else
-	return seconds;
-	#endif
+	SYSCALL(alarm, unsigned, 0, seconds, 0, 0, 0, 0, 0);
 }
 /*
 POSIX(1)
