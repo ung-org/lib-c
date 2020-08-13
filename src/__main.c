@@ -51,7 +51,7 @@ void __main(int argc, char **argv)
 	stdout->prev = stdin;
 	stderr->prev = stdout;
 
-        /* setlocale(LC_ALL, DEFAULT_LOCALE); */
+	setlocale(LC_ALL, DEFAULT_LOCALE);
 
-        exit(main(argc, argv));
+	exit(main(argc, argv));
 }
