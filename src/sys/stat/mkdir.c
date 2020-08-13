@@ -4,8 +4,7 @@
 
 int mkdir(const char *path, mode_t mode)
 {
-	(void)path; (void)mode;
-	return -1;
+	SYSCALL(mkdir, int, -1, path, mode, 0, 0, 0, 0);
 }
 
 /*
