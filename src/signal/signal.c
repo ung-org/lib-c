@@ -2,18 +2,40 @@
 #include "sys/types.h"
 #endif
 
+#include "stddef.h"
 #include <signal.h>
+
+#ifndef _POSIX_SOURCE
+#include "sigaction.c"
+#include "sigemptyset.c"
+#include "sigaddset.c"
+#endif
+
+#undef SA_RESTART
+#ifndef SA_RESTART
+/* #include "SA_RESTART.c" */
+#define SA_RESTART 0x10000000
+#endif
 
 /** set a signal handler **/
 void (*signal(int sig, void (*func)(int)))(int)
 {
-	(void)sig;
-	/* TODO */
+	struct sigaction sa = { 0 }, osa = { 0 };
+	sa.sa_handler = func;
+	sigemptyset(&sa.sa_mask);
+	sigaddset(&sa.sa_mask, sig);
+	sa.sa_flags = SA_RESTART;
+
+	if (sigaction(sig, &sa, &osa) != 0) {
+		return SIG_ERR;
+	}
+
 	/*
 	RETURN_SUCCESS(a pointer to the signal handler);
 	RETURN_FAILURE(CONSTANT(SIG_ERR), the request could not be honored);
 	*/
-	return func;
+
+	return osa.sa_handler;
 }
 
 /***
