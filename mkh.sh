@@ -41,6 +41,18 @@ for i in $(cat "${TOPDIR}/.deps/h/${HEADERNAME}.deps" | sort -u); do
 	printf '%s <%s> (%s)\n' "$i" "$HEADER" "$version" >&2
 done
 
+###
+### TODO: prevent _XOPEN_SOURCE expanding to empty string
+###
+if grep -Fq -e '_XOPEN_SOURCE <' -e '< _XOPEN_SOURCE' $(cat $(HEADER.*/*); then
+cat <<-EOF
+	#if defined _XOPEN_SOURCE && _XOPEN_SOURCE - 1 < 0
+	#	undef _XOPEN_SOURCE
+	#	define _XOPEN_SOURCE 400
+	#endif
+EOF
+fi
+
 if grep -Fq 'POSIX(' $(cat $HEADER.*/*); then
 cat <<-EOF
 	#if defined _XOPEN_SOURCE && !defined _POSIX_C_SOURCE
@@ -59,6 +71,18 @@ cat <<-EOF
 	#	define _POSIX_SOURCE
 	#endif
 
+EOF
+fi
+
+if grep -Fq -e 'POSIX(' -e 'XOPEN(' $(cat $HEADER.*/*); then
+cat <<-EOF
+	#if !defined __STDC_VERSION__ || __STDC_VERSION__ < 19901L
+	#	if (defined _POSIX_C_SOURCE && _POSIX_C_SOURCE >= 200112L)
+	#		error POSIX.1-2001 and later require a C99 compiler
+	#	elif(defined _XOPEN_SOURCE && _XOPEN_SOURCE >= 600)
+	#		error XOPEN Issue 6 and later require a C99 compiler
+	#	endif
+	#endif
 EOF
 fi
 
