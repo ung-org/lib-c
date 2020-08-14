@@ -68,6 +68,7 @@ libc_POSIX_1_OBJS= \
 	libc.a($(OBJDIR)/dup.o) \
 	libc.a($(OBJDIR)/getgid.o) \
 	libc.a($(OBJDIR)/sleep.o) \
+	libc.a($(OBJDIR)/__grp.o) \
 	libc.a($(OBJDIR)/getgrnam.o) \
 	libc.a($(OBJDIR)/getgrgid.o) \
 	libc.a($(OBJDIR)/closedir.o) \

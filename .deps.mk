@@ -1349,6 +1349,10 @@ libc.a(nl_langinfo.o): $(OBJDIR)/nl_langinfo.o
 $(OBJDIR)/nl_langinfo.o: ./src/langinfo/nl_langinfo.c
 	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/langinfo/nl_langinfo.c -o $@
 	echo [CC] $@
+libc.a(__grp.o): $(OBJDIR)/__grp.o
+$(OBJDIR)/__grp.o: ./src/grp/__grp.c
+	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/grp/__grp.c -o $@
+	echo [CC] $@
 libc.a(getgrnam.o): $(OBJDIR)/getgrnam.o
 $(OBJDIR)/getgrnam.o: ./src/grp/getgrnam.c
 	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/grp/getgrnam.c -o $@

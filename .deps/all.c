@@ -1027,6 +1027,7 @@
 ./src/langinfo/ERA.c
 ./src/langinfo/MON_9.c
 ./src/langinfo/T_FMT.c
+./src/grp/__grp.c
 ./src/grp/getgrnam.c
 ./src/grp/getgrgid.c
 ./src/grp/endgrent.c
