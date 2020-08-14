@@ -75,7 +75,7 @@ struct passwd * getpwnam(const char * name)
 		}
 
 		pwd.pw_name = user;
-		pwd.pw_uid = strtoul(gid, NULL, 10);
+		pwd.pw_uid = strtoul(uid, NULL, 10);
 		pwd.pw_gid = strtoul(gid, NULL, 10);
 		pwd.pw_dir = home;
 		pwd.pw_shell = shell;
