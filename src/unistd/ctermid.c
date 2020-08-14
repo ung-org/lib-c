@@ -2,16 +2,16 @@
 #include "sys/types.h"
 #include <unistd.h>
 #include "stdio.h"
+#include "stdio/_stdio.h"
 #include "string.h"
 
 char * ctermid(char * s)
 {
-	static char termid[L_ctermid] = "/dev/tty";
-	
+	/* TODO: return the empty string if there is no controlling terminal */
 	if (s == NULL) {
-		s = termid;
+		s = __stdio.ctermid;
 	} else {
-		strcpy(s, termid);
+		strcpy(s, __stdio.ctermid);
 	}
 
 	return s;
