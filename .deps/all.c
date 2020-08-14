@@ -888,6 +888,7 @@
 ./src/unistd/_POSIX_JOB_CONTROL.c
 ./src/unistd/_PC_LINK_MAX.c
 ./src/unistd/_POSIX2_VERSION.c
+./src/unistd/__unistd.c
 ./src/unistd/_PC_PIPE_BUF.c
 ./src/unistd/STDIN_FILENO.c
 ./src/unistd/_SC_ASYNCHRONOUS_IO.c

@@ -61,6 +61,7 @@ libc_POSIX_1_OBJS= \
 	libc.a($(OBJDIR)/execlp.o) \
 	libc.a($(OBJDIR)/pipe.o) \
 	libc.a($(OBJDIR)/cuserid.o) \
+	libc.a($(OBJDIR)/__unistd.o) \
 	libc.a($(OBJDIR)/getgroups.o) \
 	libc.a($(OBJDIR)/chown.o) \
 	libc.a($(OBJDIR)/getpid.o) \

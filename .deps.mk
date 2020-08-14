@@ -1129,6 +1129,10 @@ libc.a(confstr.o): $(OBJDIR)/confstr.o
 $(OBJDIR)/confstr.o: ./src/unistd/confstr.c
 	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/unistd/confstr.c -o $@
 	echo [CC] $@
+libc.a(__unistd.o): $(OBJDIR)/__unistd.o
+$(OBJDIR)/__unistd.o: ./src/unistd/__unistd.c
+	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/unistd/__unistd.c -o $@
+	echo [CC] $@
 libc.a(getgroups.o): $(OBJDIR)/getgroups.o
 $(OBJDIR)/getgroups.o: ./src/unistd/getgroups.c
 	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/unistd/getgroups.c -o $@
