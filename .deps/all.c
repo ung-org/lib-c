@@ -1113,6 +1113,7 @@
 ./src/complex/csinh.c
 ./src/complex/cabs.c
 ./src/complex/clog.c
+./src/pwd/__pwd.c
 ./src/pwd/getpwent.c
 ./src/pwd/setpwent.c
 ./src/pwd/getpwnam.c

@@ -74,6 +74,7 @@ libc_POSIX_1_OBJS= \
 	libc.a($(OBJDIR)/opendir.o) \
 	libc.a($(OBJDIR)/rewinddir.o) \
 	libc.a($(OBJDIR)/readdir.o) \
+	libc.a($(OBJDIR)/__pwd.o) \
 	libc.a($(OBJDIR)/getpwnam.o) \
 	libc.a($(OBJDIR)/getpwuid.o) \
 	libc.a($(OBJDIR)/cfsetospeed.o) \

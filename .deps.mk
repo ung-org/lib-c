@@ -721,6 +721,10 @@ libc.a(perror.o): $(OBJDIR)/perror.o
 $(OBJDIR)/perror.o: ./src/stdio/perror.c
 	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/stdio/perror.c -o $@
 	echo [CC] $@
+libc.a(putc_unlocked.o): $(OBJDIR)/putc_unlocked.o
+$(OBJDIR)/putc_unlocked.o: ./src/stdio/putc_unlocked.c
+	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/stdio/putc_unlocked.c -o $@
+	echo [CC] $@
 libc.a(fscanf.o): $(OBJDIR)/fscanf.o
 $(OBJDIR)/fscanf.o: ./src/stdio/fscanf.c
 	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/stdio/fscanf.c -o $@
@@ -752,6 +756,10 @@ $(OBJDIR)/rewind.o: ./src/stdio/rewind.c
 libc.a(ungetc.o): $(OBJDIR)/ungetc.o
 $(OBJDIR)/ungetc.o: ./src/stdio/ungetc.c
 	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/stdio/ungetc.c -o $@
+	echo [CC] $@
+libc.a(getc_unlocked.o): $(OBJDIR)/getc_unlocked.o
+$(OBJDIR)/getc_unlocked.o: ./src/stdio/getc_unlocked.c
+	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/stdio/getc_unlocked.c -o $@
 	echo [CC] $@
 libc.a(putw.o): $(OBJDIR)/putw.o
 $(OBJDIR)/putw.o: ./src/stdio/putw.c
@@ -1488,6 +1496,10 @@ $(OBJDIR)/cabs.o: ./src/complex/cabs.c
 libm.a(clog.o): $(OBJDIR)/clog.o
 $(OBJDIR)/clog.o: ./src/complex/clog.c
 	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/complex/clog.c -o $@
+	echo [CC] $@
+libc.a(__pwd.o): $(OBJDIR)/__pwd.o
+$(OBJDIR)/__pwd.o: ./src/pwd/__pwd.c
+	$(CC) $(BASE_CFLAGS) $(CFLAGS) -c ./src/pwd/__pwd.c -o $@
 	echo [CC] $@
 libc.a(getpwent.o): $(OBJDIR)/getpwent.o
 $(OBJDIR)/getpwent.o: ./src/pwd/getpwent.c
