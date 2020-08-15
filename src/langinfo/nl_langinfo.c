@@ -1,5 +1,6 @@
+#include <nl_types.h>
 #include <langinfo.h>
-#include "stddef.h"
+#include <stddef.h>
 
 char * nl_langinfo(nl_item item)
 {
