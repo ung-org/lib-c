@@ -10,7 +10,7 @@ void qsort(void * base, size_t nmemb, size_t size, int (*compar)(const void *, c
 		size,
 		compar,
 	};
-	__qsort(&qs, 0, nmemb);
+	__qsort(&qs, 0, nmemb - 1);
 }
 
 /***
