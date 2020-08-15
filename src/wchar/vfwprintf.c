@@ -1,8 +1,8 @@
 #include <wchar.h>
-#include "stdio.h"
-#include "stdarg.h"
-#include "stdlib.h"
-#include "../stdio/_stdio.h"
+#include <stdio.h>
+#include <stdarg.h>
+#include <stdlib.h>
+#include "stdio/_stdio.h"
 
 int vfwprintf(FILE * restrict stream, const wchar_t * restrict format, va_list arg)
 {
