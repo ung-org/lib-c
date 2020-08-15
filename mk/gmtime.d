@@ -4,6 +4,7 @@ libc.a(gmtime.o): $(OBJDIR)/gmtime.o
 
 $(OBJDIR)/gmtime.o: src/time/gmtime.c
 $(OBJDIR)/gmtime.o: src/_assert.h
+$(OBJDIR)/gmtime.o: src/time/_time.h
 $(OBJDIR)/gmtime.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)
