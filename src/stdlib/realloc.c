@@ -1,14 +1,19 @@
 #include <stdlib.h>
+
+#if defined _POSIX_C_SOURCE && 199305L <= _POSIX_C_SOURCE
 #include "sys/types.h"
 #include "fcntl.h"
 #include "sys/mman.h"
-#if defined _POSIX_C_SOURCE && 199305L <= _POSIX_C_SOURCE
-/* mu */
+
 #else
-#include "sys/mman/mmap.c"
+#include "_syscall.h"
 #define PROT_READ 0x1
 #define PROT_WRITE 0x2
 #define MAP_PRIVATE 0x2
+#define O_RDWR 0x2
+#define mmap(_a, _l, _p, _fl, _fd, _o) __syscall(__syscall_lookup(mmap), _a, _l, _p, _fl, _fd, _o)
+#define open(_p, _a, _m) __syscall(__syscall_lookup(open), _p, _a, _m)
+
 #endif
 
 /** change the amount of memory allocated **/
