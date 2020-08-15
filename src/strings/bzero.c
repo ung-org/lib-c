@@ -1,8 +1,9 @@
+#include <string.h>
 #include <strings.h>
 
-void bzero(void*s, size_t n)
+void bzero(void* s, size_t n)
 {
-	return 0;
+	(void)memset(s, '\0', n);
 }
 
 /*
