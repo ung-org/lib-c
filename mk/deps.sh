@@ -25,12 +25,19 @@ test -n "$P" && printf 'lib%s_P.%s: lib%s.a(%s.o)\n' $LIB $P $LIB $BASE
 X=$(grep -F 'XOPEN(' $SOURCE | sed -e 's/XOPEN(//;s/,.*//;s/)$//g')
 test -n "$X" && printf 'lib%s_X.%s: lib%s.a(%s.o)\n' $LIB $X $LIB $BASE
 
+if [ -z "$C" ] && [ -z "$P" ] && [ -z "$X" ]; then
+	printf 'lib%s_C.0: lib%s.a(%s.o)\n' $LIB $LIB $BASE
+fi
+
 printf 'lib%s.a(%s.o): $(OBJDIR)/%s.o\n' $LIB $BASE $BASE
+printf '\t@echo "  [AR] $@($%%)"\n'
+printf '\t@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%%\n\n'
+
 printf '$(OBJDIR)/%s.o: %s\n' $BASE $SOURCE
 
 # includes
 
 printf '$(OBJDIR)/%s.o:\n' $BASE
-printf '\t@echo [CC] $@\n'
+printf '\t@echo "  [CC] $@"\n'
 printf '\t@mkdir -p $(@D)\n'
 printf '\t@$(CC) -c -o $@ $(CFLAGS) %s\n' $SOURCE
