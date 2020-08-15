@@ -95,9 +95,11 @@ long __syscall(long __number, ...);
 #define __sys_stat 4
 
 #define __sys_time 201
+#define __sys_times 100
 
 #define __sys_umask 95
 #define __sys_unlink 87
+#define __sys_utime 132
 
 #define __sys_waitid 247
 #define __sys_write 1
