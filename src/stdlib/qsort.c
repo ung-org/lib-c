@@ -5,12 +5,7 @@
 
 void qsort(void * base, size_t nmemb, size_t size, int (*compar)(const void *, const void *))
 {
-	struct __qs qs = {
-		base,
-		size,
-		compar,
-	};
-	__qsort(&qs, 0, nmemb - 1);
+	__qsort(base, size, 0, nmemb - 1, compar);
 }
 
 /***
