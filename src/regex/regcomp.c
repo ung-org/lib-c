@@ -3,6 +3,9 @@
 
 int regcomp(regex_t * restrict preg, const char * restrict pattern, int cflags)
 {
+	(void)preg;
+	(void)pattern;
+	(void)cflags;
 	return 0;
 }
 
@@ -10,4 +13,3 @@ int regcomp(regex_t * restrict preg, const char * restrict pattern, int cflags)
 /*
 POSIX(2)
 */
-
