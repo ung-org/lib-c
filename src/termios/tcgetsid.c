@@ -4,7 +4,7 @@
 pid_t tcgetsid(int fildes)
 {
 	pid_t pid = -1;
-	if (ioctl(fildes, TIOCGPGRP, &pid) == -1) {
+	if (ioctl(fildes, TIOCGSID, &pid) == -1) {
 		return (pid_t)-1;
 	}
 	return pid;
