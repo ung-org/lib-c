@@ -1,4 +1,8 @@
 #!/bin/sh
+find_includes () {
+	grep '#include.*_' $1 | sed -e 's/^.*"\(.\)/\1/;s/"$//'
+}
+
 SOURCE=$1
 BASE=$(basename $SOURCE .c)
 LIB=$(grep LINK $SOURCE | tr -d 'LINK()')
@@ -35,7 +39,15 @@ printf '\t@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%%\n\n'
 
 printf '$(OBJDIR)/%s.o: %s\n' $BASE $SOURCE
 
-# includes
+for INC in $(find_includes $SOURCE); do
+	if [ -f src/$INC ]; then
+		FILE=src/$INC
+	else
+		FILE=$(find src -name $INC)
+	fi
+
+	printf '$(OBJDIR)/%s.o: %s\n' $BASE $FILE
+done
 
 printf '$(OBJDIR)/%s.o:\n' $BASE
 printf '\t@echo "  [CC] $@"\n'
