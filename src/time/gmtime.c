@@ -26,9 +26,12 @@ struct tm * gmtime(const time_t * timer)
 
 	tm.tm_yday = (int)(seconds / SEC_PER_DAY);
 	seconds = seconds % SEC_PER_DAY;
+
 	tm.tm_hour = (int)(seconds / SEC_PER_HR);
 	seconds = seconds % SEC_PER_HR;
+
 	tm.tm_min = (int)(seconds / SEC_PER_MIN);
+
 	tm.tm_sec = (int)(seconds % SEC_PER_MIN);
 
 	days = tm.tm_yday;
