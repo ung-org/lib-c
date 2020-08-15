@@ -1,5 +1,5 @@
 #include <math.h>
-#define INFINITY                /* TODO: positive or unsigned float infinity */
+#define INFINITY                9e300 /* TODO: proper value */
 
 /*
 STDC(199901)
