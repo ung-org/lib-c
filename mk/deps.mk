@@ -3882,10 +3882,6 @@ all: mk/sigismember.d
 mk/sigismember.d: src/signal/sigismember.c
 	sh mk/deps.sh src/signal/sigismember.c
 
-all: mk/sigset_t.d
-mk/sigset_t.d: src/signal/sigset_t.c
-	sh mk/deps.sh src/signal/sigset_t.c
-
 all: mk/siginterrupt.d
 mk/siginterrupt.d: src/signal/siginterrupt.c
 	sh mk/deps.sh src/signal/siginterrupt.c
