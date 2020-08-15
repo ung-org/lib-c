@@ -1,3 +1,6 @@
+#include <stddef.h>
+#include "wctype/wint_t.c"
+#include "wctype/wctrans_t.c"
 #include <wchar.h>
 
 int wcwidth(wchar_t wc)
