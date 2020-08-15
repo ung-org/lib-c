@@ -10,6 +10,10 @@ time_t mktime(struct tm * timeptr)
 
 	ASSERT_NONNULL(timeptr);
 
+	#ifdef _POSIX_SOURCE
+	tzset();
+	#endif
+
 	while (timeptr->tm_sec < 0) {
 		timeptr->tm_min--;
 		timeptr->tm_sec += SEC_PER_MIN;

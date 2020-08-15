@@ -8,6 +8,10 @@ struct tm * localtime(const time_t * timer)
 	static struct tm tm = {0};
 	ASSERT_NONNULL(timer);
 
+	#ifdef _POSIX_SOURCE
+	tzset();
+	#endif
+
 	tm = *gmtime(timer);
 	/* TODO: adjust for timezone */
 

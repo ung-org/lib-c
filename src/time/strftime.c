@@ -16,6 +16,10 @@ size_t strftime(char * restrict s, size_t maxsize, const char * restrict format,
 	ASSERT_NONNULL(format);
 	ASSERT_NONNULL(timeptr);
 
+	#ifdef _POSIX_SOURCE
+	tzset();
+	#endif
+
 	for (i = 0; format[i] != '\0' && converted < maxsize; i++) {
 		if (format[i] != '%') {
 			s[converted++] = format[i];
@@ -48,6 +52,10 @@ size_t strftime(char * restrict s, size_t maxsize, const char * restrict format,
 			sprintf(buf, "%02d", timeptr->tm_mday);
 			break;
 
+		case 'e':
+			sprintf(buf, "%2d", timeptr->tm_mday);
+			break;
+
 		case 'H':
 			sprintf(buf, "%02d", timeptr->tm_hour);
 			break;
@@ -66,6 +74,10 @@ size_t strftime(char * restrict s, size_t maxsize, const char * restrict format,
 
 		case 'M':
 			sprintf(buf, "%02d", timeptr->tm_min);
+			break;
+
+		case 'n':
+			sprintf(buf, "\n");
 			break;
 
 		case 'p':
@@ -117,8 +129,8 @@ size_t strftime(char * restrict s, size_t maxsize, const char * restrict format,
 			break;
 
 		default:
-			sprintf(buf, "UNDEFINED");
 			/* undefined behavior */
+			sprintf(buf, "-strftime(%%%c) is undefined-", format[i]);
 			break;
 		}
 

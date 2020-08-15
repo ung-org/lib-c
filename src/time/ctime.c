@@ -4,6 +4,10 @@
 
 char * ctime(const time_t * timer)
 {
+	#ifdef _POSIX_SOURCE
+	tzset();
+	#endif
+
 	return asctime(localtime(timer));
 }
 
