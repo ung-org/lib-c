@@ -1,4 +1,5 @@
 .global __syscall
+.type __syscall, %function
 __syscall:
 	mov %rdi, %rax
 	mov %rsi, %rdi
@@ -11,6 +12,7 @@ __syscall:
 	ret
 
 .global _start
+.type _start, %function
 _start:
 	popq %rdi
 	movq %rsp, %rsi
