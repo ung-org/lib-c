@@ -58,7 +58,7 @@ int glob(const char * restrict pattern, int flags, int (*errfunc) (const char * 
 	do {
 		const char *p = path + strlen(path) + 1;
 		struct dirent *de;
-		DIR *d = opendir(path);
+		DIR *d = opendir(slashes ? path : ".");
 		if (d == NULL) {
 			if (errfunc != NULL) {
 				if (errfunc(path, errno) != 0) {
@@ -72,7 +72,7 @@ int glob(const char * restrict pattern, int flags, int (*errfunc) (const char * 
 		}
 
 		while ((de = readdir(d)) != NULL) {
-			if (fnmatch(de->d_name, p, fnmatch_flags) == 0) {
+			if (fnmatch(p, de->d_name, fnmatch_flags) == 0) {
 				pglob->gl_pathc++;
 				char **tmp = realloc(pglob->gl_pathv, sizeof(char*) * pglob->gl_pathc);
 				if (tmp == NULL) {
