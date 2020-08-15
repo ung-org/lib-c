@@ -3,6 +3,7 @@ libc.a(tcflow.o): $(OBJDIR)/tcflow.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/tcflow.o: src/termios/tcflow.c
+$(OBJDIR)/tcflow.o: src/termios/_termios.h
 $(OBJDIR)/tcflow.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

@@ -3,6 +3,7 @@ libc.a(tcsendbreak.o): $(OBJDIR)/tcsendbreak.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/tcsendbreak.o: src/termios/tcsendbreak.c
+$(OBJDIR)/tcsendbreak.o: src/termios/_termios.h
 $(OBJDIR)/tcsendbreak.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

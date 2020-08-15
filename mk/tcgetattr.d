@@ -3,6 +3,7 @@ libc.a(tcgetattr.o): $(OBJDIR)/tcgetattr.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/tcgetattr.o: src/termios/tcgetattr.c
+$(OBJDIR)/tcgetattr.o: src/termios/_termios.h
 $(OBJDIR)/tcgetattr.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

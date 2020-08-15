@@ -3,6 +3,7 @@ libc.a(tcflush.o): $(OBJDIR)/tcflush.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/tcflush.o: src/termios/tcflush.c
+$(OBJDIR)/tcflush.o: src/termios/_termios.h
 $(OBJDIR)/tcflush.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)
