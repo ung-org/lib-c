@@ -1,19 +1,22 @@
 #include <stdlib.h>
-#include <string.h>
 
 struct __qs {
 	char *base;
 	size_t size;
 	int (*compar)(const void *, const void *);
-	char buf[64];
-	char *swap;
 };
 
-static void __swap(struct __qs *a, size_t i, size_t j)
+static void __swap(struct __qs *a, size_t b, size_t c)
 {
-	memcpy(a->swap, a->base + (a->size * i), a->size);
-	memcpy(a->base + (a->size * i), a->base + (a->size * j), a->size);
-	memcpy(a->base + (a->size * j), a->swap, a->size);
+	char *x = a->base + (a->size * b);
+	char *y = a->base + (a->size * c);
+	size_t i;
+
+	for (i = 0; i < a->size; i++) {
+		char tmp = x[i];
+		x[i] = y[i];
+		y[i] = tmp;
+	}
 }
 
 static size_t __partition(struct __qs *a, size_t lo, size_t hi)

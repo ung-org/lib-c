@@ -9,21 +9,8 @@ void qsort(void * base, size_t nmemb, size_t size, int (*compar)(const void *, c
 		base,
 		size,
 		compar,
-		{ 0 },
-		NULL,
 	};
-
-	if (size <= sizeof(qs.buf)) {
-		qs.swap = qs.buf;
-	} else {
-		qs.swap = malloc(size);
-	}
-
 	__qsort(&qs, 0, nmemb);
-
-	if (qs.swap != qs.buf) {
-		free(qs.swap);
-	}
 }
 
 /***
