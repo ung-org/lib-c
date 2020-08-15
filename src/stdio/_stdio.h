@@ -1,6 +1,7 @@
 #ifndef ___STDIO_H__
 #define ___STDIO_H__
 
+#include <stddef.h>
 #include <stdarg.h>
 #include <stdio.h>
 
@@ -8,6 +9,10 @@
 #include <sys/types.h>
 #else
 #include "sys/types/pid_t.c"
+#endif
+
+#ifndef L_ctermid
+#include "L_ctermid.c"
 #endif
 
 struct __FILE {
@@ -45,6 +50,7 @@ struct __FILE {
 struct io_options {
 	const char *fnname;
 	char *string;
+	wchar_t *wstring;
 	struct __FILE *stream;
 	size_t maxlen;
 	int fd;
