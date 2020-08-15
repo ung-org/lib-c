@@ -1,11 +1,29 @@
 #include <stdlib.h>
+#include "_qsort.h"
 
 /** sort an array **/
 
 void qsort(void * base, size_t nmemb, size_t size, int (*compar)(const void *, const void *))
 {
-	(void)base; (void)nmemb; (void)size; (void)compar;
-	/* TODO */
+	struct __qs qs = {
+		base,
+		size,
+		compar,
+		{ 0 },
+		NULL,
+	};
+
+	if (size <= sizeof(qs.buf)) {
+		qs.swap = qs.buf;
+	} else {
+		qs.swap = malloc(size);
+	}
+
+	__qsort(&qs, 0, nmemb);
+
+	if (qs.swap != qs.buf) {
+		free(qs.swap);
+	}
 }
 
 /***

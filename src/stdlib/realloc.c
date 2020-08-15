@@ -5,7 +5,7 @@
 #if defined _POSIX_C_SOURCE && 199305L <= _POSIX_C_SOURCE
 /* mu */
 #else
-#include "../sys/mman/mmap.c"
+#include "sys/mman/mmap.c"
 #define PROT_READ 0x1
 #define PROT_WRITE 0x2
 #define MAP_PRIVATE 0x2

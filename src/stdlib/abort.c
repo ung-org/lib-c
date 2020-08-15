@@ -2,7 +2,14 @@
 #ifdef _POSIX_SOURCE
 #include "sys/types.h"
 #endif
+/*
 #include "signal.h"
+*/
+
+#define __SIGNAL_H__
+#define SIGABRT
+#include "ungol/signal.h"
+extern void raise(int);
 
 /** cause abnormal program termination **/
 
