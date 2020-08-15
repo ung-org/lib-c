@@ -11,6 +11,7 @@ struct __grp __grp =
 	NULL,
 	{ 0 },
 	getgrent,
+	{ 0 },
 };
 
 /*

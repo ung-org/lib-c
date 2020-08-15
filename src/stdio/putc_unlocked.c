@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "_stdio.h"
+#include "_assert.h"
 
 #if defined _POSIX_SOURCE || defined _POSIX_C_SOURCE || defined _XOPEN_SOURCE
 #include "sys/types.h"
@@ -14,9 +15,7 @@ int putc_unlocked(int c, FILE *stream)
 {
 	unsigned char ch = (unsigned char)c;
 
-	if (!stream) {
-		return EOF;
-	}
+	ASSERT_NONNULL(stream);
 
 	if (write(stream->fd, &ch, sizeof(ch)) != 1) {
 		/* error */

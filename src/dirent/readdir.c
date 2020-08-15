@@ -6,6 +6,7 @@
 #include "_dirent.h"
 #include "unistd.h"
 #include "_syscall.h"
+#include "string.h"
 
 #ifndef NAME_MAX
 #define NAME_MAX _POSIX_NAME_MAX
