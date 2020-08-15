@@ -5,7 +5,7 @@ find_includes () {
 
 SOURCE=$1
 BASE=$(basename $SOURCE .c)
-LIB=$(grep LINK $SOURCE | tr -d 'LINK()')
+LIB=$(grep -F 'LINK(' $SOURCE | tr -d 'LINK()')
 test -z "$LIB" && LIB="c"
 
 if ! grep -q "^mk/$BASE.d:" mk/deps.mk 2>&1; then
@@ -19,15 +19,21 @@ if ! grep -q "include mk/$BASE.d" mk/all.mk 2>&1; then
 fi
 
 exec > mk/$BASE.d
+#echo "#LIB: $LIB"
+#echo "#BASE: $BASE"
+#echo "#SOURCE: $SOURCE"
 
 C=$(grep -F 'STDC(' $SOURCE | sed -e 's/STDC(//;s/,.*//;s/)$//g')
 test -n "$C" && printf 'lib%s_C.%s: lib%s.a(%s.o)\n' $LIB $C $LIB $BASE
+#echo "#C: $C"
 
 P=$(grep -F 'POSIX(' $SOURCE | sed -e 's/POSIX(//;s/,.*//;s/)$//g')
 test -n "$P" && printf 'lib%s_P.%s: lib%s.a(%s.o)\n' $LIB $P $LIB $BASE
+#echo "#POSIX: $P"
 
 X=$(grep -F 'XOPEN(' $SOURCE | sed -e 's/XOPEN(//;s/,.*//;s/)$//g')
 test -n "$X" && printf 'lib%s_X.%s: lib%s.a(%s.o)\n' $LIB $X $LIB $BASE
+#echo "#XOPEN: $X"
 
 if [ -z "$C" ] && [ -z "$P" ] && [ -z "$X" ]; then
 	printf 'lib%s_C.0: lib%s.a(%s.o)\n' $LIB $LIB $BASE
