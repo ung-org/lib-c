@@ -1,6 +1,10 @@
-#include "stdio.h"
+#include <stdio.h>
 #include <wchar.h>
-#include "../stdio/_stdio.h"
+#include "stdio/_stdio.h"
+
+#if __STDC_VERSION__ < 199901L
+	static
+#endif
 
 int vfwscanf(FILE * restrict stream, const wchar_t * restrict format, va_list arg)
 {
