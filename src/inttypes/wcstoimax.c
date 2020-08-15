@@ -11,7 +11,7 @@ intmax_t wcstoimax(const wchar_t * restrict nptr, wchar_t ** restrict endptr, in
 	intmax_t max = INTMAX_MAX;
 	intmax_t min = INTMAX_MIN;
 
-	#include "../stdlib/_strtoi.h"
+	#include "stdlib/_strtoi.h"
 
 	return ret;
 }
