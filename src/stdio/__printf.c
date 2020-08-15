@@ -6,6 +6,7 @@
 #include "wchar.h"
 #include "inttypes.h"
 #include "unistd.h"
+#include "stdlib.h"
 
 #if !defined __STDC_VERSION__ || __STDC_VERSION__ < 199909L
 #include "stdint/intmax_t.c"
@@ -273,10 +274,14 @@ int (__printf)(struct io_options *opt, const char * format, va_list arg)
 				}
 				nout++;
 			} else if (length == l) {
-				/* wint_t wc = va_arg(arg, wint_t); */
-				/* char mb[MB_CUR_MAX + 1] = "WC"; */
-				/* wctomb(mb, wc); */
-				/* nout = __append(s, mb, nout, n); */
+				#if defined __STDC_VERSION__
+				wint_t wc = va_arg(arg, wint_t);
+				char mb[MB_CUR_MAX + 1] = "WC";
+				wctomb(mb, wc);
+				nout = __append(s, mb, nout, n);
+				#else
+				nout = __append(s, "NOSUP", nout, n);
+				#endif
 			} else {
 				nout = -nout;
 				goto end;
@@ -288,12 +293,15 @@ int (__printf)(struct io_options *opt, const char * format, va_list arg)
 				char *string = va_arg(arg, char *);
 				nout = __append(s, string, nout, n);
 			} else if (length == l) {
-				/*wchar_t *ws = va_arg(arg, wchar_t *); */
-				/*char *mbs = malloc(wcslen(ws) * MB_CUR_MAX + 1); */
-				/*wcstombs(mbs, ws, wcslen(ws) * MB_CUR_MAX + 1); */
-				/*nout = __append(s, mbs, nout, n); */
-				/*free(mbs); */
-				nout = __append(s, "WIDE STRING", nout, n);
+				#if defined __STDC_VERSION__
+				wchar_t *ws = va_arg(arg, wchar_t *);
+				char *mbs = malloc(wcslen(ws) * MB_CUR_MAX + 1);
+				wcstombs(mbs, ws, wcslen(ws) * MB_CUR_MAX + 1);
+				nout = __append(s, mbs, nout, n);
+				free(mbs);
+				#else
+				nout = __append(s, "NOSUP", nout, n);
+				#endif
 			} else {
 				nout = -nout;
 				goto end;
