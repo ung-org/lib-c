@@ -1,4 +1,4 @@
-# define TGSOURCE "../complex/conj.c"
+# define TGSOURCE "complex/conj.c"
 #include "_tgmath.h"
 
 #include <complex.h>

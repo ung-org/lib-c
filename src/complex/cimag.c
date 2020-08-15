@@ -1,4 +1,4 @@
-# define TGSOURCE "../complex/cimag.c"
+# define TGSOURCE "complex/cimag.c"
 #include "_tgmath.h"
 
 #include <complex.h>

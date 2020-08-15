@@ -1,4 +1,4 @@
-# define TGSOURCE "../complex/csqrt.c"
+# define TGSOURCE "complex/csqrt.c"
 #include "_tgmath.h"
 #include <complex.h>
 #include "math.h"

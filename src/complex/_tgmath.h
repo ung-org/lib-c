@@ -2,4 +2,4 @@
 #include "CMPLXF.c"
 #include "CMPLXL.c"
 
-#include "../math/_tgmath.h"
+#include "math/_tgmath.h"

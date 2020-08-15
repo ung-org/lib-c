@@ -1,4 +1,4 @@
-# define TGSOURCE "../complex/ctanh.c"
+# define TGSOURCE "complex/ctanh.c"
 #include "_tgmath.h"
 #include <complex.h>
 #include "math.h"

@@ -1,4 +1,4 @@
-# define TGSOURCE "../complex/catan.c"
+# define TGSOURCE "complex/catan.c"
 #include "_tgmath.h"
 
 #include <complex.h>

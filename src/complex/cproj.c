@@ -1,4 +1,4 @@
-# define TGSOURCE "../complex/cproj.c"
+# define TGSOURCE "complex/cproj.c"
 #include "_tgmath.h"
 
 #include <complex.h>

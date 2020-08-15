@@ -1,12 +1,12 @@
-# define TGSOURCE "../complex/cacos.c"
+# define TGSOURCE "complex/cacos.c"
 #include "_tgmath.h"
 #include <complex.h>
 #include "math.h"
 #include "fenv.h"
 
-#include "../math/M_PI.c"
-#include "../math/M_PI_2.c"
-#include "../math/M_PI_4.c"
+#include "math/M_PI.c"
+#include "math/M_PI_2.c"
+#include "math/M_PI_4.c"
 
 TYPE complex TGFN(cacos)(TYPE complex z)
 {
