@@ -22,4 +22,13 @@
 #define DAYS_IN(y, m)	(m == 1 ? (ISLEAPYEAR(y) ? 29 : 28) : \
 			((m == 3 || m == 5 || m == 8 || m == 10) ? 30 : 31))
 
+#define TZNAMELEN 64
+
+struct __time {
+	char stdtz[TZNAMELEN];
+	char dsttz[TZNAMELEN];
+};
+
+extern struct __time __time;
+
 #endif
