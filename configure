@@ -148,59 +148,18 @@ elif [ -n "${posix}" ]; then
 	CFLAGS="${CFLAGS} -D_POSIX_C_SOURCE=${posix}"
 fi
 
-printf 'CFLAGS=%s\n' "${CFLAGS}" >> .config.mk
+printf 'CFLAGS=$(BASE_CFLAGS) %s\n\n' "${CFLAGS}" >> .config.mk
 
-### generate .build.mk
-cat <<EOF > .build.mk
-.POSIX:
-
-# work-around GNU ar's default "deterministic" mode
-ARFLAGS=rU
-
-default: all
-
-include .config.mk
-include \$(TOPDIR)/.deps.mk
-
-EOF
-
-rm -f .build.all.mk
-
-for lib in $(ls $(dirname $0)/.deps/lib* | sed -e 's#^.*/\(lib.*\)\..*$#\1#g' | grep -v '\.h$' | sort -u); do
-	printf '%s.a:' "${lib}"
-
-	for cver in $(ls $(dirname $0)/.deps/${lib}.C_* 2>/dev/null | sed -e 's#^.*\.C_##g'); do
-		if [ $cver -le ${standard_c:-1} ]; then
-			printf ' $(%s_C_%d_OBJS)' "${lib}" "${cver}"
-			printf '%s\n' "${lib}" >> .build.all.mk
-		fi
-	done
-
-	for pver in $(ls $(dirname $0)/.deps/${lib}.POSIX_* 2>/dev/null | sed -e 's#^.*\.POSIX_##g'); do
-		if [ $pver -le ${posix:-0} ]; then
-			printf ' $(%s_POSIX_%d_OBJS)' "${lib}" "${pver}"
-			printf '%s\n' "${lib}" >> .build.all.mk
-		fi
-	done
-
-	for xver in $(ls $(dirname $0)/.deps/${lib}.XOPEN_* 2>/dev/null | sed -e 's#^.*\.XOPEN_##g'); do
-		if [ $xver -le ${xopen:-0} ]; then
-			printf ' $(%s_XOPEN_%d_OBJS)' "${lib}" "${xver}"
-			printf '%s\n' "${lib}" >> .build.all.mk
-		fi
-	done
-
-	printf '\n\t$(AR) $(ARFLAGS) $@ $?\n\n'
-done >> .build.mk
-
-printf 'all:' >> .build.mk
-sort -u .build.all.mk | awk '{printf(" %s.a", $0);}' >> .build.mk
-printf '\n' >> .build.mk
-rm -f .build.all.mk
-
-for i in $libs; do
-	echo $i
-done >> .build.mk
+for lib in $(cat $(dirname $0)/mk/*.d | grep 'lib.*_[CPX]\.' | cut -d: -f1 | sort -u); do
+	ver=$(echo $lib | cut -d. -f2)
+	if (echo $lib | grep -q _C) && [ "$ver" -le ${standard_c:-1} ]; then
+		printf 'all: %s\n' $lib >> .config.mk
+	elif (echo $lib | grep -q _P) && [ "$ver" -le ${posix:-0} ]; then
+		printf 'all: %s\n' $lib >> .config.mk
+	elif (echo $lib | grep -q _X) && [ "$ver" -le ${xopen:-0} ]; then
+		printf 'all: %s\n' $lib >> .config.mk
+	fi
+done
 
 ### generate main Makefile
 if ! [ -f Makefile ]; then
