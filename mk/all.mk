@@ -995,3 +995,4 @@ include mk/sigprocmask.d
 include mk/sigaction.d
 include mk/killpg.d
 include mk/__time.d
+include mk/__scanf.d

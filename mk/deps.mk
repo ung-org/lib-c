@@ -3982,3 +3982,7 @@ all: mk/__time.d
 mk/__time.d: src/time/__time.c
 	sh mk/deps.sh src/time/__time.c
 
+all: mk/__scanf.d
+mk/__scanf.d: src/stdio/__scanf.c
+	sh mk/deps.sh src/stdio/__scanf.c
+
