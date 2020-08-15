@@ -994,3 +994,4 @@ include mk/sigrelse.d
 include mk/sigprocmask.d
 include mk/sigaction.d
 include mk/killpg.d
+include mk/__time.d

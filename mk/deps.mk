@@ -3978,3 +3978,7 @@ all: mk/killpg.d
 mk/killpg.d: src/signal/killpg.c
 	sh mk/deps.sh src/signal/killpg.c
 
+all: mk/__time.d
+mk/__time.d: src/time/__time.c
+	sh mk/deps.sh src/time/__time.c
+
