@@ -11,11 +11,12 @@
 #define DEFAULT_LOCALE "C"
 #include "_syscall.h"
 #include "termios/NCCS.c"
+#include "termios/speed_t.c"
 #include "termios/cc_t.c"
 #include "termios/tcflag_t.c"
 #include "termios/struct_termios.c"
-static struct termios __tios;
-#define isatty(fd) (__syscall(__syscall_lookup(tcgetattr), fd, &__tios) == 0)
+#include "termios/_termios.h"
+#define isatty(fd) ioctl(fd, TCFLSH, 0)
 #endif
 
 void __main(int argc, char **argv)
