@@ -1,8 +1,11 @@
+#include <sys/types.h>
 #include <dirent.h>
+#include <unistd.h>
+#include "_dirent.h"
 
 long telldir(DIR * dirp)
 {
-	return 0;
+	return lseek(dirp->fd, 0, SEEK_CUR);
 }
 
 /*
