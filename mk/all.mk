@@ -967,7 +967,6 @@ include mk/regex.d
 include mk/__loc1.d
 include mk/raise.d
 include mk/sigismember.d
-include mk/sigset_t.d
 include mk/siginterrupt.d
 include mk/signal.d
 include mk/kill.d

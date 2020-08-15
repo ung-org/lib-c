@@ -1,4 +1,3 @@
 obj
 *.a
-.build.mk
 .config.mk

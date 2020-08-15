@@ -1,32 +1,26 @@
 .POSIX:
-default: all
 
+AR=ar
+ARFLAGS=rU
+BASE_CFLAGS=-g -Wall -Wextra -nostdinc -Iinclude -Isrc
+OBJDIR=obj
+SRCDIR=src
+
+all: libc_C.0
+
+include mk/all.mk
 include .config.mk
 
-all: $(TOPDIR)/.deps.mk $(INCDIR)
-	@mkdir -p $(OBJDIR)
-	$(MAKE) -f .build.mk
+cleandeps:
+	$(RM) -f mk/*.mk
+	$(RM) -f mk/*.d
 
-deps: $(TOPDIR)/.headers.mk $(TOPDIR)/.deps.mk
-
-$(TOPDIR)/.deps.mk: $(TOPDIR)/mk.sh
-	sh -c '. $(TOPDIR)/mk.sh; cd $(TOPDIR); make_deps_mk'
-
-$(TOPDIR)/.headers.mk: $(TOPDIR)/mk.sh
-	sh -c '. $(TOPDIR)/mk.sh; cd $(TOPDIR); make_headers_mk'
-
-#headers $(INCDIR): $(TOPDIR)/.headers.mk $(TOPDIR)/mkh.sh
-#	$(MAKE) -f $(TOPDIR)/.headers.mk headers
-
-test:
-	$(MAKE) all
-	cd tests && $(MAKE) && ./testlibc $(TESTS)
-
-ctags:
-	ctags $$(find src -name \*.c)
+newdeps: cleandeps
+	printf '.POSIX:\n\nall:\n\n' > mk/deps.mk
+	for i in $$(find src -name \*.c); do sh mk/deps.sh $$i; done
 
 clean:
-	rm -rf $(OBJDIR) *.a
+	$(RM) -rf *.a $(OBJDIR)
 
-extra-clean: clean
-	rm -rf .deps .deps.mk .headers.mk $(INCDIR)
+tags:
+	ctags $$(find src -name \*.c)
