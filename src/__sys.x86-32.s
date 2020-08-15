@@ -10,8 +10,6 @@ __syscall:
 	sysenter
 	ret
 
-/* FIXME: this seems to be unpossible to put in a shared library */
-/* FIXME: it may be worthwhile to separate this into crt1.s */
 .global _start
 _start:
 	/* TODO */
