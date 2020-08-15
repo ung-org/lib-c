@@ -1,24 +1,22 @@
 #include <wchar.h>
-#include "stdio.h"
-#include "../stdio/_stdio.h"
-#include "limits.h"
-#include "errno.h"
+#include <stdio.h>
+#include <limits.h>
+#include <errno.h>
+#include "stdio/_stdio.h"
 
 wint_t fputwc(wchar_t c, FILE * stream)
 {
+	char mbs[MB_LEN_MAX+1] = {0};
+	mbstate_t ps = 0;
+	size_t len = wcrtomb(mbs, c, &ps);
 	size_t i;
 
 	if (fwide(stream, 1) <= 0) {
-		/* not a wide stream */
 		return WEOF;
 	}
 
 	flockfile(stream);
 	stream->orientation = -1;
-
-	char mbs[MB_LEN_MAX+1] = {0};
-	mbstate_t ps = 0;
-	size_t len = wcrtomb(mbs, c, &ps);
 
 	if (len == (size_t)-1) {
 		errno = EILSEQ;
@@ -27,7 +25,7 @@ wint_t fputwc(wchar_t c, FILE * stream)
 
 	/* FIXME: check for errors here */
 	for (i = 0; i < len; i++) {
-		fputc(mbs[i], stream);
+		putc_unlocked(mbs[i], stream);
 	}
 
 	stream->orientation = 1;
