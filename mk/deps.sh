@@ -39,6 +39,9 @@ printf '\t@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%%\n\n'
 
 printf '$(OBJDIR)/%s.o: %s\n' $BASE $SOURCE
 
+#
+# TODO: make this recursive
+#
 for INC in $(find_includes $SOURCE); do
 	if [ -f src/$INC ]; then
 		FILE=src/$INC
