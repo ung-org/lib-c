@@ -7,6 +7,12 @@
 #include "sys/types.h"
 #include "fcntl.h"
 #else
+#include "fcntl/O_RDONLY.c"
+#include "fcntl/O_WRONLY.c"
+#include "fcntl/O_CREAT.c"
+#include "fcntl/O_TRUNC.c"
+#include "fcntl/O_APPEND.c"
+#include "fcntl/O_RDWR.c"
 #define open(fname, flags, mode) (filename ? -1 : -1)
 #endif
 
@@ -42,8 +48,6 @@ FILE * freopen(const char * restrict filename, const char * restrict mode, FILE 
 	size_t i;
 	int fd = -1;
 
-	flockfile(stream);
-
 	for (i = 0; i < sizeof(modemap) / sizeof(modemap[0]); i++) {
 		if (!strcmp(modemap[i].smode, mode)) {
 			openmode = modemap[i].omode;
@@ -58,19 +62,23 @@ FILE * freopen(const char * restrict filename, const char * restrict mode, FILE 
 		return NULL;
 	}
 
+	flockfile(stream);
+
 	fd = open(filename, openmode, 0);
 	if (fd == -1) {
-		/* set errno */
-		return NULL;
+		/* open() already sets errno */
+		stream = NULL;
+	} else {
+		stream->fd = fd;
 	}
 
-	stream->fd = fd;
-	stream->nlocks = 0;
+	funlockfile(stream);
 
 	/*
 	RETURN_SUCCESS(ARGUMENT(stream));
 	RETURN_FAILURE(CONSTANT(NULL));
 	*/
+
 	return stream;
 }
 
