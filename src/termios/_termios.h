@@ -19,6 +19,8 @@
 #define TCXONC		0x540A
 #define TCFLSH		0x540B
 #define TIOCGPGRP	0x540F
+#define TIOCSPGRP	0x5410
+#define TIOCGSID	0x5429
 
 #define ioctl(_fd, _cmd, _arg) __syscall(16, _fd, _cmd, _arg)
 
