@@ -6,6 +6,8 @@
 #include <signal.h>
 
 #ifndef _POSIX_SOURCE
+#include "sigset_t.c"
+#include "struct_sigaction.c"
 #include "sigaction.c"
 #include "sigemptyset.c"
 #include "sigaddset.c"
