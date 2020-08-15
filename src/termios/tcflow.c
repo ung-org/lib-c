@@ -1,9 +1,9 @@
 #include <termios.h>
+#include "_termios.h"
 
 int tcflow(int fildes, int action)
 {
-	(void)fildes;
-	return action;
+	return ioctl(fildes, TCXONC, action);
 }
 
 /*

@@ -1,9 +1,9 @@
 #include <termios.h>
+#include "_termios.h"
 
 int tcsendbreak(int fildes, int duration)
 {
-	(void)duration;
-	return fildes;
+	return ioctl(fildes, TCSBRKP, duration);
 }
 /*
 POSIX(1)

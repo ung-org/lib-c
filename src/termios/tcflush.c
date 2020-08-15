@@ -1,10 +1,11 @@
 #include <termios.h>
+#include "_termios.h"
 
 int tcflush(int fildes, int queue_selector)
 {
-	(void)queue_selector;
-	return fildes;
+	return ioctl(fildes, TCFLSH, queue_selector);
 }
+
 /*
 POSIX(1)
 */

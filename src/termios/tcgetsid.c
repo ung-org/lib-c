@@ -1,8 +1,13 @@
+#include "sys/types.h"
 #include <termios.h>
 
 pid_t tcgetsid(int fildes)
 {
-	return 0;
+	pid_t pid = -1;
+	if (ioctl(fildes, TIOCGPGRP, &pid) == -1) {
+		return (pid_t)-1;
+	}
+	return pid;
 }
 
 /*
