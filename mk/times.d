@@ -3,6 +3,7 @@ libc.a(times.o): $(OBJDIR)/times.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/times.o: src/sys/times/times.c
+$(OBJDIR)/times.o: src/_syscall.h
 $(OBJDIR)/times.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)
