@@ -55,6 +55,7 @@ long __syscall(long __number, ...);
 #define __sys_getgid 104
 #define __sys_getgroups 115
 #define __sys_getpgrp 111
+#define __sys_getpgid 121
 #define __sys_getpid 39
 #define __sys_getppid 110
 #define __sys_getuid 102
@@ -98,6 +99,7 @@ long __syscall(long __number, ...);
 #define __sys_umask 95
 #define __sys_unlink 87
 
+#define __sys_waitid 247
 #define __sys_write 1
 #endif
 
