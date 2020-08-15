@@ -2,6 +2,8 @@
 #include "_tgmath.h"
 #include <math.h>
 
+#undef copysign
+
 TYPE TGFN(copysign)(TYPE x, TYPE y)
 {
 	if (isnan(x)) {
