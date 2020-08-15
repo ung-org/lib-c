@@ -1,11 +1,11 @@
 #include "stddef.h"
 #include "sys/types.h"
 #include <unistd.h>
+#include "termios/_termios.h"
 
 int tcsetpgrp(int fildes, pid_t pgid_id)
 {
-	(void)fildes; (void)pgid_id;
-	return 0;
+	return ioctl(fildes, TIOCSPGRP, &pgid_id);
 }
 
 /*

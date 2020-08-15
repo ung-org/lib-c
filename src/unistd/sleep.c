@@ -5,8 +5,8 @@
 
 #if _POSIX_C_SOURCE < 199309
 #define nanosleep __nanosleep
-#include "../time/struct_timespec.c"
-#include "../time/nanosleep.c"
+#include "time/struct_timespec.c"
+#include "time/nanosleep.c"
 #endif
 
 unsigned sleep(unsigned seconds)

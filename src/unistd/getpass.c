@@ -2,7 +2,7 @@
 
 char *getpass(const char *prompt)
 {
-	return prompt;
+	return (char*)prompt;
 }
 
 /*
