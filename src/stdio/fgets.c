@@ -4,30 +4,32 @@
 /** read a string of characters from a file stream **/
 char * fgets(char * restrict s, int n, FILE * restrict stream)
 {
-	flockfile(stream);
-
 	int i = 0;
 	if (feof(stream)) {
 		return NULL;
 	}
 
-	while (i < n-1) {
+	flockfile(stream);
+	for (i = 0; i < n-1; i++) {
 		s[i] = fgetc(stream);
 		if (s[i] == '\n') {
 			s[i+1] = '\0';
-			i = n;
-		} else if (s[i] == EOF && feof(stream)) {
+			break;
+		} else if (s[i] == EOF) {
 			s[i] = '\0';
-			i = n;
+			break;
 		}
-		i++;
 	}
-
 	funlockfile(stream);
+
 	/*
 	RETURN_SUCCESS(ARGUMENT(s));
 	RETURN_FAILURE(CONSTANT(NULL));
 	*/
+	if (s[0] == '\0') {
+		return NULL;
+	}
+
 	return s;
 }
 
