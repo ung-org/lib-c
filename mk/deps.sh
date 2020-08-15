@@ -8,6 +8,30 @@ BASE=$(basename $SOURCE .c)
 LIB=$(grep -F 'LINK(' $SOURCE | tr -d 'LINK()')
 test -z "$LIB" && LIB="c"
 
+#
+# TODO: only grab functions and global variables
+#
+if grep -q "#define $BASE" $SOURCE; then
+	#printf '%s: is a macro\n' $BASE
+	return
+fi
+
+if grep -q "#undef $BASE" $SOURCE; then
+	#printf '%s: is an undefined macro\n' $BASE
+	return
+fi
+
+RECORD=$(echo $BASE | tr '_' ' ')
+if grep -q -e "^$RECORD;" -e "$RECORD {" $SOURCE; then
+	#printf '%s: is a union or struct\n' $BASE
+	return
+fi
+
+if grep -q -e "^typedef.*$BASE;" -e "^} $BASE;" $SOURCE; then
+	#printf '%s: is a typedef\n' $BASE
+	return
+fi
+
 if ! grep -q "^mk/$BASE.d:" mk/deps.mk 2>&1; then
 	printf 'all: mk/%s.d\n' $BASE >> mk/deps.mk
 	printf 'mk/%s.d: %s\n' $BASE $SOURCE >> mk/deps.mk
@@ -40,7 +64,7 @@ if [ -z "$C" ] && [ -z "$P" ] && [ -z "$X" ]; then
 fi
 
 printf 'lib%s.a(%s.o): $(OBJDIR)/%s.o\n' $LIB $BASE $BASE
-printf '\t@echo "  [AR] $@($%%)"\n'
+#printf '\t@echo "  [AR] $@($%%)"\n'
 printf '\t@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%%\n\n'
 
 printf '$(OBJDIR)/%s.o: %s\n' $BASE $SOURCE
