@@ -2,7 +2,7 @@
 
 set -e
 
-CONFIGDIR="$(dirname $0)/config"
+CONFIGDIR="$(dirname $0)/mk"
 
 show_help() {
 	cat <<-EOF
@@ -12,25 +12,25 @@ show_help() {
 	   -d		Enable debugging symbols and asserts
 
 	   -a arch	Choose the underlying architecture to build for:
-	$(awk '{ printf("\t%s\n", $0); }' ${CONFIGDIR}/architecture)
+	$(awk '{ printf("\t%s\n", $0); }' ${CONFIGDIR}/architecture.conf)
 
 	   -c version	Conform to:
-	$(awk '{ printf("\t%s\n", $0); }' ${CONFIGDIR}/c)
+	$(awk '{ printf("\t%s\n", $0); }' ${CONFIGDIR}/c.conf)
 
 	   -p version	Conform to:
-	$(awk '{ printf("\t%s\n", $0); }' ${CONFIGDIR}/posix)
+	$(awk '{ printf("\t%s\n", $0); }' ${CONFIGDIR}/posix.conf)
 
 	   -w wordsize	Choose a word size for the architecuture:
-	$(awk '{ printf("\t%s\n", $0); }' ${CONFIGDIR}/wordsize)
+	$(awk '{ printf("\t%s\n", $0); }' ${CONFIGDIR}/wordsize.conf)
 
 	   -x version	Conform to:
-	$(awk '{ printf("\t%s\n", $0); }' ${CONFIGDIR}/xopen)
+	$(awk '{ printf("\t%s\n", $0); }' ${CONFIGDIR}/xopen.conf)
 
 	EOF
 }
 
 validate_option() {
-	option="${CONFIGDIR}/$1"
+	option="${CONFIGDIR}/$1.conf"
 
 	for opt in $(awk '/^[0-9]/ { print $1 }' "${option}"); do
 		if [ "$2" = "${opt}" ]; then
