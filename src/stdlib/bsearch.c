@@ -8,12 +8,12 @@ void * bsearch(const void * key, const void * base, size_t nmemb, size_t size, i
 	void *ret = NULL;
 	size_t i = nmemb / 2;
 	unsigned int trip = 1;
-	(void)size;
+	const char *addr = base;
 
 	while (ret == NULL) {
-		int comp = compar(key, base + i);
+		int comp = compar(key, addr + (i * size));
 		if (comp == 0) {
-			return (void*)(base + i);
+			return (void*)(addr + (i * size));
 		} else if (comp > 0) {
 			i -= (nmemb >> trip);
 		} else {
