@@ -2,7 +2,7 @@
 
 AR=ar
 ARFLAGS=rU
-BASE_CFLAGS=-g -Wall -Wextra -Werror -nostdinc -fno-builtin -Iinclude -Isrc
+BASE_CFLAGS=-g -Wall -Wextra -Werror -nostdinc -fno-builtin -fno-stack-protector -Iinclude -Isrc
 OBJDIR=obj
 SRCDIR=src
 

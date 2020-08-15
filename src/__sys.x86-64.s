@@ -15,7 +15,3 @@ _start:
 	popq %rdi
 	movq %rsp, %rsi
 	call __main
-
-.global __stack_chk_fail
-__stack_chk_fail:
-	ret
