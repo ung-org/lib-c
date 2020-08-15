@@ -860,6 +860,9 @@ include mk/globfree.d
 include mk/nftw.d
 include mk/ftw.d
 include mk/__main.d
+include mk/__longjmp.d
+include mk/__setjmp.d
+include mk/__sys.d
 include mk/loc1.d
 include mk/compile.d
 include mk/step.d
