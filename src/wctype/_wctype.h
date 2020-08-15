@@ -1,1 +1,1 @@
-#include "../ctype/_ctype.h"
+#include "ctype/_ctype.h"
