@@ -1,6 +1,8 @@
 #ifndef ___ASSERT_H__
 #define ___ASSERT_H__
 
+#define NDEBUG
+
 #ifndef NDEBUG
 #define ASSERT_NONNULL(__ptr) do { \
 	if (!__ptr) { \
