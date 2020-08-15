@@ -1,18 +1,24 @@
+#include "stdio.h"
 #include "_stdio.h"
 #include "stddef.h"
-#include "../wctype/wint_t.c"
-#include "../wctype/wctrans_t.c"
+#include "wctype/wint_t.c"
+#include "wctype/wctrans_t.c"
 #include "wchar.h"
 #include "inttypes.h"
 #include "unistd.h"
 
 #if !defined __STDC_VERSION__ || __STDC_VERSION__ < 199909L
-#include "../stdint/intmax_t.c"
-#include "../stdint/uintmax_t.c"
-#include "../stdint/intptr_t.c"
-#include "../stdint/UINTMAX_MAX.c"
+#include "stdint/intmax_t.c"
+#include "stdint/uintmax_t.c"
+#include "stdint/intptr_t.c"
+#include "stdint/UINTMAX_MAX.c"
 #define strtoumax __strtoumax
-#include "../inttypes/strtoumax.c"
+#include "inttypes/strtoumax.c"
+#endif
+
+#ifndef _POSIX_SOURCE
+#undef write
+#define write(_fd, _buf, _size) (void)(_fd)
 #endif
 
 #define NUMBUFLEN 64
