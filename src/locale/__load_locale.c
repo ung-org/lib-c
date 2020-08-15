@@ -4,7 +4,7 @@
 #include "string.h"
 
 #include "_locale.h"
-#include "../ctype/_ctype.h"
+#include "ctype/_ctype.h"
 
 #define LC_COLLATE_MASK (1<<0)
 #define LC_CTYPE_MASK (1<<1)
