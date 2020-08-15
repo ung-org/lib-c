@@ -1,7 +1,7 @@
 #include <wchar.h>
-#include "limits.h"
-#include "errno.h"
-#include "wctype.h"
+#include <limits.h>
+#include <errno.h>
+#include <wctype.h>
 
 #define isspace iswspace
 
@@ -11,7 +11,7 @@ unsigned long long int wcstoull(const wchar_t * restrict nptr, wchar_t ** restri
 	unsigned long long int max = ULLONG_MAX;
 	unsigned long long int min = 0;
 
-	#include "../stdlib/_strtoi.h"
+	#include "stdlib/_strtoi.h"
 
 	return ret;
 }
