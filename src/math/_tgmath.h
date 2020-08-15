@@ -64,4 +64,8 @@
 #include "signbit.c"
 #endif
 
+#ifndef copysign
+#define copysign(_x, _y) (_x < 0 ? -_y : _y)
+#endif
+
 #endif
