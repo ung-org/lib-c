@@ -1,10 +1,16 @@
-#include "stdarg.h"
+#include <stdarg.h>
 #include <wchar.h>
+#include "stdio/_stdio.h"
 
 int vswprintf(wchar_t * restrict s, size_t n, const wchar_t * restrict format, va_list arg)
 {
-	(void)s; (void)n; (void)format; (void)arg;
-	return -1;
+	int ret = 0;
+	struct io_options opt = {0};
+	opt.fnname = "vswprintf";
+	opt.wstring = s;
+	opt.maxlen = n;
+	ret = __printf(&opt, (const char*)format, arg);
+	return ret;
 }
 
 /*
