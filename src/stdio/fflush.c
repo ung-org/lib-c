@@ -24,7 +24,7 @@ int fflush(FILE *stream)
 	}
 
 	flockfile(stream);
-	if (write(stream->fd, stream->buf, stream->bpos) == -1) {
+	if (write(stream->fd, stream->buf, stream->bpos) < 0) {
 		/* errno is set */
 		ret = EOF;
 		stream->err = 1;
