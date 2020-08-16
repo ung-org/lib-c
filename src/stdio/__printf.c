@@ -1,18 +1,18 @@
 #include "stdio.h"
 #include "_stdio.h"
 #include "stddef.h"
-#include "wctype/wint_t.c"
-#include "wctype/wctrans_t.c"
+#include "wctype/wint_t.h"
+#include "wctype/wctrans_t.h"
 #include "wchar.h"
 #include "inttypes.h"
 #include "unistd.h"
 #include "stdlib.h"
 
 #if !defined __STDC_VERSION__ || __STDC_VERSION__ < 199909L
-#include "stdint/intmax_t.c"
-#include "stdint/uintmax_t.c"
-#include "stdint/intptr_t.c"
-#include "stdint/UINTMAX_MAX.c"
+#include "stdint/intmax_t.h"
+#include "stdint/uintmax_t.h"
+#include "stdint/intptr_t.h"
+#include "stdint/UINTMAX_MAX.h"
 #define strtoumax __strtoumax
 #include "inttypes/strtoumax.c"
 #endif

@@ -3,7 +3,7 @@
 
 #include <errno.h>
 #ifndef ENOSYS
-#include "errno/ENOSYS.c"
+#include "errno/ENOSYS.h"
 #endif
 
 #define SYSCALL(_name, _type, _err, _a1, _a2, _a3, _a4, _a5, _a6) \

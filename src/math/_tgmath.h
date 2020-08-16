@@ -34,34 +34,38 @@
 #define TGHUGE			HUGE_VAL
 
 #ifndef FP_ZERO
-#include "FP_ZERO.c"
+#include "FP_ZERO.h"
 #endif
 
 #ifndef FP_INFINITE
-#include "FP_INFINITE.c"
+#include "FP_INFINITE.h"
 #endif
 
 #ifndef FP_NAN
-#include "FP_NAN.c"
+#include "FP_NAN.h"
+#endif
+
+#ifndef FP_NORMAL
+#include "FP_NORMAL.h"
 #endif
 
 #ifndef NAN
-#include "NAN.c"
+#include "NAN.h"
 #endif
 
 #ifndef INFINITY
-#include "INFINITY.c"
+#include "INFINITY.h"
 #endif
 
 #undef feraiseexcept
 #define feraiseexcept(_)
 
 #ifndef fpclassify
-#include "fpclassify.c"
+#include "fpclassify.h"
 #endif
 
 #ifndef signbit
-#include "signbit.c"
+#include "signbit.h"
 #endif
 
 #ifndef copysign
@@ -69,11 +73,11 @@
 #endif
 
 #ifndef M_PI
-#include "M_PI.c"
+#include "M_PI.h"
 #endif
 
 #ifndef M_PI_2
-#include "M_PI_2.c"
+#include "M_PI_2.h"
 #endif
 
 #endif

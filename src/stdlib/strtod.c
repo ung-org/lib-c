@@ -5,11 +5,11 @@
 #include <stdlib.h>
 
 #ifndef INFINITY
-#include "math/INFINITY.c"
+#include "math/INFINITY.h"
 #endif
 
 #ifndef NAN
-#include "math/NAN.c"
+#include "math/NAN.h"
 #endif
 
 /** convert string to floating-point **/

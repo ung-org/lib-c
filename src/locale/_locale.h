@@ -5,31 +5,31 @@
 #include <limits.h>
 
 #ifndef LC_ALL_MASK
-#include "LC_ALL_MASK.c"
+#include "LC_ALL_MASK.h"
 #endif
 
 #ifndef LC_COLLATE_MASK
-#include "LC_COLLATE_MASK.c"
+#include "LC_COLLATE_MASK.h"
 #endif
 
 #ifndef LC_CTYPE_MASK
-#include "LC_CTYPE_MASK.c"
+#include "LC_CTYPE_MASK.h"
 #endif
 
 #ifndef LC_NUMERIC_MASK
-#include "LC_NUMERIC_MASK.c"
+#include "LC_NUMERIC_MASK.h"
 #endif
 
 #ifndef LC_TIME_MASK
-#include "LC_TIME_MASK.c"
+#include "LC_TIME_MASK.h"
 #endif
 
 #ifndef LC_MESSAGES_MASK
-#include "LC_MESSAGES_MASK.c"
+#include "LC_MESSAGES_MASK.h"
 #endif
 
 #ifndef LC_MONETARY_MASK
-#include "LC_MONETARY_MASK.c"
+#include "LC_MONETARY_MASK.h"
 #endif
 
 struct __locale_t {
