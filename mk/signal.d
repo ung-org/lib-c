@@ -3,12 +3,6 @@ libc.a(signal.o): $(OBJDIR)/signal.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/signal.o: src/signal/signal.c
-$(OBJDIR)/signal.o: src/signal/sigset_t.c
-$(OBJDIR)/signal.o: src/signal/struct_sigaction.c
-$(OBJDIR)/signal.o: 
-$(OBJDIR)/signal.o: 
-$(OBJDIR)/signal.o: 
-$(OBJDIR)/signal.o: 
 $(OBJDIR)/signal.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

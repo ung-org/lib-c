@@ -3,7 +3,6 @@ libc.a(shm_open.o): $(OBJDIR)/shm_open.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/shm_open.o: src/sys/mman/shm_open.c
-$(OBJDIR)/shm_open.o: src/sys/types/mode_t.c
 $(OBJDIR)/shm_open.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

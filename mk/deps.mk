@@ -34,30 +34,6 @@ all: mk/getrlimit.d
 mk/getrlimit.d: src/sys/resource/getrlimit.c
 	sh mk/deps.sh src/sys/resource/getrlimit.c
 
-all: mk/nlink_t.d
-mk/nlink_t.d: src/sys/types/nlink_t.c
-	sh mk/deps.sh src/sys/types/nlink_t.c
-
-all: mk/dev_t.d
-mk/dev_t.d: src/sys/types/dev_t.c
-	sh mk/deps.sh src/sys/types/dev_t.c
-
-all: mk/gid_t.d
-mk/gid_t.d: src/sys/types/gid_t.c
-	sh mk/deps.sh src/sys/types/gid_t.c
-
-all: mk/ino_t.d
-mk/ino_t.d: src/sys/types/ino_t.c
-	sh mk/deps.sh src/sys/types/ino_t.c
-
-all: mk/uid_t.d
-mk/uid_t.d: src/sys/types/uid_t.c
-	sh mk/deps.sh src/sys/types/uid_t.c
-
-all: mk/off_t.d
-mk/off_t.d: src/sys/types/off_t.c
-	sh mk/deps.sh src/sys/types/off_t.c
-
 all: mk/shmctl.d
 mk/shmctl.d: src/sys/shm/shmctl.c
 	sh mk/deps.sh src/sys/shm/shmctl.c
@@ -73,10 +49,6 @@ mk/shmat.d: src/sys/shm/shmat.c
 all: mk/shmdt.d
 mk/shmdt.d: src/sys/shm/shmdt.c
 	sh mk/deps.sh src/sys/shm/shmdt.c
-
-all: mk/struct_shmid_ds.d
-mk/struct_shmid_ds.d: src/sys/shm/struct_shmid_ds.c
-	sh mk/deps.sh src/sys/shm/struct_shmid_ds.c
 
 all: mk/setitimer.d
 mk/setitimer.d: src/sys/time/setitimer.c
@@ -102,10 +74,6 @@ all: mk/ftok.d
 mk/ftok.d: src/sys/ipc/ftok.c
 	sh mk/deps.sh src/sys/ipc/ftok.c
 
-all: mk/struct_ipc_perm.d
-mk/struct_ipc_perm.d: src/sys/ipc/struct_ipc_perm.c
-	sh mk/deps.sh src/sys/ipc/struct_ipc_perm.c
-
 all: mk/uname.d
 mk/uname.d: src/sys/utsname/uname.c
 	sh mk/deps.sh src/sys/utsname/uname.c
@@ -118,17 +86,9 @@ all: mk/writev.d
 mk/writev.d: src/sys/uio/writev.c
 	sh mk/deps.sh src/sys/uio/writev.c
 
-all: mk/struct_sem_anonymous.d
-mk/struct_sem_anonymous.d: src/sys/sem/struct_sem_anonymous.c
-	sh mk/deps.sh src/sys/sem/struct_sem_anonymous.c
-
 all: mk/semget.d
 mk/semget.d: src/sys/sem/semget.c
 	sh mk/deps.sh src/sys/sem/semget.c
-
-all: mk/struct_semid_ds.d
-mk/struct_semid_ds.d: src/sys/sem/struct_semid_ds.c
-	sh mk/deps.sh src/sys/sem/struct_semid_ds.c
 
 all: mk/semop.d
 mk/semop.d: src/sys/sem/semop.c
@@ -205,10 +165,6 @@ mk/msgrcv.d: src/sys/msg/msgrcv.c
 all: mk/msgget.d
 mk/msgget.d: src/sys/msg/msgget.c
 	sh mk/deps.sh src/sys/msg/msgget.c
-
-all: mk/struct_msqid_ds.d
-mk/struct_msqid_ds.d: src/sys/msg/struct_msqid_ds.c
-	sh mk/deps.sh src/sys/msg/struct_msqid_ds.c
 
 all: mk/msgctl.d
 mk/msgctl.d: src/sys/msg/msgctl.c
@@ -289,10 +245,6 @@ mk/siglongjmp.d: src/setjmp/siglongjmp.c
 all: mk/longjmp.d
 mk/longjmp.d: src/setjmp/longjmp.c
 	sh mk/deps.sh src/setjmp/longjmp.c
-
-all: mk/jmp_buf.d
-mk/jmp_buf.d: src/setjmp/jmp_buf.c
-	sh mk/deps.sh src/setjmp/jmp_buf.c
 
 all: mk/bzero.d
 mk/bzero.d: src/strings/bzero.c
@@ -446,18 +398,6 @@ all: mk/dbm_clearerr.d
 mk/dbm_clearerr.d: src/ndbm/dbm_clearerr.c
 	sh mk/deps.sh src/ndbm/dbm_clearerr.c
 
-all: mk/_XOPEN_SOURCE_EXTENDED.d
-mk/_XOPEN_SOURCE_EXTENDED.d: src/__FEATURE_TEST_MACROS__/_XOPEN_SOURCE_EXTENDED.c
-	sh mk/deps.sh src/__FEATURE_TEST_MACROS__/_XOPEN_SOURCE_EXTENDED.c
-
-all: mk/_XOPEN_SOURCE.d
-mk/_XOPEN_SOURCE.d: src/__FEATURE_TEST_MACROS__/_XOPEN_SOURCE.c
-	sh mk/deps.sh src/__FEATURE_TEST_MACROS__/_XOPEN_SOURCE.c
-
-all: mk/_POSIX_C_SOURCE.d
-mk/_POSIX_C_SOURCE.d: src/__FEATURE_TEST_MACROS__/_POSIX_C_SOURCE.c
-	sh mk/deps.sh src/__FEATURE_TEST_MACROS__/_POSIX_C_SOURCE.c
-
 all: mk/regcomp.d
 mk/regcomp.d: src/regex/regcomp.c
 	sh mk/deps.sh src/regex/regcomp.c
@@ -550,6 +490,14 @@ all: mk/timer_create.d
 mk/timer_create.d: src/time/timer_create.c
 	sh mk/deps.sh src/time/timer_create.c
 
+all: mk/ctime_s.d
+mk/ctime_s.d: src/time/ctime_s.c
+	sh mk/deps.sh src/time/ctime_s.c
+
+all: mk/__time.d
+mk/__time.d: src/time/__time.c
+	sh mk/deps.sh src/time/__time.c
+
 all: mk/strptime.d
 mk/strptime.d: src/time/strptime.c
 	sh mk/deps.sh src/time/strptime.c
@@ -565,6 +513,10 @@ mk/strftime.d: src/time/strftime.c
 all: mk/gmtime.d
 mk/gmtime.d: src/time/gmtime.c
 	sh mk/deps.sh src/time/gmtime.c
+
+all: mk/timespec_get.d
+mk/timespec_get.d: src/time/timespec_get.c
+	sh mk/deps.sh src/time/timespec_get.c
 
 all: mk/clock_settime.d
 mk/clock_settime.d: src/time/clock_settime.c
@@ -598,6 +550,14 @@ all: mk/asctime.d
 mk/asctime.d: src/time/asctime.c
 	sh mk/deps.sh src/time/asctime.c
 
+all: mk/localtime_s.d
+mk/localtime_s.d: src/time/localtime_s.c
+	sh mk/deps.sh src/time/localtime_s.c
+
+all: mk/gmtime_s.d
+mk/gmtime_s.d: src/time/gmtime_s.c
+	sh mk/deps.sh src/time/gmtime_s.c
+
 all: mk/ctime.d
 mk/ctime.d: src/time/ctime.c
 	sh mk/deps.sh src/time/ctime.c
@@ -613,6 +573,10 @@ mk/getdate.d: src/time/getdate.c
 all: mk/nanosleep.d
 mk/nanosleep.d: src/time/nanosleep.c
 	sh mk/deps.sh src/time/nanosleep.c
+
+all: mk/asctime_s.d
+mk/asctime_s.d: src/time/asctime_s.c
+	sh mk/deps.sh src/time/asctime_s.c
 
 all: mk/difftime.d
 mk/difftime.d: src/time/difftime.c
@@ -638,6 +602,10 @@ all: mk/clock_getres.d
 mk/clock_getres.d: src/time/clock_getres.c
 	sh mk/deps.sh src/time/clock_getres.c
 
+all: mk/scanf_s.d
+mk/scanf_s.d: src/stdio/scanf_s.c
+	sh mk/deps.sh src/stdio/scanf_s.c
+
 all: mk/fread.d
 mk/fread.d: src/stdio/fread.c
 	sh mk/deps.sh src/stdio/fread.c
@@ -645,6 +613,10 @@ mk/fread.d: src/stdio/fread.c
 all: mk/fgetpos.d
 mk/fgetpos.d: src/stdio/fgetpos.c
 	sh mk/deps.sh src/stdio/fgetpos.c
+
+all: mk/sscanf_s.d
+mk/sscanf_s.d: src/stdio/sscanf_s.c
+	sh mk/deps.sh src/stdio/sscanf_s.c
 
 all: mk/fclose.d
 mk/fclose.d: src/stdio/fclose.c
@@ -654,9 +626,25 @@ all: mk/fopen.d
 mk/fopen.d: src/stdio/fopen.c
 	sh mk/deps.sh src/stdio/fopen.c
 
+all: mk/vfscanf_s.d
+mk/vfscanf_s.d: src/stdio/vfscanf_s.c
+	sh mk/deps.sh src/stdio/vfscanf_s.c
+
+all: mk/printf_s.d
+mk/printf_s.d: src/stdio/printf_s.c
+	sh mk/deps.sh src/stdio/printf_s.c
+
 all: mk/funlockfile.d
 mk/funlockfile.d: src/stdio/funlockfile.c
 	sh mk/deps.sh src/stdio/funlockfile.c
+
+all: mk/fscanf_s.d
+mk/fscanf_s.d: src/stdio/fscanf_s.c
+	sh mk/deps.sh src/stdio/fscanf_s.c
+
+all: mk/freopen_s.d
+mk/freopen_s.d: src/stdio/freopen_s.c
+	sh mk/deps.sh src/stdio/freopen_s.c
 
 all: mk/ftell.d
 mk/ftell.d: src/stdio/ftell.c
@@ -669,6 +657,14 @@ mk/getchar_unlocked.d: src/stdio/getchar_unlocked.c
 all: mk/sscanf.d
 mk/sscanf.d: src/stdio/sscanf.c
 	sh mk/deps.sh src/stdio/sscanf.c
+
+all: mk/__scanf.d
+mk/__scanf.d: src/stdio/__scanf.c
+	sh mk/deps.sh src/stdio/__scanf.c
+
+all: mk/vfprintf_s.d
+mk/vfprintf_s.d: src/stdio/vfprintf_s.c
+	sh mk/deps.sh src/stdio/vfprintf_s.c
 
 all: mk/fsetpos.d
 mk/fsetpos.d: src/stdio/fsetpos.c
@@ -701,6 +697,10 @@ mk/fdopen.d: src/stdio/fdopen.c
 all: mk/fgets.d
 mk/fgets.d: src/stdio/fgets.c
 	sh mk/deps.sh src/stdio/fgets.c
+
+all: mk/vsnprintf_s.d
+mk/vsnprintf_s.d: src/stdio/vsnprintf_s.c
+	sh mk/deps.sh src/stdio/vsnprintf_s.c
 
 all: mk/getw.d
 mk/getw.d: src/stdio/getw.c
@@ -774,6 +774,14 @@ all: mk/tempnam.d
 mk/tempnam.d: src/stdio/tempnam.c
 	sh mk/deps.sh src/stdio/tempnam.c
 
+all: mk/fprintf_s.d
+mk/fprintf_s.d: src/stdio/fprintf_s.c
+	sh mk/deps.sh src/stdio/fprintf_s.c
+
+all: mk/fopen_s.d
+mk/fopen_s.d: src/stdio/fopen_s.c
+	sh mk/deps.sh src/stdio/fopen_s.c
+
 all: mk/vfprintf.d
 mk/vfprintf.d: src/stdio/vfprintf.c
 	sh mk/deps.sh src/stdio/vfprintf.c
@@ -834,9 +842,21 @@ all: mk/snprintf.d
 mk/snprintf.d: src/stdio/snprintf.c
 	sh mk/deps.sh src/stdio/snprintf.c
 
+all: mk/gets_s.d
+mk/gets_s.d: src/stdio/gets_s.c
+	sh mk/deps.sh src/stdio/gets_s.c
+
 all: mk/setbuf.d
 mk/setbuf.d: src/stdio/setbuf.c
 	sh mk/deps.sh src/stdio/setbuf.c
+
+all: mk/vsprintf_s.d
+mk/vsprintf_s.d: src/stdio/vsprintf_s.c
+	sh mk/deps.sh src/stdio/vsprintf_s.c
+
+all: mk/tmpfile_s.d
+mk/tmpfile_s.d: src/stdio/tmpfile_s.c
+	sh mk/deps.sh src/stdio/tmpfile_s.c
 
 all: mk/gets.d
 mk/gets.d: src/stdio/gets.c
@@ -849,6 +869,10 @@ mk/__stdio.d: src/stdio/__stdio.c
 all: mk/putc.d
 mk/putc.d: src/stdio/putc.c
 	sh mk/deps.sh src/stdio/putc.c
+
+all: mk/vprintf_s.d
+mk/vprintf_s.d: src/stdio/vprintf_s.c
+	sh mk/deps.sh src/stdio/vprintf_s.c
 
 all: mk/feof.d
 mk/feof.d: src/stdio/feof.c
@@ -866,6 +890,10 @@ all: mk/puts.d
 mk/puts.d: src/stdio/puts.c
 	sh mk/deps.sh src/stdio/puts.c
 
+all: mk/sprintf_s.d
+mk/sprintf_s.d: src/stdio/sprintf_s.c
+	sh mk/deps.sh src/stdio/sprintf_s.c
+
 all: mk/fflush.d
 mk/fflush.d: src/stdio/fflush.c
 	sh mk/deps.sh src/stdio/fflush.c
@@ -882,6 +910,14 @@ all: mk/printf.d
 mk/printf.d: src/stdio/printf.c
 	sh mk/deps.sh src/stdio/printf.c
 
+all: mk/vsscanf_s.d
+mk/vsscanf_s.d: src/stdio/vsscanf_s.c
+	sh mk/deps.sh src/stdio/vsscanf_s.c
+
+all: mk/vscanf_s.d
+mk/vscanf_s.d: src/stdio/vscanf_s.c
+	sh mk/deps.sh src/stdio/vscanf_s.c
+
 all: mk/__printf.d
 mk/__printf.d: src/stdio/__printf.c
 	sh mk/deps.sh src/stdio/__printf.c
@@ -893,6 +929,14 @@ mk/fseek.d: src/stdio/fseek.c
 all: mk/tmpnam.d
 mk/tmpnam.d: src/stdio/tmpnam.c
 	sh mk/deps.sh src/stdio/tmpnam.c
+
+all: mk/snprintf_s.d
+mk/snprintf_s.d: src/stdio/snprintf_s.c
+	sh mk/deps.sh src/stdio/snprintf_s.c
+
+all: mk/tmpnam_s.d
+mk/tmpnam_s.d: src/stdio/tmpnam_s.c
+	sh mk/deps.sh src/stdio/tmpnam_s.c
 
 all: mk/getopt.d
 mk/getopt.d: src/unistd/getopt.c
@@ -1234,6 +1278,10 @@ all: mk/sleep.d
 mk/sleep.d: src/unistd/sleep.c
 	sh mk/deps.sh src/unistd/sleep.c
 
+all: mk/strerrorlen_s.d
+mk/strerrorlen_s.d: src/string/strerrorlen_s.c
+	sh mk/deps.sh src/string/strerrorlen_s.c
+
 all: mk/strncat.d
 mk/strncat.d: src/string/strncat.c
 	sh mk/deps.sh src/string/strncat.c
@@ -1241,6 +1289,10 @@ mk/strncat.d: src/string/strncat.c
 all: mk/strncmp.d
 mk/strncmp.d: src/string/strncmp.c
 	sh mk/deps.sh src/string/strncmp.c
+
+all: mk/strncat_s.d
+mk/strncat_s.d: src/string/strncat_s.c
+	sh mk/deps.sh src/string/strncat_s.c
 
 all: mk/memmove.d
 mk/memmove.d: src/string/memmove.c
@@ -1266,6 +1318,10 @@ all: mk/memcmp.d
 mk/memcmp.d: src/string/memcmp.c
 	sh mk/deps.sh src/string/memcmp.c
 
+all: mk/strncpy_s.d
+mk/strncpy_s.d: src/string/strncpy_s.c
+	sh mk/deps.sh src/string/strncpy_s.c
+
 all: mk/strcat.d
 mk/strcat.d: src/string/strcat.c
 	sh mk/deps.sh src/string/strcat.c
@@ -1285,6 +1341,22 @@ mk/strcmp.d: src/string/strcmp.c
 all: mk/strspn.d
 mk/strspn.d: src/string/strspn.c
 	sh mk/deps.sh src/string/strspn.c
+
+all: mk/memcpy_s.d
+mk/memcpy_s.d: src/string/memcpy_s.c
+	sh mk/deps.sh src/string/memcpy_s.c
+
+all: mk/strerror_s.d
+mk/strerror_s.d: src/string/strerror_s.c
+	sh mk/deps.sh src/string/strerror_s.c
+
+all: mk/strtok_s.d
+mk/strtok_s.d: src/string/strtok_s.c
+	sh mk/deps.sh src/string/strtok_s.c
+
+all: mk/memset_s.d
+mk/memset_s.d: src/string/memset_s.c
+	sh mk/deps.sh src/string/memset_s.c
 
 all: mk/strncpy.d
 mk/strncpy.d: src/string/strncpy.c
@@ -1306,6 +1378,18 @@ all: mk/strcpy.d
 mk/strcpy.d: src/string/strcpy.c
 	sh mk/deps.sh src/string/strcpy.c
 
+all: mk/memmove_s.d
+mk/memmove_s.d: src/string/memmove_s.c
+	sh mk/deps.sh src/string/memmove_s.c
+
+all: mk/strnlen_s.d
+mk/strnlen_s.d: src/string/strnlen_s.c
+	sh mk/deps.sh src/string/strnlen_s.c
+
+all: mk/strcpy_s.d
+mk/strcpy_s.d: src/string/strcpy_s.c
+	sh mk/deps.sh src/string/strcpy_s.c
+
 all: mk/strcoll.d
 mk/strcoll.d: src/string/strcoll.c
 	sh mk/deps.sh src/string/strcoll.c
@@ -1317,6 +1401,10 @@ mk/strpbrk.d: src/string/strpbrk.c
 all: mk/strcspn.d
 mk/strcspn.d: src/string/strcspn.c
 	sh mk/deps.sh src/string/strcspn.c
+
+all: mk/strcat_s.d
+mk/strcat_s.d: src/string/strcat_s.c
+	sh mk/deps.sh src/string/strcat_s.c
 
 all: mk/strlen.d
 mk/strlen.d: src/string/strlen.c
@@ -1698,6 +1786,22 @@ all: mk/__errno.d
 mk/__errno.d: src/errno/__errno.c
 	sh mk/deps.sh src/errno/__errno.c
 
+all: mk/mbrtoc16.d
+mk/mbrtoc16.d: src/uchar/mbrtoc16.c
+	sh mk/deps.sh src/uchar/mbrtoc16.c
+
+all: mk/mbrtoc32.d
+mk/mbrtoc32.d: src/uchar/mbrtoc32.c
+	sh mk/deps.sh src/uchar/mbrtoc32.c
+
+all: mk/c32rtomb.d
+mk/c32rtomb.d: src/uchar/c32rtomb.c
+	sh mk/deps.sh src/uchar/c32rtomb.c
+
+all: mk/c16rtomb.d
+mk/c16rtomb.d: src/uchar/c16rtomb.c
+	sh mk/deps.sh src/uchar/c16rtomb.c
+
 all: mk/cfsetospeed.d
 mk/cfsetospeed.d: src/termios/cfsetospeed.c
 	sh mk/deps.sh src/termios/cfsetospeed.c
@@ -1786,10 +1890,6 @@ all: mk/sched_get_priority_max.d
 mk/sched_get_priority_max.d: src/sched/sched_get_priority_max.c
 	sh mk/deps.sh src/sched/sched_get_priority_max.c
 
-all: mk/struct_sched_param.d
-mk/struct_sched_param.d: src/sched/struct_sched_param.c
-	sh mk/deps.sh src/sched/struct_sched_param.c
-
 all: mk/sched_getscheduler.d
 mk/sched_getscheduler.d: src/sched/sched_getscheduler.c
 	sh mk/deps.sh src/sched/sched_getscheduler.c
@@ -1822,10 +1922,6 @@ all: mk/isastream.d
 mk/isastream.d: src/stropts/isastream.c
 	sh mk/deps.sh src/stropts/isastream.c
 
-all: mk/struct_str_list.d
-mk/struct_str_list.d: src/stropts/struct_str_list.c
-	sh mk/deps.sh src/stropts/struct_str_list.c
-
 all: mk/getmsg.d
 mk/getmsg.d: src/stropts/getmsg.c
 	sh mk/deps.sh src/stropts/getmsg.c
@@ -1842,10 +1938,6 @@ all: mk/getpmsg.d
 mk/getpmsg.d: src/stropts/getpmsg.c
 	sh mk/deps.sh src/stropts/getpmsg.c
 
-all: mk/struct_str_mlist.d
-mk/struct_str_mlist.d: src/stropts/struct_str_mlist.c
-	sh mk/deps.sh src/stropts/struct_str_mlist.c
-
 all: mk/ioctl.d
 mk/ioctl.d: src/stropts/ioctl.c
 	sh mk/deps.sh src/stropts/ioctl.c
@@ -1853,6 +1945,10 @@ mk/ioctl.d: src/stropts/ioctl.c
 all: mk/putpmsg.d
 mk/putpmsg.d: src/stropts/putpmsg.c
 	sh mk/deps.sh src/stropts/putpmsg.c
+
+all: mk/swscanf_s.d
+mk/swscanf_s.d: src/wchar/swscanf_s.c
+	sh mk/deps.sh src/wchar/swscanf_s.c
 
 all: mk/wcsrtombs.d
 mk/wcsrtombs.d: src/wchar/wcsrtombs.c
@@ -1866,9 +1962,17 @@ all: mk/wcstok.d
 mk/wcstok.d: src/wchar/wcstok.c
 	sh mk/deps.sh src/wchar/wcstok.c
 
+all: mk/wcscpy_s.d
+mk/wcscpy_s.d: src/wchar/wcscpy_s.c
+	sh mk/deps.sh src/wchar/wcscpy_s.c
+
 all: mk/wcsxfrm.d
 mk/wcsxfrm.d: src/wchar/wcsxfrm.c
 	sh mk/deps.sh src/wchar/wcsxfrm.c
+
+all: mk/wcstok_s.d
+mk/wcstok_s.d: src/wchar/wcstok_s.c
+	sh mk/deps.sh src/wchar/wcstok_s.c
 
 all: mk/wcscspn.d
 mk/wcscspn.d: src/wchar/wcscspn.c
@@ -1878,13 +1982,33 @@ all: mk/wcstof.d
 mk/wcstof.d: src/wchar/wcstof.c
 	sh mk/deps.sh src/wchar/wcstof.c
 
+all: mk/wcsrtombs_s.d
+mk/wcsrtombs_s.d: src/wchar/wcsrtombs_s.c
+	sh mk/deps.sh src/wchar/wcsrtombs_s.c
+
 all: mk/wcsncpy.d
 mk/wcsncpy.d: src/wchar/wcsncpy.c
 	sh mk/deps.sh src/wchar/wcsncpy.c
 
+all: mk/wmemmove_s.d
+mk/wmemmove_s.d: src/wchar/wmemmove_s.c
+	sh mk/deps.sh src/wchar/wmemmove_s.c
+
 all: mk/fgetwc.d
 mk/fgetwc.d: src/wchar/fgetwc.c
 	sh mk/deps.sh src/wchar/fgetwc.c
+
+all: mk/vsnwprintf_s.d
+mk/vsnwprintf_s.d: src/wchar/vsnwprintf_s.c
+	sh mk/deps.sh src/wchar/vsnwprintf_s.c
+
+all: mk/wcsncat_s.d
+mk/wcsncat_s.d: src/wchar/wcsncat_s.c
+	sh mk/deps.sh src/wchar/wcsncat_s.c
+
+all: mk/swprintf_s.d
+mk/swprintf_s.d: src/wchar/swprintf_s.c
+	sh mk/deps.sh src/wchar/swprintf_s.c
 
 all: mk/mbsinit.d
 mk/mbsinit.d: src/wchar/mbsinit.c
@@ -1906,13 +2030,25 @@ all: mk/wcwidth.d
 mk/wcwidth.d: src/wchar/wcwidth.c
 	sh mk/deps.sh src/wchar/wcwidth.c
 
+all: mk/wcscat_s.d
+mk/wcscat_s.d: src/wchar/wcscat_s.c
+	sh mk/deps.sh src/wchar/wcscat_s.c
+
 all: mk/wcscoll.d
 mk/wcscoll.d: src/wchar/wcscoll.c
 	sh mk/deps.sh src/wchar/wcscoll.c
 
+all: mk/wprintf_s.d
+mk/wprintf_s.d: src/wchar/wprintf_s.c
+	sh mk/deps.sh src/wchar/wprintf_s.c
+
 all: mk/wcstoull.d
 mk/wcstoull.d: src/wchar/wcstoull.c
 	sh mk/deps.sh src/wchar/wcstoull.c
+
+all: mk/vswprintf_s.d
+mk/vswprintf_s.d: src/wchar/vswprintf_s.c
+	sh mk/deps.sh src/wchar/vswprintf_s.c
 
 all: mk/ungetwc.d
 mk/ungetwc.d: src/wchar/ungetwc.c
@@ -1942,9 +2078,21 @@ all: mk/wmemset.d
 mk/wmemset.d: src/wchar/wmemset.c
 	sh mk/deps.sh src/wchar/wmemset.c
 
+all: mk/vwprintf_s.d
+mk/vwprintf_s.d: src/wchar/vwprintf_s.c
+	sh mk/deps.sh src/wchar/vwprintf_s.c
+
+all: mk/fwscanf_s.d
+mk/fwscanf_s.d: src/wchar/fwscanf_s.c
+	sh mk/deps.sh src/wchar/fwscanf_s.c
+
 all: mk/wcsspn.d
 mk/wcsspn.d: src/wchar/wcsspn.c
 	sh mk/deps.sh src/wchar/wcsspn.c
+
+all: mk/wcsncpy_s.d
+mk/wcsncpy_s.d: src/wchar/wcsncpy_s.c
+	sh mk/deps.sh src/wchar/wcsncpy_s.c
 
 all: mk/vwscanf.d
 mk/vwscanf.d: src/wchar/vwscanf.c
@@ -1966,9 +2114,25 @@ all: mk/putwc.d
 mk/putwc.d: src/wchar/putwc.c
 	sh mk/deps.sh src/wchar/putwc.c
 
+all: mk/wscanf_s.d
+mk/wscanf_s.d: src/wchar/wscanf_s.c
+	sh mk/deps.sh src/wchar/wscanf_s.c
+
 all: mk/wcscpy.d
 mk/wcscpy.d: src/wchar/wcscpy.c
 	sh mk/deps.sh src/wchar/wcscpy.c
+
+all: mk/mbsrtowcs_s.d
+mk/mbsrtowcs_s.d: src/wchar/mbsrtowcs_s.c
+	sh mk/deps.sh src/wchar/mbsrtowcs_s.c
+
+all: mk/wmemcpy_s.d
+mk/wmemcpy_s.d: src/wchar/wmemcpy_s.c
+	sh mk/deps.sh src/wchar/wmemcpy_s.c
+
+all: mk/fwprintf_s.d
+mk/fwprintf_s.d: src/wchar/fwprintf_s.c
+	sh mk/deps.sh src/wchar/fwprintf_s.c
 
 all: mk/swscanf.d
 mk/swscanf.d: src/wchar/swscanf.c
@@ -1997,6 +2161,10 @@ mk/vswscanf.d: src/wchar/vswscanf.c
 all: mk/fputwc.d
 mk/fputwc.d: src/wchar/fputwc.c
 	sh mk/deps.sh src/wchar/fputwc.c
+
+all: mk/snwprintf_s.d
+mk/snwprintf_s.d: src/wchar/snwprintf_s.c
+	sh mk/deps.sh src/wchar/snwprintf_s.c
 
 all: mk/fgetws.d
 mk/fgetws.d: src/wchar/fgetws.c
@@ -2038,6 +2206,10 @@ all: mk/wmemchr.d
 mk/wmemchr.d: src/wchar/wmemchr.c
 	sh mk/deps.sh src/wchar/wmemchr.c
 
+all: mk/wcrtomb_s.d
+mk/wcrtomb_s.d: src/wchar/wcrtomb_s.c
+	sh mk/deps.sh src/wchar/wcrtomb_s.c
+
 all: mk/btowc.d
 mk/btowc.d: src/wchar/btowc.c
 	sh mk/deps.sh src/wchar/btowc.c
@@ -2046,6 +2218,14 @@ all: mk/wcslen.d
 mk/wcslen.d: src/wchar/wcslen.c
 	sh mk/deps.sh src/wchar/wcslen.c
 
+all: mk/vfwprintf_s.d
+mk/vfwprintf_s.d: src/wchar/vfwprintf_s.c
+	sh mk/deps.sh src/wchar/vfwprintf_s.c
+
+all: mk/vwscanf_s.d
+mk/vwscanf_s.d: src/wchar/vwscanf_s.c
+	sh mk/deps.sh src/wchar/vwscanf_s.c
+
 all: mk/vfwscanf.d
 mk/vfwscanf.d: src/wchar/vfwscanf.c
 	sh mk/deps.sh src/wchar/vfwscanf.c
@@ -2053,6 +2233,10 @@ mk/vfwscanf.d: src/wchar/vfwscanf.c
 all: mk/fwide.d
 mk/fwide.d: src/wchar/fwide.c
 	sh mk/deps.sh src/wchar/fwide.c
+
+all: mk/vfwscanf_s.d
+mk/vfwscanf_s.d: src/wchar/vfwscanf_s.c
+	sh mk/deps.sh src/wchar/vfwscanf_s.c
 
 all: mk/wcschr.d
 mk/wcschr.d: src/wchar/wcschr.c
@@ -2082,6 +2266,10 @@ all: mk/swprintf.d
 mk/swprintf.d: src/wchar/swprintf.c
 	sh mk/deps.sh src/wchar/swprintf.c
 
+all: mk/wcsnlen_s.d
+mk/wcsnlen_s.d: src/wchar/wcsnlen_s.c
+	sh mk/deps.sh src/wchar/wcsnlen_s.c
+
 all: mk/wcrtomb.d
 mk/wcrtomb.d: src/wchar/wcrtomb.c
 	sh mk/deps.sh src/wchar/wcrtomb.c
@@ -2097,6 +2285,10 @@ mk/wcstoul.d: src/wchar/wcstoul.c
 all: mk/fputws.d
 mk/fputws.d: src/wchar/fputws.c
 	sh mk/deps.sh src/wchar/fputws.c
+
+all: mk/vswscanf_s.d
+mk/vswscanf_s.d: src/wchar/vswscanf_s.c
+	sh mk/deps.sh src/wchar/vswscanf_s.c
 
 all: mk/wcsstr.d
 mk/wcsstr.d: src/wchar/wcsstr.c
@@ -2542,10 +2734,6 @@ all: mk/vline.d
 mk/vline.d: src/curses/vline.c
 	sh mk/deps.sh src/curses/vline.c
 
-all: mk/COLS.d
-mk/COLS.d: src/curses/COLS.c
-	sh mk/deps.sh src/curses/COLS.c
-
 all: mk/inwstr.d
 mk/inwstr.d: src/curses/inwstr.c
 	sh mk/deps.sh src/curses/inwstr.c
@@ -2633,10 +2821,6 @@ mk/scr_set.d: src/curses/scr_set.c
 all: mk/slk_clear.d
 mk/slk_clear.d: src/curses/slk_clear.c
 	sh mk/deps.sh src/curses/slk_clear.c
-
-all: mk/COLORS.d
-mk/COLORS.d: src/curses/COLORS.c
-	sh mk/deps.sh src/curses/COLORS.c
 
 all: mk/getbkgrnd.d
 mk/getbkgrnd.d: src/curses/getbkgrnd.c
@@ -2737,10 +2921,6 @@ mk/init_pair.d: src/curses/init_pair.c
 all: mk/slk_color.d
 mk/slk_color.d: src/curses/slk_color.c
 	sh mk/deps.sh src/curses/slk_color.c
-
-all: mk/COLOR_PAIRS.d
-mk/COLOR_PAIRS.d: src/curses/COLOR_PAIRS.c
-	sh mk/deps.sh src/curses/COLOR_PAIRS.c
 
 all: mk/echochar.d
 mk/echochar.d: src/curses/echochar.c
@@ -2893,10 +3073,6 @@ mk/clearok.d: src/curses/clearok.c
 all: mk/getcchar.d
 mk/getcchar.d: src/curses/getcchar.c
 	sh mk/deps.sh src/curses/getcchar.c
-
-all: mk/LINES.d
-mk/LINES.d: src/curses/LINES.c
-	sh mk/deps.sh src/curses/LINES.c
 
 all: mk/chgat.d
 mk/chgat.d: src/curses/chgat.c
@@ -3222,10 +3398,6 @@ all: mk/atan2.d
 mk/atan2.d: src/math/atan2.c
 	sh mk/deps.sh src/math/atan2.c
 
-all: mk/copysign.d
-mk/copysign.d: src/math/copysign.c
-	sh mk/deps.sh src/math/copysign.c
-
 all: mk/logb.d
 mk/logb.d: src/math/logb.c
 	sh mk/deps.sh src/math/logb.c
@@ -3378,30 +3550,6 @@ all: mk/iswalnum.d
 mk/iswalnum.d: src/wctype/iswalnum.c
 	sh mk/deps.sh src/wctype/iswalnum.c
 
-all: mk/va_list.d
-mk/va_list.d: src/varargs/va_list.c
-	sh mk/deps.sh src/varargs/va_list.c
-
-all: mk/va_alist.d
-mk/va_alist.d: src/varargs/va_alist.c
-	sh mk/deps.sh src/varargs/va_alist.c
-
-all: mk/va_arg.d
-mk/va_arg.d: src/varargs/va_arg.c
-	sh mk/deps.sh src/varargs/va_arg.c
-
-all: mk/va_dcl.d
-mk/va_dcl.d: src/varargs/va_dcl.c
-	sh mk/deps.sh src/varargs/va_dcl.c
-
-all: mk/va_start.d
-mk/va_start.d: src/varargs/va_start.c
-	sh mk/deps.sh src/varargs/va_start.c
-
-all: mk/va_end.d
-mk/va_end.d: src/varargs/va_end.c
-	sh mk/deps.sh src/varargs/va_end.c
-
 all: mk/aio_return.d
 mk/aio_return.d: src/aio/aio_return.c
 	sh mk/deps.sh src/aio/aio_return.c
@@ -3518,10 +3666,6 @@ all: mk/mtx_trylock.d
 mk/mtx_trylock.d: src/threads/mtx_trylock.c
 	sh mk/deps.sh src/threads/mtx_trylock.c
 
-all: mk/_enums.d
-mk/_enums.d: src/threads/_enums.c
-	sh mk/deps.sh src/threads/_enums.c
-
 all: mk/cnd_destroy.d
 mk/cnd_destroy.d: src/threads/cnd_destroy.c
 	sh mk/deps.sh src/threads/cnd_destroy.c
@@ -3570,10 +3714,6 @@ all: mk/cnd_init.d
 mk/cnd_init.d: src/threads/cnd_init.c
 	sh mk/deps.sh src/threads/cnd_init.c
 
-all: mk/tss_dtor_t.d
-mk/tss_dtor_t.d: src/threads/tss_dtor_t.c
-	sh mk/deps.sh src/threads/tss_dtor_t.c
-
 all: mk/mtx_destroy.d
 mk/mtx_destroy.d: src/threads/mtx_destroy.c
 	sh mk/deps.sh src/threads/mtx_destroy.c
@@ -3585,10 +3725,6 @@ mk/cnd_wait.d: src/threads/cnd_wait.c
 all: mk/thrd_detach.d
 mk/thrd_detach.d: src/threads/thrd_detach.c
 	sh mk/deps.sh src/threads/thrd_detach.c
-
-all: mk/thrd_start_t.d
-mk/thrd_start_t.d: src/threads/thrd_start_t.c
-	sh mk/deps.sh src/threads/thrd_start_t.c
 
 all: mk/gcvt.d
 mk/gcvt.d: src/stdlib/gcvt.c
@@ -3614,6 +3750,10 @@ all: mk/fcvt.d
 mk/fcvt.d: src/stdlib/fcvt.c
 	sh mk/deps.sh src/stdlib/fcvt.c
 
+all: mk/quick_exit.d
+mk/quick_exit.d: src/stdlib/quick_exit.c
+	sh mk/deps.sh src/stdlib/quick_exit.c
+
 all: mk/ptsname.d
 mk/ptsname.d: src/stdlib/ptsname.c
 	sh mk/deps.sh src/stdlib/ptsname.c
@@ -3625,6 +3765,14 @@ mk/qsort.d: src/stdlib/qsort.c
 all: mk/setkey.d
 mk/setkey.d: src/stdlib/setkey.c
 	sh mk/deps.sh src/stdlib/setkey.c
+
+all: mk/aligned_alloc.d
+mk/aligned_alloc.d: src/stdlib/aligned_alloc.c
+	sh mk/deps.sh src/stdlib/aligned_alloc.c
+
+all: mk/getenv_s.d
+mk/getenv_s.d: src/stdlib/getenv_s.c
+	sh mk/deps.sh src/stdlib/getenv_s.c
 
 all: mk/setstate.d
 mk/setstate.d: src/stdlib/setstate.c
@@ -3681,6 +3829,10 @@ mk/mktemp.d: src/stdlib/mktemp.c
 all: mk/bsearch.d
 mk/bsearch.d: src/stdlib/bsearch.c
 	sh mk/deps.sh src/stdlib/bsearch.c
+
+all: mk/abort_handler_s.d
+mk/abort_handler_s.d: src/stdlib/abort_handler_s.c
+	sh mk/deps.sh src/stdlib/abort_handler_s.c
 
 all: mk/strtof.d
 mk/strtof.d: src/stdlib/strtof.c
@@ -3742,6 +3894,14 @@ all: mk/getsubopt.d
 mk/getsubopt.d: src/stdlib/getsubopt.c
 	sh mk/deps.sh src/stdlib/getsubopt.c
 
+all: mk/qsort_s.d
+mk/qsort_s.d: src/stdlib/qsort_s.c
+	sh mk/deps.sh src/stdlib/qsort_s.c
+
+all: mk/mbstowcs_s.d
+mk/mbstowcs_s.d: src/stdlib/mbstowcs_s.c
+	sh mk/deps.sh src/stdlib/mbstowcs_s.c
+
 all: mk/abort.d
 mk/abort.d: src/stdlib/abort.c
 	sh mk/deps.sh src/stdlib/abort.c
@@ -3778,9 +3938,21 @@ all: mk/llabs.d
 mk/llabs.d: src/stdlib/llabs.c
 	sh mk/deps.sh src/stdlib/llabs.c
 
+all: mk/set_constraint_handler_s.d
+mk/set_constraint_handler_s.d: src/stdlib/set_constraint_handler_s.c
+	sh mk/deps.sh src/stdlib/set_constraint_handler_s.c
+
+all: mk/at_quick_exit.d
+mk/at_quick_exit.d: src/stdlib/at_quick_exit.c
+	sh mk/deps.sh src/stdlib/at_quick_exit.c
+
 all: mk/realloc.d
 mk/realloc.d: src/stdlib/realloc.c
 	sh mk/deps.sh src/stdlib/realloc.c
+
+all: mk/wctomb_s.d
+mk/wctomb_s.d: src/stdlib/wctomb_s.c
+	sh mk/deps.sh src/stdlib/wctomb_s.c
 
 all: mk/rand.d
 mk/rand.d: src/stdlib/rand.c
@@ -3802,6 +3974,10 @@ all: mk/a64l.d
 mk/a64l.d: src/stdlib/a64l.c
 	sh mk/deps.sh src/stdlib/a64l.c
 
+all: mk/wcstombs_s.d
+mk/wcstombs_s.d: src/stdlib/wcstombs_s.c
+	sh mk/deps.sh src/stdlib/wcstombs_s.c
+
 all: mk/mbtowc.d
 mk/mbtowc.d: src/stdlib/mbtowc.c
 	sh mk/deps.sh src/stdlib/mbtowc.c
@@ -3817,6 +3993,10 @@ mk/realpath.d: src/stdlib/realpath.c
 all: mk/atoll.d
 mk/atoll.d: src/stdlib/atoll.c
 	sh mk/deps.sh src/stdlib/atoll.c
+
+all: mk/bsearch_s.d
+mk/bsearch_s.d: src/stdlib/bsearch_s.c
+	sh mk/deps.sh src/stdlib/bsearch_s.c
 
 all: mk/valloc.d
 mk/valloc.d: src/stdlib/valloc.c
@@ -3853,6 +4033,10 @@ mk/atol.d: src/stdlib/atol.c
 all: mk/l64a.d
 mk/l64a.d: src/stdlib/l64a.c
 	sh mk/deps.sh src/stdlib/l64a.c
+
+all: mk/ignore_handler_s.d
+mk/ignore_handler_s.d: src/stdlib/ignore_handler_s.c
+	sh mk/deps.sh src/stdlib/ignore_handler_s.c
 
 all: mk/regcmp.d
 mk/regcmp.d: src/libgen/regcmp.c
@@ -3977,12 +4161,4 @@ mk/sigaction.d: src/signal/sigaction.c
 all: mk/killpg.d
 mk/killpg.d: src/signal/killpg.c
 	sh mk/deps.sh src/signal/killpg.c
-
-all: mk/__time.d
-mk/__time.d: src/time/__time.c
-	sh mk/deps.sh src/time/__time.c
-
-all: mk/__scanf.d
-mk/__scanf.d: src/stdio/__scanf.c
-	sh mk/deps.sh src/stdio/__scanf.c
 

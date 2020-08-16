@@ -3,8 +3,8 @@ libc.a(wcswidth.o): $(OBJDIR)/wcswidth.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/wcswidth.o: src/wchar/wcswidth.c
-$(OBJDIR)/wcswidth.o: src/wctype/wint_t.c
-$(OBJDIR)/wcswidth.o: src/wctype/wctrans_t.c
+$(OBJDIR)/wcswidth.o: 
+$(OBJDIR)/wcswidth.o: 
 $(OBJDIR)/wcswidth.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

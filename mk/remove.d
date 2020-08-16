@@ -3,6 +3,7 @@ libc.a(remove.o): $(OBJDIR)/remove.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/remove.o: src/stdio/remove.c
+$(OBJDIR)/remove.o: src/_syscall.h
 $(OBJDIR)/remove.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

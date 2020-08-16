@@ -51,6 +51,9 @@ C=$(grep -F 'STDC(' $SOURCE | sed -e 's/STDC(//;s/,.*//;s/)$//g')
 test -n "$C" && printf 'lib%s_C.%s: lib%s.a(%s.o)\n' $LIB $C $LIB $BASE
 #echo "#C: $C"
 
+CX1=$(grep -F 'CEXT1(' $SOURCE | sed -e 's/CEXT1(//;s/,.*//;s/)$//g')
+test -n "$CX1" && printf 'lib%s_C_X1.%s: lib%s.a(%s.o)\n' $LIB $CX1 $LIB $BASE
+
 P=$(grep -F 'POSIX(' $SOURCE | sed -e 's/POSIX(//;s/,.*//;s/)$//g')
 test -n "$P" && printf 'lib%s_P.%s: lib%s.a(%s.o)\n' $LIB $P $LIB $BASE
 #echo "#POSIX: $P"
@@ -59,7 +62,7 @@ X=$(grep -F 'XOPEN(' $SOURCE | sed -e 's/XOPEN(//;s/,.*//;s/)$//g')
 test -n "$X" && printf 'lib%s_X.%s: lib%s.a(%s.o)\n' $LIB $X $LIB $BASE
 #echo "#XOPEN: $X"
 
-if [ -z "$C" ] && [ -z "$P" ] && [ -z "$X" ]; then
+if [ -z "$C" ] && [ -z "$P" ] && [ -z "$X" ] && [ -z "$CX1" ]; then
 	printf 'lib%s_C.0: lib%s.a(%s.o)\n' $LIB $LIB $BASE
 fi
 

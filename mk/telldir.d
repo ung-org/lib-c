@@ -3,6 +3,7 @@ libc.a(telldir.o): $(OBJDIR)/telldir.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/telldir.o: src/dirent/telldir.c
+$(OBJDIR)/telldir.o: src/dirent/_dirent.h
 $(OBJDIR)/telldir.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

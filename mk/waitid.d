@@ -5,7 +5,7 @@ libc.a(waitid.o): $(OBJDIR)/waitid.o
 
 $(OBJDIR)/waitid.o: src/sys/wait/waitid.c
 $(OBJDIR)/waitid.o: src/_syscall.h
-$(OBJDIR)/waitid.o: src/sys/wait/idtype_t.c
+$(OBJDIR)/waitid.o: 
 $(OBJDIR)/waitid.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)
