@@ -1,3 +1,8 @@
+#if ((!defined _POSIX_C_SOURCE) || (_POSIX_C_SOURCE < 2))
+#undef _POSIX_C_SOURCE
+#define _POSIX_C_SOURCE 2
+#endif
+
 #include "sys/types.h"
 #include <grp.h>
 #include "stdlib.h"
@@ -9,14 +14,11 @@
 #include "_grp.h"
 
 #ifndef LINE_MAX
-#ifndef _POSIX2_LINE_MAX
-#include "limits/_POSIX2_LINE_MAX.c"
-#endif
 #define LINE_MAX _POSIX2_LINE_MAX
 #endif
 
 #ifndef _XOPEN_SOURCE
-	static
+static
 #endif
 
 struct group * getgrent(void)
