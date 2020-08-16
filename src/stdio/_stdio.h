@@ -8,11 +8,11 @@
 #ifdef _POSIX_C_SOURCE
 #include <sys/types.h>
 #else
-#include "sys/types/pid_t.c"
+#include "sys/types/pid_t.h"
 #endif
 
 #ifndef L_ctermid
-#include "L_ctermid.c"
+#include "L_ctermid.h"
 #endif
 
 #define f_is_open(s) (s && (s->bmode != 0))
