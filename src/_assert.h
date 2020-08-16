@@ -1,7 +1,9 @@
 #ifndef ___ASSERT_H__
 #define ___ASSERT_H__
 
+#ifndef NDEBUG
 #define NDEBUG
+#endif
 
 #ifndef NDEBUG
 #define ASSERT_NONNULL(__ptr) do { \
