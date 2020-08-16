@@ -2,9 +2,9 @@
 #include "_stdio.h"
 #include "_assert.h"
 
-#if defined _POSIX_SOURCE || defined _POSIX_C_SOURCE || defined _XOPEN_SOURCE
-#include "sys/types.h"
-#include "unistd.h"
+#ifdef _POSIX_SOURCE
+#include <sys/types.h>
+#include <unistd.h>
 #else
 #include "_syscall.h"
 #define write(_fd, _buf, _size) __syscall(__syscall_lookup(write), _fd, _buf, _size)
