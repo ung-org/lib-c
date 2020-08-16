@@ -1,30 +1,44 @@
 #include <stdio.h>
 #include "_stdio.h"
 
+#ifdef _POSIX_SOURCE
+#include <sys/types.h>
+#include <unistd.h>
+#else
+#include "_syscall.h"
+#define write(_fd, _buf, _size) __syscall(__syscall_lookup(write), _fd, _buf, _size)
+#endif
+
 /** flush buffered writes **/
+
 int fflush(FILE *stream)
 {
-	flockfile(stream);
+	int ret = 0;
+
 	if (stream == NULL) {
-		FILE *p;
-		for (p = __stdio.FILES; p != NULL; p = p->prev) {
-			fflush(p);
+		size_t i;
+		for (i = 0; i < FOPEN_MAX; i++) {
+			fflush(&(__stdio.FILES[i]));
 		}
+		return 0;
 	}
 
-	/*
-	if (fsync(stream->fd) != 0) {
+	flockfile(stream);
+	if (write(stream->fd, stream->buf, stream->bpos) == -1) {
+		/* errno is set */
+		ret = EOF;
 		stream->err = 1;
-		return EOF;
+	} else {
+		stream->bpos = 0;
 	}
-	*/
-
 	funlockfile(stream);
+
 	/*
 	RETURN_SUCCESS(0);
 	RETURN_FAILURE(CONSTANT(EOF));
 	*/
-	return 0;
+
+	return ret;
 }
 
 /***
