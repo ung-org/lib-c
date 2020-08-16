@@ -11,9 +11,6 @@
 			(__assert(#__exp, __FILE__, __LINE__, __func__),  0)))
 #endif
 
-/* in c89 - void assert(int expression); */
-/* in c99 - void assert(/scalar/ expression); */
-
 /** insert program diagnostics **/
 
 /***
@@ -28,6 +25,9 @@ causes abnormal program termination by calling FUNCTION(abort).
 If the macro IDENTIFIER(NDEBUG) is defined, THIS() is
 defined as DEFINITION(((void)0)).
 ***/
+
+/* in c89 - void assert(int expression); */
+/* in c99 - void assert(/scalar/ expression); */
 
 /*
 PROTOTYPE(void assert(int expression);)
