@@ -11,15 +11,21 @@
 #endif
 
 /** write a character to a file stream with explicit client locking **/
+
 int putc_unlocked(int c, FILE *stream)
 {
 	unsigned char ch = (unsigned char)c;
 
 	ASSERT_NONNULL(stream);
-
-	if (write(stream->fd, &ch, sizeof(ch)) != 1) {
-		/* error */
-		return EOF;
+	
+	stream->buf[stream->bpos++] = ch;
+	if (stream->bpos == stream->bsize ||
+		(stream->bmode == _IOLBF && ch == '\n') ||
+		(stream->bmode == _IONBF)) {
+		if (write(stream->fd, stream->buf, stream->bpos) != 1) {
+			/* errno handled by write() */
+			return EOF;
+		}
 	}
 
 	return ch;
