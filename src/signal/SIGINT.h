@@ -1,11 +1,12 @@
-#define SIGILL                                                               (5)
+#define SIGINT                                                               (2)
 
-/** illegal instruction **/
+/** interrupt **/
 
 /***
-is a signal indicating that the program has attempted to execute an illegal
-or improperly formed instruction.
+is a signal that indicates the program is being interactively interrupted.
 ***/
+
+/* Value selected to match requirements for COMMAND(kill) and COMMAND(trap). */
 
 /*
 STDC(1)
