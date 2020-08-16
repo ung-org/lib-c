@@ -1037,3 +1037,6 @@ include mk/sigrelse.d
 include mk/sigprocmask.d
 include mk/sigaction.d
 include mk/killpg.d
+include mk/__sys.d
+include mk/__longjmp.d
+include mk/__setjmp.d
