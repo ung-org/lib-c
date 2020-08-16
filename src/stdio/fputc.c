@@ -8,6 +8,7 @@
 #else
 
 /** write a character to a file stream **/
+
 int fputc(int c, FILE *stream)
 {
 	int ret = EOF;
