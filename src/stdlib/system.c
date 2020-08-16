@@ -1,18 +1,17 @@
 #include <stdlib.h>
 
-#if defined _POSIX_SOURCE || defined _POSIX_C_SOURCE || defined _XOPEN_SOURCE
-# include "errno.h"
-# include "sys/types.h"
-# include "unistd.h"
-# include "sys/wait.h"
-# define USE_FORK
+#ifdef _POSIX_SOURCE
+# include <errno.h>
+# include <sys/types.h>
+# include <unistd.h>
+# include <sys/wait.h>
 #endif
 
 /** execute a command **/
 
 int system(const char * string)
 {
-	#if defined USE_FORK
+	#ifdef _POSIX_SOURCE
 	pid_t pid;
 	int status;
 
