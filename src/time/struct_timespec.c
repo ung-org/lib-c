@@ -1,5 +1,3 @@
-#include <time.h>
-
 struct timespec {
 	time_t tv_sec;	/* Seconds */
 	long tv_nsec;	/* Nanoseonds */
@@ -7,4 +5,5 @@ struct timespec {
 
 /*
 POSIX(199309)
+STDC(201112)
 */
