@@ -28,35 +28,29 @@ struct __FILE {
 	char ibuf[BUFSIZ];	/* statically allocated buffer */
 	size_t bsize;		/* how big is the buffer */
 	size_t bpos;		/* current position of next character */
-	int bmode;		/* _IONBF, _IOLBF, _IOFBF */
+	int bmode;		/* 0, _IONBF, _IOLBF, _IOFBF */
+				/* 0 means this FILE is currently free */
 
-	int isopen;
-	int flags;
-	int lastop;
+	int fd;			/* the backing file descriptor */
 
-	/* verified necessary */
-	int fd;
-	int oflag;
-	int orientation;
-	int eof;
-	int err;
-	int nlocks;
-	int thread;
+	int orientation;	/* 0 = undetermind, < 0 = byte, > 0 = wide */
 
-	pid_t pipe_pid;
+	int eof;		/* eof indicator */
+	int err;		/* error indicator */
 
-	struct __FILE *prev;
-	struct __FILE *next;
+	int nlocks;		/* in multithreaded, used by flockfile() */
+	int thread;		/* the owning thread if locked */
+
+	pid_t pipe_pid;		/* if stream is a pipe, the child pid */
 };
 
 struct io_options {
-	const char *fnname;
-	char *string;
-	wchar_t *wstring;
-	struct __FILE *stream;
-	size_t maxlen;
-	int fd;
-	int flags;
+	const char *fnname;	/* the calling function */
+	char *string;		/* NULL or the output string */
+	wchar_t *wstring;	/* NULL or the output wide string */
+	struct __FILE *stream;	/* NULL or the output stream */
+	int fd;			/* -1 or the output file descriptor */
+	size_t maxlen;		/* max number of bytes to write to string */
 };
 
 int __printf(struct io_options * restrict, const char * restrict, va_list);
