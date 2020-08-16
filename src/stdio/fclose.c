@@ -1,15 +1,17 @@
 #include <stdio.h>
-#include "stdlib.h"
+#include <stdlib.h>
+#include <string.h>
 #include "_stdio.h"
 
 #if defined _POSIX_SOURCE || defined _POSIX_C_SOURCE || defined _XOPEN_SOURCE
-#include "sys/types.h"
-#include "unistd.h"
+#include <sys/types.h>
+#include <unistd.h>
 #else
 #define close(fd) -1
 #endif
 
 /** close a file stream **/
+
 int fclose(FILE *stream)
 {
 	flockfile(stream);
@@ -18,26 +20,25 @@ int fclose(FILE *stream)
 		return EOF;
 	}
 
-	if (stream->mem.buf) {
-		if (stream->mem.allocated) {
-			free(stream->mem.buf);
+	if (stream->buf != stream->ibuf) {
+		if (stream->ibuf[0] == 'a') {
+			free(stream->buf);
 		}
-	} else if (close(stream->fd) == -1) {
-		/* set errno */
+	}
+
+	if (close(stream->fd) == -1) {
+		/* errno is set automatically */
+		funlockfile(stream);
 		return EOF;
 	}
 
-	/*
-	if (!(stream->flags & FF_USERBUF) && stream->buf != NULL) {
-		free(stream->buf);
-	}
-	*/
+	memset(stream, '\0', sizeof(*stream));
 
-	funlockfile(stream);
 	/*
 	RETURN_SUCCESS(0);
 	RETURN_FAILURE(CONSTANT(EOF));
 	*/
+
         return 0;
 }
 
