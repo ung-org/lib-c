@@ -5,12 +5,12 @@
 #include "_syscall.h"
 
 #ifndef P_PID
-#include "signal/union_sigval.c"
-#include "signal/siginfo_t.c"
-#include "idtype_t.c"
-#include "P_PID.c"
-#include "P_PGID.c"
-#include "P_ALL.c"
+#include "signal/union_sigval.h"
+#include "signal/siginfo_t.h"
+#include "idtype_t.h"
+#include "P_PID.h"
+#include "P_PGID.h"
+#include "P_ALL.h"
 #define getpgid(_pid) __syscall(__syscall_lookup(getpgid), _pid, 0, 0, 0, 0, 0)
 #define waitid(_type, _id, _si, _opt) __syscall(__syscall_lookup(waitid), _type, _id, _si, _opt, 0, 0)
 #endif
