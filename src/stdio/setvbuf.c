@@ -1,36 +1,57 @@
 #include <stdio.h>
-#include "stdlib.h"
+#include <errno.h>
+#include <stdlib.h>
 #include "_stdio.h"
 
 /** specify file stream buffering options **/
+
 int setvbuf(FILE *stream, char *buf, int mode, size_t size)
 {
-	if (stream == NULL
-	   || !stream->isopen
-	   || stream->buftype != UNSET
-	   || (mode != _IOFBF && mode != _IOLBF && mode != _IONBF))
-	{
-		return 1;
+	flockfile(stream);
+
+	if (!f_is_open(stream)) {
+		#ifdef EBADF
+		errno = EBADF;
+		#endif
+
+		return -1;
 	}
 
-	stream->buffering = mode;
-	stream->bsize = size;
+	if (mode != _IOFBF && mode != _IOLBF && mode != _IONBF) {
+		#ifdef EINVAL
+		errno = EINVAL;
+		#endif
+
+		funlockfile(stream);
+		return -1;
+	}
 
 	if (mode == _IONBF) {
-		/* maybe free buffer */
+		stream->bmode = mode;
+		funlockfile(stream);
 		return 0;
 	}
 
 	if (buf != NULL) {
 		stream->buf = buf;
-		stream->buftype = SUPPLIED;
-	} else if (size <= BUFSIZ) {
-		stream->buf = stream->ibuf;
-		stream->buftype = INTERNAL;
-	} else {
-		stream->buf = malloc(size);
-		stream->buftype = ALLOCED;
+	} else if (size > stream->bsize) {
+		char *tmp = stream->buf;
+		if (tmp == stream->ibuf) {
+			tmp = NULL;
+		}
+
+		stream->buf = realloc(tmp, size);
+		if (stream->buf == NULL) {
+			stream->buf = tmp ? tmp : stream->ibuf;
+			funlockfile(stream);
+			return -1;
+		}
+
+		stream->ibuf[0] = 'a';
 	}
+
+	stream->bmode = mode;
+	stream->bsize = size;
 	
 	return 0;
 }
