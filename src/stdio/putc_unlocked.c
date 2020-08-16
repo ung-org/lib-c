@@ -22,10 +22,12 @@ int putc_unlocked(int c, FILE *stream)
 	if (stream->bpos == stream->bsize ||
 		(stream->bmode == _IOLBF && ch == '\n') ||
 		(stream->bmode == _IONBF)) {
-		if (write(stream->fd, stream->buf, stream->bpos) != 1) {
+		if (write(stream->fd, stream->buf, stream->bpos) < 0) {
 			/* errno handled by write() */
+			stream->err = 1;
 			return EOF;
 		}
+		stream->bpos = 0;
 	}
 
 	return ch;
