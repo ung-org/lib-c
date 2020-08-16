@@ -1,6 +1,7 @@
 #include <stdlib.h>
-#include "limits.h"
-#include "stddef.h"
+#include <limits.h>
+#include <stddef.h>
+#include "stdio/_stdio.h"
 #include "_syscall.h"
 #include "_stdlib.h"
 
@@ -9,6 +10,7 @@ _Noreturn void exit(int status)
 {
 	long scno = __syscall_lookup(exit);
 	struct atexit *ae = &(__stdlib.atexit);
+	size_t i;
 
 	/* execute all atexit() registered functions in reverse order */
 	while (ae) {
@@ -19,7 +21,9 @@ _Noreturn void exit(int status)
 		ae = ae->prev;
 	}
 
-	/* TODO: close all open files */
+	for (i = 0; i < FOPEN_MAX; i++) {
+		fclose(&(__stdio.FILES[i]));
+	}
 	
 	for (;;) {
 		__syscall(scno, status);
