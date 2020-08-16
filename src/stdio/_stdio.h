@@ -28,8 +28,12 @@ struct __FILE {
 	char ibuf[BUFSIZ];	/* statically allocated buffer */
 	size_t bsize;		/* how big is the buffer */
 	size_t bpos;		/* current position of next character */
-	int bmode;		/* 0, _IONBF, _IOLBF, _IOFBF */
-				/* 0 means this FILE is currently free */
+	enum {
+		UNUSED = 0,
+		FULL = _IOFBF,
+		LINE = _IOLBF,
+		NONE = _IONBF,
+	} bmode;		/* buffer mode or stream available */
 
 	int fd;			/* the backing file descriptor */
 
