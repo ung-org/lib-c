@@ -15,13 +15,21 @@
 #include "L_ctermid.c"
 #endif
 
+#define f_is_open(s) (s && (s->bmode != 0))
+
+struct __fpos_t {
+	size_t off;
+};
+
 struct __FILE {
 	fpos_t pos;
-	char *buf;
-	char ibuf[BUFSIZ];
-	enum { INTERNAL, SUPPLIED, ALLOCED, UNSET } buftype;
-	int buffering;
-	int bsize;
+
+	char *buf;		/* pointer to in-use buffer */
+	char ibuf[BUFSIZ];	/* statically allocated buffer */
+	size_t bsize;		/* how big is the buffer */
+	size_t bpos;		/* current position of next character */
+	int bmode;		/* _IONBF, _IOLBF, _IOFBF */
+
 	int isopen;
 	int flags;
 	int lastop;
@@ -37,12 +45,6 @@ struct __FILE {
 
 	pid_t pipe_pid;
 
-	struct {
-		char *buf;
-		size_t size;
-		int allocated;
-	} mem;
-	
 	struct __FILE *prev;
 	struct __FILE *next;
 };
