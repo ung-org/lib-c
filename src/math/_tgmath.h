@@ -2,6 +2,59 @@
 #define __NONSTD_TGMATH_H__
 #include <math.h>
 
+#ifndef FP_ZERO
+#include "FP_ZERO.h"
+#endif
+
+#ifndef FP_INFINITE
+#include "FP_INFINITE.h"
+#endif
+
+#ifndef FP_NAN
+#include "FP_NAN.h"
+#endif
+
+#ifndef FP_NORMAL
+#include "FP_NORMAL.h"
+#endif
+
+#ifndef NAN
+#include "NAN.h"
+#endif
+
+#ifndef INFINITY
+#include "INFINITY.h"
+#endif
+
+#if ((!defined __STDC_VERSION__) || (__STDC_VERSION__ < 199901L))
+#undef feraiseexcept
+#define feraiseexcept(_)
+#endif
+
+#ifndef fpclassify
+#include "fpclassify.h"
+#endif
+
+#ifndef signbit
+#include "signbit.h"
+#endif
+
+#ifndef copysign
+#define copysign(_x, _y) (_x < 0 ? -_y : _y)
+#endif
+
+#ifndef M_PI
+#include "M_PI.h"
+#endif
+
+#ifndef M_PI_2
+#include "M_PI_2.h"
+#endif
+
+#ifndef M_PI_4
+#include "M_PI_4.h"
+#endif
+
 #ifdef TGSOURCE
 
 # if (defined __STDC_VERSION__ && __STDC_VERSION__ >= 199901L)
@@ -32,52 +85,5 @@
 #define TGFN(__x)		__x
 #define TYPE			double
 #define TGHUGE			HUGE_VAL
-
-#ifndef FP_ZERO
-#include "FP_ZERO.h"
-#endif
-
-#ifndef FP_INFINITE
-#include "FP_INFINITE.h"
-#endif
-
-#ifndef FP_NAN
-#include "FP_NAN.h"
-#endif
-
-#ifndef FP_NORMAL
-#include "FP_NORMAL.h"
-#endif
-
-#ifndef NAN
-#include "NAN.h"
-#endif
-
-#ifndef INFINITY
-#include "INFINITY.h"
-#endif
-
-#undef feraiseexcept
-#define feraiseexcept(_)
-
-#ifndef fpclassify
-#include "fpclassify.h"
-#endif
-
-#ifndef signbit
-#include "signbit.h"
-#endif
-
-#ifndef copysign
-#define copysign(_x, _y) (_x < 0 ? -_y : _y)
-#endif
-
-#ifndef M_PI
-#include "M_PI.h"
-#endif
-
-#ifndef M_PI_2
-#include "M_PI_2.h"
-#endif
 
 #endif

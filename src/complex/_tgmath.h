@@ -1,5 +1,5 @@
-#include "CMPLX.c"
-#include "CMPLXF.c"
-#include "CMPLXL.c"
+#include "CMPLX.h"
+#include "CMPLXF.h"
+#include "CMPLXL.h"
 
 #include "math/_tgmath.h"

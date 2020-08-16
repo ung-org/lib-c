@@ -4,8 +4,6 @@
 #include "math.h"
 #include "fenv.h"
 
-#include "math/M_PI_2.c"
-
 TYPE complex TGFN(catanh)(TYPE complex z)
 {
 	int classr = fpclassify(TGFN(creal)(z));
