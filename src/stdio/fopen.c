@@ -1,40 +1,27 @@
+#include <errno.h>
 #include <stdio.h>
-#include "stdlib.h"
+#include <stdlib.h>
 #include "_stdio.h"
 
 /** open a file stream **/
+
 FILE * fopen(const char * restrict filename, const char * restrict mode)
 {
-	struct __FILE *base = __stdio.FILES;
-	struct __FILE *f = base;
+	FILE *f = NULL;
+	size_t i;
 
-	/* find the next available stream */
-	while (f->next != NULL) {
-		f = f->next;
-	}
-
-	/* use a stream from the guaranteed space if possible */
-	/* otherwise, allocate a new stream */
-	if (f < base + FOPEN_MAX) {
-		f->next = f + 1;
-	} else {
-		f->next = malloc(sizeof(*f->next));
-	}
-
-	/* if we had to allocate, but that failed, we're out of memory */
-	if (f->next == NULL) {
-		return NULL;
-	}
-
-	/* open the new stream */
-	f->next->prev = f;
-	f = f->next;
-	f->fd = -1;
-	if (freopen(filename, mode, f) == NULL) {
-		if (f < base + FOPEN_MAX) {
-		} else {
-			free(f);
+	for (i = 0; i < FOPEN_MAX; i++) {
+		if (__stdio.FILES[i].bmode == 0) {
+			f = &(__stdio.FILES[i]);
+			break;
 		}
+	}
+
+	if (f == NULL) {
+		#ifdef EMFILE
+		errno = EMFILE;
+		#endif
+
 		return NULL;
 	}
 
@@ -43,7 +30,7 @@ FILE * fopen(const char * restrict filename, const char * restrict mode)
 	RETURN_FAILURE(CONSTANT(NULL));
 	*/
 
-	return f;
+	return freopen(filename, mode, f);
 }
 
 /***
