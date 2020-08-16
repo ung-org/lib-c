@@ -1,8 +1,9 @@
+#include <stdarg.h>
 #include <stdio.h>
-#include "stdarg.h"
 #include "_stdio.h"
 
 /** read formatted input from a string **/
+
 int sscanf(const char * restrict s, const char * restrict format, ...)
 {
 	int ret = 0;
@@ -25,6 +26,7 @@ reads formatted input from the string ARGUMENT(s). The format of
 ARGUMENT(format) at the variadic arguments is the same as that for
 FUNCTION(scanf).
 ***/
+
 /*
 STDC(1)
 */

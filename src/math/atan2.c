@@ -1,17 +1,11 @@
 # define TGSOURCE "atan2.c"
+#include <errno.h>
 #include <math.h>
-#include "_tgmath.h"
-#include "errno.h"
 #include "_assert.h"
-
-#include "M_PI.c"
-#include "M_PI_2.c"
-
-#ifndef copysign
-#define copysign(_x, _y) _x
-#endif
+#include "_tgmath.h"
 
 /** arc tangent **/
+
 TYPE TGFN(atan2)(TYPE y, TYPE x)
 {
 	int classy = fpclassify(y);
@@ -88,7 +82,5 @@ the correct quadrant.
 /*
 IMPLEMENTATION(The value returned on a domain error, CONSTANT(HUGE_VAL))
 LINK(m)
-*/
-/*
 STDC(1)
 */

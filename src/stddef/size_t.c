@@ -1,4 +1,3 @@
-#include <stddef.h>
 #ifdef __LLP64__
 # if !defined __STDC_VERSION__ || __STDC_VERSION__ < 199909L
 typedef unsigned __int64                                                 size_t;
@@ -18,7 +17,5 @@ OPERATOR(sizeof) operator.
 
 /*
 TYPEDEF(unsigned integer)
-*/
-/*
 STDC(1)
 */

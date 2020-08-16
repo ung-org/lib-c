@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 /** generate a temporary file name **/
+
 char * tmpnam(char *s)
 {
 	static int ntimescalled = 0;
@@ -37,7 +38,5 @@ this array.
 
 /*
 IMPLEMENTATION(Behavior if THIS() is called more than CONSTANT(TMP_MAX) times)
-*/
-/*
 STDC(1)
 */

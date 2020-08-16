@@ -8,6 +8,7 @@
 #else
 
 /** read a character from a file stream **/
+
 int fgetc(FILE *stream)
 {
 	flockfile(stream);
@@ -27,6 +28,7 @@ reads the next character from ARGUMENT(stream) as an
 TYPE(unsigned char) converted to an TYPE(int). The file position indicator
 of ARGUMENT(stream) is advanced.
 ***/
+
 /*
 STDC(1)
 */

@@ -1,3 +1,2 @@
-#include <stdlib.h>
 REFERENCE(stddef/wchar_t.c)
 STDC(1)

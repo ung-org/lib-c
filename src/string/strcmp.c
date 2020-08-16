@@ -2,6 +2,7 @@
 #include "_assert.h"
 
 /** compare strings **/
+
 int strcmp(const char *s1, const char *s2)
 {
 	ASSERT_NONNULL(s1);
@@ -35,6 +36,7 @@ int strcmp(const char *s1, const char *s2)
 /***
 compares the strings at ARGUMENT(s1) and ARGUMENT(s2).
 ***/
+
 /*
 STDC(1)
 */

@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-/* open a temporary file stream */
+/** open a temporary file stream **/
+
 FILE * tmpfile(void)
 {
 	char *path = "FIXME: A temporary file name *not* calling tmpnam()";
@@ -27,7 +28,5 @@ or when the program exits.
 
 /*
 IMPLEMENTATION(Whether the temporary file is removed if the program terminates abnormally)
-*/
-/*
 STDC(1)
 */

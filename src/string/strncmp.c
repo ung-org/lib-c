@@ -2,6 +2,7 @@
 #include "_assert.h"
 
 /** compare bound strings **/
+
 int strncmp(const char *s1, const char *s2, size_t n)
 {
 	ASSERT_NONNULL(s1);
@@ -26,6 +27,7 @@ int strncmp(const char *s1, const char *s2, size_t n)
 compares up to the first ARGUMENT(n) bytes of the strings at ARGUMENT(s1) and
 ARGUMENT(s2), or until the first CHAR(\0), whichever comes first.
 ***/
+
 /*
 STDC(1)
 */

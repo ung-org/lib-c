@@ -1,11 +1,10 @@
 # define TGSOURCE "atan.c"
+#include <errno.h>
 #include <math.h>
-#include "errno.h"
 #include "_tgmath.h"
 
-#include "M_PI_2.c"
-
 /** arc tangent **/
+
 TYPE TGFN(atan)(TYPE x)
 {
 	int MAXLOOPS = 10;
@@ -50,7 +49,5 @@ compute the principal value of the arc tangent of ARGUMENT(x).
 /*
 IMPLEMENTATION(The value returned on a domain error, CONSTANT(HUGE_VAL))
 LINK(m)
-*/
-/*
 STDC(1)
 */

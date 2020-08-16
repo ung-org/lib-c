@@ -1,8 +1,9 @@
+#include <stdarg.h>
 #include <stdio.h>
-#include "stdarg.h"
 #include "_stdio.h"
 
 /** write formatted output **/
+
 int printf(const char *format, ...)
 {
 	int ret = 0;
@@ -103,7 +104,5 @@ FLAG(CHAR(%), `Outputs a literal CHAR(%).')
 IMPLEMENTATION(`The format of CHAR(p) conversions', `STRING(0x%0ARGUMENT(n)x), where ARGUMENT(n) is the number of hexadecimal digits in a canonical address on the platform of execution.')
 UNDEFINED(`Precision with a conversion specifier other than CHAR(d), CHAR(i), CHAR(o), CHAR(u), CHAR(x), CHAR(X), CHAR(e), CHAR(E), CHAR(f), CHAR(g), CHAR(G), or CHAR(s)')
 UNDEFINED(TODO: Using h or l for !(diouxXn) or L for !(eEfgG))
-*/
-/*
 STDC(1)
 */

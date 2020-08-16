@@ -2,6 +2,7 @@
 #include "_stdio.h"
 
 /** write a string to a file stream **/
+
 int fputs(const char * restrict s, FILE * restrict stream)
 {
 	flockfile(stream);
@@ -23,6 +24,7 @@ int fputs(const char * restrict s, FILE * restrict stream)
 writes the string ARGUMENT(s) to ARGUMENT(stream), not including
 the terminating CHAR(\0) character.
 ***/
+
 /*
 STDC(1)
 */

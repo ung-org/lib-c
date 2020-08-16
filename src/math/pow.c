@@ -1,10 +1,11 @@
 # define TGSOURCE "pow.c"
+#include <errno.h>
+#include <fenv.h>
 #include <math.h>
 #include "_tgmath.h"
-#include "errno.h"
-#include "fenv.h"
 
 /** exponentiation **/
+
 TYPE TGFN(pow)(TYPE x, TYPE y)
 {
 	int classx = fpclassify(x);
@@ -114,7 +115,5 @@ compute ARGUMENT(x) raised to the power ARGUMENT(y).
 /*
 IMPLEMENTATION(The value returned on a domain error, CONSTANT(HUGE_VAL))
 LINK(m)
-*/
-/*
 STDC(1)
 */

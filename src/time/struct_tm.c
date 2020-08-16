@@ -1,7 +1,3 @@
-#include <time.h>
-
-/** broken-down time **/
-
 struct tm {
 	int tm_sec;	/* Seconds [0,60] */
 	int tm_min;	/* Minutes [0, 59] */
@@ -13,6 +9,8 @@ struct tm {
 	int tm_yday;	/* Day of the year [0,365] */
 	int tm_isdst;	/* Daylight Saving Time flag */
 };
+
+/** broken-down time **/
 
 /***
 is used to represent time broken down into its individual components.

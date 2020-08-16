@@ -2,6 +2,7 @@
 #include "_assert.h"
 
 /** search string from end **/
+
 char * strrchr(const char *s, int c)
 {
 	int i = 0;
@@ -25,6 +26,7 @@ char * strrchr(const char *s, int c)
 finds the last occurence of ARGUMENT(c) (converted to TYPE(char)) in the
 string ARGUMENT(s).
 ***/
+
 /*
 STDC(1)
 */

@@ -2,6 +2,7 @@
 #include "_assert.h"
 
 /** concatenate bounded string **/
+
 char * strncat(char * restrict s1, const char * restrict s2, size_t n)
 {
 	char *append = NULL;
@@ -34,7 +35,8 @@ overwrite the terminating null character of ARGUMENT(s1). No characters after th
 first CHAR(\0) will be copied. The resulting string will always be null
 terminated.
 ***/
+
 /*
-	RETURN_ALWAYS(ARGUMENT(s1));
+RETURN_ALWAYS(ARGUMENT(s1));
 STDC(1)
 */

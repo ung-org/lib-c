@@ -1,4 +1,3 @@
-#include <errno.h>
 #define errno                                                       (*__errno())
 
 /** get system errors **/
@@ -16,8 +15,5 @@ description.
 UNSPECIFIED(Whether THIS() is declared as a macro or an identifier with external linkage (C89, C95, and C99 only))
 UNDEFINED(A macro definition of THIS() is suppressed)
 UNDEFINED(A program defines an identifier named THIS())
-*/
-
-/*
 STDC(1)
 */

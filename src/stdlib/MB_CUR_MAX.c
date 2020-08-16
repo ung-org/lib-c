@@ -1,8 +1,6 @@
-#include <stdlib.h>
+#define MB_CUR_MAX                                                           (4)
 
 /** current longest multibyte character **/
-
-#define MB_CUR_MAX                                                           (4)
 
 /***
 is the maximum number of bytes required to store any character in the current

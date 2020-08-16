@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 /** write a character to stdout **/
+
 int putchar(int c)
 {
 	/*
@@ -14,6 +15,7 @@ int putchar(int c)
 writes the character ARGUMENT(c) (converted to an TYPE(unsigned char)) to
 IDENTIFIER(stdout).
 ***/
+
 /*
 STDC(1)
 */

@@ -2,6 +2,7 @@
 #include "_assert.h"
 
 /** fill memory **/
+
 void * memset(void *s, int c, size_t n)
 {
 	unsigned char *p = (unsigned char *)s;
@@ -23,6 +24,7 @@ void * memset(void *s, int c, size_t n)
 fills the first ARGUMENT(n) bytes of memory at ARGUMENT(s) with
 the value ARGUMENT(c) (converted to an TYPE(unsigned char)).
 ***/
+
 /*
 STDC(1)
 */

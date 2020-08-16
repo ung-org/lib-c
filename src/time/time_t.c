@@ -1,8 +1,7 @@
-#include <time.h>
+typedef                                                                 long int
+	time_t;
 
 /** time representation **/
-
-typedef long int                                                         time_t;
 
 /***
 is used for representing time.

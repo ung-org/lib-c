@@ -1,9 +1,10 @@
 # define TGSOURCE "frexp.c"
+#include <errno.h>
 #include <math.h>
 #include "_tgmath.h"
-#include "errno.h"
 
 /** extract mantissa and exponent **/
+
 TYPE TGFN(frexp)(TYPE value, int *exp)
 {
 	switch (fpclassify(value)) {
@@ -40,7 +41,5 @@ Multiplying the normalized fraction by 2 to the power ARGUMENT(*exp).
 /*
 IMPLEMENTATION(The value returned on a domain error, CONSTANT(HUGE_VAL))
 LINK(m)
-*/
-/*
 STDC(1)
 */

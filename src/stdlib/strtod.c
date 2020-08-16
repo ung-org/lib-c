@@ -1,8 +1,8 @@
+#include <ctype.h>
+#include <errno.h>
+#include <float.h>
+#include <math.h>
 #include <stdlib.h>
-#include "ctype.h"
-#include "errno.h"
-#include "float.h"
-#include "math.h"
 
 #ifndef INFINITY
 #include "math/INFINITY.c"

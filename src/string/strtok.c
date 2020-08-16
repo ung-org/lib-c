@@ -2,6 +2,7 @@
 #include "_assert.h"
 
 /** split string into tokens **/
+
 char * strtok(char * restrict s1, const char * restrict s2)
 {
 	static char *current = 0;
@@ -31,6 +32,7 @@ The list of token separators in ARGUMENT(s2) may vary from call to call.
 When tokens are found, the next token separate character is replaced with a
 CHAR(\0), terminating the token.
 ***/
+
 /*
 STDC(1)
 */

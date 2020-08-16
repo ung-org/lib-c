@@ -24,6 +24,7 @@ appends a copy of the string at ARGUMENT(s2) to the end of
 the string at ARGUMENT(s1). The first byte of ARGUMENT(s2) will overwrite the terminating
 null character of ARGUMENT(s1).
 ***/
+
 /*
 STDC(1)
 */

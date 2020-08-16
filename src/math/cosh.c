@@ -1,9 +1,10 @@
 # define TGSOURCE "cosh.c"
+#include <errno.h>
 #include <math.h>
 #include "_tgmath.h"
-#include "errno.h"
 
 /** hyperbolic cosine **/
+
 TYPE TGFN(cosh)(TYPE x)
 {
 	switch (fpclassify(x)) {
@@ -29,7 +30,5 @@ compute the hyperbolic cosine of ARGUMENT(x).
 /*
 IMPLEMENTATION(The value returned on a domain error, CONSTANT(HUGE_VAL))
 LINK(m)
-*/
-/*
 STDC(1)
 */

@@ -1,5 +1,5 @@
+#include <errno.h>
 #include <stdlib.h>
-#include "errno.h"
 #include "_stdlib.h"
 
 /** register a function to run at program exit **/

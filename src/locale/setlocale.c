@@ -1,15 +1,9 @@
 #include <locale.h>
-#include "string.h"
-#include "stdlib.h"
+#include <string.h>
+#include <stdlib.h>
 #include "_locale.h"
 
-#include "LC_ALL_MASK.c"
-#include "LC_COLLATE_MASK.c"
-#include "LC_CTYPE_MASK.c"
-#include "LC_NUMERIC_MASK.c"
-#include "LC_TIME_MASK.c"
-#include "LC_MESSAGES_MASK.c"
-#include "LC_MONETARY_MASK.c"
+/** get or set program locale **/
 
 char * setlocale(int category, const char *locale)
 {
@@ -46,8 +40,6 @@ char * setlocale(int category, const char *locale)
 
 	return __load_locale(l, mask, locale);
 }
-
-/** get or set program locale **/
 
 /***
 sets or retrieves the current global locale of the
@@ -89,7 +81,5 @@ to support std(POSIX).
 RETURN(CONSTANT(NULL), the request could not be honored)
 RETURN(NONNULL, the current locale name for ARGUMENT(category))
 IMPLEMENTATION(The native environment)
-*/
-/*
 STDC(1)
 */

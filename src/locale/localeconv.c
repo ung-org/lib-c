@@ -2,6 +2,7 @@
 #include "_locale.h"
 
 /** return locale-specific information **/
+
 struct lconv * localeconv(void)
 {
 	/*
@@ -18,7 +19,5 @@ use in formatting numbers and monetary values.
 /*
 LC_MONETARY
 LC_NUMERIC
-*/
-/*
 STDC(1)
 */

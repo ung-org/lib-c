@@ -2,6 +2,7 @@
 #include "_assert.h"
 
 /** count matching characters **/
+
 char * strpbrk(const char *s1, const char *s2)
 {
 	size_t i;
@@ -21,8 +22,9 @@ char * strpbrk(const char *s1, const char *s2)
 /***
 locates the first occurence in ARGUMENT(s1) of any character in ARGUMENT(s2).
 ***/
+
 /*
-	RETURN_FAILURE(CONSTANT(NULL));
-	RETURN_SUCCESS(a pointer to the located character);
+RETURN_FAILURE(CONSTANT(NULL));
+RETURN_SUCCESS(a pointer to the located character);
 STDC(1)
 */

@@ -1,4 +1,3 @@
-#include <math.h>
 #define HUGE_VAL                       (1.0) /* TODO: massive positive double */
 
 /** a huge value **/

@@ -2,6 +2,7 @@
 #include "_assert.h"
 
 /** compare memory regions **/
+
 int memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned char *p = (void*)s1;
@@ -29,6 +30,7 @@ int memcmp(const void *s1, const void *s2, size_t n)
 compares the first ARGUMENT(n) bytes of memory at ARGUMENT(s1)
 and ARGUMENT(s2).
 ***/
+
 /*
 STDC(1)
 */

@@ -1,10 +1,11 @@
 # define TGSOURCE "cos.c"
+#include <errno.h>
+#include <fenv.h>
 #include <math.h>
 #include "_tgmath.h"
-#include "fenv.h"
-#include "errno.h"
 
 /** cosine **/
+
 TYPE TGFN(cos)(TYPE x)
 {
 	int MAXLOOPS = 10;
@@ -51,8 +52,6 @@ compute cosine of ARGUMENT(x), in radians.
 /*
 IMPLEMENTATION(The value returned on a domain error, CONSTANT(HUGE_VAL))
 LINK(m)
-*/
-/*
 STDC(1)
 */
 

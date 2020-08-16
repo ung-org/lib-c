@@ -1,8 +1,6 @@
-#include <stdarg.h>
+#define va_start(__ap, __parmN)                __builtin_va_start(__ap, __parmN)
 
 /** begin processing unnamed arguments **/
-
-#define va_start(__ap, __parmN)                __builtin_va_start(__ap, __parmN)
 
 /***
 prepares unnamed arguments for use. It initializes ARGUMENT(ap) with the the

@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include "_stdlib.h"
 
 /** get a pseudo-random number **/

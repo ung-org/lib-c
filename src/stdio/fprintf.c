@@ -1,8 +1,9 @@
+#include <stdarg.h>
 #include <stdio.h>
-#include "stdarg.h"
 #include "_stdio.h"
 
 /** write formatted output to a file stream **/
+
 int fprintf(FILE * restrict stream, const char * restrict format, ...)
 {
 	int ret = 0;
@@ -24,6 +25,7 @@ int fprintf(FILE * restrict stream, const char * restrict format, ...)
 writes a formatted string to ARGUMENT(stream). The format of ARGUMENT(format)
 and the variadic arguments is the same as that for FUNCTION(printf).
 ***/
+
 /*
 STDC(1)
 */

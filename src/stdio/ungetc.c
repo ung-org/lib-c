@@ -2,6 +2,7 @@
 #include "_stdio.h"
 
 /** push a character back into an input stream **/
+
 int ungetc(int c, FILE *stream)
 {
 	(void)c; (void)stream;
@@ -32,6 +33,7 @@ position indicator is decremented.
 Calling THIS() on a binary stream when the file position indicator is zero
 is obsolete in ISO/IEC 9899:1999.
 ***/
+
 /*
 STDC(1)
 */

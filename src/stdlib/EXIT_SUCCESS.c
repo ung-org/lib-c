@@ -1,8 +1,6 @@
-#include <stdlib.h>
+#define EXIT_SUCCESS                                                         (0)
 
 /** successful program termination **/
-
-#define EXIT_SUCCESS                                                         (0)
 
 /***
 is used as the ARGUMENT(status) argument to FUNCTION(exit) or FUNCTION(_Exit),

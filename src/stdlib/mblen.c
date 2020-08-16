@@ -1,6 +1,7 @@
 #include <stdlib.h>
 
 /** count bytes in multibyte character **/
+
 int mblen(const char * s, size_t n)
 {
 	/* FIXME: forward dependency on AMD1 */

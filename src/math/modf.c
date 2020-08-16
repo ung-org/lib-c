@@ -1,9 +1,10 @@
 # define TGSOURCE "modf.c"
+#include <errno.h>
 #include <math.h>
 #include "_tgmath.h"
-#include "errno.h"
 
 /** decompose floating-point numbers **/
+
 TYPE TGFN(modf)(TYPE value, TYPE *iptr)
 {
 	switch (fpclassify(value)) {
@@ -32,7 +33,5 @@ by ARGUMENT(iptr).
 /*
 IMPLEMENTATION(The value returned on a domain error, CONSTANT(HUGE_VAL))
 LINK(m)
-*/
-/*
 STDC(1)
 */

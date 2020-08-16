@@ -2,6 +2,7 @@
 #include "limits.h"
 
 /** read a line from stdin **/
+
 char * gets(char *s)
 {
 	/*
@@ -23,6 +24,7 @@ after the last character read into the array.
 If end-of-file is reached before any characters are read, the contents of ARGUMENT(s)
 remain unchanged.
 ***/
+
 /*
 STDC(1,201112)
 */

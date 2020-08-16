@@ -1,6 +1,7 @@
 #include <time.h>
 
 /** get processor time **/
+
 clock_t clock(void)
 {
 	return (clock_t)-1;

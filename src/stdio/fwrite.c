@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 /** write directly to a file stream **/
+
 size_t fwrite(const void * restrict ptr, size_t size, size_t nmemb, FILE * restrict stream)
 {
 	unsigned char *buf = (unsigned char *)ptr;
@@ -31,6 +32,7 @@ the array ARGUMENT(ptr) to ARGUMENT(stream).
 The file position inidicate is advanced by the number of bytes successfully
 written.
 ***/
+
 /*
 STDC(1)
 */

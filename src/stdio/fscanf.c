@@ -1,8 +1,9 @@
+#include <stdarg.h>
 #include <stdio.h>
-#include "stdarg.h"
 #include "_stdio.h"
 
 /** read formatted input from a file stream **/
+
 int fscanf(FILE * restrict stream, const char * restrict format, ...)
 {
 	int ret = 0;
@@ -24,6 +25,7 @@ int fscanf(FILE * restrict stream, const char * restrict format, ...)
 reads formatted input from ARGUMENT(stream). The format of ARGUMENT(format) at
 the variadic arguments is the same as that for FUNCTION(scanf).
 ***/
+
 /*
 STDC(1)
 */

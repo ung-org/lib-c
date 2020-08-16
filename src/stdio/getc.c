@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 /** read a character from a file stream **/
+
 int getc(FILE *stream)
 {
 	/*
@@ -14,6 +15,7 @@ int getc(FILE *stream)
 is the equivalent of FUNCTION(fgetc) except that if it is
 defined as a macro, it may evaluate ARGUMENT(stream) more than once.
 ***/
+
 /*
 STDC(1)
 */

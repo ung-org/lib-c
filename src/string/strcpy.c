@@ -2,6 +2,7 @@
 #include "_assert.h"
 
 /** copy string **/
+
 char * strcpy(char * restrict s1, const char * restrict s2)
 {
 	char *p = s1;
@@ -24,6 +25,7 @@ char * strcpy(char * restrict s1, const char * restrict s2)
 copies the string at ARGUMENT(s2) to ARGUMENT(s1), up to and
 including the terminating CHAR(\0).
 ***/
+
 /*
 STDC(1)
 */

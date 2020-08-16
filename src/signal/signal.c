@@ -1,25 +1,18 @@
-#if defined _POSIX_SOURCE || defined _POSIX_C_SOURCE || defined _XOPEN_SOURCE
-#include "sys/types.h"
+#ifndef _POSIX_SOURCE
+#define _POSIX_SOURCE
+#define POSIX_FORCED
 #endif
 
-#include "stddef.h"
+#include <sys/types.h>
+#include <stddef.h>
 #include <signal.h>
 
-#ifndef _POSIX_SOURCE
-#include "sigset_t.c"
-#include "struct_sigaction.c"
-#include "sigaction.c"
-#include "sigemptyset.c"
-#include "sigaddset.c"
-#endif
-
+/* FIXME: Linux specific, doesn't even work */
 #undef SA_RESTART
-#ifndef SA_RESTART
-/* #include "SA_RESTART.c" */
 #define SA_RESTART 0x10000000
-#endif
 
 /** set a signal handler **/
+
 void (*signal(int sig, void (*func)(int)))(int)
 {
 	struct sigaction sa = { 0 }, osa = { 0 };
@@ -60,7 +53,5 @@ UNDEFINED(A signal handler calling standard library functions other than THIS() 
 UNDEFINED(FIXME: some function calls from signal handlers)
 IMPLEMENTATION(Whether signal blocking is performed when a signal occurs)
 IMPLEMENTATION(Other signals corresponding to computation exceptions for which signal handlers must not return)
-*/
-/*
 STDC(1)
 */

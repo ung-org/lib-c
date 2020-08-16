@@ -1,9 +1,10 @@
 # define TGSOURCE "exp.c"
+#include <errno.h>
 #include <math.h>
 #include "_tgmath.h"
-#include "errno.h"
 
 /** exponential function **/
+
 TYPE TGFN(exp)(TYPE x)
 {
 	int MAXLOOPS = 10;
@@ -44,7 +45,5 @@ compute the exponential function of ARGUMENT(x).
 /*
 IMPLEMENTATION(The value returned on a domain error, CONSTANT(HUGE_VAL))
 LINK(m)
-*/
-/*
 STDC(1)
 */

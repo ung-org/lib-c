@@ -2,6 +2,7 @@
 #include "_assert.h"
 
 /** copy bounded string **/
+
 char * strncpy(char * restrict s1, const char * restrict s2, size_t n)
 {
 	size_t i;
@@ -28,7 +29,8 @@ ARGUMENT(s1) until ARGUMENT(n) bytes have been written. If no null characters ar
 in the first ARGUMENT(n) bytes of ARGUMENT(s2), the resulting string will not be null
 terminated.
 ***/
+
 /*
-	RETURN_ALWAYS(ARGUMENT(s1));
+RETURN_ALWAYS(ARGUMENT(s1));
 STDC(1)
 */

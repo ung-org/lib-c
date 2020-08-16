@@ -1,8 +1,6 @@
-#include <stdlib.h>
+#define RAND_MAX                                                         (32767)
 
 /** random number range **/
-
-#define RAND_MAX                                                         (32767)
 
 /***
 is the maximum value returned by FUNCTION(rand).

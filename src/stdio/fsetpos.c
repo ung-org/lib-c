@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 /** set the file position indicator **/
+
 int fsetpos(FILE *stream, const fpos_t *pos)
 {
 	(void)stream; (void)pos;
@@ -16,6 +17,7 @@ FUNCTION(fgetpos).
 A successful call to THIS() clears the end-of-file indicator and discards
 any characters pushed back with FUNCTION(ungetc).
 ***/
+
 /*
 STDC(1)
 */

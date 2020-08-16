@@ -1,15 +1,18 @@
-#include <stdio.h>
+#ifndef _POSIX_SOURCE
+#define _POSIX_SOURCE
+#define POSIX_FORCED
+#endif
 
-#ifdef _POSIX_SOURCE
-#include "sys/types.h"
-#include "sys/stat.h"
-#include "unistd.h"
-#else
- struct stat { int st_mode; };
-#define stat(f, b) (void)f
-#define S_ISDIR(m) (m = 0)
-#define rmdir(f) (-1)
-#define unlink(f) (-1)
+#include <stdio.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
+
+#ifdef POSIX_FORCED
+#include "_syscall.h"
+#define stat(_f, _b)	__scall2(stat, _f, _b)
+#define rmdir(_f)	__scall1(rmdir, _f)
+#define unlink(_f)	__scall1(unlink, _f)
 #endif
 
 /** delete a file **/
@@ -31,7 +34,5 @@ open that file will fail unless creating a new file.
 
 /*
 IMPLEMENTATION(Whether the file is removed if it is open)
-*/
-/*
 STDC(1)
 */

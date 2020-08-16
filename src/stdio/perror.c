@@ -1,8 +1,9 @@
+#include <errno.h>
 #include <stdio.h>
-#include "string.h"
-#include "errno.h"
+#include <string.h>
 
 /** print an error message **/
+
 void perror(const char *s)
 {
 	if (s != NULL && *s != '\0') {
@@ -23,7 +24,5 @@ pointed to by ARGUMENT(s), a colon (CHAR(:)), and a space.
 
 /*
 POSIX_(L_C_MESSAGES)
-*/
-/*
 STDC(1)
 */

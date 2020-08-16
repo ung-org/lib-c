@@ -2,6 +2,7 @@
 #include "_stdio.h"
 
 /** get the file stream position indicator **/
+
 int fgetpos(FILE * restrict stream, fpos_t * restrict pos)
 {
 	flockfile(stream);
@@ -17,7 +18,5 @@ for ARGUMENT(stream) into the TYPEDEF(fpos_t) at ARGUMENT(pos).
 
 /*
 UNSPECIFIED(The information stored in TYPEDEF(fpos_t))
-*/
-/*
 STDC(1)
 */

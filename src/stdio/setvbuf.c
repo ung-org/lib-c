@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include <errno.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include "_stdio.h"
 
@@ -72,6 +72,7 @@ an array of at least ARGUMENT(size) characters.
 
 The ARGUMENT(size) argument specifies the size of the buffer.
 ***/
+
 /*
 STDC(1)
 */

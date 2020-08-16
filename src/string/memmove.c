@@ -2,6 +2,7 @@
 #include "_assert.h"
 
 /** move memory **/
+
 void * memmove(void *s1, const void *s2, size_t n)
 {
 	ASSERT_NONNULL(s1);
@@ -30,6 +31,7 @@ copies ARGUMENT(n) bytes of memory from the object at
 ARGUMENT(s2) to the object at ARGUMENT(s1). If ARGUMENT(s1) and ARGUMENT(s2) overlap, the memory
 is copied so that the ARGUMENT(n) bytes are safely written to ARGUMENT(s1).
 ***/
+
 /*
 STDC(1)
 */

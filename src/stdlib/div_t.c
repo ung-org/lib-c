@@ -1,11 +1,9 @@
-#include <stdlib.h>
-
-/** quotient and remainder **/
-
 typedef struct {
 	int quot;
 	int rem;
 } div_t;
+
+/** quotient and remainder **/
 
 /***
 is the type returned by FUNCTION(div) to hold both the quotient and remainder

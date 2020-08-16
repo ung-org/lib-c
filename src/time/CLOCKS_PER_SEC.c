@@ -1,4 +1,3 @@
-#include <time.h>
 #define CLOCKS_PER_SEC                                        ((clock_t)1000000)
 
 /** clock ticks per second **/

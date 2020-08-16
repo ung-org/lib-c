@@ -2,6 +2,7 @@
 #include "_stdio.h"
 
 /** write a string to stoud **/
+
 int puts(const char *s)
 {
 	int ret = 1;
@@ -34,6 +35,7 @@ int puts(const char *s)
 function writes the string pointed to by ARGUMENT(s) to IDENTIFIER(stdout),
 followed by a newline. The terminated CHAR(\0) is not written.
 ***/
+
 /*
 STDC(1)
 */

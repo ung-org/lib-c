@@ -1,6 +1,5 @@
-#include <assert.h>
-#include "stdio.h"
-#include "stdlib.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 void __assert(const char *expr, const char *file, int line, const char *func)
 {

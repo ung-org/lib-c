@@ -1,5 +1,5 @@
-#include <time.h>
-typedef long int                                                        clock_t;
+typedef                                                                 long int
+	clock_t;
 
 /** clock ticks **/
 

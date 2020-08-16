@@ -2,6 +2,7 @@
 #include "_stdio.h"
 
 /** read directly from a file stream **/
+
 size_t fread(void * restrict ptr, size_t size, size_t nmemb, FILE * restrict stream)
 {
 	unsigned char *buf = ptr;
@@ -34,6 +35,7 @@ from ARGUMENT(stream) into the array at ARGUMENT(ptr).
 
 The file position indicate is advanced by the number of bytes read.
 ***/
+
 /*
 STDC(1)
 */

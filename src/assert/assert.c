@@ -1,20 +1,14 @@
-#include <assert.h>
-
 #undef assert
 
 #ifdef NDEBUG
-
-#define assert(__exp) ((void)0)
-
+#	define assert(__exp) ((void)0)
 #else
-
-#if __STDC_VERSION__ < 199901L
-#define __func__ ((char*)0)
-#endif
-
-#define assert(__exp) \
-	((void)((__exp) || (__assert(#__exp, __FILE__, __LINE__, __func__),  0)))
-
+#	if __STDC_VERSION__ < 199901L
+#		define __func__ ((char*)0)
+#	endif
+#	define assert(__exp) \
+		((void)((__exp) || \
+			(__assert(#__exp, __FILE__, __LINE__, __func__),  0)))
 #endif
 
 /* in c89 - void assert(int expression); */

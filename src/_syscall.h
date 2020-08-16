@@ -30,6 +30,8 @@
 	} while (0)
 
 long __syscall(long __number, ...);
+#define __scall0(_n) \
+	__syscall(__syscall_lookup(_n))
 #define __scall1(_n, _1) \
 	__syscall(__syscall_lookup(_n), _1)
 #define __scall2(_n, _1, _2) \

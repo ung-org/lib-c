@@ -1,18 +1,10 @@
-#include "locale.h"
-#include "limits.h"
-#include "stdio.h"
-#include "string.h"
+#include <locale.h>
+#include <limits.h>
+#include <stdio.h>
+#include <string.h>
 
 #include "_locale.h"
 #include "ctype/_ctype.h"
-
-#define LC_COLLATE_MASK (1<<0)
-#define LC_CTYPE_MASK (1<<1)
-#define LC_MONETARY_MASK (1<<2)
-#define LC_NUMERIC_MASK (1<<3)
-#define LC_TIME_MASK (1<<4)
-#define LC_MESSAGES_MASK (1<<5)
-#define LC_ALL_MASK (0xff)
 
 #define setall(_map, _input, _mask) do { \
 	size_t _i; \
@@ -218,6 +210,7 @@ char * __load_locale(struct __locale_t *loc, int mask, const char *name)
 		}
 	}
 
+	#ifdef LC_MESSAGES
 	if (mask & LC_MESSAGES_MASK) {
 		strcpy(loc->messages, name);
 
@@ -230,6 +223,7 @@ char * __load_locale(struct __locale_t *loc, int mask, const char *name)
 			loc->lc_messages.noexpr = NULL;
 		}
 	}
+	#endif
 
 	return (char*)name;
 }

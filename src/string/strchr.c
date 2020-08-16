@@ -2,6 +2,7 @@
 #include "_assert.h"
 
 /** string search **/
+
 char * strchr(const char *s, int c)
 {
 	ASSERT_NONNULL(s);
@@ -17,6 +18,7 @@ char * strchr(const char *s, int c)
 searches the string ARGUMENT(s) for the first occurrence of
 ARGUMENT(c) (converted to a TYPE(char)).
 ***/
+
 /*
 STDC(1)
 */

@@ -1,20 +1,12 @@
+#include <errno.h>
 #include <stdio.h>
-#include "errno.h"
 #include "_syscall.h"
 
 /** rename a file **/
+
 int rename(const char *old, const char *new)
 {
-	SYSCALL_NUMBER(sc, rename, -1);
-	int err = 0;
-
-	err = __syscall(sc, old, new);
-	if (err < 0) {
-		errno = -err;
-		return -1;
-	}
-
-	return 0;
+	SYSCALL(rename, int, -1, old, new, 0, 0, 0, 0);
 }
 
 /***
@@ -24,7 +16,5 @@ ARGUMENT(new).
 
 /*
 IMPLEMENTATION(Behavior if ARGUMENT(new) exists prior to THIS() being called)
-*/
-/*
 STDC(1)
 */

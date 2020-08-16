@@ -1,10 +1,11 @@
 # define TGSOURCE "log10.c"
+#include <errno.h>
+#include <fenv.h>
 #include <math.h>
 #include "_tgmath.h"
-#include "errno.h"
-#include "fenv.h"
 
 /** base-10 logarithm **/
+
 TYPE TGFN(log10)(TYPE x)
 {
 	switch (fpclassify(x)) {
@@ -41,7 +42,5 @@ compute the base-ten logarithm of ARGUMENT(x).
 /*
 IMPLEMENTATION(The value returned on a domain error, CONSTANT(HUGE_VAL))
 LINK(m)
-*/
-/*
 STDC(1)
 */

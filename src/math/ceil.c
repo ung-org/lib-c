@@ -1,9 +1,10 @@
 # define TGSOURCE "ceil.c"
+#include <errno.h>
 #include <math.h>
 #include "_tgmath.h"
-#include "errno.h"
 
 /** round up to nearest integer **/
+
 TYPE TGFN(ceil)(TYPE x)
 {
 	switch (fpclassify(x)) {
@@ -30,7 +31,5 @@ than ARGUMENT(x), returning it as the same floating-point type as ARGUMENT(x).
 /*
 IMPLEMENTATION(The value returned on a domain error, CONSTANT(HUGE_VAL))
 LINK(m)
-*/
-/*
 STDC(1)
 */

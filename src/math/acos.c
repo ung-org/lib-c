@@ -1,10 +1,11 @@
 # define TGSOURCE "acos.c"
+#include <errno.h>
+#include <fenv.h>
 #include <math.h>
-#include "fenv.h"
-#include "errno.h"
 #include "_tgmath.h"
 
 /** arc cosine **/
+
 TYPE TGFN(acos)(TYPE x)
 {
 	if (TGFN(fabs)(x) > 1) {
@@ -36,7 +37,5 @@ the range [-1, +1].
 /*
 IMPLEMENTATION(The value returned on a domain error, CONSTANT(HUGE_VAL))
 LINK(m)
-*/
-/*
 STDC(1)
 */

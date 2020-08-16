@@ -2,6 +2,7 @@
 #include "_assert.h"
 
 /** count non-matching characters **/
+
 size_t strcspn(const char *s1, const char *s2)
 {
 	size_t i = 0;
@@ -22,7 +23,8 @@ size_t strcspn(const char *s1, const char *s2)
 the number of characters that the beginning of
 the string ARGUMENT(s1) that are not in the string ARGUMENT(s2).
 ***/
+
 /*
-	RETURN_ALWAYS(the number of non-matching characters);
+RETURN_ALWAYS(the number of non-matching characters);
 STDC(1)
 */

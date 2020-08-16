@@ -1,8 +1,9 @@
 #include <stdio.h>
-#include "_stdio.h"
 #include "_assert.h"
+#include "_stdio.h"
 
 /** test for end-of-file **/
+
 int feof(FILE *stream)
 {
 	ASSERT_NONNULL(stream);
@@ -24,6 +25,7 @@ int feof(FILE *stream)
 /***
 tests for the end-of-file indicator of ARGUMENT(stream).
 ***/
+
 /*
 STDC(1)
 */

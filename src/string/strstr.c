@@ -2,6 +2,7 @@
 #include "_assert.h"
 
 /** search for substring **/
+
 char * strstr(const char *s1, const char *s2)
 {
 	size_t l1 = 0;
@@ -38,6 +39,7 @@ finds the first occurrence of the string ARGUMENT(s2) in the string
 ARGUMENT(s1). Specifying the empty string for ARGUMENT(s2) matches the first
 character of ARGUMENT(s1).
 ***/
+
 /*
 STDC(1)
 */

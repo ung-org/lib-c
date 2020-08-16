@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 /** write a character to a file stream **/
+
 int putc(int c, FILE *stream)
 {
 	/*
@@ -14,6 +15,7 @@ int putc(int c, FILE *stream)
 is equivalent of FUNCTION(fputc), except that if it is defined
 as a macro, it may evaluate ARGUMENT(stream) more than once.
 ***/
+
 /*
 STDC(1)
 */

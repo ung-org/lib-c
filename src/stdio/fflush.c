@@ -1,12 +1,16 @@
-#include <stdio.h>
-#include "_stdio.h"
+#ifndef _POSIX_SOURCE
+#define _POSIX_SOURCE
+#define POSIX_FORCED
+#endif
 
-#ifdef _POSIX_SOURCE
+#include <stdio.h>
 #include <sys/types.h>
 #include <unistd.h>
-#else
+#include "_stdio.h"
+
+#ifdef POSIX_FORCED
 #include "_syscall.h"
-#define write(_fd, _buf, _size) __syscall(__syscall_lookup(write), _fd, _buf, _size)
+#define write(_fd, _buf, _size) __scall3(write, _fd, _buf, _size)
 #endif
 
 /** flush buffered writes **/
@@ -51,7 +55,5 @@ If ARGUMENT(stream) is CONSTANT(NULL), THIS() will flush all open streams.
 /*
 UNDEFINED(ARGUMENT(stream) is not an output stream)
 UNDEFINED(ARGUMENT(stream) is an update stream in which the most recent operation was input)
-*/
-/*
 STDC(1)
 */

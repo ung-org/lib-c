@@ -4,6 +4,34 @@
 #include <locale.h>
 #include <limits.h>
 
+#ifndef LC_ALL_MASK
+#include "LC_ALL_MASK.c"
+#endif
+
+#ifndef LC_COLLATE_MASK
+#include "LC_COLLATE_MASK.c"
+#endif
+
+#ifndef LC_CTYPE_MASK
+#include "LC_CTYPE_MASK.c"
+#endif
+
+#ifndef LC_NUMERIC_MASK
+#include "LC_NUMERIC_MASK.c"
+#endif
+
+#ifndef LC_TIME_MASK
+#include "LC_TIME_MASK.c"
+#endif
+
+#ifndef LC_MESSAGES_MASK
+#include "LC_MESSAGES_MASK.c"
+#endif
+
+#ifndef LC_MONETARY_MASK
+#include "LC_MONETARY_MASK.c"
+#endif
+
 struct __locale_t {
 	char all[UCHAR_MAX];
 

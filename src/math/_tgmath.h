@@ -68,4 +68,12 @@
 #define copysign(_x, _y) (_x < 0 ? -_y : _y)
 #endif
 
+#ifndef M_PI
+#include "M_PI.c"
+#endif
+
+#ifndef M_PI_2
+#include "M_PI_2.c"
+#endif
+
 #endif

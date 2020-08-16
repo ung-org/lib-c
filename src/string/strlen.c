@@ -19,7 +19,8 @@ size_t strlen(const char *s)
 counts the number of bytes in the string ARGUMENT(s), not
 including the terminating null character.
 ***/
+
 /*
-	RETURN_ALWAYS(the length of the string);
+RETURN_ALWAYS(the length of the string);
 STDC(1)
 */

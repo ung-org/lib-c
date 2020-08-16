@@ -1,9 +1,10 @@
 # define TGSOURCE "asin.c"
+#include <errno.h>
 #include <math.h>
 #include "_tgmath.h"
-#include "errno.h"
 
 /** arc sine **/
+
 TYPE TGFN(asin)(TYPE x)
 {
 	if (TGFN(fabs)(x) > 1.0) {
@@ -33,7 +34,5 @@ the range [-1, +1].
 /*
 IMPLEMENTATION(The value returned on a domain error, CONSTANT(HUGE_VAL))
 LINK(m)
-*/
-/*
 STDC(1)
 */

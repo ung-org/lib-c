@@ -1,9 +1,10 @@
 # define TGSOURCE "ldexp.c"
+#include <errno.h>
 #include <math.h>
 #include "_tgmath.h"
-#include "errno.h"
 
 /** multiply by a power of 2 **/
+
 TYPE TGFN(ldexp)(TYPE x, int exp)
 {
 	switch (fpclassify(x)) {
@@ -34,7 +35,5 @@ by 2 raised to the power ARGUMENT(exp).
 /*
 IMPLEMENTATION(The value returned on a domain error, CONSTANT(HUGE_VAL))
 LINK(m)
-*/
-/*
 STDC(1)
 */

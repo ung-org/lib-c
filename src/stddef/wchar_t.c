@@ -1,4 +1,3 @@
-#include <stddef.h>
 typedef int                                                             wchar_t;
 
 /** wide character type **/
@@ -11,7 +10,5 @@ The null character will always have the value LITERAL(0).
 
 /*
 TYPEDEF(integer)
-*/
-/*
 STDC(1)
 */

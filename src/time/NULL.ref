@@ -1,3 +1,2 @@
-#include <time.h>
 REFERENCE(stddef/NULL.c)
 STDC(1)

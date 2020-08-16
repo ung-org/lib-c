@@ -2,6 +2,7 @@
 #include "_stdio.h"
 
 /** reset file stream error indicator **/
+
 void clearerr(FILE * stream)
 {
 	flockfile(stream);
@@ -15,6 +16,7 @@ void clearerr(FILE * stream)
 /***
 clears the error and end-of-file indicators of ARGUMENT(stream).
 ***/
+
 /*
 STDC(1)
 */

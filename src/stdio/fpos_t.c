@@ -1,5 +1,5 @@
-#include <stdio.h>
-typedef struct __fpos_t *                                                fpos_t;
+typedef                                                        struct __fpos_t *
+	fpos_t;
 
 /** file position **/
 
@@ -7,6 +7,7 @@ typedef struct __fpos_t *                                                fpos_t;
 is used to record information about individual positions within a TYPEDEF(FILE)
 stream.
 ***/
+
 /*
 STDC(1)
 */

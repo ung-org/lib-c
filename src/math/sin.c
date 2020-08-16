@@ -1,10 +1,11 @@
 # define TGSOURCE "sin.c"
+#include <errno.h>
+#include <fenv.h>
 #include <math.h>
 #include "_tgmath.h"
-#include "errno.h"
-#include "fenv.h"
 
 /** sine **/
+
 TYPE TGFN(sin)(TYPE x)
 {
 	int MAXLOOPS = 10;
@@ -52,7 +53,5 @@ compute sine of ARGUMENT(x), in radians.
 /*
 IMPLEMENTATION(The value returned on a domain error, CONSTANT(HUGE_VAL))
 LINK(m)
-*/
-/*
 STDC(1)
 */

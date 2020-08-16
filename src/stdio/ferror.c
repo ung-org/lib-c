@@ -3,6 +3,7 @@
 #include "_stdio.h"
 
 /** tests the file stream error indicator **/
+
 int ferror(FILE *stream)
 {
 	ASSERT_NONNULL(stream);
@@ -16,6 +17,7 @@ int ferror(FILE *stream)
 /***
 tests the error indicator of ARGUMENT(stream).
 ***/
+
 /*
 STDC(1)
 */

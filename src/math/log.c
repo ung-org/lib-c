@@ -1,10 +1,11 @@
 # define TGSOURCE "log.c"
+#include <errno.h>
+#include <fenv.h>
 #include <math.h>
 #include "_tgmath.h"
-#include "errno.h"
-#include "fenv.h"
 
 /** natural logarithm **/
+
 TYPE TGFN(log)(TYPE x)
 {
 	switch (fpclassify(x)) {
@@ -41,7 +42,5 @@ compute the natural logarithm of ARGUMENT(x).
 /*
 IMPLEMENTATION(The value returned on a domain error, CONSTANT(HUGE_VAL))
 LINK(m)
-*/
-/*
 STDC(1)
 */

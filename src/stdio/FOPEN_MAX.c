@@ -1,4 +1,3 @@
-#include <stdio.h>
 #define FOPEN_MAX                                                            (8)
 
 /** maximum open FILE streams **/
@@ -10,7 +9,5 @@ guarantees can be opened at the same time.
 
 /*
 VALUE_MIN(8)
-*/
-/*
 STDC(1)
 */

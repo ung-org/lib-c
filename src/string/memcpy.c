@@ -2,6 +2,7 @@
 #include "_assert.h"
 
 /** copy memory **/
+
 void * memcpy(void * restrict s1, const void * restrict s2, size_t n)
 {
 	char *dst = (char*)s1;
@@ -26,6 +27,7 @@ void * memcpy(void * restrict s1, const void * restrict s2, size_t n)
 copies ARGUMENT(n) bytes from the object at ARGUMENT(s2) to the object at
 ARGUMENT(s1).
 ***/
+
 /*
 STDC(1)
 */

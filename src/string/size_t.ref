@@ -1,3 +1,2 @@
-#include <string.h>
 REFERENCE(stddef/size_t.c)
 STDC(1)

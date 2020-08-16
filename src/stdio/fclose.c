@@ -1,13 +1,18 @@
+#ifndef _POSIX_SOURCE
+#define _POSIX_SOURCE
+#define POSIX_FORCED
+#endif
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "_stdio.h"
-
-#if defined _POSIX_SOURCE || defined _POSIX_C_SOURCE || defined _XOPEN_SOURCE
 #include <sys/types.h>
 #include <unistd.h>
-#else
-#define close(fd) -1
+#include "_stdio.h"
+
+#ifdef POSIX_FORCED
+#include "_syscall.h"
+#define close(_fd)	__scall1(close, _fd)
 #endif
 
 /** close a file stream **/
@@ -47,6 +52,7 @@ function closes ARGUMENT(stream) and its associated file. Any
 unwritten data is flushed before closing. Any unread data is discarded. If the
 buffer was automatically allocated, it is freed.
 ***/
+
 /*
 STDC(1)
 */

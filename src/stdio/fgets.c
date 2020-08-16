@@ -2,6 +2,7 @@
 #include "_stdio.h"
 
 /** read a string of characters from a file stream **/
+
 char * fgets(char * restrict s, int n, FILE * restrict stream)
 {
 	int i = 0;

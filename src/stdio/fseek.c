@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 /** set the file position indicator **/
+
 int fseek(FILE *stream, long int offset, int whence)
 {
 	(void)stream; (void)offset;
@@ -29,7 +30,5 @@ any characters pushed with fn(ungetc).
 /*
 UNDEFINED(Specifying CONSTANT(SEEK_END) for ARGUMENT(whence) on a binary file)
 UNDEFINED(Specifying a value for ARGUMENT(offset) other than 0 or a previous return value of FUNCTION(ftell) on a text file)
-*/
-/*
 STDC(1)
 */

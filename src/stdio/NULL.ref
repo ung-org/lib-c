@@ -1,3 +1,2 @@
-#include <stdio.h>
 REFERENCE(stddef/NULL.c)
 STDC(1)

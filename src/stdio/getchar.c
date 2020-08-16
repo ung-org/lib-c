@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 /** read a character from stdin **/
+
 int getchar(void)
 {
 	/*
@@ -13,6 +14,7 @@ int getchar(void)
 /***
 reads the next character from ARGUMENT(stdin).
 ***/
+
 /*
 STDC(1)
 */

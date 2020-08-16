@@ -1,4 +1,3 @@
-#include <stddef.h>
 #ifdef __LLP64__
 # if ! defined __STDC_VERSION__ || __STDC_VERSION__ < 199909L
 typedef __int64                                                       ptrdiff_t;
@@ -18,7 +17,5 @@ from another.
 
 /*
 TYPEDEF(signed integer)
-*/
-/*
 STDC(1)
 */

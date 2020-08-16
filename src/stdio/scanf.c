@@ -1,8 +1,9 @@
+#include <stdarg.h>
 #include <stdio.h>
-#include "stdarg.h"
 #include "_stdio.h"
 
 /** read formatted input **/
+
 int scanf(const char * restrict format, ...)
 {
 	int ret = 0;
@@ -25,6 +26,7 @@ reads formatted input from macro(stdin).
 
 FIXME: scanf format goes here
 ***/
+
 /*
 STDC(1)
 */

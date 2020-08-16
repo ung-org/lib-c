@@ -2,6 +2,7 @@
 #include "_assert.h"
 
 /** count matching characters **/
+
 size_t strspn(const char *s1, const char *s2)
 {
 	size_t i = 0;
@@ -22,7 +23,8 @@ size_t strspn(const char *s1, const char *s2)
 computes the length of the maximum initial segment of the ARGUMENT(s1) made
 up of characters from ARGUMENT(s2).
 ***/
+
 /*
-	RETURN_ALWAYS(the number of matching characters);
+RETURN_ALWAYS(the number of matching characters);
 STDC(1)
 */

@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 /** specify file stream buffer **/
+
 void setbuf(FILE * restrict stream, char * restrict buf)
 {
 	if (buf) {
@@ -19,6 +20,7 @@ If ARGUMENT(buf) is CONSTANT(NULL), ARGUMENT(stream) will become unbuffered. It 
 equivalent of:
 	LITERAL(setvbuf(stream, NULL, _IONBF, 0);)
 ***/
+
 /*
 STDC(1)
 */

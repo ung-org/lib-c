@@ -1,7 +1,7 @@
+#include <locale.h>
+#include <stdio.h>
 #include <time.h>
-#include "stdio.h"
 #include "_assert.h"
-#include "locale.h"
 #include "locale/_locale.h"
 
 /** convert time to a formatted string **/
@@ -189,8 +189,5 @@ UNDEFINED(Copying takes place between objects that overlap)
 LC_TIME
 RETURN_FAILURE(ZERO)
 RETURN_SUCCESS(the length of the converted string, not counting the terminating null)
-*/
-
-/*
 STDC(1)
 */

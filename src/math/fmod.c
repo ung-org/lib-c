@@ -1,10 +1,11 @@
 # define TGSOURCE "fmod.c"
+#include <errno.h>
+#include <fenv.h>
 #include <math.h>
 #include "_tgmath.h"
-#include "errno.h"
-#include "fenv.h"
 
 /** floating-point remainder **/
+
 TYPE TGFN(fmod)(TYPE x, TYPE y)
 {
 	int classx = fpclassify(x);
@@ -46,7 +47,5 @@ FIXME: I am not sure I understand this.
 IMPLEMENTATION(The value returned on a domain error, CONSTANT(HUGE_VAL))
 IMPLEMENTATION(Whether ARGUMENT(y) being LITERAL(0) results in a domain error or THIS() returning LITERAL(0))
 LINK(m)
-*/
-/*
 STDC(1)
 */

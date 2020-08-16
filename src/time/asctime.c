@@ -1,7 +1,8 @@
+#include <stdio.h>
 #include <time.h>
-#include "stdio.h"
 
 /** convert broken down time to string **/
+
 char * asctime(const struct tm * timeptr)
 {
 	const char days[7][3] = {

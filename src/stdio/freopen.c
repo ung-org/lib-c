@@ -3,19 +3,19 @@
 #define POSIX_FORCED
 #endif
 
+#include <sys/types.h>
+#include <errno.h>
+#include <fcntl.h>
 #include <stdio.h>
 #include <string.h>
-#include <errno.h>
-#include <sys/types.h>
-#include <fcntl.h>
 #include <unistd.h>
 #include "_stdio.h"
 
 #ifdef POSIX_FORCED
 #include "termios/_termios.h"
 #include "_syscall.h"
-#define open(fname, flags, mode) __scall3(open, fname, flags, mode)
-#define isatty(fd) ioctl(fd, TCFLSH, 0)
+#define open(_p, _f, _m)	__scall3(open, _p, _f, _m)
+#define isatty(_fd)		ioctl(_fd, TCFLSH, 0)
 #endif
 
 /** reopen a file stream with a new file **/
@@ -102,6 +102,7 @@ ignoring any errors.
 
 The error and end-of-file indicators are cleared.
 ***/
+
 /*
 STDC(1)
 */

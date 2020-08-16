@@ -1,14 +1,20 @@
-#if defined _POSIX_SOURCE || defined _POSIX_C_SOURCE || defined _XOPEN_SOURCE
-#include "sys/types.h"
-#include "unistd.h"
-#else
-#include "_syscall.h"
-#define kill(pid, sig) __syscall(__syscall_lookup(kill), pid, sig)
-#define getpid() __syscall(__syscall_lookup(getpid))
+#ifndef _POSIX_SOURCE
+#define _POSIX_SOURCE
+#define POSIX_FORCED
 #endif
+
+#include <sys/types.h>
 #include <signal.h>
+#include <unistd.h>
+
+#ifdef POSIX_FORCED
+#include "_syscall.h"
+#define kill(pid, sig)	__scall2(kill, pid, sig)
+#define getpid()	__scall0(getpid)
+#endif
 
 /** send a signal to the current program **/
+
 int raise(int sig)
 {
 	/*
@@ -25,6 +31,7 @@ int raise(int sig)
 /***
 sends the signal ARGUMENT(sig) to the current program.
 ***/
+
 /*
 STDC(1)
 */

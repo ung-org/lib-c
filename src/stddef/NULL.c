@@ -1,4 +1,3 @@
-#include <stddef.h>
 #define NULL                                                          ((void*)0)
 
 /** null pointer **/
@@ -11,7 +10,5 @@ library functions.
 /*
 UNDEFINED(Dereferencing THIS())
 IMPLEMENTATION(The value of THIS(), DEFINITION((void*)0))
-*/
-/*
 STDC(1)
 */

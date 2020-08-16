@@ -1,4 +1,3 @@
-#include <locale.h>
 struct lconv {
 	/** The character that separates the whole and decimal portions of non-monetary values **/
 	char *decimal_point;		/* "." */
@@ -60,6 +59,7 @@ struct lconv {
 };
 
 /* values specified in comments are for the "C" locale */
+
 /*
 STDC(1)
 */

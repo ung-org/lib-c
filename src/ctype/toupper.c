@@ -1,6 +1,5 @@
-#include <ctype.h>
-#include "stdio.h"
-#include "limits.h"
+#include <stdio.h>
+#include <limits.h>
 #include "_ctype.h"
 
 /** convert a lowercase letter to uppercase **/
