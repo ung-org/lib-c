@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <sys/types.h>
 #include <signal.h>
 
 /** cause abnormal program termination **/
