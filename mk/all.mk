@@ -69,7 +69,6 @@ include mk/_setjmp.d
 include mk/sigsetjmp.d
 include mk/siglongjmp.d
 include mk/longjmp.d
-include mk/jmp_buf.d
 include mk/bzero.d
 include mk/index.d
 include mk/bcmp.d
@@ -108,9 +107,6 @@ include mk/dbm_close.d
 include mk/dbm_fetch.d
 include mk/dbm_open.d
 include mk/dbm_clearerr.d
-include mk/_XOPEN_SOURCE_EXTENDED.d
-include mk/_XOPEN_SOURCE.d
-include mk/_POSIX_C_SOURCE.d
 include mk/regcomp.d
 include mk/regexec.d
 include mk/regfree.d
