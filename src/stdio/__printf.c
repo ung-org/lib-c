@@ -341,7 +341,3 @@ int (__printf)(struct io_options *opt, const char * format, va_list arg)
 
 	return nout;
 }
-
-/*
-STDC(0)
-*/
