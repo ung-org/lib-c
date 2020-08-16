@@ -30,6 +30,12 @@
 	} while (0)
 
 long __syscall(long __number, ...);
+#define __scall1(_n, _1)                     __syscall(__syscall_lookup(_n), _1)
+#define __scall2(_n, _1, _2)                 __syscall(__syscall_lookup(_n), _1, _2)   
+#define __scall3(_n, _1, _2, _3)             __syscall(__syscall_lookup(_n), _1, _2, _3)
+#define __scall4(_n, _1, _2, _3, _4)         __syscall(__syscall_lookup(_n), _1, _2, _3, _4)
+#define __scall5(_n, _1, _2, _3, _4, _5)     __syscall(__syscall_lookup(_n), _1, _2, _3, _4, _5)
+#define __scall6(_n, _1, _2, _3, _4, _5, _6) __syscall(__syscall_lookup(_n), _1, _2, _3, _4, _5, _6)
 
 #if defined __linux__ && defined __x86_64__
 #define __sys_alarm 37
