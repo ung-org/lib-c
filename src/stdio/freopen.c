@@ -3,7 +3,7 @@
 #include "errno.h"
 #include "_stdio.h"
 
-#if defined _POSIX_SOURCE || defined _POSIX_C_SOURCE || defined _XOPEN_SOURCE
+#if defined _POSIX_SOURCE
 #include "sys/types.h"
 #include "fcntl.h"
 #else
@@ -13,10 +13,26 @@
 #include "fcntl/O_TRUNC.c"
 #include "fcntl/O_APPEND.c"
 #include "fcntl/O_RDWR.c"
-#define open(fname, flags, mode) (filename ? -1 : -1)
+#define open(fname, flags, mode) __syscall(__syscall_lookup(open), fname, flags, mode)
+#endif
+
+#ifdef _POSIX_SOURCE
+#define DEFAULT_LOCALE "POSIX"
+#include "unistd.h"
+#else
+#define DEFAULT_LOCALE "C"
+#include "_syscall.h"
+#include "termios/NCCS.c"
+#include "termios/speed_t.c"
+#include "termios/cc_t.c"
+#include "termios/tcflag_t.c"
+#include "termios/struct_termios.c"
+#include "termios/_termios.h"
+#define isatty(fd) ioctl(fd, TCFLSH, 0)
 #endif
 
 /** reopen a file stream with a new file **/
+
 FILE * freopen(const char * restrict filename, const char * restrict mode, FILE * restrict stream)
 {
 	struct {
@@ -63,16 +79,23 @@ FILE * freopen(const char * restrict filename, const char * restrict mode, FILE 
 	}
 
 	flockfile(stream);
+	fflush(stream);
 
-	fd = open(filename, openmode, 0);
-	if (fd == -1) {
-		/* open() already sets errno */
-		stream = NULL;
-	} else {
+	if (filename != NULL) {
+		fd = open(filename, openmode, 0);
+		if (fd == -1) {
+			/* open() already sets errno */
+			funlockfile(stream);
+			return NULL;
+		}
 		stream->fd = fd;
 	}
 
-	funlockfile(stream);
+	if (stream->bmode == 0) {
+		stream->bmode = isatty(fd) ? _IOLBF : _IOFBF;
+		stream->bsize = BUFSIZ;
+		stream->buf = stream->ibuf;
+	}
 
 	/*
 	RETURN_SUCCESS(ARGUMENT(stream));
