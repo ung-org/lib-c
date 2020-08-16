@@ -9,6 +9,9 @@
 #include "_grp.h"
 
 #ifndef LINE_MAX
+#ifndef _POSIX2_LINE_MAX
+#include "limits/_POSIX2_LINE_MAX.c"
+#endif
 #define LINE_MAX _POSIX2_LINE_MAX
 #endif
 
