@@ -35,7 +35,7 @@ void __main(int argc, char **argv)
 	freopen(NULL, "w", stderr);
 	setvbuf(stderr, NULL, _IONBF, 0);
 
-	/* setlocale(LC_ALL, DEFAULT_LOCALE); */
+	setlocale(LC_ALL, DEFAULT_LOCALE);
 
 	exit(main(argc, argv));
 }
