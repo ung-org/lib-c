@@ -1,33 +1,20 @@
-#include <stdio.h>
-#include "string.h"
-#include "errno.h"
-#include "_stdio.h"
-
-#if defined _POSIX_SOURCE
-#include "sys/types.h"
-#include "fcntl.h"
-#else
-#include "fcntl/O_RDONLY.c"
-#include "fcntl/O_WRONLY.c"
-#include "fcntl/O_CREAT.c"
-#include "fcntl/O_TRUNC.c"
-#include "fcntl/O_APPEND.c"
-#include "fcntl/O_RDWR.c"
-#define open(fname, flags, mode) __syscall(__syscall_lookup(open), fname, flags, mode)
+#ifndef _POSIX_SOURCE
+#define _POSIX_SOURCE
+#define POSIX_FORCED
 #endif
 
-#ifdef _POSIX_SOURCE
-#define DEFAULT_LOCALE "POSIX"
-#include "unistd.h"
-#else
-#define DEFAULT_LOCALE "C"
-#include "_syscall.h"
-#include "termios/NCCS.c"
-#include "termios/speed_t.c"
-#include "termios/cc_t.c"
-#include "termios/tcflag_t.c"
-#include "termios/struct_termios.c"
+#include <stdio.h>
+#include <string.h>
+#include <errno.h>
+#include <sys/types.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include "_stdio.h"
+
+#ifdef POSIX_FORCED
 #include "termios/_termios.h"
+#include "_syscall.h"
+#define open(fname, flags, mode) __scall3(open, fname, flags, mode)
 #define isatty(fd) ioctl(fd, TCFLSH, 0)
 #endif
 
