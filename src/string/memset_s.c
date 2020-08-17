@@ -1,4 +1,4 @@
-#include "string.h"
+#include <string.h>
 
 /** fill memory **/
 errno_t memset_s(void *s, rsize_t smax, int c, rsize_t n)

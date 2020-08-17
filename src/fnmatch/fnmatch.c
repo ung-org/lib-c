@@ -1,5 +1,5 @@
 #include <fnmatch.h>
-#include "string.h"
+#include <string.h>
 #include "_assert.h"
 
 int fnmatch(const char * pattern, const char * string, int flags)

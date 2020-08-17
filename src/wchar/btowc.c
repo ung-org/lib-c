@@ -1,6 +1,6 @@
 #include <wchar.h>
-#include "locale.h"
-#include "string.h"
+#include <locale.h>
+#include <string.h>
 
 wint_t btowc(int c)
 {

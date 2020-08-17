@@ -1,6 +1,6 @@
-#include "string.h"
-#include "stdlib.h"
-#include "sys/_nonstd_.h"
+#include <string.h>
+#include <stdlib.h>
+#include "_assert.h"
 
 /** move memory **/
 errno_t memmove_s(void *s1, rsize_t s1max, const void *s2, rsize_t n)

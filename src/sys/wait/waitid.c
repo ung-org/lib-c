@@ -1,17 +1,6 @@
-#include "sys/types.h"
-/*
-#include "sys/time.h"
-#include "ucontext.h"
-#include "signal.h"
+#include <sys/types.h>
 #include <sys/wait.h>
-*/
 #include "_syscall.h"
-
-#define __SYS_WAIT_H__
-
-#include "idtype_t.c"
-
-typedef struct siginfo siginfo_t;
 
 int waitid(idtype_t idtype, id_t id, siginfo_t *infop, int options)
 {

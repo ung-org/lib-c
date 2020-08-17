@@ -3,13 +3,12 @@
 #define _POSIX_C_SOURCE 2
 #endif
 
-#include "sys/types.h"
+#include <sys/types.h>
 #include <grp.h>
-#include "stdlib.h"
-#include "stddef.h"
-#include "stdio.h"
-#include "limits.h"
-#include "string.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <limits.h>
+#include <string.h>
 #include "_config.h"
 #include "_grp.h"
 

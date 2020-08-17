@@ -1,5 +1,5 @@
 #include <term.h>
-#include "curses.h"
+#include <curses.h>
 
 int tgetent(char * bp, const char * name)
 {

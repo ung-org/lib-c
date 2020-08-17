@@ -11,15 +11,14 @@
 #include "sys/types/pid_t.h"
 #endif
 
-#ifndef L_ctermid
-#include "L_ctermid.h"
+#if !defined _POSIX_C_SOURCE || _POSIX_C_SOURCE < 199506L
+#define flockfile(_file)		(void)(_file)
+#define funlockfile(_file)		(void)(_file)
+#define putc_unlocked(_c, _stream)	fputc(_c, _stream)
+#define getc_unlocked(_stream)		fgetc(_stream)
 #endif
 
 #define f_is_open(s) (s && (s->bmode != 0))
-
-struct __fpos_t {
-	size_t off;
-};
 
 struct __FILE {
 	fpos_t pos;
@@ -62,16 +61,8 @@ int __scanf(struct io_options * restrict, const char * restrict, va_list);
 
 struct __stdio {
 	struct __FILE FILES[FOPEN_MAX];
-	char ctermid[L_ctermid + 1];
 };
 
 extern struct __stdio __stdio;
-
-#if !defined _POSIX_C_SOURCE || _POSIX_C_SOURCE < 199506L
-#define flockfile(_file)		(void)(_file)
-#define funlockfile(_file)		(void)(_file)
-#define putc_unlocked(_c, _stream)	fputc(_c, _stream)
-#define getc_unlocked(_stream)		fgetc(_stream)
-#endif
 
 #endif

@@ -1,7 +1,7 @@
 #include <stdlib.h>
-#include "ctype.h"
-#include "limits.h"
-#include "errno.h"
+#include <ctype.h>
+#include <limits.h>
+#include <errno.h>
 
 unsigned long long int strtoull(const char * restrict nptr, char ** restrict endptr, int base)
 {

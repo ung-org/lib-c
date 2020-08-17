@@ -1,6 +1,3 @@
-#include "stddef.h"
-#include "sys/types.h"
-#include <unistd.h>
 #include "_syscall.h"
 
 int pause(void)

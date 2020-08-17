@@ -1,8 +1,8 @@
 # define TGSOURCE "ilogb.c"
 #include "_tgmath.h"
 #include <math.h>
-#include "limits.h"
-#include "fenv.h"
+#include <limits.h>
+#include <fenv.h>
 
 int TGFN(ilogb)(TYPE x)
 {

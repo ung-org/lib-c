@@ -1,5 +1,5 @@
-#include "time.h"
-#include "stdio.h"
+#include <time.h>
+#include <stdio.h>
 
 /** convert broken down time to string **/
 errno_t asctime_s(char *s, rsize_t maxsize, const struct tm * timeptr)

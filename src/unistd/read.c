@@ -1,7 +1,4 @@
-#include "stddef.h"
-#include "sys/types.h"
-#include <unistd.h>
-#include "errno.h"
+#include <sys/types.h>
 #include "_syscall.h"
 
 ssize_t read(int fildes, void *buf, size_t nbyte)

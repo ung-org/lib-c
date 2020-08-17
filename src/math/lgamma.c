@@ -1,7 +1,7 @@
 # define TGSOURCE "lgamma.c"
 #include "_tgmath.h"
 #include <math.h>
-#include "fenv.h"
+#include <fenv.h>
 
 TYPE TGFN(lgamma)(TYPE x)
 {

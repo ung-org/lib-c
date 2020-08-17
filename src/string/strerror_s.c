@@ -1,5 +1,5 @@
-#include "string.h"
-#include "errno.h"
+#include <string.h>
+#include <errno.h>
 #include "__strerror.h"
 
 /** convert error number to string **/

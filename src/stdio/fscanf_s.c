@@ -1,6 +1,5 @@
-#include "stdio.h"
-#include "stdio.h"
-#include "stdarg.h"
+#include <stdio.h>
+#include <stdarg.h>
 
 /** read formatted input from a file stream **/
 int fscanf_s(FILE * restrict stream, const char * restrict format, ...)

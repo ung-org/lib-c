@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include "sys/types.h"
-#include "sys/wait.h"
+#include <sys/types.h>
+#include <sys/wait.h>
 #include "_stdio.h"
 
 int pclose(FILE * stream)

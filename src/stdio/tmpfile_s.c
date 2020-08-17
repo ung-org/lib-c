@@ -1,4 +1,4 @@
-#include "stdio.h"
+#include <stdio.h>
 
 /* open a temporary file stream */
 errno_t tmpfile_s(FILE * restrict * restrict streamptr)

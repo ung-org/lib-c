@@ -1,7 +1,7 @@
-#include "sys/types.h"
+#include <sys/types.h>
 #include <unistd.h>
-#include "errno.h"
-#include "string.h"
+#include <errno.h>
+#include <string.h>
 #include "_assert.h"
 
 size_t confstr(int name, char *buf, size_t len)

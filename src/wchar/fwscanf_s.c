@@ -1,5 +1,5 @@
-#include "stdio.h"
-#include "wchar.h"
+#include <stdio.h>
+#include <wchar.h>
 
 int fwscanf_s(FILE * restrict stream, const wchar_t * restrict format, ...)
 {

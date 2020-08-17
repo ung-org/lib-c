@@ -1,5 +1,5 @@
 #include <curses.h>
-#include "stdarg.h"
+#include <stdarg.h>
 
 int mvprintw(int y, int x, const char * fmt, ...)
 {

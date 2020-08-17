@@ -1,8 +1,8 @@
 # define TGSOURCE "complex/csqrt.c"
 #include "_tgmath.h"
 #include <complex.h>
-#include "math.h"
-#include "fenv.h"
+#include <math.h>
+#include <fenv.h>
 
 TYPE complex TGFN(csqrt)(TYPE complex z)
 {

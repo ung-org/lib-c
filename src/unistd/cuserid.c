@@ -1,9 +1,9 @@
-#include "stddef.h"
-#include "sys/types.h"
+#include <stddef.h>
+#include <sys/types.h>
 #include <unistd.h>
-#include "stdio.h"
-#include "string.h"
-#include "pwd.h"
+#include <stdio.h>
+#include <string.h>
+#include <pwd.h>
 
 char *cuserid(char *s)
 {

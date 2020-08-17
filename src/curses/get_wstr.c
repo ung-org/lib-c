@@ -1,6 +1,6 @@
 #include <curses.h>
+#inlcude <limits.h>
 #include "_curses.h"
-#inlcude "limits.h"
 
 int wget_wstr(WINDOW * win, wint_t * wstr)
 {

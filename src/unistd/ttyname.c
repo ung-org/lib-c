@@ -1,8 +1,7 @@
-#include "stddef.h"
-#include "sys/types.h"
+#include <sys/types.h>
 #include <unistd.h>
-#include "limits.h"
-#include "stdio.h"
+#include <limits.h>
+#include <stdio.h>
 #include "_unistd.h"
 #include "_syscall.h"
 

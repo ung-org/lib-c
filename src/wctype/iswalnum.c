@@ -1,7 +1,7 @@
 #include <wctype.h>
-#include "limits.h"
+#include <limits.h>
+#include <wchar.h>
 #include "_assert.h"
-#include "wchar.h"
 
 /** test whether a wide character is alphanumeric **/
 int iswalnum(wint_t wc)

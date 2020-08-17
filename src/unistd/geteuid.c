@@ -1,6 +1,4 @@
-#include "stddef.h"
-#include "sys/types.h"
-#include <unistd.h>
+#include <sys/types.h>
 #include "_syscall.h"
 
 uid_t geteuid(void)

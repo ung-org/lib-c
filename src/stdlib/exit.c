@@ -1,9 +1,7 @@
 #include <stdlib.h>
-#include <limits.h>
-#include <stddef.h>
 #include <stdio.h>
-#include "_syscall.h"
 #include "_stdlib.h"
+#include "_syscall.h"
 
 /** cause normal program termination **/
 _Noreturn void exit(int status)

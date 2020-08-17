@@ -1,7 +1,7 @@
 #include <unctrl.h>
-#include "curses.h"
-#include "ctype.h"
-#include "stddef.h"
+#include <curses.h>
+#include <ctype.h>
+#include <stddef.h>
 
 char * unctrl(chtype c)
 {

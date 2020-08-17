@@ -1,4 +1,4 @@
-#include "time.h"
+#include <time.h>
 
 /** convert arithmetic time to string **/
 errno_t ctime_s(char *s, rsize_t maxsize, const time_t *timer)

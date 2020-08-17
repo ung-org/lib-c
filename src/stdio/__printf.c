@@ -1,12 +1,13 @@
-#include "stdio.h"
-#include "_stdio.h"
-#include "stddef.h"
+#include <sys/types.h>
+#include <stdio.h>
+#include <stddef.h>
 #include "wctype/wint_t.h"
 #include "wctype/wctrans_t.h"
-#include "wchar.h"
-#include "inttypes.h"
-#include "unistd.h"
-#include "stdlib.h"
+#include <wchar.h>
+#include <inttypes.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include "_stdio.h"
 
 #if !defined __STDC_VERSION__ || __STDC_VERSION__ < 199909L
 #include "stdint/intmax_t.h"

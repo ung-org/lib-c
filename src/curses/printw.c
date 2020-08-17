@@ -1,5 +1,5 @@
 #include <curses.h>
-#include "stdarg.h"
+#include <stdarg.h>
 
 int printw(const char * fmt, ...)
 {

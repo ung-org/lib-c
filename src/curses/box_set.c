@@ -1,5 +1,5 @@
 #include <curses.h>
-#include "stddef.h"
+#include <stddef.h>
 
 int box_set(WINDOW * win, const cchar_t * verch, const cchar_t * horch)
 {

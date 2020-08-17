@@ -1,5 +1,5 @@
 #include <curses.h>
-#include "stddef.h"
+#include <stddef.h>
 
 char * keyname(int c)
 {

@@ -1,5 +1,5 @@
-#include "stdio.h"
-#include "stdarg.h"
+#include <stdio.h>
+#include <stdarg.h>
 
 /** write formatted output **/
 int printf_s(const char *format, ...)

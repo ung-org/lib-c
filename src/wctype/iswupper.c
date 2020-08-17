@@ -1,5 +1,5 @@
 #include <wctype.h>
-#include "wchar.h"
+#include <wchar.h>
 #include "_assert.h"
 
 /** test whether a wide character is an uppercase letter **/

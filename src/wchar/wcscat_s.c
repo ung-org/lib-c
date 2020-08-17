@@ -1,4 +1,4 @@
-#include "wchar.h"
+#include <wchar.h>
 
 errno_t wcscat_s(wchar_t * restrict s1, rsize_t s1max, const wchar_t * restrict s2)
 {

@@ -1,7 +1,7 @@
-#include "sys/types.h"
+#include <sys/types.h>
 #include <fcntl.h>
-#include "errno.h"
-#include "stdarg.h"
+#include <errno.h>
+#include <stdarg.h>
 #include "_syscall.h"
 
 int fcntl(int fildes, int cmd, ...)

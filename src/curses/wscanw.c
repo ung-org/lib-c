@@ -1,5 +1,5 @@
 #include <curses.h>
-#include "stdarg.h"
+#include <stdarg.h>
 
 int wscanw(WINDOW * win, const char * fmt, ...)
 {

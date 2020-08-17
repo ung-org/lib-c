@@ -1,6 +1,6 @@
-#include "sys/types.h"
-#include "string.h"
-#include "stdio.h"
+#include <sys/types.h>
+#include <string.h>
+#include <stdio.h>
 #include <unistd.h>
 
 int getopt(int argc, char * const argv[], const char *optstring)

@@ -1,19 +1,18 @@
+#if ((!defined _POSIX_C_SOURCE) || (_POSIX_C_SOURCE < 199309L))
+#undef _POSIX_C_SOURCE
+#define _POSIX_C_SOURCE 199309L
+#define POSIX_FORCED
+#endif
+
 #include <stdlib.h>
+#include <sys/types.h>
+#include <fcntl.h>
+#include <sys/mman.h>
 
-#if defined _POSIX_C_SOURCE && 199305L <= _POSIX_C_SOURCE
-#include "sys/types.h"
-#include "fcntl.h"
-#include "sys/mman.h"
-
-#else
+#ifdef POSIX_FORCED
 #include "_syscall.h"
-#define PROT_READ 0x1
-#define PROT_WRITE 0x2
-#define MAP_PRIVATE 0x2
-#define O_RDWR 0x2
-#define mmap(_a, _l, _p, _fl, _fd, _o) __syscall(__syscall_lookup(mmap), _a, _l, _p, _fl, _fd, _o)
-#define open(_p, _a, _m) __syscall(__syscall_lookup(open), _p, _a, _m)
-
+#define mmap(_a, _l, _p, _fl, _fd, _o)	__scall6(mmap, _a, _l, _p, _fl, _fd, _o)
+#define open(_p, _a, _m)		__scall3(open, _p, _a, _m)
 #endif
 
 /** change the amount of memory allocated **/
@@ -29,8 +28,11 @@ void * realloc(void * ptr, size_t size)
 
 	if (ptr == NULL) {
 		/* malloc() */
-		return (void*)(long)mmap(NULL, size, PROT_READ | PROT_WRITE,
+		ptr = (void*)(long)mmap(NULL, size, PROT_READ | PROT_WRITE,
 			MAP_PRIVATE, backing, 0);
+		if (ptr == MAP_FAILED) {
+			return NULL;
+		}
 	} else if (size == 0) {
 		/* free() */
 	}

@@ -1,8 +1,8 @@
 # define TGSOURCE "llrint.c"
 #include "_tgmath.h"
 #include <math.h>
-#include "limits.h"
-#include "fenv.h"
+#include <limits.h>
+#include <fenv.h>
 
 long long int TGFN(llrint)(TYPE x)
 {

@@ -1,5 +1,4 @@
-#include "string.h"
-#include "stddef.h"
+#include <string.h>
 
 char * strtok_s(char * restrict s1, rsize_t * restrict s1max, const char * restrict s2, char **restrict ptr)
 {

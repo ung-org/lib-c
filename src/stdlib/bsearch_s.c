@@ -1,12 +1,9 @@
 #include <stddef.h>
 
 /** binary search **/
-void *bsearch_s(const void * key, const void * base,
-	rsize_t nmemb, rsize_t size,
-	int (*compar)(const void *x, const void *y, void * context),
-	void *context)
+
+void *bsearch_s(const void * key, const void * base, rsize_t nmemb, rsize_t size, int (*compar)(const void *x, const void *y, void * context), void *context)
 {
-	__C_EXT(1, 201112L);
 	/* TODO: testing */
 	void *ret = NULL;
 	size_t i = nmemb / 2;
@@ -22,6 +19,7 @@ void *bsearch_s(const void * key, const void * base,
 			i += (nmemb >> trip);
 		}
 	}
+
 	return NULL;
 }
 

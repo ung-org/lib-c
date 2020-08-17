@@ -1,8 +1,7 @@
 # define TGSOURCE "complex/cabs.c"
-#include "_tgmath.h"
-#include "math.h"
-
 #include <complex.h>
+#include <math.h>
+#include "_tgmath.h"
 
 TYPE TGFN(cabs)(TYPE complex z)
 {

@@ -1,4 +1,4 @@
-#include "wchar.h"
+#include <wchar.h>
 
 int snwprintf_s(wchar_t * restrict s, rsize_t n, const wchar_t * restrict format, ...)
 {

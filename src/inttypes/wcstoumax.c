@@ -1,7 +1,7 @@
-#include "stddef.h"
+#include <stddef.h>
+#include <errno.h>
 #include <inttypes.h>
-#include "errno.h"
-#include "wctype.h"
+#include <wctype.h>
 
 #define isspace iswspace
 

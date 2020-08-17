@@ -1,7 +1,6 @@
-#include "stddef.h"
-#include "sys/types.h"
+#include <sys/types.h>
 #include <unistd.h>
-#include "termios/_termios.h"
+#include <termios/_termios.h>
 
 int tcsetpgrp(int fildes, pid_t pgid_id)
 {

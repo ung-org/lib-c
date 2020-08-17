@@ -1,6 +1,5 @@
-#include "sys/types.h"
 #include <wordexp.h>
-#include "stdlib.h"
+#include <stdlib.h>
 
 void wordfree(wordexp_t *pwordexp)
 {
@@ -10,4 +9,3 @@ void wordfree(wordexp_t *pwordexp)
 /*
 POSIX(2)
 */
-

@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "stdarg.h"
+#include <stdarg.h>
 #include "_stdio.h"
 
 int vsnprintf(char * restrict s, size_t n, const char *format, va_list arg)

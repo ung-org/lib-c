@@ -1,7 +1,3 @@
-#include "stddef.h"
-#include "sys/types.h"
-#include <unistd.h>
-#include "errno.h"
 #include "_syscall.h"
 
 int rmdir(const char *path)

@@ -1,7 +1,7 @@
 # define TGSOURCE "atanh.c"
 #include "_tgmath.h"
 #include <math.h>
-#include "fenv.h"
+#include <fenv.h>
 
 TYPE TGFN(atanh)(TYPE x)
 {

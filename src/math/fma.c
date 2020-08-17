@@ -1,7 +1,7 @@
 # define TGSOURCE "fma.c"
 #include "_tgmath.h"
 #include <math.h>
-#include "fenv.h"
+#include <fenv.h>
 
 TYPE TGFN(fma)(TYPE x, TYPE y, TYPE z)
 {

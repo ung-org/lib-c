@@ -1,8 +1,8 @@
 #include <dirent.h>
-#include "errno.h"
-#include "sys/types.h"
-#include "stdlib.h"
-#include "fcntl.h"
+#include <errno.h>
+#include <sys/types.h>
+#include <stdlib.h>
+#include <fcntl.h>
 #include "_dirent.h"
 
 #ifndef O_DIRECTORY

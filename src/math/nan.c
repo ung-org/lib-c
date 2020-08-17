@@ -1,8 +1,8 @@
 # define TGSOURCE "nan.c"
 #include "_tgmath.h"
 #include <math.h>
-#include "string.h"
-#include "stdlib.h"
+#include <string.h>
+#include <stdlib.h>
 
 #define strtodf strtof
 #define strtodl strtold

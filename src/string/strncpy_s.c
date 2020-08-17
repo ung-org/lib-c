@@ -1,4 +1,4 @@
-#include "string.h"
+#include <string.h>
 
 /** copy bounded string **/
 errno_t strncpy_s(char * restrict s1, rsize_t s1max, const char * restrict s2, rsize_t n)

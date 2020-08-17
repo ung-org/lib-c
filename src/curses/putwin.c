@@ -1,5 +1,5 @@
 #include <curses.h>
-#include "stdio.h"
+#include <stdio.h>
 
 int putwin(WINDOW * win, FILE * filep)
 {

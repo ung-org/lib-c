@@ -1,4 +1,4 @@
-#include "stdio.h"
+#include <stdio.h>
 
 int vscanf_s(const char * restrict format, va_list arg)
 {

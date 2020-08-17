@@ -1,4 +1,4 @@
-#include "wchar.h"
+#include <wchar.h>
 
 int wscanf_s(const wchar_t * restrict format, ...)
 {

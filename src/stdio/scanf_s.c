@@ -1,5 +1,5 @@
-#include "stdio.h"
-#include "stdarg.h"
+#include <stdio.h>
+#include <stdarg.h>
 
 /** read formatted input **/
 int scanf_s(const char * restrict format, ...)

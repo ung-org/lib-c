@@ -1,5 +1,4 @@
 #include <term.h>
-#include "stddef.h"
 
 int tgetflag(char id[2])
 {

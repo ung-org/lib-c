@@ -1,5 +1,5 @@
 #include <term.h>
-#include "string.h"
+#include <string.h>
 
 char * tgetstr(char id[2], char ** area)
 {

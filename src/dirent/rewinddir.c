@@ -1,6 +1,6 @@
 #include <dirent.h>
-#include "sys/types.h"
-#include "unistd.h"
+#include <sys/types.h>
+#include <unistd.h>
 #include "_dirent.h"
 
 void rewinddir(DIR * dirp)

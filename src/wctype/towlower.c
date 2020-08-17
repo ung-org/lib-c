@@ -1,6 +1,6 @@
 #include <wctype.h>
-#include "wchar.h"
-#include "stdlib.h"
+#include <wchar.h>
+#include <stdlib.h>
 #include "_assert.h"
 
 /** convert a wide uppercase letter to lowercase **/

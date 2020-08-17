@@ -1,6 +1,4 @@
 #include <stdlib.h>
-#include <limits.h>
-#include <stddef.h>
 #include "_stdlib.h"
 
 /** cause normal quick program termination **/

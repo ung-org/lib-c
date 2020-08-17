@@ -1,7 +1,6 @@
-#include "stddef.h"
-#include "sys/types.h"
+#include <sys/types.h>
 #include <unistd.h>
-#include "termios.h"
+#include <termios.h>
 
 /** test for a terminal device **/
 

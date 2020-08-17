@@ -1,4 +1,4 @@
-#include "time.h"
+#include <time.h>
 
 /** convert arithmetic time to borken down time **/
 struct tm * gmtime_s(const time_t * restrict timer, struct tm * restrict result)

@@ -1,5 +1,3 @@
-#include <grp.h>
-
 struct group {
 	char *	gr_name;
 	gid_t	gr_gid;

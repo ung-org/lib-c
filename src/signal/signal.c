@@ -4,7 +4,6 @@
 #endif
 
 #include <sys/types.h>
-#include <stddef.h>
 #include <signal.h>
 
 /* FIXME: Linux specific, doesn't even work */

@@ -4,8 +4,6 @@
 #endif
 
 #include <sys/types.h>
-#include <stddef.h>
-#include <unistd.h>
 #include <time.h>
 #include "_syscall.h"
 

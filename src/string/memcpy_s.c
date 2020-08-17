@@ -1,5 +1,5 @@
-#include "string.h"
-#include "sys/_nonstd_.h"
+#include <string.h>
+#include "_assert.h"
 
 /** copy memory **/
 errno_t memcpy_s(void * restrict s1, rsize_t s1max, const void * restrict s2, rsize_t n)

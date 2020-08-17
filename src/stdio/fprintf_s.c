@@ -1,5 +1,5 @@
-#include "stdio.h"
-#include "stdarg.h"
+#include <stdio.h>
+#include <stdarg.h>
 
 /** write formatted output to a file stream **/
 int fprintf_s(FILE * restrict stream, const char * restrict format, ...)

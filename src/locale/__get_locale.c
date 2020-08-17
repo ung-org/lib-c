@@ -1,4 +1,3 @@
-#include "locale.h"
 #include "_locale.h"
 
 /*

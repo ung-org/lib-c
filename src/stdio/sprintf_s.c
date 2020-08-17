@@ -1,5 +1,5 @@
-#include "stdio.h"
-#include "stdarg.h"
+#include <stdio.h>
+#include <stdarg.h>
 
 /** write formatted output to a string **/
 int sprintf_s(char * restrict s, rsize_t n, const char * restrict format, ...)

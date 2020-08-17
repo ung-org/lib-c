@@ -1,5 +1,5 @@
 #include <utmpx.h>
-#include "stddef.h"
+#include <stddef.h>
 
 struct utmpx * getutxid(const struct utmpx *id)
 {

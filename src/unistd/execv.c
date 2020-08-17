@@ -1,5 +1,4 @@
-#include "stddef.h"
-#include "sys/types.h"
+#include <sys/types.h>
 #include <unistd.h>
 
 int execv(const char *path, char *const argv[])

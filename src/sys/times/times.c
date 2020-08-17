@@ -1,4 +1,4 @@
-#include "time.h"
+#include <time.h>
 #include <sys/times.h>
 #include "_syscall.h"
 

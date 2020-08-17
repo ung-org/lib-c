@@ -1,5 +1,5 @@
 #include <curses.h>
-#include "stdio.h"
+#include <stdio.h>
 
 WINDOW * getwin(FILE * filep)
 {

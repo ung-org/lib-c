@@ -1,6 +1,6 @@
 #include <wctype.h>
-#include "wchar.h"
-#include "../_assert.h"
+#include <wchar.h>
+#include "_assert.h"
 
 wint_t towctrans(wint_t wc, wctrans_t desc)
 {

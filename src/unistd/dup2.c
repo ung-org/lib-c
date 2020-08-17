@@ -1,9 +1,9 @@
-#include "stddef.h"
-#include "sys/types.h"
+#include <stddef.h>
+#include <sys/types.h>
 #include <unistd.h>
-#include "fcntl.h"
-#include "limits.h"
-#include "errno.h"
+#include <fcntl.h>
+#include <limits.h>
+#include <errno.h>
 #include "_syscall.h"
 
 int dup2(int fildes, int fildes2)

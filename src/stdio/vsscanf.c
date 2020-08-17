@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "stdarg.h"
+#include <stdarg.h>
 #include "_stdio.h"
 
 int vsscanf(const char * restrict s, const char * restrict format, va_list arg)

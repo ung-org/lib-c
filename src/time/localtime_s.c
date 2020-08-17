@@ -1,4 +1,4 @@
-#include "time.h"
+#include <time.h>
 
 /** convert arithmetic time to broken down time **/
 struct tm * localtime_s(const time_t * restrict timer, struct tm * restrict result)

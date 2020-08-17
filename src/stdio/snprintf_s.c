@@ -1,4 +1,4 @@
-#include "stdio.h"
+#include <stdio.h>
 
 int snprintf_s( char * restrict s, rsize_t n, const char * restrict format, ...)
 {

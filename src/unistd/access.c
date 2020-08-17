@@ -1,8 +1,8 @@
-#include "stddef.h"
-#include "sys/types.h"
+#include <stddef.h>
+#include <sys/types.h>
 #include <unistd.h>
-#include "errno.h"
-#include "sys/stat.h"
+#include <errno.h>
+#include <sys/stat.h>
 
 int access(const char *path, int amode)
 {

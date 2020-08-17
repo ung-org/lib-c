@@ -6,7 +6,6 @@
 #include <sys/types.h>
 #include <pwd.h>
 #include <stdlib.h>
-#include <stddef.h>
 #include <stdio.h>
 #include <limits.h>
 #include <string.h>

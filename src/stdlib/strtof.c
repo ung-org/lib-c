@@ -1,8 +1,8 @@
 #include <stdlib.h>
-#include "float.h"
-#include "errno.h"
-#include "ctype.h"
-#include "math.h"
+#include <float.h>
+#include <errno.h>
+#include <ctype.h>
+#include <math.h>
 
 /** convert string to floating-point **/
 

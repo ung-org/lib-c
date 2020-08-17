@@ -1,6 +1,6 @@
 #include <pwd.h>
+#include <stdio.h>
 #include "_pwd.h"
-#include "stdio.h"
 
 void endpwent(void)
 {

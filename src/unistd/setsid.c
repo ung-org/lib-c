@@ -1,6 +1,4 @@
-#include "stddef.h"
-#include "sys/types.h"
-#include <unistd.h>
+#include <sys/types.h>
 #include "_syscall.h"
 
 pid_t setsid(void)

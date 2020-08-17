@@ -1,6 +1,6 @@
-#include "stdlib.h"
-#include "stdio.h"
-#include "locale.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <locale.h>
 #include "stdio/_stdio.h"
 #include "stdlib/_stdlib.h"
 

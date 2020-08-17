@@ -1,4 +1,4 @@
-#include "stdio.h"
+#include <stdio.h>
 
 /** generate a temporary file name **/
 errno_t tmpnam_s(char *s, rsize_t maxsize)

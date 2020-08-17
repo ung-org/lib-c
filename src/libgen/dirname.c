@@ -1,5 +1,5 @@
 #include <libgen.h>
-#include "stddef.h"
+#include <string.h>
 
 char * dirname(char * path)
 {

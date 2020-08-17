@@ -1,8 +1,8 @@
-#include "sys/types.h"
+#include <sys/types.h>
 #include <fcntl.h>
-#include "sys/stat.h"	/* OH */
-#include "errno.h"
-#include "stdarg.h"
+#include <sys/stat.h>	/* OH */
+#include <errno.h>
+#include <stdarg.h>
 #include "_syscall.h"
 
 int open(const char *path, int oflag, ...)

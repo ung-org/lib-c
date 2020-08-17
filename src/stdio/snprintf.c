@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "stdarg.h"
+#include <stdarg.h>
 #include "_stdio.h"
 
 int snprintf(char * restrict s, size_t n, const char * restrict format, ...)

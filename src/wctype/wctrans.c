@@ -1,5 +1,5 @@
 #include <wctype.h>
-#include "string.h"
+#include <string.h>
 #include "_assert.h"
 #include "_wctype.h"
 

@@ -1,8 +1,8 @@
 # define TGSOURCE "complex/ctanh.c"
 #include "_tgmath.h"
 #include <complex.h>
-#include "math.h"
-#include "fenv.h"
+#include <math.h>
+#include <fenv.h>
 
 TYPE complex TGFN(ctanh)(TYPE complex z)
 {

@@ -1,7 +1,7 @@
 #include <wchar.h>
-#include "locale.h"
-#include "string.h"
-#include "stdio.h"
+#include <locale.h>
+#include <string.h>
+#include <stdio.h>
 
 int wctob(wint_t c)
 {

@@ -1,6 +1,6 @@
 #include <grp.h>
+#include <stdio.h>
 #include "_grp.h"
-#include "stdio.h"
 
 void setgrent(void)
 {
