@@ -51,7 +51,7 @@ static void __itos(char *s, intmax_t n, int flags, int precision, int base)
 	extern int toupper(int);
 	char digits[] = "0123456789abcdef";
 	char sign = n < 0 ? '-' : '+';
-	char buf[NUMBUFLEN]; 
+	char buf[NUMBUFLEN + 1]; 
 	char *out = buf + NUMBUFLEN;
 	if (flags & UPPER && base > 10) {
 		size_t i;
