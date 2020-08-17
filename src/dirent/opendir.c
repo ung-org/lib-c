@@ -5,14 +5,6 @@
 #include <fcntl.h>
 #include "_dirent.h"
 
-#ifndef O_DIRECTORY
-#define O_DIRECTORY O_RDONLY
-#endif
-
-#ifndef O_SEARCH
-#define O_SEARCH O_RDONLY
-#endif
-
 DIR * opendir(const char * dirname)
 {
 	DIR *dir = malloc(sizeof(*dir));

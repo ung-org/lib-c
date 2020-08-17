@@ -7,10 +7,6 @@
 #include "_dirent.h"
 #include "_syscall.h"
 
-#ifndef NAME_MAX
-#define NAME_MAX _POSIX_NAME_MAX
-#endif
-
 /** read a directory **/
 
 struct dirent * readdir(DIR * dirp)
