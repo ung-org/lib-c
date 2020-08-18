@@ -70,7 +70,7 @@ FILE * freopen(const char * restrict filename, const char * restrict mode, FILE 
 
 	if (filename != NULL) {
 		fd = open(filename, openmode, 0);
-		if (fd == -1) {
+		if (fd < 0) {
 			/* open() already sets errno */
 			funlockfile(stream);
 			return NULL;
