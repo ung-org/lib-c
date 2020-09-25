@@ -5,15 +5,14 @@
 /** move memory **/
 errno_t memmove_s(void *s1, rsize_t s1max, const void *s2, rsize_t n)
 {
-	__C_EXT(1, 201112L);
 	__ASSERT_NONNULL(s1);
 	__ASSERT_NONNULL(s2);
 
-	void *buf = malloc(n);
-	memcpy(buf, s2, n);
-	memcpy(s1, buf, n);
-	free(buf);
-	return s1;
+	if (n > s1max) {
+		/* do the right thing */
+	}
+
+	return memmove(s1, s2, n);
 }
 
 /***

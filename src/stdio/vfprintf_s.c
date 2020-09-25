@@ -5,16 +5,11 @@
 /** write formatted output to a file stream **/
 int vfprintf_s(FILE * restrict stream, const char * restrict format, va_list arg)
 {
-	__C_EXT(1, 201112L);
-	va_list ap;
-	va_copy(ap, arg);
-	int len = vsnprintf(NULL, 0, format, arg);
-	char *buf = malloc(len + 1);
-	len = vsnprintf(buf, len, format, ap);
-	va_end(ap);
-	len = (int)fwrite(buf, sizeof(*buf), len, stream);
-	free(buf);
-	return len;
+	struct io_options opt = {
+		.fnname = __func__,
+		.stream = stream,
+	};
+	return __printf(&opt, format, arg);
 }
 
 /***
