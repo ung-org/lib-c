@@ -1,6 +1,6 @@
 #if ((!defined _POSIX_C_SOURCE) || (_POSIX_C_SOURCE < 199309L))
 #undef _POSIX_C_SOURCE
-#define _POSIX_C_SOURCE 199309L
+#define _POSIX_C_SOURCE 199309L		/* force struct timespec */
 #endif
 
 #include <sys/types.h>
