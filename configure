@@ -26,6 +26,9 @@ show_help() {
 	   -x version	Conform to:
 	$(awk '{ printf("\t%s\n", $0); }' ${CONFIGDIR}/xopen.conf)
 
+	   -X number	Enable C Extension:
+	$(awk '{ printf("\t%s\n", $0); }' ${CONFIGDIR}/cext.conf)
+
 	EOF
 }
 
@@ -53,14 +56,16 @@ debug=0
 standard_c=
 posix=
 xopen=
+cext=
 
-while getopts dhc:p:x: option; do
+while getopts dhc:p:x:X: option; do
 	case ${option} in
 	a)	architecture=$(validate_option architecture ${OPTARG})	;;
 	c)	standard_c=$(validate_option c ${OPTARG})		;;
 	p)	posix=$(validate_option posix ${OPTARG})		;;
 	w)	wordsize=$(validate_option wordsize ${OPTARG})		;;
 	x)	xopen=$(validate_option xopen ${OPTARG})		;;
+	X)	cext=$(validate_option cext ${OPTARG})			;;
 	d)	debug=1 ;;
 
 	h)	show_help
@@ -107,8 +112,15 @@ if [ ${posix:-0} -ge 200112 ] && [ $standard_c -lt 199901 ]; then
 	exit 1
 fi
 
+if [ -n "${cext}" ] && [ ${standard_c:-1} -lt 201112 ]; then
+	printf 'C Extension 1 requires at least C11.\n'
+	exit 1
+fi
+
 printf 'Building C library for %d-bit %s conforming to:\n' "${wordsize}" "${architecture}"
-printf 'ISO C:  %d\n' ${standard_c}
+printf 'ISO C:  %d' ${standard_c}
+test -n "${cext}"  && printf ' (Extensions: %s)' ${cext}
+printf '\n'
 test -n "${posix}" && printf 'POSIX:  %d\n' ${posix}
 test -n "${xopen}" && printf 'X/OPEN: %d\n' ${xopen}
 
@@ -150,6 +162,9 @@ fi
 
 printf 'CFLAGS=$(BASE_CFLAGS) %s\n\n' "${CFLAGS}" >> .config.mk
 
+#
+# TODO: C extentsion
+#
 for lib in $(cat $(dirname $0)/mk/*.d | grep 'lib.*_[CPX]\.' | cut -d: -f1 | sort -u); do
 	ver=$(echo $lib | cut -d. -f2)
 	if (echo $lib | grep -q _C) && [ "$ver" -le ${standard_c:-1} ]; then
