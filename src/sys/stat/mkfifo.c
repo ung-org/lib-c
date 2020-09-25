@@ -1,5 +1,5 @@
 #ifndef _XOPEN_SOURCE
-#define _XOPEN_SOURCE 1
+#define _XOPEN_SOURCE 1		/* force definition of S_IFIFO */
 #endif
 
 #include <sys/types.h>
