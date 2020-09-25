@@ -16,7 +16,8 @@ char * strcat(char * restrict s1, const char * restrict s2)
 		i++;
 	}
 
-	return strcpy(s1 + i, s2);
+	strcpy(s1 + i, s2);
+	return s1;
 }
 
 /***
