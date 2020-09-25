@@ -17,9 +17,9 @@ int puts(const char *s)
 		s++;
 	}
 
-        if (putc_unlocked('\n', stdout) == EOF) {
+	if (putc_unlocked('\n', stdout) == EOF) {
 		ret = EOF;
-        }
+	}
 
 	funlockfile(stdout);
 
@@ -28,7 +28,7 @@ int puts(const char *s)
 	RETURN_FAILURE(CONSTANT(EOF));
 	*/
 
-        return ret;
+	return ret;
 }
 
 /***

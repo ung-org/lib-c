@@ -4,13 +4,11 @@
 /** read formatted input from a string **/
 int sscanf_s(const char * restrict s, const char * restrict format, ...)
 {
-	__C_EXT(1, 201112L);
-        int retval;
-        va_list ap;
-        va_start(ap, format);
-        retval = vsscanf(s, format, ap);
-        va_end(ap);
-        return retval;
+	va_list ap;
+	va_start(ap, format);
+	int ret = vsscanf(s, format, ap);
+	va_end(ap);
+	return ret;
 }
 
 /***

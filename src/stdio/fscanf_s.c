@@ -4,13 +4,11 @@
 /** read formatted input from a file stream **/
 int fscanf_s(FILE * restrict stream, const char * restrict format, ...)
 {
-	__C_EXT(1, 201112L);
-        int retval;
-        va_list ap;
-        va_start(ap, format);
-        retval = vfscanf_s(stream, format, ap);
-        va_end(ap);
-        return retval;
+	va_list ap;
+	va_start(ap, format);
+	int ret = vfscanf_s(stream, format, ap);
+	va_end(ap);
+	return ret;
 }
 
 /***

@@ -3,12 +3,12 @@
 
 int vfscanf(FILE * restrict stream, const char * restrict format, va_list arg)
 {
-        struct io_options opt = {
-                .fnname = __func__,
-                .stream = stream,
-        };
+	struct io_options opt = {
+		.fnname = __func__,
+		.stream = stream,
+	};
 
-        return __scanf(&opt, format, arg);
+	return __scanf(&opt, format, arg);
 }
 
 /*

@@ -44,7 +44,7 @@ int fclose(FILE *stream)
 	RETURN_FAILURE(CONSTANT(EOF));
 	*/
 
-        return 0;
+	return 0;
 }
 
 /***

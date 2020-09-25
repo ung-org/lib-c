@@ -4,13 +4,11 @@
 /** write formatted output **/
 int printf_s(const char *format, ...)
 {
-	__C_EXT(1, 201112L);
-        int retval;
-        va_list ap;
-        va_start(ap, format);
-        retval = vfprintf_s(stdout, format, ap);
-        va_end(ap);
-        return retval;
+	va_list ap;
+	va_start(ap, format);
+	int ret = vfprintf_s(stdout, format, ap);
+	va_end(ap);
+	return ret;
 }
 
 /***
