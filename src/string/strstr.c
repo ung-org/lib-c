@@ -12,20 +12,14 @@ char * strstr(const char *s1, const char *s2)
 	ASSERT_NONNULL(s1);
 	ASSERT_NONNULL(s2);
 
-	l2 = strlen(s2);
-	if (l2 == 0) {
-		return p;
-	}
-
 	l1 = strlen(s1);
+	l2 = strlen(s2);
 	
-	do {
-		p = memchr(p, *s2, l1);
-		if (p == NULL || strcmp(p + 1, s2 + 1) == 0) {
+	for (p = (char*)s1; p < s1 + l1 - l2; p = strchr(p + 1, *s2)) {
+		if (p == NULL || strncmp(p, s2, l2) == 0) {
 			break;
 		}
-		p++;
-	} while (p < s1 + l2);
+	}
 
 	/*
 	RETURN_FAILURE(CONSTANT(NULL));
