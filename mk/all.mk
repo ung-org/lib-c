@@ -305,7 +305,6 @@ include mk/execlp.d
 include mk/pipe.d
 include mk/cuserid.d
 include mk/confstr.d
-include mk/__unistd.d
 include mk/getgroups.d
 include mk/chown.d
 include mk/getsid.d
