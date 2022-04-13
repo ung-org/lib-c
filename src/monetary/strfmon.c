@@ -1,14 +1,18 @@
 #include <monetary.h>
 #include <ctype.h>
+#include <locale.h>
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 ssize_t strfmon(char * restrict s, size_t maxsize, const char * restrict format, ...)
 {
 	size_t i = 0;
 	va_list ap;
 	va_start(ap, format);
+
+	struct lconv *lc = localeconv();
 
 	while (*format && i < maxsize) {
 		if (*format != '%') {
@@ -25,68 +29,111 @@ ssize_t strfmon(char * restrict s, size_t maxsize, const char * restrict format,
 		}
 
 		char fill = ' ';
-		char style = '+';
+		char positive_negative_style = '+';
+		char *positive_sign = lc->positive_sign;
+		char *negative_sign = lc->negative_sign;
+		char *negative_end = "";
+		char *symbol = lc->currency_symbol;
 		int grouping = 1;
-		int symbol = 1;
+
 		enum { left, right } align = right;
 
-		switch (*format) {
-		case '=':
-			fill = format[1];
-			format += 2;
-			break;
-		case '^':
-			grouping = 0;
+		while (strchr("=^+(!-", *format)) {
+			switch (*format) {
+			case '=':
+				fill = format[1];
+				format++;
+				break;
+
+			case '^':
+				grouping = 0;
+				break;
+
+			case '+':
+				/* is default */
+				break;
+
+			case '(':
+				positive_sign = "";
+				negative_sign = "(";
+				negative_end = ")";
+				break;
+
+			case '!':
+				symbol = "";
+				break;
+
+			case '-':
+				align = left;
+				break;
+			}
 			format++;
-			break;
-		case '+':
-		case '(':
-			style = *format;
-			format++;
-			break;
-		case '!':
-			symbol = 0;
-			format++;
-			break;
-		case '-':
-			align = left;
-			format++;
-			break;
 		}
 
-		unsigned long width = 0;
+		int width = 0;
 		if (isdigit(*format)) {
 			char *end = NULL;
-			width = strtoul(format, &end, 10);
-			format = end + 1;
+			width = (int)strtol(format, &end, 10);
+			format = end;
 		}
 
+		int lprecision = 0;
 		if (*format == '#') {
-			/* TODO: left precision */
+			if (!isdigit(format[1])) {
+				va_end(ap);
+				return -1;
+			}
+			char *end = NULL;
+			lprecision = (int)strtol(format + 1, &end, 10);
+			format = end;
 		}
 
+		int rprecision = lc->frac_digits;
 		if (*format == '.') {
-			/* TODO: right precision */
+			if (!isdigit(format[1])) {
+				va_end(ap);
+				return -1;
+			}
+			char *end = NULL;
+			rprecision = (int)strtol(format + 1, &end, 10);
+			format = end;
 		}
 
-		if (*format == 'i') {
-			/* international format */
-			double value = va_arg(ap, double);
-			i += snprintf(s + i, maxsize - i, "USD %.2g", value);
-			format++;
-			continue;
+		if (*format != 'i' && *format != 'n') {
+			va_end(ap);
+			return -1;
 		}
 
-		if (*format == 'n') {
-			/* national format */
-			double value = va_arg(ap, double);
-			i += snprintf(s + i, maxsize - i, "$%.2g", value);
-			format++;
-			continue;
+		/* i == international format */
+		/* n == national format */
+
+		double value = va_arg(ap, double);
+		int negative = 0;
+		if (value < 0) {
+			negative = 1;
+			value = value * -1;
 		}
 
-		va_end(ap);
-		return -1;
+		char *currency = lc->currency_symbol;
+
+		char *sign = negative ? negative_sign : positive_sign;
+
+		i += snprintf(s + i, maxsize - i, "%s", sign);
+		i += snprintf(s + i, maxsize - i, "%s", symbol);
+
+		char valuebuf[64];
+		snprintf(valuebuf, sizeof(valuebuf), "%'*.2f", width, value);
+		for (char *s = valuebuf; *s == ' '; s++) {
+			*s = fill;
+		}
+
+		i += snprintf(s + i, maxsize - i, "%s", valuebuf);
+
+		if (negative) {
+			i += snprintf(s + i, maxsize - i, "%s", negative_end);
+		}
+
+		format++;
 	}
 
 	va_end(ap);
