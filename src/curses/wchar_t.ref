@@ -1,3 +1,0 @@
-#include <curses.h>
-REFERENCE(stddef/wchar_t.c)
-XOPEN(400)

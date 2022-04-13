@@ -1,3 +1,0 @@
-#include <curses.h>
-REFERENCE(wctype/WEOF.c)
-XOPEN(4)

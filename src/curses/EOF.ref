@@ -1,3 +1,0 @@
-#include <curses.h>
-REFERENCE(stdio/EOF.c)
-XOPEN(4)

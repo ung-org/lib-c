@@ -1,3 +1,0 @@
-#include <curses.h>
-REFERENCE(wctype/wint_t.c)
-XOPEN(400)

@@ -1,3 +1,0 @@
-#include <unctrl.h>
-REFERENCE(curses/chtype.c)
-XOPEN(4)
