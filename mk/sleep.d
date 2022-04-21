@@ -3,7 +3,7 @@ libc.a(sleep.o): $(OBJDIR)/sleep.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/sleep.o: src/unistd/sleep.c
-$(OBJDIR)/sleep.o: 
+$(OBJDIR)/sleep.o: src/_syscall.h
 $(OBJDIR)/sleep.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

@@ -4,7 +4,6 @@ libc.a(mkfifo.o): $(OBJDIR)/mkfifo.o
 
 $(OBJDIR)/mkfifo.o: src/sys/stat/mkfifo.c
 $(OBJDIR)/mkfifo.o: src/_syscall.h
-$(OBJDIR)/mkfifo.o: 
 $(OBJDIR)/mkfifo.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

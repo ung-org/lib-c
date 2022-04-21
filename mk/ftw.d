@@ -3,6 +3,7 @@ libc.a(ftw.o): $(OBJDIR)/ftw.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/ftw.o: src/ftw/ftw.c
+$(OBJDIR)/ftw.o: src/ftw/_ftw.h
 $(OBJDIR)/ftw.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)
