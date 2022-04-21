@@ -1,0 +1,1 @@
+typedef _Atomic uint_least16_t atomic_uint_least16_t;

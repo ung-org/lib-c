@@ -1,0 +1,1 @@
+typedef _Atomic uint_least32_t atomic_uint_least32_t;

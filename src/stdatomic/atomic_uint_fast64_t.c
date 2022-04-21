@@ -1,0 +1,1 @@
+typedef _Atomic uint_fast64_t atomic_uint_fast64_t;
