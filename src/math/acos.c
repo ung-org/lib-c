@@ -1,6 +1,5 @@
 # define TGSOURCE "acos.c"
 #include <errno.h>
-#include <fenv.h>
 #include <math.h>
 #include "_tgmath.h"
 
