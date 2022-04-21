@@ -1,14 +1,15 @@
 .POSIX:
 
+include .config.mk
+
 AR=ar
 ARFLAGS=rU
-BASE_CFLAGS=-g -Wall -Wextra -Werror -nostdinc -fno-builtin -fno-stack-protector -fPIC -Iinclude -Isrc
+BASE_CFLAGS=-g -Wall -Wextra -Werror -nostdinc -fno-builtin -fno-stack-protector -fPIC -I$(INCDIR) -Isrc
 OBJDIR=obj
 SRCDIR=src
 
 all:
 
-include .config.mk
 include mk/all.mk
 
 cleandeps:

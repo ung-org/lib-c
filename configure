@@ -11,6 +11,8 @@ show_help() {
 	Options:
 	   -d		Enable debugging symbols and asserts
 
+	   -I dir	Set the directory to use for #include files
+
 	   -a arch	Choose the underlying architecture to build for:
 	$(awk '{ printf("\t%s\n", $0); }' ${CONFIGDIR}/architecture.conf)
 
@@ -52,13 +54,14 @@ option=
 architecture=x86
 wordsize=64
 debug=0
+include=
 
 standard_c=
 posix=
 xopen=
 cext=
 
-while getopts dhc:p:x:X: option; do
+while getopts dhc:p:x:I:X: option; do
 	case ${option} in
 	a)	architecture=$(validate_option architecture ${OPTARG})	;;
 	c)	standard_c=$(validate_option c ${OPTARG})		;;
@@ -66,6 +69,7 @@ while getopts dhc:p:x:X: option; do
 	w)	wordsize=$(validate_option wordsize ${OPTARG})		;;
 	x)	xopen=$(validate_option xopen ${OPTARG})		;;
 	X)	cext=$(validate_option cext ${OPTARG})			;;
+	I)	include=${OPTARG}					;;
 	d)	debug=1 ;;
 
 	h)	show_help
@@ -131,7 +135,7 @@ cat <<-EOF > .config.mk
 	WORDSIZE=${wordsize}
 	TOPDIR=$(dirname $0)
 	SRCDIR=\$(TOPDIR)/src
-	INCDIR=\$(TOPDIR)/include
+	INCDIR=${include}
 	OBJDIR=./obj
 
 EOF
