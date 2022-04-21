@@ -1234,10 +1234,6 @@ all: mk/confstr.d
 mk/confstr.d: src/unistd/confstr.c
 	sh mk/deps.sh src/unistd/confstr.c
 
-all: mk/__unistd.d
-mk/__unistd.d: src/unistd/__unistd.c
-	sh mk/deps.sh src/unistd/__unistd.c
-
 all: mk/getgroups.d
 mk/getgroups.d: src/unistd/getgroups.c
 	sh mk/deps.sh src/unistd/getgroups.c
