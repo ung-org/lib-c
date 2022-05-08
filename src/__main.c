@@ -8,13 +8,7 @@ void __main(int argc, char **argv)
 {
 	extern int main(int, char*[]);
 
-	#ifdef _POSIX_SOURCE
-	extern char **environ;
 	environ = argv + argc + 1;
-	__stdlib.environ = environ;
-	#else
-	__stdlib.environ = argv + argc + 1;
-	#endif
 
 	stdin = __stdio.FILES + 0;
 	stdin->fd = 0;

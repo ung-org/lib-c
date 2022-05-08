@@ -20,4 +20,10 @@ struct __stdlib {
 
 extern struct __stdlib __stdlib;
 
+#ifdef _POSIX_SOURCE
+extern char **environ;
+#else
+#define environ __stdlib.environ
+#endif
+
 #endif

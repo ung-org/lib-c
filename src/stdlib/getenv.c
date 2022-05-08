@@ -6,7 +6,6 @@
 
 char * getenv(const char * name)
 {
-	char **environ = __stdlib.environ;
 	size_t len = strlen(name);
 	size_t i = 0;
 
