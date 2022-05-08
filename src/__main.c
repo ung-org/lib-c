@@ -4,12 +4,6 @@
 #include "stdio/_stdio.h"
 #include "stdlib/_stdlib.h"
 
-#ifdef _POSIX_SOURCE
-#define DEFAULT_LOCALE "POSIX"
-#else
-#define DEFAULT_LOCALE "C"
-#endif
-
 void __main(int argc, char **argv)
 {
 	extern int main(int, char*[]);
@@ -34,8 +28,6 @@ void __main(int argc, char **argv)
 	stderr->fd = 2;
 	freopen(NULL, "w", stderr);
 	setvbuf(stderr, NULL, _IONBF, 0);
-
-	setlocale(LC_ALL, DEFAULT_LOCALE);
 
 	exit(main(argc, argv));
 }
