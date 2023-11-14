@@ -1,12 +1,9 @@
-#if 0
-
 #include "_stdlib.h"
 
-struct __stdlib __stdlib;
+struct __stdlib __stdlib = {
+	.constraint_handler = abort_handler_s,
+};
 
 /*
 STDC(0)
 */
-
-
-#endif

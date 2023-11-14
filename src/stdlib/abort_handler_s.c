@@ -1,15 +1,20 @@
-#if 0
-
 #include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+//#include <errno.h>
+#include "errno/errno_t.h"
+#include "_stdlib.h"
 
 void abort_handler_s(const char * restrict msg, void * restrict ptr, errno_t error)
 {
-	__C_EXT(1, 201112L);
+	struct __constraint_info *ci = ptr;
+
+	puts(msg);
+	printf("In call to %s\n", ci->func);
+	printf("Provided error: %s (%d)\n", strerror(error), error);
+	abort();
 }
 
 /*
 CEXT1(201112)
 */
-
-
-#endif

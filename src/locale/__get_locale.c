@@ -1,5 +1,3 @@
-#if 0
-
 #include "_locale.h"
 
 /*
@@ -23,6 +21,3 @@ struct __locale_t * __get_locale(void)
 	}
 	return &l;
 }
-
-
-#endif
