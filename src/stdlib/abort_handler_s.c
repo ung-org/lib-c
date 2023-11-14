@@ -10,8 +10,12 @@ void abort_handler_s(const char * restrict msg, void * restrict ptr, errno_t err
 	struct __constraint_info *ci = ptr;
 
 	puts(msg);
-	printf("In call to %s\n", ci->func);
-	printf("Provided error: %s (%d)\n", strerror(error), error);
+	if (ci) {
+		printf("In call to %s\n", ci->func);
+	}
+	if (error != 0) {
+		printf("Provided error: %s (%d)\n", strerror(error), error);
+	}
 	abort();
 }
 
