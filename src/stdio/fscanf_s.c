@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 #include <stdarg.h>
 
@@ -27,3 +29,6 @@ arg(format) at the variadic arguments is the same as that for fn(scanf).
 /*
 CEXT1(201112)
 */
+
+
+#endif

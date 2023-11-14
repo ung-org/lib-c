@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 
 /** sort an array **/
@@ -27,3 +29,6 @@ greater than the second.
 /*
 CEXT1(201112)
 */
+
+
+#endif

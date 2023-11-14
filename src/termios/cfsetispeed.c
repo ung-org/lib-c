@@ -1,3 +1,5 @@
+#if 0
+
 #include <termios.h>
 #include <errno.h>
 #include "_assert.h"
@@ -37,3 +39,6 @@ int cfsetispeed(struct termios *termios_p, speed_t speed)
 /*
 POSIX(1)
 */
+
+
+#endif

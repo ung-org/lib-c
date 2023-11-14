@@ -1,3 +1,5 @@
+#if 0
+
 #include <string.h>
 #include "_assert.h"
 
@@ -29,3 +31,6 @@ UNDEFINED(ARGUMENT(n) is not ZERO and ARGUMENT(s1) is CONSTANT(NULL))
 RETURN_ALWAYS(the length of the transformed string, not including the terminating CHAR(\0));
 STDC(1)
 */
+
+
+#endif

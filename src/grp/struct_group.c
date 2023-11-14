@@ -1,3 +1,5 @@
+#if 0
+
 struct group {
 	char *	gr_name;
 	gid_t	gr_gid;
@@ -7,3 +9,6 @@ struct group {
 /*
 POSIX(1)
 */
+
+
+#endif

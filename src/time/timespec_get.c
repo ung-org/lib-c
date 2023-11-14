@@ -1,3 +1,5 @@
+#if 0
+
 #include <time.h>
 
 int timespec_get(struct timespec *ts, int base)
@@ -8,3 +10,6 @@ int timespec_get(struct timespec *ts, int base)
 /*
 STDC(201112)
 */
+
+
+#endif

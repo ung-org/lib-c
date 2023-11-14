@@ -1,3 +1,5 @@
+#if 0
+
 #include <sys/types.h>
 #include <dirent.h>
 #include <unistd.h>
@@ -11,3 +13,6 @@ void seekdir(DIR * dirp, long loc)
 /*
 XOPEN(4)
 */
+
+
+#endif

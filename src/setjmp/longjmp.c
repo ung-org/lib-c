@@ -1,3 +1,5 @@
+#if 0
+
 #include <setjmp.h>
 
 /** restore calling environment **/
@@ -33,3 +35,6 @@ UNDEFINED(The function containing the previous call to FUNCTION(setjmp) is no lo
 UNDEFINED(THIS() is called from a nested signal handler)
 STDC(1)
 */
+
+
+#endif

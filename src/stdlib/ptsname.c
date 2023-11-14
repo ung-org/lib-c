@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 
 char * ptsname(int fildes)
@@ -8,3 +10,6 @@ char * ptsname(int fildes)
 /*
 XOPEN(400)
 */
+
+
+#endif

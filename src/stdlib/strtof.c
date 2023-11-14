@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 #include <float.h>
 #include <errno.h>
@@ -40,3 +42,6 @@ RETURN(CONSTANT(-HUGE_VALF), converted value too small)
 RETURN(VAR(a TYPE(float)), the converted value)
 STDC(199901)
 */
+
+
+#endif

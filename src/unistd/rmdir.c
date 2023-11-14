@@ -1,3 +1,5 @@
+#if 0
+
 #include "_syscall.h"
 
 int rmdir(const char *path)
@@ -7,3 +9,6 @@ int rmdir(const char *path)
 /*
 POSIX(1)
 */
+
+
+#endif

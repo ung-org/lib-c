@@ -1,3 +1,5 @@
+#if 0
+
 #include <string.h>
 #include "_assert.h"
 
@@ -33,3 +35,6 @@ arg(s1).
 /*
 CEXT1(201112)
 */
+
+
+#endif

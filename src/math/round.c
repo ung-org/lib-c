@@ -1,3 +1,5 @@
+#if 0
+
 # define TGSOURCE "round.c"
 #include "_tgmath.h"
 #include <math.h>
@@ -34,3 +36,6 @@ TYPE TGFN(round)(TYPE x)
 STDC(199901)
 LINK(m)
 */
+
+
+#endif

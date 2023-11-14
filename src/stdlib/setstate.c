@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 
 char * setstate(char * state)
@@ -8,3 +10,6 @@ char * setstate(char * state)
 /*
 XOPEN(400)
 */
+
+
+#endif

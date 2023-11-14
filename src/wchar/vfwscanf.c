@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 #include <wchar.h>
 #include "stdio/_stdio.h"
@@ -19,3 +21,6 @@ int vfwscanf(FILE * restrict stream, const wchar_t * restrict format, va_list ar
 /*
 STDC(199901)
 */
+
+
+#endif

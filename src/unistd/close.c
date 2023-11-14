@@ -1,3 +1,5 @@
+#if 0
+
 #include <sys/types.h>
 #include <unistd.h>
 #include "_syscall.h"
@@ -9,3 +11,6 @@ int close(int fildes)
 /*
 POSIX(1)
 */
+
+
+#endif

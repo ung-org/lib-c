@@ -1,3 +1,5 @@
+#if 0
+
 #include <fenv.h>
 
 int feholdexcept(fenv_t *envp)
@@ -22,3 +24,6 @@ r*/
 STDC(199901)
 LINK(m)
 */
+
+
+#endif

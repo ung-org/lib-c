@@ -1,3 +1,5 @@
+#if 0
+
 #include <mqueue.h>
 
 int mq_unlink(const char * name)
@@ -9,3 +11,6 @@ int mq_unlink(const char * name)
 POSIX(199309)
 LINK(rt)
 */
+
+
+#endif

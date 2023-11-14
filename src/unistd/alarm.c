@@ -1,3 +1,5 @@
+#if 0
+
 #include <stddef.h>
 #include <sys/types.h>
 #include <unistd.h>
@@ -10,3 +12,6 @@ unsigned alarm(unsigned seconds)
 /*
 POSIX(1)
 */
+
+
+#endif

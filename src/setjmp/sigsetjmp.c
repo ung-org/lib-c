@@ -1,3 +1,5 @@
+#if 0
+
 #include <setjmp.h>
 #include <sys/types.h>
 #include <signal.h>
@@ -31,3 +33,6 @@ UNDEFINED(A program defines an external identifier named LITERAL(setjmp))
 
 POSIX(1)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <sys/types.h>
 #include <string.h>
 #include <stdio.h>
@@ -81,3 +83,6 @@ int getopt(int argc, char * const argv[], const char *optstring)
 /*
 POSIX(2)
 */
+
+
+#endif

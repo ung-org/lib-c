@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 
 /** open a temporary file stream **/
@@ -30,3 +32,6 @@ or when the program exits.
 IMPLEMENTATION(Whether the temporary file is removed if the program terminates abnormally)
 STDC(1)
 */
+
+
+#endif

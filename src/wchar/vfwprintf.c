@@ -1,3 +1,5 @@
+#if 0
+
 #include <wchar.h>
 #include <stdio.h>
 #include <stdarg.h>
@@ -17,3 +19,6 @@ int vfwprintf(FILE * restrict stream, const wchar_t * restrict format, va_list a
 /*
 STDC(199409)
 */
+
+
+#endif

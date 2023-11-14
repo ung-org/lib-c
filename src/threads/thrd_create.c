@@ -1,3 +1,5 @@
+#if 0
+
 #include <threads.h>
 #include <pthread.h>
 #include <errno.h>
@@ -22,3 +24,6 @@ int thrd_create(thrd_t *thr, thrd_start_t func, void *arg)
 /*
 STDC(201112)
 */
+
+
+#endif

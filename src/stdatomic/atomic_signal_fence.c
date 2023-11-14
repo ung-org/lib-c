@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdatomic.h>
 
 void atomic_signal_fence(memory_order order)
@@ -24,3 +26,6 @@ void atomic_signal_fence(memory_order order)
 		break;
 	}
 }
+
+
+#endif

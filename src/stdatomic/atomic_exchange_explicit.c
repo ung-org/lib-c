@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdatomic.h>
 
 __BASE atomic_exchange_explicit(volatile __TYPE *object, __BASE desired, memory_order order)
@@ -9,3 +11,6 @@ __BASE atomic_exchange_explicit(volatile __TYPE *object, __BASE desired, memory_
 
 	return *object = desired;
 }
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <poll.h>
 
 int poll(struct pollfd fds[], nfds_t nfds, int timeout)
@@ -9,3 +11,6 @@ int poll(struct pollfd fds[], nfds_t nfds, int timeout)
 XOPEN(400)
 POSIX(200809)
 */
+
+
+#endif

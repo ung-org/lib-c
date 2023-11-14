@@ -1,3 +1,5 @@
+#if 0
+
 #include <locale.h>
 #include <stdio.h>
 #include <time.h>
@@ -191,3 +193,6 @@ RETURN_FAILURE(ZERO)
 RETURN_SUCCESS(the length of the converted string, not counting the terminating null)
 STDC(1)
 */
+
+
+#endif

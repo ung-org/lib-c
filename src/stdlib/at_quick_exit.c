@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 #include <limits.h>
 #include <errno.h>
@@ -52,3 +54,6 @@ program exits via fn(quick_exit). The function must take no parameters.
 /*
 STDC(201112)
 */
+
+
+#endif

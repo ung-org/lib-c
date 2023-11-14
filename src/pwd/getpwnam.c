@@ -1,3 +1,5 @@
+#if 0
+
 #include <sys/types.h>
 #include <pwd.h>
 #include <string.h>
@@ -22,3 +24,6 @@ struct passwd * getpwnam(const char * name)
 /*
 POSIX(1)
 */
+
+
+#endif

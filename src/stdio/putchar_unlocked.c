@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 
 int putchar_unlocked(int c)
@@ -8,3 +10,6 @@ int putchar_unlocked(int c)
 /*
 POSIX(199506)
 */
+
+
+#endif

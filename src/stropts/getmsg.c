@@ -1,3 +1,5 @@
+#if 0
+
 #include <stropts.h>
 
 int getmsg(int fd , struct strbuf * ctlptr , struct strbuf * dataptr , int * flagsp )
@@ -7,3 +9,6 @@ int getmsg(int fd , struct strbuf * ctlptr , struct strbuf * dataptr , int * fla
 /*
 XOPEN(400)
 */
+
+
+#endif

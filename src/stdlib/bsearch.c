@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 
 /** binary search **/
@@ -42,3 +44,6 @@ RETURN_FAILURE(CONSTANT(NULL))
 RETURN_SUCCESS(a pointer to the matching element)
 STDC(1)
 */
+
+
+#endif

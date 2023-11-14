@@ -1,3 +1,5 @@
+#if 0
+
 #include <unistd.h>
 
 int setregid(gid_t rgid, gid_t egid)
@@ -8,3 +10,6 @@ int setregid(gid_t rgid, gid_t egid)
 /*
 XOPEN(400)
 */
+
+
+#endif

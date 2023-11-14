@@ -1,3 +1,5 @@
+#if 0
+
 #include <termios.h>
 #include <errno.h>
 #include "_termios.h"
@@ -32,3 +34,6 @@ int tcsetattr(int fildes, int optional_actions, struct termios *termios_p)
 /*
 POSIX(1)
 */
+
+
+#endif

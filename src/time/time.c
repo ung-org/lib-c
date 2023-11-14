@@ -1,3 +1,5 @@
+#if 0
+
 #include <time.h>
 #include <errno.h>
 #include "_syscall.h"
@@ -29,3 +31,6 @@ RETURN_FAILURE(CAST(TYPEDEF(time_t), -1))
 RETURN_SUCCESS(the current calndar time)
 STDC(1)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #if ((!defined _POSIX_C_SOURCE) || (_POSIX_C_SOURCE < 199309L))
 #undef _POSIX_C_SOURCE
 #define _POSIX_C_SOURCE 199309L		/* force struct timespec */
@@ -22,3 +24,6 @@ unsigned sleep(unsigned seconds)
 /*
 POSIX(1)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 
 /** reset file position indicator **/
@@ -16,3 +18,6 @@ beginning of the file. The error indicator will be cleared.
 /*
 STDC(1)
 */
+
+
+#endif

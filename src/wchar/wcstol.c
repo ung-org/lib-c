@@ -1,3 +1,5 @@
+#if 0
+
 #include <wchar.h>
 #include <wctype.h>
 #include <limits.h>
@@ -19,3 +21,6 @@ long int wcstol(const wchar_t * restrict nptr, wchar_t ** restrict endptr, int b
 /*
 STDC(199409)
 */
+
+
+#endif

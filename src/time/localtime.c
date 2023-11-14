@@ -1,3 +1,5 @@
+#if 0
+
 #include <time.h>
 #include "_assert.h"
 
@@ -26,3 +28,6 @@ converts the locale time at ARGUMENT(timer) to a filled out STRUCTDEF(tm).
 RETURN_ALWAYS(a pointer to the converted object)
 STDC(1)
 */
+
+
+#endif

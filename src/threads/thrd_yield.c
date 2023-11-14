@@ -1,3 +1,5 @@
+#if 0
+
 #include <threads.h>
 #include <sched.h>
 
@@ -9,3 +11,6 @@ void thrd_yield(void)
 /*
 STDC(201112)
 */
+
+
+#endif

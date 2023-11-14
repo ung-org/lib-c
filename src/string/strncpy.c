@@ -1,3 +1,5 @@
+#if 0
+
 #include <string.h>
 #include "_assert.h"
 
@@ -34,3 +36,6 @@ terminated.
 RETURN_ALWAYS(ARGUMENT(s1));
 STDC(1)
 */
+
+
+#endif

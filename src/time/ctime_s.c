@@ -1,3 +1,5 @@
+#if 0
+
 #include <time.h>
 
 /** convert arithmetic time to string **/
@@ -22,3 +24,6 @@ fn(asctime).
 /*
 CEXT1(201112)
 */
+
+
+#endif

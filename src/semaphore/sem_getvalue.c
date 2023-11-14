@@ -1,3 +1,5 @@
+#if 0
+
 #include <semaphore.h>
 
 int sem_getvalue(sem_t * restrict sem, int * restrict sval)
@@ -9,3 +11,6 @@ int sem_getvalue(sem_t * restrict sem, int * restrict sval)
 POSIX(199309)
 LINK(rt)
 */
+
+
+#endif

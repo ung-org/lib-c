@@ -1,3 +1,5 @@
+#if 0
+
 #include <errno.h>
 #include <sys/types.h>
 #include <unistd.h>
@@ -12,3 +14,6 @@ int execve(const char *path, char *const argv[], char *const envp[])
 /*
 POSIX(1)
 */
+
+
+#endif

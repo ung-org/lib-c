@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 
 int ttyslot(void)
@@ -8,3 +10,6 @@ int ttyslot(void)
 /*
 XOPEN(400,600)
 */
+
+
+#endif

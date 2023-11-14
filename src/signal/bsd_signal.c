@@ -1,3 +1,5 @@
+#if 0
+
 #include <signal.h>
 
 void (*bsd_signal(int sig, void (*func)(int)))(int)
@@ -19,3 +21,6 @@ void (*bsd_signal(int sig, void (*func)(int)))(int)
 /*
 XOPEN(400,700)
 */
+
+
+#endif

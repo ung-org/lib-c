@@ -1,3 +1,5 @@
+#if 0
+
 #include <ndbm.h>
 
 typedef struct {
@@ -8,3 +10,6 @@ typedef struct {
 /*
 XOPEN(400)
 */
+
+
+#endif

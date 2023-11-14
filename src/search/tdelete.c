@@ -1,3 +1,5 @@
+#if 0
+
 #include <search.h>
 
 void *tdelete(const void * restrict key, void ** restrict rootp, int (*compar) (const void *, const void *))
@@ -8,3 +10,6 @@ void *tdelete(const void * restrict key, void ** restrict rootp, int (*compar) (
 /*
 XOPEN(4)
 */
+
+
+#endif

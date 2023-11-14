@@ -1,3 +1,5 @@
+#if 0
+
 #include <strings.h>
 #include <ctype.h>
 
@@ -29,3 +31,6 @@ int strncasecmp(const char *s1, const char *s2, size_t n)
 XOPEN(400)
 POSIX(200809)
 */
+
+
+#endif

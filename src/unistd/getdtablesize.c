@@ -1,3 +1,5 @@
+#if 0
+
 #include <unistd.h>
 
 int getdtablesize(void)
@@ -8,3 +10,6 @@ int getdtablesize(void)
 /*
 XOPEN(400,600)
 */
+
+
+#endif

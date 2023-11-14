@@ -1,3 +1,5 @@
+#if 0
+
 #include <sched.h>
 
 int sched_setparam(pid_t pid, const struct sched_param * param)
@@ -9,3 +11,6 @@ int sched_setparam(pid_t pid, const struct sched_param * param)
 POSIX(199309)
 LINK(rt)
 */
+
+
+#endif

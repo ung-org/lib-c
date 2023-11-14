@@ -1,3 +1,5 @@
+#if 0
+
 #include <string.h>
 
 /** concatenate strings **/
@@ -27,3 +29,6 @@ null character of arg(s1).
 /*
 CEXT1(201112)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <wchar.h>
 #include <stdio.h>
 #include <stdarg.h>
@@ -14,3 +16,6 @@ int fwprintf(FILE * restrict stream, const wchar_t * restrict format, ...)
 /*
 STDC(199409)
 */
+
+
+#endif

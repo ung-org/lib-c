@@ -1,3 +1,5 @@
+#if 0
+
 #include <strings.h>
 
 int ffs(int i)
@@ -18,3 +20,6 @@ int ffs(int i)
 /*
 XOPEN(400)
 */
+
+
+#endif

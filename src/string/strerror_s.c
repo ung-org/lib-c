@@ -1,3 +1,5 @@
+#if 0
+
 #include <string.h>
 #include <errno.h>
 #include "__strerror.h"
@@ -33,3 +35,6 @@ subsequent calls.
 /*
 CEXT1(201112)
 */
+
+
+#endif

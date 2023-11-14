@@ -1,3 +1,5 @@
+#if 0
+
 #include <sys/types.h>
 #include <regex.h>
 
@@ -14,3 +16,6 @@ size_t regerror(int errcode, const regex_t * restrict preg, char * restrict errb
 POSIX(2)
 */
 
+
+
+#endif

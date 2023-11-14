@@ -1,3 +1,5 @@
+#if 0
+
 #include <ndbm.h>
 
 DBM *dbm_open(const char * file, int open_flags, mode_t file_mode)
@@ -8,3 +10,6 @@ DBM *dbm_open(const char * file, int open_flags, mode_t file_mode)
 /*
 XOPEN(400)
 */
+
+
+#endif

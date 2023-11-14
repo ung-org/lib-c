@@ -1,3 +1,5 @@
+#if 0
+
 #if ((!defined _POSIX_C_SOURCE) || (_POSIX_C_SOURCE < 199309L))
 #undef _POSIX_C_SOURCE
 #define _POSIX_C_SOURCE 199309L		/* force mmap() constants */
@@ -65,3 +67,6 @@ RETURN_FAILURE(CONSTANT(NULL))
 RETURN_SUCCESS(a pointer to the reallocate space)
 STDC(1)
 */
+
+
+#endif

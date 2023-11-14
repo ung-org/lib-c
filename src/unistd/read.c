@@ -1,3 +1,5 @@
+#if 0
+
 #include <sys/types.h>
 #include "_syscall.h"
 
@@ -8,3 +10,6 @@ ssize_t read(int fildes, void *buf, size_t nbyte)
 /*
 POSIX(1)
 */
+
+
+#endif

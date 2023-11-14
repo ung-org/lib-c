@@ -1,3 +1,5 @@
+#if 0
+
 #include <math.h>
 
 double gamma(double x)
@@ -9,3 +11,6 @@ double gamma(double x)
 XOPEN(4,600)
 LINK(m)
 */
+
+
+#endif

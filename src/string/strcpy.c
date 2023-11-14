@@ -1,3 +1,5 @@
+#if 0
+
 #include <string.h>
 #include "_assert.h"
 
@@ -29,3 +31,6 @@ including the terminating CHAR(\0).
 /*
 STDC(1)
 */
+
+
+#endif

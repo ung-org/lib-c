@@ -1,3 +1,5 @@
+#if 0
+
 #include <threads.h>
 #include <pthread.h>
 
@@ -9,3 +11,6 @@ int cnd_signal(cnd_t *cond)
 /*
 STDC(201112)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <wchar.h>
 #include <stdarg.h>
 
@@ -13,3 +15,6 @@ int wprintf(const wchar_t * restrict format, ...)
 /*
 STDC(199409)
 */
+
+
+#endif

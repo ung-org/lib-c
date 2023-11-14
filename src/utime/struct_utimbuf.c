@@ -1,3 +1,5 @@
+#if 0
+
 #include <utime.h>
 
 struct utimbuf {
@@ -8,3 +10,6 @@ struct utimbuf {
 /*
 POSIX(1)
 */
+
+
+#endif

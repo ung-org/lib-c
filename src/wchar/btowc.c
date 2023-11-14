@@ -1,3 +1,5 @@
+#if 0
+
 #include <wchar.h>
 #include <locale.h>
 #include <string.h>
@@ -19,3 +21,6 @@ wint_t btowc(int c)
 /*
 STDC(199409)
 */
+
+
+#endif

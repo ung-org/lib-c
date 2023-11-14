@@ -1,3 +1,5 @@
+#if 0
+
 #include <search.h>
 
 void * lsearch(const void * key, void * base, size_t * nelp, size_t width, int (*compar) (const void *, const void *))
@@ -8,3 +10,6 @@ void * lsearch(const void * key, void * base, size_t * nelp, size_t width, int (
 /*
 XOPEN(4)
 */
+
+
+#endif

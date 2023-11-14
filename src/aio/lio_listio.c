@@ -1,3 +1,5 @@
+#if 0
+
 #include <aio.h>
 
 int lio_listio(int mode, struct aiocb * const list[restrict], int nent, struct sigevent * restrict sig)
@@ -9,3 +11,6 @@ int lio_listio(int mode, struct aiocb * const list[restrict], int nent, struct s
 POSIX(199309)
 LINK(rt)
 */
+
+
+#endif

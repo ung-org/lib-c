@@ -1,3 +1,5 @@
+#if 0
+
 #include <arpa/inet.h>
 #include <stdlib.h>
 
@@ -52,3 +54,6 @@ in_addr_t inet_addr(const char *cp)
 
 	return addr;
 }
+
+
+#endif

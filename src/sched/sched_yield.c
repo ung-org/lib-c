@@ -1,3 +1,5 @@
+#if 0
+
 #include <sched.h>
 
 int sched_yield(void)
@@ -9,3 +11,6 @@ int sched_yield(void)
 POSIX(199309)
 LINK(rt)
 */
+
+
+#endif

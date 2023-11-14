@@ -1,3 +1,5 @@
+#if 0
+
 #include <string.h>
 #include "_assert.h"
 
@@ -31,3 +33,6 @@ ARGUMENT(s1).
 /*
 STDC(1)
 */
+
+
+#endif

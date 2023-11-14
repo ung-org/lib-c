@@ -1,3 +1,5 @@
+#if 0
+
 #include <monetary.h>
 #include <ctype.h>
 #include <locale.h>
@@ -144,3 +146,6 @@ ssize_t strfmon(char * restrict s, size_t maxsize, const char * restrict format,
 XOPEN(4)
 POSIX(200809)
 */
+
+
+#endif

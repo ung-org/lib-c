@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 
 /** write a character to stdout **/
@@ -19,3 +21,6 @@ IDENTIFIER(stdout).
 /*
 STDC(1)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 # define TGSOURCE "cos.c"
 #include <errno.h>
 #include <math.h>
@@ -54,3 +56,6 @@ LINK(m)
 STDC(1)
 */
 
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include "_pwd.h"
 
 #ifndef _XOPEN_SOURCE
@@ -16,3 +18,6 @@ struct __pwd __pwd =
 /*
 POSIX(1)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <setjmp.h>
 #include <sys/types.h>
 #include <signal.h>
@@ -33,3 +35,6 @@ UNDEFINED(THIS() is called from a nested signal handler)
 
 POSIX(1)
 */
+
+
+#endif

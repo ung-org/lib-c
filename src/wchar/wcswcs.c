@@ -1,3 +1,5 @@
+#if 0
+
 #ifdef __STDC_VERSION__
 #include <wchar.h>
 #else
@@ -16,3 +18,6 @@ wchar_t * wcswcs(const wchar_t * s1, const wchar_t * s2)
 /*
 XOPEN(4,700)
 */
+
+
+#endif

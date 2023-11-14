@@ -1,3 +1,5 @@
+#if 0
+
 #include <time.h>
 
 int clock_getres(clockid_t clock_id, struct timespec *res)
@@ -9,3 +11,6 @@ int clock_getres(clockid_t clock_id, struct timespec *res)
 POSIX(199309)
 LINK(rt)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <wchar.h>
 
 wchar_t * wcscat(wchar_t * restrict s1, const wchar_t * restrict s2)
@@ -9,3 +11,6 @@ wchar_t * wcscat(wchar_t * restrict s1, const wchar_t * restrict s2)
 /*
 STDC(199409)
 */
+
+
+#endif

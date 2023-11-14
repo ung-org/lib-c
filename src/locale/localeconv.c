@@ -1,3 +1,5 @@
+#if 0
+
 #include <locale.h>
 #include "_locale.h"
 
@@ -21,3 +23,6 @@ LC_MONETARY
 LC_NUMERIC
 STDC(1)
 */
+
+
+#endif

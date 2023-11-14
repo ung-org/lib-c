@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 
 long mrand48(void)
@@ -8,3 +10,6 @@ long mrand48(void)
 /*
 XOPEN(4)
 */
+
+
+#endif

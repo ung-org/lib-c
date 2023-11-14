@@ -1,3 +1,5 @@
+#if 0
+
 #include <ucontext.h>
 
 int getcontext(ucontext_t *ucp)
@@ -8,3 +10,6 @@ int getcontext(ucontext_t *ucp)
 /*
 XOPEN(400,700)
 */
+
+
+#endif

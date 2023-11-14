@@ -1,3 +1,5 @@
+#if 0
+
 #include <wordexp.h>
 
 int wordexp(const char *restrict words, wordexp_t *restrict pwordexp, int flags)
@@ -11,3 +13,6 @@ int wordexp(const char *restrict words, wordexp_t *restrict pwordexp, int flags)
 /*
 POSIX(2)
 */
+
+
+#endif

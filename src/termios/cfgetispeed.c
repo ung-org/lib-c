@@ -1,3 +1,5 @@
+#if 0
+
 #include <termios.h>
 #include "_assert.h"
 
@@ -9,3 +11,6 @@ speed_t cfgetispeed(const struct termios *termios_p)
 /*
 POSIX(1)
 */
+
+
+#endif

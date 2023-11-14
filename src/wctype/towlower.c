@@ -1,3 +1,5 @@
+#if 0
+
 #include <wctype.h>
 #include <wchar.h>
 #include <stdlib.h>
@@ -31,3 +33,6 @@ lowercase letter in the current locale.
 /*
 STDC(199409)
 */
+
+
+#endif

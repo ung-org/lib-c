@@ -1,3 +1,5 @@
+#if 0
+
 #include <arpa/inet.h>
 
 uint16_t ntohs(uint16_t netshort)
@@ -9,3 +11,6 @@ uint16_t ntohs(uint16_t netshort)
 
 	return (u.c[0] << 8) | u.c[1];
 }
+
+
+#endif

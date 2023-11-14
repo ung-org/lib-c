@@ -1,3 +1,5 @@
+#if 0
+
 #include <strings.h>
 #include <ctype.h>
 
@@ -24,3 +26,6 @@ int strcasecmp(const char *s1, const char *s2)
 XOPEN(400)
 POSIX(200809)
 */
+
+
+#endif

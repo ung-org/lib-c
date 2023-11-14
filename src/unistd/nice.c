@@ -1,3 +1,5 @@
+#if 0
+
 #include <unistd.h>
 
 int nice(int incr)
@@ -8,3 +10,6 @@ int nice(int incr)
 /*
 XOPEN(4)
 */
+
+
+#endif

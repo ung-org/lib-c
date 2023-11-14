@@ -1,3 +1,5 @@
+#if 0
+
 #include <wctype.h>
 #include <limits.h>
 #include <wchar.h>
@@ -26,3 +28,6 @@ cclass(alpha) or cclass(digit) in the current locale.
 /*
 STDC(199409)
 */
+
+
+#endif

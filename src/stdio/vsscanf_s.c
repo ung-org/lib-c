@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdarg.h>
 
 int vsscanf_s(const char * restrict s, const char * restrict format, va_list arg)
@@ -8,3 +10,6 @@ int vsscanf_s(const char * restrict s, const char * restrict format, va_list arg
 /*
 CEXT1(201112)
 */
+
+
+#endif

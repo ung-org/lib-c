@@ -1,3 +1,5 @@
+#if 0
+
 #include <ndbm.h>
 
 int dbm_clearerr(DBM * db)
@@ -8,3 +10,6 @@ int dbm_clearerr(DBM * db)
 /*
 XOPEN(400)
 */
+
+
+#endif

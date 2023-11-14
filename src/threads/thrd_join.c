@@ -1,3 +1,5 @@
+#if 0
+
 #include <threads.h>
 #include <pthread.h>
 
@@ -9,3 +11,6 @@ int thrd_join(thrd_t thr, int *res)
 /*
 STDC(201112)
 */
+
+
+#endif

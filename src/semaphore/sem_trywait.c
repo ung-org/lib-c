@@ -1,3 +1,5 @@
+#if 0
+
 #include <semaphore.h>
 
 int sem_trywait(sem_t * sem)
@@ -9,3 +11,6 @@ int sem_trywait(sem_t * sem)
 POSIX(199309)
 LINK(rt)
 */
+
+
+#endif

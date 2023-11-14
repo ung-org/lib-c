@@ -1,3 +1,5 @@
+#if 0
+
 #include <string.h>
 #include "_assert.h"
 
@@ -28,3 +30,6 @@ up of characters from ARGUMENT(s2).
 RETURN_ALWAYS(the number of matching characters);
 STDC(1)
 */
+
+
+#endif

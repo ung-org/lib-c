@@ -1,3 +1,5 @@
+#if 0
+
 #include <threads.h>
 #include <pthread.h>
 
@@ -9,3 +11,6 @@ int tss_set(tss_t key, void *val)
 /*
 STDC(201112)
 */
+
+
+#endif

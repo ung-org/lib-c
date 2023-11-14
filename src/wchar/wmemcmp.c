@@ -1,3 +1,5 @@
+#if 0
+
 #include <wchar.h>
 
 int wmemcmp(const wchar_t * s1, const wchar_t * s2, size_t n)
@@ -18,3 +20,6 @@ int wmemcmp(const wchar_t * s1, const wchar_t * s2, size_t n)
 /*
 STDC(199409)
 */
+
+
+#endif

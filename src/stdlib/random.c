@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 
 long random(void)
@@ -8,3 +10,6 @@ long random(void)
 /*
 XOPEN(400)
 */
+
+
+#endif

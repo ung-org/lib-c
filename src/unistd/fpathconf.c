@@ -1,3 +1,5 @@
+#if 0
+
 #include <sys/types.h>
 #include <unistd.h>
 
@@ -9,3 +11,6 @@ long fpathconf(int fildes, int name)
 /*
 POSIX(1)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <setjmp.h>
 
 /** restore calling environment **/
@@ -29,3 +31,6 @@ UNDEFINED(THIS() is called from a nested signal handler)
 XOPEN(400)
 XOBSOLETE(700, FUNCTION(siglongjmp))
 */
+
+
+#endif

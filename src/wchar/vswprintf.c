@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdarg.h>
 #include <wchar.h>
 #include "stdio/_stdio.h"
@@ -16,3 +18,6 @@ int vswprintf(wchar_t * restrict s, size_t n, const wchar_t * restrict format, v
 /*
 STDC(199409)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <string.h>
 #include "_assert.h"
 
@@ -24,3 +26,6 @@ including the terminating null character.
 RETURN_ALWAYS(the length of the string);
 STDC(1)
 */
+
+
+#endif

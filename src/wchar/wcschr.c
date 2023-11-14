@@ -1,3 +1,5 @@
+#if 0
+
 #include <wchar.h>
 
 wchar_t * wcschr(const wchar_t * s, wchar_t c)
@@ -15,3 +17,6 @@ wchar_t * wcschr(const wchar_t * s, wchar_t c)
 /*
 STDC(199409)
 */
+
+
+#endif

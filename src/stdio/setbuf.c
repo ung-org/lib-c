@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 
 /** specify file stream buffer **/
@@ -24,3 +26,6 @@ equivalent of:
 /*
 STDC(1)
 */
+
+
+#endif

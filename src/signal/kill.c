@@ -1,3 +1,5 @@
+#if 0
+
 #include <sys/types.h>
 #include <signal.h>
 #include "_syscall.h"
@@ -9,3 +11,6 @@ int kill(pid_t pid, int sig)
 /*
 POSIX(1)
 */
+
+
+#endif

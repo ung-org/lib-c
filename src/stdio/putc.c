@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 
 /** write a character to a file stream **/
@@ -19,3 +21,6 @@ as a macro, it may evaluate ARGUMENT(stream) more than once.
 /*
 STDC(1)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 
 int getsubopt(char ** optionp, char * const * keylistp, char ** valuep)
@@ -9,3 +11,6 @@ int getsubopt(char ** optionp, char * const * keylistp, char ** valuep)
 XOPEN(400)
 POSIX(200809)
 */
+
+
+#endif

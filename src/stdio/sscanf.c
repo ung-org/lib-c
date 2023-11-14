@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdarg.h>
 #include <stdio.h>
 #include "_stdio.h"
@@ -30,3 +32,6 @@ FUNCTION(scanf).
 /*
 STDC(1)
 */
+
+
+#endif

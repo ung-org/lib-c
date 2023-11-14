@@ -1,3 +1,5 @@
+#if 0
+
 #include <unistd.h>
 
 int getpagesize(void)
@@ -8,3 +10,6 @@ int getpagesize(void)
 /*
 XOPEN(400,600)
 */
+
+
+#endif

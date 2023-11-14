@@ -1,3 +1,5 @@
+#if 0
+
 #include <wchar.h>
 
 size_t wcslen(const wchar_t * s)
@@ -12,3 +14,6 @@ size_t wcslen(const wchar_t * s)
 /*
 STDC(199409)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <syslog.h>
 
 int setlogmask(int maskpri)
@@ -8,3 +10,6 @@ int setlogmask(int maskpri)
 /*
 XOPEN(400)
 */
+
+
+#endif

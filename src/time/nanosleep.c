@@ -1,3 +1,5 @@
+#if 0
+
 #include <time.h>
 #include "_syscall.h"
 
@@ -9,3 +11,6 @@ int nanosleep(const struct timespec *rqtp, struct timespec *rmtp)
 /*
 POSIX(199309)
 */
+
+
+#endif

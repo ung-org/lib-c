@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdarg.h>
 #include <stdio.h>
 #include "_stdio.h"
@@ -106,3 +108,6 @@ UNDEFINED(`Precision with a conversion specifier other than CHAR(d), CHAR(i), CH
 UNDEFINED(TODO: Using h or l for !(diouxXn) or L for !(eEfgG))
 STDC(1)
 */
+
+
+#endif

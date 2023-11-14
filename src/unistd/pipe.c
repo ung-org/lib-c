@@ -1,3 +1,5 @@
+#if 0
+
 #include <sys/types.h>
 #include <unistd.h>
 #include "_assert.h"
@@ -11,3 +13,6 @@ int pipe(int fildes[2])
 /*
 POSIX(1)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <signal.h>
 
 int sigstack(struct sigstack *ss, struct sigstack *oss)
@@ -8,3 +10,6 @@ int sigstack(struct sigstack *ss, struct sigstack *oss)
 /*
 XOPEN(400,600)
 */
+
+
+#endif

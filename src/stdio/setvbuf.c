@@ -1,3 +1,5 @@
+#if 0
+
 #include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -76,3 +78,6 @@ The ARGUMENT(size) argument specifies the size of the buffer.
 /*
 STDC(1)
 */
+
+
+#endif

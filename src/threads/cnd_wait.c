@@ -1,3 +1,5 @@
+#if 0
+
 #include <threads.h>
 #include <pthread.h>
 
@@ -9,3 +11,6 @@ int cnd_wait(cnd_t *cond, mtx_t *mtx)
 /*
 STDC(201112)
 */
+
+
+#endif

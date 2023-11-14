@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 #include "_stdio.h"
 
@@ -20,3 +22,6 @@ clears the error and end-of-file indicators of ARGUMENT(stream).
 /*
 STDC(1)
 */
+
+
+#endif

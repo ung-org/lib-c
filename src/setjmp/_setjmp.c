@@ -1,3 +1,5 @@
+#if 0
+
 #include <setjmp.h>
 
 /** save program state **/
@@ -26,3 +28,6 @@ UNDEFINED(A program defines an external identifier named LITERAL(setjmp))
 XOPEN(400)
 XOBSOLETE(700, FUNCTION(siglongjmp))
 */
+
+
+#endif

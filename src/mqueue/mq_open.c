@@ -1,3 +1,5 @@
+#if 0
+
 #include <mqueue.h>
 
 mqd_t mq_open(const char * name, int oflag, ...)
@@ -9,3 +11,6 @@ mqd_t mq_open(const char * name, int oflag, ...)
 POSIX(199309)
 LINK(rt)
 */
+
+
+#endif

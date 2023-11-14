@@ -1,3 +1,5 @@
+#if 0
+
 #include <sys/types.h>
 #include <unistd.h>
 #include <limits.h>
@@ -28,3 +30,6 @@ char *ttyname(int fildes)
 /*
 POSIX(1)
 */
+
+
+#endif

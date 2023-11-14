@@ -1,3 +1,5 @@
+#if 0
+
 #include <unistd.h>
 
 int lockf(int fildes, int function, off_t size)
@@ -8,3 +10,6 @@ int lockf(int fildes, int function, off_t size)
 /*
 XOPEN(400)
 */
+
+
+#endif

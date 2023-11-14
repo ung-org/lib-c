@@ -1,3 +1,5 @@
+#if 0
+
 #include <sys/types.h>
 #include <glob.h>
 #include <stdlib.h>
@@ -23,3 +25,6 @@ void globfree(glob_t * pglob)
 POSIX(2)
 */
 
+
+
+#endif

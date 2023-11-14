@@ -1,3 +1,5 @@
+#if 0
+
 #include <dirent.h>
 #include <limits.h>
 #include <errno.h>
@@ -43,3 +45,6 @@ struct dirent * readdir(DIR * dirp)
 /*
 POSIX(1)
 */
+
+
+#endif

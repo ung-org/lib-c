@@ -1,3 +1,5 @@
+#if 0
+
 #include <aio.h>
 
 int aio_error(const struct aiocb * aiocbp)
@@ -9,3 +11,6 @@ int aio_error(const struct aiocb * aiocbp)
 POSIX(199309)
 LINK(rt)
 */
+
+
+#endif

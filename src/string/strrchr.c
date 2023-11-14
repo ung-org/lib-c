@@ -1,3 +1,5 @@
+#if 0
+
 #include <string.h>
 #include "_assert.h"
 
@@ -30,3 +32,6 @@ string ARGUMENT(s).
 /*
 STDC(1)
 */
+
+
+#endif

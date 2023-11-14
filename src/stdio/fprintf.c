@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdarg.h>
 #include <stdio.h>
 #include "_stdio.h"
@@ -29,3 +31,6 @@ and the variadic arguments is the same as that for FUNCTION(printf).
 /*
 STDC(1)
 */
+
+
+#endif

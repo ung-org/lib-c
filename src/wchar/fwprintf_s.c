@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 #include <wchar.h>
 
@@ -14,3 +16,6 @@ int fwprintf_s(FILE * restrict stream, const wchar_t * restrict format, ...)
 /*
 CEXT1(201112)
 */
+
+
+#endif

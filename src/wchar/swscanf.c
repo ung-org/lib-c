@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdarg.h>
 #include <wchar.h>
 
@@ -18,3 +20,6 @@ int swscanf(const wchar_t * restrict s, const wchar_t * restrict format, ...)
 /*
 STDC(199409)
 */
+
+
+#endif

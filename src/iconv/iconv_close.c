@@ -1,3 +1,5 @@
+#if 0
+
 #include <iconv.h>
 
 int iconv_close(iconv_t cd)
@@ -9,3 +11,6 @@ int iconv_close(iconv_t cd)
 XOPEN(4)
 POSIX(200809)
 */
+
+
+#endif

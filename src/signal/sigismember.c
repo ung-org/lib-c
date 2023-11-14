@@ -1,3 +1,5 @@
+#if 0
+
 #include <sys/types.h>
 #include <signal.h>
 #include <limits.h>
@@ -16,3 +18,6 @@ int sigismember(const sigset_t * set, int signo)
 /*
 POSIX(1)
 */
+
+
+#endif

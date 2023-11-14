@@ -1,3 +1,5 @@
+#if 0
+
 #include <time.h>
 
 /** find difference between two times **/
@@ -15,3 +17,6 @@ subtracts ARGUMENT(time0) from ARGUMENT(time1).
 RETURN_ALWAYS(the difference in seconds)
 STDC(1)
 */
+
+
+#endif

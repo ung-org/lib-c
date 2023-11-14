@@ -1,3 +1,5 @@
+#if 0
+
 #include <unistd.h>
 
 int symlink(const char*path1, const char *path2)
@@ -9,3 +11,6 @@ int symlink(const char*path1, const char *path2)
 XOPEN(400)
 POSIX(200112)
 */
+
+
+#endif

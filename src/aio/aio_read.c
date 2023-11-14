@@ -1,3 +1,5 @@
+#if 0
+
 #include <aio.h>
 
 int aio_read(struct aiocb * aiocbp)
@@ -8,3 +10,6 @@ int aio_read(struct aiocb * aiocbp)
 POSIX(199309)
 LINK(rt)
 */
+
+
+#endif

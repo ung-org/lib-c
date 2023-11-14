@@ -1,3 +1,5 @@
+#if 0
+
 #include <sys/types.h>
 #include <unistd.h>
 #include "_assert.h"
@@ -13,3 +15,6 @@ ssize_t write(int fildes, const void *buf, size_t nbyte)
 /*
 POSIX(1)
 */
+
+
+#endif

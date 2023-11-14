@@ -1,3 +1,5 @@
+#if 0
+
 #include <semaphore.h>
 
 int sem_unlink(const char * name)
@@ -9,3 +11,6 @@ int sem_unlink(const char * name)
 POSIX(199309)
 LINK(rt)
 */
+
+
+#endif

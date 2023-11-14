@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 
 /** deallocate memory **/
@@ -20,3 +22,6 @@ causes nothing to happen.
 UNDEFINED(ARGUMENT(ptr) was not returned by a previous call to FUNCTION(calloc), FUNCTION(malloc), or FUNCTION(realloc))
 STDC(1)
 */
+
+
+#endif

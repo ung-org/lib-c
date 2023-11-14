@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 
 /** count bytes in multibyte character **/
@@ -32,3 +34,6 @@ RETURN(0, ARGUMENT(s) points to a null character);
 RETURN(TYPE(int), the number of bytes in the multibyte character);
 STDC(1)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdatomic.h>
 
 __BASE atomic_load_explicit(const volatile __TYPE *object, memory_order order)
@@ -15,3 +17,6 @@ __BASE atomic_load_explicit(const volatile __TYPE *object, memory_order order)
 
 	return *object;
 }
+
+
+#endif

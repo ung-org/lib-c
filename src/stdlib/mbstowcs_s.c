@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 
 /** convert multibyte string to wide character string **/
@@ -24,3 +26,6 @@ be converted after a null character, which is converted.
 /*
 CEXT1(201112)
 */
+
+
+#endif

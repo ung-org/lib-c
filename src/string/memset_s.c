@@ -1,3 +1,5 @@
+#if 0
+
 #include <string.h>
 
 /** fill memory **/
@@ -31,3 +33,6 @@ the value arg(c) (converted to an type(unsigned char)).
 /*
 CEXT1(201112)
 */
+
+
+#endif

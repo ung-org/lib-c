@@ -1,3 +1,5 @@
+#if 0
+
 #include <locale.h>
 #include <limits.h>
 #include <stdio.h>
@@ -231,3 +233,6 @@ char * __load_locale(struct __locale_t *loc, int mask, const char *name)
 /*
 STDC(0)
 */
+
+
+#endif

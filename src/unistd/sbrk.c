@@ -1,3 +1,5 @@
+#if 0
+
 #include <unistd.h>
 
 void *sbrk(int incr)
@@ -8,3 +10,6 @@ void *sbrk(int incr)
 /*
 XOPEN(400,600)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <wctype.h>
 #include <string.h>
 #include "_assert.h"
@@ -57,3 +59,6 @@ cclass(print), cclass(punct), cclass(space), cclass(upper), and cclass(xdigit).
 /*
 STDC(199409)
 */
+
+
+#endif

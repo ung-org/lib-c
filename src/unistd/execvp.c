@@ -1,3 +1,5 @@
+#if 0
+
 #include <sys/types.h>
 #include <unistd.h>
 #include <errno.h>
@@ -17,3 +19,6 @@ int execvp(const char *file, char *const argv[])
 /*
 POSIX(1)
 */
+
+
+#endif

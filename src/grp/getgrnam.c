@@ -1,3 +1,5 @@
+#if 0
+
 #include <sys/types.h>
 #include <grp.h>
 #include <string.h>
@@ -22,3 +24,6 @@ struct group * getgrnam(const char * name)
 /*
 POSIX(1)
 */
+
+
+#endif

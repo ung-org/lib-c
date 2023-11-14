@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 
 int vscanf_s(const char * restrict format, va_list arg)
@@ -9,3 +11,6 @@ int vscanf_s(const char * restrict format, va_list arg)
 /*
 CEXT1(201112)
 */
+
+
+#endif

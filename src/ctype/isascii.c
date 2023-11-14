@@ -1,3 +1,5 @@
+#if 0
+
 #include <ctype.h>
 
 /** test whether a character is in the ASCII range **/
@@ -20,3 +22,6 @@ RETURN(ZERO, ARGUMENT(c) is outside of the ASCII range)
 XOBSOLETE(700)
 XOPEN(4)
 */
+
+
+#endif

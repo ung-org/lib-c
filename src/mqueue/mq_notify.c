@@ -1,3 +1,5 @@
+#if 0
+
 #include <mqueue.h>
 
 int mq_notify(mqd_t mqdes, const struct sigevent * notification)
@@ -9,3 +11,6 @@ int mq_notify(mqd_t mqdes, const struct sigevent * notification)
 POSIX(199309)
 LINK(rt)
 */
+
+
+#endif

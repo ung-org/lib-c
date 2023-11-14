@@ -1,3 +1,5 @@
+#if 0
+
 #include <ctype.h>
 
 /** convert a lowercase letter to uppercase **/
@@ -17,3 +19,6 @@ LC_CTYPE
 XOPEN(4)
 XOBSOLETE(700, FUNCTION(toupper))
 */
+
+
+#endif

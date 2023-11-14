@@ -1,3 +1,5 @@
+#if 0
+
 #include <fmtmsg.h>
 
 int fmtmsg(long classification, const char * label, int severity, const char * text, const char * action, const char * tag)
@@ -8,3 +10,6 @@ int fmtmsg(long classification, const char * label, int severity, const char * t
 /*
 XOPEN(400)
 */
+
+
+#endif

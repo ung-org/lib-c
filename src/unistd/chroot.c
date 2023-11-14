@@ -1,3 +1,5 @@
+#if 0
+
 #include <unistd.h>
 
 int chroot(const char *path)
@@ -8,3 +10,6 @@ int chroot(const char *path)
 /*
 XOPEN(400,600)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <time.h>
 
 int timer_delete(timer_t timerid)
@@ -9,3 +11,6 @@ int timer_delete(timer_t timerid)
 POSIX(199309)
 LINK(rt)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 #include <stdarg.h>
 
@@ -28,3 +30,6 @@ fn(scanf).
 /*
 CEXT1(201112)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <unistd.h>
 
 int brk(void *addr)
@@ -8,3 +10,6 @@ int brk(void *addr)
 /*
 XOPEN(400,600)
 */
+
+
+#endif

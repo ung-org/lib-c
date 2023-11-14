@@ -1,3 +1,5 @@
+#if 0
+
 #include <limits.h>
 #include "_assert.h"
 #include "_ctype.h"
@@ -26,3 +28,6 @@ C_LOCALE(`THIS() is true for the standard white-space characters: SPACE, form fe
 OTHER_LOCALES(`THIS() is true for the standard white-space characters and a set of characters for which FUNCTION(isalnum) is false')
 STDC(1)
 */
+
+
+#endif

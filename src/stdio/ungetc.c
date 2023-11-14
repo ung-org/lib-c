@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 #include "_stdio.h"
 
@@ -37,3 +39,6 @@ is obsolete in ISO/IEC 9899:1999.
 /*
 STDC(1)
 */
+
+
+#endif

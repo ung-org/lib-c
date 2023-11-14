@@ -1,3 +1,5 @@
+#if 0
+
 #include <stddef.h>
 #include <inttypes.h>
 
@@ -21,3 +23,6 @@ UNDEFINED(The result cannot be represented)
 RETURN_SUCCESS(a TYPEDEF(ldiv_t) containing both the quotient and remainder)
 STDC(199901)
 */
+
+
+#endif

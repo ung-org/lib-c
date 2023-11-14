@@ -1,3 +1,5 @@
+#if 0
+
 #include <wordexp.h>
 #include <stdlib.h>
 
@@ -9,3 +11,6 @@ void wordfree(wordexp_t *pwordexp)
 /*
 POSIX(2)
 */
+
+
+#endif

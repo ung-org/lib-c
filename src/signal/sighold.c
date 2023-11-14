@@ -1,3 +1,5 @@
+#if 0
+
 #include <signal.h>
 
 int sighold(int sig)
@@ -8,3 +10,6 @@ int sighold(int sig)
 /*
 XOPEN(400)
 */
+
+
+#endif

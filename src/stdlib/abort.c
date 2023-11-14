@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 #include <sys/types.h>
 #include <signal.h>
@@ -24,3 +26,6 @@ IMPLEMENTATION(whether temporary files are removed)
 IMPLEMENTATION(the value of unsuccessful termination returned to the host environment)
 STDC(1)
 */
+
+
+#endif

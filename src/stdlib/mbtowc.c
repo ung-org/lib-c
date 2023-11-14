@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 
 /** convert a multibyte character to a wide character **/
@@ -35,3 +37,6 @@ RETURN(0, ARGUMENT(s) points to a null character)
 RETURN(TYPE(int), the number of bytes in the converted multibyte character)
 STDC(1)
 */
+
+
+#endif

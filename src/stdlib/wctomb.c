@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 
 /** convert wide character to multibyte character **/
@@ -31,3 +33,6 @@ RETURN(-1, The value of ARGUMENT(wchar) does not correspond to a valid multibyte
 RETURN(TYPE(int), The number of bytes contained in the multibyte character corresponding to ARGUMENT(wchar))
 STDC(1)
 */
+
+
+#endif

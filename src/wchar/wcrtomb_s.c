@@ -1,3 +1,5 @@
+#if 0
+
 #include <wchar.h>
 
 errno_t wcrtomb_s(size_t * restrict retval, char * restrict s, rsize_t smax,
@@ -9,3 +11,6 @@ errno_t wcrtomb_s(size_t * restrict retval, char * restrict s, rsize_t smax,
 /*
 CEXT1(201112)
 */
+
+
+#endif

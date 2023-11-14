@@ -1,3 +1,5 @@
+#if 0
+
 #include <string.h>
 #include <stdlib.h>
 
@@ -15,3 +17,6 @@ char * strdup(const char *s)
 XOPEN(400)
 POSIX(200809)
 */
+
+
+#endif

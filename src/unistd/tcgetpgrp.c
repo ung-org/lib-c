@@ -1,3 +1,5 @@
+#if 0
+
 #include <sys/types.h>
 #include <unistd.h>
 #include "termios/_termios.h"
@@ -14,3 +16,6 @@ pid_t tcgetpgrp(int fildes)
 /*
 POSIX(1)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 
 char * initstate(unsigned seed, char * state, size_t size)
@@ -8,3 +10,6 @@ char * initstate(unsigned seed, char * state, size_t size)
 /*
 XOPEN(400)
 */
+
+
+#endif

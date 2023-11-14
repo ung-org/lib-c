@@ -1,3 +1,5 @@
+#if 0
+
 #include <string.h>
 #include "_assert.h"
 
@@ -35,3 +37,6 @@ is copied so that the ARGUMENT(n) bytes are safely written to ARGUMENT(s1).
 /*
 STDC(1)
 */
+
+
+#endif

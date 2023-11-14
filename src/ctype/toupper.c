@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 #include <limits.h>
 #include "_ctype.h"
@@ -28,3 +30,6 @@ RETURN_FAILURE(ARGUMENT(c), ARGUMENT(c) was not a lowercase letter or it has no 
 LC_CTYPE
 STDC(1)
 */
+
+
+#endif

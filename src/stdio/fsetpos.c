@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 
 /** set the file position indicator **/
@@ -21,3 +23,6 @@ any characters pushed back with FUNCTION(ungetc).
 /*
 STDC(1)
 */
+
+
+#endif

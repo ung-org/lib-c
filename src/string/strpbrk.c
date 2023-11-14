@@ -1,3 +1,5 @@
+#if 0
+
 #include <string.h>
 #include "_assert.h"
 
@@ -28,3 +30,6 @@ RETURN_FAILURE(CONSTANT(NULL));
 RETURN_SUCCESS(a pointer to the located character);
 STDC(1)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <stddef.h>
 #include <errno.h>
 #include <inttypes.h>
@@ -19,3 +21,6 @@ uintmax_t wcstoumax(const wchar_t * restrict nptr, wchar_t ** restrict endptr, i
 /*
 STDC(199901)
 */
+
+
+#endif

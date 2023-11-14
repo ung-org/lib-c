@@ -1,3 +1,5 @@
+#if 0
+
 #include <signal.h>
 
 int sigpause(int sig)
@@ -8,3 +10,6 @@ int sigpause(int sig)
 /*
 XOPEN(400)
 */
+
+
+#endif

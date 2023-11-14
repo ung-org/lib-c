@@ -1,3 +1,5 @@
+#if 0
+
 #include <arpa/inet.h>
 #include <errno.h>
 #include <stdio.h>
@@ -32,3 +34,6 @@ const char *inet_ntop(int af, const void *restrict src, char *restrict dst, sock
 	/* do IPv6 conversion */
 	return dst;
 }
+
+
+#endif

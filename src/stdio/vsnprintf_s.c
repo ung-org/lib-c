@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 #include "_stdio.h"
 
@@ -14,3 +16,6 @@ int vsnprintf_s(char * restrict s, rsize_t n, const char * restrict format, va_l
 /*
 CEXT1(201112)
 */
+
+
+#endif

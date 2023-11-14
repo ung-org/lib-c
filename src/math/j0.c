@@ -1,3 +1,5 @@
+#if 0
+
 #include <math.h>
 
 double j0(double x)
@@ -9,3 +11,6 @@ double j0(double x)
 XOPEN(4)
 LINK(m)
 */
+
+
+#endif

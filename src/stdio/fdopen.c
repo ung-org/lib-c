@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 
 FILE * fdopen(int fildes, const char * mode)
@@ -8,3 +10,6 @@ FILE * fdopen(int fildes, const char * mode)
 /*
 POSIX(1)
 */
+
+
+#endif

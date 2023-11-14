@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 
 /** ignore constraint violations **/
@@ -22,3 +24,6 @@ It simply returns to its caller.
 /*
 CEXT1(201112)
 */
+
+
+#endif

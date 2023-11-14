@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 
 char * l64a(long value)
@@ -8,3 +10,6 @@ char * l64a(long value)
 /*
 XOPEN(400)
 */
+
+
+#endif

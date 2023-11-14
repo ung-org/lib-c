@@ -1,3 +1,5 @@
+#if 0
+
 #include <termios.h>
 #include "_termios.h"
 
@@ -8,3 +10,6 @@ int tcdrain(int fildes)
 /*
 POSIX(1)
 */
+
+
+#endif

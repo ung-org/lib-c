@@ -1,3 +1,5 @@
+#if 0
+
 #include <pwd.h>
 
 struct passwd {
@@ -11,3 +13,6 @@ struct passwd {
 /*
 POSIX(1)
 */
+
+
+#endif

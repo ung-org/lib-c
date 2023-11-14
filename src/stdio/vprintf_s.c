@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 
 /** write formatted output **/
@@ -26,3 +28,6 @@ responsible for this.
 /*
 CEXT1(201112)
 */
+
+
+#endif

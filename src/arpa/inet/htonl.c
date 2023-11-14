@@ -1,3 +1,5 @@
+#if 0
+
 #include <arpa/inet.h>
 
 uint32_t htonl(uint32_t hostlong)
@@ -14,3 +16,6 @@ uint32_t htonl(uint32_t hostlong)
 
 	return u.u;
 }
+
+
+#endif

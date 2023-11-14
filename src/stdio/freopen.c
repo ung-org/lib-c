@@ -1,3 +1,5 @@
+#if 0
+
 #ifndef _POSIX_SOURCE
 #define _POSIX_SOURCE
 #define POSIX_FORCED
@@ -106,3 +108,6 @@ The error and end-of-file indicators are cleared.
 /*
 STDC(1)
 */
+
+
+#endif

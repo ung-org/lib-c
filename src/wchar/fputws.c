@@ -1,3 +1,5 @@
+#if 0
+
 #include <wchar.h>
 #include <stdio.h>
 
@@ -16,3 +18,6 @@ int fputws(const wchar_t * restrict s, FILE * restrict stream)
 /*
 STDC(199409)
 */
+
+
+#endif

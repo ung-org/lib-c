@@ -1,3 +1,5 @@
+#if 0
+
 # define TGSOURCE "cosh.c"
 #include <errno.h>
 #include <math.h>
@@ -32,3 +34,6 @@ IMPLEMENTATION(The value returned on a domain error, CONSTANT(HUGE_VAL))
 LINK(m)
 STDC(1)
 */
+
+
+#endif

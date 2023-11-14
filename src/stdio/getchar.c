@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 
 /** read a character from stdin **/
@@ -18,3 +20,6 @@ reads the next character from ARGUMENT(stdin).
 /*
 STDC(1)
 */
+
+
+#endif

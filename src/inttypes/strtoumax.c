@@ -1,3 +1,5 @@
+#if 0
+
 #include <stddef.h>
 #include <ctype.h>
 #include <errno.h>
@@ -17,3 +19,6 @@ uintmax_t strtoumax(const char *restrict nptr, char ** restrict endptr, int base
 /*
 STDC(199901)
 */
+
+
+#endif

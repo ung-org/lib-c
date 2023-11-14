@@ -1,3 +1,5 @@
+#if 0
+
 #include <fnmatch.h>
 #include <string.h>
 #include "_assert.h"
@@ -97,3 +99,6 @@ int fnmatch(const char * pattern, const char * string, int flags)
 /*
 POSIX(2)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <stddef.h>
 #include <sys/types.h>
 #include <unistd.h>
@@ -13,3 +15,6 @@ void _exit(int status)
 /*
 POSIX(1)
 */
+
+
+#endif

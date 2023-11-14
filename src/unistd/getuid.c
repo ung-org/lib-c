@@ -1,3 +1,5 @@
+#if 0
+
 #include <sys/types.h>
 #include "_syscall.h"
 
@@ -8,3 +10,6 @@ uid_t getuid(void)
 /*
 POSIX(1)
 */
+
+
+#endif

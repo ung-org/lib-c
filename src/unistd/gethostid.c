@@ -1,3 +1,5 @@
+#if 0
+
 #include <unistd.h>
 
 long gethostid(void)
@@ -8,3 +10,6 @@ long gethostid(void)
 /*
 XOPEN(400)
 */
+
+
+#endif

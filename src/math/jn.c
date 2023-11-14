@@ -1,3 +1,5 @@
+#if 0
+
 #include <math.h>
 
 double jn(int n, double x)
@@ -9,3 +11,6 @@ double jn(int n, double x)
 XOPEN(4)
 LINK(m)
 */
+
+
+#endif

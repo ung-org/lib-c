@@ -1,3 +1,5 @@
+#if 0
+
 # define TGSOURCE "complex/cproj.c"
 #include "_tgmath.h"
 
@@ -25,3 +27,6 @@ STDC(199901)
 LINK(m)
 */
 
+
+
+#endif

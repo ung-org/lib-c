@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 #include "_syscall.h"
 
@@ -29,3 +31,6 @@ No functions registered by fn(atexit) or fn(at_quick_exit) are called.
 /*
 STDC(199901)
 */
+
+
+#endif

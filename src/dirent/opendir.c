@@ -1,3 +1,5 @@
+#if 0
+
 #include <dirent.h>
 #include <errno.h>
 #include <sys/types.h>
@@ -26,3 +28,6 @@ DIR * opendir(const char * dirname)
 /*
 POSIX(1)
 */
+
+
+#endif

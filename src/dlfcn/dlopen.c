@@ -1,3 +1,5 @@
+#if 0
+
 #include <dlfcn.h>
 #include <fcntl.h>
 #include <stdlib.h>
@@ -32,3 +34,6 @@ void *dlopen(const char *file, int mode)
 /*
 XOPEN(500)
 */
+
+
+#endif

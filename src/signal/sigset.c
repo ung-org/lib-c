@@ -1,3 +1,5 @@
+#if 0
+
 #include <signal.h>
 
 void (*sigset(int sig, void (*disp)(int)))(int)
@@ -8,3 +10,6 @@ void (*sigset(int sig, void (*disp)(int)))(int)
 /*
 XOPEN(400)
 */
+
+
+#endif

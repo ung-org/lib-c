@@ -1,3 +1,5 @@
+#if 0
+
 #include <sys/types.h>
 #include <signal.h>
 
@@ -18,3 +20,6 @@ int siginterrupt(int sig, int flag)
 /*
 XOPEN(400)
 */
+
+
+#endif

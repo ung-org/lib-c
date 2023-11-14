@@ -1,3 +1,5 @@
+#if 0
+
 #include <sys/types.h>
 #include "_syscall.h"
 #include "_assert.h"
@@ -12,3 +14,6 @@ int getgroups(int gidsetsize, gid_t grouplist[])
 /*
 POSIX(1)
 */
+
+
+#endif

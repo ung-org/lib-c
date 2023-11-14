@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdatomic.h>
 #include <stdbool.h>
 
@@ -21,3 +23,6 @@ _Bool atomic_compare_exchange_strong_explicit(volatile __TYPE *object, __BASE *e
 	memcpy(expected, object, sizeof(*object));
 	return false;
 }
+
+
+#endif

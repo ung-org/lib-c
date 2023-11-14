@@ -1,3 +1,5 @@
+#if 0
+
 #ifndef _POSIX_SOURCE
 #define _POSIX_SOURCE
 #define POSIX_FORCED
@@ -56,3 +58,6 @@ buffer was automatically allocated, it is freed.
 /*
 STDC(1)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <threads.h>
 #include <pthread.h>
 #include <errno.h>
@@ -17,3 +19,6 @@ int mtx_init(mtx_t *mtx, int type)
 /*
 STDC(201112)
 */
+
+
+#endif

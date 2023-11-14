@@ -1,3 +1,5 @@
+#if 0
+
 #include <ftw.h>
 
 int nftw(const char * path, int (*fn) (const char *, const struct stat *, int, struct FTW *), int fd_limit, int flags)
@@ -8,3 +10,6 @@ int nftw(const char * path, int (*fn) (const char *, const struct stat *, int, s
 /*
 XOPEN(400)
 */
+
+
+#endif

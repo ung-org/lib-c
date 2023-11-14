@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 
 char *mktemp(char *template)
@@ -8,3 +10,6 @@ char *mktemp(char *template)
 /*
 XOPEN(400,700)
 */
+
+
+#endif

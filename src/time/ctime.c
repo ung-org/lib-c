@@ -1,3 +1,5 @@
+#if 0
+
 #include <time.h>
 
 /** convert arithmetic time to string **/
@@ -20,3 +22,6 @@ FUNCTION(asctime).
 RETURN_ALWAYS(a pointer to the string)
 STDC(1)
 */
+
+
+#endif

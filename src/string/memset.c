@@ -1,3 +1,5 @@
+#if 0
+
 #include <string.h>
 #include "_assert.h"
 
@@ -28,3 +30,6 @@ the value ARGUMENT(c) (converted to an TYPE(unsigned char)).
 /*
 STDC(1)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <fenv.h>
 
 int feclearexcept(int excepts)
@@ -14,3 +16,6 @@ d*/
 STDC(199901)
 LINK(m)
 */
+
+
+#endif

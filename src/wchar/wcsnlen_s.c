@@ -1,3 +1,5 @@
+#if 0
+
 #include <wchar.h>
 
 size_t wcsnlen_s( const wchar_t *ws, size_t maxlen)
@@ -9,3 +11,6 @@ size_t wcsnlen_s( const wchar_t *ws, size_t maxlen)
 /*
 CEXT1(201112)
 */
+
+
+#endif

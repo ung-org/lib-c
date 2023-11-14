@@ -1,3 +1,5 @@
+#if 0
+
 #include <ctype.h>
 #include <limits.h>
 #include <locale.h>
@@ -28,3 +30,6 @@ RETURN(ZERO, arg(c) is not a blank character)
 LC_CTYPE
 STDC(199901)
 */
+
+
+#endif

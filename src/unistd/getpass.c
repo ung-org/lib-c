@@ -1,3 +1,5 @@
+#if 0
+
 #include <unistd.h>
 
 char *getpass(const char *prompt)
@@ -8,3 +10,6 @@ char *getpass(const char *prompt)
 /*
 XOPEN(4,600)
 */
+
+
+#endif

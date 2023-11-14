@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 #include "_stdio.h"
 
@@ -28,3 +30,6 @@ int getc_unlocked(FILE * stream)
 /*
 POSIX(199506)
 */
+
+
+#endif

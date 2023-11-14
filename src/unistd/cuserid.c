@@ -1,3 +1,5 @@
+#if 0
+
 #include <stddef.h>
 #include <sys/types.h>
 #include <unistd.h>
@@ -28,3 +30,6 @@ char *cuserid(char *s)
 TODO: verify
 POSIX(1, 199506)
 */
+
+
+#endif

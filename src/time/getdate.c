@@ -1,3 +1,5 @@
+#if 0
+
 #include <time.h>
 
 struct tm *getdate(const char *string)
@@ -8,3 +10,6 @@ struct tm *getdate(const char *string)
 /*
 XOPEN(400)
 */
+
+
+#endif

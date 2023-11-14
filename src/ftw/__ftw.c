@@ -1,3 +1,5 @@
+#if 0
+
 #include "_ftw.h"
 
 int __ftw(const char *path, int (*fn)(), int fd_limit, int flags)
@@ -10,3 +12,6 @@ int __ftw(const char *path, int (*fn)(), int fd_limit, int flags)
 
 	return ret;
 }
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <string.h>
 
 char * strtok_s(char * restrict s1, rsize_t * restrict s1max, const char * restrict s2, char **restrict ptr)
@@ -23,3 +25,6 @@ char * strtok_s(char * restrict s1, rsize_t * restrict s1max, const char * restr
 /*
 CEXT1(201112)
 */
+
+
+#endif

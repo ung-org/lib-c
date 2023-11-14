@@ -1,3 +1,5 @@
+#if 0
+
 #ifndef _POSIX_SOURCE
 #define _POSIX_SOURCE
 #define POSIX_FORCED
@@ -54,3 +56,6 @@ IMPLEMENTATION(Whether signal blocking is performed when a signal occurs)
 IMPLEMENTATION(Other signals corresponding to computation exceptions for which signal handlers must not return)
 STDC(1)
 */
+
+
+#endif

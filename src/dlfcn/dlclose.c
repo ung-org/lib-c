@@ -1,3 +1,5 @@
+#if 0
+
 #include <dlfcn.h>
 #include "_dlfcn.h"
 
@@ -11,3 +13,6 @@ int dlclose(void *handle)
 /*
 XOPEN(500)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <time.h>
 #include "_time.h"
 #include "_assert.h"
@@ -91,3 +93,6 @@ RETURN_FAILURE(CAST(TYPEDEF(time_t), -1))
 RETURN_SUCCESS(the converted time)
 STDC(1)
 */
+
+
+#endif

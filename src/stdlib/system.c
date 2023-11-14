@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 
 #ifdef _POSIX_SOURCE
@@ -67,3 +69,6 @@ RETURN(NONZERO, If ARGUMENT(string) is CONSTANT(NULL), a command processor is av
 RETURN(0, If ARGUMENT(string) is CONSTANT(NULL), a command processor is not available)
 STDC(1)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <string.h>
 #include <limits.h>
 
@@ -27,3 +29,6 @@ including the terminating char(\0).
 /*
 CEXT1(201112)
 */
+
+
+#endif

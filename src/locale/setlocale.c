@@ -1,3 +1,5 @@
+#if 0
+
 #include <locale.h>
 #include <string.h>
 #include <stdlib.h>
@@ -83,3 +85,6 @@ RETURN(NONNULL, the current locale name for ARGUMENT(category))
 IMPLEMENTATION(The native environment)
 STDC(1)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 
 int vfscanf_s(FILE * restrict stream, const char * restrict format, va_list arg)
@@ -8,3 +10,6 @@ int vfscanf_s(FILE * restrict stream, const char * restrict format, va_list arg)
 /*
 CEXT1(201112)
 */
+
+
+#endif

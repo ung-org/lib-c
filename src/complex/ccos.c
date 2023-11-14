@@ -1,3 +1,5 @@
+#if 0
+
 # define TGSOURCE "complex/ccos.c"
 #include "_tgmath.h"
 
@@ -20,3 +22,6 @@ r*/
 STDC(199901)
 LINK(m)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <signal.h>
 
 int sigtimedwait(const sigset_t * restrict set, siginfo_t * restrict info, const struct timespec * restrict timeout)
@@ -8,3 +10,6 @@ int sigtimedwait(const sigset_t * restrict set, siginfo_t * restrict info, const
 /*
 POSIX(199309)
 */
+
+
+#endif

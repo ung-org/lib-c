@@ -1,3 +1,5 @@
+#if 0
+
 #include <unistd.h>
 
 int fchdir(int fildes)
@@ -9,3 +11,6 @@ int fchdir(int fildes)
 XOPEN(400)
 POSIX(200809)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <threads.h>
 #include <pthread.h>
 
@@ -9,3 +11,6 @@ int tss_create(tss_t *key, tss_dtor_t dtor)
 /*
 STDC(201112)
 */
+
+
+#endif

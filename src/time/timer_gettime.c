@@ -1,3 +1,5 @@
+#if 0
+
 #include <time.h>
 
 int timer_gettime(timer_t timerid, struct itimerspec *value)
@@ -9,3 +11,6 @@ int timer_gettime(timer_t timerid, struct itimerspec *value)
 POSIX(199309)
 LINK(rt)
 */
+
+
+#endif

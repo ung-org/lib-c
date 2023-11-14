@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 
 /** write directly to a file stream **/
@@ -36,3 +38,6 @@ written.
 /*
 STDC(1)
 */
+
+
+#endif

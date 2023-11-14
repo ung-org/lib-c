@@ -1,3 +1,5 @@
+#if 0
+
 #include <sys/types.h>
 #include <grp.h>
 #include "_grp.h"
@@ -21,3 +23,6 @@ struct group * getgrgid(gid_t gid)
 /*
 POSIX(1)
 */
+
+
+#endif

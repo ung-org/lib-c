@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 #include <stdarg.h>
 #include "_stdio.h"
@@ -16,3 +18,6 @@ int vsnprintf(char * restrict s, size_t n, const char *format, va_list arg)
 /*
 STDC(199901)
 */
+
+
+#endif

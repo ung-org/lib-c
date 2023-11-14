@@ -1,3 +1,5 @@
+#if 0
+
 #include <stddef.h>
 #include <sys/types.h>
 #include <unistd.h>
@@ -20,3 +22,6 @@ char * ctermid(char * s)
 /*
 POSIX(1)
 */
+
+
+#endif

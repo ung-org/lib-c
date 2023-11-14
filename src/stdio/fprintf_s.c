@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 #include <stdarg.h>
 
@@ -29,3 +31,6 @@ of arg(format) and the variadic arguments is the same as that for fn(printf).
 /*
 CEXT1(201112)
 */
+
+
+#endif

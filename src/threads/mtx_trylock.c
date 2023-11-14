@@ -1,3 +1,5 @@
+#if 0
+
 #include <threads.h>
 #include <pthread.h>
 #include <errno.h>
@@ -21,3 +23,6 @@ int mtx_trylock(mtx_t *mtx)
 /*
 STDC(201112)
 */
+
+
+#endif

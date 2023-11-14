@@ -1,3 +1,5 @@
+#if 0
+
 #include <wchar.h>
 #include <wctype.h>
 #include <limits.h>
@@ -19,3 +21,6 @@ unsigned long int wcstoul(const wchar_t * restrict nptr, wchar_t ** restrict end
 /*
 STDC(199409)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 
 char *ecvt(double value, int ndigit, int *decpt, int *sign)
@@ -8,3 +10,6 @@ char *ecvt(double value, int ndigit, int *decpt, int *sign)
 /*
 XOPEN(400,700)
 */
+
+
+#endif

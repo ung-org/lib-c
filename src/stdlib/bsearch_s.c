@@ -1,3 +1,5 @@
+#if 0
+
 #include <stddef.h>
 
 /** binary search **/
@@ -45,3 +47,6 @@ element.
 /*
 CEXT1(201112)
 */
+
+
+#endif

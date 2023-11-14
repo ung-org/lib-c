@@ -1,3 +1,5 @@
+#if 0
+
 #include <unistd.h>
 
 pid_t setpgrp(void)
@@ -8,3 +10,6 @@ pid_t setpgrp(void)
 /*
 XOPEN(400)
 */
+
+
+#endif

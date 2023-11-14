@@ -1,3 +1,5 @@
+#if 0
+
 #include <limits.h>
 #include "_assert.h"
 #include "_ctype.h"
@@ -25,3 +27,6 @@ LC_CTYPE
 C_LOCALE(`THIS() is true for printing characters for which neither FUNCTION(isspace) nor FUNCTION(isalnum) is true')
 STDC(1)
 */
+
+
+#endif

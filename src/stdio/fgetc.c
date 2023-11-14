@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 #include "_stdio.h"
 
@@ -32,3 +34,6 @@ of ARGUMENT(stream) is advanced.
 /*
 STDC(1)
 */
+
+
+#endif

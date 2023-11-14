@@ -1,3 +1,5 @@
+#if 0
+
 #include <sys/types.h>
 #include <stdio.h>
 #include <stddef.h>
@@ -342,3 +344,6 @@ int (__printf)(struct io_options *opt, const char * format, va_list arg)
 
 	return nout;
 }
+
+
+#endif

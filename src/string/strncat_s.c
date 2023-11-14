@@ -1,3 +1,5 @@
+#if 0
+
 #include <string.h>
 
 /** concatenate bounded string **/
@@ -42,3 +44,6 @@ terminated.
 /*
 CEXT1(201112)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <mqueue.h>
 
 int mq_setattr(mqd_t mqdes, const struct mq_attr * restrict mqstat, struct mq_attr * restrict omqstat)
@@ -9,3 +11,6 @@ int mq_setattr(mqd_t mqdes, const struct mq_attr * restrict mqstat, struct mq_at
 POSIX(199309)
 LINK(rt)
 */
+
+
+#endif

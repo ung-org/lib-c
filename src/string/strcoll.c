@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 #include <string.h>
 #include "_assert.h"
@@ -41,3 +43,6 @@ compares the collation values of the strings at ARGUMENT(s1) and ARGUMENT(s2).
 LC_COLLATE
 STDC(1)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 #include "__stdio.h"
 #include <stdarg.h>
@@ -31,3 +33,6 @@ responsible for this.
 /*
 CEXT1(201112)
 */
+
+
+#endif

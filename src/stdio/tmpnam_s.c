@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 
 /** generate a temporary file name **/
@@ -41,3 +43,6 @@ macro(L_tmpnam) characters. The temporary name will be copied to this array.
 /*
 CEXT1(201112)
 */
+
+
+#endif

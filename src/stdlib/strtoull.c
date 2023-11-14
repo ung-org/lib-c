@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 #include <ctype.h>
 #include <limits.h>
@@ -17,3 +19,6 @@ unsigned long long int strtoull(const char * restrict nptr, char ** restrict end
 /*
 STDC(199901)
 */
+
+
+#endif

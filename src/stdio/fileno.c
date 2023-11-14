@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 #include "_stdio.h"
 #include "_assert.h"
@@ -10,3 +12,6 @@ int fileno(FILE * stream)
 /*
 POSIX(1)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <uchar.h>
 
 size_t c32rtomb(char * restrict s, char32_t c32, mbstate_t * restrict ps)
@@ -8,3 +10,6 @@ size_t c32rtomb(char * restrict s, char32_t c32, mbstate_t * restrict ps)
 /*
 STDC(201112)
 */
+
+
+#endif

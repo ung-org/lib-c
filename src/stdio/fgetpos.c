@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 #include "_stdio.h"
 
@@ -20,3 +22,6 @@ for ARGUMENT(stream) into the TYPEDEF(fpos_t) at ARGUMENT(pos).
 UNSPECIFIED(The information stored in TYPEDEF(fpos_t))
 STDC(1)
 */
+
+
+#endif

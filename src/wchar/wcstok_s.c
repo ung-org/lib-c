@@ -1,3 +1,5 @@
+#if 0
+
 #include <wchar.h>
 
 wchar_t *wcstok_s(wchar_t * restrict s1, rsize_t * restrict s1max,
@@ -9,3 +11,6 @@ wchar_t *wcstok_s(wchar_t * restrict s1, rsize_t * restrict s1max,
 /*
 CEXT1(201112)
 */
+
+
+#endif

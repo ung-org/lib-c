@@ -1,3 +1,5 @@
+#if 0
+
 #include <string.h>
 
 void *memccpy(void * restrict s1, const void * restrict s2, int c, size_t n)
@@ -21,3 +23,6 @@ void *memccpy(void * restrict s1, const void * restrict s2, int c, size_t n)
 /*
 XOPEN(4)
 */
+
+
+#endif

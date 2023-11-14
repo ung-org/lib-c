@@ -1,3 +1,5 @@
+#if 0
+
 #include <mqueue.h>
 
 struct mq_attr {
@@ -10,3 +12,6 @@ struct mq_attr {
 /*
 POSIX(199309)
 */
+
+
+#endif

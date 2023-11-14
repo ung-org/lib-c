@@ -1,3 +1,5 @@
+#if 0
+
 #include <unistd.h>
 
 int fsync(int fildes)
@@ -14,3 +16,6 @@ int fsync(int fildes)
 XOPEN(4)
 POSIX(199309)
 */
+
+
+#endif

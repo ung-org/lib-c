@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 #include <float.h>
 #include <ctype.h>
@@ -40,3 +42,6 @@ RETURN(CONSTANT(-HUGE_VALL), converted value too small)
 RETURN(VAR(a TYPE(long double)), the converted value)
 STDC(199901)
 */
+
+
+#endif

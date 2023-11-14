@@ -1,3 +1,5 @@
+#if 0
+
 #include <search.h>
 
 int hcreate(size_t nel)
@@ -8,3 +10,6 @@ int hcreate(size_t nel)
 /*
 XOPEN(4)
 */
+
+
+#endif

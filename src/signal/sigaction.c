@@ -1,3 +1,5 @@
+#if 0
+
 #include <stddef.h>
 #include <sys/types.h>
 #include <signal.h>
@@ -47,3 +49,6 @@ int sigaction(int sig, const struct sigaction * restrict act, struct sigaction *
 /*
 POSIX(1)
 */
+
+
+#endif

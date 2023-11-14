@@ -1,3 +1,5 @@
+#if 0
+
 #include <pwd.h>
 #include <stdio.h>
 #include "_pwd.h"
@@ -13,3 +15,6 @@ void endpwent(void)
 /*
 XOPEN(400)
 */
+
+
+#endif

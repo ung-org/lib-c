@@ -1,3 +1,5 @@
+#if 0
+
 #include <wchar.h>
 #include <stdio.h>
 #include <limits.h>
@@ -32,3 +34,6 @@ wint_t fgetwc(FILE * stream)
 /*
 STDC(199409)
 */
+
+
+#endif

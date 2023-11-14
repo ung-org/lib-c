@@ -1,3 +1,5 @@
+#if 0
+
 #include <sys/types.h>
 #include <unistd.h>
 
@@ -9,3 +11,6 @@ int execv(const char *path, char *const argv[])
 /*
 POSIX(1)
 */
+
+
+#endif

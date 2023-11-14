@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 #include "_stdio.h"
 
@@ -33,3 +35,6 @@ RETURN_SUCCESS(ARGUMENT(c))
 RETURN_FAILURE(CONSTANT(EOF))
 STDC(1)
 */
+
+
+#endif

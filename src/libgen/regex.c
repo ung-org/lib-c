@@ -1,3 +1,5 @@
+#if 0
+
 #include <libgen.h>
 
 char *regex(const char *re, const char *subject, ...)
@@ -8,3 +10,6 @@ char *regex(const char *re, const char *subject, ...)
 /*
 XOPEN(400,600)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <aio.h>
 
 int aio_suspend(const struct aiocb * const list[], int nent, const struct timespec * timeout)
@@ -9,3 +11,6 @@ int aio_suspend(const struct aiocb * const list[], int nent, const struct timesp
 POSIX(199309)
 LINK(rt)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 
 int unlockpt(int fildes)
@@ -8,3 +10,6 @@ int unlockpt(int fildes)
 /*
 XOPEN(400)
 */
+
+
+#endif

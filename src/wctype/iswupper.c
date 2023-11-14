@@ -1,3 +1,5 @@
+#if 0
+
 #include <wctype.h>
 #include <wchar.h>
 #include "_assert.h"
@@ -27,3 +29,6 @@ cclass(upper) in the current locale.
 /*
 STDC(199409)
 */
+
+
+#endif

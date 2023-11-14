@@ -1,3 +1,5 @@
+#if 0
+
 #include <wchar.h>
 #include "stdio/_stdio.h"
 
@@ -18,3 +20,6 @@ int vswscanf(const wchar_t * restrict s, const wchar_t * restrict format, va_lis
 /*
 STDC(199901)
 */
+
+
+#endif

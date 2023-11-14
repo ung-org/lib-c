@@ -1,3 +1,5 @@
+#if 0
+
 #include <stddef.h>
 #include <sys/types.h>
 #include <unistd.h>
@@ -41,3 +43,6 @@ int access(const char *path, int amode)
 /*
 POSIX(1)
 */
+
+
+#endif

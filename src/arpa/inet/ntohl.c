@@ -1,3 +1,5 @@
+#if 0
+
 #include <arpa/inet.h>
 
 uint32_t ntohl(uint32_t netlong)
@@ -9,3 +11,6 @@ uint32_t ntohl(uint32_t netlong)
 
 	return (u.c[0] << 24) | (u.c[1] << 16) | (u.c[2] << 8) | u.c[3];
 }
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 # define TGSOURCE "complex/csqrt.c"
 #include "_tgmath.h"
 #include <complex.h>
@@ -68,3 +70,6 @@ STDC(199901)
 LINK(m)
 */
 
+
+
+#endif

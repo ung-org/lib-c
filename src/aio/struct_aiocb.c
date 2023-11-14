@@ -1,3 +1,5 @@
+#if 0
+
 #include <aio.h>
 
 struct aiocb {
@@ -13,3 +15,6 @@ struct aiocb {
 /*
 POSIX(199309)
 */
+
+
+#endif

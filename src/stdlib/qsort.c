@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 
 /** sort an array **/
@@ -53,3 +55,6 @@ is greater than the second.
 UNSPECIFIED(The order of equal elements)
 STDC(1)
 */
+
+
+#endif

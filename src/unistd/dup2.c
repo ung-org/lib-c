@@ -1,3 +1,5 @@
+#if 0
+
 #include <stddef.h>
 #include <sys/types.h>
 #include <unistd.h>
@@ -14,3 +16,6 @@ int dup2(int fildes, int fildes2)
 /*
 POSIX(1)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <string.h>
 #include <stdlib.h>
 
@@ -25,3 +27,6 @@ environment.
 /*
 CEXT1(201112)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <time.h>
 
 int timer_settime(timer_t timerid, int flags, const struct itimerspec * restrict value, struct itimerspec * restrict ovalue)
@@ -9,3 +11,6 @@ int timer_settime(timer_t timerid, int flags, const struct itimerspec * restrict
 POSIX(199309)
 LINK(rt)
 */
+
+
+#endif

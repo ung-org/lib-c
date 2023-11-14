@@ -1,3 +1,5 @@
+#if 0
+
 #include <errno.h>
 #include <ctype.h>
 #include <limits.h>
@@ -44,3 +46,6 @@ RETURN(ULONG_MAX, converted value too large)
 RETURN(an TYPE(unsigned long int) value, the converted value)
 STDC(1)
 */
+
+
+#endif

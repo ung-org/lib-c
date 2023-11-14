@@ -1,3 +1,5 @@
+#if 0
+
 #include <sys/types.h>
 #include <fcntl.h>
 #include <errno.h>
@@ -58,3 +60,6 @@ int fcntl(int fildes, int cmd, ...)
 /*
 POSIX(1)
 */
+
+
+#endif

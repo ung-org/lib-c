@@ -1,3 +1,5 @@
+#if 0
+
 #ifndef _POSIX_SOURCE
 #define _POSIX_SOURCE
 #define POSIX_FORCED
@@ -35,3 +37,6 @@ sends the signal ARGUMENT(sig) to the current program.
 /*
 STDC(1)
 */
+
+
+#endif

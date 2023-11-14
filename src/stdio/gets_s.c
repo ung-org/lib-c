@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 #include <limits.h>
 
@@ -31,3 +33,6 @@ remain unchanged.
 /*
 CEXT1(201112)
 */
+
+
+#endif

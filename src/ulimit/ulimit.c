@@ -1,3 +1,5 @@
+#if 0
+
 #include <ulimit.h>
 #include <sys/resource.h>
 #include <stdarg.h>
@@ -61,3 +63,6 @@ e*/
 /*
 XOPEN(4)
 */
+
+
+#endif

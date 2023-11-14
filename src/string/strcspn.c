@@ -1,3 +1,5 @@
+#if 0
+
 #include <string.h>
 #include "_assert.h"
 
@@ -28,3 +30,6 @@ the string ARGUMENT(s1) that are not in the string ARGUMENT(s2).
 RETURN_ALWAYS(the number of non-matching characters);
 STDC(1)
 */
+
+
+#endif

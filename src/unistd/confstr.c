@@ -1,3 +1,5 @@
+#if 0
+
 #include <sys/types.h>
 #include <unistd.h>
 #include <errno.h>
@@ -34,3 +36,6 @@ size_t confstr(int name, char *buf, size_t len)
 /*
 POSIX(2)
 */
+
+
+#endif

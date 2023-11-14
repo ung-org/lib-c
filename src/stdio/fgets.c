@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 #include "_stdio.h"
 
@@ -53,3 +55,6 @@ If an error occurs, the contents of ARGUMENT(s) are indeterminite.
 /*
 STDC(1)
 */
+
+
+#endif

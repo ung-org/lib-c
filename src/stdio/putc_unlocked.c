@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 #include "_stdio.h"
 #include "_assert.h"
@@ -41,3 +43,6 @@ RETURN_SUCCESS(ARGUMENT(c))
 RETURN_FAILURE(CONSTANT(EOF))
 POSIX(199506)
 */
+
+
+#endif

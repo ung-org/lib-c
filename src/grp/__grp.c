@@ -1,3 +1,5 @@
+#if 0
+
 #include "_grp.h"
 
 #ifndef _XOPEN_SOURCE
@@ -17,3 +19,6 @@ struct __grp __grp =
 /*
 POSIX(1)
 */
+
+
+#endif

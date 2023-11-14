@@ -1,3 +1,5 @@
+#if 0
+
 #include <dlfcn.h>
 #include "_dlfcn.h"
 
@@ -11,3 +13,6 @@ void *dlsym(void *restrict handle, const char *restrict name)
 /*
 XOPEN(500)
 */
+
+
+#endif

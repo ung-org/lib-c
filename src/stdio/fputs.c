@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 #include "_stdio.h"
 
@@ -28,3 +30,6 @@ the terminating CHAR(\0) character.
 /*
 STDC(1)
 */
+
+
+#endif

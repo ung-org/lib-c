@@ -1,3 +1,5 @@
+#if 0
+
 #include <unistd.h>
 
 int fdatasync(int fildes)
@@ -8,3 +10,6 @@ int fdatasync(int fildes)
 /*
 POSIX(199309)
 */
+
+
+#endif

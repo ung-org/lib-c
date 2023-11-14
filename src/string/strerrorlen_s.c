@@ -1,3 +1,5 @@
+#if 0
+
 #include <string.h>
 
 size_t strerrorlen_s(errno_t errnum)
@@ -11,3 +13,6 @@ size_t strerrorlen_s(errno_t errnum)
 /*
 CEXT1(201112)
 */
+
+
+#endif

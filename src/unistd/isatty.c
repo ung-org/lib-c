@@ -1,3 +1,5 @@
+#if 0
+
 #include <sys/types.h>
 #include <unistd.h>
 #include <termios.h>
@@ -28,3 +30,6 @@ RETURN(ZERO, ARGUMENT(fildes) is not a terminal)
 RETURN(ONE, ARGUMENT(fildes) is a terminal device)
 POSIX(1)
 */
+
+
+#endif

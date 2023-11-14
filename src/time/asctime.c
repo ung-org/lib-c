@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 #include <time.h>
 
@@ -35,3 +37,6 @@ hour of the day (in the range (0,23)), LITERAL(mm) is the minute of the hour
 RETURN_ALWAYS(a pointer to the string)
 STDC(1)
 */
+
+
+#endif

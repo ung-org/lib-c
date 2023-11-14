@@ -1,3 +1,5 @@
+#if 0
+
 #include <unistd.h>
 
 pid_t getsid(pid_t pid)
@@ -9,3 +11,6 @@ pid_t getsid(pid_t pid)
 XOPEN(400)
 POSIX(200809)
 */
+
+
+#endif

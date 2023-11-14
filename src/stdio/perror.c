@@ -1,3 +1,5 @@
+#if 0
+
 #include <errno.h>
 #include <stdio.h>
 #include <string.h>
@@ -26,3 +28,6 @@ pointed to by ARGUMENT(s), a colon (CHAR(:)), and a space.
 POSIX_(L_C_MESSAGES)
 STDC(1)
 */
+
+
+#endif

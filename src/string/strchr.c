@@ -1,3 +1,5 @@
+#if 0
+
 #include <string.h>
 #include "_assert.h"
 
@@ -22,3 +24,6 @@ ARGUMENT(c) (converted to a TYPE(char)).
 /*
 STDC(1)
 */
+
+
+#endif

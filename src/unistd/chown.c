@@ -1,3 +1,5 @@
+#if 0
+
 #include <sys/types.h>
 #include <unistd.h>
 #include "_syscall.h"
@@ -9,3 +11,6 @@ int chown(const char *path, uid_t owner, gid_t group)
 /*
 POSIX(1)
 */
+
+
+#endif

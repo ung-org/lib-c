@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 
 char * getlogin(void)
@@ -10,3 +12,6 @@ char * getlogin(void)
 /*
 POSIX(1)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 
 /** convert wide character to multibyte character **/
@@ -30,3 +32,6 @@ state dependency.
 /*
 CEXT1(201112)
 */
+
+
+#endif

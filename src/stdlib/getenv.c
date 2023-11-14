@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 #include <string.h>
 #include "_stdlib.h"
@@ -30,3 +32,6 @@ RETURN_FAILURE(CONSTANT(NULL))
 RETURN_SUCCESS(a pointer to the environment string)
 STDC(1)
 */
+
+
+#endif

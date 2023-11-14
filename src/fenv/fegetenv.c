@@ -1,3 +1,5 @@
+#if 0
+
 #include <fenv.h>
 
 int fegetenv(fenv_t *envp)
@@ -15,3 +17,6 @@ d*/
 STDC(199901)
 LINK(m)
 */
+
+
+#endif

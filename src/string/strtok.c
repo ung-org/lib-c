@@ -1,3 +1,5 @@
+#if 0
+
 #include <string.h>
 #include "_assert.h"
 
@@ -36,3 +38,6 @@ CHAR(\0), terminating the token.
 /*
 STDC(1)
 */
+
+
+#endif

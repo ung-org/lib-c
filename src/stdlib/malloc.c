@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 
 /** allocate memory **/
@@ -21,3 +23,6 @@ RETURN_FAILURE(CONSTANT(NULL))
 RETURN_SUCCESS(a pointer to the allocated space)
 STDC(1)
 */
+
+
+#endif

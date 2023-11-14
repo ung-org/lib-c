@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdarg.h>
 #include <stdio.h>
 #include "_stdio.h"
@@ -29,3 +31,6 @@ responsible for this.
 /*
 STDC(1)
 */
+
+
+#endif

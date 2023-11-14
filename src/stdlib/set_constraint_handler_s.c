@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 
 constraint_handler_t set_constraint_handler_s(constraint_handler_t handler)
@@ -9,3 +11,6 @@ constraint_handler_t set_constraint_handler_s(constraint_handler_t handler)
 /*
 CEXT1(201112)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #ifndef _POSIX_SOURCE
 #define _POSIX_SOURCE
 #define POSIX_FORCED
@@ -61,3 +63,6 @@ UNDEFINED(ARGUMENT(stream) is not an output stream)
 UNDEFINED(ARGUMENT(stream) is an update stream in which the most recent operation was input)
 STDC(1)
 */
+
+
+#endif

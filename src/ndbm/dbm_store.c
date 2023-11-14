@@ -1,3 +1,5 @@
+#if 0
+
 #include <ndbm.h>
 
 int dbm_store(DBM * db, datum key, datum content, int store_mode)
@@ -8,3 +10,6 @@ int dbm_store(DBM * db, datum key, datum content, int store_mode)
 /*
 XOPEN(400)
 */
+
+
+#endif

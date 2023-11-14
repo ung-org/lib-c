@@ -1,3 +1,5 @@
+#if 0
+
 #include <search.h>
 
 void *tfind(const void * key, void * const * rootp, int (*compar) (const void *, const void *))
@@ -8,3 +10,6 @@ void *tfind(const void * key, void * const * rootp, int (*compar) (const void *,
 /*
 XOPEN(4)
 */
+
+
+#endif

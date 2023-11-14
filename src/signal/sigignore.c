@@ -1,3 +1,5 @@
+#if 0
+
 #include <signal.h>
 
 int sigignore(int sig)
@@ -11,3 +13,6 @@ int sigignore(int sig)
 /*
 XOPEN(400)
 */
+
+
+#endif

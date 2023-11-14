@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 
 double drand48(void)
@@ -8,3 +10,6 @@ double drand48(void)
 /*
 XOPEN(4)
 */
+
+
+#endif

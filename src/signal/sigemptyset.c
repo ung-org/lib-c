@@ -1,3 +1,5 @@
+#if 0
+
 #include <sys/types.h>
 #include <signal.h>
 #include <string.h>
@@ -10,3 +12,6 @@ int sigemptyset(sigset_t * set)
 /*
 POSIX(1)
 */
+
+
+#endif

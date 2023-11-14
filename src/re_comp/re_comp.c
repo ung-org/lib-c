@@ -1,3 +1,5 @@
+#if 0
+
 #include <re_comp.h>
 
 char *re_comp(const char *string)
@@ -8,3 +10,6 @@ char *re_comp(const char *string)
 /*
 XOPEN(400,600)
 */
+
+
+#endif

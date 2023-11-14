@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 
 char *gcvt(double value, int ndigit, char *buf)
@@ -8,3 +10,6 @@ char *gcvt(double value, int ndigit, char *buf)
 /*
 XOPEN(400,700)
 */
+
+
+#endif

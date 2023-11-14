@@ -1,3 +1,5 @@
+#if 0
+
 #include <sys/types.h>
 #include <fcntl.h>
 #include <sys/stat.h>	/* OH */
@@ -28,3 +30,6 @@ int open(const char *path, int oflag, ...)
 /*
 POSIX(1)
 */
+
+
+#endif

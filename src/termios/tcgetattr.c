@@ -1,3 +1,5 @@
+#if 0
+
 #include <termios.h>
 #include "_termios.h"
 
@@ -14,3 +16,6 @@ int tcgetattr(int fildes, struct termios *termios_p)
 /*
 POSIX(1)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <nl_types.h>
 
 int catclose(nl_catd catd)
@@ -8,3 +10,6 @@ int catclose(nl_catd catd)
 /*
 XOPEN(4)
 */
+
+
+#endif

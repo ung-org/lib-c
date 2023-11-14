@@ -1,3 +1,5 @@
+#if 0
+
 #ifndef _POSIX_SOURCE
 #define _POSIX_SOURCE
 #define POSIX_FORCED
@@ -36,3 +38,6 @@ open that file will fail unless creating a new file.
 IMPLEMENTATION(Whether the file is removed if it is open)
 STDC(1)
 */
+
+
+#endif

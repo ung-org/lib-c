@@ -1,3 +1,5 @@
+#if 0
+
 # define TGSOURCE "fmod.c"
 #include <errno.h>
 #include <math.h>
@@ -48,3 +50,6 @@ IMPLEMENTATION(Whether ARGUMENT(y) being LITERAL(0) results in a domain error or
 LINK(m)
 STDC(1)
 */
+
+
+#endif

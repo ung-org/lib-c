@@ -1,3 +1,5 @@
+#if 0
+
 #include <ftw.h>
 #include <sys/stat.h>
 #include "_ftw.h"
@@ -10,3 +12,6 @@ int ftw(const char * path, int (*fn) (const char *, const struct stat * ptr, int
 /*
 XOPEN(4)
 */
+
+
+#endif

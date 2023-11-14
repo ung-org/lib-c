@@ -1,3 +1,5 @@
+#if 0
+
 #include <utmpx.h>
 #include <stddef.h>
 
@@ -9,3 +11,6 @@ struct utmpx * pututxline(const struct utmpx *utmpx)
 /*
 XOPEN(400)
 */
+
+
+#endif

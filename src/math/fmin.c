@@ -1,3 +1,5 @@
+#if 0
+
 # define TGSOURCE "fmin.c"
 #include "_tgmath.h"
 #include <math.h>
@@ -17,3 +19,6 @@ TYPE TGFN(fmin)(TYPE x, TYPE y)
 STDC(199901)
 LINK(m)
 */
+
+
+#endif

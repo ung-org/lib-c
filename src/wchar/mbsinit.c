@@ -1,3 +1,5 @@
+#if 0
+
 #include <wchar.h>
 
 int mbsinit(const mbstate_t * ps)
@@ -12,3 +14,6 @@ int mbsinit(const mbstate_t * ps)
 /*
 STDC(199409)
 */
+
+
+#endif

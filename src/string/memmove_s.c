@@ -1,3 +1,5 @@
+#if 0
+
 #include <string.h>
 #include <stdlib.h>
 #include "_assert.h"
@@ -31,3 +33,6 @@ is copied so that the arg(n) bytes are safely written to arg(s1).
 /*
 CEXT1(201112)
 */
+
+
+#endif

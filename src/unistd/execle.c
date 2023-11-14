@@ -1,3 +1,5 @@
+#if 0
+
 #include <stddef.h>
 #include <sys/types.h>
 #include <unistd.h>
@@ -24,3 +26,6 @@ int execle(const char *path, const char *arg0, ... /*, (char *)0, char *const en
 /*
 POSIX(1)
 */
+
+
+#endif

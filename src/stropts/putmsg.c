@@ -1,3 +1,5 @@
+#if 0
+
 #include <stropts.h>
 
 int putmsg(int fd , const struct strbuf * ctlptr , const struct strbuf * dataptr , int flags )
@@ -7,3 +9,6 @@ int putmsg(int fd , const struct strbuf * ctlptr , const struct strbuf * dataptr
 /*
 XOPEN(400)
 */
+
+
+#endif

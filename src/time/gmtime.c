@@ -1,3 +1,5 @@
+#if 0
+
 #include <time.h>
 #include "_assert.h"
 #include "_time.h"
@@ -59,3 +61,6 @@ RETURN_FAILURE(CONSTANT(NULL))
 RETURN_SUCCESS(a pointer to the converted time)
 STDC(1)
 */
+
+
+#endif

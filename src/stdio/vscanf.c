@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 
 int vscanf(const char * restrict format, va_list arg)
@@ -8,3 +10,6 @@ int vscanf(const char * restrict format, va_list arg)
 /*
 STDC(199901)
 */
+
+
+#endif

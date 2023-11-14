@@ -1,3 +1,5 @@
+#if 0
+
 #include <signal.h>
 
 int sigrelse(int sig)
@@ -8,3 +10,6 @@ int sigrelse(int sig)
 /*
 XOPEN(400)
 */
+
+
+#endif

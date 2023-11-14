@@ -1,3 +1,5 @@
+#if 0
+
 #include <time.h>
 #include <stdio.h>
 
@@ -41,3 +43,6 @@ str(yyyy) is the year.
 /*
 CEXT1(201112)
 */
+
+
+#endif

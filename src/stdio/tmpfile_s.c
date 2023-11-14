@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 
 /* open a temporary file stream */
@@ -24,3 +26,6 @@ be automatically removed when closed by fn(fclose) or when the program exits.
 /*
 CEXT1(201112)
 */
+
+
+#endif

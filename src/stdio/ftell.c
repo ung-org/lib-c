@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 
 /** get the file position indicator **/
@@ -23,3 +25,6 @@ For binary streams, the indicator is the current byte position.
 UNSPECIFIED(The meaning of the file position indicator for text streams)
 STDC(1)
 */
+
+
+#endif

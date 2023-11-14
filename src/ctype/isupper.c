@@ -1,3 +1,5 @@
+#if 0
+
 #include <limits.h>
 #include "_assert.h"
 #include "_ctype.h"
@@ -26,3 +28,6 @@ C_LOCALE(`THIS() is true for the characters CHAR(A), CHAR(B), CHAR(C), CHAR(D), 
 OTHER_LOCALES(`THIS() is true for a set of characters for which none of FUNCTION(iscntrl), FUNCTION(isdigit), FUNCTION(ispunct), or FUNCTION(isspace) is true')
 STDC(1)
 */
+
+
+#endif

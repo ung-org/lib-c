@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 
 /** calculate quotient and remainder **/
@@ -20,3 +22,6 @@ UNDEFINED(The result cannot be represented)
 RETURN_SUCCESS(a TYPEDEF(ldiv_t) containing both the quotient and remainder)
 STDC(1)
 */
+
+
+#endif

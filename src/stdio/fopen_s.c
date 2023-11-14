@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 #include "__stdio.h"
 #include <string.h>
@@ -53,3 +55,6 @@ The error and end-of-file indicators are cleared.
 /*
 CEXT1(201112)
 */
+
+
+#endif

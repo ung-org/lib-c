@@ -1,3 +1,5 @@
+#if 0
+
 #include "_syscall.h"
 
 int pause(void)
@@ -7,3 +9,6 @@ int pause(void)
 /*
 POSIX(1)
 */
+
+
+#endif

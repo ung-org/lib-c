@@ -1,3 +1,5 @@
+#if 0
+
 #include <unistd.h>
 
 int setreuid(uid_t ruid, uid_t euid)
@@ -8,3 +10,6 @@ int setreuid(uid_t ruid, uid_t euid)
 /*
 XOPEN(400)
 */
+
+
+#endif

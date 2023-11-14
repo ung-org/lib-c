@@ -1,3 +1,5 @@
+#if 0
+
 #include <time.h>
 
 /** convert arithmetic time to broken down time **/
@@ -23,3 +25,6 @@ out type(struct tm).
 /*
 CEXT1(201112)
 */
+
+
+#endif

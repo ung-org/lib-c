@@ -1,3 +1,5 @@
+#if 0
+
 #include <wchar.h>
 
 int snwprintf_s(wchar_t * restrict s, rsize_t n, const wchar_t * restrict format, ...)
@@ -13,3 +15,6 @@ int snwprintf_s(wchar_t * restrict s, rsize_t n, const wchar_t * restrict format
 /*
 CEXT1(201112)
 */
+
+
+#endif

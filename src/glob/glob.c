@@ -1,3 +1,5 @@
+#if 0
+
 #include <sys/types.h>
 #include <glob.h>
 #include <stdlib.h>
@@ -119,3 +121,6 @@ int glob(const char * restrict pattern, int flags, int (*errfunc) (const char * 
 POSIX(2)
 */
 
+
+
+#endif

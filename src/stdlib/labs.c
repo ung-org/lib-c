@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 #include <limits.h>
 
@@ -22,3 +24,6 @@ UNDEFINED(ABS(ARGUMENT(j)) cannot be represented)
 RETURN_SUCCESS(ABS(ARGUMENT(j)))
 STDC(1)
 */
+
+
+#endif

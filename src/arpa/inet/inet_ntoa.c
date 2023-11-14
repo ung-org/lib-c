@@ -1,3 +1,5 @@
+#if 0
+
 #include <arpa/inet.h>
 #include <netinet/in.h>
 #include <stdio.h>
@@ -12,3 +14,6 @@ char *inet_ntoa(struct in_addr in)
 		(in.s_addr) & 0xff);
 	return s;
 }
+
+
+#endif

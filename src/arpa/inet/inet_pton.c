@@ -1,3 +1,5 @@
+#if 0
+
 #include <arpa/inet.h>
 #include <errno.h>
 #include <stdlib.h>
@@ -41,3 +43,6 @@ int inet_pton(int af, const char *restrict src, void *restrict dst)
 	/* do ipv6 conversion */
 	return 1;
 }
+
+
+#endif

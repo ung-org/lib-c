@@ -1,3 +1,5 @@
+#if 0
+
 #include <mqueue.h>
 
 int mq_getattr(mqd_t mqdes, struct mq_attr * mqstat)
@@ -9,3 +11,6 @@ int mq_getattr(mqd_t mqdes, struct mq_attr * mqstat)
 POSIX(199309)
 LINK(rt)
 */
+
+
+#endif

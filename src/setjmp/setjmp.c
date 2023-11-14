@@ -1,3 +1,5 @@
+#if 0
+
 #include <setjmp.h>
 #include <string.h>
 
@@ -31,3 +33,6 @@ UNDEFINED(A program defines an external identifier named LITERAL(setjmp))
 
 STDC(1)
 */
+
+
+#endif

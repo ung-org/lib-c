@@ -1,3 +1,5 @@
+#if 0
+
 #include <threads.h>
 #include <pthread.h>
 
@@ -9,3 +11,6 @@ thrd_t thrd_current(void)
 /*
 STDC(201112)
 */
+
+
+#endif

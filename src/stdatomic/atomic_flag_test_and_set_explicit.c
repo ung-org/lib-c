@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdatomic.h>
 
 _Bool atomic_flag_test_and_set_explicit(volatile atomic_flag *object, memory_order order)
@@ -7,3 +9,6 @@ _Bool atomic_flag_test_and_set_explicit(volatile atomic_flag *object, memory_ord
 	*object = 1;
 	return r;
 }
+
+
+#endif

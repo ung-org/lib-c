@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 
 /** convert string to floating-point **/
@@ -17,3 +19,6 @@ LC_CTYPE
 RETURN_SUCCESS(the converted value)
 STDC(1)
 */
+
+
+#endif

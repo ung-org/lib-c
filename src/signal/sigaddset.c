@@ -1,3 +1,5 @@
+#if 0
+
 #include <sys/types.h>
 #include <signal.h>
 #include <limits.h>
@@ -14,3 +16,6 @@ int sigaddset(sigset_t * set, int signo)
 /*
 POSIX(1)
 */
+
+
+#endif

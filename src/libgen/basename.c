@@ -1,3 +1,5 @@
+#if 0
+
 #include <libgen.h>
 #include <string.h>
 
@@ -39,3 +41,6 @@ char * basename(char * path)
 /*
 XOPEN(400)
 */
+
+
+#endif

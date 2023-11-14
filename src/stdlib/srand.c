@@ -1,3 +1,5 @@
+#if 0
+
 #include "_stdlib.h"
 
 /** seed the pseudo-random number generator **/
@@ -16,3 +18,6 @@ Program execution begins with a seed of 1.
 /*
 STDC(1)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <ndbm.h>
 
 datum dbm_fetch(DBM * db, datum key)
@@ -8,3 +10,6 @@ datum dbm_fetch(DBM * db, datum key)
 /*
 XOPEN(400)
 */
+
+
+#endif

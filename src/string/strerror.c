@@ -1,3 +1,5 @@
+#if 0
+
 #include <errno.h>
 #include <stdio.h>
 #include <string.h>
@@ -32,3 +34,6 @@ subsequent calls.
 /*
 STDC(1)
 */
+
+
+#endif

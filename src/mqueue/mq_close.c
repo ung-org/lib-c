@@ -1,3 +1,5 @@
+#if 0
+
 #include <mqueue.h>
 
 int mq_close(mqd_t mqdes)
@@ -9,3 +11,6 @@ int mq_close(mqd_t mqdes)
 POSIX(199309)
 LINK(rt)
 */
+
+
+#endif

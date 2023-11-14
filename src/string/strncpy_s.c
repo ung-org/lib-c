@@ -1,3 +1,5 @@
+#if 0
+
 #include <string.h>
 
 /** copy bounded string **/
@@ -41,3 +43,6 @@ terminated.
 /*
 CEXT1(201112)
 */
+
+
+#endif

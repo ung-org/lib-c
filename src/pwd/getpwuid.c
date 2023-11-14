@@ -1,3 +1,5 @@
+#if 0
+
 #include <sys/types.h>
 #include <pwd.h>
 #include "_pwd.h"
@@ -21,3 +23,6 @@ struct passwd * getpwuid(uid_t uid)
 /*
 POSIX(1)
 */
+
+
+#endif

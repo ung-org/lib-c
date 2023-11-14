@@ -1,3 +1,5 @@
+#if 0
+
 #include <wchar.h>
 #include <locale.h>
 #include <string.h>
@@ -20,3 +22,6 @@ int wctob(wint_t c)
 /*
 STDC(199409)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 #include <ctype.h>
 #include <limits.h>
@@ -17,3 +19,6 @@ long long int strtoll(const char * restrict nptr, char ** restrict endptr, int b
 /*
 STDC(199901)
 */
+
+
+#endif

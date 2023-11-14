@@ -1,3 +1,5 @@
+#if 0
+
 #include <time.h>
 
 /** get processor time **/
@@ -18,3 +20,6 @@ RETURN_FAILURE(CAST(TYPEDEF(clock_t), -1))
 RETURN_SUCCESS(the processor time of the current program)
 STDC(1)
 */
+
+
+#endif

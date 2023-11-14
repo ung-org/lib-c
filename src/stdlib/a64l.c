@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 
 long a64l(const char *s)
@@ -19,3 +21,6 @@ long a64l(const char *s)
 /*
 XOPEN(400)
 */
+
+
+#endif

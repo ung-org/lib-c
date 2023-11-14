@@ -1,3 +1,5 @@
+#if 0
+
 #include <sys/types.h>
 #include <unistd.h>
 #include "_syscall.h"
@@ -9,3 +11,6 @@ off_t lseek(int fildes, off_t offset, int whence)
 /*
 POSIX(1)
 */
+
+
+#endif

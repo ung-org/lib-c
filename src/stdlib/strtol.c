@@ -1,3 +1,5 @@
+#if 0
+
 #include <ctype.h>
 #include <errno.h>
 #include <limits.h>
@@ -45,3 +47,6 @@ RETURN(CONSTANT(LONG_MIN), converted value too small)
 RETURN(a TYPE(long int) value, the converted value)
 STDC(1)
 */
+
+
+#endif

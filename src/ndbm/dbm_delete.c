@@ -1,3 +1,5 @@
+#if 0
+
 #include <ndbm.h>
 
 int dbm_delete(DBM * db, datum key)
@@ -8,3 +10,6 @@ int dbm_delete(DBM * db, datum key)
 /*
 XOPEN(400)
 */
+
+
+#endif

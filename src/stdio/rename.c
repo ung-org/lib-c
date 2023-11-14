@@ -1,3 +1,5 @@
+#if 0
+
 #include <errno.h>
 #include <stdio.h>
 #include "_syscall.h"
@@ -18,3 +20,6 @@ ARGUMENT(new).
 IMPLEMENTATION(Behavior if ARGUMENT(new) exists prior to THIS() being called)
 STDC(1)
 */
+
+
+#endif

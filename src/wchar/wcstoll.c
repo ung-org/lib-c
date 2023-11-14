@@ -1,3 +1,5 @@
+#if 0
+
 #include <wchar.h>
 #include <limits.h>
 #include <errno.h>
@@ -19,3 +21,6 @@ long long int wcstoll(const wchar_t * restrict nptr, wchar_t ** restrict endptr,
 /*
 STDC(199901)
 */
+
+
+#endif

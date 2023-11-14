@@ -1,3 +1,5 @@
+#if 0
+
 #include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -63,3 +65,6 @@ The error and end-of-file indicators are cleared.
 /*
 STDC(1)
 */
+
+
+#endif

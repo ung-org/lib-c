@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 
 int putenv(char * string)
@@ -8,3 +10,6 @@ int putenv(char * string)
 /*
 XOPEN(4)
 */
+
+
+#endif

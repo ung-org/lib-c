@@ -1,3 +1,5 @@
+#if 0
+
 #include <sys/types.h>
 #include <signal.h>
 #include "_syscall.h"
@@ -9,3 +11,6 @@ int sigpending(sigset_t * set)
 /*
 POSIX(1)
 */
+
+
+#endif

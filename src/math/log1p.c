@@ -1,3 +1,5 @@
+#if 0
+
 # define TGSOURCE "log1p.c"
 #include "_tgmath.h"
 #include <math.h>
@@ -29,3 +31,6 @@ STDC(199901)
 XOPEN(400)
 LINK(m)
 */
+
+
+#endif

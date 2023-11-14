@@ -1,3 +1,5 @@
+#if 0
+
 #include <time.h>
 #include <stdlib.h>
 #include <string.h>
@@ -40,3 +42,6 @@ void tzset(void)
 /*
 POSIX(1)
 */
+
+
+#endif

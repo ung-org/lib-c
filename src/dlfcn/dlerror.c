@@ -1,3 +1,5 @@
+#if 0
+
 #include <dlfcn.h>
 #include "_dlfcn.h"
 
@@ -10,3 +12,6 @@ char *dlerror(void)
 /*
 XOPEN(500)
 */
+
+
+#endif

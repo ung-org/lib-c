@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 
 int snprintf_s( char * restrict s, rsize_t n, const char * restrict format, ...)
@@ -8,3 +10,6 @@ int snprintf_s( char * restrict s, rsize_t n, const char * restrict format, ...)
 /*
 CEXT1(201112)
 */
+
+
+#endif

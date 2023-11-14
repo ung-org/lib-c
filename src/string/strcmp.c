@@ -1,3 +1,5 @@
+#if 0
+
 #include <string.h>
 #include "_assert.h"
 
@@ -40,3 +42,6 @@ compares the strings at ARGUMENT(s1) and ARGUMENT(s2).
 /*
 STDC(1)
 */
+
+
+#endif

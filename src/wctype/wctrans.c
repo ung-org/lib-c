@@ -1,3 +1,5 @@
+#if 0
+
 #include <wctype.h>
 #include <string.h>
 #include "_assert.h"
@@ -36,3 +38,6 @@ ctrans(toupper).
 /*
 STDC(199409)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <sys/types.h>
 #include <regex.h>
 
@@ -13,3 +15,6 @@ int regcomp(regex_t * restrict preg, const char * restrict pattern, int cflags)
 /*
 POSIX(2)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 #include <limits.h>
 
@@ -28,3 +30,6 @@ remain unchanged.
 /*
 STDC(1,201112)
 */
+
+
+#endif

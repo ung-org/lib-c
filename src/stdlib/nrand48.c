@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 
 long nrand48(unsigned short xsubi[3])
@@ -8,3 +10,6 @@ long nrand48(unsigned short xsubi[3])
 /*
 XOPEN(4)
 */
+
+
+#endif

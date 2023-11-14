@@ -1,3 +1,5 @@
+#if 0
+
 #if ((!defined _POSIX_C_SOURCE) || (_POSIX_C_SOURCE < 2))
 #undef _POSIX_C_SOURCE
 #define _POSIX_C_SOURCE 2
@@ -87,3 +89,6 @@ struct group * getgrent(void)
 /*
 XOPEN(400)
 */
+
+
+#endif

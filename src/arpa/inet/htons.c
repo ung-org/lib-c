@@ -1,3 +1,5 @@
+#if 0
+
 #include <arpa/inet.h>
 
 uint16_t htons(uint16_t hostshort)
@@ -12,3 +14,6 @@ uint16_t htons(uint16_t hostshort)
 
 	return u.u;
 }
+
+
+#endif

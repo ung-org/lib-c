@@ -1,3 +1,5 @@
+#if 0
+
 #include <string.h>
 #include "_assert.h"
 
@@ -31,3 +33,6 @@ ARGUMENT(s2), or until the first CHAR(\0), whichever comes first.
 /*
 STDC(1)
 */
+
+
+#endif

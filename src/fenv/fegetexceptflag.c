@@ -1,3 +1,5 @@
+#if 0
+
 #include <fenv.h>
 
 int fegetexceptflag(fexcept_t *flagp, int excepts)
@@ -16,3 +18,6 @@ d*/
 STDC(199901)
 LINK(m)
 */
+
+
+#endif

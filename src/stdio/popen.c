@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 #include <string.h>
 #include <errno.h>
@@ -70,3 +72,6 @@ FILE * popen(const char * command, const char * mode)
 POSIX(2)
 */
 
+
+
+#endif

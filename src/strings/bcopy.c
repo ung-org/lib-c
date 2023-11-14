@@ -1,3 +1,5 @@
+#if 0
+
 #include <string.h>
 #include <strings.h>
 
@@ -10,3 +12,6 @@ int bcopy(const void *s1, void *s2, size_t n)
 /*
 XOPEN(400,700)
 */
+
+
+#endif

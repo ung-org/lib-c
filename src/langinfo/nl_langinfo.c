@@ -1,3 +1,5 @@
+#if 0
+
 #include <nl_types.h>
 #include <langinfo.h>
 #include <stddef.h>
@@ -68,3 +70,6 @@ char * nl_langinfo(nl_item item)
 XOPEN(4)
 POSIX(200809)
 */
+
+
+#endif

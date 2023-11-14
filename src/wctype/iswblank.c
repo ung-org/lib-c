@@ -1,3 +1,5 @@
+#if 0
+
 #include <wctype.h>
 #include "_assert.h"
 
@@ -25,3 +27,6 @@ class cclass(blank) in the current locale.
 /*
 STDC(199901)
 */
+
+
+#endif

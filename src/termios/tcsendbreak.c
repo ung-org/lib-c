@@ -1,3 +1,5 @@
+#if 0
+
 #include <termios.h>
 #include "_termios.h"
 
@@ -8,3 +10,6 @@ int tcsendbreak(int fildes, int duration)
 /*
 POSIX(1)
 */
+
+
+#endif

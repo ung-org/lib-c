@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 #include "_stdlib.h"
 
@@ -41,3 +43,6 @@ streams are closed. All temporary files created by fn(tmpfile) are removed.
 /*
 STDC(201112)
 */
+
+
+#endif

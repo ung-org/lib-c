@@ -1,3 +1,5 @@
+#if 0
+
 #include <wchar.h>
 #include <stdio.h>
 #include "stdio/_stdio.h"
@@ -16,3 +18,6 @@ int fwide(FILE * stream, int mode)
 /*
 STDC(199409)
 */
+
+
+#endif

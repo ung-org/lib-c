@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 #include <stdarg.h>
 #include "_stdio.h"
@@ -21,3 +23,6 @@ int snprintf(char * restrict s, size_t n, const char * restrict format, ...)
 /*
 STDC(199901)
 */
+
+
+#endif

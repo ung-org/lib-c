@@ -1,3 +1,5 @@
+#if 0
+
 #include <string.h>
 
 size_t strnlen_s(const char *s, size_t maxsize)
@@ -15,3 +17,6 @@ size_t strnlen_s(const char *s, size_t maxsize)
 /*
 CEXT1(201112)
 */
+
+
+#endif

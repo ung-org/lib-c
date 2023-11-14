@@ -1,3 +1,5 @@
+#if 0
+
 #include <wchar.h>
 
 errno_t wcsrtombs_s(size_t * restrict retval,
@@ -11,3 +13,6 @@ errno_t wcsrtombs_s(size_t * restrict retval,
 /*
 CEXT1(201112)
 */
+
+
+#endif

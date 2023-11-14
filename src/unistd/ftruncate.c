@@ -1,3 +1,5 @@
+#if 0
+
 #include <unistd.h>
 
 int ftruncate(int fildes, off_t length)
@@ -14,3 +16,6 @@ int ftruncate(int fildes, off_t length)
 XOPEN(400)
 POSIX(199309)
 */
+
+
+#endif

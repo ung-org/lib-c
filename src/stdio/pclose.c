@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 #include <sys/types.h>
 #include <sys/wait.h>
@@ -21,3 +23,6 @@ int pclose(FILE * stream)
 POSIX(2)
 */
 
+
+
+#endif

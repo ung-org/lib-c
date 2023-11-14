@@ -1,3 +1,5 @@
+#if 0
+
 #include "_perthread.h"
 
 /*
@@ -14,3 +16,6 @@ int *__errno(void)
 	THREAD_LOCAL int e = 0;
         return &e;
 }
+
+
+#endif

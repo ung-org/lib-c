@@ -1,3 +1,5 @@
+#if 0
+
 #include <wchar.h>
 
 int wscanf_s(const wchar_t * restrict format, ...)
@@ -13,3 +15,6 @@ int wscanf_s(const wchar_t * restrict format, ...)
 /*
 CEXT1(201112)
 */
+
+
+#endif

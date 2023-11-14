@@ -1,3 +1,5 @@
+#if 0
+
 #include <sys/types.h>
 #include <fcntl.h>
 
@@ -9,3 +11,6 @@ int creat(const char *path, mode_t mode)
 /*
 POSIX(1)
 */
+
+
+#endif

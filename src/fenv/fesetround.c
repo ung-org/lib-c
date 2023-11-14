@@ -1,3 +1,5 @@
+#if 0
+
 #include <fenv.h>
 
 int fesetround(int round)
@@ -21,3 +23,6 @@ int fesetround(int round)
 STDC(199901)
 LINK(m)
 */
+
+
+#endif

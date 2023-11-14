@@ -1,3 +1,5 @@
+#if 0
+
 #include <unistd.h>
 
 int truncate(const char *path, off_t length)
@@ -9,3 +11,6 @@ int truncate(const char *path, off_t length)
 XOPEN(400)
 POSIX(200809)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 
 /** convert wide character string to multibyte string **/
@@ -23,3 +25,6 @@ RETURN_FAILURE(-1)
 RETURN_SUCCESS(the number of bytes modified, not counting any terminating null)
 STDC(1)
 */
+
+
+#endif

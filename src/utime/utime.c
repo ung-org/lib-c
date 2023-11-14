@@ -1,3 +1,5 @@
+#if 0
+
 #include <time.h>
 #include <utime.h>
 #include "_syscall.h"
@@ -9,3 +11,6 @@ int utime(const char *path, const struct utimbuf *times)
 /*
 POSIX(1)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -12,3 +14,6 @@ void __assert(const char *expr, const char *file, int line, const char *func)
         }
         abort();
 }
+
+
+#endif

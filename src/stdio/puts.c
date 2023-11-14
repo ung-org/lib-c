@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 #include "_stdio.h"
 
@@ -39,3 +41,6 @@ followed by a newline. The terminated CHAR(\0) is not written.
 /*
 STDC(1)
 */
+
+
+#endif

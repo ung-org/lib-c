@@ -1,3 +1,5 @@
+#if 0
+
 #include <fenv.h>
 
 int feupdateenv(const fenv_t *envp)
@@ -18,3 +20,6 @@ int feupdateenv(const fenv_t *envp)
 STDC(199901)
 LINK(m)
 */
+
+
+#endif

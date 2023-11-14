@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdio.h>
 #include "_stdio.h"
 
@@ -39,3 +41,6 @@ The file position indicate is advanced by the number of bytes read.
 /*
 STDC(1)
 */
+
+
+#endif

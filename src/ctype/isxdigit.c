@@ -1,3 +1,5 @@
+#if 0
+
 #include <limits.h>
 #include "_assert.h"
 #include "_ctype.h"
@@ -25,3 +27,6 @@ LC_CTYPE
 C_LOCALE(`THIS() is true for the characters CHAR(0), CHAR(1), CHAR(2), CHAR(3), CHAR(4), CHAR(5), CHAR(6), CHAR(7), CHAR(8), CHAR(9), CHAR(a), CHAR(b), CHAR(c), CHAR(d), CHAR(e), CHAR(f), CHAR(A), CHAR(B), CHAR(C), CHAR(D), CHAR(E), and CHAR(F)')
 STDC(1)
 */
+
+
+#endif

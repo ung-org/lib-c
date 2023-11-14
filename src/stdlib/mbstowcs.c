@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 
 /** convert multibyte string to wide character string **/
@@ -28,3 +30,6 @@ RETURN_FAILURE(-1)
 RETURN_SUCCESS(the number of wide characters converted, not counting any terminating zero)
 STDC(1)
 */
+
+
+#endif

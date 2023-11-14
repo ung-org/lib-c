@@ -1,3 +1,5 @@
+#if 0
+
 #include <ctype.h>
 #include <errno.h>
 #include <float.h>
@@ -48,3 +50,6 @@ RETURN(CONSTANT(-HUGE_VAL), converted value too small)
 RETURN(VAR(a TYPE(double)), the converted value)
 STDC(1)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <sys/types.h>
 #include <termios.h>
 
@@ -14,3 +16,6 @@ pid_t tcgetsid(int fildes)
 XOPEN(400)
 POSIX(200809)
 */
+
+
+#endif

@@ -1,3 +1,5 @@
+#if 0
+
 #include <dirent.h>
 #include <sys/types.h>
 #include <unistd.h>
@@ -18,3 +20,6 @@ int closedir(DIR *dirp)
 /*
 POSIX(1)
 */
+
+
+#endif

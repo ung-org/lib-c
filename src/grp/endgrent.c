@@ -1,3 +1,5 @@
+#if 0
+
 #include <grp.h>
 #include <stdio.h>
 #include "_grp.h"
@@ -13,3 +15,6 @@ void endgrent(void)
 /*
 XOPEN(400)
 */
+
+
+#endif
