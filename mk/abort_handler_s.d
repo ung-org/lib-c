@@ -3,6 +3,8 @@ libc.a(abort_handler_s.o): $(OBJDIR)/abort_handler_s.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/abort_handler_s.o: src/stdlib/abort_handler_s.c
+$(OBJDIR)/abort_handler_s.o: src/errno/errno_t.h
+$(OBJDIR)/abort_handler_s.o: src/stdlib/_stdlib.h
 $(OBJDIR)/abort_handler_s.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

@@ -1918,6 +1918,10 @@ all: mk/__assert.d
 mk/__assert.d: src/assert/__assert.c
 	sh mk/deps.sh src/assert/__assert.c
 
+all: mk/assert.d
+mk/assert.d: src/assert/assert.c
+	sh mk/deps.sh src/assert/assert.c
+
 all: mk/iscntrl.d
 mk/iscntrl.d: src/ctype/iscntrl.c
 	sh mk/deps.sh src/ctype/iscntrl.c

@@ -477,6 +477,7 @@ include mk/waitid.d
 include mk/wait3.d
 include mk/uname.d
 include mk/__assert.d
+include mk/assert.d
 include mk/iscntrl.d
 include mk/isalpha.d
 include mk/toupper.d
