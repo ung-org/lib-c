@@ -5,7 +5,6 @@ libc.a(getpwent.o): $(OBJDIR)/getpwent.o
 $(OBJDIR)/getpwent.o: src/pwd/getpwent.c
 $(OBJDIR)/getpwent.o: src/_config.h
 $(OBJDIR)/getpwent.o: src/pwd/_pwd.h
-$(OBJDIR)/getpwent.o: 
 $(OBJDIR)/getpwent.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

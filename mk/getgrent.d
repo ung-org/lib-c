@@ -5,7 +5,6 @@ libc.a(getgrent.o): $(OBJDIR)/getgrent.o
 $(OBJDIR)/getgrent.o: src/grp/getgrent.c
 $(OBJDIR)/getgrent.o: src/_config.h
 $(OBJDIR)/getgrent.o: src/grp/_grp.h
-$(OBJDIR)/getgrent.o: 
 $(OBJDIR)/getgrent.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

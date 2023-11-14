@@ -4,12 +4,12 @@ libc.a(waitpid.o): $(OBJDIR)/waitpid.o
 
 $(OBJDIR)/waitpid.o: src/sys/wait/waitpid.c
 $(OBJDIR)/waitpid.o: src/_syscall.h
-$(OBJDIR)/waitpid.o: 
-$(OBJDIR)/waitpid.o: 
-$(OBJDIR)/waitpid.o: 
-$(OBJDIR)/waitpid.o: 
-$(OBJDIR)/waitpid.o: 
-$(OBJDIR)/waitpid.o: 
+$(OBJDIR)/waitpid.o: src/signal/union_sigval.h
+$(OBJDIR)/waitpid.o: src/signal/siginfo_t.h
+$(OBJDIR)/waitpid.o: src/sys/wait/idtype_t.h
+$(OBJDIR)/waitpid.o: src/sys/wait/P_PID.h
+$(OBJDIR)/waitpid.o: src/sys/wait/P_PGID.h
+$(OBJDIR)/waitpid.o: src/sys/wait/P_ALL.h
 $(OBJDIR)/waitpid.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

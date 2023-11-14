@@ -5,9 +5,6 @@ libm.a(clog.o): $(OBJDIR)/clog.o
 $(OBJDIR)/clog.o: src/complex/clog.c
 $(OBJDIR)/clog.o: src/complex/_tgmath.h
 $(OBJDIR)/src/math/_tgmath.h.o: 
-$(OBJDIR)/clog.o: 
-$(OBJDIR)/clog.o: 
-$(OBJDIR)/clog.o: 
 $(OBJDIR)/clog.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

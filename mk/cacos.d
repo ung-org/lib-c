@@ -5,9 +5,6 @@ libm.a(cacos.o): $(OBJDIR)/cacos.o
 $(OBJDIR)/cacos.o: src/complex/cacos.c
 $(OBJDIR)/cacos.o: src/complex/_tgmath.h
 $(OBJDIR)/src/math/_tgmath.h.o: 
-$(OBJDIR)/cacos.o: 
-$(OBJDIR)/cacos.o: 
-$(OBJDIR)/cacos.o: 
 $(OBJDIR)/cacos.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)
