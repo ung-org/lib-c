@@ -6,6 +6,8 @@
 #include "errno/ENOSYS.h"
 #endif
 
+#define __syscall syscall
+
 #define SYSCALL(_name, _type, _err, _a1, _a2, _a3, _a4, _a5, _a6) \
 	static int _scno = -2; \
 	if (_scno == -2) { \
