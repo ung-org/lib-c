@@ -1,7 +1,5 @@
-#if 0
-
 #include <limits.h>
-#include "_assert.h"
+#include <stdio.h>
 #include "_ctype.h"
 
 /** test whether a character is a control character */
@@ -26,6 +24,3 @@ RETURN(0, ARGUMENT(c) is not a control character)
 LC_CTYPE
 STDC(1)
 */
-
-
-#endif

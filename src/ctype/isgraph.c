@@ -1,7 +1,5 @@
-#if 0
-
 #include <limits.h>
-#include "_assert.h"
+#include <stdio.h>
 #include "_ctype.h"
 
 /** test whether a character is graphic **/
@@ -27,6 +25,3 @@ LC_CTYPE
 C_LOCALE(`THIS() is true for all printable characters other than SPACE()')
 STDC(1)
 */
-
-
-#endif

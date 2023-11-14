@@ -1,7 +1,6 @@
-#if 0
-
 #include <ctype.h>
 #include <limits.h>
+#include <stdio.h>
 #include "_assert.h"
 
 /** test whether a character is alphabetic **/
@@ -25,6 +24,3 @@ C_LOCALE(`THIS() is true for characters for which FUNCTION(isupper) or FUNCTION(
 OTHER_LOCALES(`THIS is true for a set of characters for which none of FUNCTION(iscntrl), FUNCTION(isdigit), FUNCTION(ispunct), or FUNCTION(isspace) is true')
 STDC(1)
 */
-
-
-#endif

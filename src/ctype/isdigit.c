@@ -1,7 +1,6 @@
-#if 0
-
 #include <ctype.h>
 #include <limits.h>
+#include <stdio.h>
 #include "_assert.h"
 
 /** test whether a character is a digit **/
@@ -25,6 +24,3 @@ LC_CTYPE
 C_LOCALE(`THIS() is true for characters CHAR(0), CHAR(1), CHAR(2), CHAR(3), CHAR(4), CHAR(5), CHAR(6), CHAR(7), CHAR(8), and CHAR(9)')
 STDC(1)
 */
-
-
-#endif

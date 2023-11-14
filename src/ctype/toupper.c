@@ -1,7 +1,6 @@
-#if 0
-
 #include <stdio.h>
 #include <limits.h>
+#include <stdio.h>
 #include "_ctype.h"
 
 /** convert a lowercase letter to uppercase **/
@@ -30,6 +29,3 @@ RETURN_FAILURE(ARGUMENT(c), ARGUMENT(c) was not a lowercase letter or it has no 
 LC_CTYPE
 STDC(1)
 */
-
-
-#endif

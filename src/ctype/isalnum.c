@@ -1,7 +1,6 @@
-#if 0
-
 #include <ctype.h>
 #include <limits.h>
+#include <stdio.h>
 #include "_assert.h"
 
 /** test whether a character is alphanumeric **/
@@ -23,6 +22,3 @@ RETURN(0, ARGUMENT(c) is not an alphanumeric character)
 LC_CTYPE
 STDC(1)
 */
-
-
-#endif
