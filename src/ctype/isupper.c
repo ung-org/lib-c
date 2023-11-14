@@ -10,7 +10,7 @@ int isupper(int c)
 
 	ASSERT_REPRESENTABLE(c, 0, UCHAR_MAX, unsigned char, EOF);
 
-	return map[c] & CT_UPPER;
+	return c == EOF ? 0 : map[c] & CT_UPPER;
 }
 
 /***
