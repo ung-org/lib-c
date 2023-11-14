@@ -17,7 +17,7 @@ struct __locale_t * __get_locale(void)
 	static int loaded = 0;
 	if (!loaded) {
 		loaded = 1;
-		__load_locale(&l, LC_ALL, DEFAULT_LOCALE);
+		__load_locale(&l, LC_ALL_MASK, DEFAULT_LOCALE);
 	}
 	return &l;
 }
