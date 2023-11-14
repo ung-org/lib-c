@@ -8,7 +8,7 @@ BASE_CFLAGS=-g -Wall -Wextra -Werror -nostdinc -fno-builtin -fno-stack-protector
 OBJDIR=obj
 SRCDIR=src
 
-all:
+all: libung.so
 
 include mk/all.mk
 
@@ -19,6 +19,9 @@ cleandeps:
 newdeps: cleandeps
 	printf '.POSIX:\n\nall:\n\n' > mk/deps.mk
 	for i in $$(find src -name \*.c); do sh mk/deps.sh $$i; done
+
+libung.so: libc.a libm.a
+	$(CC) -o libung.so -shared obj/*.o
 
 deps:
 	$(MAKE) -f mk/deps.mk
