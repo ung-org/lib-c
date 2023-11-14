@@ -1,3 +1,5 @@
+#if 0
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <locale.h>
@@ -27,3 +29,6 @@ void __main(int argc, char **argv)
 }
 
 void __stack_chk_fail(void) {}
+
+
+#endif
