@@ -1,5 +1,3 @@
-#if 0
-
 #include <stdlib.h>
 #include <stdio.h>
 #include "_stdlib.h"
@@ -10,6 +8,14 @@ _Noreturn void exit(int status)
 {
 	long scno = __syscall_lookup(exit);
 	struct atexit *ae = &(__stdlib.atexit);
+
+	if (__stdlib.quick_exit_called) {
+		__stdlib.constraint_handler("Undefined behavior: exit() called after quick_exit()", NULL, 0);
+	}
+	if (__stdlib.exit_called) {
+		__stdlib.constraint_handler("Undefined behavior: exit() called twice", NULL, 0);
+	}
+	__stdlib.exit_called = 1;
 
 	/* execute all atexit() registered functions in reverse order */
 	while (ae) {
@@ -47,6 +53,3 @@ IMPLEMENTATION(The unsuccessful termination value returned to the host environme
 /*
 STDC(1)
 */
-
-
-#endif

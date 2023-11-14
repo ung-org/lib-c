@@ -19,6 +19,8 @@ struct __stdlib {
         	struct atexit *next;
         	struct atexit *prev;
 	} atexit;
+	int exit_called;
+	int quick_exit_called;
 	unsigned int rand;
 	char **environ;
 	constraint_handler_t constraint_handler;

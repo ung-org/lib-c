@@ -1,5 +1,3 @@
-#if 0
-
 #include <errno.h>
 #include <stdlib.h>
 #include "_stdlib.h"
@@ -38,6 +36,3 @@ RETURN_FAILURE(NONZERO)
 RETURN_SUCCESS(0)
 STDC(1)
 */
-
-
-#endif
