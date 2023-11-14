@@ -12,6 +12,7 @@ void abort_handler_s(const char * restrict msg, void * restrict ptr, errno_t err
 	puts(msg);
 	if (ci) {
 		printf("In call to %s\n", ci->func);
+		printf("value %x\n", ci->value);
 	}
 	if (error != 0) {
 		printf("Provided error: %s (%d)\n", strerror(error), error);

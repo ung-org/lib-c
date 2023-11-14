@@ -1,8 +1,9 @@
 #ifndef ___ASSERT_H__
 #define ___ASSERT_H__
 
+#include <errno.h>
+#include <stdio.h>
 #include "stdlib/_stdlib.h"
-#include "errno/ERANGE.h"
 
 #ifndef NDEBUG
 #define ASSERT_NONNULL(__ptr) do { \
@@ -28,9 +29,10 @@
 } while (0)
 
 #define ASSERT_REPRESENTABLE(_n, _min, _max, _type, _sentinel) do { \
-	if ((_n) != _sentinel && ((_n) < _min || (_n) > _max)) { \
+	if (!(((_n) == (_sentinel)) || (((_min) <= (_n)) && ((_n) <= (_max))))) { \
 		struct __constraint_info _ci = {0}; \
 		_ci.func = __func__; \
+		_ci.value = _n; \
 		__stdlib.constraint_handler("Undefined behavior: " \
 			"Parameter " #_n " must be representable as a " #_type \
 			" or be equal to " #_sentinel, &_ci, ERANGE); \
