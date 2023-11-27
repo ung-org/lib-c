@@ -4,6 +4,7 @@
 #include "stdio/_stdio.h"
 #include "stdlib/_stdlib.h"
 
+__attribute__((constructor))
 void __init_libc(void)
 {
 	static int init = 0;
