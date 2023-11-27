@@ -5,13 +5,22 @@
 #include <stdio.h>
 #include "stdlib/_stdlib.h"
 
+#ifdef THREADS
+_Thread_local
+#endif
+extern struct __checked_call {
+	char *file;
+	char *func;
+	unsigned long long line;
+} __checked_call;
+
 #ifndef NDEBUG
 #define ASSERT_NONNULL(__ptr) do { \
 	if (!__ptr) { \
 		struct __constraint_info _ci = {0}; \
 		_ci.func = __func__; \
 		__stdlib.constraint_handler("Undefined behavior: " \
-			"Parameter " #__ptr " can not be NULL", &_ci, EFAULT); \
+			"Parameter " #__ptr " can not be NULL", &_ci, 0 /* was EFAULT */); \
 	} \
 } while (0)
 
