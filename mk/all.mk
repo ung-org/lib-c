@@ -210,6 +210,7 @@ include mk/cfsetispeed.d
 include mk/tcsendbreak.d
 include mk/tcgetsid.d
 include mk/tcflush.d
+include mk/__checked_call.d
 include mk/wordexp.d
 include mk/wordfree.d
 include mk/setlocale.d
@@ -807,6 +808,7 @@ include mk/opendir.d
 include mk/rewinddir.d
 include mk/closedir.d
 include mk/readdir.d
+include mk/__checked_i.d
 include mk/mq_unlink.d
 include mk/mq_setattr.d
 include mk/mq_notify.d
@@ -851,3 +853,6 @@ include mk/sched_get_priority_min.d
 include mk/sched_getparam.d
 include mk/sched_yield.d
 include mk/sched_setparam.d
+include mk/__sys.x86-64.s.d
+include mk/__setjmp.x86-64.s.d
+include mk/__longjmp.x86-64.s.d

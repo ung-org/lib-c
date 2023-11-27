@@ -850,6 +850,10 @@ all: mk/tcflush.d
 mk/tcflush.d: src/termios/tcflush.c
 	sh mk/deps.sh src/termios/tcflush.c
 
+all: mk/__checked_call.d
+mk/__checked_call.d: src/__checked_call.c
+	sh mk/deps.sh src/__checked_call.c
+
 all: mk/wordexp.d
 mk/wordexp.d: src/wordexp/wordexp.c
 	sh mk/deps.sh src/wordexp/wordexp.c
@@ -3246,6 +3250,10 @@ all: mk/readdir.d
 mk/readdir.d: src/dirent/readdir.c
 	sh mk/deps.sh src/dirent/readdir.c
 
+all: mk/__checked_i.d
+mk/__checked_i.d: src/__checked_i.c
+	sh mk/deps.sh src/__checked_i.c
+
 all: mk/mq_unlink.d
 mk/mq_unlink.d: src/mqueue/mq_unlink.c
 	sh mk/deps.sh src/mqueue/mq_unlink.c
@@ -3421,4 +3429,16 @@ mk/sched_yield.d: src/sched/sched_yield.c
 all: mk/sched_setparam.d
 mk/sched_setparam.d: src/sched/sched_setparam.c
 	sh mk/deps.sh src/sched/sched_setparam.c
+
+all: mk/__sys.x86-64.s.d
+mk/__sys.x86-64.s.d: src/__sys.x86-64.s
+	sh mk/deps.sh src/__sys.x86-64.s
+
+all: mk/__setjmp.x86-64.s.d
+mk/__setjmp.x86-64.s.d: src/setjmp/__setjmp.x86-64.s
+	sh mk/deps.sh src/setjmp/__setjmp.x86-64.s
+
+all: mk/__longjmp.x86-64.s.d
+mk/__longjmp.x86-64.s.d: src/setjmp/__longjmp.x86-64.s
+	sh mk/deps.sh src/setjmp/__longjmp.x86-64.s
 
