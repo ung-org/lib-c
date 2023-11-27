@@ -22,7 +22,7 @@ newdeps: cleandeps
 	for i in $$(find src -name \*.$(ARCHITECTURE)-$(WORDSIZE).s); do sh mk/deps.sh $$i; done
 
 libung.so: libc.a libm.a
-	$(CC) -o libung.so -shared $$(ls -1 obj/*.o | grep -v __main.o)
+	$(CC) -o libung.so -shared obj/*.o
 
 deps:
 	$(MAKE) -f mk/deps.mk

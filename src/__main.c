@@ -1,16 +1,16 @@
-#if 0
-
 #include <stdlib.h>
 #include <stdio.h>
 #include <locale.h>
 #include "stdio/_stdio.h"
 #include "stdlib/_stdlib.h"
 
-void __main(int argc, char **argv)
+void __init_libc(void)
 {
-	extern int main(int, char*[]);
-
-	environ = argv + argc + 1;
+	static int init = 0;
+	if (init) {
+		return;
+	}
+	init = 1;
 
 	stdin = __stdio.FILES + 0;
 	stdin->fd = 0;
@@ -24,11 +24,29 @@ void __main(int argc, char **argv)
 	stderr->fd = 2;
 	freopen(NULL, "w", stderr);
 	setvbuf(stderr, NULL, _IONBF, 0);
+}
+
+void __main(int argc, char **argv)
+{
+	extern int main(int, char*[]);
+
+	environ = argv + argc + 1;
+	__init_libc();
 
 	exit(main(argc, argv));
 }
 
+__attribute__((weak))
+int main(int argc, char *argv[])
+{
+	(void)argc;
+	(void)argv;
+	return 0;
+}
+
 void __stack_chk_fail(void) {}
 
-
-#endif
+/*
+void _init(void) {}
+void _fini(void) {}
+*/
