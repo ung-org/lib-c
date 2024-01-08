@@ -7,6 +7,7 @@
 
 int isalnum(int c)
 {
+	SIGNAL_SAFE(0);
 	ASSERT_REPRESENTABLE(c, 0, UCHAR_MAX, unsigned char, EOF);
 	return isalpha(c) || isdigit(c);
 }

@@ -4,6 +4,7 @@
 
 int toascii(int c)
 {
+	SIGNAL_SAFE(0);
 	return (c & 0x7f);
 }
 

@@ -4,6 +4,7 @@
 
 int isascii(int c)
 {
+	SIGNAL_SAFE(0);
 	if (0 <= c && c <= 0177) {
 		return 1;
 	}

@@ -9,6 +9,7 @@ int toupper(int c)
 {
 	unsigned char *map = __get_locale()->lc_ctype.ctoupper;
 
+	SIGNAL_SAFE(0);
 	ASSERT_REPRESENTABLE(c, 0, UCHAR_MAX, unsigned char, EOF);
 
 	if (c == EOF) {
