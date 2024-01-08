@@ -1,37 +1,25 @@
-#if 0
-
-#ifndef _POSIX_SOURCE
-#define _POSIX_SOURCE
-#define POSIX_FORCED
-#endif
-
-#include <sys/types.h>
-#include <signal.h>
-
-/* FIXME: Linux specific, doesn't even work */
-#undef SA_RESTART
-#define SA_RESTART 0x10000000
+#include "_signal.h"
+#include "_safety.h"
 
 /** set a signal handler **/
 
 void (*signal(int sig, void (*func)(int)))(int)
 {
-	struct sigaction sa = { 0 }, osa = { 0 };
-	sa.sa_handler = func;
-	sigemptyset(&sa.sa_mask);
-	sigaddset(&sa.sa_mask, sig);
-	sa.sa_flags = SA_RESTART;
+	if (__signal.current != 0 && __signal.current != sig) {
+		/* only safe if resetting the current signal handler */
+		SIGNAL_SAFE(0);
+	}
 
-	if (sigaction(sig, &sa, &osa) != 0) {
+	if (sig < 0 || sig > NSIGNALS) {
+		/* FIXME: should errno be set? */
 		return SIG_ERR;
 	}
 
-	/*
-	RETURN_SUCCESS(a pointer to the signal handler);
-	RETURN_FAILURE(CONSTANT(SIG_ERR), the request could not be honored);
-	*/
+	/* TODO: install __signal_handler as a hook */
 
-	return osa.sa_handler;
+	void (*prev)(int) = __signal.handlers[sig];
+	__signal.handlers[sig] = func;
+	return prev;
 }
 
 /***
@@ -56,6 +44,3 @@ IMPLEMENTATION(Whether signal blocking is performed when a signal occurs)
 IMPLEMENTATION(Other signals corresponding to computation exceptions for which signal handlers must not return)
 STDC(1)
 */
-
-
-#endif
