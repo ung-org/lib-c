@@ -1,13 +1,13 @@
-#if 0
-
 #include <stdlib.h>
-#include <sys/types.h>
 #include <signal.h>
+#include "_safety.h"
 
 /** cause abnormal program termination **/
 
 _Noreturn void abort(void)
 {
+	SIGNAL_SAFE(1);
+
 	for (;;) {
 		raise(SIGABRT);
 	}
@@ -26,6 +26,3 @@ IMPLEMENTATION(whether temporary files are removed)
 IMPLEMENTATION(the value of unsuccessful termination returned to the host environment)
 STDC(1)
 */
-
-
-#endif

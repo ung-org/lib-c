@@ -1,12 +1,16 @@
 #if 0
 
 #include <stdlib.h>
+#include "_safety.h"
 #include "_syscall.h"
 
 /** cause normal program termination without handlers **/
 _Noreturn void _Exit(int status)
 {
 	long scno = __syscall_lookup(exit);
+
+	SIGNAL_SAFE(1);
+
 	for (;;) {
 		__syscall(scno, status);
 	}

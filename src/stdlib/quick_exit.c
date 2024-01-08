@@ -1,11 +1,14 @@
 #if 0
 
 #include <stdlib.h>
+#include "_safety.h"
 #include "_stdlib.h"
 
 /** cause normal quick program termination **/
 _Noreturn void quick_exit(int status)
 {
+	SIGNAL_SAFE(1);
+
 	/* execute all at_quick_exit() registered functions in reverse order */
 	while (__stdlib.at_quick_exit) {
 		__stdlib.at_quick_exit->fn();
