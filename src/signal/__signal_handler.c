@@ -1,3 +1,4 @@
+#include <stddef.h>
 #include "_signal.h"
 
 void __signal_handler(int sig)
