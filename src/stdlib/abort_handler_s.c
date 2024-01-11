@@ -4,7 +4,7 @@
 //#include <errno.h>
 #include "errno/errno_t.h"
 #include "_stdlib.h"
-#include "_assert.h"
+#include "_safety.h"
 
 void abort_handler_s(const char * restrict msg, void * restrict ptr, errno_t error)
 {
