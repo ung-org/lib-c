@@ -1,13 +1,11 @@
-#if 0
-
 #ifndef _POSIX_SOURCE
 #define _POSIX_SOURCE
 #define POSIX_FORCED
 #endif
 
-#include <sys/types.h>
+//#include <sys/types.h>
 #include <signal.h>
-#include <unistd.h>
+//#include <unistd.h>
 
 #ifdef POSIX_FORCED
 #include "_syscall.h"
@@ -37,6 +35,3 @@ sends the signal ARGUMENT(sig) to the current program.
 /*
 STDC(1)
 */
-
-
-#endif

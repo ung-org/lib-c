@@ -1,7 +1,23 @@
+#include <errno.h>
 #include "_signal.h"
 #include "_safety.h"
+#include "_syscall.h"
 
 /** set a signal handler **/
+
+/* TODO: remove this very Linux-specific crap */
+	typedef struct __siginfo siginfo_t;
+	struct linux_sigaction {   
+		void (*sa_handler)(int);
+		int sa_flags;
+		void (*sa_restorer)(void);
+		unsigned char sa_mask[8];
+	};
+#define sigaction(_sig, _act, _oact, _size) __scall4(sigaction, _sig, _act, _oact, _size)
+#define SA_RESTART    0x10000000
+#define SA_RESTORER   0x04000000
+#undef SIG_DFL
+#define SIG_DFL  ((void (*)(int)) 0)
 
 void (*signal(int sig, void (*func)(int)))(int)
 {
@@ -19,6 +35,17 @@ void (*signal(int sig, void (*func)(int)))(int)
 
 	void (*prev)(int) = __signal.handlers[sig];
 	__signal.handlers[sig] = func;
+
+	struct linux_sigaction act = { 0 };
+	act.sa_handler = __signal_handler;
+	act.sa_flags = SA_RESTART | SA_RESTORER;
+
+	int ret = sigaction(sig, &act, NULL, 8);
+	if (ret != 0) {
+		errno = -ret;
+		return SIG_ERR;
+	}
+	
 	return prev;
 }
 
