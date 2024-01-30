@@ -4,7 +4,7 @@ include .config.mk
 
 AR=ar
 ARFLAGS=rU
-BASE_CFLAGS=-g -O0 -mno-sse -Wall -Wextra -Werror -nostdinc -fno-builtin -fno-stack-protector -fPIC -I$(INCDIR) -Isrc
+BASE_CFLAGS=-g -O0 -Wall -Wextra -Werror -nostdinc -fno-builtin -fno-stack-protector -fPIC -I$(INCDIR) -Isrc -D__UNG_INTERNAL__
 OBJDIR=obj
 SRCDIR=src
 
