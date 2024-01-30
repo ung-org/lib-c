@@ -1,6 +1,5 @@
-#if 0
-
 #include <stdlib.h>
+#include "_stdlib.h"
 
 /** binary search **/
 
@@ -11,6 +10,8 @@ void * bsearch(const void * key, const void * base, size_t nmemb, size_t size, i
 	size_t i = nmemb / 2;
 	unsigned int trip = 1;
 	const char *addr = base;
+
+	SIGNAL_SAFE(0);
 
 	while (ret == NULL) {
 		int comp = compar(key, addr + (i * size));
@@ -44,6 +45,3 @@ RETURN_FAILURE(CONSTANT(NULL))
 RETURN_SUCCESS(a pointer to the matching element)
 STDC(1)
 */
-
-
-#endif

@@ -1,12 +1,12 @@
-#if 0
-
 #include <string.h>
 #include <stdlib.h>
+#include "_stdlib.h"
 
 /** get an environment variable **/
 errno_t getenv_s(size_t * restrict len, char * restrict value, rsize_t maxsize, const char * restrict name)
 {
-	__C_EXT(1, 201112L);
+	SIGNAL_SAFE(0);
+	(void)len; (void)value; (void)maxsize; (void)name;
 	return 0;
 }
 
@@ -27,6 +27,3 @@ environment.
 /*
 CEXT1(201112)
 */
-
-
-#endif

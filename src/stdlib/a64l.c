@@ -1,9 +1,9 @@
-#if 0
-
 #include <stdlib.h>
+#include "_stdlib.h"
 
 long a64l(const char *s)
 {
+	SIGNAL_SAFE(0);
   long l = 0;
   int i = 0;
   int n = 0;
@@ -21,6 +21,3 @@ long a64l(const char *s)
 /*
 XOPEN(400)
 */
-
-
-#endif

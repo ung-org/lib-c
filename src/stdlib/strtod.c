@@ -1,10 +1,9 @@
-#if 0
-
 #include <ctype.h>
 #include <errno.h>
 #include <float.h>
 #include <math.h>
 #include <stdlib.h>
+#include "_stdlib.h"
 
 #ifndef INFINITY
 #include "math/INFINITY.h"
@@ -24,6 +23,8 @@ double strtod(const char * restrict nptr, char ** restrict endptr)
 	double inf = INFINITY;
 	double nan = NAN;
 	double huge = HUGE_VAL;
+
+	SIGNAL_SAFE(0);
 
 	#include "_strtod.h"
 	
@@ -50,6 +51,3 @@ RETURN(CONSTANT(-HUGE_VAL), converted value too small)
 RETURN(VAR(a TYPE(double)), the converted value)
 STDC(1)
 */
-
-
-#endif

@@ -1,6 +1,5 @@
-#if 0
-
 #include <stdlib.h>
+#include "_stdlib.h"
 
 #ifdef _POSIX_SOURCE
 # include <errno.h>
@@ -13,6 +12,8 @@
 
 int system(const char * string)
 {
+	SIGNAL_SAFE(0);
+
 	#ifdef _POSIX_SOURCE
 	pid_t pid;
 	int status;
@@ -69,6 +70,3 @@ RETURN(NONZERO, If ARGUMENT(string) is CONSTANT(NULL), a command processor is av
 RETURN(0, If ARGUMENT(string) is CONSTANT(NULL), a command processor is not available)
 STDC(1)
 */
-
-
-#endif

@@ -1,12 +1,14 @@
-#if 0
-
 #include <stdlib.h>
+#include "_stdlib.h"
 
 /** calculate quotient and remainder **/
 
 ldiv_t ldiv(long int numer, long int denom)
 {
 	ldiv_t d;
+
+	SIGNAL_SAFE(0);
+
 	d.quot = numer / denom;
 	d.rem = numer % denom;
 	return d;
@@ -22,6 +24,3 @@ UNDEFINED(The result cannot be represented)
 RETURN_SUCCESS(a TYPEDEF(ldiv_t) containing both the quotient and remainder)
 STDC(1)
 */
-
-
-#endif

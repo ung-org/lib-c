@@ -1,11 +1,12 @@
-#if 0
-
 #include <stdlib.h>
+#include "_stdlib.h"
 
 /** count bytes in multibyte character **/
 
 int mblen(const char * s, size_t n)
 {
+	SIGNAL_SAFE(0);
+
 	/* FIXME: forward dependency on AMD1 */
 	#if 0
 	mbstate_t ps = 0;
@@ -34,6 +35,3 @@ RETURN(0, ARGUMENT(s) points to a null character);
 RETURN(TYPE(int), the number of bytes in the multibyte character);
 STDC(1)
 */
-
-
-#endif

@@ -1,11 +1,12 @@
-#if 0
-
 #include <stdlib.h>
+#include "_stdlib.h"
 
 /** convert wide character to multibyte character **/
 
 int wctomb(char * s, wchar_t wchar)
 {
+	SIGNAL_SAFE(0);
+
 	/* FIXME: forward dependency on AMD1 */
 	#if 0
 	static mbstate_t ps = 0;
@@ -33,6 +34,3 @@ RETURN(-1, The value of ARGUMENT(wchar) does not correspond to a valid multibyte
 RETURN(TYPE(int), The number of bytes contained in the multibyte character corresponding to ARGUMENT(wchar))
 STDC(1)
 */
-
-
-#endif

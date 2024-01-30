@@ -1,18 +1,20 @@
-#if 0
-
 #include <stddef.h>
+#include "_stdlib.h"
 
 /** binary search **/
 
 void *bsearch_s(const void * key, const void * base, rsize_t nmemb, rsize_t size, int (*compar)(const void *x, const void *y, void * context), void *context)
 {
+	SIGNAL_SAFE(0);
+
 	/* TODO: testing */
+	(void)size;
 	void *ret = NULL;
 	size_t i = nmemb / 2;
 	unsigned int trip = 1;
 
 	while (ret == NULL) {
-		int comp = compar(key, base+i);
+		int comp = compar(key, base+i, context);
 		if (comp == 0) {
 			return (void*)base+i;
 		} else if (comp > 0) {
@@ -47,6 +49,3 @@ element.
 /*
 CEXT1(201112)
 */
-
-
-#endif

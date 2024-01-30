@@ -1,9 +1,9 @@
-#if 0
-
 #include <stdlib.h>
+#include "_stdlib.h"
 
 int getsubopt(char ** optionp, char * const * keylistp, char ** valuep)
 {
+	SIGNAL_SAFE(0);
 	return 0;
 }
 
@@ -11,6 +11,3 @@ int getsubopt(char ** optionp, char * const * keylistp, char ** valuep)
 XOPEN(400)
 POSIX(200809)
 */
-
-
-#endif

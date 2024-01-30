@@ -1,5 +1,3 @@
-#if 0
-
 #include <stdlib.h>
 #include <string.h>
 #include "_stdlib.h"
@@ -8,9 +6,12 @@
 
 char * getenv(const char * name)
 {
-	size_t len = strlen(name);
+	size_t len = 0;
 	size_t i = 0;
 
+	SIGNAL_SAFE(0);
+
+	len = strlen(name);
 	for (i = 0; environ[i] != NULL; i++) {
 		if (!strncmp(environ[i], name, len) && environ[i][len] == '=') {
 			return environ[i] + len + 1;
@@ -32,6 +33,3 @@ RETURN_FAILURE(CONSTANT(NULL))
 RETURN_SUCCESS(a pointer to the environment string)
 STDC(1)
 */
-
-
-#endif

@@ -1,9 +1,9 @@
-#if 0
-
 #include <stdlib.h>
+#include "_stdlib.h"
 
 int mkstemp(char * template)
 {
+	SIGNAL_SAFE(0);
 	return 0;
 }
 
@@ -11,6 +11,3 @@ int mkstemp(char * template)
 XOPEN(400)
 POSIX(200809)
 */
-
-
-#endif

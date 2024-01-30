@@ -1,11 +1,11 @@
-#if 0
-
 #include <stdlib.h>
+#include "_stdlib.h"
 
 /** convert string to long long integer **/
 
 long long int atoll(const char *nptr)
 {
+	SIGNAL_SAFE(0);
 	return strtoll(nptr, (char**)NULL, 10);
 }
 
@@ -19,6 +19,3 @@ LC_CTYPE
 RETURN_SUCCESS(the converted value)
 STDC(199901)
 */
-
-
-#endif

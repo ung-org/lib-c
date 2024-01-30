@@ -1,9 +1,8 @@
-#if 0
-
 #include <ctype.h>
 #include <errno.h>
 #include <limits.h>
 #include <stdlib.h>
+#include "_stdlib.h"
 
 /** convert string to long integer **/
 
@@ -12,6 +11,8 @@ long int strtol(const char * restrict nptr, char ** restrict endptr, int base)
 	long int ret = 0;
 	long int max = LONG_MAX;
 	long int min = LONG_MIN;
+
+	SIGNAL_SAFE(0);
 
 	#include "_strtoi.h"
 
@@ -47,6 +48,3 @@ RETURN(CONSTANT(LONG_MIN), converted value too small)
 RETURN(a TYPE(long int) value, the converted value)
 STDC(1)
 */
-
-
-#endif

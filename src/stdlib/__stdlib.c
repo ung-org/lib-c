@@ -6,4 +6,5 @@ struct __stdlib __stdlib = {
 
 /*
 STDC(0)
+SIGNAL_SAFE(0)
 */

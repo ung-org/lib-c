@@ -7,6 +7,9 @@
 int atexit(void (*func)(void))
 {
 	struct atexit *ae = &(__stdlib.atexit);
+
+	SIGNAL_SAFE(0);
+
 	while (ae->nfns == sizeof(ae->fns) / sizeof(ae->fns[0])) {
 		if (ae->next == NULL) {
 			ae->next = calloc(1, sizeof(*ae->next));

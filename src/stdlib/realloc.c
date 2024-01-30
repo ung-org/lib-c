@@ -1,5 +1,3 @@
-#if 0
-
 #if ((!defined _POSIX_C_SOURCE) || (_POSIX_C_SOURCE < 199309L))
 #undef _POSIX_C_SOURCE
 #define _POSIX_C_SOURCE 199309L		/* force mmap() constants */
@@ -7,9 +5,10 @@
 #endif
 
 #include <stdlib.h>
-#include <sys/types.h>
-#include <fcntl.h>
-#include <sys/mman.h>
+#include "_stdlib.h"
+//#include <sys/types.h>
+//#include <fcntl.h>
+//#include <sys/mman.h>
 
 #ifdef POSIX_FORCED
 #include "_syscall.h"
@@ -17,10 +16,18 @@
 #define open(_p, _a, _m)		__scall3(open, _p, _a, _m)
 #endif
 
+#define O_RDWR 0
+#define PROT_READ 0
+#define PROT_WRITE 0
+#define MAP_PRIVATE 0
+#define MAP_FAILED 0
+
 /** change the amount of memory allocated **/
 
 void * realloc(void * ptr, size_t size)
 {
+	SIGNAL_SAFE(0);
+
 	/* FIXME: forward dependency on POSIX.1b-1993, non-std /dev/zero */
 	static int backing = -1;
 
@@ -67,6 +74,3 @@ RETURN_FAILURE(CONSTANT(NULL))
 RETURN_SUCCESS(a pointer to the reallocate space)
 STDC(1)
 */
-
-
-#endif

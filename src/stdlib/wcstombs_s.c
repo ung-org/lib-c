@@ -1,11 +1,11 @@
-#if 0
-
 #include <stdlib.h>
+#include "_stdlib.h"
 
 /** convert wide character string to multibyte string **/
 errno_t wcstombs_s(size_t * restrict retval, char * restrict dst, rsize_t dstmax, const wchar_t * restrict src, rsize_t len)
 {
-	__C_EXT(1, 201112L);
+	SIGNAL_SAFE(0);
+	(void)retval; (void)dst; (void)dstmax; (void)src; (void)len;
 	/* TODO */
 	return 0;
 }
@@ -28,6 +28,3 @@ after reaching a null wide character, which is converted and stored.
 /*
 CEXT1(201112)
 */
-
-
-#endif

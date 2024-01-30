@@ -1,11 +1,12 @@
-#if 0
-
 #include <stdlib.h>
+#include "_stdlib.h"
 
 /** convert wide character string to multibyte string **/
 
 size_t wcstombs(char * restrict s, const wchar_t * restrict pwcs, size_t n)
 {
+	SIGNAL_SAFE(0);
+
 	(void)s; (void)pwcs; (void)n;
 	/* TODO */
 	return 0;
@@ -25,6 +26,3 @@ RETURN_FAILURE(-1)
 RETURN_SUCCESS(the number of bytes modified, not counting any terminating null)
 STDC(1)
 */
-
-
-#endif

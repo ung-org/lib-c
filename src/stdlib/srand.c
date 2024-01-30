@@ -1,11 +1,11 @@
-#if 0
-
 #include "_stdlib.h"
 
 /** seed the pseudo-random number generator **/
 
 void srand(unsigned int seed)
 {
+	SIGNAL_SAFE(0);
+
 	__stdlib.rand = seed;
 }
 
@@ -18,6 +18,3 @@ Program execution begins with a seed of 1.
 /*
 STDC(1)
 */
-
-
-#endif

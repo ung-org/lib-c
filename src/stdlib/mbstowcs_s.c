@@ -1,11 +1,12 @@
-#if 0
-
 #include <stdlib.h>
+#include "_stdlib.h"
 
 /** convert multibyte string to wide character string **/
 errno_t mbstowcs_s(size_t * restrict retval, wchar_t * restrict dst, rsize_t dstmax, const char * restrict src, rsize_t len)
 {
-	__C_EXT(1, 201112L);
+	SIGNAL_SAFE(0);
+	(void)retval; (void)dst; (void)dstmax; (void)src; (void)len;
+	return 0;
 }
 
 /***
@@ -26,6 +27,3 @@ be converted after a null character, which is converted.
 /*
 CEXT1(201112)
 */
-
-
-#endif

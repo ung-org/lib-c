@@ -1,7 +1,6 @@
-#if 0
-
 #include <stdlib.h>
 #include <string.h>
+#include "_stdlib.h"
 
 /** allocate and initialize memory **/
 
@@ -9,6 +8,8 @@ void * calloc(size_t nmemb, size_t size)
 {
 	void *p = NULL;
 	size_t total = nmemb * size;
+
+	SIGNAL_SAFE(0);
 
 	if (total < nmemb || total < size) {
 		return NULL;
@@ -38,6 +39,3 @@ RETURN_FAILURE(CONSTANT(NULL))
 RETURN_SUCCESS(a pointer to the newly allocated memory)
 STDC(1)
 */
-
-
-#endif

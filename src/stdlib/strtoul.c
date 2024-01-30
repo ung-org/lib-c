@@ -1,9 +1,8 @@
-#if 0
-
 #include <errno.h>
 #include <ctype.h>
 #include <limits.h>
 #include <stdlib.h>
+#include "_stdlib.h"
 
 /** convert string to unsigned long integer **/
 
@@ -12,6 +11,8 @@ unsigned long int strtoul(const char * nptr, char ** endptr, int base)
         unsigned long int ret = 0;
         unsigned long int max = ULONG_MAX;
         unsigned long int min = 0;
+
+	SIGNAL_SAFE(0);
 
         #include "_strtoi.h"
 
@@ -46,6 +47,3 @@ RETURN(ULONG_MAX, converted value too large)
 RETURN(an TYPE(unsigned long int) value, the converted value)
 STDC(1)
 */
-
-
-#endif

@@ -1,11 +1,12 @@
-#if 0
-
 #include <stdlib.h>
+#include "_stdlib.h"
 
 /** deallocate memory **/
 
 void free(void * ptr)
 {
+	SIGNAL_SAFE(0);
+
 	if (ptr == NULL) {
 		return;
 	}
@@ -22,6 +23,3 @@ causes nothing to happen.
 UNDEFINED(ARGUMENT(ptr) was not returned by a previous call to FUNCTION(calloc), FUNCTION(malloc), or FUNCTION(realloc))
 STDC(1)
 */
-
-
-#endif

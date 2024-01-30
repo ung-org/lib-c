@@ -1,11 +1,11 @@
-#if 0
-
 #include <stdlib.h>
+#include "_stdlib.h"
 
 /** ignore constraint violations **/
 void ignore_handler_s(const char * restrict msg, void * restrict ptr, errno_t error)
 {
-	__C_EXT(1, 201112L);
+	SIGNAL_SAFE(0);
+	(void)msg; (void)ptr; (void)error;
 	return;
 }
 
@@ -24,6 +24,3 @@ It simply returns to its caller.
 /*
 CEXT1(201112)
 */
-
-
-#endif

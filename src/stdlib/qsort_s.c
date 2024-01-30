@@ -1,14 +1,14 @@
-#if 0
-
 #include <stdlib.h>
+#include "_stdlib.h"
 
 /** sort an array **/
 errno_t qsort_s(void *base, rsize_t nmemb, rsize_t size,
 	int (*compar)(const void * x, const void * y, void *context),
 	void * context)
 {
-	__C_EXT(1, 201112L);
-	/* TODO */
+	SIGNAL_SAFE(0);
+	(void)base; (void)nmemb; (void)size; (void)compar; (void)context;
+	return 0;
 }
 
 /***
@@ -29,6 +29,3 @@ greater than the second.
 /*
 CEXT1(201112)
 */
-
-
-#endif

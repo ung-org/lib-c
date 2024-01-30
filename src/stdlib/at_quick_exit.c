@@ -1,5 +1,3 @@
-#if 0
-
 #include <stdlib.h>
 #include <limits.h>
 #include <errno.h>
@@ -8,11 +6,11 @@
 /** register a function to run at quick exit **/
 int at_quick_exit(void (*func)(void))
 {
-	__C_MIN(201112L);
-	if (__stdlib.nat_quick_exit >= ATEXIT_MAX) {
-		return 1;
-	}
+	SIGNAL_SAFE(0);
 
+	(void)func;
+
+	/*
 	if (__stdlib.at_quick_exit == NULL) {
 		__stdlib.at_quick_exit = calloc(1,
 			sizeof(*__stdlib.at_quick_exit));
@@ -35,6 +33,7 @@ int at_quick_exit(void (*func)(void))
 	__stdlib.at_quick_exit->next->prev = __stdlib.at_quick_exit;
 	__stdlib.at_quick_exit = __stdlib.at_quick_exit->next;
 	__stdlib.nat_quick_exit++;
+	*/
 
 	return 0;
 }
@@ -54,6 +53,3 @@ program exits via fn(quick_exit). The function must take no parameters.
 /*
 STDC(201112)
 */
-
-
-#endif

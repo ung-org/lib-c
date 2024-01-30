@@ -1,11 +1,11 @@
-#if 0
-
 #include <stdlib.h>
+#include "_stdlib.h"
 
 /** convert wide character to multibyte character **/
 errno_t wctomb_s(int * restrict status, char * restrict s, rsize_t smax, wchar_t wc)
 {
-	__C_EXT(1, 201112L);
+	SIGNAL_SAFE(0);
+	(void)status; (void)s; (void)smax; (void)wc;
 	/* TODO */
 	return 0;
 }
@@ -32,6 +32,3 @@ state dependency.
 /*
 CEXT1(201112)
 */
-
-
-#endif

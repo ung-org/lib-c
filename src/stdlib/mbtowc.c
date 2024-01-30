@@ -1,11 +1,11 @@
-#if 0
-
 #include <stdlib.h>
+#include "_stdlib.h"
 
 /** convert a multibyte character to a wide character **/
 
 int mbtowc(wchar_t * restrict pwc, const char * restrict s, size_t n)
 {
+	SIGNAL_SAFE(0);
 	/* FIXME: forward dependency on AMD1 */
 	#if 0
 	static mbstate_t ps = 0;
@@ -37,6 +37,3 @@ RETURN(0, ARGUMENT(s) points to a null character)
 RETURN(TYPE(int), the number of bytes in the converted multibyte character)
 STDC(1)
 */
-
-
-#endif

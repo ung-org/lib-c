@@ -3,6 +3,7 @@
 
 #include <stdlib.h>
 #include <limits.h>
+#include "_safety.h"
 
 #define _rand(_n) \
 	(((_n) = (_n) * 1103515245 + 12345) ? (_n) / UINT_MAX % RAND_MAX : 0)
@@ -18,7 +19,7 @@ struct __stdlib {
         	void (*fns[32])(void);
         	struct atexit *next;
         	struct atexit *prev;
-	} atexit;
+	} atexit, at_quick_exit;
 	int exit_called;
 	int quick_exit_called;
 	unsigned int rand;

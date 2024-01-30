@@ -1,10 +1,9 @@
-#if 0
-
 #include <stdlib.h>
 #include <float.h>
 #include <ctype.h>
 #include <errno.h>
 #include <math.h>
+#include "_stdlib.h"
 
 /** convert string to floating-point **/
 
@@ -16,6 +15,8 @@ long double strtold(const char * restrict nptr, char ** restrict endptr)
 	long double huge = HUGE_VALL;
 	long double inf = INFINITY;
 	long double nan = NAN;
+
+	SIGNAL_SAFE(0);
 
 	#include "_strtod.h"
 
@@ -42,6 +43,3 @@ RETURN(CONSTANT(-HUGE_VALL), converted value too small)
 RETURN(VAR(a TYPE(long double)), the converted value)
 STDC(199901)
 */
-
-
-#endif

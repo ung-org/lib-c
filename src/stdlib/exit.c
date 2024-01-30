@@ -9,6 +9,8 @@ _Noreturn void exit(int status)
 	long scno = __syscall_lookup(exit);
 	struct atexit *ae = &(__stdlib.atexit);
 
+	SIGNAL_SAFE(0);
+
 	if (__stdlib.quick_exit_called) {
 		__stdlib.constraint_handler("Undefined behavior: exit() called after quick_exit()", NULL, 0);
 	}

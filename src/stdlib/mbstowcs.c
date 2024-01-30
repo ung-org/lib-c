@@ -1,11 +1,12 @@
-#if 0
-
 #include <stdlib.h>
+#include "_stdlib.h"
 
 /** convert multibyte string to wide character string **/
 
 size_t mbstowcs(wchar_t * restrict pwcs, const char * restrict s, size_t n)
 {
+	SIGNAL_SAFE(0);
+
 	/* FIXME: forward dependency on AMD1 */
 	#if 0
 	mbstate_t ps = 0;
@@ -30,6 +31,3 @@ RETURN_FAILURE(-1)
 RETURN_SUCCESS(the number of wide characters converted, not counting any terminating zero)
 STDC(1)
 */
-
-
-#endif

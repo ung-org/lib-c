@@ -1,15 +1,12 @@
-#if 0
-
 #include <stdlib.h>
+#include "_stdlib.h"
 
 char *fcvt(double value, int ndigit, int *decpt, int *sign)
 {
+	SIGNAL_SAFE(0);
 	return 0;
 }
 
 /*
 XOPEN(400,700)
 */
-
-
-#endif

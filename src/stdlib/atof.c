@@ -1,11 +1,11 @@
-#if 0
-
 #include <stdlib.h>
+#include "_stdlib.h"
 
 /** convert string to floating-point **/
 
 double atof(const char * nptr)
 {
+	SIGNAL_SAFE(0);
 	return strtod(nptr, (char**)NULL);
 }
 
@@ -19,6 +19,3 @@ LC_CTYPE
 RETURN_SUCCESS(the converted value)
 STDC(1)
 */
-
-
-#endif

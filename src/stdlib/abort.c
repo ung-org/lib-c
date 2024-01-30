@@ -1,6 +1,8 @@
 #include <stdlib.h>
 #include <signal.h>
-#include "_safety.h"
+#include "_stdlib.h"
+
+#undef abort
 
 /** cause abnormal program termination **/
 

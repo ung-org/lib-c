@@ -1,6 +1,5 @@
-#if 0
-
 #include <stdlib.h>
+#include "_stdlib.h"
 
 /** sort an array **/
 
@@ -38,6 +37,7 @@ static void __qsort(char *base, size_t size, size_t lo, size_t hi, int (*compar)
 
 void qsort(void * base, size_t nmemb, size_t size, int (*compar)(const void *, const void *))
 {
+	SIGNAL_SAFE(0);
 	__qsort(base, size, 0, nmemb - 1, compar);
 }
 
@@ -55,6 +55,3 @@ is greater than the second.
 UNSPECIFIED(The order of equal elements)
 STDC(1)
 */
-
-
-#endif

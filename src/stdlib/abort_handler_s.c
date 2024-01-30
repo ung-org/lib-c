@@ -4,15 +4,20 @@
 //#include <errno.h>
 #include "errno/errno_t.h"
 #include "_stdlib.h"
-#include "_safety.h"
 
 void abort_handler_s(const char * restrict msg, void * restrict ptr, errno_t error)
 {
+	SIGNAL_SAFE(0);
+
 	struct __constraint_info *ci = ptr;
 
 	puts(msg);
 	if (ci) {
-		printf("In call to %s()", ci->func);
+		if (ci->signal != 0) {
+			/* TODO: map numbers to names as well */
+			printf("While handling signal %d: ", ci->signal);
+		}
+		printf("Function %s()", ci->func);
 		if (__checked_call.file) {
 			printf(" (");
 			if (__checked_call.func) {

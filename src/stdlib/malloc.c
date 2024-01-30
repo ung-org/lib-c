@@ -1,10 +1,11 @@
-#if 0
-
 #include <stdlib.h>
+#include "_stdlib.h"
 
 /** allocate memory **/
 void * malloc(size_t size)
 {
+	SIGNAL_SAFE(0);
+
 	if (size == 0) {
 		return NULL;
 	}
@@ -23,6 +24,3 @@ RETURN_FAILURE(CONSTANT(NULL))
 RETURN_SUCCESS(a pointer to the allocated space)
 STDC(1)
 */
-
-
-#endif

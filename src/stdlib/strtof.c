@@ -1,10 +1,9 @@
-#if 0
-
 #include <stdlib.h>
 #include <float.h>
 #include <errno.h>
 #include <ctype.h>
 #include <math.h>
+#include "_stdlib.h"
 
 /** convert string to floating-point **/
 
@@ -16,6 +15,8 @@ float strtof(const char * restrict nptr, char ** restrict endptr)
 	float huge = HUGE_VALF;
 	float inf = INFINITY;
 	float nan = NAN;
+
+	SIGNAL_SAFE(0);
 
 	#include "_strtod.h"
 
@@ -42,6 +43,3 @@ RETURN(CONSTANT(-HUGE_VALF), converted value too small)
 RETURN(VAR(a TYPE(float)), the converted value)
 STDC(199901)
 */
-
-
-#endif
