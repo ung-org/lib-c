@@ -3,9 +3,7 @@
 #define POSIX_FORCED
 #endif
 
-//#include <sys/types.h>
 #include <signal.h>
-//#include <unistd.h>
 
 #ifdef POSIX_FORCED
 #include "_syscall.h"

@@ -2,8 +2,6 @@
 #include "_safety.h"
 #undef strcpy
 
-#undef strcpy
-
 /** copy string **/
 
 char * strcpy(char * restrict s1, const char * restrict s2)

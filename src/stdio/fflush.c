@@ -4,8 +4,6 @@
 #endif
 
 #include <stdio.h>
-//#include <sys/types.h>
-//#include <unistd.h>
 #include "_stdio.h"
 
 #ifdef POSIX_FORCED

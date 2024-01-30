@@ -6,9 +6,11 @@
 
 #include <stdlib.h>
 #include "_stdlib.h"
+#if 0
 //#include <sys/types.h>
 //#include <fcntl.h>
 //#include <sys/mman.h>
+#endif
 
 #ifdef POSIX_FORCED
 #include "_syscall.h"

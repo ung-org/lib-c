@@ -3,19 +3,16 @@
 #define POSIX_FORCED
 #endif
 
-//#include <sys/types.h>
 #include <errno.h>
-//#include <fcntl.h>
 #include <stdio.h>
 #include <string.h>
-//#include <unistd.h>
 #include "_stdio.h"
 
 #ifdef POSIX_FORCED
-#include "termios/_termios.h"
 #include "_syscall.h"
 #define open(_p, _f, _m)	__scall3(open, _p, _f, _m)
-#define isatty(_fd)		ioctl(_fd, TCFLSH, 0)
+#define isatty(_fd)		(-1) /*ioctl(_fd, TCFLSH, 0) */
+#define TCFLSH	0x540B
 #define O_RDONLY 00
 #define O_WRONLY 01
 #define O_CREAT 0100

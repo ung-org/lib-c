@@ -1,15 +1,18 @@
+#if 0
 //#include <sys/types.h>
+//#include <unistd.h>
+#endif
+
 #include <stdio.h>
 #include <stddef.h>
 #include "wctype/wint_t.h"
 #include "wctype/wctrans_t.h"
 #include <wchar.h>
 #include <inttypes.h>
-//#include <unistd.h>
 #include <stdlib.h>
 #include "_stdio.h"
 
-#if !defined __STDC_VERSION__ || __STDC_VERSION__ < 199909L
+#if (!defined __STDC_VERSION__) || (__STDC_VERSION__ < 199909L)
 #include "stdint/intmax_t.h"
 #include "stdint/uintmax_t.h"
 #include "stdint/intptr_t.h"

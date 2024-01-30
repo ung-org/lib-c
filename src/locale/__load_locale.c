@@ -25,7 +25,7 @@ char * __load_locale(struct __locale_t *loc, int mask, const char *name)
 	char localepath[FILENAME_MAX] = "/lib/locale/";
 	strcat(localepath, name);
 
-	FILE *localefile = NULL; //fopen(localepath, "rb");
+	FILE *localefile = fopen(localepath, "rb");
 	if (localefile == NULL && strcmp(name, "C") && strcmp(name, "POSIX")) {
 		return NULL;
 	}

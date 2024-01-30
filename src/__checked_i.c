@@ -1,24 +1,33 @@
 #undef __UNG_INTERNAL__
 
 #include <ctype.h>
-#include <complex.h>	// TODO
-#include <fenv.h>
-#include <inttypes.h>
 #include <locale.h>
-#include <math.h>	// TODO
+#include <math.h>	/* TODO */
 #include <setjmp.h>
 #include <signal.h>
 #include <stdarg.h>
 #include <stdio.h>
-#include <stdlib.h>	// TODO
+#include <stdlib.h>	/* TODO */
 #include <string.h>
-#include <threads.h>	// TODO
-#include <time.h>	// TODO
-#include <uchar.h>	// TODO
-//#include <wchar.h>	// TODO
-#include <wctype.h>	// TODO
+#include <time.h>	/* TODO */
 
-#include "_assert.h"
+#if __STDC_VERSION__ >= 199409L
+#include <wchar.h>	/* TODO */
+#include <wctype.h>	/* TODO */
+#endif
+
+#if __STDC_VERSION__ >= 199901L
+#include <complex.h>	/* TODO */
+#include <fenv.h>
+#include <inttypes.h>
+#endif
+
+#if __STDC_VERSION__ >= 201112
+#include <threads.h>	/* TODO */
+#include <uchar.h>	/* TODO */
+#endif
+
+#include "_safety.h"
 
 extern char *(gets)(char*);
 
@@ -41,16 +50,19 @@ int __checked_i(const char *file, const char *func, unsigned long long line, int
 		|| fn == F(islower)
 		|| fn == F(toupper)
 		|| fn == F(tolower)
+		/*
 		|| fn == F(feclearexcept)
 		|| fn == F(feraiseexcept)
 		|| fn == F(fesetround)
 		|| fn == F(fetestexcept)
+		*/
 		|| fn == F(raise)
 		|| fn == F(putchar)
 		|| fn == F(abs)
 		) {
 		int arg = va_arg(ap, int);
 		ret = fn(arg);
+	/*
 	} else if (fn == F(fegetenv)
 		|| fn == F(feholdexcept)
 		|| fn == F(fesetenv)
@@ -64,8 +76,9 @@ int __checked_i(const char *file, const char *func, unsigned long long line, int
 		fexcept_t *fe = va_arg(ap, fexcept_t *);
 		int i = va_arg(ap, int);
 		ret = fn(fe, i);
-	} else if (fn == F(fegetround)
-		|| fn == F(getchar)
+	*/
+	} else if (/*fn == F(fegetround)
+		|| */fn == F(getchar)
 		) {
 		ret = fn();
 	} else if (fn == F(fclose)
@@ -73,7 +86,7 @@ int __checked_i(const char *file, const char *func, unsigned long long line, int
 		|| fn == F(ferror)
 		|| fn == F(fflush)
 		|| fn == F(fgetc)
-		|| fn == F(getc)
+		/* || fn == F(getc) */
 		) {
 		FILE *f = va_arg(ap, FILE *);
 		ret = fn(f);
@@ -127,12 +140,14 @@ int __checked_i(const char *file, const char *func, unsigned long long line, int
 		const char *p2 = va_arg(ap, const char *);
 		size_t n = va_arg(ap, size_t);
 		ret = fn(p1, p2, n);
+	/*
 	} else if (fn == F(atexit)) {
 		void *p = va_arg(ap, void *);
 		ret = fn(p);
+	*/
 	} else {
 		(fprintf)(stderr, "Unwrapped function %s\n", func);
-		(_Exit(1));
+		(abort());
 	}
 
 	va_end(ap);
@@ -148,6 +163,7 @@ int __checked_i(const char *file, const char *func, unsigned long long line, int
 STDC(0)
 */
 
+#if __STDC_VERSION__ >= 199901L
 #undef F
 #define F(fn) (intmax_t(*)())(fn)
 intmax_t __checked_im(const char *file, const char *func, unsigned long long line, intmax_t (*fn)(), ...)
@@ -180,7 +196,7 @@ intmax_t __checked_im(const char *file, const char *func, unsigned long long lin
 		ret = fn(s1, s2);
 	} else {
 		(fprintf)(stderr, "Unwrapped function %s\n", func);
-		(_Exit(1));
+		(abort());
 	}
 
 	va_end(ap);
@@ -216,7 +232,7 @@ uintmax_t __checked_uim(const char *file, const char *func, unsigned long long l
 		ret = fn(s, end, i);
 	} else {
 		(fprintf)(stderr, "Unwrapped function %s\n", func);
-		(_Exit(1));
+		(abort());
 	}
 
 	va_end(ap);
@@ -246,7 +262,7 @@ imaxdiv_t __checked_imd(const char *file, const char *func, unsigned long long l
 		ret = fn(n, d);
 	} else {
 		(fprintf)(stderr, "Unwrapped function %s\n", func);
-		(_Exit(1));
+		(abort());
 	}
 
 	va_end(ap);
@@ -256,6 +272,7 @@ imaxdiv_t __checked_imd(const char *file, const char *func, unsigned long long l
 
 	return ret;
 }
+#endif
 
 #undef F
 #define F(fn) (void *(*)())(fn)
@@ -299,7 +316,7 @@ void *__checked_p(const char *file, const char *func, unsigned long long line, v
 		FILE *f = va_arg(ap, FILE *);
 		ret = fn(name, mode, f);
 	} else if (fn == F(tmpnam)
-		|| fn == F(gets)
+		/* || fn == F(gets) */
 		) {
 		char *s = va_arg(ap, char *);
 		ret = fn(s);
@@ -343,7 +360,7 @@ void *__checked_p(const char *file, const char *func, unsigned long long line, v
 		ret = fn(s1, s2);
 	} else {
 		(fprintf)(stderr, "Unwrapped function %s\n", func);
-		(_Exit(1));
+		(abort());
 	}
 
 	va_end(ap);
@@ -382,7 +399,7 @@ void __checked(const char *file, const char *func, unsigned long long line, void
 		fn();
 	} else {
 		(fprintf)(stderr, "Unwrapped function %s\n", func);
-		(_Exit(1));
+		(abort());
 	}
 
 	va_end(ap);
@@ -426,7 +443,7 @@ size_t __checked_s(const char *file, const char *func, unsigned long long line, 
 		ret = fn(s1, s2, n);
 	} else {
 		(fprintf)(stderr, "Unwrapped function %s\n", func);
-		(_Exit(1));
+		(abort());
 	}
 
 	va_end(ap);
@@ -455,7 +472,7 @@ long __checked_l(const char *file, const char *func, unsigned long long line, lo
 		ret = fn(f);
 	} else {
 		(fprintf)(stderr, "Unwrapped function %s\n", func);
-		(_Exit(1));
+		(abort());
 	}
 
 	va_end(ap);
