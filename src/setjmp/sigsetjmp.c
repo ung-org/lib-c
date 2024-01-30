@@ -8,6 +8,8 @@
 
 int sigsetjmp(sigjmp_buf env, int savemask)
 {
+	SIGNAL_SAFE(0);
+
 	if (savemask) {
 		/* save mask to env */
 	}

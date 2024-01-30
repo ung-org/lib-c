@@ -1,12 +1,12 @@
-#if 0
-
 #include <setjmp.h>
+#include "_safety.h"
 
 /** restore calling environment **/
 
 _Noreturn void longjmp(jmp_buf env, int val)
 {
 	extern _Noreturn void __longjmp(jmp_buf);
+	SIGNAL_SAFE(0);
 
 	/* use val if nonzero, otherwise 1 */
 	env[0] = val ? val : 1;
@@ -35,6 +35,3 @@ UNDEFINED(The function containing the previous call to FUNCTION(setjmp) is no lo
 UNDEFINED(THIS() is called from a nested signal handler)
 STDC(1)
 */
-
-
-#endif

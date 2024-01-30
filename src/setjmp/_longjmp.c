@@ -1,11 +1,11 @@
-#if 0
-
 #include <setjmp.h>
+#include "_safety.h"
 
 /** restore calling environment **/
 
 void _longjmp(jmp_buf env, int val)
 {
+	SIGNAL_SAFE(0);
 	return longjmp(env, val);
 }
 
@@ -31,6 +31,3 @@ UNDEFINED(THIS() is called from a nested signal handler)
 XOPEN(400)
 XOBSOLETE(700, FUNCTION(siglongjmp))
 */
-
-
-#endif

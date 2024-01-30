@@ -1,11 +1,11 @@
-#if 0
-
 #include <setjmp.h>
+#include "_safety.h"
 
 /** save program state **/
 
 int _setjmp(jmp_buf env)
 {
+	SIGNAL_SAFE(0);
 	return setjmp(env);
 }
 
@@ -28,6 +28,3 @@ UNDEFINED(A program defines an external identifier named LITERAL(setjmp))
 XOPEN(400)
 XOBSOLETE(700, FUNCTION(siglongjmp))
 */
-
-
-#endif

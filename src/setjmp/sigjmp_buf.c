@@ -1,5 +1,3 @@
-#if 0
-
 #include <setjmp.h>
 
 /** program environment with signal mask **/
@@ -12,9 +10,7 @@ environment, including the signal mask.
 ***/
 
 /*
+SIGNAL_SAFE(0)
 TYPEDEF(an array type)
 POSIX(1)
 */
-
-
-#endif

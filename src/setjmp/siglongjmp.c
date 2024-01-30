@@ -3,12 +3,15 @@
 #include <setjmp.h>
 #include <sys/types.h>
 #include <signal.h>
+#include "_safety.h"
 
 /** restore calling environment with signal mask **/
 
 void siglongjmp(sigjmp_buf env, int val)
 {
-	/* restor signal mask */
+	SIGNAL_SAFE(0);
+
+	/* restore signal mask */
 
 	return longjmp(env, val);
 }
@@ -35,6 +38,5 @@ UNDEFINED(THIS() is called from a nested signal handler)
 
 POSIX(1)
 */
-
 
 #endif

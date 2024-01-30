@@ -1,13 +1,13 @@
-#if 0
-
 #include <setjmp.h>
 #include <string.h>
+#include "_safety.h"
 
 /** save program state **/
 
 int setjmp(jmp_buf env)
 {
 	extern int __setjmp(jmp_buf);
+	SIGNAL_SAFE(0);
 	memset(env, 0, sizeof(jmp_buf));
 	return __setjmp(env);
 }
@@ -33,6 +33,3 @@ UNDEFINED(A program defines an external identifier named LITERAL(setjmp))
 
 STDC(1)
 */
-
-
-#endif
