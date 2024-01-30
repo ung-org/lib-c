@@ -1,12 +1,11 @@
-#if 0
-
 #include <wctype.h>
 #include <wchar.h>
-#include "_assert.h"
+#include "_safety.h"
 
 /** convert a wide lowercase letter to uppercase **/
 wint_t towupper(wint_t wc)
 {
+	SIGNAL_SAFE(0);
 	ASSERT_REPRESENTABLE(wc, WCHAR_MIN, WCHAR_MAX, "wchar_t", WEOF);
 
 	if (!iswlower(wc)) {
@@ -32,6 +31,3 @@ uppercase letter in the current locale.
 /*
 STDC(199409)
 */
-
-
-#endif

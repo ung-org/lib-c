@@ -1,13 +1,12 @@
-#if 0
-
 #include <wctype.h>
 #include <string.h>
-#include "_assert.h"
+#include "_safety.h"
 #include "_wctype.h"
 
 /** lookup character translation **/
 wctrans_t wctrans(const char * property)
 {
+	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(property);
 
 	if (!strcmp(property, "tolower")) {
@@ -38,6 +37,3 @@ ctrans(toupper).
 /*
 STDC(199409)
 */
-
-
-#endif

@@ -1,13 +1,12 @@
-#if 0
-
 #include <wctype.h>
 #include <string.h>
-#include "_assert.h"
+#include "_safety.h"
 #include "_wctype.h"
 
 /** lookup character class **/
 wctype_t wctype(const char * property)
 {
+	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(property);
 
 	if (!strcmp(property, "alnum")) {
@@ -59,6 +58,3 @@ cclass(print), cclass(punct), cclass(space), cclass(upper), and cclass(xdigit).
 /*
 STDC(199409)
 */
-
-
-#endif

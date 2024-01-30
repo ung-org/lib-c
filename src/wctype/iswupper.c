@@ -1,12 +1,11 @@
-#if 0
-
 #include <wctype.h>
 #include <wchar.h>
-#include "_assert.h"
+#include "_safety.h"
 
 /** test whether a wide character is an uppercase letter **/
 int iswupper(wint_t wc)
 {
+	SIGNAL_SAFE(0);
 	ASSERT_REPRESENTABLE(wc, WCHAR_MIN, WCHAR_MAX, "wchar_t", WEOF);
 
 	wctype_t upper = wctype("upper");
@@ -29,6 +28,3 @@ cclass(upper) in the current locale.
 /*
 STDC(199409)
 */
-
-
-#endif

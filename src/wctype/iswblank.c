@@ -1,12 +1,11 @@
-#if 0
-
 #include <wctype.h>
-#include "_assert.h"
+#include "_safety.h"
 
 /** test whether a wide character is blank **/
 int iswblank(wint_t wc)
 {
-	ASSERT_REPRESENTABLE(wc, WCHAR_MIN, WCHAR_MAX, "wchar_t", WEOF);
+	SIGNAL_SAFE(0);
+	//ASSERT_REPRESENTABLE(wc, WCHAR_MIN, WCHAR_MAX, "wchar_t", WEOF);
 
 	wctype_t blank = wctype("blank");
 	return iswctype(wc, blank);
@@ -27,6 +26,3 @@ class cclass(blank) in the current locale.
 /*
 STDC(199901)
 */
-
-
-#endif

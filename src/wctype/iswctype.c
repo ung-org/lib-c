@@ -1,14 +1,13 @@
-#if 0
-
 #include <wctype.h>
 #include <wchar.h>
-#include "_assert.h"
+#include "_safety.h"
 
 /** test whether a wide character is part of a character class **/
 int iswctype(wint_t wc, wctype_t desc)
 {
+	SIGNAL_SAFE(0);
 	ASSERT_REPRESENTABLE(wc, WCHAR_MIN, WCHAR_MAX, "wchar_t", WEOF);
-	ASSERT_REPRESENTABLE(desc, 1, __libc.wctype.nwctype, "wctype_t", 0);
+	//ASSERT_REPRESENTABLE(desc, 1, __libc.wctype.nwctype, "wctype_t", 0);
 
 	/* TODO: actual work */
 	(void)wc; (void)desc;
@@ -32,6 +31,3 @@ returned by fn(wctype), in the current locale.
 /*
 STDC(199409)
 */
-
-
-#endif

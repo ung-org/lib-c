@@ -1,13 +1,12 @@
-#if 0
-
 #include <wctype.h>
 #include <limits.h>
 #include <wchar.h>
-#include "_assert.h"
+#include "_safety.h"
 
 /** test whether a wide character is alphanumeric **/
 int iswalnum(wint_t wc)
 {
+	SIGNAL_SAFE(0);
 	ASSERT_REPRESENTABLE(wc, WCHAR_MIN, WCHAR_MAX, "wchar_t", WEOF);
 
 	return iswalpha(wc) || iswdigit(wc);
@@ -28,6 +27,3 @@ cclass(alpha) or cclass(digit) in the current locale.
 /*
 STDC(199409)
 */
-
-
-#endif
