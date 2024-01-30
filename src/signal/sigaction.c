@@ -7,6 +7,8 @@
 
 int sigaction(int sig, const struct sigaction * restrict act, struct sigaction * restrict oact)
 {
+	SIGNAL_SAFE(-1);
+
 	struct linux_action {
 		union {
 			void (*handler)(int);

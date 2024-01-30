@@ -21,10 +21,8 @@
 
 void (*signal(int sig, void (*func)(int)))(int)
 {
-	if (__signal.current != 0 && __signal.current != sig) {
-		/* only safe if resetting the current signal handler */
-		SIGNAL_SAFE(0);
-	}
+	/* signal safe iff we are resetting the current signal handler */
+	SIGNAL_SAFE((__signal.current == sig));
 
 	if (sig < 0 || sig > NSIGNALS) {
 		/* FIXME: should errno be set? */

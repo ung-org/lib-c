@@ -13,10 +13,13 @@
 #define getpid()	__scall0(getpid)
 #endif
 
+#include "_safety.h"
+
 /** send a signal to the current program **/
 
 int raise(int sig)
 {
+	SIGNAL_SAFE(0);
 	/*
 	RETURN_FAILURE(NONZERO);
 	RETURN_SUCCESS(0);
