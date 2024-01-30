@@ -3,3 +3,7 @@ struct __constraint_info {
 	int value;
 	int signal;
 };
+
+/*
+STDC(-1)
+*/

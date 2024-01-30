@@ -35,4 +35,8 @@ extern char **environ;
 #define environ __stdlib.environ
 #endif
 
+/*
+STDC(-1)
+*/
+
 #endif

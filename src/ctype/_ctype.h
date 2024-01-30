@@ -18,4 +18,8 @@ typedef enum {
 	CT_BLANK = (1 << 10),
 } ctype_t;
 
+/*
+STDC(-1)
+*/
+
 #endif

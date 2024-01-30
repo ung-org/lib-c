@@ -91,4 +91,8 @@ struct __locale_t {
 char * __load_locale(struct __locale_t *loc, int mask, const char *name);
 struct __locale_t * __get_locale(void);
 
+/*
+STDC(-1)
+*/
+
 #endif

@@ -86,4 +86,8 @@
 #define TYPE			double
 #define TGHUGE			HUGE_VAL
 
+/*
+STDC(-1)
+*/
+
 #endif

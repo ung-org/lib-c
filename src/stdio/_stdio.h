@@ -66,4 +66,8 @@ struct __stdio {
 
 extern struct __stdio __stdio;
 
+/*
+STDC(-1)
+*/
+
 #endif

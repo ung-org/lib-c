@@ -14,4 +14,8 @@ extern struct __signal {
 
 void __signal_handler(int);
 
+/*
+STDC(-1)
+*/
+
 #endif

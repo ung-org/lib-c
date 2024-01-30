@@ -34,8 +34,8 @@ extern struct __checked_call {
 	} \
 } while (0)
 
-#define ASSERT_NOOVERLAP(__x, __y, __s) do { \
-	/* TODO */ \
+#define ASSERT_NOOVERLAP(__p1, __l1, __p2, __l2) do { \
+	/* TODO */ (void)(__p1); (void)(__l1); (void)(__p2); (void)(__l2); \
 } while (0)
 
 #define ASSERT_REPRESENTABLE(_n, _min, _max, _type, _sentinel) do { \
@@ -53,7 +53,8 @@ extern struct __checked_call {
 	if (__n == 0 && __signal.current != 0) { \
 		struct __constraint_info _ci = {0}; \
 		_ci.func = __func__; \
-		_ci.value = __signal.current; \
+		_ci.signal = __signal.current; \
+		__signal.current = 0; \
 		__stdlib.constraint_handler("Undefined behavior: " \
 			"Standard library function called from signal handler", \
 			&_ci, 0); \

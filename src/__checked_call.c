@@ -1,6 +1,6 @@
-#include "_assert.h"
+#include "_safety.h"
 
-#ifdef THREADS
+#if 0
 _Thread_local
 #endif
 struct __checked_call __checked_call = { 0 };
