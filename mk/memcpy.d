@@ -5,6 +5,5 @@ libc.a(memcpy.o): $(OBJDIR)/memcpy.o
 $(OBJDIR)/memcpy.o: src/string/memcpy.c
 $(OBJDIR)/memcpy.o: src/_safety.h
 $(OBJDIR)/memcpy.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/string/memcpy.c
+	$(CC) -c -o $@ $(CFLAGS) src/string/memcpy.c

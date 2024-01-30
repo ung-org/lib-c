@@ -5,6 +5,5 @@ libc.a(towctrans.o): $(OBJDIR)/towctrans.o
 $(OBJDIR)/towctrans.o: src/wctype/towctrans.c
 $(OBJDIR)/towctrans.o: src/_safety.h
 $(OBJDIR)/towctrans.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wctype/towctrans.c
+	$(CC) -c -o $@ $(CFLAGS) src/wctype/towctrans.c

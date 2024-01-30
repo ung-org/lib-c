@@ -5,6 +5,5 @@ libc.a(wmemmove.o): $(OBJDIR)/wmemmove.o
 $(OBJDIR)/wmemmove.o: src/wchar/wmemmove.c
 $(OBJDIR)/wmemmove.o: src/_safety.h
 $(OBJDIR)/wmemmove.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wchar/wmemmove.c
+	$(CC) -c -o $@ $(CFLAGS) src/wchar/wmemmove.c

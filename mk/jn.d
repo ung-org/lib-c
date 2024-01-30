@@ -4,6 +4,5 @@ libm.a(jn.o): $(OBJDIR)/jn.o
 
 $(OBJDIR)/jn.o: src/math/jn.c
 $(OBJDIR)/jn.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/math/jn.c
+	$(CC) -c -o $@ $(CFLAGS) src/math/jn.c

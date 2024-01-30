@@ -4,6 +4,5 @@ libc.a(select.o): $(OBJDIR)/select.o
 
 $(OBJDIR)/select.o: src/sys/time/select.c
 $(OBJDIR)/select.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/sys/time/select.c
+	$(CC) -c -o $@ $(CFLAGS) src/sys/time/select.c

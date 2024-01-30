@@ -6,6 +6,5 @@ $(OBJDIR)/strtof.o: src/stdlib/strtof.c
 $(OBJDIR)/strtof.o: src/stdlib/_stdlib.h
 $(OBJDIR)/strtof.o: src/stdlib/_strtod.h
 $(OBJDIR)/strtof.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdlib/strtof.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdlib/strtof.c

@@ -4,6 +4,5 @@ libc.a(getdtablesize.o): $(OBJDIR)/getdtablesize.o
 
 $(OBJDIR)/getdtablesize.o: src/unistd/getdtablesize.c
 $(OBJDIR)/getdtablesize.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/getdtablesize.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/getdtablesize.c

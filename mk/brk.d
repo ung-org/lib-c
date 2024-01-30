@@ -4,6 +4,5 @@ libc.a(brk.o): $(OBJDIR)/brk.o
 
 $(OBJDIR)/brk.o: src/unistd/brk.c
 $(OBJDIR)/brk.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/brk.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/brk.c

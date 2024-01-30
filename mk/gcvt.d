@@ -5,6 +5,5 @@ libc.a(gcvt.o): $(OBJDIR)/gcvt.o
 $(OBJDIR)/gcvt.o: src/stdlib/gcvt.c
 $(OBJDIR)/gcvt.o: src/stdlib/_stdlib.h
 $(OBJDIR)/gcvt.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdlib/gcvt.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdlib/gcvt.c

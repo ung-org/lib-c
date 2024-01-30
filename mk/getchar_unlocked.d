@@ -4,6 +4,5 @@ libc.a(getchar_unlocked.o): $(OBJDIR)/getchar_unlocked.o
 
 $(OBJDIR)/getchar_unlocked.o: src/stdio/getchar_unlocked.c
 $(OBJDIR)/getchar_unlocked.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdio/getchar_unlocked.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdio/getchar_unlocked.c

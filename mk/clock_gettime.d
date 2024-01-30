@@ -5,6 +5,5 @@ librt.a(clock_gettime.o): $(OBJDIR)/clock_gettime.o
 $(OBJDIR)/clock_gettime.o: src/time/clock_gettime.c
 $(OBJDIR)/clock_gettime.o: src/_safety.h
 $(OBJDIR)/clock_gettime.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/time/clock_gettime.c
+	$(CC) -c -o $@ $(CFLAGS) src/time/clock_gettime.c

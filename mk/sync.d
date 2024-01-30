@@ -4,6 +4,5 @@ libc.a(sync.o): $(OBJDIR)/sync.o
 
 $(OBJDIR)/sync.o: src/unistd/sync.c
 $(OBJDIR)/sync.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/sync.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/sync.c

@@ -5,6 +5,5 @@ libc.a(fputwc.o): $(OBJDIR)/fputwc.o
 $(OBJDIR)/fputwc.o: src/wchar/fputwc.c
 $(OBJDIR)/fputwc.o: src/stdio/_stdio.h
 $(OBJDIR)/fputwc.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wchar/fputwc.c
+	$(CC) -c -o $@ $(CFLAGS) src/wchar/fputwc.c

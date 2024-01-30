@@ -4,6 +4,5 @@ libc.a(unlockpt.o): $(OBJDIR)/unlockpt.o
 
 $(OBJDIR)/unlockpt.o: src/stdlib/unlockpt.c
 $(OBJDIR)/unlockpt.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdlib/unlockpt.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdlib/unlockpt.c

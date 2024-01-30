@@ -4,6 +4,5 @@ libc.a(shm_unlink.o): $(OBJDIR)/shm_unlink.o
 
 $(OBJDIR)/shm_unlink.o: src/sys/mman/shm_unlink.c
 $(OBJDIR)/shm_unlink.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/sys/mman/shm_unlink.c
+	$(CC) -c -o $@ $(CFLAGS) src/sys/mman/shm_unlink.c

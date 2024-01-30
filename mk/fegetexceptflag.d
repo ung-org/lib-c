@@ -5,6 +5,5 @@ libm.a(fegetexceptflag.o): $(OBJDIR)/fegetexceptflag.o
 $(OBJDIR)/fegetexceptflag.o: src/fenv/fegetexceptflag.c
 $(OBJDIR)/fegetexceptflag.o: src/_safety.h
 $(OBJDIR)/fegetexceptflag.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/fenv/fegetexceptflag.c
+	$(CC) -c -o $@ $(CFLAGS) src/fenv/fegetexceptflag.c

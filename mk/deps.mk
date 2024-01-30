@@ -226,6 +226,10 @@ all: mk/memmove_s.d
 mk/memmove_s.d: src/string/memmove_s.c
 	sh mk/deps.sh src/string/memmove_s.c
 
+all: mk/strtok.d
+mk/strtok.d: src/string/strtok.c
+	sh mk/deps.sh src/string/strtok.c
+
 all: mk/strcoll.d
 mk/strcoll.d: src/string/strcoll.c
 	sh mk/deps.sh src/string/strcoll.c
@@ -241,6 +245,10 @@ mk/strncmp.d: src/string/strncmp.c
 all: mk/memset.d
 mk/memset.d: src/string/memset.c
 	sh mk/deps.sh src/string/memset.c
+
+all: mk/strerror.d
+mk/strerror.d: src/string/strerror.c
+	sh mk/deps.sh src/string/strerror.c
 
 all: mk/strncpy_s.d
 mk/strncpy_s.d: src/string/strncpy_s.c
@@ -270,6 +278,10 @@ all: mk/strerrorlen_s.d
 mk/strerrorlen_s.d: src/string/strerrorlen_s.c
 	sh mk/deps.sh src/string/strerrorlen_s.c
 
+all: mk/strpbrk.d
+mk/strpbrk.d: src/string/strpbrk.c
+	sh mk/deps.sh src/string/strpbrk.c
+
 all: mk/memcmp.d
 mk/memcmp.d: src/string/memcmp.c
 	sh mk/deps.sh src/string/memcmp.c
@@ -277,6 +289,10 @@ mk/memcmp.d: src/string/memcmp.c
 all: mk/strcmp.d
 mk/strcmp.d: src/string/strcmp.c
 	sh mk/deps.sh src/string/strcmp.c
+
+all: mk/strcat.d
+mk/strcat.d: src/string/strcat.c
+	sh mk/deps.sh src/string/strcat.c
 
 all: mk/strncat_s.d
 mk/strncat_s.d: src/string/strncat_s.c
@@ -286,9 +302,33 @@ all: mk/memccpy.d
 mk/memccpy.d: src/string/memccpy.c
 	sh mk/deps.sh src/string/memccpy.c
 
+all: mk/strrchr.d
+mk/strrchr.d: src/string/strrchr.c
+	sh mk/deps.sh src/string/strrchr.c
+
+all: mk/strcpy.d
+mk/strcpy.d: src/string/strcpy.c
+	sh mk/deps.sh src/string/strcpy.c
+
+all: mk/strtok_s.d
+mk/strtok_s.d: src/string/strtok_s.c
+	sh mk/deps.sh src/string/strtok_s.c
+
 all: mk/strerror_s.d
 mk/strerror_s.d: src/string/strerror_s.c
 	sh mk/deps.sh src/string/strerror_s.c
+
+all: mk/strdup.d
+mk/strdup.d: src/string/strdup.c
+	sh mk/deps.sh src/string/strdup.c
+
+all: mk/strncpy.d
+mk/strncpy.d: src/string/strncpy.c
+	sh mk/deps.sh src/string/strncpy.c
+
+all: mk/strstr.d
+mk/strstr.d: src/string/strstr.c
+	sh mk/deps.sh src/string/strstr.c
 
 all: mk/strcat_s.d
 mk/strcat_s.d: src/string/strcat_s.c
@@ -305,6 +345,14 @@ mk/strcspn.d: src/string/strcspn.c
 all: mk/strlen.d
 mk/strlen.d: src/string/strlen.c
 	sh mk/deps.sh src/string/strlen.c
+
+all: mk/strchr.d
+mk/strchr.d: src/string/strchr.c
+	sh mk/deps.sh src/string/strchr.c
+
+all: mk/strncat.d
+mk/strncat.d: src/string/strncat.c
+	sh mk/deps.sh src/string/strncat.c
 
 all: mk/memset_s.d
 mk/memset_s.d: src/string/memset_s.c
@@ -658,9 +706,41 @@ all: mk/wcscoll.d
 mk/wcscoll.d: src/wchar/wcscoll.c
 	sh mk/deps.sh src/wchar/wcscoll.c
 
+all: mk/strtoumax.d
+mk/strtoumax.d: src/inttypes/strtoumax.c
+	sh mk/deps.sh src/inttypes/strtoumax.c
+
+all: mk/imaxabs.d
+mk/imaxabs.d: src/inttypes/imaxabs.c
+	sh mk/deps.sh src/inttypes/imaxabs.c
+
+all: mk/strtoimax.d
+mk/strtoimax.d: src/inttypes/strtoimax.c
+	sh mk/deps.sh src/inttypes/strtoimax.c
+
+all: mk/wcstoimax.d
+mk/wcstoimax.d: src/inttypes/wcstoimax.c
+	sh mk/deps.sh src/inttypes/wcstoimax.c
+
+all: mk/wcstoumax.d
+mk/wcstoumax.d: src/inttypes/wcstoumax.c
+	sh mk/deps.sh src/inttypes/wcstoumax.c
+
+all: mk/imaxdiv.d
+mk/imaxdiv.d: src/inttypes/imaxdiv.c
+	sh mk/deps.sh src/inttypes/imaxdiv.c
+
 all: mk/__checked_call.d
 mk/__checked_call.d: src/__checked_call.c
 	sh mk/deps.sh src/__checked_call.c
+
+all: mk/setlocale.d
+mk/setlocale.d: src/locale/setlocale.c
+	sh mk/deps.sh src/locale/setlocale.c
+
+all: mk/localeconv.d
+mk/localeconv.d: src/locale/localeconv.c
+	sh mk/deps.sh src/locale/localeconv.c
 
 all: mk/__load_locale.d
 mk/__load_locale.d: src/locale/__load_locale.c
@@ -730,6 +810,10 @@ all: mk/erand48.d
 mk/erand48.d: src/stdlib/erand48.c
 	sh mk/deps.sh src/stdlib/erand48.c
 
+all: mk/abort.d
+mk/abort.d: src/stdlib/abort.c
+	sh mk/deps.sh src/stdlib/abort.c
+
 all: mk/bsearch_s.d
 mk/bsearch_s.d: src/stdlib/bsearch_s.c
 	sh mk/deps.sh src/stdlib/bsearch_s.c
@@ -745,6 +829,10 @@ mk/fcvt.d: src/stdlib/fcvt.c
 all: mk/system.d
 mk/system.d: src/stdlib/system.c
 	sh mk/deps.sh src/stdlib/system.c
+
+all: mk/div.d
+mk/div.d: src/stdlib/div.c
+	sh mk/deps.sh src/stdlib/div.c
 
 all: mk/lrand48.d
 mk/lrand48.d: src/stdlib/lrand48.c
@@ -785,6 +873,10 @@ mk/strtold.d: src/stdlib/strtold.c
 all: mk/malloc.d
 mk/malloc.d: src/stdlib/malloc.c
 	sh mk/deps.sh src/stdlib/malloc.c
+
+all: mk/rand.d
+mk/rand.d: src/stdlib/rand.c
+	sh mk/deps.sh src/stdlib/rand.c
 
 all: mk/initstate.d
 mk/initstate.d: src/stdlib/initstate.c
@@ -1097,6 +1189,10 @@ mk/rint.d: src/math/rint.c
 all: mk/asin.d
 mk/asin.d: src/math/asin.c
 	sh mk/deps.sh src/math/asin.c
+
+all: mk/copysign.d
+mk/copysign.d: src/math/copysign.c
+	sh mk/deps.sh src/math/copysign.c
 
 all: mk/cosh.d
 mk/cosh.d: src/math/cosh.c
@@ -1938,6 +2034,10 @@ all: mk/timer_create.d
 mk/timer_create.d: src/time/timer_create.c
 	sh mk/deps.sh src/time/timer_create.c
 
+all: mk/clock.d
+mk/clock.d: src/time/clock.c
+	sh mk/deps.sh src/time/clock.c
+
 all: mk/getdate_err.d
 mk/getdate_err.d: src/time/getdate_err.c
 	sh mk/deps.sh src/time/getdate_err.c
@@ -2025,6 +2125,10 @@ mk/environ.d: src/environ.c
 all: mk/_longjmp.d
 mk/_longjmp.d: src/setjmp/_longjmp.c
 	sh mk/deps.sh src/setjmp/_longjmp.c
+
+all: mk/sigjmp_buf.d
+mk/sigjmp_buf.d: src/setjmp/sigjmp_buf.c
+	sh mk/deps.sh src/setjmp/sigjmp_buf.c
 
 all: mk/_setjmp.d
 mk/_setjmp.d: src/setjmp/_setjmp.c
@@ -2218,6 +2322,10 @@ all: mk/clearerr.d
 mk/clearerr.d: src/stdio/clearerr.c
 	sh mk/deps.sh src/stdio/clearerr.c
 
+all: mk/fopen.d
+mk/fopen.d: src/stdio/fopen.c
+	sh mk/deps.sh src/stdio/fopen.c
+
 all: mk/tmpnam_s.d
 mk/tmpnam_s.d: src/stdio/tmpnam_s.c
 	sh mk/deps.sh src/stdio/tmpnam_s.c
@@ -2225,6 +2333,10 @@ mk/tmpnam_s.d: src/stdio/tmpnam_s.c
 all: mk/__stdout.d
 mk/__stdout.d: src/stdio/__stdout.c
 	sh mk/deps.sh src/stdio/__stdout.c
+
+all: mk/fgets.d
+mk/fgets.d: src/stdio/fgets.c
+	sh mk/deps.sh src/stdio/fgets.c
 
 all: mk/snprintf_s.d
 mk/snprintf_s.d: src/stdio/snprintf_s.c
@@ -2310,6 +2422,10 @@ all: mk/vprintf_s.d
 mk/vprintf_s.d: src/stdio/vprintf_s.c
 	sh mk/deps.sh src/stdio/vprintf_s.c
 
+all: mk/getchar.d
+mk/getchar.d: src/stdio/getchar.c
+	sh mk/deps.sh src/stdio/getchar.c
+
 all: mk/tempnam.d
 mk/tempnam.d: src/stdio/tempnam.c
 	sh mk/deps.sh src/stdio/tempnam.c
@@ -2357,6 +2473,10 @@ mk/vsscanf.d: src/stdio/vsscanf.c
 all: mk/fgetpos.d
 mk/fgetpos.d: src/stdio/fgetpos.c
 	sh mk/deps.sh src/stdio/fgetpos.c
+
+all: mk/tmpfile.d
+mk/tmpfile.d: src/stdio/tmpfile.c
+	sh mk/deps.sh src/stdio/tmpfile.c
 
 all: mk/setvbuf.d
 mk/setvbuf.d: src/stdio/setvbuf.c
@@ -2577,6 +2697,10 @@ mk/fesetenv.d: src/fenv/fesetenv.c
 all: mk/fesetexceptflag.d
 mk/fesetexceptflag.d: src/fenv/fesetexceptflag.c
 	sh mk/deps.sh src/fenv/fesetexceptflag.c
+
+all: mk/fegetround.d
+mk/fegetround.d: src/fenv/fegetround.c
+	sh mk/deps.sh src/fenv/fegetround.c
 
 all: mk/fetestexcept.d
 mk/fetestexcept.d: src/fenv/fetestexcept.c

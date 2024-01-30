@@ -5,6 +5,5 @@ libc.a(uname.o): $(OBJDIR)/uname.o
 $(OBJDIR)/uname.o: src/sys/utsname/uname.c
 $(OBJDIR)/uname.o: src/_assert.h
 $(OBJDIR)/uname.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/sys/utsname/uname.c
+	$(CC) -c -o $@ $(CFLAGS) src/sys/utsname/uname.c

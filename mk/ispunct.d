@@ -5,6 +5,5 @@ libc.a(ispunct.o): $(OBJDIR)/ispunct.o
 $(OBJDIR)/ispunct.o: src/ctype/ispunct.c
 $(OBJDIR)/ispunct.o: src/ctype/_ctype.h
 $(OBJDIR)/ispunct.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/ctype/ispunct.c
+	$(CC) -c -o $@ $(CFLAGS) src/ctype/ispunct.c

@@ -6,6 +6,5 @@ $(OBJDIR)/cpow.o: src/complex/cpow.c
 $(OBJDIR)/cpow.o: src/complex/_tgmath.h
 $(OBJDIR)/src/math/_tgmath.h.o: 
 $(OBJDIR)/cpow.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/complex/cpow.c
+	$(CC) -c -o $@ $(CFLAGS) src/complex/cpow.c

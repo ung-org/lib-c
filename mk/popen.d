@@ -5,6 +5,5 @@ libc.a(popen.o): $(OBJDIR)/popen.o
 $(OBJDIR)/popen.o: src/stdio/popen.c
 $(OBJDIR)/popen.o: src/stdio/_stdio.h
 $(OBJDIR)/popen.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdio/popen.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdio/popen.c

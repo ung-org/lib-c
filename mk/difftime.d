@@ -5,6 +5,5 @@ libc.a(difftime.o): $(OBJDIR)/difftime.o
 $(OBJDIR)/difftime.o: src/time/difftime.c
 $(OBJDIR)/difftime.o: src/_safety.h
 $(OBJDIR)/difftime.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/time/difftime.c
+	$(CC) -c -o $@ $(CFLAGS) src/time/difftime.c

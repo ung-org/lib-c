@@ -4,6 +4,5 @@ libc.a(mbrlen.o): $(OBJDIR)/mbrlen.o
 
 $(OBJDIR)/mbrlen.o: src/wchar/mbrlen.c
 $(OBJDIR)/mbrlen.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wchar/mbrlen.c
+	$(CC) -c -o $@ $(CFLAGS) src/wchar/mbrlen.c

@@ -5,6 +5,5 @@ libc.a(iswlower.o): $(OBJDIR)/iswlower.o
 $(OBJDIR)/iswlower.o: src/wctype/iswlower.c
 $(OBJDIR)/iswlower.o: src/_safety.h
 $(OBJDIR)/iswlower.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wctype/iswlower.c
+	$(CC) -c -o $@ $(CFLAGS) src/wctype/iswlower.c

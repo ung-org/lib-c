@@ -5,6 +5,5 @@ libc.a(mbtowc.o): $(OBJDIR)/mbtowc.o
 $(OBJDIR)/mbtowc.o: src/stdlib/mbtowc.c
 $(OBJDIR)/mbtowc.o: src/stdlib/_stdlib.h
 $(OBJDIR)/mbtowc.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdlib/mbtowc.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdlib/mbtowc.c

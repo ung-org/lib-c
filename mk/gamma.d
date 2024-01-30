@@ -4,6 +4,5 @@ libm.a(gamma.o): $(OBJDIR)/gamma.o
 
 $(OBJDIR)/gamma.o: src/math/gamma.c
 $(OBJDIR)/gamma.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/math/gamma.c
+	$(CC) -c -o $@ $(CFLAGS) src/math/gamma.c

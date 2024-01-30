@@ -4,6 +4,5 @@ libc.a(ungetwc.o): $(OBJDIR)/ungetwc.o
 
 $(OBJDIR)/ungetwc.o: src/wchar/ungetwc.c
 $(OBJDIR)/ungetwc.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wchar/ungetwc.c
+	$(CC) -c -o $@ $(CFLAGS) src/wchar/ungetwc.c

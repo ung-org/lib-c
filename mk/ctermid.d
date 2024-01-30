@@ -4,6 +4,5 @@ libc.a(ctermid.o): $(OBJDIR)/ctermid.o
 
 $(OBJDIR)/ctermid.o: src/unistd/ctermid.c
 $(OBJDIR)/ctermid.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/ctermid.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/ctermid.c

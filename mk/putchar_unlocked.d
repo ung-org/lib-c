@@ -4,6 +4,5 @@ libc.a(putchar_unlocked.o): $(OBJDIR)/putchar_unlocked.o
 
 $(OBJDIR)/putchar_unlocked.o: src/stdio/putchar_unlocked.c
 $(OBJDIR)/putchar_unlocked.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdio/putchar_unlocked.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdio/putchar_unlocked.c

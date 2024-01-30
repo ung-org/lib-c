@@ -4,6 +4,5 @@ libc.a(utimes.o): $(OBJDIR)/utimes.o
 
 $(OBJDIR)/utimes.o: src/sys/time/utimes.c
 $(OBJDIR)/utimes.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/sys/time/utimes.c
+	$(CC) -c -o $@ $(CFLAGS) src/sys/time/utimes.c

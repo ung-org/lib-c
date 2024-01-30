@@ -4,6 +4,5 @@ libc.a(semop.o): $(OBJDIR)/semop.o
 
 $(OBJDIR)/semop.o: src/sys/sem/semop.c
 $(OBJDIR)/semop.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/sys/sem/semop.c
+	$(CC) -c -o $@ $(CFLAGS) src/sys/sem/semop.c

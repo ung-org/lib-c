@@ -5,6 +5,5 @@ libc.a(strlen.o): $(OBJDIR)/strlen.o
 $(OBJDIR)/strlen.o: src/string/strlen.c
 $(OBJDIR)/strlen.o: src/_safety.h
 $(OBJDIR)/strlen.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/string/strlen.c
+	$(CC) -c -o $@ $(CFLAGS) src/string/strlen.c

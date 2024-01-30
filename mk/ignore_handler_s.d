@@ -5,6 +5,5 @@ libc.a(ignore_handler_s.o): $(OBJDIR)/ignore_handler_s.o
 $(OBJDIR)/ignore_handler_s.o: src/stdlib/ignore_handler_s.c
 $(OBJDIR)/ignore_handler_s.o: src/stdlib/_stdlib.h
 $(OBJDIR)/ignore_handler_s.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdlib/ignore_handler_s.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdlib/ignore_handler_s.c

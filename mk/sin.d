@@ -6,6 +6,5 @@ $(OBJDIR)/sin.o: src/math/sin.c
 $(OBJDIR)/sin.o: src/complex/_tgmath.h
 $(OBJDIR)/src/math/_tgmath.h.o: 
 $(OBJDIR)/sin.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/math/sin.c
+	$(CC) -c -o $@ $(CFLAGS) src/math/sin.c

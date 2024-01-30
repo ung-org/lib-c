@@ -5,6 +5,5 @@ libc.a(lldiv.o): $(OBJDIR)/lldiv.o
 $(OBJDIR)/lldiv.o: src/stdlib/lldiv.c
 $(OBJDIR)/lldiv.o: src/stdlib/_stdlib.h
 $(OBJDIR)/lldiv.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdlib/lldiv.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdlib/lldiv.c

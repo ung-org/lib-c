@@ -6,6 +6,5 @@ $(OBJDIR)/cacos.o: src/complex/cacos.c
 $(OBJDIR)/cacos.o: src/complex/_tgmath.h
 $(OBJDIR)/src/math/_tgmath.h.o: 
 $(OBJDIR)/cacos.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/complex/cacos.c
+	$(CC) -c -o $@ $(CFLAGS) src/complex/cacos.c

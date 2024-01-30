@@ -4,6 +4,5 @@ libc.a(pathconf.o): $(OBJDIR)/pathconf.o
 
 $(OBJDIR)/pathconf.o: src/unistd/pathconf.c
 $(OBJDIR)/pathconf.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/pathconf.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/pathconf.c

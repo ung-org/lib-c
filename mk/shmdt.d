@@ -4,6 +4,5 @@ libc.a(shmdt.o): $(OBJDIR)/shmdt.o
 
 $(OBJDIR)/shmdt.o: src/sys/shm/shmdt.c
 $(OBJDIR)/shmdt.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/sys/shm/shmdt.c
+	$(CC) -c -o $@ $(CFLAGS) src/sys/shm/shmdt.c

@@ -5,6 +5,5 @@ libc.a(fwrite.o): $(OBJDIR)/fwrite.o
 $(OBJDIR)/fwrite.o: src/stdio/fwrite.c
 $(OBJDIR)/fwrite.o: src/stdio/_stdio.h
 $(OBJDIR)/fwrite.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdio/fwrite.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdio/fwrite.c

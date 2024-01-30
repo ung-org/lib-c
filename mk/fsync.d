@@ -5,6 +5,5 @@ libc.a(fsync.o): $(OBJDIR)/fsync.o
 
 $(OBJDIR)/fsync.o: src/unistd/fsync.c
 $(OBJDIR)/fsync.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/fsync.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/fsync.c

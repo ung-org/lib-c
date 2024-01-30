@@ -4,6 +4,5 @@ libc.a(wcstok.o): $(OBJDIR)/wcstok.o
 
 $(OBJDIR)/wcstok.o: src/wchar/wcstok.c
 $(OBJDIR)/wcstok.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wchar/wcstok.c
+	$(CC) -c -o $@ $(CFLAGS) src/wchar/wcstok.c

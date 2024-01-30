@@ -4,6 +4,5 @@ libc.a(timezone.o): $(OBJDIR)/timezone.o
 
 $(OBJDIR)/timezone.o: src/time/timezone.c
 $(OBJDIR)/timezone.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/time/timezone.c
+	$(CC) -c -o $@ $(CFLAGS) src/time/timezone.c

@@ -5,6 +5,5 @@ libc.a(times.o): $(OBJDIR)/times.o
 $(OBJDIR)/times.o: src/sys/times/times.c
 $(OBJDIR)/times.o: src/_syscall.h
 $(OBJDIR)/times.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/sys/times/times.c
+	$(CC) -c -o $@ $(CFLAGS) src/sys/times/times.c

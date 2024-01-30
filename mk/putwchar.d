@@ -4,6 +4,5 @@ libc.a(putwchar.o): $(OBJDIR)/putwchar.o
 
 $(OBJDIR)/putwchar.o: src/wchar/putwchar.c
 $(OBJDIR)/putwchar.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wchar/putwchar.c
+	$(CC) -c -o $@ $(CFLAGS) src/wchar/putwchar.c

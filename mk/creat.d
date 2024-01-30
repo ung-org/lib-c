@@ -4,6 +4,5 @@ libc.a(creat.o): $(OBJDIR)/creat.o
 
 $(OBJDIR)/creat.o: src/fcntl/creat.c
 $(OBJDIR)/creat.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/fcntl/creat.c
+	$(CC) -c -o $@ $(CFLAGS) src/fcntl/creat.c

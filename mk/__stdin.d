@@ -4,6 +4,5 @@ libc.a(__stdin.o): $(OBJDIR)/__stdin.o
 
 $(OBJDIR)/__stdin.o: src/stdio/__stdin.c
 $(OBJDIR)/__stdin.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdio/__stdin.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdio/__stdin.c

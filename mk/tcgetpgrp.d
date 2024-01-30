@@ -5,6 +5,5 @@ libc.a(tcgetpgrp.o): $(OBJDIR)/tcgetpgrp.o
 $(OBJDIR)/tcgetpgrp.o: src/unistd/tcgetpgrp.c
 $(OBJDIR)/tcgetpgrp.o: 
 $(OBJDIR)/tcgetpgrp.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/tcgetpgrp.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/tcgetpgrp.c

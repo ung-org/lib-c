@@ -4,6 +4,5 @@ libc.a(usleep.o): $(OBJDIR)/usleep.o
 
 $(OBJDIR)/usleep.o: src/unistd/usleep.c
 $(OBJDIR)/usleep.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/usleep.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/usleep.c

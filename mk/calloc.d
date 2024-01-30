@@ -5,6 +5,5 @@ libc.a(calloc.o): $(OBJDIR)/calloc.o
 $(OBJDIR)/calloc.o: src/stdlib/calloc.c
 $(OBJDIR)/calloc.o: src/stdlib/_stdlib.h
 $(OBJDIR)/calloc.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdlib/calloc.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdlib/calloc.c

@@ -4,6 +4,5 @@ libc.a(setreuid.o): $(OBJDIR)/setreuid.o
 
 $(OBJDIR)/setreuid.o: src/unistd/setreuid.c
 $(OBJDIR)/setreuid.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/setreuid.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/setreuid.c

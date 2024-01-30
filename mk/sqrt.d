@@ -6,6 +6,5 @@ $(OBJDIR)/sqrt.o: src/math/sqrt.c
 $(OBJDIR)/sqrt.o: src/complex/_tgmath.h
 $(OBJDIR)/src/math/_tgmath.h.o: 
 $(OBJDIR)/sqrt.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/math/sqrt.c
+	$(CC) -c -o $@ $(CFLAGS) src/math/sqrt.c

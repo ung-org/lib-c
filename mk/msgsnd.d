@@ -4,6 +4,5 @@ libc.a(msgsnd.o): $(OBJDIR)/msgsnd.o
 
 $(OBJDIR)/msgsnd.o: src/sys/msg/msgsnd.c
 $(OBJDIR)/msgsnd.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/sys/msg/msgsnd.c
+	$(CC) -c -o $@ $(CFLAGS) src/sys/msg/msgsnd.c

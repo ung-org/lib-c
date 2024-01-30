@@ -5,6 +5,5 @@ libc.a(system.o): $(OBJDIR)/system.o
 $(OBJDIR)/system.o: src/stdlib/system.c
 $(OBJDIR)/system.o: src/stdlib/_stdlib.h
 $(OBJDIR)/system.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdlib/system.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdlib/system.c

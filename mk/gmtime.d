@@ -6,6 +6,5 @@ $(OBJDIR)/gmtime.o: src/time/gmtime.c
 $(OBJDIR)/gmtime.o: src/_safety.h
 $(OBJDIR)/gmtime.o: src/time/_time.h
 $(OBJDIR)/gmtime.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/time/gmtime.c
+	$(CC) -c -o $@ $(CFLAGS) src/time/gmtime.c

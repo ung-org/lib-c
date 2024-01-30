@@ -6,6 +6,5 @@ $(OBJDIR)/wcswcs.o: src/wchar/wcswcs.c
 $(OBJDIR)/wcswcs.o: 
 $(OBJDIR)/wcswcs.o: 
 $(OBJDIR)/wcswcs.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wchar/wcswcs.c
+	$(CC) -c -o $@ $(CFLAGS) src/wchar/wcswcs.c

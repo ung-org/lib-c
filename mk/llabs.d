@@ -5,6 +5,5 @@ libc.a(llabs.o): $(OBJDIR)/llabs.o
 $(OBJDIR)/llabs.o: src/stdlib/llabs.c
 $(OBJDIR)/llabs.o: src/stdlib/_stdlib.h
 $(OBJDIR)/llabs.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdlib/llabs.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdlib/llabs.c

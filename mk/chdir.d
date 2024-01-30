@@ -5,6 +5,5 @@ libc.a(chdir.o): $(OBJDIR)/chdir.o
 $(OBJDIR)/chdir.o: src/unistd/chdir.c
 $(OBJDIR)/chdir.o: src/_syscall.h
 $(OBJDIR)/chdir.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/chdir.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/chdir.c

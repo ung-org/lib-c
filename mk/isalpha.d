@@ -5,6 +5,5 @@ libc.a(isalpha.o): $(OBJDIR)/isalpha.o
 $(OBJDIR)/isalpha.o: src/ctype/isalpha.c
 $(OBJDIR)/isalpha.o: src/_safety.h
 $(OBJDIR)/isalpha.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/ctype/isalpha.c
+	$(CC) -c -o $@ $(CFLAGS) src/ctype/isalpha.c

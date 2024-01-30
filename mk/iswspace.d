@@ -5,6 +5,5 @@ libc.a(iswspace.o): $(OBJDIR)/iswspace.o
 $(OBJDIR)/iswspace.o: src/wctype/iswspace.c
 $(OBJDIR)/iswspace.o: src/_safety.h
 $(OBJDIR)/iswspace.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wctype/iswspace.c
+	$(CC) -c -o $@ $(CFLAGS) src/wctype/iswspace.c

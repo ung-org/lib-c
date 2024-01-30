@@ -5,6 +5,5 @@ libc.a(execve.o): $(OBJDIR)/execve.o
 $(OBJDIR)/execve.o: src/unistd/execve.c
 $(OBJDIR)/execve.o: src/_syscall.h
 $(OBJDIR)/execve.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/execve.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/execve.c

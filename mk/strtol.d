@@ -6,6 +6,5 @@ $(OBJDIR)/strtol.o: src/stdlib/strtol.c
 $(OBJDIR)/strtol.o: src/stdlib/_stdlib.h
 $(OBJDIR)/strtol.o: src/stdlib/_strtoi.h
 $(OBJDIR)/strtol.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdlib/strtol.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdlib/strtol.c

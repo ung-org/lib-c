@@ -4,6 +4,5 @@ libc.a(wcsspn.o): $(OBJDIR)/wcsspn.o
 
 $(OBJDIR)/wcsspn.o: src/wchar/wcsspn.c
 $(OBJDIR)/wcsspn.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wchar/wcsspn.c
+	$(CC) -c -o $@ $(CFLAGS) src/wchar/wcsspn.c

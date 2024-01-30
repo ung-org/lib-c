@@ -4,6 +4,5 @@ libc.a(isascii.o): $(OBJDIR)/isascii.o
 
 $(OBJDIR)/isascii.o: src/ctype/isascii.c
 $(OBJDIR)/isascii.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/ctype/isascii.c
+	$(CC) -c -o $@ $(CFLAGS) src/ctype/isascii.c

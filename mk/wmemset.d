@@ -4,6 +4,5 @@ libc.a(wmemset.o): $(OBJDIR)/wmemset.o
 
 $(OBJDIR)/wmemset.o: src/wchar/wmemset.c
 $(OBJDIR)/wmemset.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wchar/wmemset.c
+	$(CC) -c -o $@ $(CFLAGS) src/wchar/wmemset.c

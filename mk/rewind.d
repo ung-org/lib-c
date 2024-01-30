@@ -5,6 +5,5 @@ libc.a(rewind.o): $(OBJDIR)/rewind.o
 $(OBJDIR)/rewind.o: src/stdio/rewind.c
 $(OBJDIR)/rewind.o: src/stdio/_stdio.h
 $(OBJDIR)/rewind.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdio/rewind.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdio/rewind.c

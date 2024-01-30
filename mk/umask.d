@@ -5,6 +5,5 @@ libc.a(umask.o): $(OBJDIR)/umask.o
 $(OBJDIR)/umask.o: src/sys/stat/umask.c
 $(OBJDIR)/umask.o: src/_syscall.h
 $(OBJDIR)/umask.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/sys/stat/umask.c
+	$(CC) -c -o $@ $(CFLAGS) src/sys/stat/umask.c

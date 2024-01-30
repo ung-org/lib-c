@@ -4,6 +4,5 @@ libc.a(thrd_sleep.o): $(OBJDIR)/thrd_sleep.o
 
 $(OBJDIR)/thrd_sleep.o: src/threads/thrd_sleep.c
 $(OBJDIR)/thrd_sleep.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/threads/thrd_sleep.c
+	$(CC) -c -o $@ $(CFLAGS) src/threads/thrd_sleep.c

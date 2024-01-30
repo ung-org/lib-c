@@ -5,6 +5,5 @@ libc.a(getpid.o): $(OBJDIR)/getpid.o
 $(OBJDIR)/getpid.o: src/unistd/getpid.c
 $(OBJDIR)/getpid.o: src/_syscall.h
 $(OBJDIR)/getpid.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/getpid.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/getpid.c

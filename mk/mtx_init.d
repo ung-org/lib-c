@@ -4,6 +4,5 @@ libc.a(mtx_init.o): $(OBJDIR)/mtx_init.o
 
 $(OBJDIR)/mtx_init.o: src/threads/mtx_init.c
 $(OBJDIR)/mtx_init.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/threads/mtx_init.c
+	$(CC) -c -o $@ $(CFLAGS) src/threads/mtx_init.c

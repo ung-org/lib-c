@@ -4,6 +4,5 @@ libc.a(ftime.o): $(OBJDIR)/ftime.o
 
 $(OBJDIR)/ftime.o: src/sys/timeb/ftime.c
 $(OBJDIR)/ftime.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/sys/timeb/ftime.c
+	$(CC) -c -o $@ $(CFLAGS) src/sys/timeb/ftime.c

@@ -5,6 +5,5 @@ libc.a(atexit.o): $(OBJDIR)/atexit.o
 $(OBJDIR)/atexit.o: src/stdlib/atexit.c
 $(OBJDIR)/atexit.o: src/stdlib/_stdlib.h
 $(OBJDIR)/atexit.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdlib/atexit.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdlib/atexit.c

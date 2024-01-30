@@ -4,6 +4,5 @@ libc.a(nice.o): $(OBJDIR)/nice.o
 
 $(OBJDIR)/nice.o: src/unistd/nice.c
 $(OBJDIR)/nice.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/nice.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/nice.c

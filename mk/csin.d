@@ -6,6 +6,5 @@ $(OBJDIR)/csin.o: src/complex/csin.c
 $(OBJDIR)/csin.o: src/complex/_tgmath.h
 $(OBJDIR)/src/math/_tgmath.h.o: 
 $(OBJDIR)/csin.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/complex/csin.c
+	$(CC) -c -o $@ $(CFLAGS) src/complex/csin.c

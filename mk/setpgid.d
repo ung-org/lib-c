@@ -5,6 +5,5 @@ libc.a(setpgid.o): $(OBJDIR)/setpgid.o
 $(OBJDIR)/setpgid.o: src/unistd/setpgid.c
 $(OBJDIR)/setpgid.o: src/_syscall.h
 $(OBJDIR)/setpgid.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/setpgid.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/setpgid.c

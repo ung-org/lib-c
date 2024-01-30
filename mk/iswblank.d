@@ -5,6 +5,5 @@ libc.a(iswblank.o): $(OBJDIR)/iswblank.o
 $(OBJDIR)/iswblank.o: src/wctype/iswblank.c
 $(OBJDIR)/iswblank.o: src/_safety.h
 $(OBJDIR)/iswblank.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wctype/iswblank.c
+	$(CC) -c -o $@ $(CFLAGS) src/wctype/iswblank.c

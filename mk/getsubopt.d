@@ -6,6 +6,5 @@ libc.a(getsubopt.o): $(OBJDIR)/getsubopt.o
 $(OBJDIR)/getsubopt.o: src/stdlib/getsubopt.c
 $(OBJDIR)/getsubopt.o: src/stdlib/_stdlib.h
 $(OBJDIR)/getsubopt.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdlib/getsubopt.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdlib/getsubopt.c

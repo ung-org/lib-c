@@ -5,6 +5,5 @@ libc.a(statvfs.o): $(OBJDIR)/statvfs.o
 
 $(OBJDIR)/statvfs.o: src/sys/statvfs/statvfs.c
 $(OBJDIR)/statvfs.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/sys/statvfs/statvfs.c
+	$(CC) -c -o $@ $(CFLAGS) src/sys/statvfs/statvfs.c

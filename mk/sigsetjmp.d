@@ -4,6 +4,5 @@ libc.a(sigsetjmp.o): $(OBJDIR)/sigsetjmp.o
 
 $(OBJDIR)/sigsetjmp.o: src/setjmp/sigsetjmp.c
 $(OBJDIR)/sigsetjmp.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/setjmp/sigsetjmp.c
+	$(CC) -c -o $@ $(CFLAGS) src/setjmp/sigsetjmp.c

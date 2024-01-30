@@ -4,6 +4,5 @@ libc.a(munlockall.o): $(OBJDIR)/munlockall.o
 
 $(OBJDIR)/munlockall.o: src/sys/mman/munlockall.c
 $(OBJDIR)/munlockall.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/sys/mman/munlockall.c
+	$(CC) -c -o $@ $(CFLAGS) src/sys/mman/munlockall.c

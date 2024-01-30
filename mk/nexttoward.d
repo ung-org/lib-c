@@ -6,6 +6,5 @@ $(OBJDIR)/nexttoward.o: src/math/nexttoward.c
 $(OBJDIR)/nexttoward.o: src/complex/_tgmath.h
 $(OBJDIR)/src/math/_tgmath.h.o: 
 $(OBJDIR)/nexttoward.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/math/nexttoward.c
+	$(CC) -c -o $@ $(CFLAGS) src/math/nexttoward.c

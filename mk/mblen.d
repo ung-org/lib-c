@@ -5,6 +5,5 @@ libc.a(mblen.o): $(OBJDIR)/mblen.o
 $(OBJDIR)/mblen.o: src/stdlib/mblen.c
 $(OBJDIR)/mblen.o: src/stdlib/_stdlib.h
 $(OBJDIR)/mblen.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdlib/mblen.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdlib/mblen.c

@@ -5,6 +5,5 @@ libc.a(setvbuf.o): $(OBJDIR)/setvbuf.o
 $(OBJDIR)/setvbuf.o: src/stdio/setvbuf.c
 $(OBJDIR)/setvbuf.o: src/stdio/_stdio.h
 $(OBJDIR)/setvbuf.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdio/setvbuf.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdio/setvbuf.c

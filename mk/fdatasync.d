@@ -4,6 +4,5 @@ libc.a(fdatasync.o): $(OBJDIR)/fdatasync.o
 
 $(OBJDIR)/fdatasync.o: src/unistd/fdatasync.c
 $(OBJDIR)/fdatasync.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/fdatasync.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/fdatasync.c

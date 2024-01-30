@@ -5,6 +5,5 @@ libc.a(fork.o): $(OBJDIR)/fork.o
 $(OBJDIR)/fork.o: src/unistd/fork.c
 $(OBJDIR)/fork.o: src/_syscall.h
 $(OBJDIR)/fork.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/fork.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/fork.c

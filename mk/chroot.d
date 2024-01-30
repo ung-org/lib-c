@@ -4,6 +4,5 @@ libc.a(chroot.o): $(OBJDIR)/chroot.o
 
 $(OBJDIR)/chroot.o: src/unistd/chroot.c
 $(OBJDIR)/chroot.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/chroot.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/chroot.c

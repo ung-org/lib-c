@@ -6,6 +6,5 @@ $(OBJDIR)/fmax.o: src/math/fmax.c
 $(OBJDIR)/fmax.o: src/complex/_tgmath.h
 $(OBJDIR)/src/math/_tgmath.h.o: 
 $(OBJDIR)/fmax.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/math/fmax.c
+	$(CC) -c -o $@ $(CFLAGS) src/math/fmax.c

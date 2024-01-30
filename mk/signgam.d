@@ -4,6 +4,5 @@ libm.a(signgam.o): $(OBJDIR)/signgam.o
 
 $(OBJDIR)/signgam.o: src/math/signgam.c
 $(OBJDIR)/signgam.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/math/signgam.c
+	$(CC) -c -o $@ $(CFLAGS) src/math/signgam.c

@@ -5,6 +5,5 @@ libc.a(close.o): $(OBJDIR)/close.o
 $(OBJDIR)/close.o: src/unistd/close.c
 $(OBJDIR)/close.o: src/_syscall.h
 $(OBJDIR)/close.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/close.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/close.c

@@ -4,6 +4,5 @@ libc.a(wmemcpy_s.o): $(OBJDIR)/wmemcpy_s.o
 
 $(OBJDIR)/wmemcpy_s.o: src/wchar/wmemcpy_s.c
 $(OBJDIR)/wmemcpy_s.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wchar/wmemcpy_s.c
+	$(CC) -c -o $@ $(CFLAGS) src/wchar/wmemcpy_s.c

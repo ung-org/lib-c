@@ -4,6 +4,5 @@ libc.a(fwscanf.o): $(OBJDIR)/fwscanf.o
 
 $(OBJDIR)/fwscanf.o: src/wchar/fwscanf.c
 $(OBJDIR)/fwscanf.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wchar/fwscanf.c
+	$(CC) -c -o $@ $(CFLAGS) src/wchar/fwscanf.c

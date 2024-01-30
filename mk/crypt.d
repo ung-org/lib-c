@@ -4,6 +4,5 @@ libc.a(crypt.o): $(OBJDIR)/crypt.o
 
 $(OBJDIR)/crypt.o: src/unistd/crypt.c
 $(OBJDIR)/crypt.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/crypt.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/crypt.c

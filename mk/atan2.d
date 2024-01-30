@@ -7,6 +7,5 @@ $(OBJDIR)/atan2.o: src/_safety.h
 $(OBJDIR)/atan2.o: src/complex/_tgmath.h
 $(OBJDIR)/src/math/_tgmath.h.o: 
 $(OBJDIR)/atan2.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/math/atan2.c
+	$(CC) -c -o $@ $(CFLAGS) src/math/atan2.c

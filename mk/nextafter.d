@@ -7,6 +7,5 @@ $(OBJDIR)/nextafter.o: src/math/nextafter.c
 $(OBJDIR)/nextafter.o: src/complex/_tgmath.h
 $(OBJDIR)/src/math/_tgmath.h.o: 
 $(OBJDIR)/nextafter.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/math/nextafter.c
+	$(CC) -c -o $@ $(CFLAGS) src/math/nextafter.c

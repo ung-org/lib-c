@@ -6,6 +6,5 @@ $(OBJDIR)/wctype.o: src/wctype/wctype.c
 $(OBJDIR)/wctype.o: src/_safety.h
 $(OBJDIR)/wctype.o: src/wctype/_wctype.h
 $(OBJDIR)/wctype.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wctype/wctype.c
+	$(CC) -c -o $@ $(CFLAGS) src/wctype/wctype.c

@@ -4,6 +4,5 @@ libc.a(semget.o): $(OBJDIR)/semget.o
 
 $(OBJDIR)/semget.o: src/sys/sem/semget.c
 $(OBJDIR)/semget.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/sys/sem/semget.c
+	$(CC) -c -o $@ $(CFLAGS) src/sys/sem/semget.c

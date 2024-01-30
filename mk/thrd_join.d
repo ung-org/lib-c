@@ -4,6 +4,5 @@ libc.a(thrd_join.o): $(OBJDIR)/thrd_join.o
 
 $(OBJDIR)/thrd_join.o: src/threads/thrd_join.c
 $(OBJDIR)/thrd_join.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/threads/thrd_join.c
+	$(CC) -c -o $@ $(CFLAGS) src/threads/thrd_join.c

@@ -4,6 +4,5 @@ libc.a(execv.o): $(OBJDIR)/execv.o
 
 $(OBJDIR)/execv.o: src/unistd/execv.c
 $(OBJDIR)/execv.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/execv.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/execv.c

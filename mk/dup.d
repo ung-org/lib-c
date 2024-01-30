@@ -4,6 +4,5 @@ libc.a(dup.o): $(OBJDIR)/dup.o
 
 $(OBJDIR)/dup.o: src/unistd/dup.c
 $(OBJDIR)/dup.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/dup.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/dup.c

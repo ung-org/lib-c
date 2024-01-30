@@ -4,6 +4,5 @@ libc.a(cuserid.o): $(OBJDIR)/cuserid.o
 
 $(OBJDIR)/cuserid.o: src/unistd/cuserid.c
 $(OBJDIR)/cuserid.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/cuserid.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/cuserid.c

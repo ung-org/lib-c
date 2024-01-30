@@ -4,6 +4,5 @@ libc.a(shmget.o): $(OBJDIR)/shmget.o
 
 $(OBJDIR)/shmget.o: src/sys/shm/shmget.c
 $(OBJDIR)/shmget.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/sys/shm/shmget.c
+	$(CC) -c -o $@ $(CFLAGS) src/sys/shm/shmget.c

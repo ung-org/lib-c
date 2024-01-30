@@ -4,6 +4,5 @@ libc.a(optind.o): $(OBJDIR)/optind.o
 
 $(OBJDIR)/optind.o: src/unistd/optind.c
 $(OBJDIR)/optind.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/optind.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/optind.c

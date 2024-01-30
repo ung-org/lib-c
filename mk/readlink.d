@@ -5,6 +5,5 @@ libc.a(readlink.o): $(OBJDIR)/readlink.o
 
 $(OBJDIR)/readlink.o: src/unistd/readlink.c
 $(OBJDIR)/readlink.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/readlink.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/readlink.c

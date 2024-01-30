@@ -6,6 +6,5 @@ $(OBJDIR)/atan.o: src/math/atan.c
 $(OBJDIR)/atan.o: src/complex/_tgmath.h
 $(OBJDIR)/src/math/_tgmath.h.o: 
 $(OBJDIR)/atan.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/math/atan.c
+	$(CC) -c -o $@ $(CFLAGS) src/math/atan.c

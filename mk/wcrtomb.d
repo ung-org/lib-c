@@ -4,6 +4,5 @@ libc.a(wcrtomb.o): $(OBJDIR)/wcrtomb.o
 
 $(OBJDIR)/wcrtomb.o: src/wchar/wcrtomb.c
 $(OBJDIR)/wcrtomb.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wchar/wcrtomb.c
+	$(CC) -c -o $@ $(CFLAGS) src/wchar/wcrtomb.c

@@ -4,6 +4,5 @@ libc.a(mbsrtowcs_s.o): $(OBJDIR)/mbsrtowcs_s.o
 
 $(OBJDIR)/mbsrtowcs_s.o: src/wchar/mbsrtowcs_s.c
 $(OBJDIR)/mbsrtowcs_s.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wchar/mbsrtowcs_s.c
+	$(CC) -c -o $@ $(CFLAGS) src/wchar/mbsrtowcs_s.c

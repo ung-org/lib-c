@@ -5,6 +5,5 @@ libc.a(valloc.o): $(OBJDIR)/valloc.o
 $(OBJDIR)/valloc.o: src/stdlib/valloc.c
 $(OBJDIR)/valloc.o: src/stdlib/_stdlib.h
 $(OBJDIR)/valloc.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdlib/valloc.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdlib/valloc.c

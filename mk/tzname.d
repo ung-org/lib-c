@@ -4,6 +4,5 @@ libc.a(tzname.o): $(OBJDIR)/tzname.o
 
 $(OBJDIR)/tzname.o: src/time/tzname.c
 $(OBJDIR)/tzname.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/time/tzname.c
+	$(CC) -c -o $@ $(CFLAGS) src/time/tzname.c

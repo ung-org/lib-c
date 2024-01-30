@@ -5,6 +5,5 @@ libc.a(snprintf.o): $(OBJDIR)/snprintf.o
 $(OBJDIR)/snprintf.o: src/stdio/snprintf.c
 $(OBJDIR)/snprintf.o: src/stdio/_stdio.h
 $(OBJDIR)/snprintf.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdio/snprintf.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdio/snprintf.c

@@ -5,6 +5,5 @@ libc.a(setkey.o): $(OBJDIR)/setkey.o
 $(OBJDIR)/setkey.o: src/stdlib/setkey.c
 $(OBJDIR)/setkey.o: src/stdlib/_stdlib.h
 $(OBJDIR)/setkey.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdlib/setkey.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdlib/setkey.c

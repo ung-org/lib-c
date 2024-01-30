@@ -5,6 +5,5 @@ libc.a(getuid.o): $(OBJDIR)/getuid.o
 $(OBJDIR)/getuid.o: src/unistd/getuid.c
 $(OBJDIR)/getuid.o: src/_syscall.h
 $(OBJDIR)/getuid.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/getuid.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/getuid.c

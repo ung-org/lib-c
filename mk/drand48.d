@@ -5,6 +5,5 @@ libc.a(drand48.o): $(OBJDIR)/drand48.o
 $(OBJDIR)/drand48.o: src/stdlib/drand48.c
 $(OBJDIR)/drand48.o: src/stdlib/_stdlib.h
 $(OBJDIR)/drand48.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdlib/drand48.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdlib/drand48.c

@@ -4,6 +4,5 @@ libc.a(setitimer.o): $(OBJDIR)/setitimer.o
 
 $(OBJDIR)/setitimer.o: src/sys/time/setitimer.c
 $(OBJDIR)/setitimer.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/sys/time/setitimer.c
+	$(CC) -c -o $@ $(CFLAGS) src/sys/time/setitimer.c

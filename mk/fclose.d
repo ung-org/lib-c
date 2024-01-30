@@ -6,6 +6,5 @@ $(OBJDIR)/fclose.o: src/stdio/fclose.c
 $(OBJDIR)/fclose.o: src/stdio/_stdio.h
 $(OBJDIR)/fclose.o: src/_syscall.h
 $(OBJDIR)/fclose.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdio/fclose.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdio/fclose.c

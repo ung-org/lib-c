@@ -5,6 +5,5 @@ libc.a(getppid.o): $(OBJDIR)/getppid.o
 $(OBJDIR)/getppid.o: src/unistd/getppid.c
 $(OBJDIR)/getppid.o: src/_syscall.h
 $(OBJDIR)/getppid.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/getppid.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/getppid.c

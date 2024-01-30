@@ -5,6 +5,5 @@ libc.a(getgid.o): $(OBJDIR)/getgid.o
 $(OBJDIR)/getgid.o: src/unistd/getgid.c
 $(OBJDIR)/getgid.o: src/_syscall.h
 $(OBJDIR)/getgid.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/getgid.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/getgid.c

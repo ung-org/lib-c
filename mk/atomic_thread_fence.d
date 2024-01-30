@@ -4,6 +4,5 @@ libc.a(atomic_thread_fence.o): $(OBJDIR)/atomic_thread_fence.o
 
 $(OBJDIR)/atomic_thread_fence.o: src/stdatomic/atomic_thread_fence.c
 $(OBJDIR)/atomic_thread_fence.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdatomic/atomic_thread_fence.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdatomic/atomic_thread_fence.c

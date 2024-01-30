@@ -5,6 +5,5 @@ libc.a(getpgrp.o): $(OBJDIR)/getpgrp.o
 $(OBJDIR)/getpgrp.o: src/unistd/getpgrp.c
 $(OBJDIR)/getpgrp.o: src/_syscall.h
 $(OBJDIR)/getpgrp.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/getpgrp.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/getpgrp.c

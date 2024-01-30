@@ -5,6 +5,5 @@ libm.a(feholdexcept.o): $(OBJDIR)/feholdexcept.o
 $(OBJDIR)/feholdexcept.o: src/fenv/feholdexcept.c
 $(OBJDIR)/feholdexcept.o: src/_safety.h
 $(OBJDIR)/feholdexcept.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/fenv/feholdexcept.c
+	$(CC) -c -o $@ $(CFLAGS) src/fenv/feholdexcept.c

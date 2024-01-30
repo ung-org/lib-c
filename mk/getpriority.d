@@ -4,6 +4,5 @@ libc.a(getpriority.o): $(OBJDIR)/getpriority.o
 
 $(OBJDIR)/getpriority.o: src/sys/resource/getpriority.c
 $(OBJDIR)/getpriority.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/sys/resource/getpriority.c
+	$(CC) -c -o $@ $(CFLAGS) src/sys/resource/getpriority.c

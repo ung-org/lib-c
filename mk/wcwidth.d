@@ -6,6 +6,5 @@ $(OBJDIR)/wcwidth.o: src/wchar/wcwidth.c
 $(OBJDIR)/wcwidth.o: 
 $(OBJDIR)/wcwidth.o: 
 $(OBJDIR)/wcwidth.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wchar/wcwidth.c
+	$(CC) -c -o $@ $(CFLAGS) src/wchar/wcwidth.c

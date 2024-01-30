@@ -5,6 +5,5 @@ libc.a(wcslen.o): $(OBJDIR)/wcslen.o
 $(OBJDIR)/wcslen.o: src/wchar/wcslen.c
 $(OBJDIR)/wcslen.o: src/_safety.h
 $(OBJDIR)/wcslen.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wchar/wcslen.c
+	$(CC) -c -o $@ $(CFLAGS) src/wchar/wcslen.c

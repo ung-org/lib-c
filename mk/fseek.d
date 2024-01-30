@@ -5,6 +5,5 @@ libc.a(fseek.o): $(OBJDIR)/fseek.o
 $(OBJDIR)/fseek.o: src/stdio/fseek.c
 $(OBJDIR)/fseek.o: src/stdio/_stdio.h
 $(OBJDIR)/fseek.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdio/fseek.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdio/fseek.c

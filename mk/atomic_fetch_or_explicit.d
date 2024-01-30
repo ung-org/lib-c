@@ -4,6 +4,5 @@ libc.a(atomic_fetch_or_explicit.o): $(OBJDIR)/atomic_fetch_or_explicit.o
 
 $(OBJDIR)/atomic_fetch_or_explicit.o: src/stdatomic/atomic_fetch_or_explicit.c
 $(OBJDIR)/atomic_fetch_or_explicit.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdatomic/atomic_fetch_or_explicit.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdatomic/atomic_fetch_or_explicit.c

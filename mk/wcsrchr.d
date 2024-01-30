@@ -4,6 +4,5 @@ libc.a(wcsrchr.o): $(OBJDIR)/wcsrchr.o
 
 $(OBJDIR)/wcsrchr.o: src/wchar/wcsrchr.c
 $(OBJDIR)/wcsrchr.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wchar/wcsrchr.c
+	$(CC) -c -o $@ $(CFLAGS) src/wchar/wcsrchr.c

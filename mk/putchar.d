@@ -5,6 +5,5 @@ libc.a(putchar.o): $(OBJDIR)/putchar.o
 $(OBJDIR)/putchar.o: src/stdio/putchar.c
 $(OBJDIR)/putchar.o: src/stdio/_stdio.h
 $(OBJDIR)/putchar.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdio/putchar.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdio/putchar.c

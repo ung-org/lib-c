@@ -4,6 +4,5 @@ libc.a(atomic_compare_exchange_strong.o): $(OBJDIR)/atomic_compare_exchange_stro
 
 $(OBJDIR)/atomic_compare_exchange_strong.o: src/stdatomic/atomic_compare_exchange_strong.c
 $(OBJDIR)/atomic_compare_exchange_strong.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdatomic/atomic_compare_exchange_strong.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdatomic/atomic_compare_exchange_strong.c

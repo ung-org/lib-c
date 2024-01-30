@@ -5,6 +5,5 @@ libc.a(wmemchr.o): $(OBJDIR)/wmemchr.o
 $(OBJDIR)/wmemchr.o: src/wchar/wmemchr.c
 $(OBJDIR)/wmemchr.o: src/_safety.h
 $(OBJDIR)/wmemchr.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wchar/wmemchr.c
+	$(CC) -c -o $@ $(CFLAGS) src/wchar/wmemchr.c

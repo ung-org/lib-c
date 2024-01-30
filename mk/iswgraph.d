@@ -5,6 +5,5 @@ libc.a(iswgraph.o): $(OBJDIR)/iswgraph.o
 $(OBJDIR)/iswgraph.o: src/wctype/iswgraph.c
 $(OBJDIR)/iswgraph.o: src/_safety.h
 $(OBJDIR)/iswgraph.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wctype/iswgraph.c
+	$(CC) -c -o $@ $(CFLAGS) src/wctype/iswgraph.c

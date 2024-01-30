@@ -5,6 +5,5 @@ libc.a(isblank.o): $(OBJDIR)/isblank.o
 $(OBJDIR)/isblank.o: src/ctype/isblank.c
 $(OBJDIR)/isblank.o: src/ctype/_ctype.h
 $(OBJDIR)/isblank.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/ctype/isblank.c
+	$(CC) -c -o $@ $(CFLAGS) src/ctype/isblank.c

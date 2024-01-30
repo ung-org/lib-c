@@ -4,6 +4,5 @@ libc.a(mtx_lock.o): $(OBJDIR)/mtx_lock.o
 
 $(OBJDIR)/mtx_lock.o: src/threads/mtx_lock.c
 $(OBJDIR)/mtx_lock.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/threads/mtx_lock.c
+	$(CC) -c -o $@ $(CFLAGS) src/threads/mtx_lock.c

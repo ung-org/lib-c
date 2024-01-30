@@ -4,6 +4,5 @@ libc.a(gethostid.o): $(OBJDIR)/gethostid.o
 
 $(OBJDIR)/gethostid.o: src/unistd/gethostid.c
 $(OBJDIR)/gethostid.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/gethostid.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/gethostid.c

@@ -6,6 +6,5 @@ $(OBJDIR)/catanh.o: src/complex/catanh.c
 $(OBJDIR)/catanh.o: src/complex/_tgmath.h
 $(OBJDIR)/src/math/_tgmath.h.o: 
 $(OBJDIR)/catanh.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/complex/catanh.c
+	$(CC) -c -o $@ $(CFLAGS) src/complex/catanh.c

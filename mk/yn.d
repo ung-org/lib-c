@@ -4,6 +4,5 @@ libm.a(yn.o): $(OBJDIR)/yn.o
 
 $(OBJDIR)/yn.o: src/math/yn.c
 $(OBJDIR)/yn.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/math/yn.c
+	$(CC) -c -o $@ $(CFLAGS) src/math/yn.c

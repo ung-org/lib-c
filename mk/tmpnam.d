@@ -5,6 +5,5 @@ libc.a(tmpnam.o): $(OBJDIR)/tmpnam.o
 $(OBJDIR)/tmpnam.o: src/stdio/tmpnam.c
 $(OBJDIR)/tmpnam.o: src/stdio/_stdio.h
 $(OBJDIR)/tmpnam.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdio/tmpnam.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdio/tmpnam.c

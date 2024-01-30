@@ -7,6 +7,5 @@ $(OBJDIR)/ilogb.o: src/math/ilogb.c
 $(OBJDIR)/ilogb.o: src/complex/_tgmath.h
 $(OBJDIR)/src/math/_tgmath.h.o: 
 $(OBJDIR)/ilogb.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/math/ilogb.c
+	$(CC) -c -o $@ $(CFLAGS) src/math/ilogb.c

@@ -4,6 +4,5 @@ libc.a(call_once.o): $(OBJDIR)/call_once.o
 
 $(OBJDIR)/call_once.o: src/threads/call_once.c
 $(OBJDIR)/call_once.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/threads/call_once.c
+	$(CC) -c -o $@ $(CFLAGS) src/threads/call_once.c

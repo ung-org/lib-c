@@ -6,6 +6,5 @@ $(OBJDIR)/tcsetpgrp.o: src/unistd/tcsetpgrp.c
 $(OBJDIR)/tcsetpgrp.o: 
 $(OBJDIR)/tcsetpgrp.o: 
 $(OBJDIR)/tcsetpgrp.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/tcsetpgrp.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/tcsetpgrp.c

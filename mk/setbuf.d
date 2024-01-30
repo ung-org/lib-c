@@ -5,6 +5,5 @@ libc.a(setbuf.o): $(OBJDIR)/setbuf.o
 $(OBJDIR)/setbuf.o: src/stdio/setbuf.c
 $(OBJDIR)/setbuf.o: src/stdio/_stdio.h
 $(OBJDIR)/setbuf.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdio/setbuf.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdio/setbuf.c

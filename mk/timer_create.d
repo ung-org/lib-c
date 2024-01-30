@@ -5,6 +5,5 @@ librt.a(timer_create.o): $(OBJDIR)/timer_create.o
 $(OBJDIR)/timer_create.o: src/time/timer_create.c
 $(OBJDIR)/timer_create.o: src/_safety.h
 $(OBJDIR)/timer_create.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/time/timer_create.c
+	$(CC) -c -o $@ $(CFLAGS) src/time/timer_create.c

@@ -5,6 +5,5 @@ libc.a(fsetpos.o): $(OBJDIR)/fsetpos.o
 $(OBJDIR)/fsetpos.o: src/stdio/fsetpos.c
 $(OBJDIR)/fsetpos.o: src/stdio/_stdio.h
 $(OBJDIR)/fsetpos.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdio/fsetpos.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdio/fsetpos.c

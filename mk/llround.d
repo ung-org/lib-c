@@ -6,6 +6,5 @@ $(OBJDIR)/llround.o: src/math/llround.c
 $(OBJDIR)/llround.o: src/complex/_tgmath.h
 $(OBJDIR)/src/math/_tgmath.h.o: 
 $(OBJDIR)/llround.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/math/llround.c
+	$(CC) -c -o $@ $(CFLAGS) src/math/llround.c

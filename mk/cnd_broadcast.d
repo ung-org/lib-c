@@ -4,6 +4,5 @@ libc.a(cnd_broadcast.o): $(OBJDIR)/cnd_broadcast.o
 
 $(OBJDIR)/cnd_broadcast.o: src/threads/cnd_broadcast.c
 $(OBJDIR)/cnd_broadcast.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/threads/cnd_broadcast.c
+	$(CC) -c -o $@ $(CFLAGS) src/threads/cnd_broadcast.c

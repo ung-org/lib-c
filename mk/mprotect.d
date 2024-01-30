@@ -5,6 +5,5 @@ libc.a(mprotect.o): $(OBJDIR)/mprotect.o
 
 $(OBJDIR)/mprotect.o: src/sys/mman/mprotect.c
 $(OBJDIR)/mprotect.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/sys/mman/mprotect.c
+	$(CC) -c -o $@ $(CFLAGS) src/sys/mman/mprotect.c

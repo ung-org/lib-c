@@ -5,6 +5,5 @@ libc.a(wctomb.o): $(OBJDIR)/wctomb.o
 $(OBJDIR)/wctomb.o: src/stdlib/wctomb.c
 $(OBJDIR)/wctomb.o: src/stdlib/_stdlib.h
 $(OBJDIR)/wctomb.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdlib/wctomb.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdlib/wctomb.c

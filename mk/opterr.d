@@ -4,6 +4,5 @@ libc.a(opterr.o): $(OBJDIR)/opterr.o
 
 $(OBJDIR)/opterr.o: src/unistd/opterr.c
 $(OBJDIR)/opterr.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/opterr.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/opterr.c

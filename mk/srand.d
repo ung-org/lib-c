@@ -5,6 +5,5 @@ libc.a(srand.o): $(OBJDIR)/srand.o
 $(OBJDIR)/srand.o: src/stdlib/srand.c
 $(OBJDIR)/srand.o: src/stdlib/_stdlib.h
 $(OBJDIR)/srand.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdlib/srand.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdlib/srand.c

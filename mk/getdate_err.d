@@ -4,6 +4,5 @@ libc.a(getdate_err.o): $(OBJDIR)/getdate_err.o
 
 $(OBJDIR)/getdate_err.o: src/time/getdate_err.c
 $(OBJDIR)/getdate_err.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/time/getdate_err.c
+	$(CC) -c -o $@ $(CFLAGS) src/time/getdate_err.c

@@ -5,6 +5,5 @@ libc.a(lseek.o): $(OBJDIR)/lseek.o
 $(OBJDIR)/lseek.o: src/unistd/lseek.c
 $(OBJDIR)/lseek.o: src/_syscall.h
 $(OBJDIR)/lseek.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/lseek.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/lseek.c

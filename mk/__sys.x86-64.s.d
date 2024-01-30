@@ -4,6 +4,5 @@ libc.a(__sys.x86-64.s.o): $(OBJDIR)/__sys.x86-64.s.o
 
 $(OBJDIR)/__sys.x86-64.s.o: src/__sys.x86-64.s
 $(OBJDIR)/__sys.x86-64.s.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/__sys.x86-64.s
+	$(CC) -c -o $@ $(CFLAGS) src/__sys.x86-64.s

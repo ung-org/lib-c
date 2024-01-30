@@ -6,6 +6,5 @@ $(OBJDIR)/strtoull.o: src/stdlib/strtoull.c
 $(OBJDIR)/strtoull.o: src/stdlib/_stdlib.h
 $(OBJDIR)/strtoull.o: src/stdlib/_strtoi.h
 $(OBJDIR)/strtoull.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdlib/strtoull.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdlib/strtoull.c

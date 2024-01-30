@@ -6,6 +6,5 @@ $(OBJDIR)/confstr.o: src/unistd/confstr.c
 $(OBJDIR)/confstr.o: src/_assert.h
 $(OBJDIR)/confstr.o: src/unistd/_confstr.h
 $(OBJDIR)/confstr.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/confstr.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/confstr.c

@@ -4,6 +4,5 @@ libc.a(getrlimit.o): $(OBJDIR)/getrlimit.o
 
 $(OBJDIR)/getrlimit.o: src/sys/resource/getrlimit.c
 $(OBJDIR)/getrlimit.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/sys/resource/getrlimit.c
+	$(CC) -c -o $@ $(CFLAGS) src/sys/resource/getrlimit.c

@@ -4,6 +4,5 @@ libc.a(shmat.o): $(OBJDIR)/shmat.o
 
 $(OBJDIR)/shmat.o: src/sys/shm/shmat.c
 $(OBJDIR)/shmat.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/sys/shm/shmat.c
+	$(CC) -c -o $@ $(CFLAGS) src/sys/shm/shmat.c

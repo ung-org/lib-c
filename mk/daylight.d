@@ -4,6 +4,5 @@ libc.a(daylight.o): $(OBJDIR)/daylight.o
 
 $(OBJDIR)/daylight.o: src/time/daylight.c
 $(OBJDIR)/daylight.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/time/daylight.c
+	$(CC) -c -o $@ $(CFLAGS) src/time/daylight.c

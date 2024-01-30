@@ -5,6 +5,5 @@ libc.a(sprintf.o): $(OBJDIR)/sprintf.o
 $(OBJDIR)/sprintf.o: src/stdio/sprintf.c
 $(OBJDIR)/sprintf.o: src/stdio/_stdio.h
 $(OBJDIR)/sprintf.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdio/sprintf.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdio/sprintf.c

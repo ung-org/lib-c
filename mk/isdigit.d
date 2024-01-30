@@ -5,6 +5,5 @@ libc.a(isdigit.o): $(OBJDIR)/isdigit.o
 $(OBJDIR)/isdigit.o: src/ctype/isdigit.c
 $(OBJDIR)/isdigit.o: src/_safety.h
 $(OBJDIR)/isdigit.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/ctype/isdigit.c
+	$(CC) -c -o $@ $(CFLAGS) src/ctype/isdigit.c

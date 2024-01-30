@@ -5,6 +5,5 @@ libc.a(vfscanf.o): $(OBJDIR)/vfscanf.o
 $(OBJDIR)/vfscanf.o: src/stdio/vfscanf.c
 $(OBJDIR)/vfscanf.o: src/stdio/_stdio.h
 $(OBJDIR)/vfscanf.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdio/vfscanf.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdio/vfscanf.c

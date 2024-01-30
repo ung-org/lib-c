@@ -4,6 +4,5 @@ libc.a(semctl.o): $(OBJDIR)/semctl.o
 
 $(OBJDIR)/semctl.o: src/sys/sem/semctl.c
 $(OBJDIR)/semctl.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/sys/sem/semctl.c
+	$(CC) -c -o $@ $(CFLAGS) src/sys/sem/semctl.c

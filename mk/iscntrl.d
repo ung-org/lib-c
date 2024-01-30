@@ -5,6 +5,5 @@ libc.a(iscntrl.o): $(OBJDIR)/iscntrl.o
 $(OBJDIR)/iscntrl.o: src/ctype/iscntrl.c
 $(OBJDIR)/iscntrl.o: src/ctype/_ctype.h
 $(OBJDIR)/iscntrl.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/ctype/iscntrl.c
+	$(CC) -c -o $@ $(CFLAGS) src/ctype/iscntrl.c

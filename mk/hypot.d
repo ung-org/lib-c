@@ -7,6 +7,5 @@ $(OBJDIR)/hypot.o: src/math/hypot.c
 $(OBJDIR)/hypot.o: src/complex/_tgmath.h
 $(OBJDIR)/src/math/_tgmath.h.o: 
 $(OBJDIR)/hypot.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/math/hypot.c
+	$(CC) -c -o $@ $(CFLAGS) src/math/hypot.c

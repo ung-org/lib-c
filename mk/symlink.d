@@ -5,6 +5,5 @@ libc.a(symlink.o): $(OBJDIR)/symlink.o
 
 $(OBJDIR)/symlink.o: src/unistd/symlink.c
 $(OBJDIR)/symlink.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/symlink.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/symlink.c

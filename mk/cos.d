@@ -6,6 +6,5 @@ $(OBJDIR)/cos.o: src/math/cos.c
 $(OBJDIR)/cos.o: src/complex/_tgmath.h
 $(OBJDIR)/src/math/_tgmath.h.o: 
 $(OBJDIR)/cos.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/math/cos.c
+	$(CC) -c -o $@ $(CFLAGS) src/math/cos.c

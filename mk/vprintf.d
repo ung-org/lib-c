@@ -5,6 +5,5 @@ libc.a(vprintf.o): $(OBJDIR)/vprintf.o
 $(OBJDIR)/vprintf.o: src/stdio/vprintf.c
 $(OBJDIR)/vprintf.o: src/stdio/_stdio.h
 $(OBJDIR)/vprintf.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdio/vprintf.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdio/vprintf.c

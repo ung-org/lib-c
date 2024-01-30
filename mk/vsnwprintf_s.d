@@ -4,6 +4,5 @@ libc.a(vsnwprintf_s.o): $(OBJDIR)/vsnwprintf_s.o
 
 $(OBJDIR)/vsnwprintf_s.o: src/wchar/vsnwprintf_s.c
 $(OBJDIR)/vsnwprintf_s.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wchar/vsnwprintf_s.c
+	$(CC) -c -o $@ $(CFLAGS) src/wchar/vsnwprintf_s.c

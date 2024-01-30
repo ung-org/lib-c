@@ -4,6 +4,5 @@ libc.a(atomic_flag_test_and_set.o): $(OBJDIR)/atomic_flag_test_and_set.o
 
 $(OBJDIR)/atomic_flag_test_and_set.o: src/stdatomic/atomic_flag_test_and_set.c
 $(OBJDIR)/atomic_flag_test_and_set.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdatomic/atomic_flag_test_and_set.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdatomic/atomic_flag_test_and_set.c

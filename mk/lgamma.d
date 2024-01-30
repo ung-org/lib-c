@@ -7,6 +7,5 @@ $(OBJDIR)/lgamma.o: src/math/lgamma.c
 $(OBJDIR)/lgamma.o: src/complex/_tgmath.h
 $(OBJDIR)/src/math/_tgmath.h.o: 
 $(OBJDIR)/lgamma.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/math/lgamma.c
+	$(CC) -c -o $@ $(CFLAGS) src/math/lgamma.c

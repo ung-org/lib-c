@@ -5,6 +5,5 @@ libc.a(c32rtomb.o): $(OBJDIR)/c32rtomb.o
 $(OBJDIR)/c32rtomb.o: src/uchar/c32rtomb.c
 $(OBJDIR)/c32rtomb.o: src/_safety.h
 $(OBJDIR)/c32rtomb.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/uchar/c32rtomb.c
+	$(CC) -c -o $@ $(CFLAGS) src/uchar/c32rtomb.c

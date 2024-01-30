@@ -5,6 +5,5 @@ libc.a(strcmp.o): $(OBJDIR)/strcmp.o
 $(OBJDIR)/strcmp.o: src/string/strcmp.c
 $(OBJDIR)/strcmp.o: src/_safety.h
 $(OBJDIR)/strcmp.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/string/strcmp.c
+	$(CC) -c -o $@ $(CFLAGS) src/string/strcmp.c

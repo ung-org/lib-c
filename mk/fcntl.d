@@ -5,6 +5,5 @@ libc.a(fcntl.o): $(OBJDIR)/fcntl.o
 $(OBJDIR)/fcntl.o: src/fcntl/fcntl.c
 $(OBJDIR)/fcntl.o: src/_syscall.h
 $(OBJDIR)/fcntl.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/fcntl/fcntl.c
+	$(CC) -c -o $@ $(CFLAGS) src/fcntl/fcntl.c

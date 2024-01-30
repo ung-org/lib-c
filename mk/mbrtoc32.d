@@ -5,6 +5,5 @@ libc.a(mbrtoc32.o): $(OBJDIR)/mbrtoc32.o
 $(OBJDIR)/mbrtoc32.o: src/uchar/mbrtoc32.c
 $(OBJDIR)/mbrtoc32.o: src/_safety.h
 $(OBJDIR)/mbrtoc32.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/uchar/mbrtoc32.c
+	$(CC) -c -o $@ $(CFLAGS) src/uchar/mbrtoc32.c

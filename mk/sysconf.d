@@ -4,6 +4,5 @@ libc.a(sysconf.o): $(OBJDIR)/sysconf.o
 
 $(OBJDIR)/sysconf.o: src/unistd/sysconf.c
 $(OBJDIR)/sysconf.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/sysconf.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/sysconf.c

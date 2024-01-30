@@ -5,6 +5,5 @@ libc.a(printf_s.o): $(OBJDIR)/printf_s.o
 $(OBJDIR)/printf_s.o: src/stdio/printf_s.c
 $(OBJDIR)/printf_s.o: src/stdio/_stdio.h
 $(OBJDIR)/printf_s.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdio/printf_s.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdio/printf_s.c

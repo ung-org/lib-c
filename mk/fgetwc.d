@@ -5,6 +5,5 @@ libc.a(fgetwc.o): $(OBJDIR)/fgetwc.o
 $(OBJDIR)/fgetwc.o: src/wchar/fgetwc.c
 $(OBJDIR)/fgetwc.o: src/stdio/_stdio.h
 $(OBJDIR)/fgetwc.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wchar/fgetwc.c
+	$(CC) -c -o $@ $(CFLAGS) src/wchar/fgetwc.c

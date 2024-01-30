@@ -6,6 +6,5 @@ $(OBJDIR)/getc_unlocked.o: src/stdio/getc_unlocked.c
 $(OBJDIR)/getc_unlocked.o: src/stdio/_stdio.h
 $(OBJDIR)/getc_unlocked.o: src/_syscall.h
 $(OBJDIR)/getc_unlocked.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdio/getc_unlocked.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdio/getc_unlocked.c

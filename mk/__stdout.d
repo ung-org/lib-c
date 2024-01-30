@@ -4,6 +4,5 @@ libc.a(__stdout.o): $(OBJDIR)/__stdout.o
 
 $(OBJDIR)/__stdout.o: src/stdio/__stdout.c
 $(OBJDIR)/__stdout.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdio/__stdout.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdio/__stdout.c

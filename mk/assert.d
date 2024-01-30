@@ -5,6 +5,5 @@ libc.a(assert.o): $(OBJDIR)/assert.o
 $(OBJDIR)/assert.o: src/assert/assert.c
 $(OBJDIR)/assert.o: src/stdlib/_stdlib.h
 $(OBJDIR)/assert.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/assert/assert.c
+	$(CC) -c -o $@ $(CFLAGS) src/assert/assert.c

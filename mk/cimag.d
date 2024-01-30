@@ -6,6 +6,5 @@ $(OBJDIR)/cimag.o: src/complex/cimag.c
 $(OBJDIR)/cimag.o: src/complex/_tgmath.h
 $(OBJDIR)/src/math/_tgmath.h.o: 
 $(OBJDIR)/cimag.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/complex/cimag.c
+	$(CC) -c -o $@ $(CFLAGS) src/complex/cimag.c

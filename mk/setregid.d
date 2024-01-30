@@ -4,6 +4,5 @@ libc.a(setregid.o): $(OBJDIR)/setregid.o
 
 $(OBJDIR)/setregid.o: src/unistd/setregid.c
 $(OBJDIR)/setregid.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/setregid.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/setregid.c

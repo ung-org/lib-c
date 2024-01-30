@@ -4,6 +4,5 @@ libc.a(encrypt.o): $(OBJDIR)/encrypt.o
 
 $(OBJDIR)/encrypt.o: src/unistd/encrypt.c
 $(OBJDIR)/encrypt.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/encrypt.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/encrypt.c

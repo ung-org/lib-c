@@ -7,6 +7,5 @@ $(OBJDIR)/expm1.o: src/math/expm1.c
 $(OBJDIR)/expm1.o: src/complex/_tgmath.h
 $(OBJDIR)/src/math/_tgmath.h.o: 
 $(OBJDIR)/expm1.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/math/expm1.c
+	$(CC) -c -o $@ $(CFLAGS) src/math/expm1.c

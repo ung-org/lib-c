@@ -4,6 +4,5 @@ libc.a(isatty.o): $(OBJDIR)/isatty.o
 
 $(OBJDIR)/isatty.o: src/unistd/isatty.c
 $(OBJDIR)/isatty.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/isatty.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/isatty.c

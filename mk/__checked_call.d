@@ -5,6 +5,5 @@ libc.a(__checked_call.o): $(OBJDIR)/__checked_call.o
 $(OBJDIR)/__checked_call.o: src/__checked_call.c
 $(OBJDIR)/__checked_call.o: src/_safety.h
 $(OBJDIR)/__checked_call.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/__checked_call.c
+	$(CC) -c -o $@ $(CFLAGS) src/__checked_call.c

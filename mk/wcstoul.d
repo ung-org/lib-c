@@ -5,6 +5,5 @@ libc.a(wcstoul.o): $(OBJDIR)/wcstoul.o
 $(OBJDIR)/wcstoul.o: src/wchar/wcstoul.c
 $(OBJDIR)/wcstoul.o: src/stdlib/_strtoi.h
 $(OBJDIR)/wcstoul.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wchar/wcstoul.c
+	$(CC) -c -o $@ $(CFLAGS) src/wchar/wcstoul.c

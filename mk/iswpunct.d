@@ -5,6 +5,5 @@ libc.a(iswpunct.o): $(OBJDIR)/iswpunct.o
 $(OBJDIR)/iswpunct.o: src/wctype/iswpunct.c
 $(OBJDIR)/iswpunct.o: src/_safety.h
 $(OBJDIR)/iswpunct.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wctype/iswpunct.c
+	$(CC) -c -o $@ $(CFLAGS) src/wctype/iswpunct.c

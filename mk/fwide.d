@@ -6,6 +6,5 @@ $(OBJDIR)/fwide.o: src/wchar/fwide.c
 $(OBJDIR)/fwide.o: src/stdio/_stdio.h
 $(OBJDIR)/fwide.o: src/_safety.h
 $(OBJDIR)/fwide.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wchar/fwide.c
+	$(CC) -c -o $@ $(CFLAGS) src/wchar/fwide.c

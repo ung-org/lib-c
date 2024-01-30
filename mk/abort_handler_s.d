@@ -6,6 +6,5 @@ $(OBJDIR)/abort_handler_s.o: src/stdlib/abort_handler_s.c
 $(OBJDIR)/abort_handler_s.o: src/errno/errno_t.h
 $(OBJDIR)/abort_handler_s.o: src/stdlib/_stdlib.h
 $(OBJDIR)/abort_handler_s.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdlib/abort_handler_s.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdlib/abort_handler_s.c

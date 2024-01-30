@@ -5,6 +5,5 @@ libc.a(chmod.o): $(OBJDIR)/chmod.o
 $(OBJDIR)/chmod.o: src/sys/stat/chmod.c
 $(OBJDIR)/chmod.o: src/_syscall.h
 $(OBJDIR)/chmod.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/sys/stat/chmod.c
+	$(CC) -c -o $@ $(CFLAGS) src/sys/stat/chmod.c

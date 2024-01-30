@@ -4,6 +4,5 @@ libc.a(atomic_init.o): $(OBJDIR)/atomic_init.o
 
 $(OBJDIR)/atomic_init.o: src/stdatomic/atomic_init.c
 $(OBJDIR)/atomic_init.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdatomic/atomic_init.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdatomic/atomic_init.c

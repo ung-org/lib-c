@@ -5,6 +5,5 @@ libc.a(memchr.o): $(OBJDIR)/memchr.o
 $(OBJDIR)/memchr.o: src/string/memchr.c
 $(OBJDIR)/memchr.o: src/_safety.h
 $(OBJDIR)/memchr.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/string/memchr.c
+	$(CC) -c -o $@ $(CFLAGS) src/string/memchr.c

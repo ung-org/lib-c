@@ -4,6 +4,5 @@ libc.a(wcscat.o): $(OBJDIR)/wcscat.o
 
 $(OBJDIR)/wcscat.o: src/wchar/wcscat.c
 $(OBJDIR)/wcscat.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wchar/wcscat.c
+	$(CC) -c -o $@ $(CFLAGS) src/wchar/wcscat.c

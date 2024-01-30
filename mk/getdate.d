@@ -5,6 +5,5 @@ libc.a(getdate.o): $(OBJDIR)/getdate.o
 $(OBJDIR)/getdate.o: src/time/getdate.c
 $(OBJDIR)/getdate.o: src/_safety.h
 $(OBJDIR)/getdate.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/time/getdate.c
+	$(CC) -c -o $@ $(CFLAGS) src/time/getdate.c

@@ -4,6 +4,5 @@ libc.a(msgrcv.o): $(OBJDIR)/msgrcv.o
 
 $(OBJDIR)/msgrcv.o: src/sys/msg/msgrcv.c
 $(OBJDIR)/msgrcv.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/sys/msg/msgrcv.c
+	$(CC) -c -o $@ $(CFLAGS) src/sys/msg/msgrcv.c

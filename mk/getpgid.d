@@ -5,6 +5,5 @@ libc.a(getpgid.o): $(OBJDIR)/getpgid.o
 
 $(OBJDIR)/getpgid.o: src/unistd/getpgid.c
 $(OBJDIR)/getpgid.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/getpgid.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/getpgid.c

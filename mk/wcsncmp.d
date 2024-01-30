@@ -5,6 +5,5 @@ libc.a(wcsncmp.o): $(OBJDIR)/wcsncmp.o
 $(OBJDIR)/wcsncmp.o: src/wchar/wcsncmp.c
 $(OBJDIR)/wcsncmp.o: src/_safety.h
 $(OBJDIR)/wcsncmp.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wchar/wcsncmp.c
+	$(CC) -c -o $@ $(CFLAGS) src/wchar/wcsncmp.c

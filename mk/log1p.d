@@ -7,6 +7,5 @@ $(OBJDIR)/log1p.o: src/math/log1p.c
 $(OBJDIR)/log1p.o: src/complex/_tgmath.h
 $(OBJDIR)/src/math/_tgmath.h.o: 
 $(OBJDIR)/log1p.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/math/log1p.c
+	$(CC) -c -o $@ $(CFLAGS) src/math/log1p.c

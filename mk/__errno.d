@@ -6,6 +6,5 @@ $(OBJDIR)/__errno.o: src/errno/__errno.c
 $(OBJDIR)/__errno.o: src/_perthread.h
 $(OBJDIR)/__errno.o: src/_safety.h
 $(OBJDIR)/__errno.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/errno/__errno.c
+	$(CC) -c -o $@ $(CFLAGS) src/errno/__errno.c

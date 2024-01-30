@@ -4,6 +4,5 @@ libc.a(mlockall.o): $(OBJDIR)/mlockall.o
 
 $(OBJDIR)/mlockall.o: src/sys/mman/mlockall.c
 $(OBJDIR)/mlockall.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/sys/mman/mlockall.c
+	$(CC) -c -o $@ $(CFLAGS) src/sys/mman/mlockall.c

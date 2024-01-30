@@ -6,6 +6,5 @@ $(OBJDIR)/realloc.o: src/stdlib/realloc.c
 $(OBJDIR)/realloc.o: src/stdlib/_stdlib.h
 $(OBJDIR)/realloc.o: src/_syscall.h
 $(OBJDIR)/realloc.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdlib/realloc.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdlib/realloc.c

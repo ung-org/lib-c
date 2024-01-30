@@ -6,6 +6,5 @@ $(OBJDIR)/ttyname.o: src/unistd/ttyname.c
 $(OBJDIR)/ttyname.o: src/unistd/_unistd.h
 $(OBJDIR)/ttyname.o: src/_syscall.h
 $(OBJDIR)/ttyname.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/ttyname.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/ttyname.c

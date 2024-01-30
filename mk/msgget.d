@@ -4,6 +4,5 @@ libc.a(msgget.o): $(OBJDIR)/msgget.o
 
 $(OBJDIR)/msgget.o: src/sys/msg/msgget.c
 $(OBJDIR)/msgget.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/sys/msg/msgget.c
+	$(CC) -c -o $@ $(CFLAGS) src/sys/msg/msgget.c

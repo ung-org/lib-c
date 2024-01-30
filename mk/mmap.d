@@ -6,6 +6,5 @@ libc.a(mmap.o): $(OBJDIR)/mmap.o
 $(OBJDIR)/mmap.o: src/sys/mman/mmap.c
 $(OBJDIR)/mmap.o: src/_syscall.h
 $(OBJDIR)/mmap.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/sys/mman/mmap.c
+	$(CC) -c -o $@ $(CFLAGS) src/sys/mman/mmap.c

@@ -6,6 +6,5 @@ $(OBJDIR)/ldexp.o: src/math/ldexp.c
 $(OBJDIR)/ldexp.o: src/complex/_tgmath.h
 $(OBJDIR)/src/math/_tgmath.h.o: 
 $(OBJDIR)/ldexp.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/math/ldexp.c
+	$(CC) -c -o $@ $(CFLAGS) src/math/ldexp.c

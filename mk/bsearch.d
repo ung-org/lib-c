@@ -5,6 +5,5 @@ libc.a(bsearch.o): $(OBJDIR)/bsearch.o
 $(OBJDIR)/bsearch.o: src/stdlib/bsearch.c
 $(OBJDIR)/bsearch.o: src/stdlib/_stdlib.h
 $(OBJDIR)/bsearch.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdlib/bsearch.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdlib/bsearch.c

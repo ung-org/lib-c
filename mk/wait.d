@@ -4,6 +4,5 @@ libc.a(wait.o): $(OBJDIR)/wait.o
 
 $(OBJDIR)/wait.o: src/sys/wait/wait.c
 $(OBJDIR)/wait.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/sys/wait/wait.c
+	$(CC) -c -o $@ $(CFLAGS) src/sys/wait/wait.c

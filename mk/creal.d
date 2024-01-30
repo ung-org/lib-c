@@ -6,6 +6,5 @@ $(OBJDIR)/creal.o: src/complex/creal.c
 $(OBJDIR)/creal.o: src/complex/_tgmath.h
 $(OBJDIR)/src/math/_tgmath.h.o: 
 $(OBJDIR)/creal.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/complex/creal.c
+	$(CC) -c -o $@ $(CFLAGS) src/complex/creal.c

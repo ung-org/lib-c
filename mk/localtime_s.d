@@ -5,6 +5,5 @@ libc.a(localtime_s.o): $(OBJDIR)/localtime_s.o
 $(OBJDIR)/localtime_s.o: src/time/localtime_s.c
 $(OBJDIR)/localtime_s.o: src/_safety.h
 $(OBJDIR)/localtime_s.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/time/localtime_s.c
+	$(CC) -c -o $@ $(CFLAGS) src/time/localtime_s.c

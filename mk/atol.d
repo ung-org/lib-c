@@ -5,6 +5,5 @@ libc.a(atol.o): $(OBJDIR)/atol.o
 $(OBJDIR)/atol.o: src/stdlib/atol.c
 $(OBJDIR)/atol.o: src/stdlib/_stdlib.h
 $(OBJDIR)/atol.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdlib/atol.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdlib/atol.c

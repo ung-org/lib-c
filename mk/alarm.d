@@ -5,6 +5,5 @@ libc.a(alarm.o): $(OBJDIR)/alarm.o
 $(OBJDIR)/alarm.o: src/unistd/alarm.c
 $(OBJDIR)/alarm.o: src/_syscall.h
 $(OBJDIR)/alarm.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/alarm.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/alarm.c

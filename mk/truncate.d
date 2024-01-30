@@ -5,6 +5,5 @@ libc.a(truncate.o): $(OBJDIR)/truncate.o
 
 $(OBJDIR)/truncate.o: src/unistd/truncate.c
 $(OBJDIR)/truncate.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/truncate.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/truncate.c

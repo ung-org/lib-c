@@ -5,6 +5,5 @@ libc.a(ftell.o): $(OBJDIR)/ftell.o
 $(OBJDIR)/ftell.o: src/stdio/ftell.c
 $(OBJDIR)/ftell.o: src/stdio/_stdio.h
 $(OBJDIR)/ftell.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdio/ftell.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdio/ftell.c

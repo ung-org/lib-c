@@ -5,6 +5,5 @@ libc.a(lchown.o): $(OBJDIR)/lchown.o
 
 $(OBJDIR)/lchown.o: src/unistd/lchown.c
 $(OBJDIR)/lchown.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/lchown.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/lchown.c

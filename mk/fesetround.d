@@ -5,6 +5,5 @@ libm.a(fesetround.o): $(OBJDIR)/fesetround.o
 $(OBJDIR)/fesetround.o: src/fenv/fesetround.c
 $(OBJDIR)/fesetround.o: src/_safety.h
 $(OBJDIR)/fesetround.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/fenv/fesetround.c
+	$(CC) -c -o $@ $(CFLAGS) src/fenv/fesetround.c

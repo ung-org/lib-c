@@ -4,6 +4,5 @@ libc.a(vfork.o): $(OBJDIR)/vfork.o
 
 $(OBJDIR)/vfork.o: src/unistd/vfork.c
 $(OBJDIR)/vfork.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/vfork.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/vfork.c

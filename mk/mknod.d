@@ -4,6 +4,5 @@ libc.a(mknod.o): $(OBJDIR)/mknod.o
 
 $(OBJDIR)/mknod.o: src/sys/stat/mknod.c
 $(OBJDIR)/mknod.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/sys/stat/mknod.c
+	$(CC) -c -o $@ $(CFLAGS) src/sys/stat/mknod.c

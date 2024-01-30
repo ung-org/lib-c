@@ -5,6 +5,5 @@ libc.a(realpath.o): $(OBJDIR)/realpath.o
 $(OBJDIR)/realpath.o: src/stdlib/realpath.c
 $(OBJDIR)/realpath.o: src/stdlib/_stdlib.h
 $(OBJDIR)/realpath.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdlib/realpath.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdlib/realpath.c

@@ -6,6 +6,5 @@ $(OBJDIR)/frexp.o: src/math/frexp.c
 $(OBJDIR)/frexp.o: src/complex/_tgmath.h
 $(OBJDIR)/src/math/_tgmath.h.o: 
 $(OBJDIR)/frexp.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/math/frexp.c
+	$(CC) -c -o $@ $(CFLAGS) src/math/frexp.c

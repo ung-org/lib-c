@@ -11,6 +11,5 @@ $(OBJDIR)/__printf.o: src/stdint/uintmax_t.h
 $(OBJDIR)/__printf.o: src/stdint/intptr_t.h
 $(OBJDIR)/__printf.o: src/stdint/UINTMAX_MAX.h
 $(OBJDIR)/__printf.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdio/__printf.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdio/__printf.c

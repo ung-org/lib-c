@@ -6,6 +6,5 @@ $(OBJDIR)/nearbyint.o: src/math/nearbyint.c
 $(OBJDIR)/nearbyint.o: src/complex/_tgmath.h
 $(OBJDIR)/src/math/_tgmath.h.o: 
 $(OBJDIR)/nearbyint.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/math/nearbyint.c
+	$(CC) -c -o $@ $(CFLAGS) src/math/nearbyint.c

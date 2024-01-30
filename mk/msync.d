@@ -5,6 +5,5 @@ libc.a(msync.o): $(OBJDIR)/msync.o
 
 $(OBJDIR)/msync.o: src/sys/mman/msync.c
 $(OBJDIR)/msync.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/sys/mman/msync.c
+	$(CC) -c -o $@ $(CFLAGS) src/sys/mman/msync.c

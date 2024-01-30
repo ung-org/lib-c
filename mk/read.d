@@ -5,6 +5,5 @@ libc.a(read.o): $(OBJDIR)/read.o
 $(OBJDIR)/read.o: src/unistd/read.c
 $(OBJDIR)/read.o: src/_syscall.h
 $(OBJDIR)/read.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/read.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/read.c

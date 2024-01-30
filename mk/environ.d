@@ -4,6 +4,5 @@ libc.a(environ.o): $(OBJDIR)/environ.o
 
 $(OBJDIR)/environ.o: src/environ.c
 $(OBJDIR)/environ.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/environ.c
+	$(CC) -c -o $@ $(CFLAGS) src/environ.c

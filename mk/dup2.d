@@ -5,6 +5,5 @@ libc.a(dup2.o): $(OBJDIR)/dup2.o
 $(OBJDIR)/dup2.o: src/unistd/dup2.c
 $(OBJDIR)/dup2.o: src/_syscall.h
 $(OBJDIR)/dup2.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/dup2.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/dup2.c

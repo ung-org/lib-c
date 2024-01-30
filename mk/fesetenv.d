@@ -5,6 +5,5 @@ libm.a(fesetenv.o): $(OBJDIR)/fesetenv.o
 $(OBJDIR)/fesetenv.o: src/fenv/fesetenv.c
 $(OBJDIR)/fesetenv.o: src/_safety.h
 $(OBJDIR)/fesetenv.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/fenv/fesetenv.c
+	$(CC) -c -o $@ $(CFLAGS) src/fenv/fesetenv.c

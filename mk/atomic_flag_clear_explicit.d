@@ -4,6 +4,5 @@ libc.a(atomic_flag_clear_explicit.o): $(OBJDIR)/atomic_flag_clear_explicit.o
 
 $(OBJDIR)/atomic_flag_clear_explicit.o: src/stdatomic/atomic_flag_clear_explicit.c
 $(OBJDIR)/atomic_flag_clear_explicit.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdatomic/atomic_flag_clear_explicit.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdatomic/atomic_flag_clear_explicit.c

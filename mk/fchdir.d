@@ -5,6 +5,5 @@ libc.a(fchdir.o): $(OBJDIR)/fchdir.o
 
 $(OBJDIR)/fchdir.o: src/unistd/fchdir.c
 $(OBJDIR)/fchdir.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/fchdir.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/fchdir.c

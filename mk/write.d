@@ -6,6 +6,5 @@ $(OBJDIR)/write.o: src/unistd/write.c
 $(OBJDIR)/write.o: src/_assert.h
 $(OBJDIR)/write.o: src/_syscall.h
 $(OBJDIR)/write.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/write.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/write.c

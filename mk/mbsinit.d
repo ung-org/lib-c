@@ -4,6 +4,5 @@ libc.a(mbsinit.o): $(OBJDIR)/mbsinit.o
 
 $(OBJDIR)/mbsinit.o: src/wchar/mbsinit.c
 $(OBJDIR)/mbsinit.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wchar/mbsinit.c
+	$(CC) -c -o $@ $(CFLAGS) src/wchar/mbsinit.c

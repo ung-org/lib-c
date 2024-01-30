@@ -4,6 +4,5 @@ libc.a(ualarm.o): $(OBJDIR)/ualarm.o
 
 $(OBJDIR)/ualarm.o: src/unistd/ualarm.c
 $(OBJDIR)/ualarm.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/ualarm.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/ualarm.c

@@ -5,6 +5,5 @@ libc.a(isupper.o): $(OBJDIR)/isupper.o
 $(OBJDIR)/isupper.o: src/ctype/isupper.c
 $(OBJDIR)/isupper.o: src/ctype/_ctype.h
 $(OBJDIR)/isupper.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/ctype/isupper.c
+	$(CC) -c -o $@ $(CFLAGS) src/ctype/isupper.c

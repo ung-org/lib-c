@@ -4,6 +4,5 @@ libc.a(tempnam.o): $(OBJDIR)/tempnam.o
 
 $(OBJDIR)/tempnam.o: src/stdio/tempnam.c
 $(OBJDIR)/tempnam.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdio/tempnam.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdio/tempnam.c

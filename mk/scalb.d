@@ -4,6 +4,5 @@ libm.a(scalb.o): $(OBJDIR)/scalb.o
 
 $(OBJDIR)/scalb.o: src/math/scalb.c
 $(OBJDIR)/scalb.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/math/scalb.c
+	$(CC) -c -o $@ $(CFLAGS) src/math/scalb.c

@@ -4,6 +4,5 @@ libc.a(wcsftime.o): $(OBJDIR)/wcsftime.o
 
 $(OBJDIR)/wcsftime.o: src/wchar/wcsftime.c
 $(OBJDIR)/wcsftime.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wchar/wcsftime.c
+	$(CC) -c -o $@ $(CFLAGS) src/wchar/wcsftime.c

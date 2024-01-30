@@ -5,6 +5,5 @@ libc.a(getsid.o): $(OBJDIR)/getsid.o
 
 $(OBJDIR)/getsid.o: src/unistd/getsid.c
 $(OBJDIR)/getsid.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/getsid.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/getsid.c

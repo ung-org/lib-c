@@ -4,6 +4,5 @@ libc.a(swab.o): $(OBJDIR)/swab.o
 
 $(OBJDIR)/swab.o: src/unistd/swab.c
 $(OBJDIR)/swab.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/swab.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/swab.c

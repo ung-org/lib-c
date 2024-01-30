@@ -4,6 +4,5 @@ libc.a(getwd.o): $(OBJDIR)/getwd.o
 
 $(OBJDIR)/getwd.o: src/unistd/getwd.c
 $(OBJDIR)/getwd.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/getwd.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/getwd.c

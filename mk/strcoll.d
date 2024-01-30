@@ -5,6 +5,5 @@ libc.a(strcoll.o): $(OBJDIR)/strcoll.o
 $(OBJDIR)/strcoll.o: src/string/strcoll.c
 $(OBJDIR)/strcoll.o: src/_safety.h
 $(OBJDIR)/strcoll.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/string/strcoll.c
+	$(CC) -c -o $@ $(CFLAGS) src/string/strcoll.c

@@ -5,6 +5,5 @@ libc.a(quick_exit.o): $(OBJDIR)/quick_exit.o
 $(OBJDIR)/quick_exit.o: src/stdlib/quick_exit.c
 $(OBJDIR)/quick_exit.o: src/stdlib/_stdlib.h
 $(OBJDIR)/quick_exit.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdlib/quick_exit.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdlib/quick_exit.c

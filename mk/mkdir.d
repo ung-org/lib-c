@@ -5,6 +5,5 @@ libc.a(mkdir.o): $(OBJDIR)/mkdir.o
 $(OBJDIR)/mkdir.o: src/sys/stat/mkdir.c
 $(OBJDIR)/mkdir.o: src/_syscall.h
 $(OBJDIR)/mkdir.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/sys/stat/mkdir.c
+	$(CC) -c -o $@ $(CFLAGS) src/sys/stat/mkdir.c

@@ -5,6 +5,5 @@ libc.a(iswprint.o): $(OBJDIR)/iswprint.o
 $(OBJDIR)/iswprint.o: src/wctype/iswprint.c
 $(OBJDIR)/iswprint.o: src/_safety.h
 $(OBJDIR)/iswprint.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wctype/iswprint.c
+	$(CC) -c -o $@ $(CFLAGS) src/wctype/iswprint.c

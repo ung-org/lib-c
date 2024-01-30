@@ -4,6 +4,5 @@ libc.a(cnd_timedwait.o): $(OBJDIR)/cnd_timedwait.o
 
 $(OBJDIR)/cnd_timedwait.o: src/threads/cnd_timedwait.c
 $(OBJDIR)/cnd_timedwait.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/threads/cnd_timedwait.c
+	$(CC) -c -o $@ $(CFLAGS) src/threads/cnd_timedwait.c

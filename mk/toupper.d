@@ -5,6 +5,5 @@ libc.a(toupper.o): $(OBJDIR)/toupper.o
 $(OBJDIR)/toupper.o: src/ctype/toupper.c
 $(OBJDIR)/toupper.o: src/ctype/_ctype.h
 $(OBJDIR)/toupper.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/ctype/toupper.c
+	$(CC) -c -o $@ $(CFLAGS) src/ctype/toupper.c

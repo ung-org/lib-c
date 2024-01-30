@@ -4,6 +4,5 @@ libc.a(lockf.o): $(OBJDIR)/lockf.o
 
 $(OBJDIR)/lockf.o: src/unistd/lockf.c
 $(OBJDIR)/lockf.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/lockf.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/lockf.c

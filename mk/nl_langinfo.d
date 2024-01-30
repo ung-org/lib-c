@@ -7,6 +7,5 @@ $(OBJDIR)/nl_langinfo.o: src/langinfo/nl_langinfo.c
 $(OBJDIR)/nl_langinfo.o: 
 $(OBJDIR)/nl_langinfo.o: 
 $(OBJDIR)/nl_langinfo.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/langinfo/nl_langinfo.c
+	$(CC) -c -o $@ $(CFLAGS) src/langinfo/nl_langinfo.c

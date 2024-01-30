@@ -5,6 +5,5 @@ libc.a(ftruncate.o): $(OBJDIR)/ftruncate.o
 
 $(OBJDIR)/ftruncate.o: src/unistd/ftruncate.c
 $(OBJDIR)/ftruncate.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/ftruncate.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/ftruncate.c

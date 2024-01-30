@@ -5,6 +5,5 @@ libc.a(iswalnum.o): $(OBJDIR)/iswalnum.o
 $(OBJDIR)/iswalnum.o: src/wctype/iswalnum.c
 $(OBJDIR)/iswalnum.o: src/_safety.h
 $(OBJDIR)/iswalnum.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wctype/iswalnum.c
+	$(CC) -c -o $@ $(CFLAGS) src/wctype/iswalnum.c

@@ -5,6 +5,5 @@ libc.a(strcspn.o): $(OBJDIR)/strcspn.o
 $(OBJDIR)/strcspn.o: src/string/strcspn.c
 $(OBJDIR)/strcspn.o: src/_safety.h
 $(OBJDIR)/strcspn.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/string/strcspn.c
+	$(CC) -c -o $@ $(CFLAGS) src/string/strcspn.c

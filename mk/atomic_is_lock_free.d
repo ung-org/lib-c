@@ -4,6 +4,5 @@ libc.a(atomic_is_lock_free.o): $(OBJDIR)/atomic_is_lock_free.o
 
 $(OBJDIR)/atomic_is_lock_free.o: src/stdatomic/atomic_is_lock_free.c
 $(OBJDIR)/atomic_is_lock_free.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdatomic/atomic_is_lock_free.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdatomic/atomic_is_lock_free.c

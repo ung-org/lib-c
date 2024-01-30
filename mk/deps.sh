@@ -8,30 +8,6 @@ BASE=$(basename $SOURCE .c)
 LIB=$(grep -F 'LINK(' $SOURCE | tr -d 'LINK()')
 test -z "$LIB" && LIB="c"
 
-#
-# TODO: only grab functions and global variables
-#
-if grep -q "#define $BASE" $SOURCE; then
-	#printf '%s: is a macro\n' $BASE
-	return
-fi
-
-if grep -q "#undef $BASE" $SOURCE; then
-	#printf '%s: is an undefined macro\n' $BASE
-	return
-fi
-
-RECORD=$(echo $BASE | tr '_' ' ')
-if grep -q -e "^$RECORD;" -e "$RECORD {" $SOURCE; then
-	#printf '%s: is a union or struct\n' $BASE
-	return
-fi
-
-if grep -q -e "^typedef.*$BASE;" -e "^} $BASE;" $SOURCE; then
-	#printf '%s: is a typedef\n' $BASE
-	return
-fi
-
 if ! grep -q "^mk/$BASE.d:" mk/deps.mk 2>&1; then
 	printf 'all: mk/%s.d\n' $BASE >> mk/deps.mk
 	printf 'mk/%s.d: %s\n' $BASE $SOURCE >> mk/deps.mk
@@ -86,6 +62,5 @@ for INC in $(find_includes $SOURCE); do
 done
 
 printf '$(OBJDIR)/%s.o:\n' $BASE
-printf '\t@echo "  [CC] $@"\n'
 printf '\t@mkdir -p $(@D)\n'
-printf '\t@$(CC) -c -o $@ $(CFLAGS) %s\n' $SOURCE
+printf '\t$(CC) -c -o $@ $(CFLAGS) %s\n' $SOURCE

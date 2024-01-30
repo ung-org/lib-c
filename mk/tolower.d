@@ -5,6 +5,5 @@ libc.a(tolower.o): $(OBJDIR)/tolower.o
 $(OBJDIR)/tolower.o: src/ctype/tolower.c
 $(OBJDIR)/tolower.o: src/ctype/_ctype.h
 $(OBJDIR)/tolower.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/ctype/tolower.c
+	$(CC) -c -o $@ $(CFLAGS) src/ctype/tolower.c

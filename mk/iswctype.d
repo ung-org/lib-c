@@ -5,6 +5,5 @@ libc.a(iswctype.o): $(OBJDIR)/iswctype.o
 $(OBJDIR)/iswctype.o: src/wctype/iswctype.c
 $(OBJDIR)/iswctype.o: src/_safety.h
 $(OBJDIR)/iswctype.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wctype/iswctype.c
+	$(CC) -c -o $@ $(CFLAGS) src/wctype/iswctype.c

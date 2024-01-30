@@ -7,6 +7,5 @@ $(OBJDIR)/signal.o: src/signal/_signal.h
 $(OBJDIR)/signal.o: src/_safety.h
 $(OBJDIR)/signal.o: src/_syscall.h
 $(OBJDIR)/signal.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/signal/signal.c
+	$(CC) -c -o $@ $(CFLAGS) src/signal/signal.c

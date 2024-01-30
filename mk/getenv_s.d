@@ -5,6 +5,5 @@ libc.a(getenv_s.o): $(OBJDIR)/getenv_s.o
 $(OBJDIR)/getenv_s.o: src/stdlib/getenv_s.c
 $(OBJDIR)/getenv_s.o: src/stdlib/_stdlib.h
 $(OBJDIR)/getenv_s.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdlib/getenv_s.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdlib/getenv_s.c

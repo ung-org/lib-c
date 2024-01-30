@@ -4,6 +4,5 @@ libc.a(getwc.o): $(OBJDIR)/getwc.o
 
 $(OBJDIR)/getwc.o: src/wchar/getwc.c
 $(OBJDIR)/getwc.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wchar/getwc.c
+	$(CC) -c -o $@ $(CFLAGS) src/wchar/getwc.c

@@ -5,6 +5,5 @@ libc.a(munmap.o): $(OBJDIR)/munmap.o
 
 $(OBJDIR)/munmap.o: src/sys/mman/munmap.c
 $(OBJDIR)/munmap.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/sys/mman/munmap.c
+	$(CC) -c -o $@ $(CFLAGS) src/sys/mman/munmap.c

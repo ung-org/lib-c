@@ -5,6 +5,5 @@ libc.a(lstat.o): $(OBJDIR)/lstat.o
 
 $(OBJDIR)/lstat.o: src/sys/stat/lstat.c
 $(OBJDIR)/lstat.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/sys/stat/lstat.c
+	$(CC) -c -o $@ $(CFLAGS) src/sys/stat/lstat.c

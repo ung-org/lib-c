@@ -4,6 +4,5 @@ libc.a(wprintf.o): $(OBJDIR)/wprintf.o
 
 $(OBJDIR)/wprintf.o: src/wchar/wprintf.c
 $(OBJDIR)/wprintf.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wchar/wprintf.c
+	$(CC) -c -o $@ $(CFLAGS) src/wchar/wprintf.c

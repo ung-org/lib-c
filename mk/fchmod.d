@@ -5,6 +5,5 @@ libc.a(fchmod.o): $(OBJDIR)/fchmod.o
 
 $(OBJDIR)/fchmod.o: src/sys/stat/fchmod.c
 $(OBJDIR)/fchmod.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/sys/stat/fchmod.c
+	$(CC) -c -o $@ $(CFLAGS) src/sys/stat/fchmod.c

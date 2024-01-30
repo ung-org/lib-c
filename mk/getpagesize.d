@@ -4,6 +4,5 @@ libc.a(getpagesize.o): $(OBJDIR)/getpagesize.o
 
 $(OBJDIR)/getpagesize.o: src/unistd/getpagesize.c
 $(OBJDIR)/getpagesize.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/getpagesize.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/getpagesize.c

@@ -5,6 +5,5 @@ libm.a(feupdateenv.o): $(OBJDIR)/feupdateenv.o
 $(OBJDIR)/feupdateenv.o: src/fenv/feupdateenv.c
 $(OBJDIR)/feupdateenv.o: src/_safety.h
 $(OBJDIR)/feupdateenv.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/fenv/feupdateenv.c
+	$(CC) -c -o $@ $(CFLAGS) src/fenv/feupdateenv.c

@@ -5,6 +5,5 @@ libc.a(memmove.o): $(OBJDIR)/memmove.o
 $(OBJDIR)/memmove.o: src/string/memmove.c
 $(OBJDIR)/memmove.o: src/_safety.h
 $(OBJDIR)/memmove.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/string/memmove.c
+	$(CC) -c -o $@ $(CFLAGS) src/string/memmove.c

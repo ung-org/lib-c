@@ -5,6 +5,5 @@ libc.a(tmpfile_s.o): $(OBJDIR)/tmpfile_s.o
 $(OBJDIR)/tmpfile_s.o: src/stdio/tmpfile_s.c
 $(OBJDIR)/tmpfile_s.o: src/stdio/_stdio.h
 $(OBJDIR)/tmpfile_s.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdio/tmpfile_s.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdio/tmpfile_s.c

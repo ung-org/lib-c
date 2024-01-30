@@ -4,6 +4,5 @@ libc.a(mtx_destroy.o): $(OBJDIR)/mtx_destroy.o
 
 $(OBJDIR)/mtx_destroy.o: src/threads/mtx_destroy.c
 $(OBJDIR)/mtx_destroy.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/threads/mtx_destroy.c
+	$(CC) -c -o $@ $(CFLAGS) src/threads/mtx_destroy.c

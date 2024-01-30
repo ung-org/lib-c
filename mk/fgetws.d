@@ -5,6 +5,5 @@ libc.a(fgetws.o): $(OBJDIR)/fgetws.o
 $(OBJDIR)/fgetws.o: src/wchar/fgetws.c
 $(OBJDIR)/fgetws.o: src/_safety.h
 $(OBJDIR)/fgetws.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wchar/fgetws.c
+	$(CC) -c -o $@ $(CFLAGS) src/wchar/fgetws.c

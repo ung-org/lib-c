@@ -4,6 +4,5 @@ libc.a(thrd_yield.o): $(OBJDIR)/thrd_yield.o
 
 $(OBJDIR)/thrd_yield.o: src/threads/thrd_yield.c
 $(OBJDIR)/thrd_yield.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/threads/thrd_yield.c
+	$(CC) -c -o $@ $(CFLAGS) src/threads/thrd_yield.c

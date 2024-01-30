@@ -4,6 +4,5 @@ libc.a(toascii.o): $(OBJDIR)/toascii.o
 
 $(OBJDIR)/toascii.o: src/ctype/toascii.c
 $(OBJDIR)/toascii.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/ctype/toascii.c
+	$(CC) -c -o $@ $(CFLAGS) src/ctype/toascii.c

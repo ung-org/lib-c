@@ -5,6 +5,5 @@ libc.a(fdopen.o): $(OBJDIR)/fdopen.o
 $(OBJDIR)/fdopen.o: src/stdio/fdopen.c
 $(OBJDIR)/fdopen.o: src/stdio/_stdio.h
 $(OBJDIR)/fdopen.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdio/fdopen.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdio/fdopen.c

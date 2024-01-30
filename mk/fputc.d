@@ -6,6 +6,5 @@ $(OBJDIR)/fputc.o: src/stdio/fputc.c
 $(OBJDIR)/fputc.o: src/stdio/_stdio.h
 $(OBJDIR)/fputc.o: src/stdio/putc_unlocked.c
 $(OBJDIR)/fputc.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdio/fputc.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdio/fputc.c

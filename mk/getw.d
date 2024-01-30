@@ -5,6 +5,5 @@ libc.a(getw.o): $(OBJDIR)/getw.o
 $(OBJDIR)/getw.o: src/stdio/getw.c
 $(OBJDIR)/getw.o: src/stdio/_stdio.h
 $(OBJDIR)/getw.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdio/getw.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdio/getw.c

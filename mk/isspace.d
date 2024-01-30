@@ -5,6 +5,5 @@ libc.a(isspace.o): $(OBJDIR)/isspace.o
 $(OBJDIR)/isspace.o: src/ctype/isspace.c
 $(OBJDIR)/isspace.o: src/ctype/_ctype.h
 $(OBJDIR)/isspace.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/ctype/isspace.c
+	$(CC) -c -o $@ $(CFLAGS) src/ctype/isspace.c

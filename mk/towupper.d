@@ -5,6 +5,5 @@ libc.a(towupper.o): $(OBJDIR)/towupper.o
 $(OBJDIR)/towupper.o: src/wctype/towupper.c
 $(OBJDIR)/towupper.o: src/_safety.h
 $(OBJDIR)/towupper.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wctype/towupper.c
+	$(CC) -c -o $@ $(CFLAGS) src/wctype/towupper.c

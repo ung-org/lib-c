@@ -5,6 +5,5 @@ libc.a(ungetc.o): $(OBJDIR)/ungetc.o
 $(OBJDIR)/ungetc.o: src/stdio/ungetc.c
 $(OBJDIR)/ungetc.o: src/stdio/_stdio.h
 $(OBJDIR)/ungetc.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdio/ungetc.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdio/ungetc.c

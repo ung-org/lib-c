@@ -5,6 +5,5 @@ libc.a(iswalpha.o): $(OBJDIR)/iswalpha.o
 $(OBJDIR)/iswalpha.o: src/wctype/iswalpha.c
 $(OBJDIR)/iswalpha.o: src/_safety.h
 $(OBJDIR)/iswalpha.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wctype/iswalpha.c
+	$(CC) -c -o $@ $(CFLAGS) src/wctype/iswalpha.c

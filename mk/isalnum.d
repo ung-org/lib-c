@@ -5,6 +5,5 @@ libc.a(isalnum.o): $(OBJDIR)/isalnum.o
 $(OBJDIR)/isalnum.o: src/ctype/isalnum.c
 $(OBJDIR)/isalnum.o: src/_safety.h
 $(OBJDIR)/isalnum.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/ctype/isalnum.c
+	$(CC) -c -o $@ $(CFLAGS) src/ctype/isalnum.c

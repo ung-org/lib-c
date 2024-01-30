@@ -5,6 +5,5 @@ libc.a(fscanf.o): $(OBJDIR)/fscanf.o
 $(OBJDIR)/fscanf.o: src/stdio/fscanf.c
 $(OBJDIR)/fscanf.o: src/stdio/_stdio.h
 $(OBJDIR)/fscanf.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdio/fscanf.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdio/fscanf.c

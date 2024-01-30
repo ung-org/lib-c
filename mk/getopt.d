@@ -4,6 +4,5 @@ libc.a(getopt.o): $(OBJDIR)/getopt.o
 
 $(OBJDIR)/getopt.o: src/unistd/getopt.c
 $(OBJDIR)/getopt.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/getopt.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/getopt.c

@@ -5,6 +5,5 @@ libm.a(feraiseexcept.o): $(OBJDIR)/feraiseexcept.o
 $(OBJDIR)/feraiseexcept.o: src/fenv/feraiseexcept.c
 $(OBJDIR)/feraiseexcept.o: src/_safety.h
 $(OBJDIR)/feraiseexcept.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/fenv/feraiseexcept.c
+	$(CC) -c -o $@ $(CFLAGS) src/fenv/feraiseexcept.c

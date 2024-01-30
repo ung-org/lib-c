@@ -4,6 +4,5 @@ libc.a(writev.o): $(OBJDIR)/writev.o
 
 $(OBJDIR)/writev.o: src/sys/uio/writev.c
 $(OBJDIR)/writev.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/sys/uio/writev.c
+	$(CC) -c -o $@ $(CFLAGS) src/sys/uio/writev.c

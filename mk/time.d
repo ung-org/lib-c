@@ -6,6 +6,5 @@ $(OBJDIR)/time.o: src/time/time.c
 $(OBJDIR)/time.o: src/_syscall.h
 $(OBJDIR)/time.o: src/_safety.h
 $(OBJDIR)/time.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/time/time.c
+	$(CC) -c -o $@ $(CFLAGS) src/time/time.c

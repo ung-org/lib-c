@@ -5,6 +5,5 @@ libc.a(strncat_s.o): $(OBJDIR)/strncat_s.o
 $(OBJDIR)/strncat_s.o: src/string/strncat_s.c
 $(OBJDIR)/strncat_s.o: src/_safety.h
 $(OBJDIR)/strncat_s.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/string/strncat_s.c
+	$(CC) -c -o $@ $(CFLAGS) src/string/strncat_s.c

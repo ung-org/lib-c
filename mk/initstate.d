@@ -5,6 +5,5 @@ libc.a(initstate.o): $(OBJDIR)/initstate.o
 $(OBJDIR)/initstate.o: src/stdlib/initstate.c
 $(OBJDIR)/initstate.o: src/stdlib/_stdlib.h
 $(OBJDIR)/initstate.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdlib/initstate.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdlib/initstate.c

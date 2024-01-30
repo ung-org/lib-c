@@ -4,6 +4,5 @@ libc.a(tss_create.o): $(OBJDIR)/tss_create.o
 
 $(OBJDIR)/tss_create.o: src/threads/tss_create.c
 $(OBJDIR)/tss_create.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/threads/tss_create.c
+	$(CC) -c -o $@ $(CFLAGS) src/threads/tss_create.c

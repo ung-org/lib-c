@@ -5,6 +5,5 @@ libc.a(setstate.o): $(OBJDIR)/setstate.o
 $(OBJDIR)/setstate.o: src/stdlib/setstate.c
 $(OBJDIR)/setstate.o: src/stdlib/_stdlib.h
 $(OBJDIR)/setstate.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdlib/setstate.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdlib/setstate.c

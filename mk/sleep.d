@@ -5,6 +5,5 @@ libc.a(sleep.o): $(OBJDIR)/sleep.o
 $(OBJDIR)/sleep.o: src/unistd/sleep.c
 $(OBJDIR)/sleep.o: src/_syscall.h
 $(OBJDIR)/sleep.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/sleep.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/sleep.c

@@ -4,6 +4,5 @@ libc.a(__sigsegv.o): $(OBJDIR)/__sigsegv.o
 
 $(OBJDIR)/__sigsegv.o: src/signal/__sigsegv.c
 $(OBJDIR)/__sigsegv.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/signal/__sigsegv.c
+	$(CC) -c -o $@ $(CFLAGS) src/signal/__sigsegv.c

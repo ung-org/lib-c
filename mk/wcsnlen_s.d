@@ -4,6 +4,5 @@ libc.a(wcsnlen_s.o): $(OBJDIR)/wcsnlen_s.o
 
 $(OBJDIR)/wcsnlen_s.o: src/wchar/wcsnlen_s.c
 $(OBJDIR)/wcsnlen_s.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wchar/wcsnlen_s.c
+	$(CC) -c -o $@ $(CFLAGS) src/wchar/wcsnlen_s.c

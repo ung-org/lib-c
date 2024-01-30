@@ -5,6 +5,5 @@ libc.a(ctime.o): $(OBJDIR)/ctime.o
 $(OBJDIR)/ctime.o: src/time/ctime.c
 $(OBJDIR)/ctime.o: src/_safety.h
 $(OBJDIR)/ctime.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/time/ctime.c
+	$(CC) -c -o $@ $(CFLAGS) src/time/ctime.c

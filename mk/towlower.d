@@ -5,6 +5,5 @@ libc.a(towlower.o): $(OBJDIR)/towlower.o
 $(OBJDIR)/towlower.o: src/wctype/towlower.c
 $(OBJDIR)/towlower.o: src/_safety.h
 $(OBJDIR)/towlower.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wctype/towlower.c
+	$(CC) -c -o $@ $(CFLAGS) src/wctype/towlower.c

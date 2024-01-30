@@ -6,6 +6,5 @@ $(OBJDIR)/__fpclassify.o: src/math/__fpclassify.c
 $(OBJDIR)/__fpclassify.o: src/complex/_tgmath.h
 $(OBJDIR)/src/math/_tgmath.h.o: 
 $(OBJDIR)/__fpclassify.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/math/__fpclassify.c
+	$(CC) -c -o $@ $(CFLAGS) src/math/__fpclassify.c

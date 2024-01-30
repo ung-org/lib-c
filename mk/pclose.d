@@ -5,6 +5,5 @@ libc.a(pclose.o): $(OBJDIR)/pclose.o
 $(OBJDIR)/pclose.o: src/stdio/pclose.c
 $(OBJDIR)/pclose.o: src/stdio/_stdio.h
 $(OBJDIR)/pclose.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdio/pclose.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdio/pclose.c

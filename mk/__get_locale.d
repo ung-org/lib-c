@@ -6,6 +6,5 @@ $(OBJDIR)/__get_locale.o: src/locale/__get_locale.c
 $(OBJDIR)/__get_locale.o: src/locale/_locale.h
 $(OBJDIR)/__get_locale.o: src/_safety.h
 $(OBJDIR)/__get_locale.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/locale/__get_locale.c
+	$(CC) -c -o $@ $(CFLAGS) src/locale/__get_locale.c

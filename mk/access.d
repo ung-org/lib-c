@@ -4,6 +4,5 @@ libc.a(access.o): $(OBJDIR)/access.o
 
 $(OBJDIR)/access.o: src/unistd/access.c
 $(OBJDIR)/access.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/access.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/access.c

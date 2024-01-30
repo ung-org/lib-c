@@ -5,6 +5,5 @@ libc.a(putenv.o): $(OBJDIR)/putenv.o
 $(OBJDIR)/putenv.o: src/stdlib/putenv.c
 $(OBJDIR)/putenv.o: src/stdlib/_stdlib.h
 $(OBJDIR)/putenv.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdlib/putenv.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdlib/putenv.c

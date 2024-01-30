@@ -6,6 +6,5 @@ $(OBJDIR)/ccosh.o: src/complex/ccosh.c
 $(OBJDIR)/ccosh.o: src/complex/_tgmath.h
 $(OBJDIR)/src/math/_tgmath.h.o: 
 $(OBJDIR)/ccosh.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/complex/ccosh.c
+	$(CC) -c -o $@ $(CFLAGS) src/complex/ccosh.c

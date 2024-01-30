@@ -6,6 +6,5 @@ $(OBJDIR)/cabs.o: src/complex/cabs.c
 $(OBJDIR)/cabs.o: src/complex/_tgmath.h
 $(OBJDIR)/src/math/_tgmath.h.o: 
 $(OBJDIR)/cabs.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/complex/cabs.c
+	$(CC) -c -o $@ $(CFLAGS) src/complex/cabs.c

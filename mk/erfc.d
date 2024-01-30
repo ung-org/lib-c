@@ -7,6 +7,5 @@ $(OBJDIR)/erfc.o: src/math/erfc.c
 $(OBJDIR)/erfc.o: src/complex/_tgmath.h
 $(OBJDIR)/src/math/_tgmath.h.o: 
 $(OBJDIR)/erfc.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/math/erfc.c
+	$(CC) -c -o $@ $(CFLAGS) src/math/erfc.c

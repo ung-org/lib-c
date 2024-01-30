@@ -6,6 +6,5 @@ $(OBJDIR)/putc_unlocked.o: src/stdio/putc_unlocked.c
 $(OBJDIR)/putc_unlocked.o: src/stdio/_stdio.h
 $(OBJDIR)/putc_unlocked.o: src/_syscall.h
 $(OBJDIR)/putc_unlocked.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdio/putc_unlocked.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdio/putc_unlocked.c

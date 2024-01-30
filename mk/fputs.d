@@ -5,6 +5,5 @@ libc.a(fputs.o): $(OBJDIR)/fputs.o
 $(OBJDIR)/fputs.o: src/stdio/fputs.c
 $(OBJDIR)/fputs.o: src/stdio/_stdio.h
 $(OBJDIR)/fputs.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdio/fputs.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdio/fputs.c

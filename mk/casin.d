@@ -6,6 +6,5 @@ $(OBJDIR)/casin.o: src/complex/casin.c
 $(OBJDIR)/casin.o: src/complex/_tgmath.h
 $(OBJDIR)/src/math/_tgmath.h.o: 
 $(OBJDIR)/casin.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/complex/casin.c
+	$(CC) -c -o $@ $(CFLAGS) src/complex/casin.c

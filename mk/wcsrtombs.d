@@ -4,6 +4,5 @@ libc.a(wcsrtombs.o): $(OBJDIR)/wcsrtombs.o
 
 $(OBJDIR)/wcsrtombs.o: src/wchar/wcsrtombs.c
 $(OBJDIR)/wcsrtombs.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wchar/wcsrtombs.c
+	$(CC) -c -o $@ $(CFLAGS) src/wchar/wcsrtombs.c

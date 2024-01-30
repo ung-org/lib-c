@@ -5,6 +5,5 @@ libc.a(vsscanf.o): $(OBJDIR)/vsscanf.o
 $(OBJDIR)/vsscanf.o: src/stdio/vsscanf.c
 $(OBJDIR)/vsscanf.o: src/stdio/_stdio.h
 $(OBJDIR)/vsscanf.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdio/vsscanf.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdio/vsscanf.c

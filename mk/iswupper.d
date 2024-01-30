@@ -5,6 +5,5 @@ libc.a(iswupper.o): $(OBJDIR)/iswupper.o
 $(OBJDIR)/iswupper.o: src/wctype/iswupper.c
 $(OBJDIR)/iswupper.o: src/_safety.h
 $(OBJDIR)/iswupper.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wctype/iswupper.c
+	$(CC) -c -o $@ $(CFLAGS) src/wctype/iswupper.c

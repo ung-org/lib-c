@@ -6,6 +6,5 @@ $(OBJDIR)/scalbn.o: src/math/scalbn.c
 $(OBJDIR)/scalbn.o: src/complex/_tgmath.h
 $(OBJDIR)/src/math/_tgmath.h.o: 
 $(OBJDIR)/scalbn.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/math/scalbn.c
+	$(CC) -c -o $@ $(CFLAGS) src/math/scalbn.c

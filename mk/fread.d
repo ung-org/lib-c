@@ -5,6 +5,5 @@ libc.a(fread.o): $(OBJDIR)/fread.o
 $(OBJDIR)/fread.o: src/stdio/fread.c
 $(OBJDIR)/fread.o: src/stdio/_stdio.h
 $(OBJDIR)/fread.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdio/fread.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdio/fread.c

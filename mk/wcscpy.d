@@ -4,6 +4,5 @@ libc.a(wcscpy.o): $(OBJDIR)/wcscpy.o
 
 $(OBJDIR)/wcscpy.o: src/wchar/wcscpy.c
 $(OBJDIR)/wcscpy.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wchar/wcscpy.c
+	$(CC) -c -o $@ $(CFLAGS) src/wchar/wcscpy.c

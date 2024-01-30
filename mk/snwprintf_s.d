@@ -4,6 +4,5 @@ libc.a(snwprintf_s.o): $(OBJDIR)/snwprintf_s.o
 
 $(OBJDIR)/snwprintf_s.o: src/wchar/snwprintf_s.c
 $(OBJDIR)/snwprintf_s.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wchar/snwprintf_s.c
+	$(CC) -c -o $@ $(CFLAGS) src/wchar/snwprintf_s.c

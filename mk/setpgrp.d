@@ -4,6 +4,5 @@ libc.a(setpgrp.o): $(OBJDIR)/setpgrp.o
 
 $(OBJDIR)/setpgrp.o: src/unistd/setpgrp.c
 $(OBJDIR)/setpgrp.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/setpgrp.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/setpgrp.c

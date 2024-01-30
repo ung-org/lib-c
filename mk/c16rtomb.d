@@ -5,6 +5,5 @@ libc.a(c16rtomb.o): $(OBJDIR)/c16rtomb.o
 $(OBJDIR)/c16rtomb.o: src/uchar/c16rtomb.c
 $(OBJDIR)/c16rtomb.o: src/_safety.h
 $(OBJDIR)/c16rtomb.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/uchar/c16rtomb.c
+	$(CC) -c -o $@ $(CFLAGS) src/uchar/c16rtomb.c

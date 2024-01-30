@@ -5,6 +5,5 @@ libc.a(funlockfile.o): $(OBJDIR)/funlockfile.o
 $(OBJDIR)/funlockfile.o: src/stdio/funlockfile.c
 $(OBJDIR)/funlockfile.o: src/stdio/_stdio.h
 $(OBJDIR)/funlockfile.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdio/funlockfile.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdio/funlockfile.c

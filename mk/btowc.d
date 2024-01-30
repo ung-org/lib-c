@@ -4,6 +4,5 @@ libc.a(btowc.o): $(OBJDIR)/btowc.o
 
 $(OBJDIR)/btowc.o: src/wchar/btowc.c
 $(OBJDIR)/btowc.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/wchar/btowc.c
+	$(CC) -c -o $@ $(CFLAGS) src/wchar/btowc.c

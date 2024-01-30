@@ -6,6 +6,5 @@ $(OBJDIR)/__signal_handler.o: src/signal/__signal_handler.c
 $(OBJDIR)/__signal_handler.o: src/signal/_signal.h
 $(OBJDIR)/__signal_handler.o: src/_safety.h
 $(OBJDIR)/__signal_handler.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/signal/__signal_handler.c
+	$(CC) -c -o $@ $(CFLAGS) src/signal/__signal_handler.c

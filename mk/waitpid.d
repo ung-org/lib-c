@@ -11,6 +11,5 @@ $(OBJDIR)/waitpid.o: src/sys/wait/P_PID.h
 $(OBJDIR)/waitpid.o: src/sys/wait/P_PGID.h
 $(OBJDIR)/waitpid.o: src/sys/wait/P_ALL.h
 $(OBJDIR)/waitpid.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/sys/wait/waitpid.c
+	$(CC) -c -o $@ $(CFLAGS) src/sys/wait/waitpid.c

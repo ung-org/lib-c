@@ -4,6 +4,5 @@ libc.a(getlogin.o): $(OBJDIR)/getlogin.o
 
 $(OBJDIR)/getlogin.o: src/unistd/getlogin.c
 $(OBJDIR)/getlogin.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/unistd/getlogin.c
+	$(CC) -c -o $@ $(CFLAGS) src/unistd/getlogin.c

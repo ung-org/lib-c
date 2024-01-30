@@ -5,6 +5,5 @@ libc.a(ferror.o): $(OBJDIR)/ferror.o
 $(OBJDIR)/ferror.o: src/stdio/ferror.c
 $(OBJDIR)/ferror.o: src/stdio/_stdio.h
 $(OBJDIR)/ferror.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdio/ferror.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdio/ferror.c

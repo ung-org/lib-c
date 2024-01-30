@@ -6,6 +6,5 @@ libc.a(mkstemp.o): $(OBJDIR)/mkstemp.o
 $(OBJDIR)/mkstemp.o: src/stdlib/mkstemp.c
 $(OBJDIR)/mkstemp.o: src/stdlib/_stdlib.h
 $(OBJDIR)/mkstemp.o:
-	@echo "  [CC] $@"
 	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdlib/mkstemp.c
+	$(CC) -c -o $@ $(CFLAGS) src/stdlib/mkstemp.c
