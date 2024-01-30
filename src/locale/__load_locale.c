@@ -5,6 +5,7 @@
 
 #include "_locale.h"
 #include "ctype/_ctype.h"
+#include "_safety.h"
 
 #define setall(_map, _input, _mask) do { \
 	size_t _i; \
@@ -15,6 +16,8 @@
 
 char * __load_locale(struct __locale_t *loc, int mask, const char *name)
 {
+	SIGNAL_SAFE(1);
+
 	if (name == NULL) {
 		name = "";
 	}
@@ -22,7 +25,7 @@ char * __load_locale(struct __locale_t *loc, int mask, const char *name)
 	char localepath[FILENAME_MAX] = "/lib/locale/";
 	strcat(localepath, name);
 
-	FILE *localefile = fopen(localepath, "rb");
+	FILE *localefile = NULL; //fopen(localepath, "rb");
 	if (localefile == NULL && strcmp(name, "C") && strcmp(name, "POSIX")) {
 		return NULL;
 	}

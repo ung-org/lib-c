@@ -1,12 +1,14 @@
-#if 0
-
 #include <locale.h>
 #include "_locale.h"
+#include "_safety.h"
+#undef localeconv
 
 /** return locale-specific information **/
 
 struct lconv * localeconv(void)
 {
+	SIGNAL_SAFE(0);
+
 	/*
 	RETURN_SUCCESS(a pointer to a filled-in STRUCTDEF(lconv) for the current locale);
 	*/
@@ -23,6 +25,3 @@ LC_MONETARY
 LC_NUMERIC
 STDC(1)
 */
-
-
-#endif

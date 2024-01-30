@@ -1,4 +1,5 @@
 #include "_locale.h"
+#include "_safety.h"
 
 /*
 This implementation only supports a single, global locale. A second
@@ -15,9 +16,15 @@ struct __locale_t * __get_locale(void)
 {
 	static struct __locale_t l;
 	static int loaded = 0;
+	SIGNAL_SAFE(1);
+
 	if (!loaded) {
 		loaded = 1;
 		__load_locale(&l, LC_ALL_MASK, DEFAULT_LOCALE);
 	}
 	return &l;
 }
+
+/*
+STDC(0)
+*/

@@ -1,9 +1,9 @@
-#if 0
-
 #include <locale.h>
 #include <string.h>
 #include <stdlib.h>
 #include "_locale.h"
+#include "_safety.h"
+#undef setlocale
 
 /** get or set program locale **/
 
@@ -11,6 +11,8 @@ char * setlocale(int category, const char *locale)
 {
 	struct __locale_t *l = __get_locale();
 	int mask = 0;
+
+	SIGNAL_SAFE(0);
 
 	if (locale == NULL) {
 		switch (category) {
@@ -85,6 +87,3 @@ RETURN(NONNULL, the current locale name for ARGUMENT(category))
 IMPLEMENTATION(The native environment)
 STDC(1)
 */
-
-
-#endif
