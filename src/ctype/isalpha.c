@@ -1,7 +1,7 @@
 #include <ctype.h>
 #include <limits.h>
 #include <stdio.h>
-#include "_assert.h"
+#include "_safety.h"
 
 /** test whether a character is alphabetic **/
 
