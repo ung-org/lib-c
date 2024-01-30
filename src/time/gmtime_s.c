@@ -1,12 +1,13 @@
-#if 0
-
 #include <time.h>
+#include "_safety.h"
 
 /** convert arithmetic time to borken down time **/
 struct tm * gmtime_s(const time_t * restrict timer, struct tm * restrict result)
 {
-	__C_EXT(1, 201112L);
 	/* TODO */
+	SIGNAL_SAFE(0);
+	(void)timer; (void)result;
+
 	return NULL;
 }
 
@@ -26,6 +27,3 @@ type(struct tm).
 /*
 CEXT1(201112)
 */
-
-
-#endif

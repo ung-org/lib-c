@@ -1,8 +1,6 @@
-#if 0
-
 #include <time.h>
 #include "_time.h"
-#include "_assert.h"
+#include "_safety.h"
 
 /** convert time structure to arithmetic type **/
 
@@ -10,6 +8,7 @@ time_t mktime(struct tm * timeptr)
 {
 	int i;
 
+	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(timeptr);
 
 	#ifdef _POSIX_SOURCE
@@ -93,6 +92,3 @@ RETURN_FAILURE(CAST(TYPEDEF(time_t), -1))
 RETURN_SUCCESS(the converted time)
 STDC(1)
 */
-
-
-#endif

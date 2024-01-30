@@ -1,12 +1,13 @@
-#if 0
-
 #include <time.h>
 #include <stdlib.h>
 #include <string.h>
 #include "_time.h"
+#include "_safety.h"
 
 void tzset(void)
 {
+	SIGNAL_SAFE(0);
+
 	char buf[TZNAMELEN * 3]; /* one for std, one for dst, plus dst rule */
 	char *tzstr = getenv("TZ");
 	if (tzstr == NULL) {
@@ -42,6 +43,3 @@ void tzset(void)
 /*
 POSIX(1)
 */
-
-
-#endif

@@ -1,11 +1,12 @@
-#if 0
-
 #include <time.h>
+#include "_safety.h"
 
 /** convert arithmetic time to string **/
 
 char * ctime(const time_t * timer)
 {
+	SIGNAL_SAFE(0);
+
 	#ifdef _POSIX_SOURCE
 	tzset();
 	#endif
@@ -22,6 +23,3 @@ FUNCTION(asctime).
 RETURN_ALWAYS(a pointer to the string)
 STDC(1)
 */
-
-
-#endif

@@ -1,9 +1,9 @@
-#if 0
-
 #include <time.h>
+#include "_safety.h"
 
 int timer_gettime(timer_t timerid, struct itimerspec *value)
 {
+	SIGNAL_SAFE(0);
 	return 0;
 }
 
@@ -11,6 +11,3 @@ int timer_gettime(timer_t timerid, struct itimerspec *value)
 POSIX(199309)
 LINK(rt)
 */
-
-
-#endif

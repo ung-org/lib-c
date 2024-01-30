@@ -1,7 +1,5 @@
-#if 0
-
 #include <time.h>
-#include "_assert.h"
+#include "_safety.h"
 #include "_time.h"
 
 /** convert arithmetic time to broken down time **/
@@ -12,6 +10,7 @@ struct tm * gmtime(const time_t * timer)
 	time_t seconds = 0;
 	int days = 0;
 
+	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(timer);
 	seconds = *timer;
 
@@ -61,6 +60,3 @@ RETURN_FAILURE(CONSTANT(NULL))
 RETURN_SUCCESS(a pointer to the converted time)
 STDC(1)
 */
-
-
-#endif

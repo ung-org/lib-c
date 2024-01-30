@@ -1,9 +1,9 @@
-#if 0
-
 #include <time.h>
+#include "_safety.h"
 
 int timer_settime(timer_t timerid, int flags, const struct itimerspec * restrict value, struct itimerspec * restrict ovalue)
 {
+	SIGNAL_SAFE(0);
 	return 0;
 }
 
@@ -11,6 +11,3 @@ int timer_settime(timer_t timerid, int flags, const struct itimerspec * restrict
 POSIX(199309)
 LINK(rt)
 */
-
-
-#endif

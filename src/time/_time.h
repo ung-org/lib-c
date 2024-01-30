@@ -31,4 +31,8 @@ struct __time {
 
 extern struct __time __time;
 
+/*
+STDC(0)
+*/
+
 #endif

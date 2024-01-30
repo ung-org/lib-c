@@ -1,9 +1,7 @@
-#if 0
-
 #include <locale.h>
 #include <stdio.h>
 #include <time.h>
-#include "_assert.h"
+#include "_safety.h"
 #include "locale/_locale.h"
 
 /** convert time to a formatted string **/
@@ -14,6 +12,7 @@ size_t strftime(char * restrict s, size_t maxsize, const char * restrict format,
 	char buf[64];
 	struct __locale_t *lc = __get_locale();
 
+	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(s);
 	ASSERT_NONNULL(format);
 	ASSERT_NONNULL(timeptr);
@@ -193,6 +192,3 @@ RETURN_FAILURE(ZERO)
 RETURN_SUCCESS(the length of the converted string, not counting the terminating null)
 STDC(1)
 */
-
-
-#endif

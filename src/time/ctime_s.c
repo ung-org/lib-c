@@ -1,12 +1,13 @@
-#if 0
-
 #include <time.h>
+#include "_safety.h"
 
 /** convert arithmetic time to string **/
 errno_t ctime_s(char *s, rsize_t maxsize, const time_t *timer)
 {
-	__C_EXT(1, 201112L);
-	return asctime(localtime(timer));
+	SIGNAL_SAFE(0);
+	(void)s; (void)maxsize;
+	asctime(localtime(timer));
+	return 0;
 }
 
 /***
@@ -24,6 +25,3 @@ fn(asctime).
 /*
 CEXT1(201112)
 */
-
-
-#endif

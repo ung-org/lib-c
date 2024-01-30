@@ -1,11 +1,12 @@
-#if 0
-
 #include <time.h>
+#include "_safety.h"
+#undef clock
 
 /** get processor time **/
 
 clock_t clock(void)
 {
+	SIGNAL_SAFE(0);
 	return (clock_t)-1;
 }
 
@@ -20,6 +21,3 @@ RETURN_FAILURE(CAST(TYPEDEF(clock_t), -1))
 RETURN_SUCCESS(the processor time of the current program)
 STDC(1)
 */
-
-
-#endif

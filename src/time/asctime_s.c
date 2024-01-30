@@ -1,12 +1,10 @@
-#if 0
-
 #include <time.h>
 #include <stdio.h>
+#include "_safety.h"
 
 /** convert broken down time to string **/
 errno_t asctime_s(char *s, rsize_t maxsize, const struct tm * timeptr)
 {
-	__C_EXT(1, 201112L);
 	static const char days[7][3] = {
 		"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"
 	};
@@ -14,13 +12,13 @@ errno_t asctime_s(char *s, rsize_t maxsize, const struct tm * timeptr)
 		"Jan", "Feb", "Mar", "Apr", "May", "Jun",
 		"Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
 	};
-	static char result[26];
+	SIGNAL_SAFE(0);
 
-	sprintf(result, "%.3s %.3s%3d %.2d:%.2d:%.2d %d\n",
+	snprintf(s, maxsize, "%.3s %.3s%3d %.2d:%.2d:%.2d %d\n",
 		days[timeptr->tm_wday], months[timeptr->tm_mon],
 		timeptr->tm_mday, timeptr->tm_hour, timeptr->tm_min,
 		timeptr->tm_sec, timeptr->tm_year + 1900);
-	return result;
+	return 0;
 }
 
 /***
@@ -43,6 +41,3 @@ str(yyyy) is the year.
 /*
 CEXT1(201112)
 */
-
-
-#endif

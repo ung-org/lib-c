@@ -1,7 +1,6 @@
-#if 0
-
 #include <stdio.h>
 #include <time.h>
+#include "_safety.h"
 
 /** convert broken down time to string **/
 
@@ -15,6 +14,8 @@ char * asctime(const struct tm * timeptr)
 		"Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
 	};
 	static char result[26];
+
+	SIGNAL_SAFE(0);
 
 	sprintf(result, "%.3s %.3s%3d %.2d:%.2d:%.2d %d\n",
 		days[timeptr->tm_wday], months[timeptr->tm_mon],
@@ -37,6 +38,3 @@ hour of the day (in the range (0,23)), LITERAL(mm) is the minute of the hour
 RETURN_ALWAYS(a pointer to the string)
 STDC(1)
 */
-
-
-#endif

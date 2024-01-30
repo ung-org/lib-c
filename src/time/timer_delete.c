@@ -1,9 +1,9 @@
-#if 0
-
 #include <time.h>
+#include "_safety.h"
 
 int timer_delete(timer_t timerid)
 {
+	SIGNAL_SAFE(0);
 	return 0;
 }
 
@@ -11,6 +11,3 @@ int timer_delete(timer_t timerid)
 POSIX(199309)
 LINK(rt)
 */
-
-
-#endif
