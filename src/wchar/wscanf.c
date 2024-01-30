@@ -5,6 +5,8 @@
 
 int wscanf(const wchar_t * restrict format, ...)
 {
+	SIGNAL_SAFE(0);
+
 	/*
 	va_list ap;
 	va_start(ap, format);

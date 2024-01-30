@@ -2,10 +2,12 @@
 
 #include <wchar.h>
 #include <stdio.h>
-#include "_assert.h"
+#include "_safety.h"
 
 wchar_t * fgetws(wchar_t * restrict s, int n, FILE * restrict stream)
 {
+	SIGNAL_SAFE(0);
+
 	ASSERT_NONNULL(s);
 	ASSERT_NONNULL(stream);
 

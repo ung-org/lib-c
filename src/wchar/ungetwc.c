@@ -5,6 +5,8 @@
 
 wint_t ungetwc(wint_t c, FILE * stream)
 {
+	SIGNAL_SAFE(0);
+
 	(void)c; (void)stream;
 	return -1;
 }

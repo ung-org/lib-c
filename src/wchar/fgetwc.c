@@ -7,6 +7,8 @@
 
 wint_t fgetwc(FILE * stream)
 {
+	SIGNAL_SAFE(0);
+
 	char mbr[MB_LEN_MAX+1] = {0};
 	mbstate_t ps = 0;
 	wint_t wc = 0;

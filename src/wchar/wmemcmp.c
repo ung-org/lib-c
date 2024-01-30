@@ -4,6 +4,8 @@
 
 int wmemcmp(const wchar_t * s1, const wchar_t * s2, size_t n)
 {
+	SIGNAL_SAFE(0);
+
 	size_t i;
 
 	for (i = 0; i < n; i++) {

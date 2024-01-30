@@ -4,7 +4,8 @@
 
 int snwprintf_s(wchar_t * restrict s, rsize_t n, const wchar_t * restrict format, ...)
 {
-	__C_EXT(1, 201112L);
+	SIGNAL_SAFE(0);
+
 	va_list ap;
 	va_start(ap, format);
 	int ret = vsnwprintf_s(s, n, format, ap);

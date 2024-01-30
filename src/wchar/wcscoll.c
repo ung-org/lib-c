@@ -4,6 +4,8 @@
 
 int wcscoll(const wchar_t * s1, const wchar_t * s2)
 {
+	SIGNAL_SAFE(0);
+
 	/*
 	wchar_t *collated_s1 = s1;
 	wchar_t *collated_s2 = s2;

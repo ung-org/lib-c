@@ -3,10 +3,12 @@
 #include <wchar.h>
 #include <stdio.h>
 #include "stdio/_stdio.h"
-#include "_assert.h"
+#include "_safety.h"
 
 int fwide(FILE * stream, int mode)
 {
+	SIGNAL_SAFE(0);
+
 	ASSERT_NONNULL(stream);
 
 	if (stream->orientation == 0) {

@@ -7,6 +7,8 @@
 
 int wcswidth(const wchar_t * wcsptr, size_t n)
 {
+	SIGNAL_SAFE(0);
+
 }
 
 /*

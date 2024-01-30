@@ -4,6 +4,8 @@
 
 wchar_t * wcsncpy(wchar_t * restrict s1, const wchar_t * restrict s2, size_t n)
 {
+	SIGNAL_SAFE(0);
+
 	size_t i;
 	int nul = 0;
 	for (i = 0; i < n; i++) {

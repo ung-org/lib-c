@@ -7,6 +7,8 @@
 
 int wcwidth(wchar_t wc)
 {
+	SIGNAL_SAFE(0);
+
 }
 
 /*

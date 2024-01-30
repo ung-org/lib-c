@@ -7,7 +7,8 @@ errno_t wcsrtombs_s(size_t * restrict retval,
 	const wchar_t ** restrict src, rsize_t len,
 	mbstate_t * restrict ps)
 {
-	__C_EXT(1, 201112L);
+	SIGNAL_SAFE(0);
+
 }
 
 /*

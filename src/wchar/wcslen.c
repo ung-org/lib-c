@@ -1,9 +1,10 @@
-#if 0
-
 #include <wchar.h>
+#include "_safety.h"
 
 size_t wcslen(const wchar_t * s)
 {
+	SIGNAL_SAFE(0);
+
 	size_t l = 0;
 	while (s[l] != L'\0') {
 		l++;
@@ -14,6 +15,3 @@ size_t wcslen(const wchar_t * s)
 /*
 STDC(199409)
 */
-
-
-#endif

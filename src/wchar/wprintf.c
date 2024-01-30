@@ -5,6 +5,8 @@
 
 int wprintf(const wchar_t * restrict format, ...)
 {
+	SIGNAL_SAFE(0);
+
 	va_list ap;
 	va_start(ap, format);
 	int ret = vwprintf(format, ap);

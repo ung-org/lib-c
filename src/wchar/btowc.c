@@ -6,6 +6,8 @@
 
 wint_t btowc(int c)
 {
+	SIGNAL_SAFE(0);
+
 	char *l = setlocale(LC_CTYPE, NULL);
 
 	if (!strcmp(l, "C") || !strcmp(l, "POSIX")) {

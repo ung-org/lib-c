@@ -4,7 +4,8 @@
 
 size_t wcsnlen_s( const wchar_t *ws, size_t maxlen)
 {
-	__C_EXT(1, 201112L);
+	SIGNAL_SAFE(0);
+
 	return 0;
 }
 

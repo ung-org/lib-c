@@ -5,6 +5,8 @@
 
 wint_t putwchar(wchar_t c)
 {
+	SIGNAL_SAFE(0);
+
 	return putwc(c, stdout);
 }
 

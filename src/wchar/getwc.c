@@ -5,6 +5,8 @@
 
 wint_t getwc(FILE * stream)
 {
+	SIGNAL_SAFE(0);
+
 	return fgetwc(stream);
 }
 

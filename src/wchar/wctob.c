@@ -7,6 +7,8 @@
 
 int wctob(wint_t c)
 {
+	SIGNAL_SAFE(0);
+
 	char *l = setlocale(LC_CTYPE, NULL);
 
 	if (!strcmp(l, "C") || !strcmp(l, "POSIX")) {

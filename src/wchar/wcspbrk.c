@@ -4,6 +4,8 @@
 
 wchar_t * wcspbrk(const wchar_t * s1, const wchar_t * s2)
 {
+	SIGNAL_SAFE(0);
+
 	int i;
 	for (i = 0; s1[i] != L'\0'; i++) {
 		if (wcschr(s2, s1[i]) != NULL) {

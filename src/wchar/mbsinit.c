@@ -4,6 +4,8 @@
 
 int mbsinit(const mbstate_t * ps)
 {
+	SIGNAL_SAFE(0);
+
 	if (ps == NULL || *ps == 0) {
 		return 1;
 	}

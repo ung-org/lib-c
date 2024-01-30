@@ -5,6 +5,8 @@
 
 wint_t getwchar(void)
 {
+	SIGNAL_SAFE(0);
+
 	return getwc(stdin);
 }
 
