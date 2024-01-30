@@ -3,6 +3,7 @@ libc.a(atoi.o): $(OBJDIR)/atoi.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/atoi.o: src/stdlib/atoi.c
+$(OBJDIR)/atoi.o: src/stdlib/_stdlib.h
 $(OBJDIR)/atoi.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

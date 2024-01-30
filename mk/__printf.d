@@ -6,7 +6,6 @@ $(OBJDIR)/__printf.o: src/stdio/__printf.c
 $(OBJDIR)/__printf.o: src/wctype/wint_t.h
 $(OBJDIR)/__printf.o: src/wctype/wctrans_t.h
 $(OBJDIR)/__printf.o: src/stdio/_stdio.h
-$(OBJDIR)/__printf.o: src/_safety.h
 $(OBJDIR)/__printf.o: src/stdint/intmax_t.h
 $(OBJDIR)/__printf.o: src/stdint/uintmax_t.h
 $(OBJDIR)/__printf.o: src/stdint/intptr_t.h

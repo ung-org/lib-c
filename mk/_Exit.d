@@ -3,7 +3,7 @@ libc.a(_Exit.o): $(OBJDIR)/_Exit.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/_Exit.o: src/stdlib/_Exit.c
-$(OBJDIR)/_Exit.o: src/_safety.h
+$(OBJDIR)/_Exit.o: src/stdlib/_stdlib.h
 $(OBJDIR)/_Exit.o: src/_syscall.h
 $(OBJDIR)/_Exit.o:
 	@echo "  [CC] $@"

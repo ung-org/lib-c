@@ -3,6 +3,7 @@ libc.a(strptime.o): $(OBJDIR)/strptime.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/strptime.o: src/time/strptime.c
+$(OBJDIR)/strptime.o: src/_safety.h
 $(OBJDIR)/strptime.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

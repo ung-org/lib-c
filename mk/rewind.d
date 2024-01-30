@@ -3,6 +3,7 @@ libc.a(rewind.o): $(OBJDIR)/rewind.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/rewind.o: src/stdio/rewind.c
+$(OBJDIR)/rewind.o: src/stdio/_stdio.h
 $(OBJDIR)/rewind.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

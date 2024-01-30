@@ -3,6 +3,7 @@ libc.a(valloc.o): $(OBJDIR)/valloc.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/valloc.o: src/stdlib/valloc.c
+$(OBJDIR)/valloc.o: src/stdlib/_stdlib.h
 $(OBJDIR)/valloc.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

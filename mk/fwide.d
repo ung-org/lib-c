@@ -4,7 +4,7 @@ libc.a(fwide.o): $(OBJDIR)/fwide.o
 
 $(OBJDIR)/fwide.o: src/wchar/fwide.c
 $(OBJDIR)/fwide.o: src/stdio/_stdio.h
-$(OBJDIR)/fwide.o: src/_assert.h
+$(OBJDIR)/fwide.o: src/_safety.h
 $(OBJDIR)/fwide.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

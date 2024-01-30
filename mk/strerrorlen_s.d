@@ -3,6 +3,7 @@ libc.a(strerrorlen_s.o): $(OBJDIR)/strerrorlen_s.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/strerrorlen_s.o: src/string/strerrorlen_s.c
+$(OBJDIR)/strerrorlen_s.o: src/_safety.h
 $(OBJDIR)/strerrorlen_s.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

@@ -3,7 +3,7 @@ libc.a(iswpunct.o): $(OBJDIR)/iswpunct.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/iswpunct.o: src/wctype/iswpunct.c
-$(OBJDIR)/iswpunct.o: src/_assert.h
+$(OBJDIR)/iswpunct.o: src/_safety.h
 $(OBJDIR)/iswpunct.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

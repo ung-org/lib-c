@@ -3,6 +3,7 @@ librt.a(timer_delete.o): $(OBJDIR)/timer_delete.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/timer_delete.o: src/time/timer_delete.c
+$(OBJDIR)/timer_delete.o: src/_safety.h
 $(OBJDIR)/timer_delete.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

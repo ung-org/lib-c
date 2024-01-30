@@ -4,6 +4,7 @@ libc.a(time.o): $(OBJDIR)/time.o
 
 $(OBJDIR)/time.o: src/time/time.c
 $(OBJDIR)/time.o: src/_syscall.h
+$(OBJDIR)/time.o: src/_safety.h
 $(OBJDIR)/time.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

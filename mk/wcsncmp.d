@@ -3,7 +3,7 @@ libc.a(wcsncmp.o): $(OBJDIR)/wcsncmp.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/wcsncmp.o: src/wchar/wcsncmp.c
-$(OBJDIR)/wcsncmp.o: src/_assert.h
+$(OBJDIR)/wcsncmp.o: src/_safety.h
 $(OBJDIR)/wcsncmp.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

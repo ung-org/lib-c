@@ -3,7 +3,7 @@ libc.a(iswlower.o): $(OBJDIR)/iswlower.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/iswlower.o: src/wctype/iswlower.c
-$(OBJDIR)/iswlower.o: src/_assert.h
+$(OBJDIR)/iswlower.o: src/_safety.h
 $(OBJDIR)/iswlower.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

@@ -3,7 +3,7 @@ libc.a(iswupper.o): $(OBJDIR)/iswupper.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/iswupper.o: src/wctype/iswupper.c
-$(OBJDIR)/iswupper.o: src/_assert.h
+$(OBJDIR)/iswupper.o: src/_safety.h
 $(OBJDIR)/iswupper.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

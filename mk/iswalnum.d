@@ -3,7 +3,7 @@ libc.a(iswalnum.o): $(OBJDIR)/iswalnum.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/iswalnum.o: src/wctype/iswalnum.c
-$(OBJDIR)/iswalnum.o: src/_assert.h
+$(OBJDIR)/iswalnum.o: src/_safety.h
 $(OBJDIR)/iswalnum.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

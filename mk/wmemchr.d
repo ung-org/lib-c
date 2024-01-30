@@ -3,7 +3,7 @@ libc.a(wmemchr.o): $(OBJDIR)/wmemchr.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/wmemchr.o: src/wchar/wmemchr.c
-$(OBJDIR)/wmemchr.o: src/_assert.h
+$(OBJDIR)/wmemchr.o: src/_safety.h
 $(OBJDIR)/wmemchr.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

@@ -4,6 +4,7 @@ libc.a(tzset.o): $(OBJDIR)/tzset.o
 
 $(OBJDIR)/tzset.o: src/time/tzset.c
 $(OBJDIR)/tzset.o: src/time/_time.h
+$(OBJDIR)/tzset.o: src/_safety.h
 $(OBJDIR)/tzset.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

@@ -3,6 +3,7 @@ libc.a(strncpy_s.o): $(OBJDIR)/strncpy_s.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/strncpy_s.o: src/string/strncpy_s.c
+$(OBJDIR)/strncpy_s.o: src/_safety.h
 $(OBJDIR)/strncpy_s.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

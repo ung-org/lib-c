@@ -3,7 +3,7 @@ libc.a(strlen.o): $(OBJDIR)/strlen.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/strlen.o: src/string/strlen.c
-$(OBJDIR)/strlen.o: src/_assert.h
+$(OBJDIR)/strlen.o: src/_safety.h
 $(OBJDIR)/strlen.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

@@ -3,6 +3,7 @@ libc.a(nanosleep.o): $(OBJDIR)/nanosleep.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/nanosleep.o: src/time/nanosleep.c
+$(OBJDIR)/nanosleep.o: src/_safety.h
 $(OBJDIR)/nanosleep.o: src/_syscall.h
 $(OBJDIR)/nanosleep.o:
 	@echo "  [CC] $@"

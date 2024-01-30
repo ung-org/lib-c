@@ -3,6 +3,7 @@ libc.a(system.o): $(OBJDIR)/system.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/system.o: src/stdlib/system.c
+$(OBJDIR)/system.o: src/stdlib/_stdlib.h
 $(OBJDIR)/system.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

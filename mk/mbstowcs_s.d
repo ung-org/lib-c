@@ -3,6 +3,7 @@ libc.a(mbstowcs_s.o): $(OBJDIR)/mbstowcs_s.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/mbstowcs_s.o: src/stdlib/mbstowcs_s.c
+$(OBJDIR)/mbstowcs_s.o: src/stdlib/_stdlib.h
 $(OBJDIR)/mbstowcs_s.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

@@ -3,6 +3,7 @@ libc.a(aligned_alloc.o): $(OBJDIR)/aligned_alloc.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/aligned_alloc.o: src/stdlib/aligned_alloc.c
+$(OBJDIR)/aligned_alloc.o: src/stdlib/_stdlib.h
 $(OBJDIR)/aligned_alloc.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

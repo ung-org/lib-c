@@ -3,6 +3,7 @@ libc.a(qsort_s.o): $(OBJDIR)/qsort_s.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/qsort_s.o: src/stdlib/qsort_s.c
+$(OBJDIR)/qsort_s.o: src/stdlib/_stdlib.h
 $(OBJDIR)/qsort_s.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

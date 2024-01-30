@@ -3,6 +3,7 @@ libc.a(getdate.o): $(OBJDIR)/getdate.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/getdate.o: src/time/getdate.c
+$(OBJDIR)/getdate.o: src/_safety.h
 $(OBJDIR)/getdate.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

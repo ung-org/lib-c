@@ -3,6 +3,7 @@ libc.a(grantpt.o): $(OBJDIR)/grantpt.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/grantpt.o: src/stdlib/grantpt.c
+$(OBJDIR)/grantpt.o: src/stdlib/_stdlib.h
 $(OBJDIR)/grantpt.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

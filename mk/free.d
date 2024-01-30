@@ -3,6 +3,7 @@ libc.a(free.o): $(OBJDIR)/free.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/free.o: src/stdlib/free.c
+$(OBJDIR)/free.o: src/stdlib/_stdlib.h
 $(OBJDIR)/free.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

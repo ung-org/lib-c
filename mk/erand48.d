@@ -3,6 +3,7 @@ libc.a(erand48.o): $(OBJDIR)/erand48.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/erand48.o: src/stdlib/erand48.c
+$(OBJDIR)/erand48.o: src/stdlib/_stdlib.h
 $(OBJDIR)/erand48.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

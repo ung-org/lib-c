@@ -3,6 +3,7 @@ libc.a(wctomb.o): $(OBJDIR)/wctomb.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/wctomb.o: src/stdlib/wctomb.c
+$(OBJDIR)/wctomb.o: src/stdlib/_stdlib.h
 $(OBJDIR)/wctomb.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

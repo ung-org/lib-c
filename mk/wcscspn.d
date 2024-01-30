@@ -3,7 +3,7 @@ libc.a(wcscspn.o): $(OBJDIR)/wcscspn.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/wcscspn.o: src/wchar/wcscspn.c
-$(OBJDIR)/wcscspn.o: src/_assert.h
+$(OBJDIR)/wcscspn.o: src/_safety.h
 $(OBJDIR)/wcscspn.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

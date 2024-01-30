@@ -1,4 +1,4 @@
-libc_C.0: libc.a(__time.o)
+libc_C.-1: libc.a(__time.o)
 libc.a(__time.o): $(OBJDIR)/__time.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 

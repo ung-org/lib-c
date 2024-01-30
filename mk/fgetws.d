@@ -3,7 +3,7 @@ libc.a(fgetws.o): $(OBJDIR)/fgetws.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/fgetws.o: src/wchar/fgetws.c
-$(OBJDIR)/fgetws.o: src/_assert.h
+$(OBJDIR)/fgetws.o: src/_safety.h
 $(OBJDIR)/fgetws.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

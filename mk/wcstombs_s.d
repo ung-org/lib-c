@@ -3,6 +3,7 @@ libc.a(wcstombs_s.o): $(OBJDIR)/wcstombs_s.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/wcstombs_s.o: src/stdlib/wcstombs_s.c
+$(OBJDIR)/wcstombs_s.o: src/stdlib/_stdlib.h
 $(OBJDIR)/wcstombs_s.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

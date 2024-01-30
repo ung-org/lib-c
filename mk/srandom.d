@@ -3,6 +3,7 @@ libc.a(srandom.o): $(OBJDIR)/srandom.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/srandom.o: src/stdlib/srandom.c
+$(OBJDIR)/srandom.o: src/stdlib/_stdlib.h
 $(OBJDIR)/srandom.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

@@ -3,6 +3,7 @@ libc.a(ignore_handler_s.o): $(OBJDIR)/ignore_handler_s.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/ignore_handler_s.o: src/stdlib/ignore_handler_s.c
+$(OBJDIR)/ignore_handler_s.o: src/stdlib/_stdlib.h
 $(OBJDIR)/ignore_handler_s.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

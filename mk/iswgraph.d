@@ -3,7 +3,7 @@ libc.a(iswgraph.o): $(OBJDIR)/iswgraph.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/iswgraph.o: src/wctype/iswgraph.c
-$(OBJDIR)/iswgraph.o: src/_assert.h
+$(OBJDIR)/iswgraph.o: src/_safety.h
 $(OBJDIR)/iswgraph.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

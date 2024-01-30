@@ -3,7 +3,7 @@ libc.a(tcgetpgrp.o): $(OBJDIR)/tcgetpgrp.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/tcgetpgrp.o: src/unistd/tcgetpgrp.c
-$(OBJDIR)/tcgetpgrp.o: src/termios/_termios.h
+$(OBJDIR)/tcgetpgrp.o: 
 $(OBJDIR)/tcgetpgrp.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

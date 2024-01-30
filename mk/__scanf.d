@@ -4,7 +4,6 @@ libc.a(__scanf.o): $(OBJDIR)/__scanf.o
 
 $(OBJDIR)/__scanf.o: src/stdio/__scanf.c
 $(OBJDIR)/__scanf.o: src/stdio/_stdio.h
-$(OBJDIR)/__scanf.o: src/_safety.h
 $(OBJDIR)/__scanf.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

@@ -3,7 +3,7 @@ libc.a(iswblank.o): $(OBJDIR)/iswblank.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/iswblank.o: src/wctype/iswblank.c
-$(OBJDIR)/iswblank.o: src/_assert.h
+$(OBJDIR)/iswblank.o: src/_safety.h
 $(OBJDIR)/iswblank.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

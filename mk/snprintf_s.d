@@ -3,6 +3,7 @@ libc.a(snprintf_s.o): $(OBJDIR)/snprintf_s.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/snprintf_s.o: src/stdio/snprintf_s.c
+$(OBJDIR)/snprintf_s.o: src/stdio/_stdio.h
 $(OBJDIR)/snprintf_s.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

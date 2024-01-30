@@ -4,7 +4,6 @@ libc.a(feof.o): $(OBJDIR)/feof.o
 
 $(OBJDIR)/feof.o: src/stdio/feof.c
 $(OBJDIR)/feof.o: src/stdio/_stdio.h
-$(OBJDIR)/feof.o: src/_safety.h
 $(OBJDIR)/feof.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

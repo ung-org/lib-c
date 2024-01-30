@@ -5,7 +5,6 @@ libc.a(fflush.o): $(OBJDIR)/fflush.o
 $(OBJDIR)/fflush.o: src/stdio/fflush.c
 $(OBJDIR)/fflush.o: src/stdio/_stdio.h
 $(OBJDIR)/fflush.o: src/_syscall.h
-$(OBJDIR)/fflush.o: src/_safety.h
 $(OBJDIR)/fflush.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

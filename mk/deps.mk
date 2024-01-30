@@ -226,10 +226,6 @@ all: mk/memmove_s.d
 mk/memmove_s.d: src/string/memmove_s.c
 	sh mk/deps.sh src/string/memmove_s.c
 
-all: mk/strtok.d
-mk/strtok.d: src/string/strtok.c
-	sh mk/deps.sh src/string/strtok.c
-
 all: mk/strcoll.d
 mk/strcoll.d: src/string/strcoll.c
 	sh mk/deps.sh src/string/strcoll.c
@@ -245,10 +241,6 @@ mk/strncmp.d: src/string/strncmp.c
 all: mk/memset.d
 mk/memset.d: src/string/memset.c
 	sh mk/deps.sh src/string/memset.c
-
-all: mk/strerror.d
-mk/strerror.d: src/string/strerror.c
-	sh mk/deps.sh src/string/strerror.c
 
 all: mk/strncpy_s.d
 mk/strncpy_s.d: src/string/strncpy_s.c
@@ -278,10 +270,6 @@ all: mk/strerrorlen_s.d
 mk/strerrorlen_s.d: src/string/strerrorlen_s.c
 	sh mk/deps.sh src/string/strerrorlen_s.c
 
-all: mk/strpbrk.d
-mk/strpbrk.d: src/string/strpbrk.c
-	sh mk/deps.sh src/string/strpbrk.c
-
 all: mk/memcmp.d
 mk/memcmp.d: src/string/memcmp.c
 	sh mk/deps.sh src/string/memcmp.c
@@ -289,10 +277,6 @@ mk/memcmp.d: src/string/memcmp.c
 all: mk/strcmp.d
 mk/strcmp.d: src/string/strcmp.c
 	sh mk/deps.sh src/string/strcmp.c
-
-all: mk/strcat.d
-mk/strcat.d: src/string/strcat.c
-	sh mk/deps.sh src/string/strcat.c
 
 all: mk/strncat_s.d
 mk/strncat_s.d: src/string/strncat_s.c
@@ -302,29 +286,9 @@ all: mk/memccpy.d
 mk/memccpy.d: src/string/memccpy.c
 	sh mk/deps.sh src/string/memccpy.c
 
-all: mk/strrchr.d
-mk/strrchr.d: src/string/strrchr.c
-	sh mk/deps.sh src/string/strrchr.c
-
-all: mk/strtok_s.d
-mk/strtok_s.d: src/string/strtok_s.c
-	sh mk/deps.sh src/string/strtok_s.c
-
 all: mk/strerror_s.d
 mk/strerror_s.d: src/string/strerror_s.c
 	sh mk/deps.sh src/string/strerror_s.c
-
-all: mk/strdup.d
-mk/strdup.d: src/string/strdup.c
-	sh mk/deps.sh src/string/strdup.c
-
-all: mk/strncpy.d
-mk/strncpy.d: src/string/strncpy.c
-	sh mk/deps.sh src/string/strncpy.c
-
-all: mk/strstr.d
-mk/strstr.d: src/string/strstr.c
-	sh mk/deps.sh src/string/strstr.c
 
 all: mk/strcat_s.d
 mk/strcat_s.d: src/string/strcat_s.c
@@ -341,14 +305,6 @@ mk/strcspn.d: src/string/strcspn.c
 all: mk/strlen.d
 mk/strlen.d: src/string/strlen.c
 	sh mk/deps.sh src/string/strlen.c
-
-all: mk/strchr.d
-mk/strchr.d: src/string/strchr.c
-	sh mk/deps.sh src/string/strchr.c
-
-all: mk/strncat.d
-mk/strncat.d: src/string/strncat.c
-	sh mk/deps.sh src/string/strncat.c
 
 all: mk/memset_s.d
 mk/memset_s.d: src/string/memset_s.c
@@ -702,50 +658,6 @@ all: mk/wcscoll.d
 mk/wcscoll.d: src/wchar/wcscoll.c
 	sh mk/deps.sh src/wchar/wcscoll.c
 
-all: mk/tcflow.d
-mk/tcflow.d: src/termios/tcflow.c
-	sh mk/deps.sh src/termios/tcflow.c
-
-all: mk/tcgetattr.d
-mk/tcgetattr.d: src/termios/tcgetattr.c
-	sh mk/deps.sh src/termios/tcgetattr.c
-
-all: mk/tcsetattr.d
-mk/tcsetattr.d: src/termios/tcsetattr.c
-	sh mk/deps.sh src/termios/tcsetattr.c
-
-all: mk/cfgetospeed.d
-mk/cfgetospeed.d: src/termios/cfgetospeed.c
-	sh mk/deps.sh src/termios/cfgetospeed.c
-
-all: mk/cfgetispeed.d
-mk/cfgetispeed.d: src/termios/cfgetispeed.c
-	sh mk/deps.sh src/termios/cfgetispeed.c
-
-all: mk/tcdrain.d
-mk/tcdrain.d: src/termios/tcdrain.c
-	sh mk/deps.sh src/termios/tcdrain.c
-
-all: mk/cfsetospeed.d
-mk/cfsetospeed.d: src/termios/cfsetospeed.c
-	sh mk/deps.sh src/termios/cfsetospeed.c
-
-all: mk/cfsetispeed.d
-mk/cfsetispeed.d: src/termios/cfsetispeed.c
-	sh mk/deps.sh src/termios/cfsetispeed.c
-
-all: mk/tcsendbreak.d
-mk/tcsendbreak.d: src/termios/tcsendbreak.c
-	sh mk/deps.sh src/termios/tcsendbreak.c
-
-all: mk/tcgetsid.d
-mk/tcgetsid.d: src/termios/tcgetsid.c
-	sh mk/deps.sh src/termios/tcgetsid.c
-
-all: mk/tcflush.d
-mk/tcflush.d: src/termios/tcflush.c
-	sh mk/deps.sh src/termios/tcflush.c
-
 all: mk/__checked_call.d
 mk/__checked_call.d: src/__checked_call.c
 	sh mk/deps.sh src/__checked_call.c
@@ -834,10 +746,6 @@ all: mk/system.d
 mk/system.d: src/stdlib/system.c
 	sh mk/deps.sh src/stdlib/system.c
 
-all: mk/div.d
-mk/div.d: src/stdlib/div.c
-	sh mk/deps.sh src/stdlib/div.c
-
 all: mk/lrand48.d
 mk/lrand48.d: src/stdlib/lrand48.c
 	sh mk/deps.sh src/stdlib/lrand48.c
@@ -877,10 +785,6 @@ mk/strtold.d: src/stdlib/strtold.c
 all: mk/malloc.d
 mk/malloc.d: src/stdlib/malloc.c
 	sh mk/deps.sh src/stdlib/malloc.c
-
-all: mk/rand.d
-mk/rand.d: src/stdlib/rand.c
-	sh mk/deps.sh src/stdlib/rand.c
 
 all: mk/initstate.d
 mk/initstate.d: src/stdlib/initstate.c
@@ -2034,10 +1938,6 @@ all: mk/timer_create.d
 mk/timer_create.d: src/time/timer_create.c
 	sh mk/deps.sh src/time/timer_create.c
 
-all: mk/clock.d
-mk/clock.d: src/time/clock.c
-	sh mk/deps.sh src/time/clock.c
-
 all: mk/getdate_err.d
 mk/getdate_err.d: src/time/getdate_err.c
 	sh mk/deps.sh src/time/getdate_err.c
@@ -2318,10 +2218,6 @@ all: mk/clearerr.d
 mk/clearerr.d: src/stdio/clearerr.c
 	sh mk/deps.sh src/stdio/clearerr.c
 
-all: mk/fopen.d
-mk/fopen.d: src/stdio/fopen.c
-	sh mk/deps.sh src/stdio/fopen.c
-
 all: mk/tmpnam_s.d
 mk/tmpnam_s.d: src/stdio/tmpnam_s.c
 	sh mk/deps.sh src/stdio/tmpnam_s.c
@@ -2329,10 +2225,6 @@ mk/tmpnam_s.d: src/stdio/tmpnam_s.c
 all: mk/__stdout.d
 mk/__stdout.d: src/stdio/__stdout.c
 	sh mk/deps.sh src/stdio/__stdout.c
-
-all: mk/fgets.d
-mk/fgets.d: src/stdio/fgets.c
-	sh mk/deps.sh src/stdio/fgets.c
 
 all: mk/snprintf_s.d
 mk/snprintf_s.d: src/stdio/snprintf_s.c
@@ -2418,10 +2310,6 @@ all: mk/vprintf_s.d
 mk/vprintf_s.d: src/stdio/vprintf_s.c
 	sh mk/deps.sh src/stdio/vprintf_s.c
 
-all: mk/getchar.d
-mk/getchar.d: src/stdio/getchar.c
-	sh mk/deps.sh src/stdio/getchar.c
-
 all: mk/tempnam.d
 mk/tempnam.d: src/stdio/tempnam.c
 	sh mk/deps.sh src/stdio/tempnam.c
@@ -2469,10 +2357,6 @@ mk/vsscanf.d: src/stdio/vsscanf.c
 all: mk/fgetpos.d
 mk/fgetpos.d: src/stdio/fgetpos.c
 	sh mk/deps.sh src/stdio/fgetpos.c
-
-all: mk/tmpfile.d
-mk/tmpfile.d: src/stdio/tmpfile.c
-	sh mk/deps.sh src/stdio/tmpfile.c
 
 all: mk/setvbuf.d
 mk/setvbuf.d: src/stdio/setvbuf.c

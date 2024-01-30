@@ -3,6 +3,7 @@ libc.a(malloc.o): $(OBJDIR)/malloc.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/malloc.o: src/stdlib/malloc.c
+$(OBJDIR)/malloc.o: src/stdlib/_stdlib.h
 $(OBJDIR)/malloc.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

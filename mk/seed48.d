@@ -3,6 +3,7 @@ libc.a(seed48.o): $(OBJDIR)/seed48.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/seed48.o: src/stdlib/seed48.c
+$(OBJDIR)/seed48.o: src/stdlib/_stdlib.h
 $(OBJDIR)/seed48.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

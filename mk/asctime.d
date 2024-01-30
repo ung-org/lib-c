@@ -3,6 +3,7 @@ libc.a(asctime.o): $(OBJDIR)/asctime.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/asctime.o: src/time/asctime.c
+$(OBJDIR)/asctime.o: src/_safety.h
 $(OBJDIR)/asctime.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

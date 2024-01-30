@@ -3,6 +3,7 @@ libc.a(gmtime_s.o): $(OBJDIR)/gmtime_s.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/gmtime_s.o: src/time/gmtime_s.c
+$(OBJDIR)/gmtime_s.o: src/_safety.h
 $(OBJDIR)/gmtime_s.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

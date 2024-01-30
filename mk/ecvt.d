@@ -3,6 +3,7 @@ libc.a(ecvt.o): $(OBJDIR)/ecvt.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/ecvt.o: src/stdlib/ecvt.c
+$(OBJDIR)/ecvt.o: src/stdlib/_stdlib.h
 $(OBJDIR)/ecvt.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

@@ -3,7 +3,7 @@ libc.a(memmove_s.o): $(OBJDIR)/memmove_s.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/memmove_s.o: src/string/memmove_s.c
-$(OBJDIR)/memmove_s.o: src/_assert.h
+$(OBJDIR)/memmove_s.o: src/_safety.h
 $(OBJDIR)/memmove_s.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

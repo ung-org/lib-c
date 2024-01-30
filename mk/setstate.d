@@ -3,6 +3,7 @@ libc.a(setstate.o): $(OBJDIR)/setstate.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/setstate.o: src/stdlib/setstate.c
+$(OBJDIR)/setstate.o: src/stdlib/_stdlib.h
 $(OBJDIR)/setstate.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

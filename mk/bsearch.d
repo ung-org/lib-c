@@ -3,6 +3,7 @@ libc.a(bsearch.o): $(OBJDIR)/bsearch.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/bsearch.o: src/stdlib/bsearch.c
+$(OBJDIR)/bsearch.o: src/stdlib/_stdlib.h
 $(OBJDIR)/bsearch.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

@@ -3,6 +3,7 @@ librt.a(timer_gettime.o): $(OBJDIR)/timer_gettime.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/timer_gettime.o: src/time/timer_gettime.c
+$(OBJDIR)/timer_gettime.o: src/_safety.h
 $(OBJDIR)/timer_gettime.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

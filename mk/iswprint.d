@@ -3,7 +3,7 @@ libc.a(iswprint.o): $(OBJDIR)/iswprint.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/iswprint.o: src/wctype/iswprint.c
-$(OBJDIR)/iswprint.o: src/_assert.h
+$(OBJDIR)/iswprint.o: src/_safety.h
 $(OBJDIR)/iswprint.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

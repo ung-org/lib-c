@@ -3,6 +3,7 @@ libc.a(drand48.o): $(OBJDIR)/drand48.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/drand48.o: src/stdlib/drand48.c
+$(OBJDIR)/drand48.o: src/stdlib/_stdlib.h
 $(OBJDIR)/drand48.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

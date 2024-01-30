@@ -3,6 +3,7 @@ libc.a(strtold.o): $(OBJDIR)/strtold.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/strtold.o: src/stdlib/strtold.c
+$(OBJDIR)/strtold.o: src/stdlib/_stdlib.h
 $(OBJDIR)/strtold.o: src/stdlib/_strtod.h
 $(OBJDIR)/strtold.o:
 	@echo "  [CC] $@"

@@ -3,7 +3,7 @@ libc.a(localtime.o): $(OBJDIR)/localtime.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/localtime.o: src/time/localtime.c
-$(OBJDIR)/localtime.o: src/_assert.h
+$(OBJDIR)/localtime.o: src/_safety.h
 $(OBJDIR)/localtime.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

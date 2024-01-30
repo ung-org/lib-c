@@ -3,6 +3,7 @@ libc.a(lldiv.o): $(OBJDIR)/lldiv.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/lldiv.o: src/stdlib/lldiv.c
+$(OBJDIR)/lldiv.o: src/stdlib/_stdlib.h
 $(OBJDIR)/lldiv.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)
