@@ -1,5 +1,3 @@
-#if 0
-
 #include <stdio.h>
 #include "_stdio.h"
 
@@ -13,6 +11,7 @@
 
 int fgetc(FILE *stream)
 {
+	SIGNAL_SAFE(0);
 	flockfile(stream);
 	char c = getc_unlocked(stream);
 	funlockfile(stream);
@@ -34,6 +33,3 @@ of ARGUMENT(stream) is advanced.
 /*
 STDC(1)
 */
-
-
-#endif

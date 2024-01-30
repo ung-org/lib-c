@@ -1,13 +1,13 @@
-#if 0
-
 #include <stdio.h>
 #include "_stdio.h"
 
-/** write a string to stoud **/
+/** write a string to stdout **/
 
 int puts(const char *s)
 {
 	int ret = 1;
+
+	SIGNAL_SAFE(0);
 
 	flockfile(stdout);
 
@@ -41,6 +41,3 @@ followed by a newline. The terminated CHAR(\0) is not written.
 /*
 STDC(1)
 */
-
-
-#endif

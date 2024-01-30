@@ -1,11 +1,11 @@
-#if 0
-
 #include <stdio.h>
 #include <stdarg.h>
+#include "_stdio.h"
 
 /** read formatted input from a file stream **/
 int fscanf_s(FILE * restrict stream, const char * restrict format, ...)
 {
+	SIGNAL_SAFE(0);
 	va_list ap;
 	va_start(ap, format);
 	int ret = vfscanf_s(stream, format, ap);
@@ -29,6 +29,3 @@ arg(format) at the variadic arguments is the same as that for fn(scanf).
 /*
 CEXT1(201112)
 */
-
-
-#endif

@@ -1,5 +1,3 @@
-#if 0
-
 #include <stdio.h>
 #include <sys/types.h>
 #include <sys/wait.h>
@@ -9,6 +7,8 @@ int pclose(FILE * stream)
 {
 	int status;
 	pid_t child = stream->pipe_pid;
+	SIGNAL_SAFE(0);
+
 	if (child == 0) {
 		/* undefined behavior */
 	}
@@ -22,7 +22,3 @@ int pclose(FILE * stream)
 /*
 POSIX(2)
 */
-
-
-
-#endif

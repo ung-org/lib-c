@@ -1,11 +1,11 @@
-#if 0
-
 #include <stdio.h>
+#include "_stdio.h"
 
 /** write a character to a file stream **/
 
 int putc(int c, FILE *stream)
 {
+	SIGNAL_SAFE(0);
 	/*
 	RETURN_SUCCESS(ARGUMENT(c));
 	RETURN_FAILURE(CONSTANT(EOF));
@@ -21,6 +21,3 @@ as a macro, it may evaluate ARGUMENT(stream) more than once.
 /*
 STDC(1)
 */
-
-
-#endif

@@ -1,6 +1,5 @@
-#if 0
-
 #include <stdio.h>
+#include "_stdio.h"
 
 /** write directly to a file stream **/
 
@@ -8,6 +7,8 @@ size_t fwrite(const void * restrict ptr, size_t size, size_t nmemb, FILE * restr
 {
 	unsigned char *buf = (unsigned char *)ptr;
 	size_t n = 0;
+	SIGNAL_SAFE(0);
+
 	while (nmemb) {
 		size_t i;
 		for (i = 0; i < size; i++) {
@@ -38,6 +39,3 @@ written.
 /*
 STDC(1)
 */
-
-
-#endif

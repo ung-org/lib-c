@@ -1,11 +1,11 @@
-#if 0
-
 #include <stdio.h>
+#include "_stdio.h"
 
 /** set the file position indicator **/
 
 int fsetpos(FILE *stream, const fpos_t *pos)
 {
+	SIGNAL_SAFE(0);
 	(void)stream; (void)pos;
 	/* TODO */
 	return 1;
@@ -23,6 +23,3 @@ any characters pushed back with FUNCTION(ungetc).
 /*
 STDC(1)
 */
-
-
-#endif

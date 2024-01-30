@@ -1,12 +1,11 @@
-#if 0
-
 #include <stdio.h>
 #include <stdarg.h>
+#include "_stdio.h"
 
 /** write formatted output to a file stream **/
 int fprintf_s(FILE * restrict stream, const char * restrict format, ...)
 {
-	__C_EXT(1, 201112L);
+	SIGNAL_SAFE(0);
 	int retval;
 	va_list ap;
 	va_start(ap, format);
@@ -31,6 +30,3 @@ of arg(format) and the variadic arguments is the same as that for fn(printf).
 /*
 CEXT1(201112)
 */
-
-
-#endif

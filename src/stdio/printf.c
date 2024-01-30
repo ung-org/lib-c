@@ -1,5 +1,3 @@
-#if 0
-
 #include <stdarg.h>
 #include <stdio.h>
 #include "_stdio.h"
@@ -11,6 +9,9 @@ int printf(const char *format, ...)
 	int ret = 0;
 	va_list ap;
 	struct io_options opt = {0};
+
+	SIGNAL_SAFE(0);
+
 	opt.fnname = "printf";
 	opt.stream = stdout;
 	va_start(ap, format);
@@ -108,6 +109,3 @@ UNDEFINED(`Precision with a conversion specifier other than CHAR(d), CHAR(i), CH
 UNDEFINED(TODO: Using h or l for !(diouxXn) or L for !(eEfgG))
 STDC(1)
 */
-
-
-#endif

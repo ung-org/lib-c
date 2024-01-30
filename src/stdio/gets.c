@@ -1,12 +1,12 @@
-#if 0
-
 #include <stdio.h>
 #include <limits.h>
+#include "_stdio.h"
 
 /** read a line from stdin **/
 
 char * gets(char *s)
 {
+	SIGNAL_SAFE(0);
 	/*
 	RETURN_SUCCESS(ARGUMENT(s));
 	RETURN_FAILURE(CONSTANT(NULL));
@@ -30,6 +30,3 @@ remain unchanged.
 /*
 STDC(1,201112)
 */
-
-
-#endif

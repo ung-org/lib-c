@@ -1,9 +1,8 @@
-#if 0
-
 #include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include "_stdio.h"
+#undef fopen
 
 /** open a file stream **/
 
@@ -11,6 +10,8 @@ FILE * fopen(const char * restrict filename, const char * restrict mode)
 {
 	FILE *f = NULL;
 	size_t i;
+
+	SIGNAL_SAFE(0);
 
 	for (i = 0; i < FOPEN_MAX; i++) {
 		if (__stdio.FILES[i].bmode == 0) {
@@ -65,6 +66,3 @@ The error and end-of-file indicators are cleared.
 /*
 STDC(1)
 */
-
-
-#endif

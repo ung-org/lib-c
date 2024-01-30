@@ -1,13 +1,14 @@
-#if 0
-
 #include <stdio.h>
 #include "_stdio.h"
+#undef fgets
 
 /** read a string of characters from a file stream **/
 
 char * fgets(char * restrict s, int n, FILE * restrict stream)
 {
 	int i = 0;
+	SIGNAL_SAFE(0);
+
 	if (feof(stream)) {
 		return NULL;
 	}
@@ -55,6 +56,3 @@ If an error occurs, the contents of ARGUMENT(s) are indeterminite.
 /*
 STDC(1)
 */
-
-
-#endif

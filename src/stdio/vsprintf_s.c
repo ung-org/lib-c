@@ -1,13 +1,13 @@
-#if 0
-
 #include <stdio.h>
 #include <stdarg.h>
 #include <stdint.h>
+#include "_stdio.h"
 
 /** write formatted output to a string **/
 int vsprintf_s(char *s, rsize_t n, const char *format, va_list arg)
 {
-	__C_EXT(1, 201112L);
+	SIGNAL_SAFE(0);
+	(void)n;
 	return vsnprintf(s, SIZE_MAX, format, arg);
 }
 
@@ -29,6 +29,3 @@ responsible for this.
 /*
 CEXT1(201112)
 */
-
-
-#endif

@@ -1,5 +1,3 @@
-#if 0
-
 #include <stdarg.h>
 #include <stdio.h>
 #include "_stdio.h"
@@ -11,6 +9,9 @@ int fprintf(FILE * restrict stream, const char * restrict format, ...)
 	int ret = 0;
 	va_list ap;
 	struct io_options opt = {0};
+
+	SIGNAL_SAFE(0);
+
 	opt.fnname = "fprintf";
 	opt.stream = stream;
 	va_start(ap, format);
@@ -31,6 +32,3 @@ and the variadic arguments is the same as that for FUNCTION(printf).
 /*
 STDC(1)
 */
-
-
-#endif

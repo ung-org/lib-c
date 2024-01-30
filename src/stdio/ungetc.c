@@ -1,5 +1,3 @@
-#if 0
-
 #include <stdio.h>
 #include "_stdio.h"
 
@@ -7,6 +5,7 @@
 
 int ungetc(int c, FILE *stream)
 {
+	SIGNAL_SAFE(0);
 	(void)c; (void)stream;
 	/* TODO */
 	/*
@@ -39,6 +38,3 @@ is obsolete in ISO/IEC 9899:1999.
 /*
 STDC(1)
 */
-
-
-#endif

@@ -1,11 +1,12 @@
-#if 0
-
 #include <stdio.h>
+#include "_stdio.h"
 
 /** get the file position indicator **/
 
 long int ftell(FILE *stream)
 {
+	SIGNAL_SAFE(0);
+
 	(void)stream;
 	/* TODO */
 	/*
@@ -25,6 +26,3 @@ For binary streams, the indicator is the current byte position.
 UNSPECIFIED(The meaning of the file position indicator for text streams)
 STDC(1)
 */
-
-
-#endif

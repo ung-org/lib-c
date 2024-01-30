@@ -1,7 +1,7 @@
-#if 0
-
 #include <stdio.h>
 FILE *__stdout;
 
-
-#endif
+/*
+STDC(0)
+SIGNAL_SAFE(0)
+*/

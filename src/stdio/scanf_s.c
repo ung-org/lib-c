@@ -1,11 +1,12 @@
-#if 0
-
 #include <stdio.h>
 #include <stdarg.h>
+#include "_stdio.h"
 
 /** read formatted input **/
 int scanf_s(const char * restrict format, ...)
 {
+	SIGNAL_SAFE(0);
+
 	va_list ap;
 	va_start(ap, format);
 	int ret = vfscanf_s(stdin, format, ap);
@@ -30,6 +31,3 @@ FIXME: scanf format goes here
 /*
 CEXT1(201112)
 */
-
-
-#endif

@@ -1,5 +1,3 @@
-#if 0
-
 #include <stdio.h>
 #include "_stdio.h"
 
@@ -14,6 +12,8 @@
 int getc_unlocked(FILE * stream)
 {
 	char c = 0;
+
+	SIGNAL_SAFE(0);
 
 	if (!stream) {
 		return EOF;
@@ -30,6 +30,3 @@ int getc_unlocked(FILE * stream)
 /*
 POSIX(199506)
 */
-
-
-#endif

@@ -4,6 +4,7 @@
 #include <stddef.h>
 #include <stdarg.h>
 #include <stdio.h>
+#include "_safety.h"
 
 #ifdef _POSIX_C_SOURCE
 #include <sys/types.h>

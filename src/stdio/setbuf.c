@@ -1,11 +1,12 @@
-#if 0
-
 #include <stdio.h>
+#include "_stdio.h"
 
 /** specify file stream buffer **/
 
 void setbuf(FILE * restrict stream, char * restrict buf)
 {
+	SIGNAL_SAFE(0);
+
 	if (buf) {
 		setvbuf(stream, buf, _IOFBF, BUFSIZ);
 	} else {
@@ -26,6 +27,3 @@ equivalent of:
 /*
 STDC(1)
 */
-
-
-#endif

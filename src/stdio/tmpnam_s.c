@@ -1,11 +1,12 @@
-#if 0
-
 #include <stdio.h>
+#include "_stdio.h"
 
 /** generate a temporary file name **/
 errno_t tmpnam_s(char *s, rsize_t maxsize)
 {
-	__C_EXT(1, 201112L);
+	SIGNAL_SAFE(0);
+	(void)maxsize;
+
 	static int ntimescalled = 0;
 	static char path[L_tmpnam];
 
@@ -43,6 +44,3 @@ macro(L_tmpnam) characters. The temporary name will be copied to this array.
 /*
 CEXT1(201112)
 */
-
-
-#endif

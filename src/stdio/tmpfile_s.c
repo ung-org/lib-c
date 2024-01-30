@@ -1,11 +1,11 @@
-#if 0
-
 #include <stdio.h>
+#include "_stdio.h"
 
 /* open a temporary file stream */
 errno_t tmpfile_s(FILE * restrict * restrict streamptr)
 {
-	__C_EXT(1, 201112L);
+	SIGNAL_SAFE(0);
+	(void)streamptr;
 	return 0;
 }
 
@@ -26,6 +26,3 @@ be automatically removed when closed by fn(fclose) or when the program exits.
 /*
 CEXT1(201112)
 */
-
-
-#endif

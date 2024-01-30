@@ -1,8 +1,5 @@
-#if 0
-
 #include <stdio.h>
-#include "__stdio.h"
-#include <fcntl.h>
+#include "_stdio.h"
 #include <string.h>
 
 /** reopen a file stream with a new file **/
@@ -11,7 +8,8 @@ errno_t freopen_s(FILE * restrict * restrict newstreamptr,
 	const char * restrict mode,
 	FILE * restrict stream)
 {
-	__C_EXT(1, 201112L);
+	SIGNAL_SAFE(0);
+	(void)newstreamptr; (void)filename; (void)mode; (void)stream;
 	return 0;
 }
 
@@ -36,6 +34,3 @@ The error and end-of-file indicators are cleared.
 /*
 CEXT1(201112)
 */
-
-
-#endif

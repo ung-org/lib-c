@@ -1,11 +1,11 @@
-#if 0
-
 #include <stdio.h>
+#include "_stdio.h"
 
 /** write a character to stdout **/
 
 int putchar(int c)
 {
+	SIGNAL_SAFE(0);
 	/*
 	RETURN_SUCCESS(c);
 	RETURN_FAILURE(CONSTANT(EOF));
@@ -21,6 +21,3 @@ IDENTIFIER(stdout).
 /*
 STDC(1)
 */
-
-
-#endif

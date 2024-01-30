@@ -1,13 +1,11 @@
-#if 0
-
 #ifndef _POSIX_SOURCE
 #define _POSIX_SOURCE
 #define POSIX_FORCED
 #endif
 
 #include <stdio.h>
-#include <sys/types.h>
-#include <unistd.h>
+//#include <sys/types.h>
+//#include <unistd.h>
 #include "_stdio.h"
 
 #ifdef POSIX_FORCED
@@ -20,6 +18,8 @@
 int fflush(FILE *stream)
 {
 	int ret = 0;
+
+	SIGNAL_SAFE(0);
 
 	if (stream == NULL) {
 		size_t i;
@@ -63,6 +63,3 @@ UNDEFINED(ARGUMENT(stream) is not an output stream)
 UNDEFINED(ARGUMENT(stream) is an update stream in which the most recent operation was input)
 STDC(1)
 */
-
-
-#endif

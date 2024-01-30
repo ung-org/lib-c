@@ -1,5 +1,4 @@
 #if 0
-
 #ifndef _POSIX_SOURCE
 #define _POSIX_SOURCE
 #define POSIX_FORCED
@@ -22,6 +21,9 @@
 int remove(const char *filename)
 {
 	struct stat st;
+
+	SIGNAL_SAFE(0);
+
 	stat(filename, &st);
 	if (S_ISDIR(st.st_mode)) {
 		return rmdir(filename);
@@ -38,6 +40,5 @@ open that file will fail unless creating a new file.
 IMPLEMENTATION(Whether the file is removed if it is open)
 STDC(1)
 */
-
 
 #endif

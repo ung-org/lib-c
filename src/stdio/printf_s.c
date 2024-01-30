@@ -1,11 +1,11 @@
-#if 0
-
 #include <stdio.h>
 #include <stdarg.h>
+#include "_stdio.h"
 
 /** write formatted output **/
 int printf_s(const char *format, ...)
 {
+	SIGNAL_SAFE(0);
 	va_list ap;
 	va_start(ap, format);
 	int ret = vfprintf_s(stdout, format, ap);
@@ -30,6 +30,3 @@ FIXME: printf format goes here
 /*
 CEXT1(201112)
 */
-
-
-#endif

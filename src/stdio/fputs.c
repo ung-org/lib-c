@@ -1,5 +1,3 @@
-#if 0
-
 #include <stdio.h>
 #include "_stdio.h"
 
@@ -7,6 +5,7 @@
 
 int fputs(const char * restrict s, FILE * restrict stream)
 {
+	SIGNAL_SAFE(0);
 	flockfile(stream);
 	while (*s) {
 		if (fputc(*s++, stream) == EOF) {
@@ -30,6 +29,3 @@ the terminating CHAR(\0) character.
 /*
 STDC(1)
 */
-
-
-#endif

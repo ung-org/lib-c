@@ -1,13 +1,11 @@
-#if 0
-
 #include <stdio.h>
-#include "_assert.h"
 #include "_stdio.h"
 
 /** test for end-of-file **/
 
 int feof(FILE *stream)
 {
+	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(stream);
 	flockfile(stream);
 
@@ -31,6 +29,3 @@ tests for the end-of-file indicator of ARGUMENT(stream).
 /*
 STDC(1)
 */
-
-
-#endif

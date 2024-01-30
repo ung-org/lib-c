@@ -1,11 +1,11 @@
-#if 0
-
 #include <stdio.h>
 #include <stdarg.h>
 #include "_stdio.h"
 
 int snprintf(char * restrict s, size_t n, const char * restrict format, ...)
 {
+	SIGNAL_SAFE(0);
+
 	struct io_options opt = {
 		.fnname = __func__,
 		.string = s,
@@ -23,6 +23,3 @@ int snprintf(char * restrict s, size_t n, const char * restrict format, ...)
 /*
 STDC(199901)
 */
-
-
-#endif

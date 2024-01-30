@@ -1,6 +1,5 @@
-#if 0
-
 #include <stdio.h>
+#include "_stdio.h"
 
 /** generate a temporary file name **/
 
@@ -9,6 +8,7 @@ char * tmpnam(char *s)
 	static int ntimescalled = 0;
 	static char path[L_tmpnam];
 
+	SIGNAL_SAFE(0);
 	if (ntimescalled >= TMP_MAX) {
 		return NULL;
 	}
@@ -42,6 +42,3 @@ this array.
 IMPLEMENTATION(Behavior if THIS() is called more than CONSTANT(TMP_MAX) times)
 STDC(1)
 */
-
-
-#endif

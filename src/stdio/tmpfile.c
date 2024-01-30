@@ -1,13 +1,17 @@
-#if 0
-
 #include <stdio.h>
+#include "_stdio.h"
+#undef tmpfile
 
 /** open a temporary file stream **/
 
 FILE * tmpfile(void)
 {
 	char *path = "FIXME: A temporary file name *not* calling tmpnam()";
-	FILE *f = fopen(path, "w+");
+	FILE *f = NULL;
+
+	SIGNAL_SAFE(0);
+
+	f = fopen(path, "w+");
 	if (f) {
 		/* FIXME: set flag for temporary in FILE struct */
 	} else {
@@ -32,6 +36,3 @@ or when the program exits.
 IMPLEMENTATION(Whether the temporary file is removed if the program terminates abnormally)
 STDC(1)
 */
-
-
-#endif

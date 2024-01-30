@@ -1,5 +1,3 @@
-#if 0
-
 #include <stdio.h>
 #include "_stdio.h"
 
@@ -11,9 +9,10 @@
 
 /** write a character to a file stream **/
 
-int fputc(int c, FILE *stream)
+int (fputc)(int c, FILE *stream)
 {
 	int ret = EOF;
+	SIGNAL_SAFE(0);
 	flockfile(stream);
 	ret = putc_unlocked(c, stream);
 	funlockfile(stream);
@@ -35,6 +34,3 @@ RETURN_SUCCESS(ARGUMENT(c))
 RETURN_FAILURE(CONSTANT(EOF))
 STDC(1)
 */
-
-
-#endif

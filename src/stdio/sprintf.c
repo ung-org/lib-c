@@ -1,5 +1,3 @@
-#if 0
-
 #include <stdarg.h>
 #include <stdio.h>
 #include "_stdio.h"
@@ -11,6 +9,9 @@ int sprintf(char * restrict s, const char * restrict format, ...)
 	int ret = 0;
 	va_list ap;
 	struct io_options opt = {0};
+
+	SIGNAL_SAFE(0);
+
 	opt.fnname = "sprintf";
 	opt.string = s;
 	opt.maxlen = (size_t)-1;
@@ -32,6 +33,3 @@ FUNCTION(printf).
 /*
 STDC(1)
 */
-
-
-#endif

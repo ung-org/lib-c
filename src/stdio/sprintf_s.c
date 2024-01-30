@@ -1,11 +1,14 @@
-#if 0
-
 #include <stdio.h>
 #include <stdarg.h>
+#include "_stdio.h"
 
 /** write formatted output to a string **/
 int sprintf_s(char * restrict s, rsize_t n, const char * restrict format, ...)
 {
+	SIGNAL_SAFE(0);
+
+	(void)n;
+
 	va_list ap;
 	va_start(ap, format);
 	int ret = vsprintf(s, format, ap);
@@ -29,6 +32,3 @@ fn(printf).
 /*
 CEXT1(201112)
 */
-
-
-#endif

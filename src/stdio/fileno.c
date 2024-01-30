@@ -1,17 +1,13 @@
-#if 0
-
 #include <stdio.h>
 #include "_stdio.h"
-#include "_assert.h"
 
 int fileno(FILE * stream)
 {
+	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(stream);
 	return stream->fd;
 }
+
 /*
 POSIX(1)
 */
-
-
-#endif

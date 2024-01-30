@@ -1,15 +1,17 @@
-#if 0
-
 #ifndef _POSIX_SOURCE
 #define _POSIX_SOURCE
 #define POSIX_FORCED
 #endif
 
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#if 0
 #include <sys/types.h>
 #include <unistd.h>
+#endif
+
 #include "_stdio.h"
 
 #ifdef POSIX_FORCED
@@ -21,6 +23,8 @@
 
 int fclose(FILE *stream)
 {
+	SIGNAL_SAFE(0);
+
 	flockfile(stream);
 	if (fflush(stream) == EOF) {
 		/* set errno */
@@ -58,6 +62,3 @@ buffer was automatically allocated, it is freed.
 /*
 STDC(1)
 */
-
-
-#endif

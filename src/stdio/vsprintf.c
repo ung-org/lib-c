@@ -1,5 +1,3 @@
-#if 0
-
 #include <stdarg.h>
 #include <stdio.h>
 #include "_stdio.h"
@@ -10,6 +8,9 @@ int vsprintf(char *s, const char *format, va_list arg)
 {
 	int ret = 0;
 	struct io_options opt = {0};
+
+	SIGNAL_SAFE(0);
+
 	opt.fnname = "fprintf";
 	opt.string = s;
 	opt.maxlen = (size_t)-1;
@@ -31,6 +32,3 @@ responsible for this.
 /*
 STDC(1)
 */
-
-
-#endif

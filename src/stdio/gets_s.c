@@ -1,12 +1,12 @@
-#if 0
-
 #include <stdio.h>
 #include <limits.h>
+#include "_stdio.h"
 
 /** read a line from stdin **/
 char * gets_s(char *s, rsize_t n)
 {
-	__C_EXT(1, 201112L);
+	SIGNAL_SAFE(0);
+	(void)n;
 	return fgets(s, INT_MAX, stdin);
 }
 
@@ -33,6 +33,3 @@ remain unchanged.
 /*
 CEXT1(201112)
 */
-
-
-#endif

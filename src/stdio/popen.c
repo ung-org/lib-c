@@ -1,5 +1,3 @@
-#if 0
-
 #include <stdio.h>
 #include <string.h>
 #include <errno.h>
@@ -7,7 +5,6 @@
 #include <sys/types.h>
 #include <unistd.h"
 
-#include "_assert.h"
 #include "_stdio.h"
 
 #ifdef __STDC_VERSION__
@@ -16,6 +13,7 @@
 
 FILE * popen(const char * command, const char * mode)
 {
+	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(command);
 	ASSERT_NONNULL(mode);
 	
@@ -71,7 +69,3 @@ FILE * popen(const char * command, const char * mode)
 /*
 POSIX(2)
 */
-
-
-
-#endif

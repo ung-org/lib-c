@@ -1,13 +1,11 @@
-#if 0
-
 #include <stdio.h>
-#include "_assert.h"
 #include "_stdio.h"
 
 /** tests the file stream error indicator **/
 
 int ferror(FILE *stream)
 {
+	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(stream);
 	/*
 	RETURN(0, the error indicator is not set);
@@ -23,6 +21,3 @@ tests the error indicator of ARGUMENT(stream).
 /*
 STDC(1)
 */
-
-
-#endif

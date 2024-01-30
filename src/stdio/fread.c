@@ -1,5 +1,3 @@
-#if 0
-
 #include <stdio.h>
 #include "_stdio.h"
 
@@ -9,6 +7,9 @@ size_t fread(void * restrict ptr, size_t size, size_t nmemb, FILE * restrict str
 {
 	unsigned char *buf = ptr;
 	size_t n = 0;
+
+	SIGNAL_SAFE(0);
+
 	flockfile(stream);
 	while (nmemb) {
 		size_t i;
@@ -41,6 +42,3 @@ The file position indicate is advanced by the number of bytes read.
 /*
 STDC(1)
 */
-
-
-#endif

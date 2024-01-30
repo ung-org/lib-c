@@ -1,8 +1,5 @@
-#if 0
-
 #include <stdio.h>
 #include "_stdio.h"
-#include "_assert.h"
 
 #ifdef _POSIX_SOURCE
 #include <sys/types.h>
@@ -18,6 +15,7 @@ int putc_unlocked(int c, FILE *stream)
 {
 	unsigned char ch = (unsigned char)c;
 
+	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(stream);
 	
 	stream->buf[stream->bpos++] = ch;
@@ -43,6 +41,3 @@ RETURN_SUCCESS(ARGUMENT(c))
 RETURN_FAILURE(CONSTANT(EOF))
 POSIX(199506)
 */
-
-
-#endif

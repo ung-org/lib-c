@@ -1,12 +1,11 @@
-#if 0
-
 #include <stdio.h>
-#include "__stdio.h"
 #include <stdarg.h>
+#include "_stdio.h"
 
 /** write formatted output to a file stream **/
 int vfprintf_s(FILE * restrict stream, const char * restrict format, va_list arg)
 {
+	SIGNAL_SAFE(0);
 	struct io_options opt = {
 		.fnname = __func__,
 		.stream = stream,
@@ -33,6 +32,3 @@ responsible for this.
 /*
 CEXT1(201112)
 */
-
-
-#endif

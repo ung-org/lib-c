@@ -1,13 +1,14 @@
-#if 0
-
 #include <errno.h>
 #include <stdio.h>
 #include <string.h>
+#include "_stdio.h"
 
 /** print an error message **/
 
 void perror(const char *s)
 {
+	SIGNAL_SAFE(0);
+
 	if (s != NULL && *s != '\0') {
 		fprintf(stderr, "%s: ", s);
 	}
@@ -28,6 +29,3 @@ pointed to by ARGUMENT(s), a colon (CHAR(:)), and a space.
 POSIX_(L_C_MESSAGES)
 STDC(1)
 */
-
-
-#endif

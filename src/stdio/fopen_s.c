@@ -1,18 +1,15 @@
-#if 0
-
 #include <stdio.h>
-#include "__stdio.h"
+#include "_stdio.h"
 #include <string.h>
 #include <stdlib.h>
-#include <fcntl.h>
-#include <unistd.h>
 
 /** open a file stream **/
 errno_t fopen_s(FILE * restrict * restrict streamptr,
 	const char * restrict filename,
-	const char * restrict mode);
+	const char * restrict mode)
 {
-	__C_EXT(1, 201112L);
+	SIGNAL_SAFE(0);
+	(void)streamptr; (void)filename; (void)mode;
 	return 0;
 }
 
@@ -55,6 +52,3 @@ The error and end-of-file indicators are cleared.
 /*
 CEXT1(201112)
 */
-
-
-#endif

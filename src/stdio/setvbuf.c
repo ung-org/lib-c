@@ -1,5 +1,3 @@
-#if 0
-
 #include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -9,6 +7,8 @@
 
 int setvbuf(FILE *stream, char *buf, int mode, size_t size)
 {
+	SIGNAL_SAFE(0);
+
 	flockfile(stream);
 
 	if (!f_is_open(stream)) {
@@ -78,6 +78,3 @@ The ARGUMENT(size) argument specifies the size of the buffer.
 /*
 STDC(1)
 */
-
-
-#endif

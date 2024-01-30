@@ -1,16 +1,14 @@
-#if 0
-
 #ifndef _POSIX_SOURCE
 #define _POSIX_SOURCE
 #define POSIX_FORCED
 #endif
 
-#include <sys/types.h>
+//#include <sys/types.h>
 #include <errno.h>
-#include <fcntl.h>
+//#include <fcntl.h>
 #include <stdio.h>
 #include <string.h>
-#include <unistd.h>
+//#include <unistd.h>
 #include "_stdio.h"
 
 #ifdef POSIX_FORCED
@@ -18,6 +16,12 @@
 #include "_syscall.h"
 #define open(_p, _f, _m)	__scall3(open, _p, _f, _m)
 #define isatty(_fd)		ioctl(_fd, TCFLSH, 0)
+#define O_RDONLY 00
+#define O_WRONLY 01
+#define O_CREAT 0100
+#define O_TRUNC 01000
+#define O_APPEND 02000
+#define O_RDWR 02
 #endif
 
 /** reopen a file stream with a new file **/
@@ -52,6 +56,8 @@ FILE * freopen(const char * restrict filename, const char * restrict mode, FILE 
 	int openmode = -1;
 	size_t i;
 	int fd = -1;
+
+	SIGNAL_SAFE(0);
 
 	for (i = 0; i < sizeof(modemap) / sizeof(modemap[0]); i++) {
 		if (!strcmp(modemap[i].smode, mode)) {
@@ -108,6 +114,3 @@ The error and end-of-file indicators are cleared.
 /*
 STDC(1)
 */
-
-
-#endif

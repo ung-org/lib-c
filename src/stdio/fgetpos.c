@@ -1,5 +1,3 @@
-#if 0
-
 #include <stdio.h>
 #include "_stdio.h"
 
@@ -7,6 +5,8 @@
 
 int fgetpos(FILE * restrict stream, fpos_t * restrict pos)
 {
+	SIGNAL_SAFE(0);
+
 	flockfile(stream);
 	*pos = stream->pos;
 	funlockfile(stream);
@@ -22,6 +22,3 @@ for ARGUMENT(stream) into the TYPEDEF(fpos_t) at ARGUMENT(pos).
 UNSPECIFIED(The information stored in TYPEDEF(fpos_t))
 STDC(1)
 */
-
-
-#endif

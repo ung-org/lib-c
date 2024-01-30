@@ -1,13 +1,11 @@
-#if 0
-
-#include <sys/types.h>
+//#include <sys/types.h>
 #include <stdio.h>
 #include <stddef.h>
 #include "wctype/wint_t.h"
 #include "wctype/wctrans_t.h"
 #include <wchar.h>
 #include <inttypes.h>
-#include <unistd.h>
+//#include <unistd.h>
 #include <stdlib.h>
 #include "_stdio.h"
 
@@ -345,5 +343,7 @@ int (__printf)(struct io_options *opt, const char * format, va_list arg)
 	return nout;
 }
 
-
-#endif
+/*
+STDC(0)
+SIGNAL_SAFE(0)
+*/

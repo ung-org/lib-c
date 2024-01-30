@@ -1,15 +1,12 @@
-#if 0
-
 #include <stdio.h>
+#include "_stdio.h"
 
 int vscanf(const char * restrict format, va_list arg)
 {
+	SIGNAL_SAFE(0);
 	return vfscanf(stdin, format, arg);
 }
 
 /*
 STDC(199901)
 */
-
-
-#endif
