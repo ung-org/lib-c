@@ -7,6 +7,7 @@
 
 TYPE complex TGFN(conj)(TYPE complex z)
 {
+	SIGNAL_SAFE(0);
 	return TGFN(creal)(z) - TGFN(cimag)(z);
 }
 

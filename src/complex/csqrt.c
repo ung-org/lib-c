@@ -8,6 +8,7 @@
 
 TYPE complex TGFN(csqrt)(TYPE complex z)
 {
+	SIGNAL_SAFE(0);
 	int classr = fpclassify(TGFN(creal)(z));
 	int classi = fpclassify(TGFN(cimag)(z));
 	int signr = signbit(TGFN(creal)(z));

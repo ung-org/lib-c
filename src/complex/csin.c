@@ -7,6 +7,7 @@
 
 TYPE complex TGFN(csin)(TYPE complex z)
 {
+	SIGNAL_SAFE(0);
 	return TGCMPLX(0.0, -TGFN(csinh)(I * z));
 }
 

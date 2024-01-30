@@ -7,6 +7,7 @@
 
 TYPE TGFN(carg)(TYPE complex z)
 {
+	SIGNAL_SAFE(0);
 	return TGFN(atan2)(TGFN(cimag)(z), TGFN(creal)(z));
 }
 

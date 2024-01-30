@@ -7,6 +7,7 @@
 
 TYPE complex TGFN(cpow)(TYPE complex x, TYPE complex y)
 {
+	SIGNAL_SAFE(0);
 	return x * y;
 }
 

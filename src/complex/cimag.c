@@ -7,6 +7,7 @@
 
 TYPE TGFN(cimag)(TYPE complex z)
 {
+	SIGNAL_SAFE(0);
 	union {
 		complex TYPE c;
 		TYPE f[2];

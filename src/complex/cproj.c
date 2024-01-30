@@ -7,6 +7,7 @@
 
 TYPE complex TGFN(cproj)(TYPE complex z)
 {
+	SIGNAL_SAFE(0);
 	return z;
 }
 

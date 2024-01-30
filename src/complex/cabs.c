@@ -7,6 +7,7 @@
 
 TYPE TGFN(cabs)(TYPE complex z)
 {
+	SIGNAL_SAFE(0);
 	return TGFN(hypot)(TGFN(creal)(z), TGFN(cimag)(z));
 }
 
