@@ -1,12 +1,15 @@
-#if 0
-
 #include <stddef.h>
 #include <ctype.h>
 #include <errno.h>
 #include <inttypes.h>
+#include "_safety.h"
+
+#undef strtoumax
 
 uintmax_t strtoumax(const char *restrict nptr, char ** restrict endptr, int base)
 {
+	SIGNAL_SAFE(0);
+
 	uintmax_t ret = 0;
 	uintmax_t max = UINTMAX_MAX;
 	uintmax_t min = 0;
@@ -19,6 +22,3 @@ uintmax_t strtoumax(const char *restrict nptr, char ** restrict endptr, int base
 /*
 STDC(199901)
 */
-
-
-#endif
