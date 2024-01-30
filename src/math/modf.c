@@ -9,6 +9,7 @@
 
 TYPE TGFN(modf)(TYPE value, TYPE *iptr)
 {
+	SIGNAL_SAFE(0);
 	switch (fpclassify(value)) {
 	case FP_INFINITE:	*iptr = value; return copysign(0.0, value);
 	case FP_NAN:		*iptr = value; return value;

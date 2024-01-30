@@ -9,6 +9,7 @@
 
 TYPE TGFN(acos)(TYPE x)
 {
+	SIGNAL_SAFE(0);
 	if (TGFN(fabs)(x) > 1) {
 		feraiseexcept(FE_INVALID);
 		return NAN;

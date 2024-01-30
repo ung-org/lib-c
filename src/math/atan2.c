@@ -3,13 +3,14 @@
 # define TGSOURCE "atan2.c"
 #include <errno.h>
 #include <math.h>
-#include "_assert.h"
+#include "_safety.h"
 #include "_tgmath.h"
 
 /** arc tangent **/
 
 TYPE TGFN(atan2)(TYPE y, TYPE x)
 {
+	SIGNAL_SAFE(0);
 	int classy = fpclassify(y);
 	int classx = fpclassify(x);
 	ASSERT_NONZERO(x);

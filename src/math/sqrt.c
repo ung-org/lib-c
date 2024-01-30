@@ -9,6 +9,7 @@
 
 TYPE TGFN(sqrt)(TYPE x)
 {
+	SIGNAL_SAFE(0);
 	if (x < 0) {
 		errno = EDOM; /* ARGUMENT(x) is negative */
 		return TGHUGE;

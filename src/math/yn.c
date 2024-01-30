@@ -4,6 +4,7 @@
 
 double yn(int n, double x)
 {
+	SIGNAL_SAFE(0);
         return x;
 }
 

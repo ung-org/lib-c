@@ -9,6 +9,7 @@
 
 TYPE TGFN(fabs)(TYPE x)
 {
+	SIGNAL_SAFE(0);
 	switch (fpclassify(x)) {
 	case FP_ZERO:		return 0.0;
 	case FP_INFINITE:	return INFINITY;

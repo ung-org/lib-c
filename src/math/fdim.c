@@ -6,6 +6,7 @@
 
 TYPE TGFN(fdim)(TYPE x, TYPE y)
 {
+	SIGNAL_SAFE(0);
 	if (x > y) {
 		return x - y;
 	}

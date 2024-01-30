@@ -8,6 +8,7 @@
 
 long long int TGFN(llrint)(TYPE x)
 {
+	SIGNAL_SAFE(0);
 	switch (fpclassify(x)) {
 	case FP_ZERO:
 		return 0;

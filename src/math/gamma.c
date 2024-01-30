@@ -4,6 +4,7 @@
 
 double gamma(double x)
 {
+	SIGNAL_SAFE(0);
 	return x;
 }
 

@@ -6,6 +6,7 @@
 
 long long int TGFN(llround)(TYPE x)
 {
+	SIGNAL_SAFE(0);
 	return x;
 }
 

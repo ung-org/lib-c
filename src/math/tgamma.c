@@ -7,6 +7,7 @@
 
 TYPE TGFN(tgamma)(TYPE x)
 {
+	SIGNAL_SAFE(0);
 	switch (fpclassify(x)) {
 	case FP_ZERO:
 		feraiseexcept(FE_DIVBYZERO);

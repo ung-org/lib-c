@@ -4,6 +4,7 @@
 
 double y0(double x)
 {
+	SIGNAL_SAFE(0);
         return x;
 }
 

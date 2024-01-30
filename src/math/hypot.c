@@ -6,6 +6,7 @@
 
 TYPE TGFN(hypot)(TYPE x, TYPE y)
 {
+	SIGNAL_SAFE(0);
 	if (fpclassify(y) == FP_ZERO) {
 		return fabs(x);
 	}

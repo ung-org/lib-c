@@ -8,6 +8,7 @@
 
 TYPE TGFN(copysign)(TYPE x, TYPE y)
 {
+	SIGNAL_SAFE(0);
 	if (isnan(x)) {
 		if (signbit(y)) {
 			/* return -NaN; */

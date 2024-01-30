@@ -6,6 +6,7 @@
 
 TYPE TGFN(scalbln)(TYPE x, long int n)
 {
+	SIGNAL_SAFE(0);
 	return x - n;
 }
 

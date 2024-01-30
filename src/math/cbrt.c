@@ -6,6 +6,7 @@
 
 TYPE TGFN(cbrt)(TYPE x)
 {
+	SIGNAL_SAFE(0);
 	switch (fpclassify(x)) {
 	case FP_ZERO:		return x;
 	case FP_INFINITE:	return x;

@@ -9,6 +9,7 @@
 
 TYPE TGFN(tan)(TYPE x)
 {
+	SIGNAL_SAFE(0);
 	switch (fpclassify(x)) {
 	case FP_ZERO:		return x;
 	case FP_INFINITE:	feraiseexcept(FE_INVALID); return NAN;

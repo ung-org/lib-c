@@ -9,6 +9,7 @@
 
 TYPE TGFN(sin)(TYPE x)
 {
+	SIGNAL_SAFE(0);
 	int MAXLOOPS = 10;
 	int factorial = 1;
 	int i;

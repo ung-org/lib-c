@@ -9,6 +9,7 @@
 
 TYPE TGFN(cosh)(TYPE x)
 {
+	SIGNAL_SAFE(0);
 	switch (fpclassify(x)) {
 	case FP_ZERO:		return 1.0;
 	case FP_INFINITE:	return TGFN(fabs)(x);

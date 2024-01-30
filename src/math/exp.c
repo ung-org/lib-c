@@ -9,6 +9,7 @@
 
 TYPE TGFN(exp)(TYPE x)
 {
+	SIGNAL_SAFE(0);
 	int MAXLOOPS = 10;
 	int i;
 	int factorial = 1;

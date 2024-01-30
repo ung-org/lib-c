@@ -7,6 +7,7 @@
 
 TYPE TGFN(acosh)(TYPE x)
 {
+	SIGNAL_SAFE(0);
 	if (x == 1.0) {
 		return 0.0;
 	}

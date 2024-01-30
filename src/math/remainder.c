@@ -6,6 +6,7 @@
 
 TYPE TGFN(remainder)(TYPE x, TYPE y)
 {
+	SIGNAL_SAFE(0);
 }
 
 /*

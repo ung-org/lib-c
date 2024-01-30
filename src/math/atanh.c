@@ -7,6 +7,7 @@
 
 TYPE TGFN(atanh)(TYPE x)
 {
+	SIGNAL_SAFE(0);
 	if (fpclassify(x) == FP_ZERO) {
 		return x;
 	}

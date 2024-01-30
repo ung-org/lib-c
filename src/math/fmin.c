@@ -6,6 +6,7 @@
 
 TYPE TGFN(fmin)(TYPE x, TYPE y)
 {
+	SIGNAL_SAFE(0);
 	if (isnan(x) && !isnan(y)) {
 		return y;
 	} else if (!isnan(x) && isnan(y)) {

@@ -8,6 +8,7 @@
 
 int TGFN(ilogb)(TYPE x)
 {
+	SIGNAL_SAFE(0);
 	switch (fpclassify(x)) {
 	case FP_ZERO:		feraiseexcept(FE_INVALID); return FP_ILOGB0;
 	case FP_INFINITE:	feraiseexcept(FE_INVALID); return INT_MAX;

@@ -9,6 +9,7 @@
 
 TYPE TGFN(frexp)(TYPE value, int *exp)
 {
+	SIGNAL_SAFE(0);
 	switch (fpclassify(value)) {
 	case FP_ZERO:		*exp = 0; return value;
 	case FP_INFINITE:	*exp = /* unspecified */0; return value;

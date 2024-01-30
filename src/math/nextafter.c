@@ -6,6 +6,7 @@
 
 TYPE TGFN(nextafter)(TYPE x, TYPE y)
 {
+	SIGNAL_SAFE(0);
 	return x - y;
 }
 

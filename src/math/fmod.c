@@ -9,6 +9,7 @@
 
 TYPE TGFN(fmod)(TYPE x, TYPE y)
 {
+	SIGNAL_SAFE(0);
 	int classx = fpclassify(x);
 	int classy = fpclassify(y);
 

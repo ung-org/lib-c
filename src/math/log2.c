@@ -7,6 +7,7 @@
 
 TYPE TGFN(log2)(TYPE x)
 {
+	SIGNAL_SAFE(0);
 	switch (fpclassify(x)) {
 	case FP_ZERO:		feraiseexcept(FE_DIVBYZERO); return - INFINITY;
 	case FP_INFINITE:	if (!signbit(x)) { return x; } break;

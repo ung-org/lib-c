@@ -4,6 +4,7 @@
 
 double scalb(double x, double n)
 {
+	SIGNAL_SAFE(0);
 }
 
 /*

@@ -9,6 +9,7 @@
 
 TYPE TGFN(log10)(TYPE x)
 {
+	SIGNAL_SAFE(0);
 	switch (fpclassify(x)) {
 	case FP_ZERO:		feraiseexcept(FE_INVALID); return - INFINITY;
 	case FP_INFINITE:	if (!signbit(x)) { return x; } break;

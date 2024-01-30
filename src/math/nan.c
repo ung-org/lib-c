@@ -11,6 +11,7 @@
 
 TYPE TGFN(nan)(const char *tagp)
 {
+	SIGNAL_SAFE(0);
 	if (tagp) {
 		char ncharseq[strlen(tagp) + 6];
 		strcpy(ncharseq, "NAN(");

@@ -9,6 +9,7 @@
 
 TYPE TGFN(atan)(TYPE x)
 {
+	SIGNAL_SAFE(0);
 	int MAXLOOPS = 10;
 	TYPE arctan = 0.0;
 	TYPE power = 1.0;
