@@ -3,6 +3,7 @@ libm.a(feupdateenv.o): $(OBJDIR)/feupdateenv.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/feupdateenv.o: src/fenv/feupdateenv.c
+$(OBJDIR)/feupdateenv.o: src/_safety.h
 $(OBJDIR)/feupdateenv.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

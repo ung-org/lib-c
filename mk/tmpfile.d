@@ -3,6 +3,7 @@ libc.a(tmpfile.o): $(OBJDIR)/tmpfile.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/tmpfile.o: src/stdio/tmpfile.c
+$(OBJDIR)/tmpfile.o: src/stdio/_stdio.h
 $(OBJDIR)/tmpfile.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

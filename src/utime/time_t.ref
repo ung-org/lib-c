@@ -1,4 +1,0 @@
-#include <utime.h>
-REFERENCE(time/time_t.c)
-XOPEN(4)
-POSIX(200112)

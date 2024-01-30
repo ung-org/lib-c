@@ -3,7 +3,7 @@ libc.a(isalpha.o): $(OBJDIR)/isalpha.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/isalpha.o: src/ctype/isalpha.c
-$(OBJDIR)/isalpha.o: src/_assert.h
+$(OBJDIR)/isalpha.o: src/_safety.h
 $(OBJDIR)/isalpha.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

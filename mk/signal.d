@@ -3,6 +3,9 @@ libc.a(signal.o): $(OBJDIR)/signal.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/signal.o: src/signal/signal.c
+$(OBJDIR)/signal.o: src/signal/_signal.h
+$(OBJDIR)/signal.o: src/_safety.h
+$(OBJDIR)/signal.o: src/_syscall.h
 $(OBJDIR)/signal.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

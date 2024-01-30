@@ -3,7 +3,7 @@ libc.a(vfprintf_s.o): $(OBJDIR)/vfprintf_s.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/vfprintf_s.o: src/stdio/vfprintf_s.c
-$(OBJDIR)/vfprintf_s.o: 
+$(OBJDIR)/vfprintf_s.o: src/stdio/_stdio.h
 $(OBJDIR)/vfprintf_s.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

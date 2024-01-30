@@ -1,3 +1,0 @@
-#include <ucontext.h>
-REFERENCE(signal/stack_t.c)
-XOPEN(400,700)

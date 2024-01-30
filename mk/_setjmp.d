@@ -3,6 +3,7 @@ libc.a(_setjmp.o): $(OBJDIR)/_setjmp.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/_setjmp.o: src/setjmp/_setjmp.c
+$(OBJDIR)/_setjmp.o: src/_safety.h
 $(OBJDIR)/_setjmp.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

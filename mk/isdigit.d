@@ -3,7 +3,7 @@ libc.a(isdigit.o): $(OBJDIR)/isdigit.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/isdigit.o: src/ctype/isdigit.c
-$(OBJDIR)/isdigit.o: src/_assert.h
+$(OBJDIR)/isdigit.o: src/_safety.h
 $(OBJDIR)/isdigit.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

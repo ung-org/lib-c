@@ -3,7 +3,7 @@ libc.a(fopen_s.o): $(OBJDIR)/fopen_s.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/fopen_s.o: src/stdio/fopen_s.c
-$(OBJDIR)/fopen_s.o: 
+$(OBJDIR)/fopen_s.o: src/stdio/_stdio.h
 $(OBJDIR)/fopen_s.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

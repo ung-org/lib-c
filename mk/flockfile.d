@@ -3,6 +3,7 @@ libc.a(flockfile.o): $(OBJDIR)/flockfile.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/flockfile.o: src/stdio/flockfile.c
+$(OBJDIR)/flockfile.o: src/stdio/_stdio.h
 $(OBJDIR)/flockfile.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

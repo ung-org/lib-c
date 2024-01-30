@@ -1,9 +1,0 @@
-libc_C.0: libc.a(ATOMIC_CHAR16_T_LOCK_FREE.o)
-libc.a(ATOMIC_CHAR16_T_LOCK_FREE.o): $(OBJDIR)/ATOMIC_CHAR16_T_LOCK_FREE.o
-	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
-
-$(OBJDIR)/ATOMIC_CHAR16_T_LOCK_FREE.o: src/stdatomic/ATOMIC_CHAR16_T_LOCK_FREE.c
-$(OBJDIR)/ATOMIC_CHAR16_T_LOCK_FREE.o:
-	@echo "  [CC] $@"
-	@mkdir -p $(@D)
-	@$(CC) -c -o $@ $(CFLAGS) src/stdatomic/ATOMIC_CHAR16_T_LOCK_FREE.c

@@ -3,6 +3,7 @@ libm.a(fesetenv.o): $(OBJDIR)/fesetenv.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/fesetenv.o: src/fenv/fesetenv.c
+$(OBJDIR)/fesetenv.o: src/_safety.h
 $(OBJDIR)/fesetenv.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

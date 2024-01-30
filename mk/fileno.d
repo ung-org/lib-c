@@ -4,7 +4,6 @@ libc.a(fileno.o): $(OBJDIR)/fileno.o
 
 $(OBJDIR)/fileno.o: src/stdio/fileno.c
 $(OBJDIR)/fileno.o: src/stdio/_stdio.h
-$(OBJDIR)/fileno.o: src/_assert.h
 $(OBJDIR)/fileno.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

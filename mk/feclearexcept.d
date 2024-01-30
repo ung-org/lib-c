@@ -3,6 +3,7 @@ libm.a(feclearexcept.o): $(OBJDIR)/feclearexcept.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/feclearexcept.o: src/fenv/feclearexcept.c
+$(OBJDIR)/feclearexcept.o: src/_safety.h
 $(OBJDIR)/feclearexcept.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

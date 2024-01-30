@@ -3,6 +3,7 @@ libc.a(perror.o): $(OBJDIR)/perror.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/perror.o: src/stdio/perror.c
+$(OBJDIR)/perror.o: src/stdio/_stdio.h
 $(OBJDIR)/perror.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

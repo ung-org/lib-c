@@ -4,6 +4,7 @@ libc.a(raise.o): $(OBJDIR)/raise.o
 
 $(OBJDIR)/raise.o: src/signal/raise.c
 $(OBJDIR)/raise.o: src/_syscall.h
+$(OBJDIR)/raise.o: src/_safety.h
 $(OBJDIR)/raise.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

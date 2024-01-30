@@ -3,6 +3,7 @@ libc.a(getc.o): $(OBJDIR)/getc.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/getc.o: src/stdio/getc.c
+$(OBJDIR)/getc.o: src/stdio/_stdio.h
 $(OBJDIR)/getc.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

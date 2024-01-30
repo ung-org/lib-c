@@ -3,6 +3,7 @@ libc.a(ftell.o): $(OBJDIR)/ftell.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/ftell.o: src/stdio/ftell.c
+$(OBJDIR)/ftell.o: src/stdio/_stdio.h
 $(OBJDIR)/ftell.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)

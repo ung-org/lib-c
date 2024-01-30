@@ -1,3 +1,0 @@
-#include <monetary.h>
-REFERENCE(sys/types/ssize_t.c)
-XOPEN(4)

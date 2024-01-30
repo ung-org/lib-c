@@ -3,6 +3,7 @@ libc.a(vscanf_s.o): $(OBJDIR)/vscanf_s.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/vscanf_s.o: src/stdio/vscanf_s.c
+$(OBJDIR)/vscanf_s.o: src/stdio/_stdio.h
 $(OBJDIR)/vscanf_s.o:
 	@echo "  [CC] $@"
 	@mkdir -p $(@D)
