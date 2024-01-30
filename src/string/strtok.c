@@ -1,7 +1,6 @@
-#if 0
-
 #include <string.h>
-#include "_assert.h"
+#include "_safety.h"
+#undef strtok
 
 /** split string into tokens **/
 
@@ -11,6 +10,7 @@ char * strtok(char * restrict s1, const char * restrict s2)
 	static char **state = &current;
 
 	/* TODO */
+	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(s2);
 
 	/*
@@ -38,6 +38,3 @@ CHAR(\0), terminating the token.
 /*
 STDC(1)
 */
-
-
-#endif

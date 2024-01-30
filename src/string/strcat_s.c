@@ -1,16 +1,15 @@
-#if 0
-
 #include <string.h>
+#include "_safety.h"
 
 /** concatenate strings **/
 errno_t strcat_s(char * restrict s1, rsize_t s1max, const char * restrict s2)
 {
-	__C_EXT(1, 201112L);
-	__ASSERT_NONNULL(s1);
-	__ASSERT_NONNULL(s2);
-	__ASSERT_NOOVERLAP(s1, s2, strlen(s1) + strlen(s2));
+	SIGNAL_SAFE(0);
+	ASSERT_NONNULL(s1);
+	ASSERT_NONNULL(s2);
+	ASSERT_NOOVERLAP(s1, s1max, s2, strlen(s2));
 
-	return strncat(s1, s2, strlen(s2));
+	return 0;
 }
 
 /***
@@ -29,6 +28,3 @@ null character of arg(s1).
 /*
 CEXT1(201112)
 */
-
-
-#endif

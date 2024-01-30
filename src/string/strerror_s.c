@@ -1,21 +1,12 @@
-#if 0
-
 #include <string.h>
 #include <errno.h>
-#include "__strerror.h"
+#include "_safety.h"
 
 /** convert error number to string **/
 errno_t strerror_s(char *s, rsize_t maxsize, errno_t errnum)
 {
-	__C_EXT(1, 201112L);
-	if (errnum > __nstrerror || __strerror[errnum] == NULL) {
-		if (snprintf(s, maxsize, "Uknown error [%d]", errnum) < maxsize) {
-			return 0;
-		}
-		return 1;
-	}
-
-	strncpy(s, __strerror[errnum], maxsize);
+	SIGNAL_SAFE(0);
+	(void)s; (void)maxsize; (void)errnum;
 	return errnum;
 }
 
@@ -35,6 +26,3 @@ subsequent calls.
 /*
 CEXT1(201112)
 */
-
-
-#endif

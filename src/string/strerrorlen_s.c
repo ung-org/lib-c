@@ -1,10 +1,9 @@
-#if 0
-
 #include <string.h>
+#include "_safety.h"
 
 size_t strerrorlen_s(errno_t errnum)
 {
-	__C_EXT(1, 201112L);
+	SIGNAL_SAFE(0);
 	char buffer[1024];
 	strerror_s(buffer, sizeof(buffer), errnum);
 	return strlen(buffer);
@@ -13,6 +12,3 @@ size_t strerrorlen_s(errno_t errnum)
 /*
 CEXT1(201112)
 */
-
-
-#endif

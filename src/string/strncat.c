@@ -1,7 +1,6 @@
-#if 0
-
 #include <string.h>
-#include "_assert.h"
+#include "_safety.h"
+#undef strncat
 
 /** concatenate bounded string **/
 
@@ -10,9 +9,10 @@ char * strncat(char * restrict s1, const char * restrict s2, size_t n)
 	char *append = NULL;
 	size_t i;
 
+	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(s1);
 	ASSERT_NONNULL(s2);
-	ASSERT_NOOVERLAP(s1, s2, strlen(s1) + strlen(s2));
+	ASSERT_NOOVERLAP(s1, n, s2, strlen(s1) + strlen(s2));
 
 	append = s1 + strlen(s1);
 
@@ -42,6 +42,3 @@ terminated.
 RETURN_ALWAYS(ARGUMENT(s1));
 STDC(1)
 */
-
-
-#endif

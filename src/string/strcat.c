@@ -1,15 +1,15 @@
-#if 0
-
 #include <string.h>
-#include "_assert.h"
+#include "_safety.h"
+#undef strcat
 
 /** concatenate strings **/
 char * strcat(char * restrict s1, const char * restrict s2)
 {
 	size_t i = 0;
+	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(s1);
 	ASSERT_NONNULL(s2);
-	ASSERT_NOOVERLAP(s1, s2, strlen(s1) + strlen(s2));
+	ASSERT_NOOVERLAP(s1, strlen(s1) + strlen(s2), s2, strlen(s2));
 
 	/*
 	RETURN_ALWAYS(ARGUMENT(s1));
@@ -31,6 +31,3 @@ null character of ARGUMENT(s1).
 /*
 STDC(1)
 */
-
-
-#endif

@@ -1,20 +1,20 @@
-#if 0
-
 #include <string.h>
 #include <stdlib.h>
-#include "_assert.h"
+#include "_safety.h"
 
 /** move memory **/
 errno_t memmove_s(void *s1, rsize_t s1max, const void *s2, rsize_t n)
 {
-	__ASSERT_NONNULL(s1);
-	__ASSERT_NONNULL(s2);
+	SIGNAL_SAFE(0);
+	ASSERT_NONNULL(s1);
+	ASSERT_NONNULL(s2);
 
 	if (n > s1max) {
 		/* do the right thing */
 	}
 
-	return memmove(s1, s2, n);
+	memmove(s1, s2, n);
+	return 0;
 }
 
 /***
@@ -33,6 +33,3 @@ is copied so that the arg(n) bytes are safely written to arg(s1).
 /*
 CEXT1(201112)
 */
-
-
-#endif

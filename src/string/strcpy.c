@@ -1,7 +1,8 @@
-#if 0
-
 #include <string.h>
-#include "_assert.h"
+#include "_safety.h"
+#undef strcpy
+
+#undef strcpy
 
 /** copy string **/
 
@@ -9,9 +10,10 @@ char * strcpy(char * restrict s1, const char * restrict s2)
 {
 	char *p = s1;
 
+	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(s1);
 	ASSERT_NONNULL(s2);
-	ASSERT_NOOVERLAP(s1, s2, strlen(s2));
+	ASSERT_NOOVERLAP(s1, strlen(s2), s2, strlen(s2));
 
 	while ((*s1++ = *s2++) != '\0') {
 		continue;
@@ -31,6 +33,3 @@ including the terminating CHAR(\0).
 /*
 STDC(1)
 */
-
-
-#endif

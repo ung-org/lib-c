@@ -1,7 +1,5 @@
-#if 0
-
 #include <string.h>
-#include "_assert.h"
+#include "_safety.h"
 
 /** compare memory regions **/
 
@@ -11,6 +9,7 @@ int memcmp(const void *s1, const void *s2, size_t n)
 	unsigned char *q = (void*)s2;
 	size_t i = 0;
 
+	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(s1);
 	ASSERT_NONNULL(s2);
 
@@ -36,6 +35,3 @@ and ARGUMENT(s2).
 /*
 STDC(1)
 */
-
-
-#endif

@@ -1,21 +1,20 @@
-#if 0
-
 #include <string.h>
+#include "_safety.h"
 
 /** fill memory **/
 errno_t memset_s(void *s, rsize_t smax, int c, rsize_t n)
 {
-	__C_EXT(1, 201112L);
-	__ASSERT_NONNULL(s);
+	SIGNAL_SAFE(0);
+	ASSERT_NONNULL(s);
 
 	unsigned char *_s = (unsigned char *)s;
-	int i = 0;
+	rsize_t i = 0;
 
-	while (i < n) {
+	while (i < n && i < smax) {
 		_s[i] = (unsigned char)c;
 	}
 
-	return s;
+	return 0;
 }
 
 /***
@@ -33,6 +32,3 @@ the value arg(c) (converted to an type(unsigned char)).
 /*
 CEXT1(201112)
 */
-
-
-#endif

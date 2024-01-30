@@ -1,12 +1,11 @@
-#if 0
-
 #include <string.h>
-#include "_assert.h"
+#include "_safety.h"
 
 /** compare bound strings **/
 
 int strncmp(const char *s1, const char *s2, size_t n)
 {
+	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(s1);
 	ASSERT_NONNULL(s2);
 
@@ -33,6 +32,3 @@ ARGUMENT(s2), or until the first CHAR(\0), whichever comes first.
 /*
 STDC(1)
 */
-
-
-#endif

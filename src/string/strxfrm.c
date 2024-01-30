@@ -1,7 +1,5 @@
-#if 0
-
 #include <string.h>
-#include "_assert.h"
+#include "_safety.h"
 
 /** transform string **/
 
@@ -9,11 +7,12 @@ size_t strxfrm(char * restrict s1, const char * restrict s2, size_t n)
 {
 	/* TODO */
 	(void)s1; (void)s2; (void)n;
+	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(s2);
 
 	if (n != 0) {
 		ASSERT_NONNULL(s1);
-		ASSERT_NOOVERLAP(s1, s2, n);
+		ASSERT_NOOVERLAP(s1, n, s2, n);
 	}
 	
 	return 0;
@@ -31,6 +30,3 @@ UNDEFINED(ARGUMENT(n) is not ZERO and ARGUMENT(s1) is CONSTANT(NULL))
 RETURN_ALWAYS(the length of the transformed string, not including the terminating CHAR(\0));
 STDC(1)
 */
-
-
-#endif

@@ -1,7 +1,6 @@
-#if 0
-
 #include <string.h>
-#include "_assert.h"
+#include "_safety.h"
+#undef strncpy
 
 /** copy bounded string **/
 
@@ -9,9 +8,10 @@ char * strncpy(char * restrict s1, const char * restrict s2, size_t n)
 {
 	size_t i;
 
+	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(s1);
 	ASSERT_NONNULL(s2);
-	ASSERT_NOOVERLAP(s1, s2, n);
+	ASSERT_NOOVERLAP(s1, n, s2, n);
 
 	for (i = 0; i < n; i++) {
 		s1[i] = s2[i];
@@ -36,6 +36,3 @@ terminated.
 RETURN_ALWAYS(ARGUMENT(s1));
 STDC(1)
 */
-
-
-#endif

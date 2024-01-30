@@ -1,23 +1,21 @@
-#if 0
-
 #include <string.h>
-#include "_assert.h"
+#include "_safety.h"
 
 /** copy memory **/
 errno_t memcpy_s(void * restrict s1, rsize_t s1max, const void * restrict s2, rsize_t n)
 {
-	__C_EXT(1, 201112L);
-	__ASSERT_NONNULL(s1);
-	__ASSERT_NONNULL(s2);
-	__ASSERT_NOOVERLAP(s1, s2, n);
+	SIGNAL_SAFE(0);
+	ASSERT_NONNULL(s1);
+	ASSERT_NONNULL(s2);
+	ASSERT_NOOVERLAP(s1, s1max, s2, n);
 
 	char *dst = (char*)s1, *src = (char*)s2;
-	int i = 0;
+	rsize_t i = 0;
 	while (i < n) {
 		dst[i] = src[i];
 		i++;
 	}
-	return dst;
+	return 0;
 }
 
 /***
@@ -35,6 +33,3 @@ arg(s1).
 /*
 CEXT1(201112)
 */
-
-
-#endif

@@ -1,7 +1,6 @@
-#if 0
-
 #include <string.h>
-#include "_assert.h"
+#include "_safety.h"
+#undef strrchr
 
 /** search string from end **/
 
@@ -9,6 +8,7 @@ char * strrchr(const char *s, int c)
 {
 	int i = 0;
 
+	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(s);
 
 	for (i = strlen(s) + 1; i >= 0; i--) {
@@ -32,6 +32,3 @@ string ARGUMENT(s).
 /*
 STDC(1)
 */
-
-
-#endif

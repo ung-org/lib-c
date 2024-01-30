@@ -1,12 +1,12 @@
-#if 0
-
 #include <string.h>
-#include "_assert.h"
+#include "_safety.h"
+#undef strchr
 
 /** string search **/
 
 char * strchr(const char *s, int c)
 {
+	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(s);
 
 	/*
@@ -24,6 +24,3 @@ ARGUMENT(c) (converted to a TYPE(char)).
 /*
 STDC(1)
 */
-
-
-#endif

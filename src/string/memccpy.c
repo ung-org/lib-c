@@ -1,9 +1,10 @@
-#if 0
-
 #include <string.h>
+#include "_safety.h"
 
 void *memccpy(void * restrict s1, const void * restrict s2, int c, size_t n)
 {
+	SIGNAL_SAFE(0);
+
 	unsigned char *dst = s1;
 	const unsigned char *src = s2;
 	size_t i = 0;
@@ -23,6 +24,3 @@ void *memccpy(void * restrict s1, const void * restrict s2, int c, size_t n)
 /*
 XOPEN(4)
 */
-
-
-#endif

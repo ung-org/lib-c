@@ -1,8 +1,6 @@
-#if 0
-
 #include <stdlib.h>
 #include <string.h>
-#include "_assert.h"
+#include "_safety.h"
 
 /** collate strings **/
 
@@ -12,6 +10,7 @@ int strcoll(const char *s1, const char *s2)
 	char *x2 = NULL;
 	int ret = 0;
 
+	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(s1);
 	ASSERT_NONNULL(s2);
 
@@ -43,6 +42,3 @@ compares the collation values of the strings at ARGUMENT(s1) and ARGUMENT(s2).
 LC_COLLATE
 STDC(1)
 */
-
-
-#endif

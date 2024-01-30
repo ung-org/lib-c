@@ -1,7 +1,5 @@
-#if 0
-
 #include <string.h>
-#include "_assert.h"
+#include "_safety.h"
 
 /** count matching characters **/
 
@@ -9,6 +7,7 @@ size_t strspn(const char *s1, const char *s2)
 {
 	size_t i = 0;
 
+	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(s1);
 	ASSERT_NONNULL(s2);
 
@@ -30,6 +29,3 @@ up of characters from ARGUMENT(s2).
 RETURN_ALWAYS(the number of matching characters);
 STDC(1)
 */
-
-
-#endif

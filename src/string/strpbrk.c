@@ -1,7 +1,6 @@
-#if 0
-
 #include <string.h>
-#include "_assert.h"
+#include "_safety.h"
+#undef strpbrk
 
 /** count matching characters **/
 
@@ -9,6 +8,7 @@ char * strpbrk(const char *s1, const char *s2)
 {
 	size_t i;
 
+	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(s1);
 	ASSERT_NONNULL(s2);
 
@@ -30,6 +30,3 @@ RETURN_FAILURE(CONSTANT(NULL));
 RETURN_SUCCESS(a pointer to the located character);
 STDC(1)
 */
-
-
-#endif

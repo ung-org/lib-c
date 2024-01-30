@@ -1,8 +1,8 @@
-#if 0
-
 #include <errno.h>
 #include <stdio.h>
 #include <string.h>
+#include "_safety.h"
+#undef strerror
 
 # define __LONGEST_STRERR 64	/* FIXME */
 
@@ -11,6 +11,8 @@
 char * strerror(int errnum)
 {
 	static char errstr[__LONGEST_STRERR+1];
+
+	SIGNAL_SAFE(0);
 
 	switch (errnum) {
 	#include "_strerror.h"
@@ -34,6 +36,3 @@ subsequent calls.
 /*
 STDC(1)
 */
-
-
-#endif

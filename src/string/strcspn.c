@@ -1,7 +1,5 @@
-#if 0
-
 #include <string.h>
-#include "_assert.h"
+#include "_safety.h"
 
 /** count non-matching characters **/
 
@@ -9,6 +7,7 @@ size_t strcspn(const char *s1, const char *s2)
 {
 	size_t i = 0;
 
+	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(s1);
 	ASSERT_NONNULL(s2);
 
@@ -30,6 +29,3 @@ the string ARGUMENT(s1) that are not in the string ARGUMENT(s2).
 RETURN_ALWAYS(the number of non-matching characters);
 STDC(1)
 */
-
-
-#endif

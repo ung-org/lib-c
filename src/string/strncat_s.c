@@ -1,14 +1,13 @@
-#if 0
-
 #include <string.h>
+#include "_safety.h"
 
 /** concatenate bounded string **/
 errno_t strncat_s(char * restrict s1, rsize_t s1max, const char * restrict s2, rsize_t n)
 {
-	__C_EXT(1, 201112L);
-	//__ASSERT_NONNULL(s1);
-	//__ASSERT_NONNULL(s2);
-	//__ASSERT_NOOVERLAP(s1, s2, strlen(s1) + strlen(s2));
+	SIGNAL_SAFE(0);
+	ASSERT_NONNULL(s1);
+	ASSERT_NONNULL(s2);
+	(void)s1max; //ASSERT_NOOVERLAP(s1, s1max, s2, strlen(s1) + strlen(s2));
 
 	char *append = s1 + strlen(s1);
 	for (size_t i = 0; i < n; i++) {
@@ -23,7 +22,7 @@ errno_t strncat_s(char * restrict s1, rsize_t s1max, const char * restrict s2, r
 		*append = '\0';
 	}
 
-	return s1;
+	return 0;
 }
 
 /***
@@ -44,6 +43,3 @@ terminated.
 /*
 CEXT1(201112)
 */
-
-
-#endif

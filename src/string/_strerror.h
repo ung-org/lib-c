@@ -109,3 +109,7 @@ case ESRCH: strcpy(errstr, "No such process [ESRCH]"); break;
 #ifdef EXDEV
 case EXDEV: strcpy(errstr, "Cross-device link [EXDEV]"); break;
 #endif
+
+/*
+STDC(0)
+*/

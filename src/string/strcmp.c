@@ -1,12 +1,11 @@
-#if 0
-
 #include <string.h>
-#include "_assert.h"
+#include "_safety.h"
 
 /** compare strings **/
 
 int strcmp(const char *s1, const char *s2)
 {
+	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(s1);
 	ASSERT_NONNULL(s2);
 
@@ -42,6 +41,3 @@ compares the strings at ARGUMENT(s1) and ARGUMENT(s2).
 /*
 STDC(1)
 */
-
-
-#endif

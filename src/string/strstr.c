@@ -1,7 +1,6 @@
-#if 0
-
 #include <string.h>
-#include "_assert.h"
+#include "_safety.h"
+#undef strstr
 
 /** search for substring **/
 
@@ -11,6 +10,7 @@ char * strstr(const char *s1, const char *s2)
 	size_t l2 = 0;
 	char *p = (char*)s1;
 
+	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(s1);
 	ASSERT_NONNULL(s2);
 
@@ -39,6 +39,3 @@ character of ARGUMENT(s1).
 /*
 STDC(1)
 */
-
-
-#endif

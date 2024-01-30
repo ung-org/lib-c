@@ -1,12 +1,11 @@
-#if 0
-
 #include <string.h>
-#include "_assert.h"
+#include "_safety.h"
 
 /** move memory **/
 
 void * memmove(void *s1, const void *s2, size_t n)
 {
+	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(s1);
 	ASSERT_NONNULL(s2);
 
@@ -37,6 +36,3 @@ is copied so that the ARGUMENT(n) bytes are safely written to ARGUMENT(s1).
 /*
 STDC(1)
 */
-
-
-#endif

@@ -1,17 +1,17 @@
-#if 0
-
 #include <string.h>
 #include <limits.h>
+#include "_safety.h"
 
 /** copy string **/
 errno_t strcpy_s(char * restrict s1, rsize_t s1max, const char * restrict s2)
 {
-	__C_EXT(1, 201112L);
-	__ASSERT_NONNULL(s1);
-	__ASSERT_NONNULL(s2);
-	__ASSERT_NOOVERLAP(s1, s2, strlen(s2));
+	SIGNAL_SAFE(0);
+	ASSERT_NONNULL(s1);
+	ASSERT_NONNULL(s2);
+	ASSERT_NOOVERLAP(s1, s1max, s2, strlen(s2));
 
-	return strncpy(s1, s2, strlen(s2));
+	strncpy(s1, s2, strlen(s2));
+	return 0;
 }
 
 /***
@@ -29,6 +29,3 @@ including the terminating char(\0).
 /*
 CEXT1(201112)
 */
-
-
-#endif

@@ -1,12 +1,12 @@
-#if 0
-
 #include <string.h>
-#include "_assert.h"
+#include "_safety.h"
 
 /** search memory **/
 
 void * memchr(const void *s, int c, size_t n)
 {
+	SIGNAL_SAFE(0);
+
 	char *p = (char*)s;
 	size_t i = 0;
 
@@ -33,6 +33,3 @@ ARGUMENT(c) (converted to an TYPE(unsigned char)).
 /*
 STDC(1)
 */
-
-
-#endif

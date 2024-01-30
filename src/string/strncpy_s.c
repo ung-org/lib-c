@@ -1,14 +1,13 @@
-#if 0
-
 #include <string.h>
+#include "_safety.h"
 
 /** copy bounded string **/
 errno_t strncpy_s(char * restrict s1, rsize_t s1max, const char * restrict s2, rsize_t n)
 {
-	__C_EXT(1, 201112L);
-	__ASSERT_NONNULL(s1);
-	__ASSERT_NONNULL(s2);
-	__ASSERT_NOOVERLAP(s1, s2, n);
+	SIGNAL_SAFE(0);
+	ASSERT_NONNULL(s1);
+	ASSERT_NONNULL(s2);
+	ASSERT_NOOVERLAP(s1, s1max, s2, n);
 
 	size_t i;
 	for (i = 0; i < n; i++) {
@@ -22,7 +21,7 @@ errno_t strncpy_s(char * restrict s1, rsize_t s1max, const char * restrict s2, r
 		s1[i++] = '\0';
 	}
 
-	return s1;
+	return 0;
 }
 
 /***
@@ -43,6 +42,3 @@ terminated.
 /*
 CEXT1(201112)
 */
-
-
-#endif
