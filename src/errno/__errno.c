@@ -1,6 +1,5 @@
-#if 0
-
 #include "_perthread.h"
+#include "_safety.h"
 
 /*
 This version of __errno() is for single-threaded programs and those compiled
@@ -14,8 +13,10 @@ in pthread/__pt_errno.c which uses pthread keys.
 int *__errno(void)
 {
 	THREAD_LOCAL int e = 0;
+	SIGNAL_SAFE(1);
         return &e;
 }
 
-
-#endif
+/*
+STDC(0)
+*/
