@@ -1,23 +1,23 @@
-#if 0
-
 #include <fenv.h>
+#include "_safety.h"
 
 int fetestexcept(int excepts)
 {
+	SIGNAL_SAFE(0);
 	return excepts;
 }
 
-/*d
+/*
 The fetestexcept function determines which of a specified subset of the floating-
 point exception flags are currently set. The excepts argument specifies the floating-
 point status flags to be queried. 179)
-d*/
+*/
 
-/*r
+/*
 The fetestexcept function returns the value of the bitwise OR of the floating-point
 exception macros corresponding to the currently set floating-point exceptions included in
 excepts.
-r*/
+*/
 
 /* example
 	#pragma STDC FENV_ACCESS ON
@@ -33,6 +33,3 @@ r*/
 STDC(199901)
 LINK(m)
 */
-
-
-#endif

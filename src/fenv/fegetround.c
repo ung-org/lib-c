@@ -1,26 +1,25 @@
-#if 0
-
 #include <fenv.h>
+#include "_safety.h"
+
+#undef fegetround
 
 int fegetround(void)
 {
+	SIGNAL_SAFE(0);
 	return 0;
 }
 
-/*d
+/*
 The fegetround function gets the current rounding direction.
-d*/
+*/
 
-/*r
+/*
 The fegetround function returns the value of the rounding direction macro
 representing the current rounding direction or a negative value if there is no such
 rounding direction macro or the current rounding direction is not determinable.
-r*/
+*/
 
 /*
 STDC(199901)
 LINK(m)
 */
-
-
-#endif

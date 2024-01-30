@@ -1,28 +1,25 @@
-#if 0
-
 #include <fenv.h>
+#include "_safety.h"
 
 int fesetround(int round)
 {
+	SIGNAL_SAFE(0);
 	return round;
 }
 
-/*d */
-/* The fesetround function establishes the rounding direction represented by its */
-/* argument round. If the argument is not equal to the value of a rounding direction macro, */
-/* the rounding direction is not changed. */
-/* d*/
+/*
+The fesetround function establishes the rounding direction represented by its
+argument round. If the argument is not equal to the value of a rounding direction macro,
+the rounding direction is not changed.
+*/
 
-/*r */
-/* The fesetround function returns a zero value if and only if the argument is equal to a */
-/* rounding direction macro (that is, if and only if the requested rounding direction was */
-/* established). */
-/* r*/
+/*
+The fesetround function returns a zero value if and only if the argument is equal to a
+rounding direction macro (that is, if and only if the requested rounding direction was
+established).
+r*/
 
 /*
 STDC(199901)
 LINK(m)
 */
-
-
-#endif
