@@ -5,6 +5,7 @@
 
 void cnd_destroy(cnd_t *cond)
 {
+	SIGNAL_SAFE(0);
 	pthread_cond_destroy(cond);
 }
 

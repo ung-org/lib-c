@@ -5,6 +5,7 @@
 
 void thrd_yield(void)
 {
+	SIGNAL_SAFE(0);
 	sched_yield();
 }
 

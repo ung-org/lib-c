@@ -5,6 +5,7 @@
 
 int tss_set(tss_t key, void *val)
 {
+	SIGNAL_SAFE(0);
 	return pthread_setspecific(key, val) == 0 ? thrd_success : thrd_error;
 }
 

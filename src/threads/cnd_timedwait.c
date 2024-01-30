@@ -6,6 +6,7 @@
 
 int cnd_timedwait(cnd_t *restrict cond, mtx_t *restrict mtx, const struct timespec *restrict ts)
 {
+	SIGNAL_SAFE(0);
 	switch (pthread_cond_timedwait(cond, mtx, ts)) {
 	case 0:
 		return thrd_success;

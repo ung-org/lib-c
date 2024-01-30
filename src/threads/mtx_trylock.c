@@ -6,6 +6,7 @@
 
 int mtx_trylock(mtx_t *mtx)
 {
+	SIGNAL_SAFE(0);
 	switch (pthread_mutex_trylock(mtx)) {
 	case 0:
 		return thrd_success;

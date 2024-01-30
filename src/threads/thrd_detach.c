@@ -5,6 +5,7 @@
 
 int thrd_detach(thrd_t thr)
 {
+	SIGNAL_SAFE(0);
 	return pthread_detach(thr) == 0 ? thrd_success : thrd_error;
 }
 

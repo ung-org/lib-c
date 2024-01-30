@@ -6,6 +6,7 @@
 
 int cnd_init(cnd_t *cond)
 {
+	SIGNAL_SAFE(0);
 	switch (pthread_cond_init(cond, 0)) {
 	case 0:
 		return thrd_success;

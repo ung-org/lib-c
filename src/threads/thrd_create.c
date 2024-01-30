@@ -6,6 +6,7 @@
 
 int thrd_create(thrd_t *thr, thrd_start_t func, void *arg)
 {
+	SIGNAL_SAFE(0);
 	typedef void *(*pthread_start_fn)(void*);
 	switch (pthread_create(thr, 0, (pthread_start_fn)func, arg)) {
 	case 0:

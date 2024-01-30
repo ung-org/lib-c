@@ -6,6 +6,7 @@
 
 int mtx_init(mtx_t *mtx, int type)
 {
+	SIGNAL_SAFE(0);
 	pthread_mutexattr_t attr;
 	pthread_mutexattr_init(&attr);
 	if (type & mtx_recursive) {

@@ -5,6 +5,7 @@
 
 int thrd_join(thrd_t thr, int *res)
 {
+	SIGNAL_SAFE(0);
 	return pthread_join(thr, (void**)&res) == 0 ? thrd_success : thrd_error;
 }
 

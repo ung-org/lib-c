@@ -5,6 +5,7 @@
 
 _Noreturn void thrd_exit(int res)
 {
+	SIGNAL_SAFE(0);
 	pthread_exit(&res);
 }
 

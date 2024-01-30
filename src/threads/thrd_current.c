@@ -5,6 +5,7 @@
 
 thrd_t thrd_current(void)
 {
+	SIGNAL_SAFE(0);
 	return pthread_self();
 }
 

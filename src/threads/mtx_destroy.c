@@ -5,6 +5,7 @@
 
 void mtx_destroy(mtx_t *mtx)
 {
+	SIGNAL_SAFE(0);
 	pthread_mutex_destroy(mtx);
 }
 
