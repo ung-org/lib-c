@@ -15,6 +15,8 @@ int iswctype(wint_t wc, wctype_t desc)
 	return 0;
 }
 
+__check_2(int, 0, iswctype, wint_t, wctype_t)
+
 /***
 The fn(iswctype) function tests whether arg(wc) is a wide character in the
 character class represented by arg(desc), which must have been previously

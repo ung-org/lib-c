@@ -12,6 +12,8 @@ int iswupper(wint_t wc)
 	return iswctype(wc, upper);
 }
 
+__check_1(int, 0, iswupper, wint_t)
+
 /***
 The fn(iswupper) function tests whether arg(wc) is a wide character in the class
 cclass(upper) in the current locale.

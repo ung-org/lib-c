@@ -12,6 +12,8 @@ int iswxdigit(wint_t wc)
 	return iswctype(wc, xdigit);
 }
 
+__check_1(int, 0, iswxdigit, wint_t)
+
 /***
 The fn(iswxdigit) function tests whether arg(wc) is a wide character in the
 class cclass(xdigit) in the current locale.

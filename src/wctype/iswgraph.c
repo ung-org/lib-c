@@ -12,6 +12,8 @@ int iswgraph(wint_t wc)
 	return iswctype(wc, graph);
 }
 
+__check_1(int, 0, iswgraph, wint_t)
+
 /***
 The fn(iswgraph) function tests whether arg(wc) is a wide character in the class
 cclass(graph) in the current locale.

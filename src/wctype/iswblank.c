@@ -11,6 +11,8 @@ int iswblank(wint_t wc)
 	return iswctype(wc, blank);
 }
 
+__check_1(int, 0, iswblank, wint_t)
+
 /***
 The fn(iswblank) functions tests whether a wide character is a of the character
 class cclass(blank) in the current locale.

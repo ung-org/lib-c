@@ -18,6 +18,8 @@ wctrans_t wctrans(const char * property)
 	return 0;
 }
 
+__check_1(wctrans_t, 0, wctrans, const char *)
+
 /***
 The fn(wctrans) function looks up the wide character translation mapping
 specified by the string arg(property), to be used as the arg(desc) parameter

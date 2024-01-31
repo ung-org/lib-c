@@ -17,6 +17,8 @@ wint_t towlower(wint_t wc)
 	return towctrans(wc, trans);
 }
 
+__check_1(wint_t, 0, towlower, wint_t)
+
 /***
 The fn(towlower) function converts a wide uppercase letter to its equivalent
 lowercase letter in the current locale.

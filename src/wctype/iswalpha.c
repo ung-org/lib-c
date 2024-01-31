@@ -12,6 +12,8 @@ int iswalpha(wint_t wc)
 	return iswctype(wc, alpha);
 }
 
+__check_1(int, 0, iswalpha, wint_t)
+
 /***
 The fn(iswalpha) function tests whether arg(wc) is a wide character in the class
 cclass(alpha) in the current locale.

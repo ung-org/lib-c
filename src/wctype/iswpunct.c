@@ -12,6 +12,8 @@ int iswpunct(wint_t wc)
 	return iswctype(wc, punct);
 }
 
+__check_1(int, 0, iswpunct, wint_t)
+
 /***
 The fn(iswpunct) function tests whether arg(wc) is a character in the class
 cclass(punct) in the current locale.

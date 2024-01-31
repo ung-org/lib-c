@@ -38,6 +38,8 @@ wctype_t wctype(const char * property)
 	return 0;
 }
 
+__check_1(wctype_t, 0, wctype, const char *)
+
 /***
 The fn(wctype) function looks up the character class specified by the string
 arg(property). If arg(property) is a recognized character class, a value is

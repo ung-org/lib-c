@@ -12,6 +12,8 @@ int iswalnum(wint_t wc)
 	return iswalpha(wc) || iswdigit(wc);
 }
 
+__check_1(int, 0, iswalnum, wint_t)
+
 /***
 The fn(iswalnum) function tests whether arg(wc) is a wide character in the class
 cclass(alpha) or cclass(digit) in the current locale.
