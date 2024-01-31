@@ -1,6 +1,12 @@
 #include <stdlib.h>
-#include <wchar.h>
 #include "_stdlib.h"
+
+#ifdef __STDC_VERSION__
+#include <wchar.h>
+#else
+static size_t wcslen(const wchar_t *);
+#include "wchar/wcslen.c"
+#endif
 
 /** convert wide character string to multibyte string **/
 
