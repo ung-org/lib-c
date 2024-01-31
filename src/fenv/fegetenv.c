@@ -1,5 +1,5 @@
 #include <fenv.h>
-#include "_safety.h"
+#include "_fenv.h"
 
 int fegetenv(fenv_t *envp)
 {
@@ -7,6 +7,8 @@ int fegetenv(fenv_t *envp)
 	(void)envp;
 	return 0;
 }
+
+CHECK_1(int, 0, fegetenv, fenv_t *)
 
 /*
 The fegetenv function stores the current floating-point environment in the object

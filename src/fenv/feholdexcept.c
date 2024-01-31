@@ -1,5 +1,5 @@
 #include <fenv.h>
-#include "_safety.h"
+#include "_fenv.h"
 
 int feholdexcept(fenv_t *envp)
 {
@@ -7,6 +7,8 @@ int feholdexcept(fenv_t *envp)
 	(void)envp;
 	return 0;
 }
+
+CHECK_1(int, 0, feholdexcept, fenv_t *)
 
 /*
 The feholdexcept function saves the current floating-point environment in the object

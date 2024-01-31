@@ -1,5 +1,5 @@
 #include <fenv.h>
-#include "_safety.h"
+#include "_fenv.h"
 
 int feupdateenv(const fenv_t *envp)
 {
@@ -7,6 +7,8 @@ int feupdateenv(const fenv_t *envp)
 	(void)envp;
 	return 0;
 }
+
+CHECK_1(int, 0, feupdateenv, const fenv_t *)
 
 /*
 The feupdateenv function saves the currently raised floating-point exceptions in its

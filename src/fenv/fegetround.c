@@ -1,11 +1,13 @@
 #include <fenv.h>
-#include "_safety.h"
+#include "_fenv.h"
 
 int fegetround(void)
 {
 	SIGNAL_SAFE(0);
 	return 0;
 }
+
+CHECK_0(int, 0, fegetround)
 
 /*
 The fegetround function gets the current rounding direction.

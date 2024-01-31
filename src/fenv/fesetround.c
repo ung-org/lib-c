@@ -1,11 +1,13 @@
 #include <fenv.h>
-#include "_safety.h"
+#include "_fenv.h"
 
 int fesetround(int round)
 {
 	SIGNAL_SAFE(0);
 	return round;
 }
+
+CHECK_1(int, 0, fesetround, int)
 
 /*
 The fesetround function establishes the rounding direction represented by its
