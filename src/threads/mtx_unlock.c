@@ -9,6 +9,8 @@ int mtx_unlock(mtx_t *mtx)
 	return pthread_mutex_unlock(mtx) == 0 ? thrd_success : thrd_error;
 }
 
+__check_1(int, 0, mtx_unlock, mtx_t *)
+
 /*
 STDC(201112)
 */

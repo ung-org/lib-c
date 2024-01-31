@@ -9,6 +9,8 @@ void cnd_destroy(cnd_t *cond)
 	pthread_cond_destroy(cond);
 }
 
+__vcheck_1(cnd_destroy, cnd_t *)
+
 /*
 STDC(201112)
 */

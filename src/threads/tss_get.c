@@ -9,6 +9,8 @@ void *tss_get(tss_t key)
 	return pthread_getspecific(key);
 }
 
+__check_1(void *, 0, tss_get, tss_t)
+
 /*
 STDC(201112)
 */

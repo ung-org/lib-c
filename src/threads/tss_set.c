@@ -9,6 +9,8 @@ int tss_set(tss_t key, void *val)
 	return pthread_setspecific(key, val) == 0 ? thrd_success : thrd_error;
 }
 
+__check_2(int, 0, tss_set, tss_t, void *)
+
 /*
 STDC(201112)
 */

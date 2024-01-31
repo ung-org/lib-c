@@ -9,6 +9,8 @@ int cnd_wait(cnd_t *cond, mtx_t *mtx)
 	return pthread_cond_wait(cond, mtx) == 0 ? thrd_success : thrd_error;
 }
 
+__check_2(int, 0, cnd_wait, cnd_t *, mtx_t *)
+
 /*
 STDC(201112)
 */

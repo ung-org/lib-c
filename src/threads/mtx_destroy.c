@@ -9,6 +9,8 @@ void mtx_destroy(mtx_t *mtx)
 	pthread_mutex_destroy(mtx);
 }
 
+__vcheck_1(mtx_destroy, mtx_t *)
+
 /*
 STDC(201112)
 */

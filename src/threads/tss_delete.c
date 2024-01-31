@@ -9,6 +9,8 @@ void tss_delete(tss_t key)
 	pthread_key_delete(key);
 }
 
+__vcheck_1(tss_delete, tss_t)
+
 /*
 STDC(201112)
 */

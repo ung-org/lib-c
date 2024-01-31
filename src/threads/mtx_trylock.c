@@ -21,6 +21,8 @@ int mtx_trylock(mtx_t *mtx)
 	return thrd_error;
 }
 
+__check_1(int, 0, mtx_trylock, mtx_t *)
+
 /*
 STDC(201112)
 */

@@ -9,6 +9,8 @@ int mtx_lock(mtx_t *mtx)
 	return pthread_mutex_lock(mtx);
 }
 
+__check_1(int, 0, mtx_lock, mtx_t *)
+
 /*
 STDC(201112)
 */

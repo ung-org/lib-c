@@ -9,6 +9,8 @@ int thrd_equal(thrd_t thr0, thrd_t thr1)
 	return pthread_equal(thr0, thr1);
 }
 
+__check_2(int, 0, thrd_equal, thrd_t, thrd_t)
+
 /*
 STDC(201112)
 */

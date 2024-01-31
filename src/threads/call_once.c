@@ -9,6 +9,10 @@ void call_once(once_flag *flag, void (*func)(void))
 	pthread_once(flag, func);
 }
 
+typedef void (*once_fn)(void);
+
+__vcheck_2(call_once, once_flag *, once_fn);
+
 /*
 STDC(201112)
 */

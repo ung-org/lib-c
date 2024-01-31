@@ -9,6 +9,8 @@ void thrd_yield(void)
 	sched_yield();
 }
 
+__vcheck_0(thrd_yield)
+
 /*
 STDC(201112)
 */

@@ -9,6 +9,8 @@ _Noreturn void thrd_exit(int res)
 	pthread_exit(&res);
 }
 
+__vcheck_1(thrd_exit, int)
+
 /*
 STDC(201112)
 */

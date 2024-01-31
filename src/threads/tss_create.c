@@ -9,6 +9,8 @@ int tss_create(tss_t *key, tss_dtor_t dtor)
 	return pthread_key_create(key, dtor) == 0 ? thrd_success : thrd_error;
 }
 
+__check_2(int, 0, tss_create, tss_t *, tss_dtor_t)
+
 /*
 STDC(201112)
 */

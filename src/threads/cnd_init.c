@@ -21,6 +21,8 @@ int cnd_init(cnd_t *cond)
 	return thrd_error;
 }
 
+__check_1(int, 0, cnd_init, cnd_t *)
+
 /*
 STDC(201112)
 */
