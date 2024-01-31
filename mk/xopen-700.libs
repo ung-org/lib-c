@@ -1,0 +1,6 @@
+.POSIX:
+
+include mk/xopen-600.libs
+include mk/posix-2008.libs
+
+libc.a: libc_XOPEN.700

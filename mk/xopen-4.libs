@@ -1,0 +1,5 @@
+.POSIX:
+
+include mk/posix-1993.libs
+
+libc.a: libc_XOPEN.4

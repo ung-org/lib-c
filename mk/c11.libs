@@ -1,0 +1,6 @@
+.POSIX:
+
+include mk/c99.libs
+
+libc.a: libc_C.201112
+libpthread.a: libpthread_C.20112

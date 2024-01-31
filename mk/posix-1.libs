@@ -1,0 +1,6 @@
+.POSIX:
+
+include mk/c89.libs
+
+libc.a: libc_POSIX.1
+libm.a: libm_POSIX.1

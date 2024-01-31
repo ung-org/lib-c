@@ -1,0 +1,6 @@
+.POSIX:
+
+include mk/c94.libs
+
+all: libc_C.199901
+all: libm_C.199901

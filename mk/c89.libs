@@ -1,0 +1,6 @@
+.POSIX:
+
+libc.a: libc_C.0
+libc.a: libc_C.1
+libm.a: libm_C.0
+libm.a: libm_C.1

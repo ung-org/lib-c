@@ -7,9 +7,9 @@ ISO C support, you'll want one of the following targets:
 * c94 - ISO/IEC 9899:1990/AMD1:1995, AKA C94, C95
 * c99 - ISO/IEC 9899:1999, AKA C99
 * c11 - ISO/IEC 9899:2011, AKA C11
-* c11+ext1 - ISO/IEC 9899:2011, AKA C11, with Extension 1
+* c11-ext1 - ISO/IEC 9899:2011, AKA C11, with Extension 1
 * c18 - ISO/IEC 9899:2018, AKA C18
-* c18+ext1 - ISO/IEC 9899:2018, AKA C18, with Extension 1
+* c18-ext1 - ISO/IEC 9899:2018, AKA C18, with Extension 1
 
 For basic POSIX support:
 
@@ -33,7 +33,7 @@ SUSv4 library, run:
     make susv4
 
 If you run `make` without any targets, it will default to the most recently
-selected target. The default target straight from git is `c18+ext1`.
+selected target. The default target straight from git is `c18-ext1`.
 
 Code Organization
 -----------------

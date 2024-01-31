@@ -1,0 +1,6 @@
+.POSIX:
+
+include mk/posix-1.libs
+
+libc.a: libc_POSIX.2
+libm.a: libm_POSIX.2

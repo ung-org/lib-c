@@ -1,0 +1,8 @@
+.POSIX:
+
+include mk/c11.libs
+
+# There aren't actually any new functions in C18
+#libc.a: libc_C.201710
+#libc.a: libm_C.201710
+#libc.a: libpthread_C.201710

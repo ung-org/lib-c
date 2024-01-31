@@ -1,0 +1,4 @@
+.POSIX:
+
+include mk/c18.libs
+include mk/c11-ext1.libs
