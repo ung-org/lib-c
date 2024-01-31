@@ -1,6 +1,7 @@
 # define TGSOURCE "copysign.c"
-#include "_tgmath.h"
 #include <math.h>
+#include "_tgmath.h"
+#undef copysign
 
 TYPE TGFN(copysign)(TYPE x, TYPE y)
 {
