@@ -60,6 +60,56 @@ extern struct __checked_call {
 			&_ci, 0); \
 	} \
 } while (0)
+
+#define __setchecked(__file, __func, __line) \
+	do { \
+		__checked_call.func = (char*)func; \
+		__checked_call.file = (char*)file; \
+		__checked_call.line = line; \
+	} while (0)
+
+#define __vcheck_0(__fn) \
+	void __#__fn(const char * file, const char * func, unsigned long long line) { \
+		__setchecked(file, func, line); \
+		__fn(); \
+		__setchecked(NULL, NULL, 0); \
+	}
+
+#define __check_0(__type, __def, __fn) \
+	__type __##__fn(const char * file, const char * func, unsigned long long line) { \
+		__type ret = __def; \
+		__setchecked(file, func, line); \
+		ret = __fn(); \
+		__setchecked(NULL, NULL, 0); \
+		return ret; \
+	}
+
+#define __check_1(__type, __def, __fn, __t1) \
+	__type __##__fn(const char * file, const char * func, unsigned long long line, __t1 a1) { \
+		__type ret = __def; \
+		__setchecked(file, func, line); \
+		ret = __fn(a1); \
+		__setchecked(NULL, NULL, 0); \
+		return ret; \
+	}
+
+#define __check_2(__type, __def, __fn, __t1, __t2) \
+	__type __##__fn(const char * file, const char * func, unsigned long long line, __t1 a1, __t2 a2) { \
+		__type ret = __def; \
+		__setchecked(file, func, line); \
+		ret = __fn(a1, a2); \
+		__setchecked(NULL, NULL, 0); \
+		return ret; \
+	}
+
+#define __check_3(__type, __def, __fn, __t1, __t2, __t3) \
+	__type __##__fn(const char * file, const char * func, unsigned long long line, __t1 a1, __t2 a2, __t3 a3) { \
+		__type ret = __def; \
+		__setchecked(file, func, line); \
+		ret = __fn(a1, a2, a3); \
+		__setchecked(NULL, NULL, 0); \
+		return ret; \
+	}
 #else
 
 #define ASSERT_REPRESENTABLE(_n, _min, _max, _type, _sentinel)
