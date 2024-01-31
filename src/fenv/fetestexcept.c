@@ -1,11 +1,14 @@
 #include <fenv.h>
-#include "_safety.h"
+#include "_fenv.h"
 
 int fetestexcept(int excepts)
 {
 	SIGNAL_SAFE(0);
+	ASSERT_VALID_EXCEPTION_MASK(excepts);
 	return excepts;
 }
+
+CHECK_1(int, 0, fetestexcept, int)
 
 /*
 The fetestexcept function determines which of a specified subset of the floating-

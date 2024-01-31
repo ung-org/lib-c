@@ -1,12 +1,16 @@
 #include <fenv.h>
-#include "_safety.h"
+#include "_fenv.h"
 
 int fesetexceptflag(const fexcept_t *flagp, int excepts)
 {
 	SIGNAL_SAFE(0);
+	ASSERT_PREVIOUS_FEXCEPT(flagp, excepts);
+	ASSERT_VALID_EXCEPTION_MASK(excepts);
 	(void)flagp; (void)excepts;
 	return 0;
 }
+
+CHECK_2(int, 0, fesetexceptflag, const fexcept_t *, int)
 
 /*
 The fesetexceptflag function sets the floating-point status flags indicated by the
