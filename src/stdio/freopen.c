@@ -23,6 +23,7 @@
 
 /** reopen a file stream with a new file **/
 
+GCC_SSE_HACK
 FILE * freopen(const char * restrict filename, const char * restrict mode, FILE * restrict stream)
 {
 	struct {
@@ -69,6 +70,7 @@ FILE * freopen(const char * restrict filename, const char * restrict mode, FILE 
 	}
 
 	if (openmode == -1) {
+		__undefined("\"%s\" is not a valid mode for fopen() or freopen()", mode);
 		#ifdef EINVAL
 		errno = EINVAL;
 		#endif
@@ -101,6 +103,8 @@ FILE * freopen(const char * restrict filename, const char * restrict mode, FILE 
 
 	return stream;
 }
+
+CHECK_3(FILE *, NULL, freopen, const char * restrict, const char * restrict, FILE * restrict)
 
 /***
 changes the file associated with ARGUMENT(stream) to

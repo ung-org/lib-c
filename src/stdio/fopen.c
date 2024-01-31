@@ -37,6 +37,8 @@ FILE * fopen(const char * restrict filename, const char * restrict mode)
 	return freopen(filename, mode, f);
 }
 
+CHECK_2(FILE *, NULL, fopen, const char * restrict, const char * restrict)
+
 /***
 opens a file stream associated with the file ARGUMENT(filename).
 
