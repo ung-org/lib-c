@@ -5,16 +5,18 @@
 
 _Noreturn void longjmp(jmp_buf env, int val)
 {
-	extern _Noreturn void __longjmp(jmp_buf);
+	extern _Noreturn void ___longjmp(jmp_buf);
 	SIGNAL_SAFE(0);
 
 	/* use val if nonzero, otherwise 1 */
 	env[0] = val ? val : 1;
 	
 	for (;;) {
-		__longjmp(env);
+		___longjmp(env);
 	}
 }
+
+__vcheck_2(longjmp, jmp_buf, int)
 
 /***
 restores the environment of a previous call to FUNCTION(setjmp)

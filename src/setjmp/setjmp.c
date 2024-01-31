@@ -6,11 +6,13 @@
 
 int setjmp(jmp_buf env)
 {
-	extern int __setjmp(jmp_buf);
+	extern int ___setjmp(jmp_buf);
 	SIGNAL_SAFE(0);
 	memset(env, 0, sizeof(jmp_buf));
-	return __setjmp(env);
+	return ___setjmp(env);
 }
+
+__check_1(int, 0, setjmp, jmp_buf)
 
 /***
 saves the current state of the calling environment

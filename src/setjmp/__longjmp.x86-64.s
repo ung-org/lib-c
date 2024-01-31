@@ -1,5 +1,5 @@
-.global __longjmp
-__longjmp:
+.global ___longjmp
+___longjmp:
 	mov %rdi, %rax
 	mov 0x08(%rax), %rbx
 	mov 0x18(%rax), %rdx

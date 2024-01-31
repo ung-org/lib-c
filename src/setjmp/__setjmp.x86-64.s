@@ -1,5 +1,5 @@
-.global __setjmp
-__setjmp:
+.global ___setjmp
+___setjmp:
 	/* setjmp() in C sets env[0] to 0 */
 	mov %rbx, 0x08(%rdi)
 	mov %rcx, 0x10(%rdi)
