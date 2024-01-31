@@ -39,7 +39,14 @@ extern struct __checked_call {
 } while (0)
 
 #define ASSERT_NOOVERLAP(__p1, __l1, __p2, __l2) do { \
-	/* TODO */ (void)(__p1); (void)(__l1); (void)(__p2); (void)(__l2); \
+	char *__s1 = (char*)(__p1); \
+	char *__s2 = (char*)(__p2); \
+	if (((__s1 < __s2) && ((__s1 + (__l1)) >= __s2)) || ((__s1 > __s2) && ((__s2 + (__l2)) >= __s1))) { \
+		struct __constraint_info _ci = {0}; \
+		_ci.func = __func__; \
+		__stdlib.constraint_handler("Undefined behavior: " \
+			"Parameter " #__p1 " and " #__p2 " overlap", &_ci, 0); \
+	} \
 } while (0)
 
 #define ASSERT_REPRESENTABLE(_n, _min, _max, _type, _sentinel) do { \
