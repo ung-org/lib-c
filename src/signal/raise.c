@@ -29,6 +29,8 @@ int raise(int sig)
 	#endif
 }
 
+__check_1(int, 0, raise, int)
+
 /***
 sends the signal ARGUMENT(sig) to the current program.
 ***/

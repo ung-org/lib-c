@@ -47,6 +47,9 @@ void (*signal(int sig, void (*func)(int)))(int)
 	return prev;
 }
 
+typedef void (*handler)(int);
+//__check_2(handler, SIG_ERR, signal, int, handler)
+
 /***
 sets the signal handler for the signal specified by ARGUMENT(sig) to
 ARGUMENT(func).
