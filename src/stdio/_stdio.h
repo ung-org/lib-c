@@ -4,12 +4,11 @@
 #include <stddef.h>
 #include <stdarg.h>
 #include <stdio.h>
+
 #include "_safety.h"
 
 #ifdef _POSIX_C_SOURCE
 #include <sys/types.h>
-#else
-#include "sys/types/pid_t.h"
 #endif
 
 #if !defined _POSIX_C_SOURCE || _POSIX_C_SOURCE < 199506L
@@ -45,16 +44,19 @@ struct __FILE {
 	int nlocks;		/* in multithreaded, used by flockfile() */
 	int thread;		/* the owning thread if locked */
 
+	#ifdef _POSIX_C_SOURCE
 	pid_t pipe_pid;		/* if stream is a pipe, the child pid */
+	#endif
 };
 
 struct io_options {
 	const char *fnname;	/* the calling function */
 	char *string;		/* NULL or the output string */
 	wchar_t *wstring;	/* NULL or the output wide string */
-	struct __FILE *stream;	/* NULL or the output stream */
+	FILE *stream;		/* NULL or the output stream */
 	int fd;			/* -1 or the output file descriptor */
 	size_t maxlen;		/* max number of bytes to write to string */
+	int ret;		/* return value */
 };
 
 int __printf(struct io_options * restrict, const char * restrict, va_list);
