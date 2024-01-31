@@ -21,6 +21,8 @@ void *memccpy(void * restrict s1, const void * restrict s2, int c, size_t n)
 	return NULL;
 }
 
+__check_4(void *, 0, memccpy, void * restrict, const void * restrict, int, size_t)
+
 /*
 XOPEN(4)
 */

@@ -14,6 +14,8 @@ errno_t strcpy_s(char * restrict s1, rsize_t s1max, const char * restrict s2)
 	return 0;
 }
 
+__check_3(errno_t, 0, strcpy_s, char * restrict, rsize_t, const char * restrict)
+
 /***
 The fn(strcpy) function copies the string at arg(s2) to arg(s1), up to and
 including the terminating char(\0).

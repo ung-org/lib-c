@@ -1,6 +1,5 @@
 #include <string.h>
 #include "_safety.h"
-#undef strrchr
 
 /** search string from end **/
 
@@ -23,6 +22,8 @@ char * strrchr(const char *s, int c)
 	*/
 	return NULL;
 }
+
+CHECK_2(char *, 0, strrchr, const char *, int)
 
 /***
 finds the last occurence of ARGUMENT(c) (converted to TYPE(char)) in the

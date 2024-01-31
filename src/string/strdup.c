@@ -1,7 +1,6 @@
 #include <string.h>
 #include <stdlib.h>
 #include "_safety.h"
-#undef strdup
 
 char * strdup(const char *s)
 {
@@ -14,6 +13,8 @@ char * strdup(const char *s)
 	}
 	return ret;
 }
+
+__check_1(char *, 0, strdup, const char *)
 
 /*
 XOPEN(400)

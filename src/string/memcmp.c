@@ -27,6 +27,8 @@ int memcmp(const void *s1, const void *s2, size_t n)
 	return 0;
 }
 
+__check_3(int, 0, memcmp, const void *, const void *, size_t)
+
 /***
 compares the first ARGUMENT(n) bytes of memory at ARGUMENT(s1)
 and ARGUMENT(s2).

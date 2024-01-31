@@ -24,6 +24,8 @@ void * memcpy(void * restrict s1, const void * restrict s2, size_t n)
 	return dst;
 }
 
+CHECK_3(void *, 0, memcpy, void * restrict, const void * restrict, size_t)
+
 /***
 copies ARGUMENT(n) bytes from the object at ARGUMENT(s2) to the object at
 ARGUMENT(s1).

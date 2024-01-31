@@ -17,6 +17,8 @@ errno_t memmove_s(void *s1, rsize_t s1max, const void *s2, rsize_t n)
 	return 0;
 }
 
+__check_4(errno_t, 0, memmove_s, void *, rsize_t, const void *, rsize_t)
+
 /***
 The fn(memmove) function copies arg(n) bytes of memory from the object at
 arg(s2) to the object at arg(s1). If arg(s1) and arg(s2) overlap, the memory

@@ -1,6 +1,5 @@
 #include <string.h>
 #include "_safety.h"
-#undef strncat
 
 /** concatenate bounded string **/
 
@@ -29,6 +28,8 @@ char * strncat(char * restrict s1, const char * restrict s2, size_t n)
 
 	return s1;
 }
+
+__check_3(char *, 0, strncat, char * restrict, const char * restrict, size_t)
 
 /***
 appends a copy of the frist ARGUMENT(n) bytes of the string

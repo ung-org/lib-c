@@ -24,6 +24,8 @@ errno_t strncpy_s(char * restrict s1, rsize_t s1max, const char * restrict s2, r
 	return 0;
 }
 
+CHECK_4(errno_t, 0, strncpy_s, char * restrict, rsize_t, const char *, rsize_t)
+
 /***
 The fn(strncpy) function copies up to arg(n) bytes from the string at arg(s2)
 to arg(s1). If a char(\0) is encountered, null characters are appended to

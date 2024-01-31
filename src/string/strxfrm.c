@@ -18,6 +18,8 @@ size_t strxfrm(char * restrict s1, const char * restrict s2, size_t n)
 	return 0;
 }
 
+CHECK_3(size_t, 0, strxfrm, char * restrict, const char * restrict, size_t)
+
 /***
 transforms up to ARGUMENT(n) bytes of the string at ARGUMENT(s2),
 placing the transformed string at ARGUMENT(s1). The transformed string is the

@@ -34,6 +34,8 @@ int strcoll(const char *s1, const char *s2)
 	return ret;
 }
 
+__check_2(int, 0, strcoll, const char *, const char *)
+
 /***
 compares the collation values of the strings at ARGUMENT(s1) and ARGUMENT(s2).
 ***/

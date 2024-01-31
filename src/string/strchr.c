@@ -16,6 +16,8 @@ char * strchr(const char *s, int c)
 	return (char*)memchr(s, (char)c, strlen(s));
 }
 
+__check_2(char *, 0, strchr, const char *, int)
+
 /***
 searches the string ARGUMENT(s) for the first occurrence of
 ARGUMENT(c) (converted to a TYPE(char)).

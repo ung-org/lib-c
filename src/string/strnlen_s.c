@@ -8,6 +8,8 @@ size_t strnlen_s(const char *s, size_t maxsize)
 	return maxsize;
 }
 
+CHECK_2(size_t, 0, strnlen_s, const char *, size_t)
+
 /*
 CEXT1(201112)
 */

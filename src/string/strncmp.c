@@ -24,6 +24,8 @@ int strncmp(const char *s1, const char *s2, size_t n)
 	return memcmp(s1, s2, n);
 }
 
+__check_3(int, 0, strncmp, const char *, const char *, size_t)
+
 /***
 compares up to the first ARGUMENT(n) bytes of the strings at ARGUMENT(s1) and
 ARGUMENT(s2), or until the first CHAR(\0), whichever comes first.

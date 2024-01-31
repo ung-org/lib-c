@@ -27,6 +27,8 @@ void * memmove(void *s1, const void *s2, size_t n)
 	return s1;
 }
 
+__check_3(void *, 0, memmove, void *, const void *, size_t)
+
 /***
 copies ARGUMENT(n) bytes of memory from the object at
 ARGUMENT(s2) to the object at ARGUMENT(s1). If ARGUMENT(s1) and ARGUMENT(s2) overlap, the memory

@@ -21,6 +21,8 @@ char * strpbrk(const char *s1, const char *s2)
 	return NULL;
 }
 
+CHECK_2(char *, 0, strpbrk, const char *, const char *)
+
 /***
 locates the first occurence in ARGUMENT(s1) of any character in ARGUMENT(s2).
 ***/

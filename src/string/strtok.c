@@ -23,6 +23,8 @@ char * strtok(char * restrict s1, const char * restrict s2)
 	return current;
 }
 
+CHECK_2(char *, 0, strtok, char * restrict, char * restrict)
+
 /***
 splits the string ARGUMENT(s1) into a series of tokens
 delimited by characters from the string ARGUMENT(s2).

@@ -20,6 +20,8 @@ size_t strspn(const char *s1, const char *s2)
 	return i;
 }
 
+CHECK_2(size_t, 0, strspn, const char *, const char *)
+
 /***
 computes the length of the maximum initial segment of the ARGUMENT(s1) made
 up of characters from ARGUMENT(s2).

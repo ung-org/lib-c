@@ -24,6 +24,8 @@ char * strncpy(char * restrict s1, const char * restrict s2, size_t n)
 	return s1;
 }
 
+CHECK_3(char *, 0, strncpy, char * restrict, const char * restrict, size_t)
+
 /***
 copies up to ARGUMENT(n) bytes from the string at ARGUMENT(s2)
 to ARGUMENT(s1). If a CHAR(\0) is encountered, null characters are appended to

@@ -10,6 +10,8 @@ errno_t strerror_s(char *s, rsize_t maxsize, errno_t errnum)
 	return errnum;
 }
 
+__check_3(errno_t, 0, strerror_s, char *, rsize_t, errno_t)
+
 /***
 The fn(strerror_s) converts the error number arg(errnum) to an error message
 string. The string returned should not be modified, and may be overwritten by

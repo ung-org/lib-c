@@ -30,6 +30,8 @@ char * strstr(const char *s1, const char *s2)
 	return p;
 }
 
+CHECK_2(char *, 0, strstr, const char *, const char *)
+
 /***
 finds the first occurrence of the string ARGUMENT(s2) in the string
 ARGUMENT(s1). Specifying the empty string for ARGUMENT(s2) matches the first

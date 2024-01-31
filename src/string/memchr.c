@@ -25,6 +25,8 @@ void * memchr(const void *s, int c, size_t n)
 	return NULL;
 }
 
+__check_3(void *, 0, memchr, const void *, int, size_t)
+
 /***
 searches the first ARGUMENT(n) bytes of memory at ARGUMENT(s) for
 ARGUMENT(c) (converted to an TYPE(unsigned char)).

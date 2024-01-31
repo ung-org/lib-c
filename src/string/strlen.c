@@ -16,6 +16,8 @@ size_t strlen(const char *s)
 	return i;
 }
 
+__check_1(size_t, 0, strlen, const char *)
+
 /***
 counts the number of bytes in the string ARGUMENT(s), not
 including the terminating null character.
