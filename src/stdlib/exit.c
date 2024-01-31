@@ -14,13 +14,13 @@ _Noreturn void exit(int status)
 
 	SIGNAL_SAFE(0);
 
-	if (__stdlib.quick_exit_called) {
+	if (__stdlib.exit_called == QUICK) {
 		__stdlib.constraint_handler("Undefined behavior: exit() called after quick_exit()", NULL, 0);
 	}
-	if (__stdlib.exit_called) {
+	if (__stdlib.exit_called == REGULAR) {
 		__stdlib.constraint_handler("Undefined behavior: exit() called twice", NULL, 0);
 	}
-	__stdlib.exit_called = 1;
+	__stdlib.exit_called = REGULAR;
 
 	/* execute all atexit() registered functions in reverse order */
 	while (ae) {
