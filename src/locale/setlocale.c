@@ -3,7 +3,6 @@
 #include <stdlib.h>
 #include "_locale.h"
 #include "_safety.h"
-#undef setlocale
 
 /** get or set program locale **/
 
@@ -44,6 +43,8 @@ char * setlocale(int category, const char *locale)
 
 	return __load_locale(l, mask, locale);
 }
+
+__check_2(char *, NULL, setlocale, int, const char *)
 
 /***
 sets or retrieves the current global locale of the

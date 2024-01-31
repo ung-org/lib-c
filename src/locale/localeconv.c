@@ -1,7 +1,6 @@
 #include <locale.h>
 #include "_locale.h"
 #include "_safety.h"
-#undef localeconv
 
 /** return locale-specific information **/
 
@@ -14,6 +13,8 @@ struct lconv * localeconv(void)
 	*/
 	return &(__get_locale()->lconv);
 }
+
+__check_0(struct lconv *, NULL, localeconv)
 
 /***
 fills in a STRUCTDEF(lconv) in the current locale for
