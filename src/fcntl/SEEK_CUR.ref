@@ -1,4 +1,0 @@
-#include <fcntl.h>
-REFERENCE(stdio/SEEK_CUR.c)
-XOPEN(4)
-probably-posix

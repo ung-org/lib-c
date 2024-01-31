@@ -1,4 +1,0 @@
-#include <fcntl.h>
-REFERENCE(sys/types/mode_t.c)
-XOPEN(4)
-probably-posix
