@@ -1,6 +1,5 @@
 #include <inttypes.h>
 #include "_safety.h"
-#undef imaxabs
 
 /** absolute value **/
 
@@ -15,6 +14,8 @@ intmax_t imaxabs(intmax_t j)
 	
 	return j < 0 ? -j : j;
 }
+
+__check_1(intmax_t, 0, imaxabs, intmax_t)
 
 /***
 computes the absolute value of ARGUMENT(j).

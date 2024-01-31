@@ -4,8 +4,6 @@
 #include <inttypes.h>
 #include "_safety.h"
 
-#undef strtoumax
-
 uintmax_t strtoumax(const char *restrict nptr, char ** restrict endptr, int base)
 {
 	SIGNAL_SAFE(0);
@@ -18,6 +16,8 @@ uintmax_t strtoumax(const char *restrict nptr, char ** restrict endptr, int base
 
 	return ret;
 }
+
+__check_3(uintmax_t, 0, strtoumax, const char *restrict, char ** restrict, int)
 
 /*
 STDC(199901)

@@ -1,6 +1,5 @@
 #include <inttypes.h>
 #include "_safety.h"
-#undef imaxdiv
 
 /** calculate quotient and remainder **/
 
@@ -13,6 +12,8 @@ imaxdiv_t imaxdiv(intmax_t numer, intmax_t denom)
 	r.rem = numer % denom;
 	return r;
 }
+
+__check_2(imaxdiv_t, {0}, imaxdiv, intmax_t, intmax_t)
 
 /***
 computes both the quotient and remainder of ARGUMENT(numer)
