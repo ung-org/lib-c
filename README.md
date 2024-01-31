@@ -1,10 +1,39 @@
 Building
 --------
-First run `configure` to set up the standards conformance. It has help when run
-with -h, which will always be more up-to-date than anything that could be put
-in this document.
+First, determine what level of library support you want. If you only need
+ISO C support, you'll want one of the following targets:
 
-Then run `make`.
+* c89 - ISO/IEC 9899:1990, AKA ANSI X3.159-1989, ANSI C, ISO C, C89, C90
+* c94 - ISO/IEC 9899:1990/AMD1:1995, AKA C94, C95
+* c99 - ISO/IEC 9899:1999, AKA C99
+* c11 - ISO/IEC 9899:2011, AKA C11
+* c11+ext1 - ISO/IEC 9899:2011, AKA C11, with Extension 1
+* c18 - ISO/IEC 9899:2018, AKA C18
+* c18+ext1 - ISO/IEC 9899:2018, AKA C18, with Extension 1
+
+For basic POSIX support:
+
+* posix-1    - POSIX.1-1990 (includes POSIX.1-1988, implies C89)
+* posix-2    - POSIX.1-1990 plus POSIX.2-1992
+* posix-1993 - POSIX.1b-1993 (includes POSIX.1-1990)
+* posix-1995 - POSIX.1-1996
+* posix-2001 - POSIX.1-2001 (implies C99)
+* posix-2008 - POSIX.1-2008 (implies C99)
+
+For complete Single UNIX Specification (X/Open) support:
+
+* susv1 - Single Unix Specification, version 1 (includes POSIX.1-1990 and POSIX.2-1992)
+* susv2 - Single Unix Specification, version 2 (includes POSIX.1-1995)
+* susv3 - Single Unix Specification, version 3 (includes POSIX.1-2001)
+* susv4 - Single Unix Specification, version 4 (includes POSIX.1-2008)
+
+Then run `make` followed by your preferred target. For example, to get a full
+SUSv4 library, run:
+
+    make susv4
+
+If you run `make` without any targets, it will default to the most recently
+selected target. The default target straight from git is `c18+ext1`.
 
 Code Organization
 -----------------
