@@ -1,3 +1,0 @@
-#include <sys/stat.h>
-REFERENCE(sys/types/mode_t.c)
-XOPEN(4)
