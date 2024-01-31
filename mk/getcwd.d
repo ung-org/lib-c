@@ -3,7 +3,7 @@ libc.a(getcwd.o): $(OBJDIR)/getcwd.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/getcwd.o: src/unistd/getcwd.c
-$(OBJDIR)/getcwd.o: src/_assert.h
+$(OBJDIR)/getcwd.o: src/_safety.h
 $(OBJDIR)/getcwd.o: src/_syscall.h
 $(OBJDIR)/getcwd.o:
 	@mkdir -p $(@D)

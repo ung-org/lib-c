@@ -2,7 +2,7 @@
 
 #include <sys/types.h>
 #include "_syscall.h"
-#include "_assert.h"
+#include "_safety.h"
 
 int getgroups(int gidsetsize, gid_t grouplist[])
 {

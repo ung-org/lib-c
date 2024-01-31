@@ -2,7 +2,7 @@
 
 #include <sys/types.h>
 #include <unistd.h>
-#include "_assert.h"
+#include "_safety.h"
 #include "_syscall.h"
 
 int unlink(const char *path)

@@ -10,10 +10,6 @@ check_signal_safety() {
 	if ! (grep -q -F 'SIGNAL_SAFE(' "$1"); then
 		printf '%s has no signal safety information\n' "$1"
 	fi
-
-	if (grep -q -F '_assert.h' "$1"); then
-		printf '%s still refers to _assert.h\n' "$1"
-	fi
 }
 
 check_file() {

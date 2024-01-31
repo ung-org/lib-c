@@ -3,7 +3,7 @@ libc.a(unlink.o): $(OBJDIR)/unlink.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/unlink.o: src/unistd/unlink.c
-$(OBJDIR)/unlink.o: src/_assert.h
+$(OBJDIR)/unlink.o: src/_safety.h
 $(OBJDIR)/unlink.o: src/_syscall.h
 $(OBJDIR)/unlink.o:
 	@mkdir -p $(@D)

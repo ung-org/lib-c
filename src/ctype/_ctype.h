@@ -1,8 +1,8 @@
 #ifndef ___CTYPE_H__
 #define ___CTYPE_H__
 
-#include "_assert.h"
 #include "locale/_locale.h"
+#include "_safety.h"
 
 typedef enum {
 	CT_ALPHA = (1 << 0),

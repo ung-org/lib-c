@@ -4,7 +4,7 @@ libc.a(getgroups.o): $(OBJDIR)/getgroups.o
 
 $(OBJDIR)/getgroups.o: src/unistd/getgroups.c
 $(OBJDIR)/getgroups.o: src/_syscall.h
-$(OBJDIR)/getgroups.o: src/_assert.h
+$(OBJDIR)/getgroups.o: src/_safety.h
 $(OBJDIR)/getgroups.o:
 	@mkdir -p $(@D)
 	$(CC) -c -o $@ $(CFLAGS) src/unistd/getgroups.c

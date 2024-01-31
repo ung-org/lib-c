@@ -1,7 +1,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <stdlib.h>
-#include "_assert.h"
+#include "_safety.h"
 #include "_syscall.h"
 
 int stat(const char * restrict path, struct stat * restrict buf)

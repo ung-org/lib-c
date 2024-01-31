@@ -1,6 +1,6 @@
 #include <sys/utsname.h>
 #include <string.h>
-#include "_assert.h"
+#include "_safety.h"
 
 # define __PLATFORM__ "x86"
 

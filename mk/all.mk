@@ -388,7 +388,6 @@ include mk/shmctl.d
 include mk/shmdt.d
 include mk/ftok.d
 include mk/times.d
-include mk/struct_tms.d
 include mk/waitpid.d
 include mk/wait.d
 include mk/waitid.d

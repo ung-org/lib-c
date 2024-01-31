@@ -3,7 +3,7 @@ libc.a(confstr.o): $(OBJDIR)/confstr.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/confstr.o: src/unistd/confstr.c
-$(OBJDIR)/confstr.o: src/_assert.h
+$(OBJDIR)/confstr.o: src/_safety.h
 $(OBJDIR)/confstr.o: src/unistd/_confstr.h
 $(OBJDIR)/confstr.o:
 	@mkdir -p $(@D)

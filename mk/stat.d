@@ -3,7 +3,7 @@ libc.a(stat.o): $(OBJDIR)/stat.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/stat.o: src/sys/stat/stat.c
-$(OBJDIR)/stat.o: src/_assert.h
+$(OBJDIR)/stat.o: src/_safety.h
 $(OBJDIR)/stat.o: src/_syscall.h
 $(OBJDIR)/stat.o:
 	@mkdir -p $(@D)

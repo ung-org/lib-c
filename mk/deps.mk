@@ -1562,10 +1562,6 @@ all: mk/times.d
 mk/times.d: src/sys/times/times.c
 	sh mk/deps.sh src/sys/times/times.c
 
-all: mk/struct_tms.d
-mk/struct_tms.d: src/sys/times/struct_tms.c
-	sh mk/deps.sh src/sys/times/struct_tms.c
-
 all: mk/waitpid.d
 mk/waitpid.d: src/sys/wait/waitpid.c
 	sh mk/deps.sh src/sys/wait/waitpid.c
