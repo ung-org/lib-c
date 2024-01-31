@@ -1,6 +1,5 @@
 #include <wctype.h>
 #include <string.h>
-#include "_safety.h"
 #include "_wctype.h"
 
 /** lookup character translation **/

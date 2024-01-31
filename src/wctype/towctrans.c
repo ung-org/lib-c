@@ -1,6 +1,6 @@
 #include <wctype.h>
 #include <wchar.h>
-#include "_safety.h"
+#include "_wctype.h"
 
 wint_t towctrans(wint_t wc, wctrans_t desc)
 {

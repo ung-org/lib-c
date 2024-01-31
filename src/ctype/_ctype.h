@@ -4,6 +4,16 @@
 #include "locale/_locale.h"
 #include "_safety.h"
 
+#ifdef NDEBUG
+#define ASSERT_REPRESENTABLE(_n, _min, _max, _type, _sentinel) (void)
+#else
+#define ASSERT_REPRESENTABLE(_n, _min, _max, _type, _sentinel) do { \
+	if (!(((_n) == (_sentinel)) || (((_min) <= (_n)) && ((_n) <= (_max))))) { \
+		__undefined("In call to %s(), parameter %s (value 0x%ju) is not representable as a %s (range [%s, %s]) or exactly %s", __func__, #_n, (uintmax_t)(_n), #_type, #_min, #_max, #_sentinel); \
+	} \
+} while (0)                                                                       
+#endif
+
 typedef enum {
 	CT_ALPHA = (1 << 0),
 	CT_CNTRL = (1 << 1),

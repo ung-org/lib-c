@@ -1,6 +1,6 @@
 #include <wctype.h>
 #include <wchar.h>
-#include "_safety.h"
+#include "_wctype.h"
 
 /** test whether a wide character is printable **/
 int iswprint(wint_t wc)

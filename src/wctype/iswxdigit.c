@@ -1,6 +1,6 @@
 #include <wctype.h>
 #include <wchar.h>
-#include "_safety.h"
+#include "_wctype.h"
 
 /** test whether a wide character is a hexadecimal digit **/
 int iswxdigit(wint_t wc)

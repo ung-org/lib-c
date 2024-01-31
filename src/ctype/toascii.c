@@ -1,4 +1,5 @@
 #include <ctype.h>
+#include "_ctype.h"
 
 /** convert a character to 7-bit ASCII **/
 

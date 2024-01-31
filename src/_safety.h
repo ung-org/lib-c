@@ -5,7 +5,9 @@ _Noreturn void __undefined(const char *, ...);
 
 #include <errno.h>
 #include <stdio.h>
+/*
 #include "stdlib/_stdlib.h"
+*/
 #include "signal/_signal.h"
 
 #if __STDC_VERSION__ >= 199901L
@@ -30,23 +32,11 @@ extern struct __checked_call {
 	} \
 } while (0)
 
-#define ASSERT_NONZERO(__n) do { \
-	if (!__n) { \
-		__undefined("In call to %s(), parameter %s cannot be 0", __func__, #__n); \
-	} \
-} while (0)
-
 #define ASSERT_NOOVERLAP(__p1, __l1, __p2, __l2) do { \
 	char *__s1 = (char*)(__p1); \
 	char *__s2 = (char*)(__p2); \
 	if (((__s1 < __s2) && ((__s1 + (__l1)) >= __s2)) || ((__s1 > __s2) && ((__s2 + (__l2)) >= __s1))) { \
 		__undefined("In call to %s(), parameters %s and %s overlap", __func__, #__p1, #__p2); \
-	} \
-} while (0)
-
-#define ASSERT_REPRESENTABLE(_n, _min, _max, _type, _sentinel) do { \
-	if (!(((_n) == (_sentinel)) || (((_min) <= (_n)) && ((_n) <= (_max))))) { \
-		__undefined("In call to %s(), parameter %s (value 0x%ju) is not representable as a %s (range [%s, %s]) or exactly %s", __func__, #_n, (uintmax_t)(_n), #_type, #_min, #_max, #_sentinel); \
 	} \
 } while (0)
 
@@ -139,10 +129,18 @@ extern struct __checked_call {
 #define __check_4(__type, __def, __fn, __t1, __t2, __t3, __t4) CHECK_4(__type, __def, __fn, __t1, __t2, __t3, __t4)
 #else
 
-#define ASSERT_REPRESENTABLE(_n, _min, _max, _type, _sentinel)
 #define ASSERT_NOOVERLAP(__x, __y, __s)
 #define ASSERT_NONNULL(x)
-#define ASSERT_NONZERO(n)
+#define VCHECK_0(f)
+#define VCHECK_1(f, a)
+#define VCHECK_2(f, a, b)
+#define VCHECK_3(f, a, b, c)
+#define VCHECK_4(f, a, b, c, d)
+#define CHECK_0(t, d, f)
+#define CHECK_1(t, d, f, a)
+#define CHECK_2(t, d, f, a, b)
+#define CHECK_3(t, d, f, a, b, c)
+#define CHECK_4(t, d, f, a, b, c, d)
 
 #endif
 

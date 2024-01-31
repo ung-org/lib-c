@@ -1,6 +1,6 @@
 #include <wctype.h>
 #include <wchar.h>
-#include "_safety.h"
+#include "_wctype.h"
 
 /** test whether a character is a lowercase letter **/
 int iswlower(wint_t wc)

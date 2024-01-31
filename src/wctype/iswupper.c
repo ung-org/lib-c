@@ -1,6 +1,6 @@
 #include <wctype.h>
 #include <wchar.h>
-#include "_safety.h"
+#include "_wctype.h"
 
 /** test whether a wide character is an uppercase letter **/
 int iswupper(wint_t wc)

@@ -10,6 +10,8 @@ static _Noreturn void _Exit(int);
 
 _Noreturn void __undefined(const char *fmt, ...)
 {
+	___signal.current = 0;
+
 	va_list ap;
 	va_start(ap, fmt);
 	fprintf(stderr, "Undefined Behavior: ");

@@ -1,7 +1,7 @@
 #include <wctype.h>
 #include <wchar.h>
 #include <stdlib.h>
-#include "_safety.h"
+#include "_wctype.h"
 
 /** convert a wide uppercase letter to lowercase **/
 wint_t towlower(wint_t wc)

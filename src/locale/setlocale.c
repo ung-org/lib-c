@@ -41,6 +41,7 @@ char * setlocale(int category, const char *locale)
 	default:		return NULL;
 	}
 
+	/* TODO: mark return value read-only */
 	return __load_locale(l, mask, locale);
 }
 

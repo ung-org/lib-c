@@ -1,4 +1,5 @@
 #include <ctype.h>
+#include "_ctype.h"
 
 /** test whether a character is in the ASCII range **/
 

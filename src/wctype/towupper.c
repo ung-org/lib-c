@@ -1,6 +1,6 @@
 #include <wctype.h>
 #include <wchar.h>
-#include "_safety.h"
+#include "_wctype.h"
 
 /** convert a wide lowercase letter to uppercase **/
 wint_t towupper(wint_t wc)

@@ -11,6 +11,7 @@ struct lconv * localeconv(void)
 	/*
 	RETURN_SUCCESS(a pointer to a filled-in STRUCTDEF(lconv) for the current locale);
 	*/
+	/* TODO: mark return value read-only */
 	return &(__get_locale()->lconv);
 }
 

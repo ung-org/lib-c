@@ -1,12 +1,15 @@
 #include <fenv.h>
-#include "_safety.h"
+#include "_fenv.h"
 
 int fesetenv(const fenv_t *envp)
 {
 	SIGNAL_SAFE(0);
+	ASSERT_PREVIOUS_FENV(envp);
 	(void)envp;
 	return 0;
 }
+
+CHECK_1(int, 0, fesetenv, const fenv_t *)
 
 /*
 The fesetenv function establishes the floating-point environment represented by the

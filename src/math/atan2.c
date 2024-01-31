@@ -11,7 +11,6 @@ TYPE TGFN(atan2)(TYPE y, TYPE x)
 	SIGNAL_SAFE(0);
 	int classy = fpclassify(y);
 	int classx = fpclassify(x);
-	ASSERT_NONZERO(x);
 
 	if (classy == FP_ZERO && classx == 0) {
 		if (signbit(x)) {

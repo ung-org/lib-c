@@ -1,5 +1,5 @@
 #include <wctype.h>
-#include "_safety.h"
+#include "_wctype.h"
 
 /** test whether a wide character is blank **/
 int iswblank(wint_t wc)
