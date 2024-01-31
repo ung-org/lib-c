@@ -1,5 +1,3 @@
-#if 0
-
 # define TGSOURCE "nexttoward.c"
 #include "_tgmath.h"
 #include <math.h>
@@ -14,6 +12,3 @@ TYPE TGFN(nexttoward)(TYPE x, TYPE y)
 STDC(199901)
 LINK(m)
 */
-
-
-#endif

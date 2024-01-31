@@ -1,5 +1,3 @@
-#if 0
-
 #include <math.h>
 
 double yn(int n, double x)
@@ -12,6 +10,3 @@ double yn(int n, double x)
 XOPEN(4)
 LINK(m)
 */
-
-
-#endif

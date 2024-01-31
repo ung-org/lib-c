@@ -1,5 +1,3 @@
-#if 0
-
 #include <math.h>
 #define TGSOURCE "remainder.c"
 #include "_tgmath.h"
@@ -14,6 +12,3 @@ XOPEN(400)
 POSIX(200112)
 LINK(m)
 */
-
-
-#endif

@@ -1,5 +1,3 @@
-#if 0
-
 #define TGSOURCE "log2.c"
 #include "_tgmath.h"
 #include <math.h>
@@ -30,6 +28,3 @@ TYPE TGFN(log2)(TYPE x)
 STDC(199901)
 LINK(m)
 */
-
-
-#endif

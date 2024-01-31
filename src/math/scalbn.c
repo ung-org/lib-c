@@ -1,5 +1,3 @@
-#if 0
-
 # define TGSOURCE "scalbn.c"
 #include "_tgmath.h"
 #include <math.h>
@@ -24,6 +22,3 @@ TYPE TGFN(scalbn)(TYPE x, int n)
 STDC(199901)
 LINK(m)
 */
-
-
-#endif

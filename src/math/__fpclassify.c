@@ -1,5 +1,3 @@
-#if 0
-
 # define TGSOURCE "__fpclassify.c"
 #include <math.h>
 #include "_tgmath.h"
@@ -15,6 +13,3 @@ int TGFN(__fpclassify)(TYPE x)
 STDC(0)
 LINK(m)
 */
-
-
-#endif

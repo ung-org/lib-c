@@ -1,6 +1,7 @@
 #ifndef __NONSTD_TGMATH_H__
 #define __NONSTD_TGMATH_H__
 #include <math.h>
+#include "_safety.h"
 
 #ifndef FP_ZERO
 #include "FP_ZERO.h"

@@ -1,5 +1,3 @@
-#if 0
-
 # define TGSOURCE "copysign.c"
 #include "_tgmath.h"
 #include <math.h>
@@ -23,6 +21,3 @@ TYPE TGFN(copysign)(TYPE x, TYPE y)
 STDC(199901)
 LINK(m)
 */
-
-
-#endif

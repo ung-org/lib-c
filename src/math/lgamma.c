@@ -1,5 +1,3 @@
-#if 0
-
 # define TGSOURCE "lgamma.c"
 #include "_tgmath.h"
 #include <math.h>
@@ -31,6 +29,3 @@ STDC(199901)
 XOPEN(4)
 LINK(m)
 */
-
-
-#endif

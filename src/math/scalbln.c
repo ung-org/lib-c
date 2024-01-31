@@ -1,5 +1,3 @@
-#if 0
-
 # define TGSOURCE "scalbln.c"
 #include "_tgmath.h"
 #include <math.h>
@@ -24,6 +22,3 @@ The scalbn and scalbln functions return x × FLT_RADIX n .
 STDC(199901)
 LINK(m)
 */
-
-
-#endif
