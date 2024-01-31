@@ -12,9 +12,14 @@ void * bsearch(const void * key, const void * base, size_t nmemb, size_t size, i
 	const char *addr = base;
 
 	SIGNAL_SAFE(0);
+	ASSERT_NONNULL(key);
+	ASSERT_NONNULL(base);
 	/* overlap can't be detected because the size of key can't be known */
 
+	/* TODO: ensure everything is in order to start with */
+
 	while (ret == NULL) {
+		/* TODO: ensure compar doesn't modify things */
 		int comp = compar(key, addr + (i * size));
 		if (comp == 0) {
 			return (void*)(addr + (i * size));

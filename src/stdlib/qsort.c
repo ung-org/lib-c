@@ -24,6 +24,7 @@ static void __qsort(char *base, size_t size, size_t lo, size_t hi, int (*compar)
 	}
 
 	for (j = lo; j < hi; j++) {
+		/* TODO: ensure compar() doesn't modify things */
 		if (compar(base + (size * j), base + (size * hi)) < 0) {
 			__swap(base, size, i, j);
 			i++;
@@ -38,6 +39,7 @@ static void __qsort(char *base, size_t size, size_t lo, size_t hi, int (*compar)
 void qsort(void * base, size_t nmemb, size_t size, int (*compar)(const void *, const void *))
 {
 	SIGNAL_SAFE(0);
+	ASSERT_NONNULL(base);
 	__qsort(base, size, 0, nmemb - 1, compar);
 }
 
