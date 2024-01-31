@@ -27,22 +27,12 @@ void __init_libc(void)
 	setvbuf(stderr, NULL, _IONBF, 0);
 }
 
-void __main(int argc, char **argv)
+void __main(int (*main)(int, char*[]), int argc, char **argv)
 {
-	extern int main(int, char*[]);
-
 	environ = argv + argc + 1;
 	__init_libc();
 
 	exit(main(argc, argv));
-}
-
-__attribute__((weak))
-int main(int argc, char *argv[])
-{
-	(void)argc;
-	(void)argv;
-	return 0;
 }
 
 void __stack_chk_fail(void) {}
