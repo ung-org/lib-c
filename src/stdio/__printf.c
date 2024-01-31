@@ -1,6 +1,8 @@
 #include <ctype.h>
 #include <stdio.h>
 #include <stddef.h>
+#include <stdlib.h>
+#include <wchar.h>
 
 #ifdef _POSIX_SOURCE
 #include <sys/types.h>
@@ -270,7 +272,8 @@ int (__printf)(struct io_options *opt, const char * format, va_list arg)
 			} else if (length == l) {
 				#if defined __STDC_VERSION__
 				wint_t wc = va_arg(arg, wint_t);
-				char mb[MB_CUR_MAX + 1] = "WC";
+				char mb[MB_CUR_MAX + 1];
+				mb[0] = 'W'; mb[1] = 'C'; mb[2] = '\0';
 				wctomb(mb, wc);
 				nout = __append(s, mb, nout, n);
 				#else
