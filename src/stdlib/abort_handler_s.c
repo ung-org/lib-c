@@ -13,6 +13,10 @@ void abort_handler_s(const char * restrict msg, void * restrict ptr, errno_t err
 
 	puts(msg);
 	if (ci) {
+		if (ci->func) {
+			printf("In call to %s() ", ci->func);
+		}
+
 		if (ci->signal != 0) {
 			/* TODO: map numbers to names as well */
 			printf("While handling signal %d: ", ci->signal);
