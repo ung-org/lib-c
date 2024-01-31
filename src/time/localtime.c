@@ -20,6 +20,8 @@ struct tm * localtime(const time_t * timer)
 	return &tm;
 }
 
+__check_1(struct tm *, NULL, localtime, const time_t *)
+
 /***
 converts the locale time at ARGUMENT(timer) to a filled out STRUCTDEF(tm).
 ***/

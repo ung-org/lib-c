@@ -10,6 +10,8 @@ clock_t clock(void)
 	return (clock_t)-1;
 }
 
+__check_0(clock_t, 0, clock)
+
 /***
 returns the amount of processor time used by the current
 program. To convert this time to seconds, divide it by CONSTANT(CLOCKS_PER_SEC).

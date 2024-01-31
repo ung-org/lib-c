@@ -8,6 +8,8 @@ int timespec_get(struct timespec *ts, int base)
 	return base;
 }
 
+__check_2(int, 0, timespec_get, struct timespec *, int)
+
 /*
 STDC(201112)
 */

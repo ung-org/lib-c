@@ -14,6 +14,8 @@ char * ctime(const time_t * timer)
 	return asctime(localtime(timer));
 }
 
+__check_1(char *, NULL, ctime, const time_t *)
+
 /***
 converts the time at ARGUMENT(timer) to a string in the same format as
 FUNCTION(asctime).

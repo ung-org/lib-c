@@ -152,6 +152,8 @@ size_t strftime(char * restrict s, size_t maxsize, const char * restrict format,
 	return converted;
 }
 
+__check_4(size_t, 0, strftime, char * restrict, size_t, const char * restrict, const struct tm *)
+
 /***
 converts the time at ARGUMENT(timeptr) to a string of no more than
 ARGUMENT(maxsize) bytes at ARGUMENT(s). The format of the converted string

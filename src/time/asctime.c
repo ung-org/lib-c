@@ -24,6 +24,8 @@ char * asctime(const struct tm * timeptr)
 	return result;
 }
 
+__check_1(char *, NULL, asctime, const struct tm *)
+
 /***
 converts the time specified at ARGUMENT(timeptr) to a string
 in the format LITERAL(DDD MMM dd hh:mm:ss yyyy\n\0), where LITERAL(DDD) is the

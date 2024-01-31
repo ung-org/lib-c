@@ -21,6 +21,8 @@ errno_t asctime_s(char *s, rsize_t maxsize, const struct tm * timeptr)
 	return 0;
 }
 
+__check_3(errno_t, 0, asctime_s, char *, rsize_t, const struct tm *)
+
 /***
 The fn(asctime) function converts the time specified at arg(timeptr) to a string
 in the format string(DDD MMM dd hh:mm:ss yyyy\n\0), where str(DDD) is the

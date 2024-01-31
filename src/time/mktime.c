@@ -79,6 +79,8 @@ time_t mktime(struct tm * timeptr)
 		+ timeptr->tm_sec;
 }
 
+__check_1(time_t, 0, mktime, struct tm *)
+
 /***
 converts the local time pointed to by ARGUMENT(timeptr) to
 an arithmetic value of type TYPEDEF(time_t). It also normalizes the values in
