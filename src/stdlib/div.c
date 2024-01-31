@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include "_stdlib.h"
-#undef div
 
 /** calculate quotient and remainder **/
 

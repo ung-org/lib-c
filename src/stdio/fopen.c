@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "_stdio.h"
-#undef fopen
 
 /** open a file stream **/
 

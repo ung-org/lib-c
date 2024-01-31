@@ -1,5 +1,4 @@
 #include "_stdlib.h"
-#undef rand
 
 /** get a pseudo-random number **/
 int rand(void)

@@ -1,6 +1,5 @@
 #include <string.h>
 #include "_safety.h"
-#undef strchr
 
 /** string search **/
 

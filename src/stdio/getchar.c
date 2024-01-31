@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "_stdio.h"
-#undef getchar
 
 /** read a character from stdin **/
 

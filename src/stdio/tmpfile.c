@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "_stdio.h"
-#undef tmpfile
 
 /** open a temporary file stream **/
 

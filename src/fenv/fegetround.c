@@ -1,8 +1,6 @@
 #include <fenv.h>
 #include "_safety.h"
 
-#undef fegetround
-
 int fegetround(void)
 {
 	SIGNAL_SAFE(0);

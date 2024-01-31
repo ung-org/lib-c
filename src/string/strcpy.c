@@ -1,6 +1,5 @@
 #include <string.h>
 #include "_safety.h"
-#undef strcpy
 
 /** copy string **/
 

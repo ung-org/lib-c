@@ -1,6 +1,5 @@
 #include <string.h>
 #include "_safety.h"
-#undef strstr
 
 /** search for substring **/
 

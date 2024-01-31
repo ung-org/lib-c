@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "_stdio.h"
-#undef fgets
 
 /** read a string of characters from a file stream **/
 

@@ -16,8 +16,6 @@
 #define sigaction(_sig, _act, _oact, _size) __scall4(sigaction, _sig, _act, _oact, _size)
 #define SA_RESTART    0x10000000
 #define SA_RESTORER   0x04000000
-#undef SIG_DFL
-#define SIG_DFL  ((void (*)(int)) 0)
 
 void (*signal(int sig, void (*func)(int)))(int)
 {

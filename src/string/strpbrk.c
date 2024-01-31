@@ -1,6 +1,5 @@
 #include <string.h>
 #include "_safety.h"
-#undef strpbrk
 
 /** count matching characters **/
 

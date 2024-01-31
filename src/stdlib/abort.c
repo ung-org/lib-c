@@ -2,8 +2,6 @@
 #include <signal.h>
 #include "_stdlib.h"
 
-#undef abort
-
 /** cause abnormal program termination **/
 
 _Noreturn void abort(void)

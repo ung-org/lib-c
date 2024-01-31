@@ -1,6 +1,5 @@
 #include <time.h>
 #include "_safety.h"
-#undef clock
 
 /** get processor time **/
 

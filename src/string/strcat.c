@@ -1,6 +1,5 @@
 #include <string.h>
 #include "_safety.h"
-#undef strcat
 
 /** concatenate strings **/
 char * strcat(char * restrict s1, const char * restrict s2)
