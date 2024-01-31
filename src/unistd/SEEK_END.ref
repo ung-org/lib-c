@@ -1,3 +1,0 @@
-#include <unistd.h>
-REFERENCE(stdio/SEEK_END.c)
-POSIX(1)

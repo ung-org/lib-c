@@ -1,3 +1,0 @@
-#include <unistd.h>
-REFERENCE(sys/types/pid_t.c)
-XOPEN(4)
