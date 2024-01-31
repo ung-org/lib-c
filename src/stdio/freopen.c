@@ -55,8 +55,10 @@ FILE * freopen(const char * restrict filename, const char * restrict mode, FILE 
 	int fd = -1;
 
 	SIGNAL_SAFE(0);
-	ASSERT_NOOVERLAP(filename, strlen(filename), mode, strlen(mode));
-	ASSERT_NOOVERLAP(filename, strlen(filename), stream, sizeof(*stream));
+	if (filename) {
+		ASSERT_NOOVERLAP(filename, strlen(filename), mode, strlen(mode));
+		ASSERT_NOOVERLAP(filename, strlen(filename), stream, sizeof(*stream));
+	}
 	ASSERT_NOOVERLAP(mode, strlen(mode), stream, sizeof(*stream));
 
 	for (i = 0; i < sizeof(modemap) / sizeof(modemap[0]); i++) {
