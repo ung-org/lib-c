@@ -1,14 +1,18 @@
 #ifndef ___ASSERT_H__
 #define ___ASSERT_H__
 
-#if ! (__STDC_VERSION__ >= 201112 && defined __STDC_WANT_LIB_EXT1__)
-#define abort_handler_s __abort_handler_s
-#endif
+_Noreturn void __undefined(const char *, ...);
 
 #include <errno.h>
 #include <stdio.h>
 #include "stdlib/_stdlib.h"
 #include "signal/_signal.h"
+
+#if __STDC_VERSION__ >= 199901L
+#include <inttypes.h>
+#else
+#include "inttypes/uintmax_t.h"
+#endif
 
 #if 0
 _Thread_local
@@ -22,19 +26,13 @@ extern struct __checked_call {
 #ifndef NDEBUG
 #define ASSERT_NONNULL(__ptr) do { \
 	if (!__ptr) { \
-		struct __constraint_info _ci = {0}; \
-		_ci.func = __func__; \
-		__stdlib.constraint_handler("Undefined behavior: " \
-			"Parameter " #__ptr " can not be NULL", &_ci, 0 /* was EFAULT */); \
+		__undefined("In call to %s(), parameter %s cannot be NULL", __func__, #__ptr); \
 	} \
 } while (0)
 
 #define ASSERT_NONZERO(__n) do { \
 	if (!__n) { \
-		struct __constraint_info _ci = {0}; \
-		_ci.func = __func__; \
-		__stdlib.constraint_handler("Undefined behavior: " \
-			"Parameter " #__n " can not be 0", &_ci, ERANGE); \
+		__undefined("In call to %s(), parameter %s cannot be 0", __func__, #__n); \
 	} \
 } while (0)
 
@@ -42,33 +40,20 @@ extern struct __checked_call {
 	char *__s1 = (char*)(__p1); \
 	char *__s2 = (char*)(__p2); \
 	if (((__s1 < __s2) && ((__s1 + (__l1)) >= __s2)) || ((__s1 > __s2) && ((__s2 + (__l2)) >= __s1))) { \
-		struct __constraint_info _ci = {0}; \
-		_ci.func = __func__; \
-		__stdlib.constraint_handler("Undefined behavior: " \
-			"Parameter " #__p1 " and " #__p2 " overlap", &_ci, 0); \
+		__undefined("In call to %s(), parameters %s and %s overlap", __func__, #__p1, #__p2); \
 	} \
 } while (0)
 
 #define ASSERT_REPRESENTABLE(_n, _min, _max, _type, _sentinel) do { \
 	if (!(((_n) == (_sentinel)) || (((_min) <= (_n)) && ((_n) <= (_max))))) { \
-		struct __constraint_info _ci = {0}; \
-		_ci.func = __func__; \
-		_ci.value = _n; \
-		__stdlib.constraint_handler("Undefined behavior: " \
-			"Parameter " #_n " must be representable as a " #_type \
-			" or be equal to " #_sentinel, &_ci, ERANGE); \
+		__undefined("In call to %s(), parameter %s (value 0x%ju) is not representable as a %s (range [%s, %s]) or exactly %s", __func__, #_n, (uintmax_t)(_n), #_type, #_min, #_max, #_sentinel); \
 	} \
-	} while (0)
+} while (0)
 
 #define SIGNAL_SAFE(__n) do { \
 	if (__n == 0 && ___signal.current != 0) { \
-		struct __constraint_info _ci = {0}; \
-		_ci.func = __func__; \
-		_ci.signal = ___signal.current; \
-		___signal.current = 0; \
-		__stdlib.constraint_handler("Undefined behavior: " \
-			"Standard library function called from signal handler", \
-			&_ci, 0); \
+		int _sig = ___signal.current; \
+		__undefined("Function %s() is not safe to call from a signal handler (signal %d)", __func__, _sig); \
 	} \
 } while (0)
 
