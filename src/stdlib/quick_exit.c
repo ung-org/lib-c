@@ -1,24 +1,35 @@
 #include <stdlib.h>
 #include "_stdlib.h"
+#include "_syscall.h"
 
 /** cause normal quick program termination **/
 _Noreturn void quick_exit(int status)
 {
 	SIGNAL_SAFE(1);
 
+	if (__stdlib.quick_exit_called) {                                         
+		__stdlib.constraint_handler("Undefined behavior: quick_exit() called twice", NULL, 0);
+        }                                                                         
+	if (__stdlib.exit_called) {                                               
+		__stdlib.constraint_handler("Undefined behavior: quick_exit() called after exit", NULL, 0);
+        }                                                                         
+        __stdlib.quick_exit_called = 1;                                                 
+
 	/* execute all at_quick_exit() registered functions in reverse order */
-	/*
-	while (__stdlib.at_quick_exit) {
-		__stdlib.at_quick_exit->fn();
-		__stdlib.at_quick_exit = __stdlib.at_quick_exit->prev;
-	}
-	*/
+	struct atexit *ae = &(__stdlib.at_quick_exit);
+	while (ae) {                                                              
+		int i = ae->nfns;                                                 
+		while (i > 0) {                                                   
+			ae->fns[--i]();                                           
+		}                                                                 
+		ae = ae->prev;                                                    
+	}                                                                         
 
 	fflush(NULL);
 	// fclose(all the things);
 	// remove(all the tmpfile()s);
 	/* TODO */
-	/* __syscall(exit, status); */
+	
 	_Exit(status);
 }
 

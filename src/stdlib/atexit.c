@@ -24,6 +24,7 @@ int atexit(void (*func)(void))
 		ae = ae->next;
 	}
 	ae->fns[ae->nfns++] = func;
+
 	return 0;
 }
 

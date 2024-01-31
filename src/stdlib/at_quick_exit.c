@@ -8,32 +8,21 @@ int at_quick_exit(void (*func)(void))
 {
 	SIGNAL_SAFE(0);
 
-	(void)func;
-
-	/*
-	if (__stdlib.at_quick_exit == NULL) {
-		__stdlib.at_quick_exit = calloc(1,
-			sizeof(*__stdlib.at_quick_exit));
-		if (__stdlib.at_quick_exit == NULL) {
-			errno = ENOMEM;
-			return 1;
+	struct atexit *ae = &(__stdlib.at_quick_exit);
+	while (ae->nfns == sizeof(ae->fns) / sizeof(ae->fns[0])) {
+		if (ae->next == NULL) {
+			ae->next = calloc(1, sizeof(*ae->next));
+			if (ae->next == NULL) {
+				#ifdef ENOMEM
+				errno = ENOMEM;
+				#endif
+				return 1;
+			}
+			ae->next->prev = ae;
 		}
-		__stdlib.at_quick_exit->fn = func;
-		__stdlib.nat_quick_exit = 1;
-		return 0;
+		ae = ae->next;
 	}
-
-	__stdlib.at_quick_exit->next = calloc(1,
-		sizeof(*__stdlib.at_quick_exit->next));
-	if (__stdlib.at_quick_exit->next == NULL) {
-		errno = ENOMEM;
-		return 1;
-	}
-	__stdlib.at_quick_exit->next->fn = func;
-	__stdlib.at_quick_exit->next->prev = __stdlib.at_quick_exit;
-	__stdlib.at_quick_exit = __stdlib.at_quick_exit->next;
-	__stdlib.nat_quick_exit++;
-	*/
+	ae->fns[ae->nfns++] = func;
 
 	return 0;
 }

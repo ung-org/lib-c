@@ -3,10 +3,13 @@
 #include "_stdlib.h"
 #include "_syscall.h"
 
+#if __STDC_VERSION__ < 199901L
+#include "_Exit.c"
+#endif
+
 /** cause normal program termination **/
 _Noreturn void exit(int status)
 {
-	long scno = __syscall_lookup(exit);
 	struct atexit *ae = &(__stdlib.atexit);
 
 	SIGNAL_SAFE(0);
@@ -30,9 +33,7 @@ _Noreturn void exit(int status)
 
 	fflush(NULL);
 	
-	for (;;) {
-		__syscall(scno, status);
-	}
+	_Exit(status);
 }
 
 /***
