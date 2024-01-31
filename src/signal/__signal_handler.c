@@ -1,9 +1,14 @@
 #include <stddef.h>
 #include "_signal.h"
+#include "stdlib/_stdlib.h"
 #include "_safety.h"
 
 void __signal_handler(int sig)
 {
+	if (__stdlib.exit_called == QUICK) {
+		__undefined("signal %d occured during quick_exit", sig);
+	}
+
 	___signal.current = sig;
 	if (___signal.handlers[sig] != NULL) {
 		___signal.handlers[sig](sig);
