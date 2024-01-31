@@ -32,7 +32,6 @@ newdeps: cleandeps
 	printf '.POSIX:\n\nall:\n\n' > mk/deps.mk
 	for i in $$(find src -name \*.c); do sh mk/deps.sh $$i; done
 	for i in $$(find src -name \*.$(ARCHITECTURE)-$(WORDSIZE).s); do sh mk/deps.sh $$i; done
-	touch mk/configured.mk
 
 libung.so: libc.a libm.a
 	$(CC) -o libung.so -shared obj/*.o

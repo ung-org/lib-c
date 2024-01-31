@@ -1,3 +1,0 @@
-#include <sys/timeb.h>
-REFERENCE(time/time_t.c)
-XOPEN(400)

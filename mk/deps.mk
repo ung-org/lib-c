@@ -1414,46 +1414,6 @@ all: mk/mlockall.d
 mk/mlockall.d: src/sys/mman/mlockall.c
 	sh mk/deps.sh src/sys/mman/mlockall.c
 
-all: mk/semctl.d
-mk/semctl.d: src/sys/sem/semctl.c
-	sh mk/deps.sh src/sys/sem/semctl.c
-
-all: mk/semop.d
-mk/semop.d: src/sys/sem/semop.c
-	sh mk/deps.sh src/sys/sem/semop.c
-
-all: mk/semget.d
-mk/semget.d: src/sys/sem/semget.c
-	sh mk/deps.sh src/sys/sem/semget.c
-
-all: mk/getrusage.d
-mk/getrusage.d: src/sys/resource/getrusage.c
-	sh mk/deps.sh src/sys/resource/getrusage.c
-
-all: mk/setrlimit.d
-mk/setrlimit.d: src/sys/resource/setrlimit.c
-	sh mk/deps.sh src/sys/resource/setrlimit.c
-
-all: mk/getrlimit.d
-mk/getrlimit.d: src/sys/resource/getrlimit.c
-	sh mk/deps.sh src/sys/resource/getrlimit.c
-
-all: mk/setpriority.d
-mk/setpriority.d: src/sys/resource/setpriority.c
-	sh mk/deps.sh src/sys/resource/setpriority.c
-
-all: mk/getpriority.d
-mk/getpriority.d: src/sys/resource/getpriority.c
-	sh mk/deps.sh src/sys/resource/getpriority.c
-
-all: mk/fstatvfs.d
-mk/fstatvfs.d: src/sys/statvfs/fstatvfs.c
-	sh mk/deps.sh src/sys/statvfs/fstatvfs.c
-
-all: mk/statvfs.d
-mk/statvfs.d: src/sys/statvfs/statvfs.c
-	sh mk/deps.sh src/sys/statvfs/statvfs.c
-
 all: mk/mkdir.d
 mk/mkdir.d: src/sys/stat/mkdir.c
 	sh mk/deps.sh src/sys/stat/mkdir.c
@@ -1490,78 +1450,6 @@ all: mk/lstat.d
 mk/lstat.d: src/sys/stat/lstat.c
 	sh mk/deps.sh src/sys/stat/lstat.c
 
-all: mk/readv.d
-mk/readv.d: src/sys/uio/readv.c
-	sh mk/deps.sh src/sys/uio/readv.c
-
-all: mk/writev.d
-mk/writev.d: src/sys/uio/writev.c
-	sh mk/deps.sh src/sys/uio/writev.c
-
-all: mk/msgrcv.d
-mk/msgrcv.d: src/sys/msg/msgrcv.c
-	sh mk/deps.sh src/sys/msg/msgrcv.c
-
-all: mk/msgget.d
-mk/msgget.d: src/sys/msg/msgget.c
-	sh mk/deps.sh src/sys/msg/msgget.c
-
-all: mk/msgctl.d
-mk/msgctl.d: src/sys/msg/msgctl.c
-	sh mk/deps.sh src/sys/msg/msgctl.c
-
-all: mk/msgsnd.d
-mk/msgsnd.d: src/sys/msg/msgsnd.c
-	sh mk/deps.sh src/sys/msg/msgsnd.c
-
-all: mk/getitimer.d
-mk/getitimer.d: src/sys/time/getitimer.c
-	sh mk/deps.sh src/sys/time/getitimer.c
-
-all: mk/gettimeofday.d
-mk/gettimeofday.d: src/sys/time/gettimeofday.c
-	sh mk/deps.sh src/sys/time/gettimeofday.c
-
-all: mk/setitimer.d
-mk/setitimer.d: src/sys/time/setitimer.c
-	sh mk/deps.sh src/sys/time/setitimer.c
-
-all: mk/utimes.d
-mk/utimes.d: src/sys/time/utimes.c
-	sh mk/deps.sh src/sys/time/utimes.c
-
-all: mk/select.d
-mk/select.d: src/sys/time/select.c
-	sh mk/deps.sh src/sys/time/select.c
-
-all: mk/ftime.d
-mk/ftime.d: src/sys/timeb/ftime.c
-	sh mk/deps.sh src/sys/timeb/ftime.c
-
-all: mk/shmget.d
-mk/shmget.d: src/sys/shm/shmget.c
-	sh mk/deps.sh src/sys/shm/shmget.c
-
-all: mk/shmat.d
-mk/shmat.d: src/sys/shm/shmat.c
-	sh mk/deps.sh src/sys/shm/shmat.c
-
-all: mk/shmctl.d
-mk/shmctl.d: src/sys/shm/shmctl.c
-	sh mk/deps.sh src/sys/shm/shmctl.c
-
-all: mk/shmdt.d
-mk/shmdt.d: src/sys/shm/shmdt.c
-	sh mk/deps.sh src/sys/shm/shmdt.c
-
-all: mk/ftok.d
-mk/ftok.d: src/sys/ipc/ftok.c
-	sh mk/deps.sh src/sys/ipc/ftok.c
-
-all: mk/times.d
-mk/times.d: src/sys/times/times.c
-	sh mk/deps.sh src/sys/times/times.c
-
 all: mk/waitpid.d
 mk/waitpid.d: src/sys/wait/waitpid.c
 	sh mk/deps.sh src/sys/wait/waitpid.c
@@ -1577,10 +1465,6 @@ mk/waitid.d: src/sys/wait/waitid.c
 all: mk/wait3.d
 mk/wait3.d: src/sys/wait/wait3.c
 	sh mk/deps.sh src/sys/wait/wait3.c
-
-all: mk/uname.d
-mk/uname.d: src/sys/utsname/uname.c
-	sh mk/deps.sh src/sys/utsname/uname.c
 
 all: mk/__assert.d
 mk/__assert.d: src/assert/__assert.c
@@ -2149,10 +2033,6 @@ mk/longjmp.d: src/setjmp/longjmp.c
 all: mk/sigsetjmp.d
 mk/sigsetjmp.d: src/setjmp/sigsetjmp.c
 	sh mk/deps.sh src/setjmp/sigsetjmp.c
-
-all: mk/nl_langinfo.d
-mk/nl_langinfo.d: src/langinfo/nl_langinfo.c
-	sh mk/deps.sh src/langinfo/nl_langinfo.c
 
 all: mk/fputs.d
 mk/fputs.d: src/stdio/fputs.c

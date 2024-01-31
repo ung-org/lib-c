@@ -5,6 +5,7 @@ libc.a(exit.o): $(OBJDIR)/exit.o
 $(OBJDIR)/exit.o: src/stdlib/exit.c
 $(OBJDIR)/exit.o: src/stdlib/_stdlib.h
 $(OBJDIR)/exit.o: src/_syscall.h
+$(OBJDIR)/exit.o: src/stdlib/_Exit.c
 $(OBJDIR)/exit.o:
 	@mkdir -p $(@D)
 	$(CC) -c -o $@ $(CFLAGS) src/stdlib/exit.c

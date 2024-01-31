@@ -1,3 +1,0 @@
-#include <sys/ipc.h>
-REFERENCE(sys/types/gid_t.c)
-XOPEN(4)

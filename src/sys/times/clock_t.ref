@@ -1,3 +1,0 @@
-#include <sys/times.h>
-REFERENCE(time/clock_t.c)
-POSIX(1)

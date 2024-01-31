@@ -1,3 +1,0 @@
-#include <sys/msg.h>
-REFERENCE(time/time_t.c)
-XOPEN(4)

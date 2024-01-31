@@ -1,3 +1,0 @@
-#include <sys/sem.h>
-REFERENCE(sys/types/key_t.c)
-XOPEN(4)
