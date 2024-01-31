@@ -17,6 +17,7 @@
 #define SA_RESTART    0x10000000
 #define SA_RESTORER   0x04000000
 
+__attribute__((noinline, target("no-sse")))
 void (*signal(int sig, void (*func)(int)))(int)
 {
 	/* signal safe iff we are resetting the current signal handler */
@@ -26,8 +27,6 @@ void (*signal(int sig, void (*func)(int)))(int)
 		/* FIXME: should errno be set? */
 		return SIG_ERR;
 	}
-
-	/* TODO: install __signal_handler as a hook */
 
 	void (*prev)(int) = ___signal.handlers[sig];
 	___signal.handlers[sig] = func;

@@ -8,7 +8,13 @@ void __signal_handler(int sig)
 	if (___signal.handlers[sig] != NULL) {
 		___signal.handlers[sig](sig);
 	}
-	/* TODO: if signal is fatal, trigger UB */
+
+	/* TODO: signal number to name */
+	if (sig == SIGFPE || sig == SIGILL || sig == SIGSEGV) {
+		___signal.current = 0;
+		__undefined("Signal handler for signal %d returned", sig);
+	}
+
 	___signal.current = 0;
 }
 
