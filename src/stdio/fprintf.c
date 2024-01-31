@@ -5,6 +5,7 @@
 
 /** write formatted output to a file stream **/
 
+GCC_SSE_HACK
 int fprintf(FILE * restrict stream, const char * restrict format, ...)
 {
 	int ret = 0;

@@ -5,6 +5,7 @@
 
 /** write formatted output to a file stream **/
 
+GCC_SSE_HACK
 int vfprintf(FILE * restrict stream, const char * restrict format, va_list arg)
 {
 	int ret = 0;
