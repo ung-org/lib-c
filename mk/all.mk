@@ -388,6 +388,7 @@ include mk/shmctl.d
 include mk/shmdt.d
 include mk/ftok.d
 include mk/times.d
+include mk/struct_tms.d
 include mk/waitpid.d
 include mk/wait.d
 include mk/waitid.d
@@ -673,7 +674,6 @@ include mk/fesetexceptflag.d
 include mk/fegetround.d
 include mk/fetestexcept.d
 include mk/fegetexceptflag.d
-include mk/__checked_i.d
 include mk/__sys.x86-64.s.d
 include mk/__setjmp.x86-64.s.d
 include mk/__longjmp.x86-64.s.d

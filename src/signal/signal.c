@@ -22,7 +22,7 @@
 void (*signal(int sig, void (*func)(int)))(int)
 {
 	/* signal safe iff we are resetting the current signal handler */
-	SIGNAL_SAFE((__signal.current == sig));
+	SIGNAL_SAFE((___signal.current == sig));
 
 	if (sig < 0 || sig > NSIGNALS) {
 		/* FIXME: should errno be set? */
@@ -31,8 +31,8 @@ void (*signal(int sig, void (*func)(int)))(int)
 
 	/* TODO: install __signal_handler as a hook */
 
-	void (*prev)(int) = __signal.handlers[sig];
-	__signal.handlers[sig] = func;
+	void (*prev)(int) = ___signal.handlers[sig];
+	___signal.handlers[sig] = func;
 
 	struct linux_sigaction act = { 0 };
 	act.sa_handler = __signal_handler;
@@ -48,7 +48,7 @@ void (*signal(int sig, void (*func)(int)))(int)
 }
 
 typedef void (*handler)(int);
-//__check_2(handler, SIG_ERR, signal, int, handler)
+CHECK_2(handler, SIG_ERR, signal, int, handler)
 
 /***
 sets the signal handler for the signal specified by ARGUMENT(sig) to

@@ -4,12 +4,12 @@
 
 void __signal_handler(int sig)
 {
-	__signal.current = sig;
-	if (__signal.handlers[sig] != NULL) {
-		__signal.handlers[sig](sig);
+	___signal.current = sig;
+	if (___signal.handlers[sig] != NULL) {
+		___signal.handlers[sig](sig);
 	}
 	/* TODO: if signal is fatal, trigger UB */
-	__signal.current = 0;
+	___signal.current = 0;
 }
 
 /*

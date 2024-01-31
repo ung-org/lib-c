@@ -1,6 +1,6 @@
 #include "_signal.h"
 
-struct __signal __signal = {0};
+struct __signal ___signal = {0};
 
 /*
 STDC(0)

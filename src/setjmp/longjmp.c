@@ -16,7 +16,7 @@ _Noreturn void longjmp(jmp_buf env, int val)
 	}
 }
 
-__vcheck_2(longjmp, jmp_buf, int)
+VCHECK_2(longjmp, jmp_buf, int)
 
 /***
 restores the environment of a previous call to FUNCTION(setjmp)

@@ -10,7 +10,7 @@ typedef void (*handler)(int);
 extern struct __signal {
 	int current;
 	handler handlers[NSIGNALS];
-} __signal;
+} ___signal;
 
 void __signal_handler(int);
 

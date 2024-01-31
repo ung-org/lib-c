@@ -1562,6 +1562,10 @@ all: mk/times.d
 mk/times.d: src/sys/times/times.c
 	sh mk/deps.sh src/sys/times/times.c
 
+all: mk/struct_tms.d
+mk/struct_tms.d: src/sys/times/struct_tms.c
+	sh mk/deps.sh src/sys/times/struct_tms.c
+
 all: mk/waitpid.d
 mk/waitpid.d: src/sys/wait/waitpid.c
 	sh mk/deps.sh src/sys/wait/waitpid.c
@@ -2709,10 +2713,6 @@ mk/fetestexcept.d: src/fenv/fetestexcept.c
 all: mk/fegetexceptflag.d
 mk/fegetexceptflag.d: src/fenv/fegetexceptflag.c
 	sh mk/deps.sh src/fenv/fegetexceptflag.c
-
-all: mk/__checked_i.d
-mk/__checked_i.d: src/__checked_i.c
-	sh mk/deps.sh src/__checked_i.c
 
 all: mk/__sys.x86-64.s.d
 mk/__sys.x86-64.s.d: src/__sys.x86-64.s

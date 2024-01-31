@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-//#include <errno.h>
+#include <errno.h>
 #include "errno/errno_t.h"
 #include "_stdlib.h"
 
@@ -17,7 +17,7 @@ void abort_handler_s(const char * restrict msg, void * restrict ptr, errno_t err
 			/* TODO: map numbers to names as well */
 			printf("While handling signal %d: ", ci->signal);
 		}
-		printf("Function %s()", ci->func);
+
 		if (__checked_call.file) {
 			printf(" (");
 			if (__checked_call.func) {
