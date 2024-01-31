@@ -4,6 +4,7 @@ libc.a(__signal_handler.o): $(OBJDIR)/__signal_handler.o
 
 $(OBJDIR)/__signal_handler.o: src/signal/__signal_handler.c
 $(OBJDIR)/__signal_handler.o: src/signal/_signal.h
+$(OBJDIR)/__signal_handler.o: src/stdlib/_stdlib.h
 $(OBJDIR)/__signal_handler.o: src/_safety.h
 $(OBJDIR)/__signal_handler.o:
 	@mkdir -p $(@D)

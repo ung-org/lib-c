@@ -3,7 +3,6 @@ libc.a(wctrans.o): $(OBJDIR)/wctrans.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/wctrans.o: src/wctype/wctrans.c
-$(OBJDIR)/wctrans.o: src/_safety.h
 $(OBJDIR)/wctrans.o: src/wctype/_wctype.h
 $(OBJDIR)/wctrans.o:
 	@mkdir -p $(@D)

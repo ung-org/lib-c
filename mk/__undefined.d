@@ -3,6 +3,8 @@ libc.a(__undefined.o): $(OBJDIR)/__undefined.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/__undefined.o: src/__undefined.c
+$(OBJDIR)/__undefined.o: src/_safety.h
+$(OBJDIR)/__undefined.o: src/stdlib/_Exit.c
 $(OBJDIR)/__undefined.o:
 	@mkdir -p $(@D)
 	$(CC) -c -o $@ $(CFLAGS) src/__undefined.c

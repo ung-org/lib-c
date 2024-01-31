@@ -3,7 +3,7 @@ libc.a(towctrans.o): $(OBJDIR)/towctrans.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/towctrans.o: src/wctype/towctrans.c
-$(OBJDIR)/towctrans.o: src/_safety.h
+$(OBJDIR)/towctrans.o: src/wctype/_wctype.h
 $(OBJDIR)/towctrans.o:
 	@mkdir -p $(@D)
 	$(CC) -c -o $@ $(CFLAGS) src/wctype/towctrans.c
