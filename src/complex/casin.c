@@ -1,5 +1,3 @@
-#if 0
-
 # define TGSOURCE "complex/casin.c"
 #include "_tgmath.h"
 
@@ -26,6 +24,3 @@ r*/
 STDC(199901)
 LINK(m)
 */
-
-
-#endif

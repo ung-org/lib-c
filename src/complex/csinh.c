@@ -1,5 +1,3 @@
-#if 0
-
 # define TGSOURCE "complex/csinh.c"
 #include "_tgmath.h"
 #include <complex.h>
@@ -83,7 +81,3 @@ r*/
 STDC(199901)
 LINK(m)
 */
-
-
-
-#endif

@@ -1,5 +1,3 @@
-#if 0
-
 # define TGSOURCE "complex/cabs.c"
 #include <complex.h>
 #include <math.h>
@@ -24,6 +22,3 @@ r*/
 STDC(199901)
 LINK(m)
 */
-
-
-#endif
