@@ -2,6 +2,12 @@
 #include <time.h>
 #include "_safety.h"
 
+#define CHECKRANGE(field, min, max) do {\
+	if (timeptr->tm_##field < min || timeptr->tm_##field > max) { \
+		__undefined("In call to asctime(), the field tm_%s (%d) is out of range [%d, %d] in the provided time", #field, timeptr->tm_##field, min, max); \
+	} \
+} while (0)
+
 /** convert broken down time to string **/
 
 char * asctime(const struct tm * timeptr)
@@ -16,6 +22,16 @@ char * asctime(const struct tm * timeptr)
 	static char result[26];
 
 	SIGNAL_SAFE(0);
+	ASSERT_NONNULL(timeptr);
+
+	CHECKRANGE(sec, 0, 60);
+	CHECKRANGE(min, 0, 59);
+	CHECKRANGE(hour, 0, 23);
+	CHECKRANGE(mday, 1, 31);
+	CHECKRANGE(mon, 0, 11);
+	CHECKRANGE(year, -900, 8100);
+	CHECKRANGE(wday, 0, 6);
+	CHECKRANGE(yday, 0, 365);
 
 	sprintf(result, "%.3s %.3s%3d %.2d:%.2d:%.2d %d\n",
 		days[timeptr->tm_wday], months[timeptr->tm_mon],
