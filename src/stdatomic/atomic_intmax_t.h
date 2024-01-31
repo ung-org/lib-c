@@ -4,3 +4,7 @@ typedef _Atomic intmax_t atomic_intmax_t;
 
 
 #endif
+
+/*
+STDC(201112)
+*/

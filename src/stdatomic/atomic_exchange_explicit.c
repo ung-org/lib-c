@@ -14,3 +14,7 @@ __BASE atomic_exchange_explicit(volatile __TYPE *object, __BASE desired, memory_
 
 
 #endif
+
+/*
+STDC(201112)
+*/

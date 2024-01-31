@@ -6,3 +6,7 @@ typedef enum {
 	memory_order_acq_rel,
 	memory_order_seq_cst,
 } memory_order;
+
+/*
+STDC(201112)
+*/

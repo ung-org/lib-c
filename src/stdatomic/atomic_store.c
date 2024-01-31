@@ -9,3 +9,7 @@ void atomic_store(volatile __TYPE *object, __BASE desired)
 
 
 #endif
+
+/*
+STDC(201112)
+*/

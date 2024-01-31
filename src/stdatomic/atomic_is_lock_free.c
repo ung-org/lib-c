@@ -11,3 +11,7 @@ _Bool atomic_is_lock_free(const volatile __TYPE *obj)
 
 
 #endif
+
+/*
+STDC(201112)
+*/

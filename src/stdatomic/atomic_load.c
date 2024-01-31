@@ -9,3 +9,7 @@ __BASE atomic_store(const volatile __TYPE *object)
 
 
 #endif
+
+/*
+STDC(201112)
+*/

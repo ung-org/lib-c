@@ -4,3 +4,7 @@ typedef _Atomic uint_fast8_t atomic_uint_fast8_t;
 
 
 #endif
+
+/*
+STDC(201112)
+*/

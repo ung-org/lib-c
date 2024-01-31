@@ -4,3 +4,7 @@ typedef _Atomic unsigned char atomic_uchar;
 
 
 #endif
+
+/*
+STDC(201112)
+*/

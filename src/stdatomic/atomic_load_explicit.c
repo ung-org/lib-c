@@ -20,3 +20,7 @@ __BASE atomic_load_explicit(const volatile __TYPE *object, memory_order order)
 
 
 #endif
+
+/*
+STDC(201112)
+*/

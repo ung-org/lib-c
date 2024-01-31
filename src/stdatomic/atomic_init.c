@@ -9,3 +9,7 @@ void atomic_init(volatile __TYPE *obj, __BASE value)
 
 
 #endif
+
+/*
+STDC(201112)
+*/

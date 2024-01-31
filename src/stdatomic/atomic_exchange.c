@@ -9,3 +9,7 @@ __BASE atomic_exchange(volatile __TYPE *object, __BASE desired)
 
 
 #endif
+
+/*
+STDC(201112)
+*/

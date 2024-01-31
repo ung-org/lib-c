@@ -20,3 +20,7 @@ void atomic_store_explicit(volatile __TYPE *object, __BASE desired, memory_order
 
 
 #endif
+
+/*
+STDC(201112)
+*/

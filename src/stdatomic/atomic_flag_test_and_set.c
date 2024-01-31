@@ -11,3 +11,7 @@ _Bool atomic_flag_test_and_set(volatile atomic_flag *object)
 
 
 #endif
+
+/*
+STDC(201112)
+*/

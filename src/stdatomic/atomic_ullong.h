@@ -4,3 +4,7 @@ typedef _Atomic unsigned long long atomic_ullong;
 
 
 #endif
+
+/*
+STDC(201112)
+*/

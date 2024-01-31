@@ -9,3 +9,7 @@ void atomic_flag_clear(volatile atomic_flag *object)
 
 
 #endif
+
+/*
+STDC(201112)
+*/

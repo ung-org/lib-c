@@ -5,3 +5,7 @@ typedef                                                            _Atomic _Bool
 
 
 #endif
+
+/*
+STDC(201112)
+*/

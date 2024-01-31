@@ -16,3 +16,7 @@ _Bool atomic_compare_exchange_strong(volatile __TYPE *object, __BASE *expected, 
 
 
 #endif
+
+/*
+STDC(201112)
+*/

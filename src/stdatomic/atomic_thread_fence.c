@@ -29,3 +29,7 @@ void atomic_thread_fence(memory_order order)
 
 
 #endif
+
+/*
+STDC(201112)
+*/
