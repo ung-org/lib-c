@@ -1,18 +1,15 @@
-#if 0
-//#include <sys/types.h>
-//#include <unistd.h>
-#endif
-
+#include <ctype.h>
 #include <stdio.h>
 #include <stddef.h>
-#include "wctype/wint_t.h"
-#include "wctype/wctrans_t.h"
-#include <wchar.h>
-#include <inttypes.h>
-#include <stdlib.h>
-#include "_stdio.h"
 
-#if (!defined __STDC_VERSION__) || (__STDC_VERSION__ < 199901L)
+#ifdef _POSIX_SOURCE
+#include <sys/types.h>
+#include <unistd.h>
+#endif
+
+#if __STDC_VERSION__ >= 199901L
+#include <inttypes.h>
+#else
 #include "stdint/intmax_t.h"
 #include "stdint/uintmax_t.h"
 #include "stdint/intptr_t.h"
@@ -21,10 +18,7 @@
 #include "inttypes/strtoumax.c"
 #endif
 
-#ifndef _POSIX_SOURCE
-#undef write
-#define write(_fd, _buf, _size) (void)(_fd)
-#endif
+#include "_stdio.h"
 
 #define NUMBUFLEN 64
 
@@ -86,13 +80,8 @@ static void __itos(char *s, intmax_t n, int flags, int precision, int base)
 
 int (__printf)(struct io_options *opt, const char * format, va_list arg)
 {
-	extern int isdigit(int);
-	extern int isupper(int);
-
 	char buf[BUFSIZ];
 	int nout = 0;
-	int fd = -1;
-	struct __FILE *f = NULL;
 
 	intmax_t argint = 0;
 	void *argptr = NULL;
@@ -104,10 +93,9 @@ int (__printf)(struct io_options *opt, const char * format, va_list arg)
 
 	if (opt->stream) {
 		/* file based */
-		f = opt->stream;
 		s = buf;
 		n = BUFSIZ;
-		flockfile(f);
+		flockfile(opt->stream);
 	} else if (opt->string) {
 		/* memory buffer */
 		s = opt->string;
@@ -116,7 +104,6 @@ int (__printf)(struct io_options *opt, const char * format, va_list arg)
 		/* file descriptor */
 		s = buf;
 		n = BUFSIZ;
-		fd = opt->fd;
 	}
 
 	for (i = 0; format[i] != 0; i++) {
@@ -256,14 +243,17 @@ int (__printf)(struct io_options *opt, const char * format, va_list arg)
 
 		case 'f':	/* double [-]ddd.ddd */
 		case 'F':
+			/* fcvt */
 			break;
 
 		case 'e':	/* double [-]d.ddde+/-dd */
 		case 'E':
+			/* ecvt */
 			break;
 
 		case 'g':	/* double f or e see docs */
 		case 'G':
+			/* gcvt */
 			break;
 
 		case 'a':	/* double as hex */
@@ -336,11 +326,13 @@ int (__printf)(struct io_options *opt, const char * format, va_list arg)
 	}
 
 	end:
-	if (f) {
-		fwrite(buf, 1, nout % BUFSIZ, f);
-		funlockfile(f);
-	} else if (fd != -1) {
-		write(fd, buf, nout % BUFSIZ);
+	if (opt->stream) {
+		fwrite(buf, 1, nout % BUFSIZ, opt->stream);
+		funlockfile(opt->stream);
+	#ifdef _POSIX_SOURCE
+	} else if (opt->fd != -1) {
+		write(opt->fd, buf, nout % BUFSIZ);
+	#endif
 	}
 
 	return nout;
