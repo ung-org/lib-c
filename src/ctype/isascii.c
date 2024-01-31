@@ -11,6 +11,8 @@ int isascii(int c)
 	return 0;
 }
 
+__check_1(int, 0, isascii, int)
+
 /***
 tests whether ARGUMENT(c) is a 7-bit US-ASCII character.
 ***/

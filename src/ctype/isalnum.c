@@ -12,6 +12,8 @@ int isalnum(int c)
 	return isalpha(c) || isdigit(c);
 }
 
+__check_1(int, 0, isalnum, int)
+
 /***
 tests whether ARGUMENT(c) is a character in the class
 CHARACTER_CLASS(alpha) or CHARACTER_CLASS(digit) in the current locale.

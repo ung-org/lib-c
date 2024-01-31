@@ -12,6 +12,8 @@ int isalpha(int c)
 	return islower(c) || isupper(c);
 }
 
+__check_1(int, 0, isalpha, int)
+
 /***
 tests whether ARGUMENT(c) is a character in the class
 CHARACTER_CLASS(alpha) in the current locale.

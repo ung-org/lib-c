@@ -8,6 +8,8 @@ int toascii(int c)
 	return (c & 0x7f);
 }
 
+__check_1(int, 0, toascii, int)
+
 /***
 converts ARGUMENT(c) to 7-bit ASCII.
 ***/

@@ -14,6 +14,8 @@ int isprint(int c)
 	return c == EOF ? 0 : map[c] & CT_PRINT;
 }
 
+__check_1(int, 0, isprint, int)
+
 /***
 tests whether ARGUMENT(c) is a character in the class CHARACTER_CLASS(print)
 in the current locale.

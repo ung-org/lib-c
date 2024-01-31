@@ -19,6 +19,8 @@ int tolower(int c)
 	return map[c];
 }
 
+__check_1(int, 0, tolower, int)
+
 /***
 converts an uppercase letter to its equivalent lowercase letter in the current
 locale.

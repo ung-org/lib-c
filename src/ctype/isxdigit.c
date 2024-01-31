@@ -14,6 +14,8 @@ int isxdigit(int c)
 	return c == EOF ? 0 : map[c] & CT_XDIGIT;
 }
 
+__check_1(int, 0, isxdigit, int)
+
 /***
 tests whether ARGUMENT(c) is a character in the class CHARACTER_CLASS(xdigit)
 in the current locale.
