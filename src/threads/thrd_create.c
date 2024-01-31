@@ -24,7 +24,7 @@ int thrd_create(thrd_t *thr, thrd_start_t func, void *arg)
 	return thrd_error;
 }
 
-__check_3(int, 0, thrd_create, thrd_t *, thrd_start_t, void *)
+CHECK_3(int, 0, thrd_create, thrd_t *, thrd_start_t, void *)
 
 /*
 STDC(201112)

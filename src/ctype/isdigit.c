@@ -11,7 +11,7 @@ int isdigit(int c)
 	return isxdigit(c) && !isalpha(c);
 }
 
-__check_1(int, 0, isdigit, int)
+CHECK_1(int, 0, isdigit, int)
 
 /***
 tests whether ARGUMENT(c) is a character in the class CHARACTER_CLASS(digit)

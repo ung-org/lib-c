@@ -12,7 +12,7 @@ int isspace(int c)
 	return c == EOF ? 0 : map[c] & CT_SPACE;
 }
 
-__check_1(int, 0, isspace, int)
+CHECK_1(int, 0, isspace, int)
 
 /***
 tests whether ARGUMENT(c) is a character in the class CHARACTER_CLASS(space)

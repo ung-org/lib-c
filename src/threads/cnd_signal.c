@@ -9,7 +9,7 @@ int cnd_signal(cnd_t *cond)
 	return pthread_cond_signal(cond) == 0 ? thrd_success : thrd_error;
 }
 
-__check_1(int, 0, cnd_signal, cnd_t *)
+CHECK_1(int, 0, cnd_signal, cnd_t *)
 
 /*
 STDC(201112)

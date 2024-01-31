@@ -19,7 +19,7 @@ intmax_t strtoimax(const char * restrict nptr, char ** restrict endptr, int base
 	return ret;
 }
 
-__check_3(intmax_t, 0, strtoimax, const char * restrict, char ** restrict, int)
+CHECK_3(intmax_t, 0, strtoimax, const char * restrict, char ** restrict, int)
 
 /*
 STDC(199901)

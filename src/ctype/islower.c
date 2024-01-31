@@ -12,7 +12,7 @@ int islower(int c)
 	return c == EOF ? 0 : map[c] & CT_LOWER;
 }
 
-__check_1(int, 0, islower, int)
+CHECK_1(int, 0, islower, int)
 
 /***
 tests whether ARGUMENT(c) is a character in the class CHARACTER_CLASS(lower)

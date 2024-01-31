@@ -79,7 +79,7 @@ time_t mktime(struct tm * timeptr)
 		+ timeptr->tm_sec;
 }
 
-__check_1(time_t, 0, mktime, struct tm *)
+CHECK_1(time_t, 0, mktime, struct tm *)
 
 /***
 converts the local time pointed to by ARGUMENT(timeptr) to

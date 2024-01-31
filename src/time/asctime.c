@@ -40,7 +40,7 @@ char * asctime(const struct tm * timeptr)
 	return result;
 }
 
-__check_1(char *, NULL, asctime, const struct tm *)
+CHECK_1(char *, NULL, asctime, const struct tm *)
 
 /***
 converts the time specified at ARGUMENT(timeptr) to a string

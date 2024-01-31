@@ -15,7 +15,7 @@ struct lconv * localeconv(void)
 	return &(__get_locale()->lconv);
 }
 
-__check_0(struct lconv *, NULL, localeconv)
+CHECK_0(struct lconv *, NULL, localeconv)
 
 /***
 fills in a STRUCTDEF(lconv) in the current locale for

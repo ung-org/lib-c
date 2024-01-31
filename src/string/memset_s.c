@@ -17,7 +17,7 @@ errno_t memset_s(void *s, rsize_t smax, int c, rsize_t n)
 	return 0;
 }
 
-__check_4(errno_t, 0, memset_s, void *, rsize_t, int, rsize_t)
+CHECK_4(errno_t, 0, memset_s, void *, rsize_t, int, rsize_t)
 
 /***
 The fn(memset) function fills the first arg(n) bytes of memory at arg(s) with

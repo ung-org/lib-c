@@ -86,7 +86,6 @@ extern struct __checked_call {
 		__setchecked(NULL, NULL, 0); \
 		return ret; \
 	}
-#define __check_0(__type, __def, __fn) CHECK_0(__type, __def, __fn)
 
 #define CHECK_1(__type, __def, __fn, __t1) \
 	__type __##__fn(const char * file, const char * func, unsigned long long line, __t1 a1) { \
@@ -96,7 +95,6 @@ extern struct __checked_call {
 		__setchecked(NULL, NULL, 0); \
 		return ret; \
 	}
-#define __check_1(__type, __def, __fn, __t1) CHECK_1(__type, __def, __fn, __t1)
 
 #define CHECK_2(__type, __def, __fn, __t1, __t2) \
 	__type __##__fn(const char * file, const char * func, unsigned long long line, __t1 a1, __t2 a2) { \
@@ -106,7 +104,6 @@ extern struct __checked_call {
 		__setchecked(NULL, NULL, 0); \
 		return ret; \
 	}
-#define __check_2(__type, __def, __fn, __t1, __t2) CHECK_2(__type, __def, __fn, __t1, __t2)
 
 #define CHECK_3(__type, __def, __fn, __t1, __t2, __t3) \
 	__type __##__fn(const char * file, const char * func, unsigned long long line, __t1 a1, __t2 a2, __t3 a3) { \
@@ -116,7 +113,6 @@ extern struct __checked_call {
 		__setchecked(NULL, NULL, 0); \
 		return ret; \
 	}
-#define __check_3(__type, __def, __fn, __t1, __t2, __t3) CHECK_3(__type, __def, __fn, __t1, __t2, __t3)
 
 #define CHECK_4(__type, __def, __fn, __t1, __t2, __t3, __t4) \
 	__type __##__fn(const char * file, const char * func, unsigned long long line, __t1 a1, __t2 a2, __t3 a3, __t4 a4) { \
@@ -126,7 +122,6 @@ extern struct __checked_call {
 		__setchecked(NULL, NULL, 0); \
 		return ret; \
 	}
-#define __check_4(__type, __def, __fn, __t1, __t2, __t3, __t4) CHECK_4(__type, __def, __fn, __t1, __t2, __t3, __t4)
 #else
 
 #define ASSERT_NOOVERLAP(__x, __y, __s)

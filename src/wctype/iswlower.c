@@ -12,7 +12,7 @@ int iswlower(wint_t wc)
 	return iswctype(wc, lower);
 }
 
-__check_1(int, 0, iswlower, wint_t)
+CHECK_1(int, 0, iswlower, wint_t)
 
 /***
 The fn(iswlower) function tests whether arg(wc) is a wide character in the class

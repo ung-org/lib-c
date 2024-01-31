@@ -23,7 +23,7 @@ int mtx_timedlock(mtx_t *restrict mtx, const struct timespec *restrict ts)
 	return thrd_error;
 }
 
-__check_2(int, 0, mtx_timedlock, mtx_t * restrict, const struct timespec * restrict)
+CHECK_2(int, 0, mtx_timedlock, mtx_t * restrict, const struct timespec * restrict)
 
 /*
 STDC(201112)

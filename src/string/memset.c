@@ -21,7 +21,7 @@ void * memset(void *s, int c, size_t n)
 	return s;
 }
 
-__check_3(void *, 0, memset, void *, int, size_t)
+CHECK_3(void *, 0, memset, void *, int, size_t)
 
 /***
 fills the first ARGUMENT(n) bytes of memory at ARGUMENT(s) with

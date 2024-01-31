@@ -9,7 +9,7 @@ int thrd_join(thrd_t thr, int *res)
 	return pthread_join(thr, (void**)&res) == 0 ? thrd_success : thrd_error;
 }
 
-__check_2(int, 0, thrd_join, thrd_t, int *)
+CHECK_2(int, 0, thrd_join, thrd_t, int *)
 
 /*
 STDC(201112)

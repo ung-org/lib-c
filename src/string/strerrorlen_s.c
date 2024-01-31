@@ -9,7 +9,7 @@ size_t strerrorlen_s(errno_t errnum)
 	return strlen(buffer);
 }
 
-__check_1(size_t, 0, strerrorlen_s, errno_t)
+CHECK_1(size_t, 0, strerrorlen_s, errno_t)
 
 /*
 CEXT1(201112)

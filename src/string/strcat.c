@@ -21,7 +21,7 @@ char * strcat(char * restrict s1, const char * restrict s2)
 	return s1;
 }
 
-__check_2(char *, 0, strcat, char * restrict, const char * restrict)
+CHECK_2(char *, 0, strcat, char * restrict, const char * restrict)
 
 /***
 appends a copy of the string at ARGUMENT(s2) to the end of

@@ -27,7 +27,7 @@ void * memmove(void *s1, const void *s2, size_t n)
 	return s1;
 }
 
-__check_3(void *, 0, memmove, void *, const void *, size_t)
+CHECK_3(void *, 0, memmove, void *, const void *, size_t)
 
 /***
 copies ARGUMENT(n) bytes of memory from the object at

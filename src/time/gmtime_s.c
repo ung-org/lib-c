@@ -11,7 +11,7 @@ struct tm * gmtime_s(const time_t * restrict timer, struct tm * restrict result)
 	return NULL;
 }
 
-__check_2(struct tm *, NULL, gmtime_s, const time_t * restrict, struct tm * restrict)
+CHECK_2(struct tm *, NULL, gmtime_s, const time_t * restrict, struct tm * restrict)
 
 /***
 The fn(gmtime) function converts the UTC time at arg(timer) to a filled out

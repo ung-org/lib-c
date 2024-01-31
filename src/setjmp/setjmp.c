@@ -12,7 +12,7 @@ int setjmp(jmp_buf env)
 	return ___setjmp(env);
 }
 
-__check_1(int, 0, setjmp, jmp_buf)
+CHECK_1(int, 0, setjmp, jmp_buf)
 
 /***
 saves the current state of the calling environment

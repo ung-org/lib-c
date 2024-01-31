@@ -12,7 +12,7 @@ int iswprint(wint_t wc)
 	return iswctype(wc, print);
 }
 
-__check_1(int, 0, iswprint, wint_t)
+CHECK_1(int, 0, iswprint, wint_t)
 
 /***
 The fn(iswprint) function tests whether arg(wc) is a character in the class

@@ -12,7 +12,7 @@ int iswdigit(wint_t wc)
 	return iswctype(wc, digit);
 }
 
-__check_1(int, 0, iswdigit, wint_t)
+CHECK_1(int, 0, iswdigit, wint_t)
 
 /***
 The fn(iswdigit) function tests whether arg(wc) is a wide character in the class

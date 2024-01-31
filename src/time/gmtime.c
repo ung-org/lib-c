@@ -51,7 +51,7 @@ struct tm * gmtime(const time_t * timer)
 	return &tm;
 }
 
-__check_1(struct tm *, 0, gmtime, const time_t *)
+CHECK_1(struct tm *, 0, gmtime, const time_t *)
 
 /***
 converts the UTC time at ARGUMENT(timer) to a filled out STRUCTDEF(tm).

@@ -12,7 +12,7 @@ int iscntrl(int c)
 	return c == EOF ? 0 : map[c] & CT_CNTRL;
 }
 
-__check_1(int, 0, iscntrl, int)
+CHECK_1(int, 0, iscntrl, int)
 
 /***
 tests whether ARGUMENT(c) is a character in the class CHARACTER_CLASS(cntrl)

@@ -35,7 +35,7 @@ int strcmp(const char *s1, const char *s2)
 	return 0;
 }
 
-__check_2(int, 0, strcmp, const char *, const char *)
+CHECK_2(int, 0, strcmp, const char *, const char *)
 
 /***
 compares the strings at ARGUMENT(s1) and ARGUMENT(s2).

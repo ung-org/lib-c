@@ -20,7 +20,7 @@ uintmax_t wcstoumax(const wchar_t * restrict nptr, wchar_t ** restrict endptr, i
 	return ret;
 }
 
-__check_3(uintmax_t, 0, wcstoumax, const wchar_t * restrict, wchar_t ** restrict, int)
+CHECK_3(uintmax_t, 0, wcstoumax, const wchar_t * restrict, wchar_t ** restrict, int)
 
 /*
 STDC(199901)

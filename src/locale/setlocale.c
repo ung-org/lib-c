@@ -45,7 +45,7 @@ char * setlocale(int category, const char *locale)
 	return __load_locale(l, mask, locale);
 }
 
-__check_2(char *, NULL, setlocale, int, const char *)
+CHECK_2(char *, NULL, setlocale, int, const char *)
 
 /***
 sets or retrieves the current global locale of the

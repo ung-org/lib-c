@@ -17,7 +17,7 @@ wctrans_t wctrans(const char * property)
 	return 0;
 }
 
-__check_1(wctrans_t, 0, wctrans, const char *)
+CHECK_1(wctrans_t, 0, wctrans, const char *)
 
 /***
 The fn(wctrans) function looks up the wide character translation mapping

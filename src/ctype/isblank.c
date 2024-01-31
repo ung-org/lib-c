@@ -12,7 +12,7 @@ int isblank(int c)
 	return c == EOF ? 0 : map[c] & CT_BLANK;
 }
 
-__check_1(int, 0, isblank, int)
+CHECK_1(int, 0, isblank, int)
 
 /***
 tests whether a character is a of the character class CCLASS(blank) in the

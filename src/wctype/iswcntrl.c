@@ -12,7 +12,7 @@ int iswcntrl(wint_t wc)
 	return iswctype(wc, cntrl);
 }
 
-__check_1(int, 0, iswcntrl, wint_t)
+CHECK_1(int, 0, iswcntrl, wint_t)
 
 /***
 The fn(iswcntrl) function tests whether arg(wc) is a wide character in the class

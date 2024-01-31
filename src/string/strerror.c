@@ -26,7 +26,7 @@ char * strerror(int errnum)
 	return errstr;
 }
 
-__check_1(char *, 0, strerror, int)
+CHECK_1(char *, 0, strerror, int)
 
 /***
 converts the error number ARGUMENT(errnum) to an error message

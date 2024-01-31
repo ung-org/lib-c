@@ -9,7 +9,7 @@ int thrd_detach(thrd_t thr)
 	return pthread_detach(thr) == 0 ? thrd_success : thrd_error;
 }
 
-__check_1(int, 0, thrd_detach, thrd_t)
+CHECK_1(int, 0, thrd_detach, thrd_t)
 
 /*
 STDC(201112)

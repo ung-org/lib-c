@@ -9,7 +9,7 @@ struct tm * localtime_s(const time_t * restrict timer, struct tm * restrict resu
 	return NULL;
 }
 
-__check_2(struct tm *, NULL, localtime_s, const time_t * restrict, struct tm * restrict)
+CHECK_2(struct tm *, NULL, localtime_s, const time_t * restrict, struct tm * restrict)
 
 /***
 The fn(localtime) function converts the locale time at arg(timer) to a filled

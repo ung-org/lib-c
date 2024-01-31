@@ -10,7 +10,7 @@ int isalpha(int c)
 	return islower(c) || isupper(c);
 }
 
-__check_1(int, 0, isalpha, int)
+CHECK_1(int, 0, isalpha, int)
 
 /***
 tests whether ARGUMENT(c) is a character in the class

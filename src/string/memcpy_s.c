@@ -18,7 +18,7 @@ errno_t memcpy_s(void * restrict s1, rsize_t s1max, const void * restrict s2, rs
 	return 0;
 }
 
-__check_4(errno_t, 0, memcpy_s, void * restrict, rsize_t, const void * restrict, rsize_t)
+CHECK_4(errno_t, 0, memcpy_s, void * restrict, rsize_t, const void * restrict, rsize_t)
 
 /***
 The fn(memcpy) copies arg(n) bytes from the object at arg(s2) to the object at

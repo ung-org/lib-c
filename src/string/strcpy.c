@@ -22,7 +22,7 @@ char * strcpy(char * restrict s1, const char * restrict s2)
 	return p;
 }
 
-__check_2(char *, 0, strcpy, char * restrict, const char * restrict)
+CHECK_2(char *, 0, strcpy, char * restrict, const char * restrict)
 
 /***
 copies the string at ARGUMENT(s2) to ARGUMENT(s1), up to and

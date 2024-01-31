@@ -21,7 +21,7 @@ time_t time(time_t * timer)
 	return (time_t)now;
 }
 
-__check_1(time_t, 0, time, time_t *)
+CHECK_1(time_t, 0, time, time_t *)
 
 /***
 gets the current time. If ARGUMENT(timer) is not CONSTANT(NULL),

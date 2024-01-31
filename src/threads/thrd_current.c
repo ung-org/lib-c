@@ -9,7 +9,7 @@ thrd_t thrd_current(void)
 	return pthread_self();
 }
 
-__check_0(thrd_t, 0, thrd_current)
+CHECK_0(thrd_t, 0, thrd_current)
 
 /*
 STDC(201112)

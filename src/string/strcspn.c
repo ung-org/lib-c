@@ -21,7 +21,7 @@ size_t strcspn(const char *s1, const char *s2)
 	return i;
 }
 
-__check_2(size_t, 0, strcspn, const char *, const char *)
+CHECK_2(size_t, 0, strcspn, const char *, const char *)
 
 /***
 the number of characters that the beginning of

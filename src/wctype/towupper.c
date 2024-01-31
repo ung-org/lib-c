@@ -16,7 +16,7 @@ wint_t towupper(wint_t wc)
 	return towctrans(wc, trans);
 }
 
-__check_1(wint_t, 0, towupper, wint_t)
+CHECK_1(wint_t, 0, towupper, wint_t)
 
 /***
 The fn(towupper) function converts a wide lowercase letter to its equivalent

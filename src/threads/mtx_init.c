@@ -17,7 +17,7 @@ int mtx_init(mtx_t *mtx, int type)
 	return pthread_mutex_init(mtx, &attr) == 0 ? thrd_success : thrd_error;
 }
 
-__check_2(int, 0, mtx_init, mtx_t *, int)
+CHECK_2(int, 0, mtx_init, mtx_t *, int)
 
 /*
 STDC(201112)

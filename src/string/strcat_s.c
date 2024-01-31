@@ -12,7 +12,7 @@ errno_t strcat_s(char * restrict s1, rsize_t s1max, const char * restrict s2)
 	return 0;
 }
 
-__check_3(errno_t, 0, strcat_s, char * restrict, rsize_t, const char * restrict)
+CHECK_3(errno_t, 0, strcat_s, char * restrict, rsize_t, const char * restrict)
 
 /***
 The fn(strcat) function appends a copy of the string at arg(s2) to the end of

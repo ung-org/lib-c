@@ -25,7 +25,7 @@ errno_t strncat_s(char * restrict s1, rsize_t s1max, const char * restrict s2, r
 	return 0;
 }
 
-__check_4(errno_t, 0, strncat_s, char * restrict, rsize_t, const char * restrict, rsize_t)
+CHECK_4(errno_t, 0, strncat_s, char * restrict, rsize_t, const char * restrict, rsize_t)
 
 /***
 The fn(strncat) function appends a copy of the frist arg(n) bytes of the string

@@ -14,7 +14,7 @@ wint_t towctrans(wint_t wc, wctrans_t desc)
 	return 0;
 }
 
-__check_2(wint_t, 0, towctrans, wint_t, wctrans_t)
+CHECK_2(wint_t, 0, towctrans, wint_t, wctrans_t)
 
 /***
 The fn(towctrans) function translates the wide character arg(wc) according to
