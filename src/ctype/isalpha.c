@@ -1,6 +1,4 @@
 #include <ctype.h>
-#include <limits.h>
-#include <stdio.h>
 #include "_ctype.h"
 
 /** test whether a character is alphabetic **/

@@ -1,7 +1,3 @@
-#include <ctype.h>
-#include <limits.h>
-#include <locale.h>
-#include <stdio.h>
 #include "_ctype.h"
 
 /** test whether a character is blank **/

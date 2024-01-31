@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <limits.h>
-#include <stdio.h>
 #include "_ctype.h"
 
 /** convert an uppercase letter to lowercase **/
@@ -12,11 +9,7 @@ int tolower(int c)
 	SIGNAL_SAFE(0);
 	ASSERT_REPRESENTABLE(c, 0, UCHAR_MAX, unsigned char, EOF);
 
-	if (c == EOF) {
-		return EOF;
-	}
-
-	return map[c];
+	return c == EOF ? EOF : map[c];
 }
 
 __check_1(int, 0, tolower, int)

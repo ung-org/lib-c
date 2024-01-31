@@ -1,5 +1,3 @@
-#include <limits.h>
-#include <stdio.h>
 #include "_ctype.h"
 
 /** test whether a character is a hexadecimal digit **/

@@ -1,6 +1,9 @@
 #ifndef ___CTYPE_H__
 #define ___CTYPE_H__
 
+#include <limits.h>
+#include <stdio.h>
+
 #include "locale/_locale.h"
 #include "_safety.h"
 
