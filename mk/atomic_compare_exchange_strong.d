@@ -1,4 +1,4 @@
-libc_C.0: libc.a(atomic_compare_exchange_strong.o)
+libc_C.201112: libc.a(atomic_compare_exchange_strong.o)
 libc.a(atomic_compare_exchange_strong.o): $(OBJDIR)/atomic_compare_exchange_strong.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 

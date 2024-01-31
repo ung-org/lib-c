@@ -1,4 +1,4 @@
-libc_C.0: libc.a(atomic_fetch_xor.o)
+libc_C.201112: libc.a(atomic_fetch_xor.o)
 libc.a(atomic_fetch_xor.o): $(OBJDIR)/atomic_fetch_xor.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 

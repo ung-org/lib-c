@@ -1,4 +1,4 @@
-libc_C.0: libc.a(atomic_thread_fence.o)
+libc_C.201112: libc.a(atomic_thread_fence.o)
 libc.a(atomic_thread_fence.o): $(OBJDIR)/atomic_thread_fence.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 

@@ -1,4 +1,4 @@
-libc_C.0: libc.a(atomic_exchange.o)
+libc_C.201112: libc.a(atomic_exchange.o)
 libc.a(atomic_exchange.o): $(OBJDIR)/atomic_exchange.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 

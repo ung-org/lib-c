@@ -1,4 +1,4 @@
-libc_C.0: libc.a(atomic_signal_fence.o)
+libc_C.201112: libc.a(atomic_signal_fence.o)
 libc.a(atomic_signal_fence.o): $(OBJDIR)/atomic_signal_fence.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 

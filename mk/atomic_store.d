@@ -1,4 +1,4 @@
-libc_C.0: libc.a(atomic_store.o)
+libc_C.201112: libc.a(atomic_store.o)
 libc.a(atomic_store.o): $(OBJDIR)/atomic_store.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 

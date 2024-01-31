@@ -52,6 +52,7 @@ include mk/clog.d
 include mk/cproj.d
 include mk/csin.d
 include mk/cacos.d
+include mk/__undefined.d
 include mk/strspn.d
 include mk/memmove_s.d
 include mk/strtok.d

@@ -1,4 +1,4 @@
-libc_C.0: libc.a(atomic_is_lock_free.o)
+libc_C.201112: libc.a(atomic_is_lock_free.o)
 libc.a(atomic_is_lock_free.o): $(OBJDIR)/atomic_is_lock_free.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 

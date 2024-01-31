@@ -218,6 +218,10 @@ all: mk/cacos.d
 mk/cacos.d: src/complex/cacos.c
 	sh mk/deps.sh src/complex/cacos.c
 
+all: mk/__undefined.d
+mk/__undefined.d: src/__undefined.c
+	sh mk/deps.sh src/__undefined.c
+
 all: mk/strspn.d
 mk/strspn.d: src/string/strspn.c
 	sh mk/deps.sh src/string/strspn.c

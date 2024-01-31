@@ -1,4 +1,4 @@
-libc_C.0: libc.a(atomic_init.o)
+libc_C.201112: libc.a(atomic_init.o)
 libc.a(atomic_init.o): $(OBJDIR)/atomic_init.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
