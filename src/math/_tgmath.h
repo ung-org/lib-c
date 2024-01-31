@@ -1,6 +1,7 @@
 #ifndef __NONSTD_TGMATH_H__
 #define __NONSTD_TGMATH_H__
 #include <math.h>
+#include <fenv.h>
 #include "_safety.h"
 
 #ifndef FP_ZERO
@@ -41,7 +42,7 @@
 #endif
 
 #ifndef copysign
-#define copysign(_x, _y) (_x < 0 ? -_y : _y)
+#define copysign(_x, _y) ((_x) < 0 ? -(_y) : (_y))
 #endif
 
 #ifndef M_PI
