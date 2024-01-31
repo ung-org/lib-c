@@ -10,6 +10,8 @@ size_t mbrtoc16(char16_t * restrict pc16, const char * restrict s, size_t n, mbs
 	return 0;
 }
 
+__check_4(size_t, 0, mbrtoc16, char16_t * restrict, const char * restrict, size_t, mbstate_t * restrict)
+
 /*
 STDC(201112)
 */
