@@ -8,6 +8,7 @@ int strncmp(const char *s1, const char *s2, size_t n)
 	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(s1);
 	ASSERT_NONNULL(s2);
+	/* no modifcation, overlap is OK */
 
 	if (strlen(s1) < n) {
 		n = strlen(s1);

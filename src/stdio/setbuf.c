@@ -8,6 +8,7 @@ void setbuf(FILE * restrict stream, char * restrict buf)
 	SIGNAL_SAFE(0);
 
 	if (buf) {
+		ASSERT_NOOVERLAP(stream, sizeof(*stream), buf, BUFSIZ);
 		setvbuf(stream, buf, _IOFBF, BUFSIZ);
 	} else {
 		setvbuf(stream, NULL, _IONBF, 0);

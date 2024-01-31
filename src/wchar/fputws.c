@@ -6,6 +6,7 @@
 int fputws(const wchar_t * restrict s, FILE * restrict stream)
 {
 	SIGNAL_SAFE(0);
+	/* TODO: overlap */
 
 	const wchar_t *p = s;
 	while (*p != L'\0') {

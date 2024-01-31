@@ -1,5 +1,6 @@
 #include <stdarg.h>
 #include <stdio.h>
+#include <string.h>
 #include "_stdio.h"
 
 /** write formatted output to a file stream **/
@@ -8,7 +9,10 @@ int vfprintf(FILE * restrict stream, const char * restrict format, va_list arg)
 {
 	int ret = 0;
 	struct io_options opt = {0};
+
 	SIGNAL_SAFE(0);
+	ASSERT_NOOVERLAP(stream, sizeof(stream), format, strlen(format));
+
 	opt.fnname = "vfprintf";
 	opt.stream = stream;
 	ret = __printf(&opt, format, arg);

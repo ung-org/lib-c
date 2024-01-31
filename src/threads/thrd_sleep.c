@@ -6,6 +6,8 @@
 int thrd_sleep(const struct timespec *duration, struct timespec *remaining)
 {
 	SIGNAL_SAFE(0);
+	ASSERT_OVERLAP(duration, sizeof(*duration, remaining, sizeof(*remaining));
+
 	return nanosleep(duration, remaining);
 }
 

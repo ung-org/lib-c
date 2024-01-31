@@ -2,11 +2,13 @@
 #include <ctype.h>
 #include <errno.h>
 #include <inttypes.h>
+#include <string.h>
 #include "_safety.h"
 
 uintmax_t strtoumax(const char *restrict nptr, char ** restrict endptr, int base)
 {
 	SIGNAL_SAFE(0);
+	ASSERT_NOOVERLAP(nptr, strlen(nptr), endptr, sizeof(*endptr));
 
 	uintmax_t ret = 0;
 	uintmax_t max = UINTMAX_MAX;

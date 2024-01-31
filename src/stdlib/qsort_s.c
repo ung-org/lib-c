@@ -7,6 +7,7 @@ errno_t qsort_s(void *base, rsize_t nmemb, rsize_t size,
 	void * context)
 {
 	SIGNAL_SAFE(0);
+	/* Overlap can't be detected because size of context is unknowable */
 	(void)base; (void)nmemb; (void)size; (void)compar; (void)context;
 	return 0;
 }

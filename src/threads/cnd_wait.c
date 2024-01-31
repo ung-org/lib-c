@@ -6,6 +6,8 @@
 int cnd_wait(cnd_t *cond, mtx_t *mtx)
 {
 	SIGNAL_SAFE(0);
+	ASSERT_NOOVERLAP(cond, sizeof(*cond), mtx, sizeof(*mtx));
+
 	return pthread_cond_wait(cond, mtx) == 0 ? thrd_success : thrd_error;
 }
 

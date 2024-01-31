@@ -10,6 +10,7 @@
 unsigned long long int wcstoull(const wchar_t * restrict nptr, wchar_t ** restrict endptr, int base)
 {
 	SIGNAL_SAFE(0);
+	/* TODO: overlap */
 
 	unsigned long long int ret = 0;
 	unsigned long long int max = ULLONG_MAX;

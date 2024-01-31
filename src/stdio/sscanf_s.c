@@ -1,11 +1,13 @@
 #include <stdio.h>
 #include <stdarg.h>
+#include <string.h>
 #include "_stdio.h"
 
 /** read formatted input from a string **/
 int sscanf_s(const char * restrict s, const char * restrict format, ...)
 {
 	SIGNAL_SAFE(0);
+	ASSERT_NOOVERLAP(s, strlen(s), format, strlen(format));
 
 	va_list ap;
 	va_start(ap, format);

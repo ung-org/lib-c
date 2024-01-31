@@ -1,5 +1,6 @@
 #include <stdarg.h>
 #include <stdio.h>
+#include <string.h>
 #include "_stdio.h"
 
 /** read formatted input from a string **/
@@ -11,6 +12,7 @@ int sscanf(const char * restrict s, const char * restrict format, ...)
 	struct io_options opt = {0};
 
 	SIGNAL_SAFE(0);
+	ASSERT_NOOVERLAP(s, strlen(s), format, strlen(format));
 
 	opt.fnname = "sscanf";
 	opt.string = (char *)s;

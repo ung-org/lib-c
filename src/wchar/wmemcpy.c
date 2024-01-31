@@ -5,6 +5,7 @@
 wchar_t * wmemcpy(wchar_t * restrict s1, const wchar_t * restrict s2, size_t n)
 {
 	SIGNAL_SAFE(0);
+	/* TODO: overlap */
 
 	size_t i;
 	for (i = 0; i < n; i++) {

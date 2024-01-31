@@ -11,6 +11,7 @@ char * strtok(char * restrict s1, const char * restrict s2)
 	/* TODO */
 	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(s2);
+	/* nothing is copied, overlap is OK */
 
 	/*
 	RETURN(CONSTANT(NULL), there are no further tokens, only token separators);

@@ -10,6 +10,7 @@ wchar_t * fgetws(wchar_t * restrict s, int n, FILE * restrict stream)
 
 	ASSERT_NONNULL(s);
 	ASSERT_NONNULL(stream);
+	/* TODO: overlap */
 
 	if (fwide(stream, 1) <= 0) {
 		/* not a wide stream */

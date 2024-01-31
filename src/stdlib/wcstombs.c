@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <wchar.h>
 #include "_stdlib.h"
 
 /** convert wide character string to multibyte string **/
@@ -6,6 +7,7 @@
 size_t wcstombs(char * restrict s, const wchar_t * restrict pwcs, size_t n)
 {
 	SIGNAL_SAFE(0);
+	ASSERT_NOOVERLAP(s, n, pwcs, wcslen(pwcs));
 
 	(void)s; (void)pwcs; (void)n;
 	/* TODO */

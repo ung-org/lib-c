@@ -10,6 +10,7 @@ int vsprintf(char *s, const char *format, va_list arg)
 	struct io_options opt = {0};
 
 	SIGNAL_SAFE(0);
+	/* overlap can't be detected because the size of s is unknown */
 
 	opt.fnname = "fprintf";
 	opt.string = s;

@@ -6,6 +6,7 @@
 size_t mbstowcs(wchar_t * restrict pwcs, const char * restrict s, size_t n)
 {
 	SIGNAL_SAFE(0);
+	ASSERT_NOOVERLAP(pwcs, n * sizeof(*pwcs), s, n);
 
 	/* FIXME: forward dependency on AMD1 */
 	#if 0

@@ -7,6 +7,10 @@
 int cnd_timedwait(cnd_t *restrict cond, mtx_t *restrict mtx, const struct timespec *restrict ts)
 {
 	SIGNAL_SAFE(0);
+	ASSERT_NOOVERLAP(cond, sizeof(*cond), mtx, sizeof(*mtx));
+	ASSERT_NOOVERLAP(cond, sizeof(*cond), ts, sizeof(*ts));
+	ASSERT_NOOVERLAP(mtx, sizeof(*mtx), ts, sizeof(*ts));
+
 	switch (pthread_cond_timedwait(cond, mtx, ts)) {
 	case 0:
 		return thrd_success;

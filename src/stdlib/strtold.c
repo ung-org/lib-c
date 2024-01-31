@@ -3,6 +3,7 @@
 #include <ctype.h>
 #include <errno.h>
 #include <math.h>
+#include <string.h>
 #include "_stdlib.h"
 
 /** convert string to floating-point **/
@@ -17,6 +18,7 @@ long double strtold(const char * restrict nptr, char ** restrict endptr)
 	long double nan = NAN;
 
 	SIGNAL_SAFE(0);
+	ASSERT_NOOVERLAP(nptr, strlen(nptr), endptr, sizeof(*endptr));
 
 	#include "_strtod.h"
 

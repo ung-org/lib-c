@@ -7,6 +7,7 @@ char * fgets(char * restrict s, int n, FILE * restrict stream)
 {
 	int i = 0;
 	SIGNAL_SAFE(0);
+	ASSERT_NOOVERLAP(s, n, stream, sizeof(*stream));
 
 	if (feof(stream)) {
 		return NULL;

@@ -8,6 +8,7 @@ errno_t memmove_s(void *s1, rsize_t s1max, const void *s2, rsize_t n)
 	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(s1);
 	ASSERT_NONNULL(s2);
+	/* Overlap is explicitly allowed */
 
 	if (n > s1max) {
 		/* do the right thing */

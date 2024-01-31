@@ -1,11 +1,13 @@
 #include <stdio.h>
 #include <stdarg.h>
+#include <string.h>
 #include "_stdio.h"
 
 /** write formatted output to a string **/
 int sprintf_s(char * restrict s, rsize_t n, const char * restrict format, ...)
 {
 	SIGNAL_SAFE(0);
+	ASSERT_NOOVERLAP(s, n, format, strlen(format));
 
 	(void)n;
 

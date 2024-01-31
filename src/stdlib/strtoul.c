@@ -2,6 +2,7 @@
 #include <ctype.h>
 #include <limits.h>
 #include <stdlib.h>
+#include <string.h>
 #include "_stdlib.h"
 
 /** convert string to unsigned long integer **/
@@ -13,6 +14,7 @@ unsigned long int strtoul(const char * nptr, char ** endptr, int base)
         unsigned long int min = 0;
 
 	SIGNAL_SAFE(0);
+	ASSERT_NOOVERLAP(nptr, strlen(nptr), endptr, sizeof(*endptr));
 
         #include "_strtoi.h"
 

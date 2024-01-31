@@ -12,6 +12,7 @@ int sprintf(char * restrict s, const char * restrict format, ...)
 	struct io_options opt = {0};
 
 	SIGNAL_SAFE(0);
+	/* overlap can't be detected because the length of s is unknown */
 
 	opt.fnname = "sprintf";
 	opt.string = s;

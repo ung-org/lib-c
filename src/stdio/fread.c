@@ -9,6 +9,7 @@ size_t fread(void * restrict ptr, size_t size, size_t nmemb, FILE * restrict str
 	size_t n = 0;
 
 	SIGNAL_SAFE(0);
+	ASSERT_NOOVERLAP(ptr, size * nmemb, stream, sizeof(*stream));
 
 	flockfile(stream);
 	while (nmemb) {

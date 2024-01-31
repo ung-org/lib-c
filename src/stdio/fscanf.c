@@ -1,5 +1,6 @@
 #include <stdarg.h>
 #include <stdio.h>
+#include <string.h>
 #include "_stdio.h"
 
 /** read formatted input from a file stream **/
@@ -11,6 +12,7 @@ int fscanf(FILE * restrict stream, const char * restrict format, ...)
 	struct io_options opt = {0};
 
 	SIGNAL_SAFE(0);
+	ASSERT_NOOVERLAP(stream, sizeof(*stream), format, strlen(format));
 
 	opt.fnname = "fscanf";
 	opt.stream = stream;

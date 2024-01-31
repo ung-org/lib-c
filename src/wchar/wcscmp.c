@@ -9,6 +9,7 @@ int wcscmp(const wchar_t * s1, const wchar_t * s2)
 
 	ASSERT_NONNULL(s1);
 	ASSERT_NONNULL(s2);
+	/* TODO: overlap */
 
 	while (*s1 == *s2 && *s1 != L'\0') {
 		s1++;

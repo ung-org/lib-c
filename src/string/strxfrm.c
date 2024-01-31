@@ -9,6 +9,7 @@ size_t strxfrm(char * restrict s1, const char * restrict s2, size_t n)
 	(void)s1; (void)s2; (void)n;
 	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(s2);
+	ASSERT_NOOVERLAP(s1, n, s2, n);
 
 	if (n != 0) {
 		ASSERT_NONNULL(s1);

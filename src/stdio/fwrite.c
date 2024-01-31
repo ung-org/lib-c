@@ -7,7 +7,9 @@ size_t fwrite(const void * restrict ptr, size_t size, size_t nmemb, FILE * restr
 {
 	unsigned char *buf = (unsigned char *)ptr;
 	size_t n = 0;
+
 	SIGNAL_SAFE(0);
+	ASSERT_NOOVERLAP(ptr, size * nmemb, stream, sizeof(*stream));
 
 	while (nmemb) {
 		size_t i;

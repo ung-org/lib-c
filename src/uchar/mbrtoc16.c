@@ -4,6 +4,7 @@
 size_t mbrtoc16(char16_t * restrict pc16, const char * restrict s, size_t n, mbstate_t * restrict ps)
 {
 	SIGNAL_SAFE(0);
+	/* TODO: overlap */
 
 	(void)pc16; (void)s; (void)n; (void)ps;
 

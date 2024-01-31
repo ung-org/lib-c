@@ -11,6 +11,7 @@ size_t wcscspn(const wchar_t * s1, const wchar_t * s2)
 
 	ASSERT_NONNULL(s1);
 	ASSERT_NONNULL(s2);
+	/* TODO: overlap */
 
 	for (i = 0; s1[i] != L'\0'; i++) {
 		if (s1[i] == L'\0' || wcschr(s2, s1[i]) == NULL) {

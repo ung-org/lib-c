@@ -11,6 +11,7 @@
 int swscanf(const wchar_t * restrict s, const wchar_t * restrict format, ...)
 {
 	SIGNAL_SAFE(0);
+	/* TODO: overlap */
 
 	va_list ap;
 	va_start(ap, format);

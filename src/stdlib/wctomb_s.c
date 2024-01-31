@@ -5,6 +5,7 @@
 errno_t wctomb_s(int * restrict status, char * restrict s, rsize_t smax, wchar_t wc)
 {
 	SIGNAL_SAFE(0);
+	ASSERT_NOOVERLAP(status, sizeof(*status), s, smax);
 	(void)status; (void)s; (void)smax; (void)wc;
 	/* TODO */
 	return 0;

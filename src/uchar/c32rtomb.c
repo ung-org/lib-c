@@ -4,6 +4,7 @@
 size_t c32rtomb(char * restrict s, char32_t c32, mbstate_t * restrict ps)
 {
 	SIGNAL_SAFE(0);
+	/* TODO: overlap */
 
 	(void)s; (void)c32; (void)ps;
 

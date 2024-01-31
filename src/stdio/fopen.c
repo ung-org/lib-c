@@ -1,6 +1,7 @@
 #include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "_stdio.h"
 
 /** open a file stream **/
@@ -11,6 +12,7 @@ FILE * fopen(const char * restrict filename, const char * restrict mode)
 	size_t i;
 
 	SIGNAL_SAFE(0);
+	ASSERT_NOOVERLAP(filename, strlen(filename), mode, strlen(mode));
 
 	for (i = 0; i < FOPEN_MAX; i++) {
 		if (__stdio.FILES[i].bmode == 0) {

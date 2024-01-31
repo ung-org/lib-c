@@ -4,6 +4,7 @@
 size_t mbrtoc32(char32_t * restrict pc32, const char * restrict s, size_t n, mbstate_t * restrict ps)
 {
 	SIGNAL_SAFE(0);
+	/* TODO: overlap */
 
 	(void)pc32; (void)s; (void)n; (void)ps;
 

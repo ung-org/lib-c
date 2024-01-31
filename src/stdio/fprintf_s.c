@@ -1,11 +1,13 @@
 #include <stdio.h>
 #include <stdarg.h>
+#include <string.h>
 #include "_stdio.h"
 
 /** write formatted output to a file stream **/
 int fprintf_s(FILE * restrict stream, const char * restrict format, ...)
 {
 	SIGNAL_SAFE(0);
+	ASSERT_NOOVERLAP(stream, sizeof(*stream), format, strlen(format));
 	int retval;
 	va_list ap;
 	va_start(ap, format);

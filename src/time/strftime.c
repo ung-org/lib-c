@@ -1,6 +1,7 @@
 #include <locale.h>
 #include <stdio.h>
 #include <time.h>
+#include <string.h>
 #include "_safety.h"
 #include "locale/_locale.h"
 
@@ -16,6 +17,9 @@ size_t strftime(char * restrict s, size_t maxsize, const char * restrict format,
 	ASSERT_NONNULL(s);
 	ASSERT_NONNULL(format);
 	ASSERT_NONNULL(timeptr);
+	ASSERT_NOOVERLAP(s, maxsize, format, strlen(format));
+	ASSERT_NOOVERLAP(s, maxsize, timeptr, sizeof(*timeptr));
+	ASSERT_NOOVERLAP(format, sizeof(format), timeptr, sizeof(*timeptr));
 
 	#ifdef _POSIX_SOURCE
 	tzset();

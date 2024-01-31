@@ -3,6 +3,7 @@
 #include <float.h>
 #include <math.h>
 #include <stdlib.h>
+#include <string.h>
 #include "_stdlib.h"
 
 #ifndef INFINITY
@@ -25,6 +26,7 @@ double strtod(const char * restrict nptr, char ** restrict endptr)
 	double huge = HUGE_VAL;
 
 	SIGNAL_SAFE(0);
+	ASSERT_NOOVERLAP(nptr, strlen(nptr), endptr, sizeof(*endptr));
 
 	#include "_strtod.h"
 	

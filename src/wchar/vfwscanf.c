@@ -11,6 +11,7 @@
 int vfwscanf(FILE * restrict stream, const wchar_t * restrict format, va_list arg)
 {
 	SIGNAL_SAFE(0);
+	/* TODO: overlap */
 
 	int ret = 0;
 	struct io_options opt = {0};

@@ -7,6 +7,8 @@
 int mtx_timedlock(mtx_t *restrict mtx, const struct timespec *restrict ts)
 {
 	SIGNAL_SAFE(0);
+	ASSERT_NOOVERLAP(mtx, sizeof(*mtx), ts, sizeof(*ts));
+
 	switch (pthread_mutex_timedlock(mtx, ts)) {
 	case 0:
 		return thrd_success;

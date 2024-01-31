@@ -12,6 +12,7 @@ int memcmp(const void *s1, const void *s2, size_t n)
 	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(s1);
 	ASSERT_NONNULL(s2);
+	/* no modifications, so overlap is OK */
 
 	for (i = 0; i < n; i++) {
 		if (p[i] != q[i]) {

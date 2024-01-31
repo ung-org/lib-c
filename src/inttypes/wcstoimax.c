@@ -9,6 +9,7 @@
 intmax_t wcstoimax(const wchar_t * restrict nptr, wchar_t ** restrict endptr, int base)
 {
 	SIGNAL_SAFE(0);
+	ASSERT_NOOVERLAP(nptr, wcslen(nptr), endptr, sizeof(*endptr));
 
 	intmax_t ret = 0;
 	intmax_t max = INTMAX_MAX;

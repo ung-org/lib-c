@@ -1,7 +1,7 @@
 #include <stdio.h>
-#include "_stdio.h"
 #include <string.h>
 #include <stdlib.h>
+#include "_stdio.h"
 
 /** open a file stream **/
 errno_t fopen_s(FILE * restrict * restrict streamptr,
@@ -9,6 +9,8 @@ errno_t fopen_s(FILE * restrict * restrict streamptr,
 	const char * restrict mode)
 {
 	SIGNAL_SAFE(0);
+	ASSERT_NOOVERLAP(streamptr, sizeof(*streamptr), filename, strlen(filename));
+	ASSERT_NOOVERLAP(streamptr, sizeof(*streamptr), mode, strlen(mode));
 	(void)streamptr; (void)filename; (void)mode;
 	return 0;
 }

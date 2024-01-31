@@ -6,6 +6,7 @@
 size_t wcrtomb(char * restrict s, wchar_t wc, mbstate_t * restrict ps)
 {
 	SIGNAL_SAFE(0);
+	/* TODO: overlap */
 
 	char buf[MB_LEN_MAX+1];
 	if (s == NULL) {

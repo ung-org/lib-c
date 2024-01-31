@@ -5,6 +5,10 @@
 errno_t wcstombs_s(size_t * restrict retval, char * restrict dst, rsize_t dstmax, const wchar_t * restrict src, rsize_t len)
 {
 	SIGNAL_SAFE(0);
+	ASSERT_NOOVERLAP(retval, sizeof(*retval), dst, dstmax);
+	ASSERT_NOOVERLAP(retval, sizeof(*retval), src, len);
+	ASSERT_NOOVERLAP(dst, dstmax, src, len);
+
 	(void)retval; (void)dst; (void)dstmax; (void)src; (void)len;
 	/* TODO */
 	return 0;

@@ -7,7 +7,7 @@ errno_t strncat_s(char * restrict s1, rsize_t s1max, const char * restrict s2, r
 	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(s1);
 	ASSERT_NONNULL(s2);
-	(void)s1max; //ASSERT_NOOVERLAP(s1, s1max, s2, strlen(s1) + strlen(s2));
+	ASSERT_NOOVERLAP(s1, s1max, s2, n);
 
 	char *append = s1 + strlen(s1);
 	for (size_t i = 0; i < n; i++) {

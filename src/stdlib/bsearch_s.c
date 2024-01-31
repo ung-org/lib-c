@@ -6,6 +6,7 @@
 void *bsearch_s(const void * key, const void * base, rsize_t nmemb, rsize_t size, int (*compar)(const void *x, const void *y, void * context), void *context)
 {
 	SIGNAL_SAFE(0);
+	/* Overlap can't be detected because the size of the key and context are unknowable */
 
 	/* TODO: testing */
 	(void)size;

@@ -10,6 +10,7 @@
 long int wcstol(const wchar_t * restrict nptr, wchar_t ** restrict endptr, int base)
 {
 	SIGNAL_SAFE(0);
+	/* TODO: overlap */
 
 	long int ret = 0;
 	long int max = LONG_MAX;

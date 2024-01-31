@@ -13,6 +13,7 @@
 wchar_t * wcswcs(const wchar_t * s1, const wchar_t * s2)
 {
 	SIGNAL_SAFE(0);
+	/* TODO: overlap */
 
 	return wcsstr(s1, s2);
 }

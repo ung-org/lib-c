@@ -2,6 +2,7 @@
 #include <errno.h>
 #include <limits.h>
 #include <stdlib.h>
+#include <string.h>
 #include "_stdlib.h"
 
 /** convert string to long integer **/
@@ -13,6 +14,7 @@ long int strtol(const char * restrict nptr, char ** restrict endptr, int base)
 	long int min = LONG_MIN;
 
 	SIGNAL_SAFE(0);
+	ASSERT_NOOVERLAP(nptr, strlen(nptr), endptr, sizeof(*endptr));
 
 	#include "_strtoi.h"
 

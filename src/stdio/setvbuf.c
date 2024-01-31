@@ -8,6 +8,7 @@
 int setvbuf(FILE *stream, char *buf, int mode, size_t size)
 {
 	SIGNAL_SAFE(0);
+	ASSERT_NOOVERLAP(stream, sizeof(*stream), buf, size);
 
 	flockfile(stream);
 

@@ -6,6 +6,7 @@
 int fgetpos(FILE * restrict stream, fpos_t * restrict pos)
 {
 	SIGNAL_SAFE(0);
+	ASSERT_NOOVERLAP(stream, sizeof(*stream), pos, sizeof(*pos));
 
 	flockfile(stream);
 	*pos = stream->pos;
