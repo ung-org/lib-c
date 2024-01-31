@@ -4,25 +4,26 @@
 
 /** write formatted output **/
 
+/* TODO: FIXME! This is a terrible hack around GCC sucking. */
+__attribute__((noinline, target("no-sse")))
 int printf(const char *format, ...)
 {
-	int ret = 0;
-	va_list ap;
 	struct io_options opt = {0};
+	va_list ap;
 
 	SIGNAL_SAFE(0);
 
 	opt.fnname = "printf";
 	opt.stream = stdout;
 	va_start(ap, format);
-	ret = __printf(&opt, format, ap);
+	opt.ret = __printf(&opt, format, ap);
 	va_end(ap);
 
 	/*
 	RETURN_SUCCESS(the number of characters written);
 	RETURN_FAILURE(NEGATIVE);
 	*/
-	return ret;
+	return opt.ret;
 }
 
 /***
