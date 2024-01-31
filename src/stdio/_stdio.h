@@ -20,6 +20,8 @@
 
 #define f_is_open(s) (s && (s->bmode != 0))
 
+#define GCC_SSE_HACK __attribute__((noinline, target("no-sse")))
+
 struct __FILE {
 	fpos_t pos;
 

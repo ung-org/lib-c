@@ -4,6 +4,7 @@
 
 /** write formatted output to a string **/
 
+GCC_SSE_HACK
 int sprintf(char * restrict s, const char * restrict format, ...)
 {
 	int ret = 0;

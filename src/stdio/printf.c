@@ -4,8 +4,7 @@
 
 /** write formatted output **/
 
-/* TODO: FIXME! This is a terrible hack around GCC sucking. */
-__attribute__((noinline, target("no-sse")))
+GCC_SSE_HACK
 int printf(const char *format, ...)
 {
 	struct io_options opt = {0};
