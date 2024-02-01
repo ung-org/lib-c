@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stddef.h>
 #include <stdlib.h>
+#include <string.h>
 #include <wchar.h>
 
 #ifdef _POSIX_SOURCE
@@ -203,6 +204,12 @@ int (__printf)(struct io_options *opt, const char * format, va_list arg)
 			flags |= UPPER;
 		}
 
+		if ((flags & ALT) && (!strchr("xXaAeEfFgG", format[i]))) {
+			__undefined("In call to %s(): The # flag is undefined for %%%c", opt->fnname, format[i]);
+		} else if ((flags & ZERO) && (!strchr("diouxXaAeEfFgG", format[i]))) {
+			__undefined("In call to %s(): The 0 flag is undefined for %%%c", opt->fnname, format[i]);
+		}
+
 		switch (format[i]) {
 		case 'o':	/* unsigned int */
 		case 'u':
@@ -324,7 +331,7 @@ int (__printf)(struct io_options *opt, const char * format, va_list arg)
 			break;
 
 		default:	/* undefined */
-			return -nout;
+			__undefined("In call to %s(): Unknown conversion specifier %%%c", opt->fnname, format[i]);
 		}
 	}
 
