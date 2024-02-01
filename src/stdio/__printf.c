@@ -397,6 +397,9 @@ int (__printf)(struct io_options *opt, const char * format, va_list arg)
 			break;
 
 		case '%':	/* literal '%' */
+			if (specified != 0) {
+				__undefined("In call to %s(): \"%%%%\" conversion is not literally \"%%%%\"", opt->fnname);
+			}
 			if (nout < (int)n) {
 				s[nout] = '%';
 			}
