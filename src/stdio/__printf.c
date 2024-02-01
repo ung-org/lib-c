@@ -33,6 +33,11 @@
 #define UPPER (1 << 5)
 #define UNSIGNED (1 << 6)
 
+#define FLAG (1 << 0)
+#define WIDTH (1 << 1)
+#define PRECISION (1 << 2)
+#define LENGTH (1 << 3)
+
 static int __append(char *s, char *argstring, int nout, size_t n)
 {
 	s += nout;
@@ -118,11 +123,12 @@ int (__printf)(struct io_options *opt, const char * format, va_list arg)
 		//	"z", "t", "L"
 		// conversion specifier "diouxXfFeEgGaAcspn%"
 		*/
-		int flags = 0;
-		/* uintmax_t width = 0; */
+		unsigned int flags = 0;
+		uintmax_t width = 0;
 		int step = 0;
 		int precision = 0;
 		int base = 10;
+		unsigned int specified = 0;
 		enum { def, hh, h, l, ll, j, z, t, L } length = def;
 
 		if (format[i] != '%') {
@@ -136,26 +142,31 @@ int (__printf)(struct io_options *opt, const char * format, va_list arg)
 		while (step == 0) {
 			i++;
 			switch (format[i]) {
-			case '-':	flags |= LEFT; break;
-			case '+':	flags |= SIGN; break;
-			case ' ':	flags |= SPACE; break;
-			case '#':	flags |= ALT; break;
-			case '0':	flags |= ZERO; break;
+			case '-':	flags |= LEFT; specified |= FLAG; break;
+			case '+':	flags |= SIGN; specified |= FLAG; break;
+			case ' ':	flags |= SPACE; specified |= FLAG; break;
+			case '#':	flags |= ALT; specified |= FLAG; break;
+			case '0':	flags |= ZERO; specified |= FLAG; break;
 			default:	step = 1; break;
 			}
 		}
 
 		if (format[i] == '*') {
+			specified |= WIDTH;
+			width = va_arg(arg, int);
 			i++;
 		} else if (isdigit(format[i])) {
-			/*
+			specified |= WIDTH;
+
 			char *end;
 			width = strtoumax(format + i, &end, 10);
 			i = end - format;
-			*/
 		}
+		(void)width; /* TODO!!!! */
 
 		if (format[i] == '.') {
+			specified |= PRECISION;
+
 			i++;
 			if (format[i] == '*') {
 				i++;
@@ -337,6 +348,52 @@ int (__printf)(struct io_options *opt, const char * format, va_list arg)
 			break;
 
 		case 'n':	/* write-back */
+			if (specified & FLAG) {
+				__undefined("In call to %s(): Flags with %%n conversion", opt->fnname);
+			} else if (specified & 0) {
+				/* TODO: output suppression (might only be for input) */
+			} else if (specified & WIDTH) {
+				__undefined("In call to %s(): Width with %%n conversion", opt->fnname);
+			} else if (specified & PRECISION) {
+				__undefined("In call to %s(): Precision with %%n conversion", opt->fnname);
+			}
+
+			switch (length) {
+			case def:
+				int *ip = va_arg(arg, int *);
+				*ip = nout;
+				break;
+			case hh:
+				signed char *sc = va_arg(arg, signed char *);
+				*sc = nout;
+				break;
+			case h:
+				short int *si = va_arg(arg, short int *);
+				*si = nout;
+				break;
+			case l:
+				long int *li = va_arg(arg, long int *);
+				*li = nout;
+				break;
+			case ll:
+				long long int *lli = va_arg(arg, long long int *);
+				*lli = nout;
+				break;
+			case j:
+				intmax_t *im = va_arg(arg, intmax_t *);
+				*im = nout;
+				break;
+			case z:
+				size_t *sz = va_arg(arg, size_t *);
+				*sz = nout;
+				break;
+			case t:
+				ptrdiff_t *pd = va_arg(arg, ptrdiff_t *);
+				*pd = nout;
+				break;
+			case L:
+				__undefined("In call to %s(): Invalid length 'L' for %%n conversion", opt->fnname);
+			}
 			break;
 
 		case '%':	/* literal '%' */
