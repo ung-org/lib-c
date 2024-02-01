@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#define NEED_COMPAR
 #include "_stdlib.h"
 
 /** binary search **/
@@ -14,13 +15,20 @@ void * bsearch(const void * key, const void * base, size_t nmemb, size_t size, i
 	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(key);
 	ASSERT_NONNULL(base);
-	/* overlap can't be detected because the size of key can't be known */
+	/* assume that key exists in base, don't check for overlap */
 
 	/* TODO: ensure everything is in order to start with */
+	#ifndef NDEBUG
+	for (size_t i = 0; nmemb != 0 && i < nmemb - 1; i++) {
+		if (SAFE_COMPAR(compar, addr + (i * size), addr + ((i + 1) * size), size, "bsearch") > 0) {
+			__undefined("In call to bsearch(): Base array is not sorted");
+		}
+	}
+	#endif
 
 	while (ret == NULL) {
 		/* TODO: ensure compar doesn't modify things */
-		int comp = compar(key, addr + (i * size));
+		int comp = SAFE_COMPAR(compar, key, addr + (i * size), size, "bsearch");
 		if (comp == 0) {
 			return (void*)(addr + (i * size));
 		} else if (comp > 0) {

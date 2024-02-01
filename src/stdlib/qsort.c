@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#define NEED_COMPAR
 #include "_stdlib.h"
 
 /** sort an array **/
@@ -24,8 +25,7 @@ static void __qsort(char *base, size_t size, size_t lo, size_t hi, int (*compar)
 	}
 
 	for (j = lo; j < hi; j++) {
-		/* TODO: ensure compar() doesn't modify things */
-		if (compar(base + (size * j), base + (size * hi)) < 0) {
+		if (SAFE_COMPAR(compar, base + (size * j), base + (size * hi), size, "qsort") < 0) {
 			__swap(base, size, i, j);
 			i++;
 		}

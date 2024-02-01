@@ -5,6 +5,32 @@
 #include <limits.h>
 #include "_safety.h"
 
+#ifdef NEED_COMPAR
+#ifdef NDEBUG
+#define SAFE_COMPAR(__comp, __p1, __p2, __sz, __fn) __comp(__p1, __p2)
+#else
+static unsigned __hash(const void *p, size_t size) {
+	unsigned int h = 0;
+	const unsigned char *s = p;
+	for (size_t i = 0; i < size; i++) {
+		h <<= CHAR_BIT;
+		h |= s[i];
+	}
+	return h;
+}
+static int __safe_compar(int (*compar)(const void *, const void *), const void *p1, const void *p2, size_t size, const char *fn) {
+	unsigned int h1 = __hash(p1, size);
+	unsigned int h2 = __hash(p2, size);
+	int ret = compar(p1, p2);
+	if (h1 != __hash(p1, size) || h2 != __hash(p2, size)) {
+		__undefined("In call to %s(): Comparison function modifies parameters", fn);
+	}
+	return ret;
+}
+#define SAFE_COMPAR(__comp, __p1, __p2, __sz, __fn) __safe_compar(__comp, __p1, __p2, __sz, __fn)
+#endif
+#endif
+
 #define _rand(_n) \
 	(((_n) = (_n) * 1103515245 + 12345) ? (_n) / UINT_MAX % RAND_MAX : 0)
 
