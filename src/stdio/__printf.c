@@ -205,9 +205,25 @@ int (__printf)(struct io_options *opt, const char * format, va_list arg)
 		}
 
 		if ((flags & ALT) && (!strchr("xXaAeEfFgG", format[i]))) {
-			__undefined("In call to %s(): The # flag is undefined for %%%c", opt->fnname, format[i]);
+			__undefined("In call to %s(): The '#' flag is undefined for %%%c", opt->fnname, format[i]);
 		} else if ((flags & ZERO) && (!strchr("diouxXaAeEfFgG", format[i]))) {
-			__undefined("In call to %s(): The 0 flag is undefined for %%%c", opt->fnname, format[i]);
+			__undefined("In call to %s(): The '0' flag is undefined for %%%c", opt->fnname, format[i]);
+		} else if ((length == hh) && (!strchr("diouxXn", format[i]))) {
+			__undefined("In call to %s(): The length 'hh' is undefined for %%%c", opt->fnname, format[i]);
+		} else if ((length == h) && (!strchr("diouxXn", format[i]))) {
+			__undefined("In call to %s(): The length 'h' is undefined for %%%c", opt->fnname, format[i]);
+		} else if ((length == l) && (!strchr("diouxXncsaAeEfFgG", format[i]))) {
+			__undefined("In call to %s(): The length 'l' is undefined for %%%c", opt->fnname, format[i]);
+		} else if ((length == ll) && (!strchr("diouxXn", format[i]))) {
+			__undefined("In call to %s(): The length 'll' is undefined for %%%c", opt->fnname, format[i]);
+		} else if ((length == j) && (!strchr("diouxXn", format[i]))) {
+			__undefined("In call to %s(): The length 'j' is undefined for %%%c", opt->fnname, format[i]);
+		} else if ((length == z) && (!strchr("diouxXn", format[i]))) {
+			__undefined("In call to %s(): The length 'z' is undefined for %%%c", opt->fnname, format[i]);
+		} else if ((length == t) && (!strchr("diouxXn", format[i]))) {
+			__undefined("In call to %s(): The length 't' is undefined for %%%c", opt->fnname, format[i]);
+		} else if ((length == L) && (!strchr("aAeEfFgG", format[i]))) {
+			__undefined("In call to %s(): The length 'L' is undefined for %%%c", opt->fnname, format[i]);
 		}
 
 		switch (format[i]) {
