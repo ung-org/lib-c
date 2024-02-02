@@ -7,6 +7,10 @@ imaxdiv_t imaxdiv(intmax_t numer, intmax_t denom)
 {
 	SIGNAL_SAFE(0);
 
+	if ((denom == 0) || (numer == INTMAX_MIN && denom == -1)) {
+		UNDEFINED("In call to imaxdiv(): The result of %jd / %jd is not representable as an intmax_t", numer, denom);
+	}
+
 	imaxdiv_t r;
 	r.quot = numer / denom;
 	r.rem = numer % denom;

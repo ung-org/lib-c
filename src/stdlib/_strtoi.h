@@ -106,6 +106,7 @@
 
 		if (ret > max / base) {
 			overflow = 1;
+			UNDEFINED("In call to %s(): %s (base %d) is not representable", __func__, start, base);
 		} else {
 			ret = (ret * base) + n;
 		}

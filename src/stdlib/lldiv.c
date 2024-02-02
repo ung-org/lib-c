@@ -1,3 +1,4 @@
+#include <limits.h>
 #include <stdlib.h>
 #include "_stdlib.h"
 
@@ -6,12 +7,17 @@
 lldiv_t lldiv(long long int numer, long long int denom)
 {
 	SIGNAL_SAFE(0);
+	if ((denom == 0) || (numer == LLONG_MIN && denom == -1)) {
+		UNDEFINED("In call to lldiv(): The result of %lld / %lld is not representable as a long long int", numer, denom);
+	}
 
 	lldiv_t d;
 	d.quot = numer / denom;
 	d.rem = numer % denom;
 	return d;
 }
+
+CHECK_2(lldiv_t, {0}, lldiv, long long int, long long int)
 
 /***
 computes both the quotient and remainder of ARGUMENT(numer)

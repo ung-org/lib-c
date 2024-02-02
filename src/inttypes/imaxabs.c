@@ -8,7 +8,7 @@ intmax_t imaxabs(intmax_t j)
 	SIGNAL_SAFE(0);
 
 	if (j == INTMAX_MIN) {
-		/* undefined behavior */
+		UNDEFINED("In call to imaxabs(): The absoluate value of INTMAX_MIN is not representable as an intmax_t");
 		return INTMAX_MIN;
 	}
 	
