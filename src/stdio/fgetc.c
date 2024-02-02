@@ -12,9 +12,12 @@
 int fgetc(FILE *stream)
 {
 	SIGNAL_SAFE(0);
+	ASSERT_STREAM(stream, ORIENT_BYTE, OP_INPUT);
+
 	flockfile(stream);
 	char c = getc_unlocked(stream);
 	funlockfile(stream);
+
 	/*
 	RETURN_SUCCESS(the next character);
 	RETURN_FAILURE(CONSTANT(EOF));

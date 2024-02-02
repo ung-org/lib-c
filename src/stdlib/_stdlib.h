@@ -23,7 +23,7 @@ static int __safe_compar(int (*compar)(const void *, const void *), const void *
 	unsigned int h2 = __hash(p2, size);
 	int ret = compar(p1, p2);
 	if (h1 != __hash(p1, size) || h2 != __hash(p2, size)) {
-		__undefined("In call to %s(): Comparison function modifies parameters", fn);
+		UNDEFINED("In call to %s(): Comparison function modifies parameters", fn);
 	}
 	return ret;
 }

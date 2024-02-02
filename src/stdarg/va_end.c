@@ -2,7 +2,7 @@
 
 void va_end()
 {
-	__undefined("The va_end() macro has been suppressed to access an actual function");
+	UNDEFINED("The va_end() macro has been suppressed to access an actual function");
 }
 
 /*

@@ -6,8 +6,15 @@
 int fseek(FILE *stream, long int offset, int whence)
 {
 	SIGNAL_SAFE(0);
+	ASSERT_STREAM(stream, 0, 0);
 
-	(void)stream; (void)offset;
+	if (stream->text && offset != 0) {
+		if (whence != SEEK_SET) {
+			UNDEFINED("In call to fseek(): Only SEEK_SET is supported for text files");
+		}
+		/* if offset is not previous */
+		/* UNDEFINED("fseek() on text files requires an offset previously returned by ftell()"); */
+	}
 
 	if (whence == SEEK_CUR) {
 	} else if (whence == SEEK_END) {

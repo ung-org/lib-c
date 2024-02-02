@@ -169,15 +169,14 @@ int (__printf)(struct io_options *opt, const char * format, va_list arg)
 
 			i++;
 			if (format[i] == '*') {
+				/* TODO */
 				i++;
 			} else if (isdigit(format[i])) {
 				char *end;
 				precision = (int)strtoumax(format + i, &end, 10);
 				i = end - format;
 			} else {
-				/* invalid precision */
-				nout = -nout;
-				goto end;
+				precision = 0;
 			}
 		}
 
@@ -216,25 +215,25 @@ int (__printf)(struct io_options *opt, const char * format, va_list arg)
 		}
 
 		if ((flags & ALT) && (!strchr("xXaAeEfFgG", format[i]))) {
-			__undefined("In call to %s(): The '#' flag is undefined for %%%c", opt->fnname, format[i]);
+			UNDEFINED("In call to %s(): The '#' flag is undefined for %%%c", opt->fnname, format[i]);
 		} else if ((flags & ZERO) && (!strchr("diouxXaAeEfFgG", format[i]))) {
-			__undefined("In call to %s(): The '0' flag is undefined for %%%c", opt->fnname, format[i]);
+			UNDEFINED("In call to %s(): The '0' flag is undefined for %%%c", opt->fnname, format[i]);
 		} else if ((length == hh) && (!strchr("diouxXn", format[i]))) {
-			__undefined("In call to %s(): The length 'hh' is undefined for %%%c", opt->fnname, format[i]);
+			UNDEFINED("In call to %s(): The length 'hh' is undefined for %%%c", opt->fnname, format[i]);
 		} else if ((length == h) && (!strchr("diouxXn", format[i]))) {
-			__undefined("In call to %s(): The length 'h' is undefined for %%%c", opt->fnname, format[i]);
+			UNDEFINED("In call to %s(): The length 'h' is undefined for %%%c", opt->fnname, format[i]);
 		} else if ((length == l) && (!strchr("diouxXncsaAeEfFgG", format[i]))) {
-			__undefined("In call to %s(): The length 'l' is undefined for %%%c", opt->fnname, format[i]);
+			UNDEFINED("In call to %s(): The length 'l' is undefined for %%%c", opt->fnname, format[i]);
 		} else if ((length == ll) && (!strchr("diouxXn", format[i]))) {
-			__undefined("In call to %s(): The length 'll' is undefined for %%%c", opt->fnname, format[i]);
+			UNDEFINED("In call to %s(): The length 'll' is undefined for %%%c", opt->fnname, format[i]);
 		} else if ((length == j) && (!strchr("diouxXn", format[i]))) {
-			__undefined("In call to %s(): The length 'j' is undefined for %%%c", opt->fnname, format[i]);
+			UNDEFINED("In call to %s(): The length 'j' is undefined for %%%c", opt->fnname, format[i]);
 		} else if ((length == z) && (!strchr("diouxXn", format[i]))) {
-			__undefined("In call to %s(): The length 'z' is undefined for %%%c", opt->fnname, format[i]);
+			UNDEFINED("In call to %s(): The length 'z' is undefined for %%%c", opt->fnname, format[i]);
 		} else if ((length == t) && (!strchr("diouxXn", format[i]))) {
-			__undefined("In call to %s(): The length 't' is undefined for %%%c", opt->fnname, format[i]);
+			UNDEFINED("In call to %s(): The length 't' is undefined for %%%c", opt->fnname, format[i]);
 		} else if ((length == L) && (!strchr("aAeEfFgG", format[i]))) {
-			__undefined("In call to %s(): The length 'L' is undefined for %%%c", opt->fnname, format[i]);
+			UNDEFINED("In call to %s(): The length 'L' is undefined for %%%c", opt->fnname, format[i]);
 		}
 
 		switch (format[i]) {
@@ -297,6 +296,10 @@ int (__printf)(struct io_options *opt, const char * format, va_list arg)
 			break;
 
 		case 'c':	/* char */
+			if (specified & PRECISION) {
+				UNDEFINED("In call to %s(): Precision with %%c conversions", opt->fnname);
+			}
+
 			if (length == def) {
 				char c = va_arg(arg, int);
 				if (nout < (int)n) {
@@ -341,6 +344,9 @@ int (__printf)(struct io_options *opt, const char * format, va_list arg)
 			break;
 
 		case 'p':	/* pointer */
+			if (specified & PRECISION) {
+				UNDEFINED("In call to %s(): Precision with %%p conversion", opt->fnname);
+			}
 			argptr = va_arg(arg, void *);
 			nout = __append(s, "0x", nout, n);
 			__itos(numbuf, (intptr_t)argptr, ZERO, sizeof(argptr) * 2, 16);
@@ -349,13 +355,13 @@ int (__printf)(struct io_options *opt, const char * format, va_list arg)
 
 		case 'n':	/* write-back */
 			if (specified & FLAG) {
-				__undefined("In call to %s(): Flags with %%n conversion", opt->fnname);
+				UNDEFINED("In call to %s(): Flags with %%n conversion", opt->fnname);
 			} else if (specified & 0) {
 				/* TODO: output suppression (might only be for input) */
 			} else if (specified & WIDTH) {
-				__undefined("In call to %s(): Width with %%n conversion", opt->fnname);
+				UNDEFINED("In call to %s(): Width with %%n conversion", opt->fnname);
 			} else if (specified & PRECISION) {
-				__undefined("In call to %s(): Precision with %%n conversion", opt->fnname);
+				UNDEFINED("In call to %s(): Precision with %%n conversion", opt->fnname);
 			}
 
 			switch (length) {
@@ -392,13 +398,13 @@ int (__printf)(struct io_options *opt, const char * format, va_list arg)
 				*pd = nout;
 				break;
 			case L:
-				__undefined("In call to %s(): Invalid length 'L' for %%n conversion", opt->fnname);
+				UNDEFINED("In call to %s(): Invalid length 'L' for %%n conversion", opt->fnname);
 			}
 			break;
 
 		case '%':	/* literal '%' */
 			if (specified != 0) {
-				__undefined("In call to %s(): \"%%%%\" conversion is not literally \"%%%%\"", opt->fnname);
+				UNDEFINED("In call to %s(): \"%%%%\" conversion is not literally \"%%%%\"", opt->fnname);
 			}
 			if (nout < (int)n) {
 				s[nout] = '%';
@@ -407,7 +413,7 @@ int (__printf)(struct io_options *opt, const char * format, va_list arg)
 			break;
 
 		default:	/* undefined */
-			__undefined("In call to %s(): Unknown conversion specifier %%%c", opt->fnname, format[i]);
+			UNDEFINED("In call to %s(): Unknown conversion specifier %%%c", opt->fnname, format[i]);
 		}
 	}
 

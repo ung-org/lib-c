@@ -20,7 +20,7 @@ int raise(int sig)
 {
 	SIGNAL_SAFE(0);
 	if (__stdlib.exit_called == QUICK) {
-		__undefined("raise() called during quick_exit()");
+		UNDEFINED("raise() called during quick_exit()");
 	}
 	/*
 	RETURN_FAILURE(NONZERO);

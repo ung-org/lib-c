@@ -2,7 +2,7 @@
 
 void assert()
 {
-	__undefined("The assert() macro has been suppressed to access an actual function");
+	UNDEFINED("The assert() macro has been suppressed to access an actual function");
 }
 
 /*

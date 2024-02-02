@@ -6,7 +6,7 @@
 void __signal_handler(int sig)
 {
 	if (__stdlib.exit_called == QUICK) {
-		__undefined("signal %d occured during quick_exit", sig);
+		UNDEFINED("signal %d occured during quick_exit", sig);
 	}
 
 	___signal.current = sig;
@@ -17,7 +17,7 @@ void __signal_handler(int sig)
 	/* TODO: signal number to name */
 	if (sig == SIGFPE || sig == SIGILL || sig == SIGSEGV) {
 		___signal.current = 0;
-		__undefined("Signal handler for signal %d returned", sig);
+		UNDEFINED("Signal handler for signal %d returned", sig);
 	}
 
 	___signal.current = 0;

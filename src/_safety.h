@@ -30,7 +30,7 @@ extern struct __checked_call {
 
 #define ASSERT_NONNULL(__ptr) do { \
 	if (!__ptr) { \
-		__undefined("In call to %s(), parameter %s cannot be NULL", __func__, #__ptr); \
+		UNDEFINED("In call to %s(), parameter %s cannot be NULL", __func__, #__ptr); \
 	} \
 } while (0)
 
@@ -38,14 +38,14 @@ extern struct __checked_call {
 	char *__s1 = (char*)(__p1); \
 	char *__s2 = (char*)(__p2); \
 	if (((__s1 < __s2) && ((__s1 + (__l1)) >= __s2)) || ((__s1 > __s2) && ((__s2 + (__l2)) >= __s1))) { \
-		__undefined("In call to %s(), parameters %s and %s overlap", __func__, #__p1, #__p2); \
+		UNDEFINED("In call to %s(), parameters %s and %s overlap", __func__, #__p1, #__p2); \
 	} \
 } while (0)
 
 #define SIGNAL_SAFE(__n) do { \
 	if (__n == 0 && ___signal.current != 0) { \
 		int _sig = ___signal.current; \
-		__undefined("Function %s() is not safe to call from a signal handler (signal %d)", __func__, _sig); \
+		UNDEFINED("Function %s() is not safe to call from a signal handler (signal %d)", __func__, _sig); \
 	} \
 } while (0)
 

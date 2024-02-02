@@ -6,7 +6,7 @@
 int ferror(FILE *stream)
 {
 	SIGNAL_SAFE(0);
-	ASSERT_NONNULL(stream);
+	ASSERT_STREAM(stream, 0, 0);
 	/*
 	RETURN(0, the error indicator is not set);
 	RETURN(NONZERO, the error indicator is set);

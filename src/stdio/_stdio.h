@@ -22,6 +22,23 @@
 
 #define GCC_SSE_HACK __attribute__((noinline, target("no-sse")))
 
+#define ORIENT_WIDE (1)
+#define ORIENT_BYTE (-1)
+
+#define OP_INPUT  (1)
+#define OP_OUTPUT (2)
+
+#ifdef NDEBUG
+#define ASSERT_STREAM(__stream, __orientation, __operation)
+#else
+#define ASSERT_STREAM(__stream, __orientation, __operation) do { \
+		ASSERT_NONNULL(__stream); \
+		if (((__orientation) && stream->orientation) && ((__orientation) != stream->orientation)) { \
+			UNDEFINED("In call to %s(): Requested %s operation on %s oriented stream", __func__, (__orientation) > 0 ? "wide" : "byte", (stream->orientation) > 0 ? "wide" : "byte"); \
+		} \
+	} while (0)
+#endif
+
 struct __FILE {
 	fpos_t pos;
 
@@ -38,13 +55,14 @@ struct __FILE {
 
 	int fd;			/* the backing file descriptor */
 
-	int orientation;	/* 0 = undetermind, < 0 = byte, > 0 = wide */
-
-	int eof;		/* eof indicator */
-	int err;		/* error indicator */
-
 	int nlocks;		/* in multithreaded, used by flockfile() */
 	int thread;		/* the owning thread if locked */
+
+	int orientation:2;	/* 0 = undetermind, < 0 = byte, > 0 = wide */
+	int operation;		/* TODO: previous operation, NONE, INPUT, OUTPUT (are there others?) */
+	int eof:1;		/* eof indicator */
+	int err:1;		/* error indicator */
+	int text:1;		/* is this a text file? */
 
 	#ifdef _POSIX_C_SOURCE
 	pid_t pipe_pid;		/* if stream is a pipe, the child pid */

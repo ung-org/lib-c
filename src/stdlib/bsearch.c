@@ -21,7 +21,7 @@ void * bsearch(const void * key, const void * base, size_t nmemb, size_t size, i
 	#ifndef NDEBUG
 	for (size_t i = 0; nmemb != 0 && i < nmemb - 1; i++) {
 		if (SAFE_COMPAR(compar, addr + (i * size), addr + ((i + 1) * size), size, "bsearch") > 0) {
-			__undefined("In call to bsearch(): Base array is not sorted");
+			UNDEFINED("In call to bsearch(): Base array is not sorted");
 		}
 	}
 	#endif

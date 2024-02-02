@@ -8,7 +8,7 @@
 #else
 #define ASSERT_VALID_EXCEPTION_MASK(_n) do { \
 	if (((_n) & ~(FE_ALL_EXCEPT)) != 0) { \
-		__undefined("In call to %s(), exception mask 0x(%jx) is not valid", __func__, (uintmax_t)(_n)); \
+		UNDEFINED("In call to %s(), exception mask 0x(%jx) is not valid", __func__, (uintmax_t)(_n)); \
 	} \
 } while (0)
 

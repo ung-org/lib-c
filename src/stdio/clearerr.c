@@ -7,6 +7,8 @@
 void clearerr(FILE * stream)
 {
 	SIGNAL_SAFE(0);
+	ASSERT_STREAM(stream, 0, 0);
+
 	flockfile(stream);
 	if (stream != NULL) {
 		stream->eof = 0;

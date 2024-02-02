@@ -4,7 +4,7 @@
 
 #define CHECKRANGE(field, min, max) do {\
 	if (timeptr->tm_##field < min || timeptr->tm_##field > max) { \
-		__undefined("In call to asctime(), the field tm_%s (%d) is out of range [%d, %d] in the provided time", #field, timeptr->tm_##field, min, max); \
+		UNDEFINED("In call to asctime(), the field tm_%s (%d) is out of range [%d, %d] in the provided time", #field, timeptr->tm_##field, min, max); \
 	} \
 } while (0)
 

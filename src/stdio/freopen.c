@@ -70,7 +70,7 @@ FILE * freopen(const char * restrict filename, const char * restrict mode, FILE 
 	}
 
 	if (openmode == -1) {
-		__undefined("\"%s\" is not a valid mode for fopen() or freopen()", mode);
+		UNDEFINED("\"%s\" is not a valid mode for fopen() or freopen()", mode);
 		#ifdef EINVAL
 		errno = EINVAL;
 		#endif
@@ -95,6 +95,8 @@ FILE * freopen(const char * restrict filename, const char * restrict mode, FILE 
 		stream->bsize = BUFSIZ;
 		stream->buf = stream->ibuf;
 	}
+
+	stream->text = !(strchr(mode, 'b'));
 
 	/*
 	RETURN_SUCCESS(ARGUMENT(stream));
