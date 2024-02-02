@@ -12,8 +12,7 @@ int fseek(FILE *stream, long int offset, int whence)
 		if (whence != SEEK_SET) {
 			UNDEFINED("In call to fseek(): Only SEEK_SET is supported for text files");
 		}
-		/* if offset is not previous */
-		/* UNDEFINED("fseek() on text files requires an offset previously returned by ftell()"); */
+		ASSERT_PREV(offset, stream->valid_ftell, stream->nvalid_ftell, "ftell");
 	}
 
 	if (whence == SEEK_CUR) {

@@ -5,15 +5,21 @@
 
 long int ftell(FILE *stream)
 {
-	SIGNAL_SAFE(0);
+	long int ret = -1L;
 
-	(void)stream;
-	/* TODO */
+	SIGNAL_SAFE(0);
+	ASSERT_STREAM(stream, 0, 0);
+
 	/*
 	RETURN_SUCCESS(the current file position);
 	RETURN_FAILURE(LITERAL(-1L));
 	*/
-	return -1L;
+	
+	if (stream->text) {
+		ADD_PREV(ret, stream->valid_ftell, stream->nvalid_ftell);
+	}
+
+	return ret;
 }
 
 /***

@@ -4,6 +4,7 @@
 _Noreturn void __undefined(const char *, ...);
 
 #include <errno.h>
+#include <stdlib.h>
 #include <stdio.h>
 /*
 #include "stdlib/_stdlib.h"
@@ -27,6 +28,30 @@ extern struct __checked_call {
 
 #ifndef NDEBUG
 #define UNDEFINED(...) __undefined(__VA_ARGS__)
+
+#define ADD_PREV(__val, __arr, __count) do { \
+	void *tmp = realloc((__arr), ((__count) + 1) * sizeof((__arr)[0])); \
+	if (tmp == NULL) { \
+		fprintf(stderr, "Out of memory tracking values\n"); \
+		abort(); \
+	} \
+	(__arr) = tmp; \
+	(__arr)[__count] = __val; \
+	(__count)++; \
+} while (0)
+
+#define ASSERT_PREV(__val, __arr, __count, __prev) do { \
+	int __found = 0; \
+	for (size_t __i = 0; __i < (__count); __i++) { \
+		if ((__arr)[__i] == (__val)) { \
+			__found = 1; \
+			break; \
+		} \
+	} \
+	if (!__found) { \
+		UNDEFINED("In call to %s(): %s was not returned by a previous call to %s", __func__, #__val, __prev); \
+	} \
+} while (0)
 
 #define ASSERT_NONNULL(__ptr) do { \
 	if (!__ptr) { \

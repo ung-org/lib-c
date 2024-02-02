@@ -59,7 +59,7 @@ struct __FILE {
 	int thread;		/* the owning thread if locked */
 
 	int orientation:2;	/* 0 = undetermind, < 0 = byte, > 0 = wide */
-	int operation;		/* TODO: previous operation, NONE, INPUT, OUTPUT (are there others?) */
+	int operation:2;	/* TODO: previous operation, NONE, INPUT, OUTPUT (are there others?) */
 	int eof:1;		/* eof indicator */
 	int err:1;		/* error indicator */
 	int text:1;		/* is this a text file? */
@@ -67,6 +67,11 @@ struct __FILE {
 	#ifdef _POSIX_C_SOURCE
 	pid_t pipe_pid;		/* if stream is a pipe, the child pid */
 	#endif
+
+	fpos_t *valid_fpos;
+	size_t nvalid_fpos;
+	long int *valid_ftell;
+	size_t nvalid_ftell;
 };
 
 struct io_options {
