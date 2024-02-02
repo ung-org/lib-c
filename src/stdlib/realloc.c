@@ -18,11 +18,11 @@
 #define open(_p, _a, _m)		__scall3(open, _p, _a, _m)
 #endif
 
-#define O_RDWR 0
-#define PROT_READ 0
-#define PROT_WRITE 0
-#define MAP_PRIVATE 0
-#define MAP_FAILED 0
+#define O_RDWR 02
+#define PROT_READ 0x1
+#define PROT_WRITE 0x2
+#define MAP_PRIVATE 0x02
+#define MAP_FAILED (void*)(-1)
 
 /** change the amount of memory allocated **/
 
