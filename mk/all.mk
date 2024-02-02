@@ -463,6 +463,11 @@ include mk/fesetexceptflag.d
 include mk/fegetround.d
 include mk/fetestexcept.d
 include mk/fegetexceptflag.d
+include mk/__fenv.d
+include mk/va_copy.d
+include mk/va_start.d
+include mk/va_arg.d
+include mk/va_end.d
 include mk/__sys.x86-64.s.d
 include mk/__setjmp.x86-64.s.d
 include mk/__longjmp.x86-64.s.d

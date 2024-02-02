@@ -1862,6 +1862,26 @@ all: mk/fegetexceptflag.d
 mk/fegetexceptflag.d: src/fenv/fegetexceptflag.c
 	sh mk/deps.sh src/fenv/fegetexceptflag.c
 
+all: mk/__fenv.d
+mk/__fenv.d: src/fenv/__fenv.c
+	sh mk/deps.sh src/fenv/__fenv.c
+
+all: mk/va_copy.d
+mk/va_copy.d: src/stdarg/va_copy.c
+	sh mk/deps.sh src/stdarg/va_copy.c
+
+all: mk/va_start.d
+mk/va_start.d: src/stdarg/va_start.c
+	sh mk/deps.sh src/stdarg/va_start.c
+
+all: mk/va_arg.d
+mk/va_arg.d: src/stdarg/va_arg.c
+	sh mk/deps.sh src/stdarg/va_arg.c
+
+all: mk/va_end.d
+mk/va_end.d: src/stdarg/va_end.c
+	sh mk/deps.sh src/stdarg/va_end.c
+
 all: mk/__sys.x86-64.s.d
 mk/__sys.x86-64.s.d: src/__sys.x86-64.s
 	sh mk/deps.sh src/__sys.x86-64.s

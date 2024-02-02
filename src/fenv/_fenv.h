@@ -1,6 +1,13 @@
 #include <fenv.h>
 #include "_safety.h"
 
+extern struct __fenv {
+	fexcept_t *valid_fexcept;
+	size_t nvalid_fexcept;
+	fenv_t *valid_fenv;
+	size_t nvalid_fenv;
+} __fenv;
+
 #ifdef NDEBUG
 #define ASSERT_VALID_EXCEPTION_MASK(_n) (void)(_n)
 #define ASSERT_PREVIOUS_FEXCEPT(_f, _e) (void)(_f)
