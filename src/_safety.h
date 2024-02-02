@@ -1,5 +1,5 @@
-#ifndef ___ASSERT_H__
-#define ___ASSERT_H__
+#ifndef ___SAFETY_H__
+#define ___SAFETY_H__
 
 _Noreturn void __undefined(const char *, ...);
 
@@ -26,6 +26,8 @@ extern struct __checked_call {
 } __checked_call;
 
 #ifndef NDEBUG
+#define UNDEFINED(...) __undefined(__VA_ARGS__)
+
 #define ASSERT_NONNULL(__ptr) do { \
 	if (!__ptr) { \
 		__undefined("In call to %s(), parameter %s cannot be NULL", __func__, #__ptr); \
@@ -124,6 +126,7 @@ extern struct __checked_call {
 	}
 #else
 
+#define UNDEFINED(...)
 #define ASSERT_NOOVERLAP(__x, __y, __s)
 #define ASSERT_NONNULL(x)
 #define VCHECK_0(f)
