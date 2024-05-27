@@ -17,7 +17,12 @@ int putc_unlocked(int c, FILE *stream)
 
 	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(stream);
+
+	if (stream->operation == OP_INPUT) {
+		UNDEFINED("attempted output on stream immediately after input");
+	}
 	
+	stream->operation = OP_OUTPUT;
 	stream->buf[stream->bpos++] = ch;
 	if (stream->bpos == stream->bsize ||
 		(stream->bmode == _IOLBF && ch == '\n') ||

@@ -27,6 +27,14 @@ int fflush(FILE *stream)
 		return 0;
 	}
 
+	if (!stream->write) {
+		UNDEFINED("attempt to fflush() an input stream");
+	}
+
+	if (stream->read && stream->operation == OP_INPUT) {
+		UNDEFINED("attempt to fflush() an update stream after input");
+	}
+
 	if (stream->bpos == 0) {
 		return 0;
 	}

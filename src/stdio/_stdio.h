@@ -25,6 +25,7 @@
 #define ORIENT_WIDE (1)
 #define ORIENT_BYTE (-1)
 
+#define OP_NONE   (0)
 #define OP_INPUT  (1)
 #define OP_OUTPUT (2)
 
@@ -58,11 +59,13 @@ struct __FILE {
 	int nlocks;		/* in multithreaded, used by flockfile() */
 	int thread;		/* the owning thread if locked */
 
-	int orientation:2;	/* 0 = undetermind, < 0 = byte, > 0 = wide */
-	int operation:2;	/* TODO: previous operation, NONE, INPUT, OUTPUT (are there others?) */
-	int eof:1;		/* eof indicator */
-	int err:1;		/* error indicator */
-	int text:1;		/* is this a text file? */
+	unsigned int orientation:2;	/* 0 = undetermind, < 0 = byte, > 0 = wide */
+	unsigned int operation:2;	/* TODO: previous operation, NONE, INPUT, OUTPUT (are there others?) */
+	unsigned int eof:1;		/* eof indicator */
+	unsigned int err:1;		/* error indicator */
+	unsigned int text:1;		/* is this a text file? */
+	unsigned int read:1;		/* open for reading? */
+	unsigned int write:1;		/* open for writing? */
 
 	#ifdef _POSIX_C_SOURCE
 	pid_t pipe_pid;		/* if stream is a pipe, the child pid */

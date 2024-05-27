@@ -19,6 +19,12 @@ int getc_unlocked(FILE * stream)
 		return EOF;
 	}
 
+	if (stream->operation == OP_OUTPUT) {
+		UNDEFINED("attempted input on stream immediately after output");
+	}
+
+	stream->operation = OP_INPUT;
+
 	if (read(stream->fd, &c, sizeof(c)) != 1) {
 		stream->err = 1;
 		return EOF;

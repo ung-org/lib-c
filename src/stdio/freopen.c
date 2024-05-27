@@ -78,10 +78,12 @@ FILE * freopen(const char * restrict filename, const char * restrict mode, FILE 
 	}
 
 	flockfile(stream);
-	fflush(stream);
+	if (stream->write) {
+		fflush(stream);
+	}
 
 	if (filename != NULL) {
-		fd = open(filename, openmode, 0);
+		fd = open(filename, openmode, 0755); /* TODO: umask */
 		if (fd < 0) {
 			/* open() already sets errno */
 			funlockfile(stream);
@@ -103,6 +105,8 @@ FILE * freopen(const char * restrict filename, const char * restrict mode, FILE 
 	stream->nvalid_ftell = 0;
 
 	stream->text = !(strchr(mode, 'b'));
+	stream->read = ((openmode & O_RDONLY) == O_RDONLY) || ((openmode & O_RDWR) == O_RDWR);
+	stream->write = ((openmode & O_WRONLY) == O_WRONLY) || ((openmode & O_RDWR) == O_RDWR);
 
 	/*
 	RETURN_SUCCESS(ARGUMENT(stream));
