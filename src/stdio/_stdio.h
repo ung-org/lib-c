@@ -34,7 +34,16 @@
 #else
 #define ASSERT_STREAM(__stream, __orientation, __operation) do { \
 		ASSERT_NONNULL(__stream); \
-		if (((__orientation) && stream->orientation) && ((__orientation) != stream->orientation)) { \
+		if ((__stream)->fd == -1) { \
+			UNDEFINED("In call to %s: Stream is not open (use after close?)", __func__); \
+		} \
+		if (((__operation) == OP_INPUT) && !(__stream)->read) { \
+			UNDEFINED("In call to %s: Attempted input operation on output stream", __func__); \
+		} \
+		if (((__operation) == OP_OUTPUT) && !(__stream)->write) { \
+			UNDEFINED("In call to %s: Attempted output operation on input stream", __func__); \
+		} \
+		if (((__orientation) && (__stream)->orientation) && ((__orientation) != (__stream)->orientation)) { \
 			UNDEFINED("In call to %s(): Requested %s operation on %s oriented stream", __func__, (__orientation) > 0 ? "wide" : "byte", (stream->orientation) > 0 ? "wide" : "byte"); \
 		} \
 	} while (0)

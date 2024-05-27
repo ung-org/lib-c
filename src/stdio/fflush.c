@@ -27,6 +27,8 @@ int fflush(FILE *stream)
 		return 0;
 	}
 
+	ASSERT_STREAM(stream, 0, 0);
+
 	if (!stream->write) {
 		UNDEFINED("attempt to fflush() an input stream");
 	}

@@ -15,9 +15,7 @@ int getc_unlocked(FILE * stream)
 
 	SIGNAL_SAFE(0);
 
-	if (!stream) {
-		return EOF;
-	}
+	ASSERT_STREAM(stream, 0, OP_INPUT);
 
 	if (stream->operation == OP_OUTPUT) {
 		UNDEFINED("attempted input on stream immediately after output");

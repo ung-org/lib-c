@@ -26,7 +26,7 @@ int fclose(FILE *stream)
 	SIGNAL_SAFE(0);
 
 	flockfile(stream);
-	if (fflush(stream) == EOF) {
+	if (stream->operation == OP_OUTPUT && fflush(stream) == EOF) {
 		/* set errno */
 		return EOF;
 	}
@@ -44,6 +44,7 @@ int fclose(FILE *stream)
 	}
 
 	memset(stream, '\0', sizeof(*stream));
+	stream->fd = -1;
 
 	/*
 	RETURN_SUCCESS(0);
