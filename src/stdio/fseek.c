@@ -20,6 +20,8 @@ int fseek(FILE *stream, long int offset, int whence)
 	} else if (whence == SEEK_SET) {
 	}
 
+	stream->operation = OP_NONE;
+
 	return 1;
 }
 

@@ -10,6 +10,7 @@ int fsetpos(FILE *stream, const fpos_t *pos)
 
 	(void)stream; (void)pos;
 	/* TODO */
+	stream->operation = OP_NONE;
 	return 1;
 }
 

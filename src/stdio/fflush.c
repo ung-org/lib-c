@@ -54,6 +54,8 @@ int fflush(FILE *stream)
 	RETURN_FAILURE(CONSTANT(EOF));
 	*/
 
+	stream->operation = OP_NONE;
+
 	return ret;
 }
 
