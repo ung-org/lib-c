@@ -1,24 +1,19 @@
+#include <limits.h>
 #include <stdlib.h>
 #include "_readonly.h"
+#include "stdlib/_jkmalloc.h"
+#include "_forced/mprotect.h"
 
-#ifdef _POSIX_C_SOURCE
-#include <sys/mman.h>
-#include <limits.h>
-#else
-#include "_syscall.h"
-#define mprotect(__ptr, __len, __prot) __syscall(__sys_mprotect, __ptr, __len, __prot)
-#define PROT_READ	1
-#define PROT_WRITE	2
-#define PAGESIZE 4096
+#ifndef PAGESIZE
+#define PAGESIZE	4096
 #endif
 
 void* __readonly(ro_action_t action, void *ptr)
 {
 	switch (action) {
 	case RO_ALLOC:
-		/* set magic to JK_READONLY */
-		/* set label to ptr */
-		return malloc(PAGESIZE);
+		return __jkmalloc(NULL, NULL, 0, NULL, 1, PAGESIZE, 0, ptr);
+
 
 	case RO_FREE:
 		free(ptr);

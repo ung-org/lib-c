@@ -4,10 +4,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 
-#if __STDC_VERSION__ < 199901L
-#define vfwscanf __vfwscanf
-#include "vfwscanf.c"
-#endif
+#include "_forced/vfwscanf.h"
 
 int fwscanf(FILE * restrict stream, const wchar_t * restrict format, ...)
 {

@@ -1,16 +1,8 @@
-#ifndef _POSIX_SOURCE
-#define _POSIX_SOURCE
-#define POSIX_FORCED
-#endif
-
 #include <signal.h>
 #include "stdlib/_stdlib.h"
 
-#ifdef POSIX_FORCED
-#include "_syscall.h"
-#define kill(pid, sig)	__scall2(kill, pid, sig)
-#define getpid()	__scall0(getpid)
-#endif
+#include "_forced/kill.h"
+#include "_forced/getpid.h"
 
 #include "_safety.h"
 

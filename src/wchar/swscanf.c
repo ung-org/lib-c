@@ -3,10 +3,7 @@
 #include <stdarg.h>
 #include <wchar.h>
 
-#if __STDC_VERSION__ < 199901L
-#define vswscanf __vswscanf
-#include "vswscanf.c"
-#endif
+#include "_forced/vswscanf.h"
 
 int swscanf(const wchar_t * restrict s, const wchar_t * restrict format, ...)
 {

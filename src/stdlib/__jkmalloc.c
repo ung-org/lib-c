@@ -11,43 +11,14 @@
 #include <sys/mman.h>
 #include <unistd.h>
 #else
-#include "_syscall.h"
+#include "_forced/sigaction.h"
+#include "_forced/mmap.h"
+#include "_forced/munmap.h"
+#include "_forced/mprotect.h"
 
 #define sysconf(__n) 4096
-
-#define mprotect(__ptr, __len, __prot)	__syscall(__sys_mprotect, __ptr, __len, __prot)
-#define mmap(_a, _l, _p, _fl, _fd, _o)	(void*)__syscall(__sys_mmap, _a, _l, _p, _fl, _fd, _o)
-#define munmap(_a, _l)			__syscall(__sys_munmap, _a, _l)
-#define open(_p, _a, _m)		__syscall(__sys_open, _p, _a, _m)
-
-typedef unsigned long pid_t;
-typedef unsigned long uid_t;
-typedef unsigned long clock_t;
-#include "signal/sigset_t.h"
-#include "signal/union_sigval.h"
-#include "signal/siginfo_t.h"
-
-#define _POSIX_C_SOURCE 199506L
-#include "signal/struct_sigaction.h"
-
-static int sigaction(int, const struct sigaction * restrict, struct sigaction * restrict);
-
-#include "signal/sigaction.c"
-
-#define SA_RESTART    0x10000000
-#define SA_RESTORER   0x04000000
-
-#define O_RDWR 02
-#define PROT_NONE 0x0
-#define PROT_READ 0x1
-#define PROT_WRITE 0x2
-#define MAP_PRIVATE 0x02
-#define MAP_FAILED (void*)(-1)
-#define MAP_ANONYMOUS (0x20)
 #define psiginfo(x, y)	fprintf(stderr, "%s (%p)\n", (char*)(y), (void*)(x))
-
 #define sigemptyset(x) memset(x, 0, sizeof(*x))
-
 #endif
 
 #include "_jkmalloc.h"
@@ -195,7 +166,7 @@ static void jk_sigsegv(int sig)
 }
 */
 
-void* __jkmalloc(const char *file, const char *func, uintmax_t line, void *ptr, size_t alignment, size_t size1, size_t size2)
+void* __jkmalloc(const char *file, const char *func, uintmax_t line, void *ptr, size_t alignment, size_t size1, size_t size2, const char *user)
 {
 	static int sa_set = 0;
 	if (!sa_set) {
@@ -296,7 +267,7 @@ void* __jkmalloc(const char *file, const char *func, uintmax_t line, void *ptr, 
 			__jk_error("Attempt to reallocate() incorrect address", ptr, &src);
 		}
 	
-		void *newptr = __jkmalloc(NULL, NULL, 0, NULL, alignment, size1, size2);
+		void *newptr = __jkmalloc(NULL, NULL, 0, NULL, alignment, size1, size2, user);
 		if (newptr != NULL) {
 			memmove(newptr, ptr, b->size);
 			free(ptr);
@@ -345,7 +316,11 @@ void* __jkmalloc(const char *file, const char *func, uintmax_t line, void *ptr, 
 
 	if (file) {
 		under->tlen = snprintf(under->trace, __jk_pagesize - sizeof(*under), "+++ %s() (%s:%ju)", func, file, line);
-		memmove(over->trace, under->trace, under->tlen + 1);
+		memcpy(over->trace, under->trace, under->tlen + 1);
+		over->tlen = under->tlen;
+	} else if (user) {
+		under->tlen = snprintf(under->trace, __jk_pagesize - sizeof(*under), "Read-only memory for %s", user);
+		memcpy(over->trace, under->trace, under->tlen + 1);
 		over->tlen = under->tlen;
 	} else {
 		under->trace[0] = '\0';
@@ -372,7 +347,7 @@ int (jk_memalign)(void **ptr, size_t a, size_t n)
 		return EINVAL;
 	}
 
-	if (((*ptr) = __jkmalloc(NULL, NULL, 0, NULL, a, n, 0)) == NULL) {
+	if (((*ptr) = __jkmalloc(NULL, NULL, 0, NULL, a, n, 0, NULL)) == NULL) {
 		return errno;
 	}
 

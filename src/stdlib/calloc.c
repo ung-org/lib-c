@@ -9,7 +9,7 @@ void * calloc(size_t nmemb, size_t size)
 {
 	SIGNAL_SAFE(0);
 
-	return __jkmalloc(NULL, NULL, 0, NULL, 1, nmemb, size);
+	return __jkmalloc(NULL, NULL, 0, NULL, 1, nmemb, size, NULL);
 }
 
 /***

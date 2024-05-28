@@ -9,7 +9,7 @@ void free(void * ptr)
 	SIGNAL_SAFE(0);
 
 	if (ptr) {
-		__jkmalloc(NULL, NULL, 0, ptr, 0, 0, 0);
+		__jkmalloc(NULL, NULL, 0, ptr, 0, 0, 0, NULL);
 	}
 }
 

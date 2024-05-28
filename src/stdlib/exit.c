@@ -3,9 +3,7 @@
 #include "_stdlib.h"
 #include "_syscall.h"
 
-#if __STDC_VERSION__ < 199901L
-#include "_Exit.c"
-#endif
+#include "_forced/_Exit.h"
 
 /** cause normal program termination **/
 _Noreturn void exit(int status)

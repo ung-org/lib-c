@@ -3,10 +3,7 @@
 #include <stdarg.h>
 #include "_safety.h"
 
-#if __STDC_VERSION__ < 199901L
-static _Noreturn void _Exit(int);
-#include "stdlib/_Exit.c"
-#endif
+#include "_forced/_Exit.h"
 
 _Noreturn void __undefined(const char *fmt, ...)
 {

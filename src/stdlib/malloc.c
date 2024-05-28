@@ -7,7 +7,7 @@ void * malloc(size_t size)
 {
 	SIGNAL_SAFE(0);
 
-	return __jkmalloc(NULL, NULL, 0, NULL, 1, size, 0);
+	return __jkmalloc(NULL, NULL, 0, NULL, 1, size, 0, NULL);
 }
 
 /***

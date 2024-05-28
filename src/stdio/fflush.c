@@ -1,15 +1,6 @@
-#ifndef _POSIX_SOURCE
-#define _POSIX_SOURCE
-#define POSIX_FORCED
-#endif
-
 #include <stdio.h>
 #include "_stdio.h"
-
-#ifdef POSIX_FORCED
-#include "_syscall.h"
-#define write(_fd, _buf, _size) __scall3(write, _fd, _buf, _size)
-#endif
+#include "_forced/write.h"
 
 /** flush buffered writes **/
 

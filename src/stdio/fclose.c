@@ -1,23 +1,10 @@
-#ifndef _POSIX_SOURCE
-#define _POSIX_SOURCE
-#define POSIX_FORCED
-#endif
-
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#if 0
-#include <sys/types.h>
-#include <unistd.h>
-#endif
 
 #include "_stdio.h"
 
-#ifdef POSIX_FORCED
-#include "_syscall.h"
-#define close(_fd)	__scall1(close, _fd)
-#endif
+#include "_forced/close.h"
 
 /** close a file stream **/
 

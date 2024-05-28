@@ -8,7 +8,7 @@ void * realloc(void * ptr, size_t size)
 {
 	SIGNAL_SAFE(0);
 
-	return __jkmalloc(NULL, NULL, 0, ptr, 1, size, 0);
+	return __jkmalloc(NULL, NULL, 0, ptr, 1, size, 0, NULL);
 }
 
 /***

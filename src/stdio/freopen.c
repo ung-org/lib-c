@@ -1,25 +1,9 @@
-#ifndef _POSIX_SOURCE
-#define _POSIX_SOURCE
-#define POSIX_FORCED
-#endif
-
 #include <errno.h>
 #include <stdio.h>
 #include <string.h>
 #include "_stdio.h"
-
-#ifdef POSIX_FORCED
-#include "_syscall.h"
-#define open(_p, _f, _m)	__scall3(open, _p, _f, _m)
-#define isatty(_fd)		(-1) /*ioctl(_fd, TCFLSH, 0) */
-#define TCFLSH	0x540B
-#define O_RDONLY 00
-#define O_WRONLY 01
-#define O_CREAT 0100
-#define O_TRUNC 01000
-#define O_APPEND 02000
-#define O_RDWR 02
-#endif
+#include "_forced/open.h"
+#include "_forced/isatty.h"
 
 /** reopen a file stream with a new file **/
 
