@@ -23,6 +23,14 @@ int putc_unlocked(int c, FILE *stream)
 	}
 	
 	stream->operation = OP_OUTPUT;
+	if (stream->buf == NULL) {
+		if (write(stream->fd, &ch, 1) != 1) {
+			stream->err = 1;
+			return EOF;
+		}
+		return ch;
+	}
+
 	stream->buf[stream->bpos++] = ch;
 	if (stream->bpos == stream->bsize ||
 		(stream->bmode == _IOLBF && ch == '\n') ||

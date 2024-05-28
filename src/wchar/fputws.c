@@ -1,7 +1,6 @@
-#if 0
-
 #include <wchar.h>
 #include <stdio.h>
+#include "_safety.h"
 
 int fputws(const wchar_t * restrict s, FILE * restrict stream)
 {
@@ -21,6 +20,3 @@ int fputws(const wchar_t * restrict s, FILE * restrict stream)
 /*
 STDC(199409)
 */
-
-
-#endif

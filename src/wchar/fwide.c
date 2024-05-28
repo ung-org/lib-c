@@ -1,5 +1,3 @@
-#if 0
-
 #include <wchar.h>
 #include <stdio.h>
 #include "stdio/_stdio.h"
@@ -9,10 +7,14 @@ int fwide(FILE * stream, int mode)
 {
 	SIGNAL_SAFE(0);
 
-	ASSERT_NONNULL(stream);
+	ASSERT_STREAM(stream, 0, 0);
 
-	if (stream->orientation == 0) {
-		stream->orientation = mode;
+	if (mode != 0) {
+		if (mode < 0) {
+			stream->orientation = ORIENT_BYTE;
+		} else if (mode > 0) {
+			stream->orientation = ORIENT_WIDE;
+		}
 	}
 	return stream->orientation;
 }
@@ -20,6 +22,3 @@ int fwide(FILE * stream, int mode)
 /*
 STDC(199409)
 */
-
-
-#endif

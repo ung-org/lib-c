@@ -7,6 +7,7 @@
 int fputs(const char * restrict s, FILE * restrict stream)
 {
 	SIGNAL_SAFE(0);
+	ASSERT_STREAM(stream, ORIENT_BYTE, OP_OUTPUT);
 	ASSERT_NOOVERLAP(s, strlen(s), stream, sizeof(*stream));
 
 	flockfile(stream);

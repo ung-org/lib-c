@@ -1,7 +1,6 @@
-#if 0
-
 #include <wchar.h>
 #include <limits.h>
+#include "_safety.h"
 
 size_t wcrtomb(char * restrict s, wchar_t wc, mbstate_t * restrict ps)
 {
@@ -22,6 +21,3 @@ size_t wcrtomb(char * restrict s, wchar_t wc, mbstate_t * restrict ps)
 /*
 STDC(199409)
 */
-
-
-#endif

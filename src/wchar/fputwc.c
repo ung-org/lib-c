@@ -1,5 +1,3 @@
-#if 0
-
 #include <wchar.h>
 #include <stdio.h>
 #include <limits.h>
@@ -41,6 +39,3 @@ wint_t fputwc(wchar_t c, FILE * stream)
 /*
 STDC(199409)
 */
-
-
-#endif

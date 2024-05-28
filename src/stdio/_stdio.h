@@ -43,8 +43,8 @@
 		if (((__operation) == OP_OUTPUT) && !(__stream)->write) { \
 			UNDEFINED("In call to %s: Attempted output operation on input stream", __func__); \
 		} \
-		if (((__orientation) && (__stream)->orientation) && ((__orientation) != (__stream)->orientation)) { \
-			UNDEFINED("In call to %s(): Requested %s operation on %s oriented stream", __func__, (__orientation) > 0 ? "wide" : "byte", (stream->orientation) > 0 ? "wide" : "byte"); \
+		if ((__orientation) && (__stream)->orientation && ((__orientation) != (__stream)->orientation)) { \
+			UNDEFINED("In call to %s(): Requested %s operation on %s oriented stream", __func__, (__orientation) > 0 ? "wide" : "byte", ((__stream)->orientation) > 0 ? "wide" : "byte"); \
 		} \
 	} while (0)
 #endif
@@ -68,7 +68,7 @@ struct __FILE {
 	int nlocks;		/* in multithreaded, used by flockfile() */
 	int thread;		/* the owning thread if locked */
 
-	unsigned int orientation:2;	/* 0 = undetermind, < 0 = byte, > 0 = wide */
+	int orientation:2;	/* 0 = undetermind, < 0 = byte, > 0 = wide */
 	unsigned int operation:2;	/* TODO: previous operation, NONE, INPUT, OUTPUT (are there others?) */
 	unsigned int eof:1;		/* eof indicator */
 	unsigned int err:1;		/* error indicator */

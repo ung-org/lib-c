@@ -8,6 +8,7 @@ int puts(const char *s)
 	int ret = 1;
 
 	SIGNAL_SAFE(0);
+	ASSERT_STREAM(stdout, ORIENT_BYTE, OP_OUTPUT);
 
 	flockfile(stdout);
 
