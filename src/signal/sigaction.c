@@ -1,9 +1,8 @@
-#if 0
 
 #include <stddef.h>
-#include <sys/types.h>
 #include <signal.h>
 #include "_syscall.h"
+#include "_safety.h"
 
 int sigaction(int sig, const struct sigaction * restrict act, struct sigaction * restrict oact)
 {
@@ -12,7 +11,7 @@ int sigaction(int sig, const struct sigaction * restrict act, struct sigaction *
 	struct linux_action {
 		union {
 			void (*handler)(int);
-			void (*action)(int, struct sigaction *, void *);
+			void (*action)(int, siginfo_t *, void *);
 		} fn;
 		unsigned long flags;
 		void (*restorer)(void);
@@ -27,6 +26,7 @@ int sigaction(int sig, const struct sigaction * restrict act, struct sigaction *
 	#ifdef SA_SIGINFO
 	if (act->sa_flags & SA_SIGINFO) {
 		a.fn.action = act->sa_sigaction;
+	}
 	#endif
 
 	a.flags = act->sa_flags;
@@ -51,6 +51,3 @@ int sigaction(int sig, const struct sigaction * restrict act, struct sigaction *
 /*
 POSIX(1)
 */
-
-
-#endif

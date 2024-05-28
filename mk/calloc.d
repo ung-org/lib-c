@@ -4,6 +4,7 @@ libc.a(calloc.o): $(OBJDIR)/calloc.o
 
 $(OBJDIR)/calloc.o: src/stdlib/calloc.c
 $(OBJDIR)/calloc.o: src/stdlib/_stdlib.h
+$(OBJDIR)/calloc.o: src/stdlib/_jkmalloc.h
 $(OBJDIR)/calloc.o:
 	@mkdir -p $(@D)
 	$(CC) -c -o $@ $(CFLAGS) src/stdlib/calloc.c

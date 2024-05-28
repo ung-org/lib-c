@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include "_stdlib.h"
+#include "_jkmalloc.h"
 
 /** deallocate memory **/
 
@@ -7,11 +8,9 @@ void free(void * ptr)
 {
 	SIGNAL_SAFE(0);
 
-	if (ptr == NULL) {
-		return;
+	if (ptr) {
+		__jkmalloc(NULL, NULL, 0, ptr, 0, 0, 0);
 	}
-
-	realloc(ptr, 0);
 }
 
 /***

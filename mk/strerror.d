@@ -4,6 +4,7 @@ libc.a(strerror.o): $(OBJDIR)/strerror.o
 
 $(OBJDIR)/strerror.o: src/string/strerror.c
 $(OBJDIR)/strerror.o: src/_safety.h
+$(OBJDIR)/strerror.o: src/_readonly.h
 $(OBJDIR)/strerror.o: src/string/_strerror.h
 $(OBJDIR)/strerror.o:
 	@mkdir -p $(@D)

@@ -83,6 +83,7 @@ long __syscall(long __number, ...);
 #define __sys_mknod 133
 #define __sys_mmap 9
 #define __sys_munmap 11
+#define __sys_mprotect 10
 
 #define __sys_nanosleep 35
 /* needed for POSIX < 199309 when nanosleep becomes __nanosleep */

@@ -4,6 +4,7 @@ libc.a(malloc.o): $(OBJDIR)/malloc.o
 
 $(OBJDIR)/malloc.o: src/stdlib/malloc.c
 $(OBJDIR)/malloc.o: src/stdlib/_stdlib.h
+$(OBJDIR)/malloc.o: src/stdlib/_jkmalloc.h
 $(OBJDIR)/malloc.o:
 	@mkdir -p $(@D)
 	$(CC) -c -o $@ $(CFLAGS) src/stdlib/malloc.c

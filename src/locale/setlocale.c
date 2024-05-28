@@ -3,11 +3,13 @@
 #include <stdlib.h>
 #include "_locale.h"
 #include "_safety.h"
+#include "_readonly.h"
 
 /** get or set program locale **/
 
 char * setlocale(int category, const char *locale)
 {
+	static char *retname = NULL;
 	struct __locale_t *l = __get_locale();
 	int mask = 0;
 
@@ -42,7 +44,13 @@ char * setlocale(int category, const char *locale)
 	}
 
 	/* TODO: mark return value read-only */
-	return __load_locale(l, mask, locale);
+	if (retname == NULL) {
+		retname = __readonly(RO_ALLOC, "setlocale");
+	}
+	__readonly(RO_UNLOCK, retname);
+	strcpy(retname, __load_locale(l, mask, locale));
+	//__readonly(RO_LOCK, retname);
+	return retname;
 }
 
 CHECK_2(char *, NULL, setlocale, int, const char *)

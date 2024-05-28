@@ -4,7 +4,7 @@ libc.a(realloc.o): $(OBJDIR)/realloc.o
 
 $(OBJDIR)/realloc.o: src/stdlib/realloc.c
 $(OBJDIR)/realloc.o: src/stdlib/_stdlib.h
-$(OBJDIR)/realloc.o: src/_syscall.h
+$(OBJDIR)/realloc.o: src/stdlib/_jkmalloc.h
 $(OBJDIR)/realloc.o:
 	@mkdir -p $(@D)
 	$(CC) -c -o $@ $(CFLAGS) src/stdlib/realloc.c

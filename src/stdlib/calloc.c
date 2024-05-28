@@ -1,30 +1,15 @@
 #include <stdlib.h>
 #include <string.h>
 #include "_stdlib.h"
+#include "_jkmalloc.h"
 
 /** allocate and initialize memory **/
 
 void * calloc(size_t nmemb, size_t size)
 {
-	void *p = NULL;
-	size_t total = nmemb * size;
-
 	SIGNAL_SAFE(0);
 
-	if (total < nmemb || total < size) {
-		return NULL;
-	}
-
-	if (nmemb == 0 || size == 0) {
-		return NULL;
-	}
-
-	p = malloc(total);
-	if (p != NULL) {
-		memset(p, 0, size * nmemb);
-	}
-
-	return p;
+	return __jkmalloc(NULL, NULL, 0, NULL, 1, nmemb, size);
 }
 
 /***

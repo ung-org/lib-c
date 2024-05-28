@@ -2,16 +2,21 @@
 #include <stdio.h>
 #include <string.h>
 #include "_safety.h"
-
-# define __LONGEST_STRERR 64	/* FIXME */
+#include "_readonly.h"
 
 /** convert error number to string **/
 
 char * strerror(int errnum)
 {
-	static char errstr[__LONGEST_STRERR+1];
+	static char *errstr = NULL;
 
 	SIGNAL_SAFE(0);
+
+	if (errstr == NULL) {
+		errstr = __readonly(RO_ALLOC, "strerror");
+	}
+
+	__readonly(RO_UNLOCK, errstr);
 
 	switch (errnum) {
 	#include "_strerror.h"
@@ -19,6 +24,8 @@ char * strerror(int errnum)
 		sprintf(errstr, "unknown error [%d]", errnum);
 		break;
 	}
+
+	__readonly(RO_LOCK, errstr);
 
 	/*
 	RETURN_ALWAYS(a pointer to the message string);

@@ -1,16 +1,13 @@
 #include <stdlib.h>
 #include "_stdlib.h"
+#include "_jkmalloc.h"
 
 /** allocate memory **/
 void * malloc(size_t size)
 {
 	SIGNAL_SAFE(0);
 
-	if (size == 0) {
-		return NULL;
-	}
-
-	return realloc(NULL, size);
+	return __jkmalloc(NULL, NULL, 0, NULL, 1, size, 0);
 }
 
 /***
