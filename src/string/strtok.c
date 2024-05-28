@@ -5,12 +5,15 @@
 
 char * strtok(char * restrict s1, const char * restrict s2)
 {
-	static char *current = 0;
+	static char *current = NULL;
 	static char **state = &current;
 
 	/* TODO */
 	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(s2);
+	if (current == NULL && s1 == NULL) {
+		UNDEFINED("strtok() called with NULL input and no previous call");
+	}
 	/* nothing is copied, overlap is OK */
 
 	/*
