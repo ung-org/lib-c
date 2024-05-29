@@ -12,44 +12,69 @@ char * setlocale(int category, const char *locale)
 	static char *retname = NULL;
 	struct __locale_t *l = __get_locale();
 	int mask = 0;
+	char *name_to_return = NULL;
 
 	SIGNAL_SAFE(0);
 
-	if (locale == NULL) {
-		switch (category) {
-		case LC_ALL:		return l->all;
-		case LC_COLLATE:	return l->collate;
-		case LC_CTYPE:		return l->ctype;
-		case LC_MONETARY:	return l->monetary;
-		case LC_NUMERIC:	return l->numeric;
-		case LC_TIME:		return l->time;
-		#ifdef LC_MESSAGES
-		case LC_MESSAGES:	return l->messages;
-		#endif
-		default:		return NULL;
-		}
-	}
-
-	switch (category) {
-	case LC_ALL:		mask = LC_ALL_MASK; break;
-	case LC_COLLATE:	mask = LC_COLLATE_MASK; break;
-	case LC_CTYPE:		mask = LC_CTYPE_MASK; break;
-	case LC_MONETARY:	mask = LC_MONETARY_MASK; break;
-	case LC_NUMERIC:	mask = LC_NUMERIC_MASK; break;
-	case LC_TIME:		mask = LC_TIME_MASK; break;
-	#ifdef LC_MESSAGES
-	case LC_MESSAGES:	mask = LC_MESSAGES_MASK; break;
-	#endif
-	default:		return NULL;
-	}
-
-	/* TODO: mark return value read-only */
 	if (retname == NULL) {
 		retname = __readonly(RO_ALLOC, "setlocale");
 	}
+
+	if (locale == NULL) {
+		switch (category) {
+		case LC_ALL:
+			name_to_return = l->all;
+			break;
+
+		case LC_COLLATE:
+			name_to_return = l->collate;
+			break;
+
+		case LC_CTYPE:
+			name_to_return = l->ctype;
+			break;
+
+		case LC_MONETARY:
+			name_to_return = l->monetary;
+			break;
+
+		case LC_NUMERIC:
+			name_to_return = l->numeric;
+			break;
+
+		case LC_TIME:
+			name_to_return = l->time;
+			break;
+
+		#ifdef LC_MESSAGES
+		case LC_MESSAGES:
+			name_to_return = l->messages;
+			break;
+		#endif
+
+		default:
+			return NULL;
+		}
+	} else {
+		switch (category) {
+		case LC_ALL:		mask = LC_ALL_MASK; break;
+		case LC_COLLATE:	mask = LC_COLLATE_MASK; break;
+		case LC_CTYPE:		mask = LC_CTYPE_MASK; break;
+		case LC_MONETARY:	mask = LC_MONETARY_MASK; break;
+		case LC_NUMERIC:	mask = LC_NUMERIC_MASK; break;
+		case LC_TIME:		mask = LC_TIME_MASK; break;
+		#ifdef LC_MESSAGES
+		case LC_MESSAGES:	mask = LC_MESSAGES_MASK; break;
+		#endif
+		default:		return NULL;
+		}
+
+		name_to_return = __load_locale(l, mask, locale);
+	}
+
 	__readonly(RO_UNLOCK, retname);
-	strcpy(retname, __load_locale(l, mask, locale));
-	//__readonly(RO_LOCK, retname);
+	strcpy(retname, name_to_return);
+	__readonly(RO_LOCK, retname);
 	return retname;
 }
 
