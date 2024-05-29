@@ -20,8 +20,6 @@
 
 #define f_is_open(s) (s && (s->bmode != 0))
 
-#define GCC_SSE_HACK __attribute__((noinline, target("no-sse")))
-
 #define ORIENT_WIDE (1)
 #define ORIENT_BYTE (-1)
 

@@ -3,6 +3,8 @@
 
 _Noreturn void __undefined(const char *, ...);
 
+#define GCC_SSE_HACK __attribute__((noinline, target("no-sse")))
+
 #include <errno.h>
 #include <stdlib.h>
 #include <stdio.h>

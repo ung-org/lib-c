@@ -3,6 +3,7 @@
 #include "_syscall.h"
 #include "_safety.h"
 
+GCC_SSE_HACK
 int sigaction(int sig, const struct sigaction * restrict act, struct sigaction * restrict oact)
 {
 	SIGNAL_SAFE(-1);

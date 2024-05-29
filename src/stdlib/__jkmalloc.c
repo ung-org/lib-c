@@ -182,6 +182,7 @@ static void __jk_sigaction(int sig, siginfo_t *si, void *addr)
 	__jk_error(NULL, NULL, &src);
 }
 
+GCC_SSE_HACK
 void* __jkmalloc(void *ptr, size_t alignment, size_t size1, size_t size2, const char *user)
 {
 	static int sa_set = 0;
