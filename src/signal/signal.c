@@ -22,7 +22,7 @@
 #define SA_RESTORER   0x04000000
 #endif
 
-__attribute__((noinline, target("no-sse")))
+GCC_SSE_HACK
 void (*signal(int sig, void (*func)(int)))(int)
 {
 	/* signal safe iff we are resetting the current signal handler */
