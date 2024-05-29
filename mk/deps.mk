@@ -242,6 +242,10 @@ all: mk/fegetenv.d
 mk/fegetenv.d: src/fenv/fegetenv.c
 	sh mk/deps.sh src/fenv/fegetenv.c
 
+all: mk/__dangerous.d
+mk/__dangerous.d: src/__dangerous.c
+	sh mk/deps.sh src/__dangerous.c
+
 all: mk/atomic_store.d
 mk/atomic_store.d: src/stdatomic/atomic_store.c
 	sh mk/deps.sh src/stdatomic/atomic_store.c
@@ -793,6 +797,10 @@ mk/va_end.d: src/stdarg/va_end.c
 all: mk/environ.d
 mk/environ.d: src/environ.c
 	sh mk/deps.sh src/environ.c
+
+all: mk/__musl.d
+mk/__musl.d: src/__musl.c
+	sh mk/deps.sh src/__musl.c
 
 all: mk/timespec_get.d
 mk/timespec_get.d: src/time/timespec_get.c

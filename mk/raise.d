@@ -4,7 +4,8 @@ libc.a(raise.o): $(OBJDIR)/raise.o
 
 $(OBJDIR)/raise.o: src/signal/raise.c
 $(OBJDIR)/raise.o: src/stdlib/_stdlib.h
-$(OBJDIR)/raise.o: src/_syscall.h
+$(OBJDIR)/raise.o: src/_forced/kill.h
+$(OBJDIR)/raise.o: src/_forced/getpid.h
 $(OBJDIR)/raise.o: src/_safety.h
 $(OBJDIR)/raise.o:
 	@mkdir -p $(@D)

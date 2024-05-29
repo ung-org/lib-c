@@ -4,6 +4,7 @@ libc.a(wcstombs.o): $(OBJDIR)/wcstombs.o
 
 $(OBJDIR)/wcstombs.o: src/stdlib/wcstombs.c
 $(OBJDIR)/wcstombs.o: src/stdlib/_stdlib.h
+$(OBJDIR)/wcstombs.o: src/_forced/wcslen.h
 $(OBJDIR)/wcstombs.o:
 	@mkdir -p $(@D)
 	$(CC) -c -o $@ $(CFLAGS) src/stdlib/wcstombs.c

@@ -4,7 +4,9 @@ libc.a(remove.o): $(OBJDIR)/remove.o
 
 $(OBJDIR)/remove.o: src/stdio/remove.c
 $(OBJDIR)/remove.o: src/stdio/_stdio.h
-$(OBJDIR)/remove.o: src/_syscall.h
+$(OBJDIR)/remove.o: src/_forced/stat.h
+$(OBJDIR)/remove.o: src/_forced/rmdir.h
+$(OBJDIR)/remove.o: src/_forced/unlink.h
 $(OBJDIR)/remove.o:
 	@mkdir -p $(@D)
 	$(CC) -c -o $@ $(CFLAGS) src/stdio/remove.c

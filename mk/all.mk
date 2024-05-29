@@ -58,6 +58,7 @@ include mk/fesetenv.d
 include mk/feclearexcept.d
 include mk/fegetround.d
 include mk/fegetenv.d
+include mk/__dangerous.d
 include mk/atomic_store.d
 include mk/atomic_compare_exchange_weak.d
 include mk/atomic_fetch_xor.d
@@ -196,6 +197,7 @@ include mk/va_start.d
 include mk/va_arg.d
 include mk/va_end.d
 include mk/environ.d
+include mk/__musl.d
 include mk/timespec_get.d
 include mk/ctime.d
 include mk/asctime_s.d
