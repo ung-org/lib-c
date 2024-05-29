@@ -17,10 +17,10 @@ char * getenv(const char * name)
 	}
 
 	len = strlen(name);
-	for (i = 0; environ[i] != NULL; i++) {
-		if (!strncmp(environ[i], name, len) && environ[i][len] == '=') {
+	for (i = 0; __stdlib.environ[i] != NULL; i++) {
+		if (!strncmp(__stdlib.environ[i], name, len) && __stdlib.environ[i][len] == '=') {
 			__readonly(RO_UNLOCK, variable);
-			strcpy(variable, environ[i] + len + 1);
+			strcpy(variable, __stdlib.environ[i] + len + 1);
 			__readonly(RO_LOCK, variable);
 			return variable;
 		}

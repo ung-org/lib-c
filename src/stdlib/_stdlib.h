@@ -48,16 +48,14 @@ struct __stdlib {
 	} atexit, at_quick_exit;
 	enum { REGULAR = 1, QUICK } exit_called;
 	unsigned int rand;
-	char **environ;
 	constraint_handler_t constraint_handler;
+	char **environ;
 };
 
 extern struct __stdlib __stdlib;
 
 #ifdef _POSIX_SOURCE
 extern char **environ;
-#else
-#define environ __stdlib.environ
 #endif
 
 /*
