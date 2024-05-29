@@ -5,7 +5,7 @@
 
 /** set a signal handler **/
 
-#if 0
+#if 1
 #include "_forced/sigaction.h"
 
 #else
@@ -36,11 +36,11 @@ void (*signal(int sig, void (*func)(int)))(int)
 	void (*prev)(int) = ___signal.handlers[sig];
 	___signal.handlers[sig] = func;
 
-	struct linux_sigaction act = { 0 };
+	struct sigaction act = { 0 };
 	act.sa_handler = __signal_handler;
 	act.sa_flags = SA_RESTART | SA_RESTORER;
 
-	int ret = sigaction(sig, &act, NULL, 8);
+	int ret = sigaction(sig, &act, NULL);
 	if (ret != 0) {
 		errno = -ret;
 		return SIG_ERR;

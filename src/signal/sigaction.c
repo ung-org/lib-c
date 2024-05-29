@@ -1,4 +1,3 @@
-
 #include <stddef.h>
 #include <signal.h>
 #include "_syscall.h"
@@ -29,11 +28,17 @@ int sigaction(int sig, const struct sigaction * restrict act, struct sigaction *
 	}
 	#endif
 
-	a.flags = act->sa_flags;
+	/* SA_RESTORER seems to be required for sigaction to *actually* work on Linux */
+	a.flags = act->sa_flags | SA_RESTORER;
 	a.mask = act->sa_mask;
 
-	ret = __syscall(scno, sig, &a, &o, sizeof(act->sa_mask), 0, 0);
-	if (ret != -1 && oact != NULL) {
+	ret = __syscall(scno, sig, &a, oact ? &o : NULL, /* 8 */ sizeof(act->sa_mask), 0, 0);
+	if (ret < 0) {
+		errno = -ret;
+		return -1;
+	}
+
+	if (oact != NULL) {
 		oact->sa_handler = o.fn.handler;
 		#ifdef SA_SIGINFO
 		if (o.flags & SA_SIGINFO) {
@@ -45,7 +50,7 @@ int sigaction(int sig, const struct sigaction * restrict act, struct sigaction *
 		oact->sa_mask = o.mask;
 	}
 
-	return ret;
+	return 0;
 }
 
 /*

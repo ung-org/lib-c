@@ -7,8 +7,10 @@ void * malloc(size_t size)
 {
 	SIGNAL_SAFE(0);
 
-	return __jkmalloc(NULL, NULL, 0, NULL, 1, size, 0, NULL);
+	return __jkmalloc(NULL, 1, size, 0, NULL);
 }
+
+CHECK_1(void *, NULL, malloc, size_t)
 
 /***
 allocates ARGUMENT(size) bytes of memory.

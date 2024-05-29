@@ -9,8 +9,10 @@ void * calloc(size_t nmemb, size_t size)
 {
 	SIGNAL_SAFE(0);
 
-	return __jkmalloc(NULL, NULL, 0, NULL, 1, nmemb, size, NULL);
+	return __jkmalloc(NULL, 1, nmemb, size, NULL);
 }
+
+CHECK_2(void *, NULL, calloc, size_t, size_t)
 
 /***
 allocates an array of ARGUMENT(nmemb) elements, each of which

@@ -6,6 +6,8 @@
 #include <stdio.h>
 #include <string.h>
 
+#include "_safety.h"
+
 #ifdef _XOPEN_SOURCE
 #include <fcntl.h>
 #include <sys/mman.h>
@@ -23,13 +25,6 @@
 
 #include "_jkmalloc.h"
 
-#if defined __OpenBSD__ || defined __FreeBSD__ || defined __APPLE__
-#define psiginfo(x, y)	((y) ? fprintf(stderr, "%s\n", (char*)(y)) : 0)
-#ifndef SA_SIGINFO
-#define SA_SIGINFO	(0)
-#endif
-#endif
-
 #define PTR_BITS	(CHAR_BIT * sizeof(uintptr_t))
 
 #define JKMALLOC_EXIT_VALUE	(127 + SIGSEGV)
@@ -39,7 +34,7 @@
 #define JK_FREE_MAGIC		(0x551a51dc)
 #define JK_UNDER_MAGIC		(0xcb2873ac)
 #define JK_OVER_MAGIC		(0x18a12c17)
-#define JK_RONLY_MAGIC		(0xdeadb00d)
+#define JK_RONLY_MAGIC		(0x902faf31)
 
 #define jk_pages(bytes)		(((bytes + __jk_pagesize - 1) / __jk_pagesize) + 2)
 #define jk_pageof(addr)		((void*)((uintptr_t)addr - ((uintptr_t)addr % __jk_pagesize)))
@@ -66,12 +61,23 @@ static struct jk_bucket *__jk_free_list[JK_FREE_LIST_SIZE];
 static size_t __jk_free_buckets = 0;
 static size_t __jk_pagesize = 0;
 
+static void __jk_undef(void)
+{
+	static int printed = 0;
+	if (printed == 0) {
+		printed = 1;
+		fprintf(stderr, "Undefined Behavior: ");
+	}
+}
+
 static void __jk_error(const char *s, void *addr, struct jk_source *src)
 {
+	__jk_undef();
+
 	if (s && *s) {
 		fputs(s, stderr);
 		if (addr != NULL) {
-			fprintf(stderr, "%p", addr);
+			fprintf(stderr, " %p", addr);
 		}
 		fputs("\n", stderr);
 	}
@@ -114,7 +120,15 @@ static void *__jk_page_alloc(size_t npages)
 static void __jk_sigaction(int sig, siginfo_t *si, void *addr)
 {
 	___signal.current = 0;
+
 	(void)sig; (void)addr;
+
+	__jk_undef();
+
+	if (!si) {
+		__jk_error("No signal information provided", NULL, NULL);
+	}
+
 	if (si->si_addr == NULL) {
 		psiginfo(si, "NULL pointer dereference");
 		__jk_error(NULL, NULL, NULL);
@@ -126,6 +140,7 @@ static void __jk_sigaction(int sig, siginfo_t *si, void *addr)
 		__jk_error(NULL, NULL, NULL);
 	}
 
+	MAGIC_CHECK:
 	switch (bucket->magic) {
 	case JK_UNDER_MAGIC:
 		if (bucket->size == 0) {
@@ -149,24 +164,25 @@ static void __jk_sigaction(int sig, siginfo_t *si, void *addr)
 		psiginfo(si, "Use after free() detected");
 		break;
 
+	case JK_RONLY_MAGIC:
+		psiginfo(si, "Attempt to modify read-only memory detected");
+		break;
+
 	default:
-		psiginfo(si, NULL);
+		/* try to find the actual error */
+		bucket = (void*)((char*)bucket - __jk_pagesize);
+		if (mprotect(bucket, __jk_pagesize, PROT_READ) != 0) {
+			psiginfo(si, NULL);
+			__jk_error(NULL, NULL, NULL);
+		}
+		goto MAGIC_CHECK;
 	}
 
 	struct jk_source src = { .bucket = bucket };
 	__jk_error(NULL, NULL, &src);
 }
 
-/*
-static void jk_sigsegv(int sig)
-{
-	___signal.current = 0;
-	fprintf(stderr, "JK SIGSEGV!\n");
-	__jk_sigaction(sig, NULL, NULL);
-}
-*/
-
-void* __jkmalloc(const char *file, const char *func, uintmax_t line, void *ptr, size_t alignment, size_t size1, size_t size2, const char *user)
+void* __jkmalloc(void *ptr, size_t alignment, size_t size1, size_t size2, const char *user)
 {
 	static int sa_set = 0;
 	if (!sa_set) {
@@ -174,9 +190,8 @@ void* __jkmalloc(const char *file, const char *func, uintmax_t line, void *ptr, 
 			.sa_flags = SA_SIGINFO,
 			.sa_sigaction = __jk_sigaction,
 		};
-		//sigemptyset(&sa.sa_mask);
+		sigemptyset(&sa.sa_mask);
 		sigaction(SIGSEGV, &sa, NULL);
-		//signal(SIGSEGV, jk_sigsegv);
 		sa_set = 1;
 	}
 
@@ -185,9 +200,9 @@ void* __jkmalloc(const char *file, const char *func, uintmax_t line, void *ptr, 
 	}
 
 	struct jk_source src = {
-		.file = file,
-		.func = func,
-		.line = line,
+		.file = __checked_call.file,
+		.func = __checked_call.func,
+		.line = __checked_call.line,
 	};
 
 	/* free() */
@@ -220,16 +235,16 @@ void* __jkmalloc(const char *file, const char *func, uintmax_t line, void *ptr, 
 		char *base = (char*)b;
 		mprotect(base, __jk_pagesize * b->pages, PROT_READ | PROT_WRITE);
 
-		if (file) {
+		if (src.file) {
 			size_t len = b->tlen;
 			b->tlen += snprintf(b->trace + len, __jk_pagesize - sizeof(*b) - len,
-				"%s--- %s() (%s:%ju)", len ? "\n" : "", func, file, line);
+				"%s--- %s() (%s:%ju)", len ? "\n" : "", src.func, src.file, src.line);
 		}
 
 		b->magic = JK_FREE_MAGIC;
 
 		for (size_t i = 1; i < b->pages; i++) {
-			memmove(base + i * __jk_pagesize, b, __jk_pagesize);
+			memcpy(base + i * __jk_pagesize, b, __jk_pagesize - 1);
 		}
 
 		size_t fb = __jk_free_buckets % JK_FREE_LIST_SIZE;
@@ -267,7 +282,7 @@ void* __jkmalloc(const char *file, const char *func, uintmax_t line, void *ptr, 
 			__jk_error("Attempt to reallocate() incorrect address", ptr, &src);
 		}
 	
-		void *newptr = __jkmalloc(NULL, NULL, 0, NULL, alignment, size1, size2, user);
+		void *newptr = __jkmalloc(NULL, alignment, size1, size2, user);
 		if (newptr != NULL) {
 			memmove(newptr, ptr, b->size);
 			free(ptr);
@@ -314,13 +329,15 @@ void* __jkmalloc(const char *file, const char *func, uintmax_t line, void *ptr, 
 
 	ptr = (void*)under->start;
 
-	if (file) {
-		under->tlen = snprintf(under->trace, __jk_pagesize - sizeof(*under), "+++ %s() (%s:%ju)", func, file, line);
+	if (src.file) {
+		under->tlen = snprintf(under->trace, __jk_pagesize - sizeof(*under), "+++ %s() (%s:%ju)", src.func, src.file, src.line);
 		memcpy(over->trace, under->trace, under->tlen + 1);
 		over->tlen = under->tlen;
 	} else if (user) {
+		under->magic = JK_RONLY_MAGIC;
 		under->tlen = snprintf(under->trace, __jk_pagesize - sizeof(*under), "Read-only memory for %s", user);
 		memcpy(over->trace, under->trace, under->tlen + 1);
+		over->magic = JK_RONLY_MAGIC;
 		over->tlen = under->tlen;
 	} else {
 		under->trace[0] = '\0';
@@ -347,7 +364,7 @@ int (jk_memalign)(void **ptr, size_t a, size_t n)
 		return EINVAL;
 	}
 
-	if (((*ptr) = __jkmalloc(NULL, NULL, 0, NULL, a, n, 0, NULL)) == NULL) {
+	if (((*ptr) = __jkmalloc(NULL, a, n, 0, NULL)) == NULL) {
 		return errno;
 	}
 

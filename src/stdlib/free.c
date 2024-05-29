@@ -9,9 +9,11 @@ void free(void * ptr)
 	SIGNAL_SAFE(0);
 
 	if (ptr) {
-		__jkmalloc(NULL, NULL, 0, ptr, 0, 0, 0, NULL);
+		__jkmalloc(ptr, 0, 0, 0, NULL);
 	}
 }
+
+VCHECK_1(free, void *)
 
 /***
 deallocates the memory at ARGUMENT(ptr). Specifying CONSTANT(NULL)

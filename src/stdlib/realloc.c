@@ -8,8 +8,10 @@ void * realloc(void * ptr, size_t size)
 {
 	SIGNAL_SAFE(0);
 
-	return __jkmalloc(NULL, NULL, 0, ptr, 1, size, 0, NULL);
+	return __jkmalloc(ptr, 1, size, 0, NULL);
 }
+
+CHECK_2(void *, NULL, realloc, void *, size_t)
 
 /***
 changes the amount of memory allocated to ARGUMENT(ptr) to ARGUMENT(size)

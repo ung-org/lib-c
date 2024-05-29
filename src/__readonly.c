@@ -12,7 +12,7 @@ void* __readonly(ro_action_t action, void *ptr)
 {
 	switch (action) {
 	case RO_ALLOC:
-		return __jkmalloc(NULL, NULL, 0, NULL, 1, PAGESIZE, 0, ptr);
+		return __jkmalloc(NULL, 1, PAGESIZE, 0, ptr);
 
 
 	case RO_FREE:
