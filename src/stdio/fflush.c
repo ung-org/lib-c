@@ -13,7 +13,10 @@ int fflush(FILE *stream)
 	if (stream == NULL) {
 		size_t i;
 		for (i = 0; i < FOPEN_MAX; i++) {
-			fflush(&(__stdio.FILES[i]));
+			stream = __stdio.FILES + i;
+			if (stream->write && (stream->operation != OP_INPUT)) {
+				fflush(stream);
+			}
 		}
 		return 0;
 	}
