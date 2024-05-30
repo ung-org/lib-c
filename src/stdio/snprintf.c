@@ -3,6 +3,7 @@
 #include <string.h>
 #include "_stdio.h"
 
+GCC_SSE_HACK
 int snprintf(char * restrict s, size_t n, const char * restrict format, ...)
 {
 	SIGNAL_SAFE(0);
