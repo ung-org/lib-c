@@ -125,6 +125,10 @@ static void __jk_sigaction(int sig, siginfo_t *si, void *addr)
 
 	__jk_undef();
 
+	if (__dangerous.func) {
+		fprintf(stderr, "In call to %s, accessing parameter %s (%p)\n", __dangerous.func, __dangerous.param, __dangerous.addr);
+	}
+
 	if (!si) {
 		__jk_error("No signal information provided", NULL, NULL);
 	}
