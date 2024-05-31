@@ -16,7 +16,7 @@ int __memperm(void *ptr)
 		uintmax_t low = 0;
 		uintmax_t high = 0;
 		char perms[5];
-		fscanf(map, "%ju-%ju %4s%*s\n", &low, &high, perms);
+		fscanf(map, "%jx-%jx %4s%*s\n", &low, &high, perms);
 		if (low <= addr && high >= addr) {
 			if (perms[0] == 'r') {
 				ret |= PROT_READ;
