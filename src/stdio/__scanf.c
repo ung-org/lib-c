@@ -16,6 +16,9 @@
 			UNDEFINED("Assignment to %s would overflow", #__t); \
 		} \
 		__t *__ptr = va_arg(__arg_list, __t *); \
+		if (__ptr == NULL) { \
+			UNDEFINED("Passed NULL for input conversion"); \
+		} \
 		*__ptr = (__t)(__val); \
 	} while (0)
 
@@ -24,7 +27,8 @@ static int __unget(struct io_options *opt, int c)
 	if (opt->stream) {
 		return ungetc(c, opt->stream);
 	}
-	return opt->string[--(opt->pos)] = c;
+	opt->pos--;
+	return c;
 }
 
 static int __get(struct io_options *opt)
@@ -42,8 +46,16 @@ static uintmax_t __get_uint(struct io_options *opt, char basec)
 	size_t pos = 0;
 	int base = 10;
 	char *end = NULL;
-	if (basec == 'x' || basec == 'X') {
+	if (basec == 'o') {
+		base = 8;
+	} else if (basec == 'x' || basec == 'X') {
 		base = 16;
+	}
+
+	if (opt->string) {
+		uintmax_t ret = strtoumax(opt->string + opt->pos, &end, base);
+		opt->pos += (size_t)(end - (opt->string + opt->pos));
+		return ret;
 	}
 
 	/* TODO: skip whitespace */
@@ -76,8 +88,12 @@ static intmax_t __get_int(struct io_options *opt, char basec)
 	char *end = NULL;
 	if (basec == 'd') {
 		base = 10;
-	} else if (basec == 'o') {
-		base = 8;
+	}
+
+	if (opt->string) {
+		intmax_t ret = strtoimax(opt->string + opt->pos, &end, base);
+		opt->pos += (size_t)(end - (opt->string + opt->pos));
+		return ret;
 	}
 
 	/* TODO: skip whitespace */
@@ -87,7 +103,7 @@ static intmax_t __get_int(struct io_options *opt, char basec)
 			buf[pos] = '\0';
 			break;
 		}
-		buf[pos] = c;
+		buf[pos++] = c;
 		strtoimax(buf, &end, base);
 		if (end && *end) {
 			break;
@@ -145,7 +161,6 @@ int __scanf(struct io_options *opt, const char * format, va_list arg)
 		switch (conv.spec) {
 		case 'd':	/* base 10 int */
 		case 'i':	/* unknown base int */
-		case 'o':	/* base 8 int */
 			intmax_t i = __get_int(opt, conv.spec);
 			switch (conv.length) {
 			case L_hh:	ASSIGN(signed char, arg, i, SCHAR_MIN, SCHAR_MAX); break;
@@ -161,8 +176,9 @@ int __scanf(struct io_options *opt, const char * format, va_list arg)
 			}
 			break;
 
+		case 'o':	/* base 8 unsigned */
 		case 'u':	/* base 10 unsigned */
-		case 'x':
+		case 'x':	/* base 16 unsigned */
 		case 'X':	/* base 16 unsigned */
 			uintmax_t u = __get_uint(opt, conv.spec);
 			switch (conv.length) {
@@ -174,6 +190,7 @@ int __scanf(struct io_options *opt, const char * format, va_list arg)
 			case L_z:	ASSIGN(size_t, arg, u, 0, SIZE_MAX); break;
 			case L_t:	ASSIGN(ptrdiff_t, arg, u, 0, PTRDIFF_MAX); break;
 			default:	ASSIGN(unsigned int, arg, u, 0, UINT_MAX); break;
+
 			/* case L_L: UNDEFINED(""); break; */
 			}
 			break;
@@ -186,7 +203,18 @@ int __scanf(struct io_options *opt, const char * format, va_list arg)
 		case 'F':
 		case 'g':
 		case 'G':
-			/* strtod */
+			if (conv.length == L_L) {
+				/*
+				long double *ld = va_arg(arg, long double *);
+				*ld = strtold(opt->string, NULL);
+				*/
+			} else {
+				/*
+				double *d = va_arg(arg, double *);
+				*d = strtod(opt->string, NULL);
+				*/
+			}
+			break;
 
 		case 'c':
 			/* width (default 1) characters */
