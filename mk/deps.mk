@@ -1154,6 +1154,10 @@ all: mk/fgets.d
 mk/fgets.d: src/stdio/fgets.c
 	sh mk/deps.sh src/stdio/fgets.c
 
+all: mk/__conv.d
+mk/__conv.d: src/stdio/__conv.c
+	sh mk/deps.sh src/stdio/__conv.c
+
 all: mk/vsscanf_s.d
 mk/vsscanf_s.d: src/stdio/vsscanf_s.c
 	sh mk/deps.sh src/stdio/vsscanf_s.c

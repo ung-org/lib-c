@@ -1,6 +1,7 @@
 #ifndef ___STDIO_H__
 #define ___STDIO_H__
 
+#include <inttypes.h>
 #include <stddef.h>
 #include <stdarg.h>
 #include <stdio.h>
@@ -91,9 +92,39 @@ struct io_options {
 	FILE *stream;		/* NULL or the output stream */
 	int fd;			/* -1 or the output file descriptor */
 	size_t maxlen;		/* max number of bytes to write to string */
+	size_t pos;		/* current index in string */
 	int ret;		/* return value */
 };
 
+struct io_conversion {
+	enum { IO_IN, IO_OUT } dir;
+	enum {
+		F_STAR = (1<<0),
+		F_LEFT = (1<<1),
+		F_SIGN = (1<<2),
+		F_SPACE = (1<<3),
+		F_ALT = (1<<4),
+		F_ZERO = (1<<4),
+	} flags;
+	enum {
+		L_default,
+		L_hh,
+		L_h,
+		L_l,
+		L_ll,
+		L_j,
+		L_z,
+		L_t,
+		L_L,
+	} length;
+	int has_width:1;
+	int has_precision:1;
+	uintmax_t width;
+	uintmax_t precision;
+	char spec;
+};
+
+size_t __conv(const char *, struct io_conversion *);
 int __printf(struct io_options * restrict, const char * restrict, va_list);
 int __scanf(struct io_options * restrict, const char * restrict, va_list);
 

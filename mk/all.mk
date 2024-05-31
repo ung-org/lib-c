@@ -286,6 +286,7 @@ include mk/setvbuf.d
 include mk/sscanf.d
 include mk/fclose.d
 include mk/fgets.d
+include mk/__conv.d
 include mk/vsscanf_s.d
 include mk/__stderr.d
 include mk/fgetc.d
