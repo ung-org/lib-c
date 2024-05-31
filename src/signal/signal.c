@@ -2,6 +2,7 @@
 #include "_signal.h"
 #include "_safety.h"
 #include "_syscall.h"
+#include "_memperm.h"
 
 /** set a signal handler **/
 
@@ -31,6 +32,10 @@ void (*signal(int sig, void (*func)(int)))(int)
 	if (sig < 0 || sig > NSIGNALS) {
 		/* FIXME: should errno be set? */
 		return SIG_ERR;
+	}
+
+	if ((__memperm(func) & PROT_EXEC) != PROT_EXEC) {
+		UNDEFINED("signal handler is not executable");
 	}
 
 	void (*prev)(int) = ___signal.handlers[sig];
