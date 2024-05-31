@@ -6,6 +6,10 @@ all: mk/__undefined.d
 mk/__undefined.d: src/__undefined.c
 	sh mk/deps.sh src/__undefined.c
 
+all: mk/__memperm.d
+mk/__memperm.d: src/__memperm.c
+	sh mk/deps.sh src/__memperm.c
+
 all: mk/ctan.d
 mk/ctan.d: src/complex/ctan.c
 	sh mk/deps.sh src/complex/ctan.c

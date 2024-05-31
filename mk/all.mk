@@ -1,4 +1,5 @@
 include mk/__undefined.d
+include mk/__memperm.d
 include mk/ctan.d
 include mk/catan.d
 include mk/ccos.d
