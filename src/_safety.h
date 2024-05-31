@@ -75,8 +75,8 @@ extern struct __dangerous {
 #define ASSERT_NOOVERLAP(__p1, __l1, __p2, __l2) do { \
 	char *__s1 = (char*)(__p1); \
 	char *__s2 = (char*)(__p2); \
-	if (((__s1 < __s2) && ((__s1 + (__l1)) >= __s2)) || ((__s1 > __s2) && ((__s2 + (__l2)) >= __s1))) { \
-		UNDEFINED("In call to %s(), parameters %s and %s overlap", __func__, #__p1, #__p2); \
+	if (((__s1 < __s2) && ((__s1 + (__l1)) > __s2)) || ((__s1 > __s2) && ((__s2 + (__l2)) > __s1))) { \
+		UNDEFINED("In call to %s(), parameters %s (%p-%p) and %s (%p-%p) overlap", __func__, #__p1, __p1, __s1 + __l1 - 1, #__p2, __p2, __s2 + __l2 - 1); \
 	} \
 } while (0)
 
