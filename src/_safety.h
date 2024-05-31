@@ -28,8 +28,19 @@ extern struct __checked_call {
 	unsigned long long line;
 } __checked_call;
 
+#if 0
+_Thread_local
+#endif
+extern struct __dangerous {
+	const char *func;
+	const char *param;
+	const void *addr;
+} __dangerous;
+
 #ifndef NDEBUG
 #define UNDEFINED(...) __undefined(__VA_ARGS__)
+
+#define DANGER(__s) __dangerous = ((__s != NULL && __dangerous.func == NULL) ? (struct __dangerous){ .func = __func__, .param = #__s, .addr = __s } : (struct __dangerous){ 0 })
 
 #define ADD_PREV(__val, __arr, __count) do { \
 	void *tmp = realloc((__arr), ((__count) + 1) * sizeof((__arr)[0])); \
@@ -156,6 +167,7 @@ extern struct __checked_call {
 #define UNDEFINED(...)
 #define ASSERT_NOOVERLAP(__x, __y, __s)
 #define ASSERT_NONNULL(x)
+#define DANGER(__s)
 #define VCHECK_0(f)
 #define VCHECK_1(f, a)
 #define VCHECK_2(f, a, b)
