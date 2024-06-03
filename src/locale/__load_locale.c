@@ -43,6 +43,7 @@ char * __load_locale(struct __locale_t *loc, int mask, const char *name)
 
 	if (mask & LC_CTYPE_MASK) {
 		strcpy(loc->ctype, name);
+		loc->ctype_epoch++;
 
 		if (localefile == NULL) {
 			char upper[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";

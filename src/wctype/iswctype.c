@@ -9,6 +9,10 @@ int iswctype(wint_t wc, wctype_t desc)
 	ASSERT_REPRESENTABLE(wc, WCHAR_MIN, WCHAR_MAX, "wchar_t", WEOF);
 	//ASSERT_REPRESENTABLE(desc, 1, __libc.wctype.nwctype, "wctype_t", 0);
 
+	if (__get_locale()->ctype_epoch != (desc >> CT_EPOCH_SHIFT)) {
+		UNDEFINED("LC_CTYPE has been changed since the call to wctype()");
+	}
+
 	/* TODO: actual work */
 	(void)wc; (void)desc;
 

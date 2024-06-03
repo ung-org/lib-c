@@ -18,18 +18,33 @@
 #endif
 
 typedef enum {
-	CT_ALPHA = (1 << 0),
-	CT_CNTRL = (1 << 1),
-	CT_DIGIT = (1 << 2),
-	CT_GRAPH = (1 << 3),
-	CT_LOWER = (1 << 4),
-	CT_PRINT = (1 << 5),
-	CT_PUNCT = (1 << 6),
-	CT_SPACE = (1 << 7),
-	CT_UPPER = (1 << 8),
-	CT_XDIGIT = (1 << 9),
-	CT_BLANK = (1 << 10),
-} ctype_t;
+	CT_ALPHA = 0,
+	CT_CNTRL = 1,
+	CT_DIGIT = 2,
+	CT_GRAPH = 3,
+	CT_LOWER = 4,
+	CT_PRINT = 5,
+	CT_PUNCT = 6,
+	CT_SPACE = 7,
+	CT_UPPER = 8,
+	CT_XDIGIT = 9,
+	CT_BLANK = 10,
+	CT_ALNUM = 11,
+} c_type;
+
+typedef enum {
+	CTM_ALPHA = (1 << CT_ALPHA),
+	CTM_CNTRL = (1 << CT_CNTRL),
+	CTM_DIGIT = (1 << CT_DIGIT),
+	CTM_GRAPH = (1 << CT_GRAPH),
+	CTM_LOWER = (1 << CT_LOWER),
+	CTM_PRINT = (1 << CT_PRINT),
+	CTM_PUNCT = (1 << CT_PUNCT),
+	CTM_SPACE = (1 << CT_SPACE),
+	CTM_UPPER = (1 << CT_UPPER),
+	CTM_XDIGIT = (1 << CT_XDIGIT),
+	CTM_BLANK = (1 << CT_BLANK),
+} c_type_mask;
 
 /*
 STDC(-1)

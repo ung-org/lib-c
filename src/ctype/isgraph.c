@@ -9,7 +9,7 @@ int isgraph(int c)
 	SIGNAL_SAFE(0);
 	ASSERT_REPRESENTABLE(c, 0, UCHAR_MAX, unsigned char, EOF);
 
-	return c == EOF ? 0 : map[c] & CT_GRAPH;
+	return c == EOF ? 0 : map[c] & CTM_GRAPH;
 }
 
 CHECK_1(int, 0, isgraph, int)

@@ -9,7 +9,7 @@ int isupper(int c)
 	SIGNAL_SAFE(0);
 	ASSERT_REPRESENTABLE(c, 0, UCHAR_MAX, unsigned char, EOF);
 
-	return c == EOF ? 0 : map[c] & CT_UPPER;
+	return c == EOF ? 0 : map[c] & CTM_UPPER;
 }
 
 CHECK_1(int, 0, isupper, int)

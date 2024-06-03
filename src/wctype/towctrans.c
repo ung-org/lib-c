@@ -8,6 +8,10 @@ wint_t towctrans(wint_t wc, wctrans_t desc)
 	ASSERT_REPRESENTABLE(wc, WCHAR_MIN, WCHAR_MAX, "wchar_t", WEOF);
 	//ASSERT_REPRESENTABLE(desc, 1, __libc.wctype.nwctrans, "wctrans_t", 0);
 
+	if (__get_locale()->ctype_epoch != (desc >> CT_EPOCH_SHIFT)) {
+		UNDEFINED("LC_CTYPE has changed since the call to wctrans()");
+	}
+
 	/* TODO: actual work */
 	(void)wc; (void)desc;
 

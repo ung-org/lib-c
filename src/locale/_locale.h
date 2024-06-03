@@ -36,6 +36,7 @@ struct __locale_t {
 	char all[UCHAR_MAX];
 
 	char ctype[UCHAR_MAX];
+	unsigned int ctype_epoch;
 	struct {
 		unsigned int ctattr[UCHAR_MAX + 1];
 		unsigned char ctoupper[UCHAR_MAX + 1];

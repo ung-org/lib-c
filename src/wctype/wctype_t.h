@@ -1,5 +1,5 @@
 #include <wctype.h>
-typedef int                                                            wctype_t;
+typedef unsigned int                                                   wctype_t;
 
 /*
 STDC(199409)

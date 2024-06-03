@@ -7,31 +7,32 @@ wctype_t wctype(const char * property)
 {
 	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(property);
+	wctype_t epoch = ((__get_locale()->ctype_epoch) << CT_EPOCH_SHIFT);
 
 	if (!strcmp(property, "alnum")) {
-		return CT_ALPHA | CT_DIGIT;
+		return epoch | CT_ALNUM;
 	} else if (!strcmp(property, "alpha")) {
-		return CT_ALPHA;
+		return epoch | CT_ALPHA;
 	} else if (!strcmp(property, "blank")) {
-		return CT_BLANK;
+		return epoch | CT_BLANK;
 	} else if (!strcmp(property, "cntrl")) {
-		return CT_CNTRL;
+		return epoch | CT_CNTRL;
 	} else if (!strcmp(property, "digit")) {
-		return CT_DIGIT;
+		return epoch | CT_DIGIT;
 	} else if (!strcmp(property, "graph")) {
-		return CT_GRAPH;
+		return epoch | CT_GRAPH;
 	} else if (!strcmp(property, "lower")) {
-		return CT_LOWER;
+		return epoch | CT_LOWER;
 	} else if (!strcmp(property, "print")) {
-		return CT_PRINT;
+		return epoch | CT_PRINT;
 	} else if (!strcmp(property, "punct")) {
-		return CT_PUNCT;
+		return epoch | CT_PUNCT;
 	} else if (!strcmp(property, "space")) {
-		return CT_SPACE;
+		return epoch | CT_SPACE;
 	} else if (!strcmp(property, "upper")) {
-		return CT_UPPER;
+		return epoch | CT_UPPER;
 	} else if (!strcmp(property, "xdigit")) {
-		return CT_XDIGIT;
+		return epoch | CT_XDIGIT;
 	}
 
 	return 0;

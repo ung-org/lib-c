@@ -72,9 +72,14 @@ char * setlocale(int category, const char *locale)
 		name_to_return = __load_locale(l, mask, locale);
 	}
 
-	__readonly(RO_UNLOCK, retname);
-	strcpy(retname, name_to_return);
-	__readonly(RO_LOCK, retname);
+	if (name_to_return != NULL) {
+		__readonly(RO_UNLOCK, retname);
+		strcpy(retname, name_to_return);
+		__readonly(RO_LOCK, retname);
+	} else {
+		retname = NULL;
+	}
+
 	return retname;
 }
 

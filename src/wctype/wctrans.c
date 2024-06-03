@@ -7,11 +7,12 @@ wctrans_t wctrans(const char * property)
 {
 	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(property);
+	wctrans_t epoch = __get_locale()->ctype_epoch << CT_EPOCH_SHIFT;
 
 	if (!strcmp(property, "tolower")) {
-		return CT_LOWER;
+		return epoch | CT_LOWER;
 	} else if (!strcmp(property, "toupper")) {
-		return CT_UPPER;
+		return epoch | CT_UPPER;
 	}
 
 	return 0;

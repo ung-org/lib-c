@@ -10,11 +10,16 @@ char * strcpy(char * restrict s1, const char * restrict s2)
 	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(s1);
 	ASSERT_NONNULL(s2);
+
+	DANGER(s2);
+
 	ASSERT_NOOVERLAP(s1, strlen(s2), s2, strlen(s2));
 
 	while ((*s1++ = *s2++) != '\0') {
 		continue;
 	}
+
+	DANGER(0);
 
 	/*
 	RETURN_ALWAYS(ARGUMENT(s1));
