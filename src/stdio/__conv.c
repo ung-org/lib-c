@@ -1,37 +1,7 @@
 #include <inttypes.h>
 #include <ctype.h>
 #include <string.h>
-#include "_conversion.h"
-
-/*
-struct io_conversion {
-	enum { IO_IN, IO_OUT } dir;
-        enum {
-                F_STAR = (1<<0),
-                F_LEFT = (1<<1),
-                F_SIGN = (1<<2),
-                F_SPACE = (1<<3),
-                F_ALT = (1<<4),
-                F_ZERO = (1<<4),
-        } flags;
-        enum {
-                L_default,
-                L_hh,
-                L_h,
-                L_l,
-                L_ll,
-                L_j,
-                L_z,
-                L_t,
-                L_L,
-        } length;
-        int has_width:1;
-        int has_precision:1;
-        uintmax_t width;
-        uintmax_t precision;
-        char spec;
-};
-*/
+#include "_stdio.h"
 
 size_t __conv(const char *format, struct io_conversion *conv)
 {
