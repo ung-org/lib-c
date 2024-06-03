@@ -230,7 +230,7 @@ int __scanf(struct io_options *opt, const char * format, va_list arg)
 
 			char *str = va_arg(arg, char *);
 
-			/* TODO: only use widht if conv.has_width == 1 */
+			/* TODO: only use width if conv.has_width == 1 */
 			for (uintmax_t i = 0; i < conv.width; i++) {
 				int c = __get(opt);
 				if (isspace(c)) {
@@ -248,6 +248,18 @@ int __scanf(struct io_options *opt, const char * format, va_list arg)
 
 		case 'p':
 			/* previous printf("%p"); */
+			char str_ptr[sizeof(void *) * 2 + 3];
+			for (size_t i = 0; i < sizeof(str_ptr); i++) {
+				/* TODO: error checking */
+				str_ptr[i] = __get(opt);
+			}
+			ASSERT_PREV_STRING(str_ptr, __stdio.formatted_pointers, __stdio.nformatted_pointers, "printf() or similar");
+			void **ptr = va_arg(arg, void **);
+			if (ptr == NULL) {
+				UNDEFINED("parameter is NULL");
+			}
+			*ptr = (void*)strtoumax(str_ptr, NULL, 0);
+			break;
 
 		case 'n':
 			/* output a number */

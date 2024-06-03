@@ -11,6 +11,7 @@
 #endif
 
 #include "_forced/strtoumax.h"
+#include "_forced/strdup.h"
 
 #include "_stdio.h"
 
@@ -339,9 +340,11 @@ int (__printf)(struct io_options *opt, const char * format, va_list arg)
 				UNDEFINED("In call to %s(): Precision with %%p conversion", opt->fnname);
 			}
 			argptr = va_arg(arg, void *);
+			char *s_to_track = s + nout;
 			nout = __append(s, "0x", nout, n);
 			__itos(numbuf, (intptr_t)argptr, ZERO, sizeof(argptr) * 2, 16);
 			nout = __append(s, numbuf, nout, n);
+			ADD_PREV_STRING(s_to_track, __stdio.formatted_pointers, __stdio.nformatted_pointers);
 			break;
 
 		case 'n':	/* write-back */

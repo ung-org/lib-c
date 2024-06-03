@@ -130,6 +130,8 @@ int __scanf(struct io_options * restrict, const char * restrict, va_list);
 
 struct __stdio {
 	struct __FILE FILES[FOPEN_MAX];
+	char **formatted_pointers;
+	size_t nformatted_pointers;
 };
 
 extern struct __stdio __stdio;
