@@ -1,4 +1,4 @@
-libc_C.1: libc.a(setjmp.o)
+libc_C.0: libc.a(setjmp.o)
 libc.a(setjmp.o): $(OBJDIR)/setjmp.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 

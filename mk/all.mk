@@ -216,6 +216,8 @@ include mk/nanosleep.d
 include mk/mktime.d
 include mk/asctime.d
 include mk/__readonly.d
+include mk/__setjmp.d
+include mk/__setjmp_h.d
 include mk/longjmp.d
 include mk/setjmp.d
 include mk/thrd_join.d
@@ -347,6 +349,7 @@ include mk/strcpy.d
 include mk/strtok.d
 include mk/memset.d
 include mk/memmove.d
+include mk/strdup.d
 include mk/strncpy.d
 include mk/strcat_s.d
 include mk/strnlen_s.d
@@ -476,4 +479,4 @@ include mk/calloc.d
 include mk/div.d
 include mk/__sys.x86-64.s.d
 include mk/__longjmp.x86-64.s.d
-include mk/__setjmp.x86-64.s.d
+include mk/___setjmp.x86-64.s.d

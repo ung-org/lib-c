@@ -874,6 +874,14 @@ all: mk/__readonly.d
 mk/__readonly.d: src/__readonly.c
 	sh mk/deps.sh src/__readonly.c
 
+all: mk/__setjmp.d
+mk/__setjmp.d: src/setjmp/__setjmp.c
+	sh mk/deps.sh src/setjmp/__setjmp.c
+
+all: mk/__setjmp_h.d
+mk/__setjmp_h.d: src/setjmp/__setjmp_h.c
+	sh mk/deps.sh src/setjmp/__setjmp_h.c
+
 all: mk/longjmp.d
 mk/longjmp.d: src/setjmp/longjmp.c
 	sh mk/deps.sh src/setjmp/longjmp.c
@@ -1398,6 +1406,10 @@ all: mk/memmove.d
 mk/memmove.d: src/string/memmove.c
 	sh mk/deps.sh src/string/memmove.c
 
+all: mk/strdup.d
+mk/strdup.d: src/string/strdup.c
+	sh mk/deps.sh src/string/strdup.c
+
 all: mk/strncpy.d
 mk/strncpy.d: src/string/strncpy.c
 	sh mk/deps.sh src/string/strncpy.c
@@ -1914,7 +1926,7 @@ all: mk/__longjmp.x86-64.s.d
 mk/__longjmp.x86-64.s.d: src/setjmp/__longjmp.x86-64.s
 	sh mk/deps.sh src/setjmp/__longjmp.x86-64.s
 
-all: mk/__setjmp.x86-64.s.d
-mk/__setjmp.x86-64.s.d: src/setjmp/__setjmp.x86-64.s
-	sh mk/deps.sh src/setjmp/__setjmp.x86-64.s
+all: mk/___setjmp.x86-64.s.d
+mk/___setjmp.x86-64.s.d: src/setjmp/___setjmp.x86-64.s
+	sh mk/deps.sh src/setjmp/___setjmp.x86-64.s
 

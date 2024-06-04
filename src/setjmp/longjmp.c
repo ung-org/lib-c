@@ -1,4 +1,5 @@
 #include <setjmp.h>
+#include "_setjmp.h"
 #include "_safety.h"
 
 /** restore calling environment **/
@@ -7,6 +8,7 @@ _Noreturn void longjmp(jmp_buf env, int val)
 {
 	extern _Noreturn void ___longjmp(jmp_buf);
 	SIGNAL_SAFE(0);
+	ASSERT_JMP_BUF(env);
 
 	/* use val if nonzero, otherwise 1 */
 	env[0] = val ? val : 1;
