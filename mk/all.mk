@@ -412,6 +412,7 @@ include mk/exp.d
 include mk/expm1.d
 include mk/floor.d
 include mk/ldexp.d
+include mk/__fpclassify_error.d
 include mk/fabs.d
 include mk/cosh.d
 include mk/sqrt.d

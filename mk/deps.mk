@@ -1658,6 +1658,10 @@ all: mk/ldexp.d
 mk/ldexp.d: src/math/ldexp.c
 	sh mk/deps.sh src/math/ldexp.c
 
+all: mk/__fpclassify_error.d
+mk/__fpclassify_error.d: src/math/__fpclassify_error.c
+	sh mk/deps.sh src/math/__fpclassify_error.c
+
 all: mk/fabs.d
 mk/fabs.d: src/math/fabs.c
 	sh mk/deps.sh src/math/fabs.c
