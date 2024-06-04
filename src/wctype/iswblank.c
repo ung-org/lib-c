@@ -5,7 +5,7 @@
 int iswblank(wint_t wc)
 {
 	SIGNAL_SAFE(0);
-	//ASSERT_REPRESENTABLE(wc, WCHAR_MIN, WCHAR_MAX, "wchar_t", WEOF);
+	ASSERT_REPRESENTABLE(wc, WCHAR_MIN, WCHAR_MAX, "wchar_t", WEOF);
 
 	wctype_t blank = wctype("blank");
 	return iswctype(wc, blank);
