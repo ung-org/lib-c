@@ -3,7 +3,21 @@
 
 #include <stdlib.h>
 #include <limits.h>
+#include "locale/_locale.h"
 #include "_safety.h"
+
+#ifndef NDEBUG
+#define ASSERT_CTYPE(__s_ptr) do { \
+	static unsigned int __ctype_epoch = 0; \
+	if ((__s_ptr) == 0) { \
+		__ctype_epoch = __get_ctype_epoch(); \
+	} else if (__ctype_epoch != __get_ctype_epoch()) { \
+		UNDEFINED("LC_CTYPE has changed since previous call which did not reset internal state"); \
+	} \
+} while (0)
+#else
+#define ASSERT_CTYPE(__s_ptr) (void)(__s_ptr)
+#endif
 
 #ifdef NEED_COMPAR
 #ifdef NDEBUG

@@ -6,6 +6,7 @@
 int wctomb(char * s, wchar_t wchar)
 {
 	SIGNAL_SAFE(0);
+	ASSERT_CTYPE(s);
 
 	/* FIXME: forward dependency on AMD1 */
 	#if 0

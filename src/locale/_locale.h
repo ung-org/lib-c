@@ -92,6 +92,8 @@ struct __locale_t {
 char * __load_locale(struct __locale_t *loc, int mask, const char *name);
 struct __locale_t * __get_locale(void);
 
+#define __get_ctype_epoch() (__get_locale()->ctype_epoch)
+
 /*
 STDC(-1)
 */

@@ -7,6 +7,7 @@ int mbtowc(wchar_t * restrict pwc, const char * restrict s, size_t n)
 {
 	SIGNAL_SAFE(0);
 	ASSERT_NOOVERLAP(pwc, sizeof(*pwc), s, n);
+	ASSERT_CTYPE(s);
 
 	/* FIXME: forward dependency on AMD1 */
 	#if 0
