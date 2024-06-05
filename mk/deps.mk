@@ -1930,11 +1930,11 @@ all: mk/__sys.x86-64.s.d
 mk/__sys.x86-64.s.d: src/__sys.x86-64.s
 	sh mk/deps.sh src/__sys.x86-64.s
 
-all: mk/__longjmp.x86-64.s.d
-mk/__longjmp.x86-64.s.d: src/setjmp/__longjmp.x86-64.s
-	sh mk/deps.sh src/setjmp/__longjmp.x86-64.s
-
 all: mk/___setjmp.x86-64.s.d
 mk/___setjmp.x86-64.s.d: src/setjmp/___setjmp.x86-64.s
 	sh mk/deps.sh src/setjmp/___setjmp.x86-64.s
+
+all: mk/___longjmp.x86-64.s.d
+mk/___longjmp.x86-64.s.d: src/setjmp/___longjmp.x86-64.s
+	sh mk/deps.sh src/setjmp/___longjmp.x86-64.s
 

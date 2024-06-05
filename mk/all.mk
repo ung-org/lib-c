@@ -480,5 +480,5 @@ include mk/realloc.d
 include mk/calloc.d
 include mk/div.d
 include mk/__sys.x86-64.s.d
-include mk/__longjmp.x86-64.s.d
 include mk/___setjmp.x86-64.s.d
+include mk/___longjmp.x86-64.s.d
