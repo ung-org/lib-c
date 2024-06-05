@@ -3,6 +3,7 @@ libc.a(mbrtowc.o): $(OBJDIR)/mbrtowc.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/mbrtowc.o: src/wchar/mbrtowc.c
+$(OBJDIR)/mbrtowc.o: src/wchar/_wchar.h
 $(OBJDIR)/mbrtowc.o:
 	@mkdir -p $(@D)
 	$(CC) -c -o $@ $(CFLAGS) src/wchar/mbrtowc.c

@@ -1,19 +1,27 @@
-#if 0
-
 #include <wchar.h>
+#include "_wchar.h"
 
+GCC_SSE_HACK
 size_t wcsrtombs(char * restrict dst, const wchar_t ** restrict src, size_t len, mbstate_t * restrict ps)
 {
+	static struct __mbstate_t internal = { 0 };
+	static mbstate_t ip = { &internal };
+
+	if (ps == NULL) {
+		ps = &ip;
+	}
+
 	SIGNAL_SAFE(0);
+	ASSERT_MBSTATE(ps, WTOMB, dst, src);
 	/* TODO: overlap */
 
-	(void)dst; (void)src; (void)len; (void)ps;
-	return 0;
+	SET_MBSTATE(ps, WTOMB, dst, *src);
+
+	/* TODO: conversion */
+
+	return len;
 }
 
 /*
 STDC(199409)
 */
-
-
-#endif

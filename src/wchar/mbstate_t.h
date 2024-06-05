@@ -1,5 +1,5 @@
 #include <wchar.h>
-typedef int                                                           mbstate_t;
+typedef struct { struct __mbstate_t *__impl; }                        mbstate_t;
 
 /*
 STDC(199409)
