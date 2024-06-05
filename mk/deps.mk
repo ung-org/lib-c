@@ -602,6 +602,10 @@ all: mk/wcsrtombs_s.d
 mk/wcsrtombs_s.d: src/wchar/wcsrtombs_s.c
 	sh mk/deps.sh src/wchar/wcsrtombs_s.c
 
+all: mk/__wchar_h.d
+mk/__wchar_h.d: src/wchar/__wchar_h.c
+	sh mk/deps.sh src/wchar/__wchar_h.c
+
 all: mk/putwchar.d
 mk/putwchar.d: src/wchar/putwchar.c
 	sh mk/deps.sh src/wchar/putwchar.c

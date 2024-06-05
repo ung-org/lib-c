@@ -6,6 +6,11 @@
 #include "_safety.h"
 #include "locale/_locale.h"
 
+extern struct __wchar_h {
+	wchar_t **wcstok;
+	size_t nwcstok;
+} __wchar_h;
+
 struct __mbstate_t {
 	unsigned int ctype_epoch;
 	enum { NONE, WTOMB, MBTOW } dir;

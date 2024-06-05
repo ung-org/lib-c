@@ -148,6 +148,7 @@ include mk/wcstoull.d
 include mk/fwprintf.d
 include mk/wscanf_s.d
 include mk/wcsrtombs_s.d
+include mk/__wchar_h.d
 include mk/putwchar.d
 include mk/wcstof.d
 include mk/fwprintf_s.d
