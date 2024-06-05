@@ -4,9 +4,6 @@
 #include <setjmp.h>
 #include "_safety.h"
 
-struct __valid_jmp_buf {
-};
-
 extern struct __setjmp_h {
 	struct valid_jmp_buf {
 		unsigned long int *buf;
@@ -14,7 +11,6 @@ extern struct __setjmp_h {
 	} *valid;
 	size_t nvalid;
 } __setjmp_h;
-
 
 #ifndef NDEBUG
 static inline unsigned long int jmp_sum(jmp_buf env)
