@@ -128,13 +128,11 @@ size_t __conv(const char *, struct io_conversion *);
 int __printf(struct io_options * restrict, const char * restrict, va_list);
 int __scanf(struct io_options * restrict, const char * restrict, va_list);
 
-struct __stdio {
+extern struct __stdio_h {
 	struct __FILE FILES[FOPEN_MAX];
 	char **formatted_pointers;
 	size_t nformatted_pointers;
-};
-
-extern struct __stdio __stdio;
+} __stdio_h;
 
 /*
 STDC(-1)

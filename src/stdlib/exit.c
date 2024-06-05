@@ -8,17 +8,17 @@
 /** cause normal program termination **/
 _Noreturn void exit(int status)
 {
-	struct atexit *ae = &(__stdlib.atexit);
+	struct atexit *ae = &(__stdlib_h.atexit);
 
 	SIGNAL_SAFE(0);
 
-	if (__stdlib.exit_called == QUICK) {
-		__stdlib.constraint_handler("Undefined behavior: exit() called after quick_exit()", NULL, 0);
+	if (__stdlib_h.exit_called == QUICK) {
+		__stdlib_h.constraint_handler("Undefined behavior: exit() called after quick_exit()", NULL, 0);
 	}
-	if (__stdlib.exit_called == REGULAR) {
-		__stdlib.constraint_handler("Undefined behavior: exit() called twice", NULL, 0);
+	if (__stdlib_h.exit_called == REGULAR) {
+		__stdlib_h.constraint_handler("Undefined behavior: exit() called twice", NULL, 0);
 	}
-	__stdlib.exit_called = REGULAR;
+	__stdlib_h.exit_called = REGULAR;
 
 	/* execute all atexit() registered functions in reverse order */
 	while (ae) {

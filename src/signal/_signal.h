@@ -7,7 +7,7 @@
 
 typedef void (*handler)(int);
 
-extern struct __signal {
+extern struct __signal_h {
 	int current;
 	handler handlers[NSIGNALS];
 } __signal_h;

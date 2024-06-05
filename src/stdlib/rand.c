@@ -5,7 +5,7 @@ int rand(void)
 {
 	SIGNAL_SAFE(0);
 
-	return (int)_rand(__stdlib.rand);
+	return (int)_rand(__stdlib_h.rand);
 }
 
 /***

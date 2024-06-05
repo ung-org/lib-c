@@ -344,7 +344,7 @@ int (__printf)(struct io_options *opt, const char * format, va_list arg)
 			nout = __append(s, "0x", nout, n);
 			__itos(numbuf, (intptr_t)argptr, ZERO, sizeof(argptr) * 2, 16);
 			nout = __append(s, numbuf, nout, n);
-			ADD_PREV_STRING(s_to_track, __stdio.formatted_pointers, __stdio.nformatted_pointers);
+			ADD_PREV_STRING(s_to_track, __stdio_h.formatted_pointers, __stdio_h.nformatted_pointers);
 			break;
 
 		case 'n':	/* write-back */

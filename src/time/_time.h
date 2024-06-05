@@ -24,12 +24,10 @@
 
 #define TZNAMELEN 64
 
-struct __time {
+extern struct __time_h {
 	char stdtz[TZNAMELEN];
 	char dsttz[TZNAMELEN];
-};
-
-extern struct __time __time;
+} __time_h;
 
 /*
 STDC(0)

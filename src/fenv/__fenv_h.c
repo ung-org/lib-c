@@ -1,6 +1,6 @@
 #include "_fenv.h"
 
-struct __fenv __fenv = { 0 };
+struct __fenv __fenv_h = { 0 };
 
 /*
 STDC(-1)

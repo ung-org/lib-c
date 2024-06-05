@@ -53,7 +53,7 @@ static int __safe_compar(int (*compar)(const void *, const void *), const void *
 #include "__constraint_info.h"
 void abort_handler_s(const char * restrict msg, void * restrict ptr, errno_t error);
 
-struct __stdlib {
+extern struct __stdlib_h {
 	struct atexit {
         	int nfns;
         	void (*fns[32])(void);
@@ -64,9 +64,7 @@ struct __stdlib {
 	unsigned int rand;
 	constraint_handler_t constraint_handler;
 	char **environ;
-};
-
-extern struct __stdlib __stdlib;
+} __stdlib_h;
 
 #ifdef _POSIX_SOURCE
 extern char **environ;

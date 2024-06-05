@@ -6,7 +6,7 @@ void srand(unsigned int seed)
 {
 	SIGNAL_SAFE(0);
 
-	__stdlib.rand = seed;
+	__stdlib_h.rand = seed;
 }
 
 /***

@@ -5,7 +5,7 @@
 
 void __signal_handler(int sig)
 {
-	if (__stdlib.exit_called == QUICK) {
+	if (__stdlib_h.exit_called == QUICK) {
 		UNDEFINED("signal %d occured during quick_exit", sig);
 	}
 

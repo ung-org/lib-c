@@ -218,10 +218,6 @@ all: mk/fesetround.d
 mk/fesetround.d: src/fenv/fesetround.c
 	sh mk/deps.sh src/fenv/fesetround.c
 
-all: mk/__fenv.d
-mk/__fenv.d: src/fenv/__fenv.c
-	sh mk/deps.sh src/fenv/__fenv.c
-
 all: mk/feupdateenv.d
 mk/feupdateenv.d: src/fenv/feupdateenv.c
 	sh mk/deps.sh src/fenv/feupdateenv.c
@@ -245,6 +241,10 @@ mk/fegetround.d: src/fenv/fegetround.c
 all: mk/fegetenv.d
 mk/fegetenv.d: src/fenv/fegetenv.c
 	sh mk/deps.sh src/fenv/fegetenv.c
+
+all: mk/__fenv_h.d
+mk/__fenv_h.d: src/fenv/__fenv_h.c
+	sh mk/deps.sh src/fenv/__fenv_h.c
 
 all: mk/__dangerous.d
 mk/__dangerous.d: src/__dangerous.c
@@ -854,10 +854,6 @@ all: mk/localtime.d
 mk/localtime.d: src/time/localtime.c
 	sh mk/deps.sh src/time/localtime.c
 
-all: mk/__time.d
-mk/__time.d: src/time/__time.c
-	sh mk/deps.sh src/time/__time.c
-
 all: mk/localtime_s.d
 mk/localtime_s.d: src/time/localtime_s.c
 	sh mk/deps.sh src/time/localtime_s.c
@@ -865,6 +861,10 @@ mk/localtime_s.d: src/time/localtime_s.c
 all: mk/nanosleep.d
 mk/nanosleep.d: src/time/nanosleep.c
 	sh mk/deps.sh src/time/nanosleep.c
+
+all: mk/__time_h.d
+mk/__time_h.d: src/time/__time_h.c
+	sh mk/deps.sh src/time/__time_h.c
 
 all: mk/mktime.d
 mk/mktime.d: src/time/mktime.c
@@ -1046,10 +1046,6 @@ all: mk/fsetpos.d
 mk/fsetpos.d: src/stdio/fsetpos.c
 	sh mk/deps.sh src/stdio/fsetpos.c
 
-all: mk/__stdio.d
-mk/__stdio.d: src/stdio/__stdio.c
-	sh mk/deps.sh src/stdio/__stdio.c
-
 all: mk/scanf.d
 mk/scanf.d: src/stdio/scanf.c
 	sh mk/deps.sh src/stdio/scanf.c
@@ -1129,6 +1125,10 @@ mk/flockfile.d: src/stdio/flockfile.c
 all: mk/fprintf_s.d
 mk/fprintf_s.d: src/stdio/fprintf_s.c
 	sh mk/deps.sh src/stdio/fprintf_s.c
+
+all: mk/__stdio_h.d
+mk/__stdio_h.d: src/stdio/__stdio_h.c
+	sh mk/deps.sh src/stdio/__stdio_h.c
 
 all: mk/freopen_s.d
 mk/freopen_s.d: src/stdio/freopen_s.c
@@ -1810,6 +1810,10 @@ all: mk/strtoull.d
 mk/strtoull.d: src/stdlib/strtoull.c
 	sh mk/deps.sh src/stdlib/strtoull.c
 
+all: mk/__stdlib_h.d
+mk/__stdlib_h.d: src/stdlib/__stdlib_h.c
+	sh mk/deps.sh src/stdlib/__stdlib_h.c
+
 all: mk/mblen.d
 mk/mblen.d: src/stdlib/mblen.c
 	sh mk/deps.sh src/stdlib/mblen.c
@@ -1913,10 +1917,6 @@ mk/bsearch_s.d: src/stdlib/bsearch_s.c
 all: mk/realloc.d
 mk/realloc.d: src/stdlib/realloc.c
 	sh mk/deps.sh src/stdlib/realloc.c
-
-all: mk/__stdlib.d
-mk/__stdlib.d: src/stdlib/__stdlib.c
-	sh mk/deps.sh src/stdlib/__stdlib.c
 
 all: mk/calloc.d
 mk/calloc.d: src/stdlib/calloc.c

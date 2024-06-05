@@ -8,7 +8,7 @@ int at_quick_exit(void (*func)(void))
 {
 	SIGNAL_SAFE(0);
 
-	struct atexit *ae = &(__stdlib.at_quick_exit);
+	struct atexit *ae = &(__stdlib_h.at_quick_exit);
 	while (ae->nfns == sizeof(ae->fns) / sizeof(ae->fns[0])) {
 		if (ae->next == NULL) {
 			ae->next = calloc(1, sizeof(*ae->next));

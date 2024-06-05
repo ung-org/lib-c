@@ -253,7 +253,7 @@ int __scanf(struct io_options *opt, const char * format, va_list arg)
 				/* TODO: error checking */
 				str_ptr[i] = __get(opt);
 			}
-			ASSERT_PREV_STRING(str_ptr, __stdio.formatted_pointers, __stdio.nformatted_pointers, "printf() or similar");
+			ASSERT_PREV_STRING(str_ptr, __stdio_h.formatted_pointers, __stdio_h.nformatted_pointers, "printf() or similar");
 			void **ptr = va_arg(arg, void **);
 			if (ptr == NULL) {
 				UNDEFINED("parameter is NULL");

@@ -52,13 +52,13 @@ include mk/fesetexceptflag.d
 include mk/fetestexcept.d
 include mk/fegetexceptflag.d
 include mk/fesetround.d
-include mk/__fenv.d
 include mk/feupdateenv.d
 include mk/feholdexcept.d
 include mk/fesetenv.d
 include mk/feclearexcept.d
 include mk/fegetround.d
 include mk/fegetenv.d
+include mk/__fenv_h.d
 include mk/__dangerous.d
 include mk/atomic_store.d
 include mk/atomic_compare_exchange_weak.d
@@ -211,9 +211,9 @@ include mk/clock.d
 include mk/gmtime_s.d
 include mk/strftime.d
 include mk/localtime.d
-include mk/__time.d
 include mk/localtime_s.d
 include mk/nanosleep.d
+include mk/__time_h.d
 include mk/mktime.d
 include mk/asctime.d
 include mk/__readonly.d
@@ -259,7 +259,6 @@ include mk/fscanf_s.d
 include mk/getchar_unlocked.d
 include mk/tmpnam.d
 include mk/fsetpos.d
-include mk/__stdio.d
 include mk/scanf.d
 include mk/gets_s.d
 include mk/gets.d
@@ -280,6 +279,7 @@ include mk/snprintf.d
 include mk/putchar_unlocked.d
 include mk/flockfile.d
 include mk/fprintf_s.d
+include mk/__stdio_h.d
 include mk/freopen_s.d
 include mk/sprintf.d
 include mk/fscanf.d
@@ -450,6 +450,7 @@ include mk/qsort.d
 include mk/strtold.d
 include mk/free.d
 include mk/strtoull.d
+include mk/__stdlib_h.d
 include mk/mblen.d
 include mk/abs.d
 include mk/lldiv.d
@@ -476,7 +477,6 @@ include mk/wctomb_s.d
 include mk/strtod.d
 include mk/bsearch_s.d
 include mk/realloc.d
-include mk/__stdlib.d
 include mk/calloc.d
 include mk/div.d
 include mk/__sys.x86-64.s.d

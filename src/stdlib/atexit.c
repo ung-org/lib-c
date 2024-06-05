@@ -6,7 +6,7 @@
 
 int atexit(void (*func)(void))
 {
-	struct atexit *ae = &(__stdlib.atexit);
+	struct atexit *ae = &(__stdlib_h.atexit);
 
 	SIGNAL_SAFE(0);
 

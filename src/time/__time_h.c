@@ -1,6 +1,6 @@
 #include "_time.h"
 
-struct __time __time;
+struct __time_h __time_h = { 0 };
 
 /*
 STDC(-1)

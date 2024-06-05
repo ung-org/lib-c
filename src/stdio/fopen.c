@@ -15,8 +15,8 @@ FILE * fopen(const char * restrict filename, const char * restrict mode)
 	ASSERT_NOOVERLAP(filename, strlen(filename), mode, strlen(mode));
 
 	for (i = 0; i < FOPEN_MAX; i++) {
-		if (__stdio.FILES[i].bmode == 0) {
-			f = &(__stdio.FILES[i]);
+		if (__stdio_h.FILES[i].bmode == 0) {
+			f = &(__stdio_h.FILES[i]);
 			break;
 		}
 	}

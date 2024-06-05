@@ -1,6 +1,6 @@
 #include "_stdio.h"
 
-struct __stdio __stdio = { 0 };
+struct __stdio_h __stdio_h = { 0 };
 
 /*
 STDC(0)

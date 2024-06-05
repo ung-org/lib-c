@@ -7,16 +7,16 @@ _Noreturn void quick_exit(int status)
 {
 	SIGNAL_SAFE(1);
 
-	if (__stdlib.exit_called == QUICK) {
-		__stdlib.constraint_handler("Undefined behavior: quick_exit() called twice", NULL, 0);
+	if (__stdlib_h.exit_called == QUICK) {
+		__stdlib_h.constraint_handler("Undefined behavior: quick_exit() called twice", NULL, 0);
         }
-	if (__stdlib.exit_called) {
-		__stdlib.constraint_handler("Undefined behavior: quick_exit() called after exit", NULL, 0);
+	if (__stdlib_h.exit_called) {
+		__stdlib_h.constraint_handler("Undefined behavior: quick_exit() called after exit", NULL, 0);
         }
-        __stdlib.exit_called = QUICK;
+        __stdlib_h.exit_called = QUICK;
 
 	/* execute all at_quick_exit() registered functions in reverse order */
-	struct atexit *ae = &(__stdlib.at_quick_exit);
+	struct atexit *ae = &(__stdlib_h.at_quick_exit);
 	while (ae) {
 		int i = ae->nfns;
 		while (i > 0) {
