@@ -9,7 +9,7 @@ wint_t fputwc(wchar_t c, FILE * stream)
 	SIGNAL_SAFE(0);
 
 	char mbs[MB_LEN_MAX+1] = {0};
-	mbstate_t ps = 0;
+	mbstate_t ps = { 0 };
 	size_t len = wcrtomb(mbs, c, &ps);
 	size_t i;
 
