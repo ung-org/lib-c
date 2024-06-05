@@ -119,7 +119,7 @@ static void *__jk_page_alloc(size_t npages)
 
 static void __jk_sigaction(int sig, siginfo_t *si, void *addr)
 {
-	___signal.current = 0;
+	__signal_h.current = 0;
 
 	(void)sig; (void)addr;
 

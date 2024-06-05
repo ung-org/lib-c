@@ -27,7 +27,7 @@ GCC_SSE_HACK
 void (*signal(int sig, void (*func)(int)))(int)
 {
 	/* signal safe iff we are resetting the current signal handler */
-	SIGNAL_SAFE((___signal.current == sig));
+	SIGNAL_SAFE((__signal_h.current == sig));
 
 	if (sig < 0 || sig > NSIGNALS) {
 		/* FIXME: should errno be set? */
@@ -38,8 +38,8 @@ void (*signal(int sig, void (*func)(int)))(int)
 		UNDEFINED("signal handler is not executable");
 	}
 
-	void (*prev)(int) = ___signal.handlers[sig];
-	___signal.handlers[sig] = func;
+	void (*prev)(int) = __signal_h.handlers[sig];
+	__signal_h.handlers[sig] = func;
 
 	struct sigaction act = { 0 };
 	act.sa_handler = __signal_handler;

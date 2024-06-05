@@ -9,18 +9,18 @@ void __signal_handler(int sig)
 		UNDEFINED("signal %d occured during quick_exit", sig);
 	}
 
-	___signal.current = sig;
-	if (___signal.handlers[sig] != NULL) {
-		___signal.handlers[sig](sig);
+	__signal_h.current = sig;
+	if (__signal_h.handlers[sig] != NULL) {
+		__signal_h.handlers[sig](sig);
 	}
 
 	/* TODO: signal number to name */
 	if (sig == SIGFPE || sig == SIGILL || sig == SIGSEGV) {
-		___signal.current = 0;
+		__signal_h.current = 0;
 		UNDEFINED("Signal handler for signal %d returned", sig);
 	}
 
-	___signal.current = 0;
+	__signal_h.current = 0;
 }
 
 /*

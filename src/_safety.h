@@ -107,8 +107,8 @@ extern struct __dangerous {
 } while (0)
 
 #define SIGNAL_SAFE(__n) do { \
-	if (__n == 0 && ___signal.current != 0) { \
-		int _sig = ___signal.current; \
+	if (__n == 0 && __signal_h.current != 0) { \
+		int _sig = __signal_h.current; \
 		UNDEFINED("Function %s() is not safe to call from a signal handler (signal %d)", __func__, _sig); \
 	} \
 } while (0)

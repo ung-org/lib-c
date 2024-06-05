@@ -7,7 +7,7 @@
 
 _Noreturn void __undefined(const char *fmt, ...)
 {
-	___signal.current = 0;
+	__signal_h.current = 0;
 
 	va_list ap;
 	va_start(ap, fmt);
