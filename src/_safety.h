@@ -60,7 +60,6 @@ extern struct __dangerous {
 		abort(); \
 	} \
 	(__arr) = tmp; \
-	printf("Adding %s\n", (__val)); \
 	(__arr)[__count] = strdup(__val); \
 	(__count)++; \
 } while (0)

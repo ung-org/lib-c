@@ -97,34 +97,51 @@ struct io_options {
 };
 
 struct io_conversion {
+	const char *func;
 	enum { IO_IN, IO_OUT } dir;
-	enum {
+	enum conversion_flags {
+		/* explicit */
 		F_STAR = (1<<0),
 		F_LEFT = (1<<1),
 		F_SIGN = (1<<2),
 		F_SPACE = (1<<3),
 		F_ALT = (1<<4),
-		F_ZERO = (1<<4),
+		F_ZERO = (1<<5),
+
+		/* inferred */
+		F_UPPER = (1<<10),
+		F_WIDTH = (1<<11),
+		F_PRECISION = (1<<12),
 	} flags;
-	enum {
+	enum conversion_length {
 		L_default,
 		L_hh,
+		L_ll,
 		L_h,
 		L_l,
-		L_ll,
 		L_j,
 		L_z,
 		L_t,
 		L_L,
 	} length;
-	int has_width:1;
-	int has_precision:1;
 	uintmax_t width;
 	uintmax_t precision;
 	char spec;
+	union {
+		uintmax_t u;
+		intmax_t i;
+		float f;
+		double d;
+		long double ld;
+		char *s;
+		wchar_t *wcs;
+		char c;
+		wchar_t wc;
+		void *ptr;
+	} val;
 };
 
-size_t __conv(const char *, struct io_conversion *);
+size_t __conv(const char *, struct io_conversion *, va_list);
 int __printf(struct io_options * restrict, const char * restrict, va_list);
 int __scanf(struct io_options * restrict, const char * restrict, va_list);
 

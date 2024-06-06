@@ -126,7 +126,10 @@ int __scanf(struct io_options *opt, const char * format, va_list arg)
 	}
 
 	while (*format) {
-		struct io_conversion conv = { .dir = IO_IN };
+		struct io_conversion conv = {
+			.func = opt->fnname,
+			.dir = IO_IN,
+		};
 
 		if (isspace(*format)) {
 			int c = 0;
@@ -156,7 +159,7 @@ int __scanf(struct io_options *opt, const char * format, va_list arg)
 			break;
 		}
 
-		format += __conv(format, &conv);
+		format += __conv(format, &conv, arg);
 
 		switch (conv.spec) {
 		case 'd':	/* base 10 int */
@@ -171,8 +174,6 @@ int __scanf(struct io_options *opt, const char * format, va_list arg)
 			//case L_z:	ASSIGN(signed size_t, arg, i, 0, 0); break; /* TODO!!! */
 			//case L_t:	ASSIGN(signed ptrdiff_t, arg, i, 0, 0); break; /* TODO!!! */
 			default:	ASSIGN(int, arg, i, INT_MIN, INT_MAX); break;
-
-			/* case L_L: UNDEFINED(""); break; */
 			}
 			break;
 
@@ -190,8 +191,6 @@ int __scanf(struct io_options *opt, const char * format, va_list arg)
 			case L_z:	ASSIGN(size_t, arg, u, 0, SIZE_MAX); break;
 			case L_t:	ASSIGN(ptrdiff_t, arg, u, 0, PTRDIFF_MAX); break;
 			default:	ASSIGN(unsigned int, arg, u, 0, UINT_MAX); break;
-
-			/* case L_L: UNDEFINED(""); break; */
 			}
 			break;
 
@@ -218,16 +217,12 @@ int __scanf(struct io_options *opt, const char * format, va_list arg)
 
 		case 'c':
 			/* width (default 1) characters */
-			if (conv.has_width == 0) {
+			if ((conv.flags & F_WIDTH) == 0) {
 				conv.width = 1;
 			}
 			break;
 
 		case 's':
-			if (conv.length != L_default && conv.length != L_l) {
-				//__bad_length(length, 's');
-			}
-
 			char *str = va_arg(arg, char *);
 
 			/* TODO: only use width if conv.has_width == 1 */
@@ -269,14 +264,13 @@ int __scanf(struct io_options *opt, const char * format, va_list arg)
 			break;
 
 		default:
-			UNDEFINED("Unknown conversion specifier '%c'", *format);
+			/* ub already handled by __conv() */
 			break;
 		}
 
 		format++;
 	}
 
-	(void)arg;
 	return ret;
 }
 
