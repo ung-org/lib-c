@@ -119,9 +119,6 @@ static void __itos(char *s, intmax_t n, enum conversion_flags flags, int precisi
 
 int __printf(struct io_options *opt, const char * format, va_list arg)
 {
-	intmax_t argint = 0;
-	uintmax_t arguns = 0;
-	void *argptr = NULL;
 	char numbuf[NUMBUFLEN];
 
 	if (opt->stream) {
@@ -153,47 +150,47 @@ int __printf(struct io_options *opt, const char * format, va_list arg)
 		case 'x':
 		case 'X':
 			switch (conv.length) {
-			case L_hh:	arguns = (unsigned char)va_arg(arg, unsigned int); break;
-			case L_h:	arguns = (unsigned short int)va_arg(arg, unsigned int); break;
-			case L_l:	arguns = va_arg(arg, unsigned long int); break;
+			case L_hh:	conv.val.u = (unsigned char)va_arg(arg, unsigned int); break;
+			case L_h:	conv.val.u = (unsigned short int)va_arg(arg, unsigned int); break;
+			case L_l:	conv.val.u = va_arg(arg, unsigned long int); break;
 
 			#if defined __STDC_VERSION__ && 199901L <= __STDC_VERSION__
-			case L_ll:	arguns = va_arg(arg, unsigned long long int); break;
+			case L_ll:	conv.val.u = va_arg(arg, unsigned long long int); break;
 			#endif
 
-			case L_j:	arguns = va_arg(arg, uintmax_t); break;
-			case L_z:	arguns = va_arg(arg, size_t); break;
-			case L_t:	arguns = va_arg(arg, ptrdiff_t); break;
+			case L_j:	conv.val.u = va_arg(arg, uintmax_t); break;
+			case L_z:	conv.val.u = va_arg(arg, size_t); break;
+			case L_t:	conv.val.u = va_arg(arg, ptrdiff_t); break;
 
-			default:	arguns = va_arg(arg, unsigned int); break;
+			default:	conv.val.u = va_arg(arg, unsigned int); break;
 			}
 			if (conv.spec == 'o') {
 				base = 8;
 			} else if (conv.spec == 'x' || conv.spec == 'X') {
 				base = 16;
 			}
-			__utos(numbuf, arguns, conv.flags, conv.precision, base);
+			__utos(numbuf, conv.val.u, conv.flags, conv.precision, base);
 			__output(opt, &conv, numbuf, 0);
 			break;
 
 		case 'd':	/* int */
 		case 'i':
 			switch (conv.length) {
-			case L_hh:	argint = (signed char)va_arg(arg, int); break;
-			case L_h:	argint = (short int)va_arg(arg, int); break;
-			case L_l:	argint = va_arg(arg, long int); break;
+			case L_hh:	conv.val.i = (signed char)va_arg(arg, int); break;
+			case L_h:	conv.val.i = (short int)va_arg(arg, int); break;
+			case L_l:	conv.val.i = va_arg(arg, long int); break;
 
 			#if defined __STDC_VERSION__ && 199901L <= __STDC_VERSION__
-			case L_ll:	argint = va_arg(arg, long long int); break;
+			case L_ll:	conv.val.i = va_arg(arg, long long int); break;
 			#endif
 
-			case L_j:	argint = va_arg(arg, intmax_t); break;
-			case L_z:	argint = va_arg(arg, size_t); break;
-			case L_t:	argint = va_arg(arg, ptrdiff_t); break;
+			case L_j:	conv.val.i = va_arg(arg, intmax_t); break;
+			case L_z:	conv.val.i = va_arg(arg, size_t); break;
+			case L_t:	conv.val.i = va_arg(arg, ptrdiff_t); break;
 
-			default:	argint = va_arg(arg, int); break;
+			default:	conv.val.i = va_arg(arg, int); break;
 			}
-			__itos(numbuf, argint, conv.flags, conv.precision, 10);
+			__itos(numbuf, conv.val.i, conv.flags, conv.precision, 10);
 			__output(opt, &conv, numbuf, 0);
 			break;
 
@@ -249,8 +246,8 @@ int __printf(struct io_options *opt, const char * format, va_list arg)
 			break;
 
 		case 'p':	/* pointer */
-			argptr = va_arg(arg, void *);
-			__itos(numbuf, (intptr_t)argptr, F_ALT | F_ZERO, sizeof(argptr) * 2, 16);
+			conv.val.ptr = va_arg(arg, void *);
+			__itos(numbuf, (intptr_t)conv.val.ptr, F_ALT | F_ZERO, sizeof(conv.val.ptr) * 2, 16);
 			__output(opt, &conv, numbuf, 0);
 			ADD_PREV_STRING(numbuf, __stdio_h.formatted_pointers, __stdio_h.nformatted_pointers);
 			break;
