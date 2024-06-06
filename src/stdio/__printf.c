@@ -9,9 +9,7 @@
 #include <unistd.h>
 #endif
 
-#include "_forced/strtoumax.h"
 #include "_forced/strdup.h"
-
 #include "_stdio.h"
 
 #define NUMBUFLEN 64
@@ -53,8 +51,10 @@ static void __output(struct io_options *opt, struct io_conversion *conv, const c
 	} else if (opt->string) {
 		memcpy(opt->string + opt->ret, str, len);
 		opt->ret += len;
+	#ifdef _POSIX_SOURCE
 	} else {
-		/* opt->ret += write(opt->fd, str, len); */
+		opt->ret += write(opt->fd, str, len);
+	#endif
 	}
 
 	if (conv && (conv->flags & F_WIDTH) && (conv->flags & F_LEFT)) {
@@ -119,21 +119,16 @@ static void __itos(char *s, intmax_t n, enum conversion_flags flags, int precisi
 
 int __printf(struct io_options *opt, const char * format, va_list arg)
 {
-	int nout = 0;
-
 	intmax_t argint = 0;
 	uintmax_t arguns = 0;
 	void *argptr = NULL;
 	char numbuf[NUMBUFLEN];
 
-	size_t i;
-	//char *s = NULL;
-
 	if (opt->stream) {
 		flockfile(opt->stream);
 	}
 
-	for (i = 0; format[i] != 0; i++) {
+	for (size_t i = 0; format[i] != 0; i++) {
 		struct io_conversion conv = {
 			.func = opt->fnname,
 			.dir = IO_OUT,
@@ -226,7 +221,6 @@ int __printf(struct io_options *opt, const char * format, va_list arg)
 			if (conv.length == L_default) {
 				char c = va_arg(arg, int);
 				__output(opt, &conv, &c, 1);
-				nout++;
 			} else if (conv.length == L_l) {
 				#if defined __STDC_VERSION__
 				wint_t wc = va_arg(arg, wint_t);
@@ -265,35 +259,35 @@ int __printf(struct io_options *opt, const char * format, va_list arg)
 			switch (conv.length) {
 			case L_hh:
 				signed char *sc = va_arg(arg, signed char *);
-				*sc = nout;
+				*sc = opt->ret;
 				break;
 			case L_h:
 				short int *si = va_arg(arg, short int *);
-				*si = nout;
+				*si = opt->ret;
 				break;
 			case L_l:
 				long int *li = va_arg(arg, long int *);
-				*li = nout;
+				*li = opt->ret;
 				break;
 			case L_ll:
 				long long int *lli = va_arg(arg, long long int *);
-				*lli = nout;
+				*lli = opt->ret;
 				break;
 			case L_j:
 				intmax_t *im = va_arg(arg, intmax_t *);
-				*im = nout;
+				*im = opt->ret;
 				break;
 			case L_z:
 				size_t *sz = va_arg(arg, size_t *);
-				*sz = nout;
+				*sz = opt->ret;
 				break;
 			case L_t:
 				ptrdiff_t *pd = va_arg(arg, ptrdiff_t *);
-				*pd = nout;
+				*pd = opt->ret;
 				break;
 			default:
 				int *ip = va_arg(arg, int *);
-				*ip = nout;
+				*ip = opt->ret;
 				break;
 			}
 			break;
