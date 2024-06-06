@@ -1,8 +1,6 @@
-#include <ctype.h>
 #include <limits.h>
 #include <stdio.h>
 #include <stddef.h>
-#include <stdlib.h>
 #include <string.h>
 #include <wchar.h>
 
@@ -18,78 +16,90 @@
 
 #define NUMBUFLEN 64
 
-static int __output(struct io_options *opt, struct io_conversion *conv, const char *str, size_t len)
+static void __output(struct io_options *opt, struct io_conversion *conv, const char *str, size_t len)
 {
+	static char pad[BUFSIZ] = "";
 	size_t olen = strlen(str);
 	if (len == 0) {
 		len = olen;
 	}
 
-	if (conv && olen < conv->width && (conv->flags & F_WIDTH) && !(conv->flags & F_LEFT)) {
-		for (size_t i = 0; i < conv->width - olen; i++) {
-			__output(opt, NULL, " ", 1);
+	if (pad[0] == '\0') {
+		memset(pad, ' ', sizeof(pad));
+	}
+
+	if (conv && (conv->flags & F_WIDTH)) {
+		if (conv->width < olen) {
+			conv->width = 0;
+		} else {
+			conv->width -= olen;
 		}
+	}
+
+	if (conv && (conv->flags & F_WIDTH) && !(conv->flags & F_LEFT)) {
+		while (conv->width > 0) {
+			__output(opt, NULL, pad, conv->width % BUFSIZ);
+			conv->width -= conv->width % BUFSIZ;
+		}
+	}
+
+	if (len > INT_MAX || opt->ret > INT_MAX - (int)len) {
+		UNDEFINED("In call to %s(): Attempting to output more than INT_MAX characters", opt->fnname);
 	}
 	
-	for (size_t i = 0; i < len && str[i] != '\0'; i++) {
-		if (opt->ret == INT_MAX) {
-			UNDEFINED("In call to %s(): Attempting to output more than INT_MAX characters", opt->fnname);
-		}
-		if (opt->stream) {
-			fputc(str[i], opt->stream);
-		} else if (opt->string) {
-			if ((size_t)opt->ret < opt->maxlen) {
-				opt->string[opt->ret] = str[i];
-			}
-		} else {
-			/* file descriptor */
-		}
-		opt->ret++;
+	/* TODO: check for errors */
+	if (opt->stream) {
+		opt->ret += fwrite(str, 1, len, opt->stream);
+	} else if (opt->string) {
+		memcpy(opt->string + opt->ret, str, len);
+		opt->ret += len;
+	} else {
+		/* opt->ret += write(opt->fd, str, len); */
 	}
 
-	if (conv && olen < conv->width && (conv->flags & F_WIDTH) && (conv->flags & F_LEFT)) {
-		for (size_t i = 0; i < conv->width - olen; i++) {
-			__output(opt, NULL, " ", 1);
+	if (conv && (conv->flags & F_WIDTH) && (conv->flags & F_LEFT)) {
+		while (conv->width > 0) {
+			__output(opt, NULL, pad, conv->width % BUFSIZ);
+			conv->width -= conv->width % BUFSIZ;
 		}
 	}
-
-	return 0;
 }
 
 static void __utos(char *s, uintmax_t n, enum conversion_flags flags, int precision, int base)
 {
-	char digits[] = "0123456789abcdef";
+	char lower[] = "0123456789abcdef";
+	char upper[] = "0123456789ABCDEF";
+	char *digits = (flags & F_UPPER ? upper : lower);
 	char sign = '+';
 	char buf[NUMBUFLEN + 1]; 
 	char *out = buf + NUMBUFLEN;
-	if (flags & F_UPPER && base > 10) {
-		size_t i;
-		for (i = 0; i < sizeof(digits); i++) {
-			digits[i] = (char)toupper(digits[i]);
-		}
-	}
+
 	*out = '\0';
 	out--;
 	if (n == 0) {
 		*out = '0';
 		out--;
 	}
+
 	while (n > 0) {
 		precision--;
 		*out = digits[n % base];
 		n /= base;
 		out--;
 	}
+
 	/* TODO: this has a risk of overflowing */
 	while (precision > 0 && (flags & (F_ZERO | F_PRECISION))) {
 		*out = '0';
 		precision--;
 		out--;
 	}
+
 	if (flags & F_SIGN) {
 		*out = sign;
 		out--;
 	}
+
 	out++;
 	while ((*s++ = *out++) != 0) {
 		continue;
