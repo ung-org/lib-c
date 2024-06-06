@@ -58,30 +58,30 @@ char * __load_locale(struct __locale_t *loc, int mask, const char *name)
 			memset(loc->lc_ctype.ctattr, 0, sizeof(loc->lc_ctype.ctattr));
 
 			for (i = 0; i < 32; i++) {
-				loc->lc_ctype.ctattr[i] = CT_CNTRL;
+				loc->lc_ctype.ctattr[i] = CTM_CNTRL;
 			}
-			loc->lc_ctype.ctattr[127] = CT_CNTRL;
+			loc->lc_ctype.ctattr[127] = CTM_CNTRL;
 
-			setall(loc->lc_ctype.ctattr, upper, CT_UPPER);
-			setall(loc->lc_ctype.ctattr, upper, CT_ALPHA);
-			setall(loc->lc_ctype.ctattr, lower, CT_LOWER);
-			setall(loc->lc_ctype.ctattr, lower, CT_ALPHA);
-			setall(loc->lc_ctype.ctattr, digit, CT_DIGIT);
-			setall(loc->lc_ctype.ctattr, xdigit, CT_XDIGIT);
-			setall(loc->lc_ctype.ctattr, space, CT_SPACE);
-			setall(loc->lc_ctype.ctattr, punct, CT_PUNCT);
-			setall(loc->lc_ctype.ctattr, blank, CT_BLANK);
+			setall(loc->lc_ctype.ctattr, upper, CTM_UPPER);
+			setall(loc->lc_ctype.ctattr, upper, CTM_ALPHA);
+			setall(loc->lc_ctype.ctattr, lower, CTM_LOWER);
+			setall(loc->lc_ctype.ctattr, lower, CTM_ALPHA);
+			setall(loc->lc_ctype.ctattr, digit, CTM_DIGIT);
+			setall(loc->lc_ctype.ctattr, xdigit, CTM_XDIGIT);
+			setall(loc->lc_ctype.ctattr, space, CTM_SPACE);
+			setall(loc->lc_ctype.ctattr, punct, CTM_PUNCT);
+			setall(loc->lc_ctype.ctattr, blank, CTM_BLANK);
 
 			for (i = 0; i < CHAR_MAX; i++) {
 				if (loc->lc_ctype.ctattr[i] &
-					(CT_UPPER | CT_ALPHA | CT_LOWER |
-					 CT_DIGIT | CT_XDIGIT | CT_PUNCT)) {
-					loc->lc_ctype.ctattr[i] |= CT_GRAPH;
-					loc->lc_ctype.ctattr[i] |= CT_PRINT;
+					(CTM_UPPER | CTM_ALPHA | CTM_LOWER |
+					 CTM_DIGIT | CTM_XDIGIT | CTM_PUNCT)) {
+					loc->lc_ctype.ctattr[i] |= CTM_GRAPH;
+					loc->lc_ctype.ctattr[i] |= CTM_PRINT;
 				}
 			}
 
-			loc->lc_ctype.ctattr[' '] |= CT_PRINT;
+			loc->lc_ctype.ctattr[' '] |= CTM_PRINT;
 
 			for (i = 0; i < UCHAR_MAX; i++) {
 				loc->lc_ctype.ctoupper[i] = i;
