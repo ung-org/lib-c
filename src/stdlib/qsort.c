@@ -32,14 +32,19 @@ static void __qsort(char *base, size_t size, size_t lo, size_t hi, int (*compar)
 	}
 	__swap(base, size, i, hi);
 
-	__qsort(base, size, lo, i - 1, compar);
-	__qsort(base, size, i + 1, hi, compar);
+	if (i > lo) {
+		__qsort(base, size, lo, i - 1, compar);
+		__qsort(base, size, i + 1, hi, compar);
+	}
 }
 
 void qsort(void * base, size_t nmemb, size_t size, int (*compar)(const void *, const void *))
 {
 	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(base);
+	if (nmemb == 0) {
+		return;
+	}
 	__qsort(base, size, 0, nmemb - 1, compar);
 }
 
