@@ -9,7 +9,7 @@
 #include "_safety.h"
 
 #define UNDEFINED_FMT(__conv, __fmt, ...) do { \
-	char __buf[128]; \
+	char __buf[BUFSIZ]; \
 	snprintf(__buf, sizeof(__buf), "In call to %s() with format string \"%s\": Invalid conversion specification: ", __conv->func, __conv->fmt); \
 	__undefined("%s" __fmt, __buf, __VA_ARGS__); \
 } while (0)
