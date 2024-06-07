@@ -17,7 +17,7 @@ char * getenv(const char * name)
 	}
 
 	len = strlen(name);
-	for (i = 0; __stdlib_h.environ[i] != NULL; i++) {
+	for (i = 0; __stdlib_h.environ && __stdlib_h.environ[i] != NULL; i++) {
 		if (!strncmp(__stdlib_h.environ[i], name, len) && __stdlib_h.environ[i][len] == '=') {
 			__readonly(RO_UNLOCK, variable);
 			strcpy(variable, __stdlib_h.environ[i] + len + 1);
