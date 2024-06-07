@@ -67,8 +67,8 @@ static void __output(struct io_options *opt, struct io_conversion *conv, const c
 
 static void __utos(char *s, uintmax_t n, enum conversion_flags flags, int precision, int base)
 {
-	char lower[] = "0123456789abcdef";
-	char upper[] = "0123456789ABCDEF";
+	char lower[] = "0123456789abcdefx";
+	char upper[] = "0123456789ABCDEFX";
 	char *digits = (flags & F_UPPER ? upper : lower);
 	char sign = '+';
 	char buf[NUMBUFLEN + 1]; 
@@ -95,6 +95,13 @@ static void __utos(char *s, uintmax_t n, enum conversion_flags flags, int precis
 		out--;
 	}
 
+	if ((flags & F_ALT) && base == 16) {
+		*out = digits[16];
+		out--;
+		*out = '0';
+		out--;
+	}
+
 	if (flags & F_SIGN) {
 		*out = sign;
 		out--;
@@ -117,6 +124,7 @@ static void __itos(char *s, intmax_t n, enum conversion_flags flags, int precisi
 	}
 }
 
+GCC_SSE_HACK
 int __printf(struct io_options *opt, const char * format, va_list arg)
 {
 	char numbuf[NUMBUFLEN];
