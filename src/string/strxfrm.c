@@ -16,7 +16,7 @@ size_t strxfrm(char * restrict s1, const char * restrict s2, size_t n)
 		ASSERT_NOOVERLAP(s1, n, s2, n);
 	}
 	
-	return 0;
+	return strlen(s2);
 }
 
 CHECK_3(size_t, 0, strxfrm, char * restrict, const char * restrict, size_t)
