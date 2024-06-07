@@ -25,6 +25,7 @@ int getc_unlocked(FILE * stream)
 
 	if (read(stream->fd, &c, sizeof(c)) != 1) {
 		stream->err = 1;
+		stream->eof = 1;
 		return EOF;
 	}
 
