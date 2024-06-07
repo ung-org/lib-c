@@ -161,5 +161,12 @@ size_t __conv(const char *format, struct io_conversion *conv, va_list arg)
 		UNDEFINED_FMT(conv, "Unknown conversion specifier '%c'", conv->spec);
 	}
 
+	if ((conv->flags & F_ALT) && !strchr("xXaAeEfFgG", conv->spec)) {
+		UNDEFINED_FMT(conv, "Flag '#' is not supported with conversion specifier '%c'", conv->spec);
+	}
+	if ((conv->flags & F_ZERO) && !strchr("diouxXaAeEfFgG", conv->spec)) {
+		UNDEFINED_FMT(conv, "Flag '0' is not supported with conversion specifier '%c'", conv->spec);
+	}
+
 	return ret;
 }
