@@ -206,6 +206,10 @@ all: mk/fesetexceptflag.d
 mk/fesetexceptflag.d: src/fenv/fesetexceptflag.c
 	sh mk/deps.sh src/fenv/fesetexceptflag.c
 
+all: mk/__FE_DFL_ENV.d
+mk/__FE_DFL_ENV.d: src/fenv/__FE_DFL_ENV.c
+	sh mk/deps.sh src/fenv/__FE_DFL_ENV.c
+
 all: mk/fetestexcept.d
 mk/fetestexcept.d: src/fenv/fetestexcept.c
 	sh mk/deps.sh src/fenv/fetestexcept.c

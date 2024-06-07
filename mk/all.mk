@@ -49,6 +49,7 @@ include mk/assert.d
 include mk/__assert.d
 include mk/feraiseexcept.d
 include mk/fesetexceptflag.d
+include mk/__FE_DFL_ENV.d
 include mk/fetestexcept.d
 include mk/fegetexceptflag.d
 include mk/fesetround.d
