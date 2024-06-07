@@ -4,7 +4,9 @@
 int feholdexcept(fenv_t *envp)
 {
 	SIGNAL_SAFE(0);
-	(void)envp;
+	ASSERT_NONNULL(envp);
+	fegetenv(envp);
+	/* TODO: clears the floating-point status flags, and then installs a non-stop (continue on floating-point exceptions) mode, if available, for all floating-point exceptions. */
 	return 0;
 }
 

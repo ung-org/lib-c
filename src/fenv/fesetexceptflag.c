@@ -4,7 +4,7 @@
 int fesetexceptflag(const fexcept_t *flagp, int excepts)
 {
 	SIGNAL_SAFE(0);
-	ASSERT_PREVIOUS_FEXCEPT(flagp, excepts);
+	ASSERT_PREV_FEXCEPT(flagp, excepts);
 	ASSERT_VALID_EXCEPTION_MASK(excepts);
 	(void)flagp; (void)excepts;
 	return 0;

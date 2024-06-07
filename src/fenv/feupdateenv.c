@@ -4,6 +4,7 @@
 int feupdateenv(const fenv_t *envp)
 {
 	SIGNAL_SAFE(0);
+	ASSERT_PREV_FENV(envp);
 	(void)envp;
 	return 0;
 }

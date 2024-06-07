@@ -1,10 +1,20 @@
 #include <fenv.h>
+#include <stdlib.h>
 #include "_fenv.h"
 
 int fegetenv(fenv_t *envp)
 {
 	SIGNAL_SAFE(0);
-	(void)envp;
+	ASSERT_NONNULL(envp);
+	if (!(envp->__impl >= __fenv_h.fenv && envp->__impl <= __fenv_h.fenv + __fenv_h.nfenv)) {
+		struct __fenv_t *tmp = realloc(__fenv_h.fenv, sizeof(*__fenv_h.fenv) * (__fenv_h.nfenv + 1));
+		if (tmp == NULL) {
+			abort();
+		}
+		__fenv_h.fenv = tmp;
+		envp->__impl = &(__fenv_h.fenv[__fenv_h.nfenv++]);
+	}
+	/* TODO: save state in envp->__impl */
 	return 0;
 }
 
