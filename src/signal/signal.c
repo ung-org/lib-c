@@ -34,7 +34,11 @@ void (*signal(int sig, void (*func)(int)))(int)
 		return SIG_ERR;
 	}
 
-	if ((__memperm(func) & PROT_EXEC) != PROT_EXEC) {
+	if (func == SIG_DFL) {
+		/* TODO */
+	} else if (func == SIG_IGN) {
+		/* TODO */
+	} else if ((__memperm(func) & PROT_EXEC) != PROT_EXEC) {
 		UNDEFINED("signal handler is not executable");
 	}
 
