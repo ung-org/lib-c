@@ -6,22 +6,7 @@
 
 /** set a signal handler **/
 
-#if 1
 #include "_forced/sigaction.h"
-
-#else
-/* TODO: remove this very Linux-specific crap */
-	typedef struct __siginfo siginfo_t;
-	struct linux_sigaction {   
-		void (*sa_handler)(int);
-		int sa_flags;
-		void (*sa_restorer)(void);
-		unsigned char sa_mask[8];
-	};
-#define sigaction(_sig, _act, _oact, _size) __scall4(sigaction, _sig, _act, _oact, _size)
-#define SA_RESTART    0x10000000
-#define SA_RESTORER   0x04000000
-#endif
 
 GCC_SSE_HACK
 void (*signal(int sig, void (*func)(int)))(int)
