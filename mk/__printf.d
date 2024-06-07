@@ -4,7 +4,7 @@ libc.a(__printf.o): $(OBJDIR)/__printf.o
 
 $(OBJDIR)/__printf.o: src/stdio/__printf.c
 $(OBJDIR)/__printf.o: src/_forced/strdup.h
-$(OBJDIR)/__printf.o: src/stdio/_stdio.h
+$(OBJDIR)/__printf.o: src/stdio/_format.h
 $(OBJDIR)/__printf.o:
 	@mkdir -p $(@D)
 	$(CC) -c -o $@ $(CFLAGS) src/stdio/__printf.c

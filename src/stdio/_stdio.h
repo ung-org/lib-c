@@ -46,6 +46,13 @@
 			UNDEFINED("In call to %s(): Requested %s operation on %s oriented stream", __func__, (__orientation) > 0 ? "wide" : "byte", ((__stream)->orientation) > 0 ? "wide" : "byte"); \
 		} \
 	} while (0)
+
+#define ASSERT_FPOS(__stream, __pos) do { \
+	if (!(__pos->__impl >= __stream->fpos && __pos->__impl <= __stream->fpos + __stream->nfpos)) { \
+		UNDEFINED("In call to %s(): %s must be previously set by calling fesetpos()", __func__, #__pos); \
+	} \
+} while (0)
+
 #endif
 
 struct __FILE {
@@ -79,71 +86,15 @@ struct __FILE {
 	pid_t pipe_pid;		/* if stream is a pipe, the child pid */
 	#endif
 
-	fpos_t *valid_fpos;
-	size_t nvalid_fpos;
+	struct __fpos_t *fpos;
+	size_t nfpos;
 	long int *valid_ftell;
 	size_t nvalid_ftell;
 };
 
-struct io_options {
-	const char *fnname;	/* the calling function */
-	char *string;		/* NULL or the output string */
-	wchar_t *wstring;	/* NULL or the output wide string */
-	FILE *stream;		/* NULL or the output stream */
-	int fd;			/* -1 or the output file descriptor */
-	size_t maxlen;		/* max number of bytes to write to string */
-	size_t pos;		/* current index in string */
-	int ret;		/* return value */
+struct __fpos_t {
+	size_t pos;
 };
-
-struct io_conversion {
-	const char *func;
-	enum { IO_IN, IO_OUT } dir;
-	enum conversion_flags {
-		/* explicit */
-		F_STAR = (1<<0),
-		F_LEFT = (1<<1),
-		F_SIGN = (1<<2),
-		F_SPACE = (1<<3),
-		F_ALT = (1<<4),
-		F_ZERO = (1<<5),
-
-		/* inferred */
-		F_UPPER = (1<<10),
-		F_WIDTH = (1<<11),
-		F_PRECISION = (1<<12),
-	} flags;
-	enum conversion_length {
-		L_default,
-		L_hh,
-		L_ll,
-		L_h,
-		L_l,
-		L_j,
-		L_z,
-		L_t,
-		L_L,
-	} length;
-	uintmax_t width;
-	uintmax_t precision;
-	char spec;
-	union {
-		uintmax_t u;
-		intmax_t i;
-		float f;
-		double d;
-		long double ld;
-		char *s;
-		wchar_t *wcs;
-		char c;
-		wchar_t wc;
-		void *ptr;
-	} val;
-};
-
-size_t __conv(const char *, struct io_conversion *, va_list);
-int __printf(struct io_options * restrict, const char * restrict, va_list);
-int __scanf(struct io_options * restrict, const char * restrict, va_list);
 
 extern struct __stdio_h {
 	struct __FILE FILES[FOPEN_MAX];

@@ -3,7 +3,7 @@ libc.a(printf_s.o): $(OBJDIR)/printf_s.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/printf_s.o: src/stdio/printf_s.c
-$(OBJDIR)/printf_s.o: src/stdio/_stdio.h
+$(OBJDIR)/printf_s.o: src/stdio/_format.h
 $(OBJDIR)/printf_s.o:
 	@mkdir -p $(@D)
 	$(CC) -c -o $@ $(CFLAGS) src/stdio/printf_s.c

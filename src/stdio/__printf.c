@@ -10,7 +10,7 @@
 #endif
 
 #include "_forced/strdup.h"
-#include "_stdio.h"
+#include "_format.h"
 
 #define NUMBUFLEN 64
 
@@ -129,6 +129,7 @@ int __printf(struct io_options *opt, const char * format, va_list arg)
 		struct io_conversion conv = {
 			.func = opt->fnname,
 			.dir = IO_OUT,
+			.fmt = format,
 		};
 		int base = 10;
 

@@ -6,6 +6,8 @@
 int fsetpos(FILE *stream, const fpos_t *pos)
 {
 	SIGNAL_SAFE(0);
+	ASSERT_STREAM(stream, 0, 0);
+	ASSERT_FPOS(stream, pos);
 	ASSERT_NOOVERLAP(stream, sizeof(*stream), pos, sizeof(*pos));
 
 	(void)stream; (void)pos;

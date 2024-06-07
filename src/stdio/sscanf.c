@@ -1,7 +1,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <string.h>
-#include "_stdio.h"
+#include "_format.h"
 
 /** read formatted input from a string **/
 

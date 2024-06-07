@@ -82,8 +82,8 @@ FILE * freopen(const char * restrict filename, const char * restrict mode, FILE 
 		stream->buf = stream->ibuf;
 	}
 
-	free(stream->valid_fpos);
-	stream->nvalid_fpos = 0;
+	free(stream->fpos);
+	stream->nfpos = 0;
 
 	free(stream->valid_ftell);
 	stream->nvalid_ftell = 0;

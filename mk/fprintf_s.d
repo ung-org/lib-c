@@ -3,7 +3,7 @@ libc.a(fprintf_s.o): $(OBJDIR)/fprintf_s.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
 $(OBJDIR)/fprintf_s.o: src/stdio/fprintf_s.c
-$(OBJDIR)/fprintf_s.o: src/stdio/_stdio.h
+$(OBJDIR)/fprintf_s.o: src/stdio/_format.h
 $(OBJDIR)/fprintf_s.o:
 	@mkdir -p $(@D)
 	$(CC) -c -o $@ $(CFLAGS) src/stdio/fprintf_s.c

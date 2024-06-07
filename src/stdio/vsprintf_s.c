@@ -2,7 +2,7 @@
 #include <stdarg.h>
 #include <stdint.h>
 #include <string.h>
-#include "_stdio.h"
+#include "_format.h"
 
 /** write formatted output to a string **/
 int vsprintf_s(char *s, rsize_t n, const char *format, va_list arg)

@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "_stdio.h"
+#include "_format.h"
 #include "_safety.h"
 
 #pragma GCC diagnostic ignored "-Wint-conversion"
@@ -129,6 +129,7 @@ int __scanf(struct io_options *opt, const char * format, va_list arg)
 		struct io_conversion conv = {
 			.func = opt->fnname,
 			.dir = IO_IN,
+			.fmt = format,
 		};
 
 		if (isspace(*format)) {

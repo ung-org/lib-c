@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <string.h>
-#include "_stdio.h"
+#include "_format.h"
 
 /** write formatted output to a string **/
 int sprintf_s(char * restrict s, rsize_t n, const char * restrict format, ...)

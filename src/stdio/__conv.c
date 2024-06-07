@@ -1,7 +1,7 @@
 #include <inttypes.h>
 #include <ctype.h>
 #include <string.h>
-#include "_stdio.h"
+#include "_format.h"
 
 static char *length_names[] = {
 	[L_hh] = "hh",
@@ -39,7 +39,7 @@ size_t __conv(const char *format, struct io_conversion *conv, va_list arg)
 
 		if (conv->dir == IO_IN) {
 			if ((conv->flags & ~(F_STAR)) != 0) {
-				UNDEFINED("Flag '%c' is not valid for formatted input", format[ret]);
+				UNDEFINED_FMT(conv, "Flag '%c' is not valid for formatted input", format[ret]);
 			}
 		} else {
 			if (conv->flags & F_STAR) {
@@ -101,7 +101,7 @@ size_t __conv(const char *format, struct io_conversion *conv, va_list arg)
 	case 'd':
 	case 'i':
 		if (conv->length == L_L) {
-			UNDEFINED("In call to %s(): Length '%s' is not supported with conversion specifier '%c'", conv->func, length_names[conv->length], conv->spec);
+			UNDEFINED_FMT(conv, "Length '%s' is not supported with conversion specifier '%c'", length_names[conv->length], conv->spec);
 		}
 		break;
 
@@ -110,7 +110,7 @@ size_t __conv(const char *format, struct io_conversion *conv, va_list arg)
 	case 'x':
 	case 'X':
 		if (conv->length == L_L) {
-			UNDEFINED("In call to %s(): Length '%s' is not supported with conversion specifier '%c'", conv->func, length_names[conv->length], conv->spec);
+			UNDEFINED_FMT(conv, "Length '%s' is not supported with conversion specifier '%c'", length_names[conv->length], conv->spec);
 		}
 		break;
 
@@ -123,20 +123,20 @@ size_t __conv(const char *format, struct io_conversion *conv, va_list arg)
 	case 'a':
 	case 'A':
 		if (conv->length != L_L && conv->length) {
-			UNDEFINED("In call to %s(): Length '%s' is not supported with conversion specifier '%c'", conv->func, length_names[conv->length], conv->spec);
+			UNDEFINED_FMT(conv, "Length '%s' is not supported with conversion specifier '%c'", length_names[conv->length], conv->spec);
 		}
 		break;
 
 	case 'c':
 		if (conv->flags & F_PRECISION) {
-			UNDEFINED("In call to %s(): Precision is not supported with conversion specifier '%c'", conv->func, conv->spec);
+			UNDEFINED_FMT(conv, "Precision is not supported with conversion specifier '%c'", conv->spec);
 		}
 		/* FALLTHRU */
 
 	case 's':
 	case '[':
 		if (conv->length != L_l && conv->length) {
-			UNDEFINED("In call to %s(): Length '%s' is not supported with conversion specifier '%c'", conv->func, length_names[conv->length], conv->spec);
+			UNDEFINED_FMT(conv, "Length '%s' is not supported with conversion specifier '%c'", length_names[conv->length], conv->spec);
 		}
 		break;
 
@@ -144,21 +144,21 @@ size_t __conv(const char *format, struct io_conversion *conv, va_list arg)
 	case 'n':
 	case '%':
 		if (conv->flags & F_WIDTH) {
-			UNDEFINED("In call to %s(): Field width is not supported with conversion specififier '%c'", conv->func, conv->spec);
+			UNDEFINED_FMT(conv, "Field width is not supported with conversion specififier '%c'", conv->spec);
 		}
 		if (conv->flags & F_PRECISION) {
-			UNDEFINED("In call to %s(): Precision is not supported with conversion specififier '%c'", conv->func, conv->spec);
+			UNDEFINED_FMT(conv, "Precision is not supported with conversion specififier '%c'", conv->spec);
 		}
 		if (conv->flags) {
-			UNDEFINED("In call to %s(): Flags are not supported with conversion specifier '%c'", conv->func, conv->spec);
+			UNDEFINED_FMT(conv, "Flags are not supported with conversion specifier '%c'", conv->spec);
 		}
 		if (conv->length) {
-			UNDEFINED("In call to %s(): Length '%s' is not supported with conversion specifier '%c'", conv->func, length_names[conv->length], conv->spec);
+			UNDEFINED_FMT(conv, "Length '%s' is not supported with conversion specifier '%c'", length_names[conv->length], conv->spec);
 		}
 		break;
 
 	default:
-		UNDEFINED("In call to %s(): Unknown conversion specifier '%c'", conv->func, conv->spec);
+		UNDEFINED_FMT(conv, "Unknown conversion specifier '%c'", conv->spec);
 	}
 
 	return ret;

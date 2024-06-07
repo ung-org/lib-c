@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <string.h>
-#include "_stdio.h"
+#include "_format.h"
 
 GCC_SSE_HACK
 int snprintf(char * restrict s, size_t n, const char * restrict format, ...)

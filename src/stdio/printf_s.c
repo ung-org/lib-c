@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdarg.h>
-#include "_stdio.h"
+#include "_format.h"
 
 /** write formatted output **/
 int printf_s(const char *format, ...)

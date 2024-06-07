@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <string.h>
-#include "_stdio.h"
+#include "_format.h"
 
 /** write formatted output to a file stream **/
 int vfprintf_s(FILE * restrict stream, const char * restrict format, va_list arg)

@@ -1,6 +1,6 @@
 #include <stdarg.h>
 #include <string.h>
-#include "_stdio.h"
+#include "_format.h"
 
 int vsscanf_s(const char * restrict s, const char * restrict format, va_list arg)
 {
