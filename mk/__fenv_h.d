@@ -1,4 +1,4 @@
-libc_C.-1: libc.a(__fenv_h.o)
+libc_C.0: libc.a(__fenv_h.o)
 libc.a(__fenv_h.o): $(OBJDIR)/__fenv_h.o
 	@$(AR) $(ARFLAGS) $@ $(OBJDIR)/$%
 
