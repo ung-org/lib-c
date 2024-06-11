@@ -372,6 +372,7 @@ include mk/raise.d
 include mk/__signal_handler.d
 include mk/__sigsegv.d
 include mk/__signal_h.d
+include mk/__segv.d
 include mk/frexp.d
 include mk/erfc.d
 include mk/rint.d

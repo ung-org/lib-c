@@ -1,7 +1,6 @@
 #include <errno.h>
 #include <limits.h>
 #include <stdlib.h>
-#include <signal.h>
 #include <stdint.h>
 #include <stdio.h>
 #include <string.h>
@@ -13,66 +12,22 @@
 #include <sys/mman.h>
 #include <unistd.h>
 #else
-#include "_forced/sigaction.h"
 #include "_forced/mmap.h"
 #include "_forced/munmap.h"
 #include "_forced/mprotect.h"
 
 #define sysconf(__n) 4096
-#define psiginfo(x, y)	fprintf(stderr, "%s (%p)\n", (char*)(y), (void*)(x))
-#define sigemptyset(x) memset(x, 0, sizeof(*x))
 #endif
 
 #include "_jkmalloc.h"
 
-#define PTR_BITS	(CHAR_BIT * sizeof(uintptr_t))
-
-#define JKMALLOC_EXIT_VALUE	(127 + SIGSEGV)
-#define JK_FREE_LIST_SIZE	(8)
-
-/* magic numbers derived from CRC-32 of jk_foo_block */
-#define JK_FREE_MAGIC		(0x551a51dc)
-#define JK_UNDER_MAGIC		(0xcb2873ac)
-#define JK_OVER_MAGIC		(0x18a12c17)
-#define JK_RONLY_MAGIC		(0x902faf31)
-
-#define jk_pages(bytes)		(((bytes + __jk_pagesize - 1) / __jk_pagesize) + 2)
-#define jk_pageof(addr)		((void*)((uintptr_t)addr - ((uintptr_t)addr % __jk_pagesize)))
-#define jk_bucketof(addr)	((void*)((uintptr_t)jk_pageof(addr) - __jk_pagesize))
-
-struct jk_bucket {
-	uint32_t magic;
-	uintptr_t start;
-	size_t size;
-	size_t align;
-	size_t pages;
-	size_t tlen;
-	char trace[];
-};
-
-struct jk_source {
-	const char *file;
-	const char *func;
-	uintmax_t line;
-	struct jk_bucket *bucket;
-};
-
 static struct jk_bucket *__jk_free_list[JK_FREE_LIST_SIZE];
 static size_t __jk_free_buckets = 0;
-static size_t __jk_pagesize = 0;
-
-static void __jk_undef(void)
-{
-	static int printed = 0;
-	if (printed == 0) {
-		printed = 1;
-		fprintf(stderr, "Undefined Behavior: ");
-	}
-}
+//static size_t __jk_pagesize = 0;
 
 static void __jk_error(const char *s, void *addr, struct jk_source *src)
 {
-	__jk_undef();
+	fprintf(stderr, "Undefined Behavior: ");
 
 	if (s && *s) {
 		fputs(s, stderr);
@@ -117,91 +72,11 @@ static void *__jk_page_alloc(size_t npages)
 	return pages;
 }
 
-static void __jk_sigaction(int sig, siginfo_t *si, void *addr)
-{
-	__signal_h.current = 0;
-
-	(void)sig; (void)addr;
-
-	__jk_undef();
-
-	if (__dangerous.func) {
-		fprintf(stderr, "In call to %s, accessing parameter %s (%p)\n", __dangerous.func, __dangerous.param, __dangerous.addr);
-	}
-
-	if (!si) {
-		__jk_error("No signal information provided", NULL, NULL);
-	}
-
-	if (si->si_addr == NULL) {
-		psiginfo(si, "NULL pointer dereference");
-		__jk_error(NULL, NULL, NULL);
-	}
-
-	struct jk_bucket *bucket = jk_pageof(si->si_addr);
-	if (mprotect(bucket, __jk_pagesize, PROT_READ) != 0) {
-		psiginfo(si, NULL);
-		__jk_error(NULL, NULL, NULL);
-	}
-
-	MAGIC_CHECK:
-	switch (bucket->magic) {
-	case JK_UNDER_MAGIC:
-		if (bucket->size == 0) {
-			psiginfo(si, "Attempt to use 0-byte allocation");
-		} else {
-			psiginfo(si, "Heap underflow detected");
-		}
-		break;
-
-	case JK_OVER_MAGIC:
-		if (bucket->size == 0) {
-			psiginfo(si, "Attempt to use 0-byte allocation");
-		} else {
-			psiginfo(si, "Heap overflow detected");
-			fprintf(stderr, "Allocation of size %zu at %p, overflow at %p (offset %zu)\n", bucket->size, (void*)bucket->start, si->si_addr, (size_t)((char*)si->si_addr - (char*)bucket->start));
-			fprintf(stderr, "Buffer begins with %4s\n", (char*)bucket->start);
-		}
-		break;
-
-	case JK_FREE_MAGIC:
-		psiginfo(si, "Use after free() detected");
-		break;
-
-	case JK_RONLY_MAGIC:
-		psiginfo(si, "Attempt to modify read-only memory detected");
-		break;
-
-	default:
-		/* try to find the actual error */
-		bucket = (void*)((char*)bucket - __jk_pagesize);
-		if (mprotect(bucket, __jk_pagesize, PROT_READ) != 0) {
-			psiginfo(si, NULL);
-			__jk_error(NULL, NULL, NULL);
-		}
-		goto MAGIC_CHECK;
-	}
-
-	struct jk_source src = { .bucket = bucket };
-	__jk_error(NULL, NULL, &src);
-}
-
 GCC_SSE_HACK
 void* __jkmalloc(void *ptr, size_t alignment, size_t size1, size_t size2, const char *user)
 {
-	static int sa_set = 0;
-	if (!sa_set) {
-		struct sigaction sa = {
-			.sa_flags = SA_SIGINFO,
-			.sa_sigaction = __jk_sigaction,
-		};
-		sigemptyset(&sa.sa_mask);
-		sigaction(SIGSEGV, &sa, NULL);
-		sa_set = 1;
-	}
-
 	if (__jk_pagesize == 0) {
-		__jk_pagesize = sysconf(_SC_PAGESIZE);
+		//__jk_pagesize = sysconf(_SC_PAGESIZE);
 	}
 
 	struct jk_source src = {

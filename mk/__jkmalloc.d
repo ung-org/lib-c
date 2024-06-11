@@ -4,7 +4,6 @@ libc.a(__jkmalloc.o): $(OBJDIR)/__jkmalloc.o
 
 $(OBJDIR)/__jkmalloc.o: src/stdlib/__jkmalloc.c
 $(OBJDIR)/__jkmalloc.o: src/_safety.h
-$(OBJDIR)/__jkmalloc.o: src/_forced/sigaction.h
 $(OBJDIR)/__jkmalloc.o: src/_forced/mmap.h
 $(OBJDIR)/__jkmalloc.o: src/_forced/munmap.h
 $(OBJDIR)/__jkmalloc.o: src/_forced/mprotect.h

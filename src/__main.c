@@ -3,6 +3,7 @@
 #include <locale.h>
 #include "stdio/_stdio.h"
 #include "stdlib/_stdlib.h"
+#include "signal/_signal.h"
 
 #undef stdin
 #undef stdout
@@ -39,6 +40,8 @@ void __init_libc(void)
 	extern char **environ;
 	__stdlib_h.environ = environ;
 	#endif
+
+	__segv();
 }
 
 void __main(int (*main)(int, char*[]), int argc, char **argv)

@@ -13,6 +13,7 @@ extern struct __signal_h {
 } __signal_h;
 
 void __signal_handler(int);
+void __segv(void);
 
 /*
 STDC(-1)

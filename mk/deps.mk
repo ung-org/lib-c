@@ -1498,6 +1498,10 @@ all: mk/__signal_h.d
 mk/__signal_h.d: src/signal/__signal_h.c
 	sh mk/deps.sh src/signal/__signal_h.c
 
+all: mk/__segv.d
+mk/__segv.d: src/signal/__segv.c
+	sh mk/deps.sh src/signal/__segv.c
+
 all: mk/frexp.d
 mk/frexp.d: src/math/frexp.c
 	sh mk/deps.sh src/math/frexp.c
