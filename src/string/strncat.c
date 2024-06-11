@@ -11,9 +11,15 @@ char * strncat(char * restrict s1, const char * restrict s2, size_t n)
 	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(s1);
 	ASSERT_NONNULL(s2);
-	ASSERT_NOOVERLAP(s1, n, s2, strlen(s1) + strlen(s2));
+	DANGEROUS_READ(s1, n);
+	size_t s1len = strlen(s1);
+	DANGER_OVER();
+	DANGEROUS_READ(s2, n);
+	size_t s2len = strlen(s2);
+	ASSERT_NOOVERLAP(s1, n, s2, s1len + s2len);
+	DANGEROUS_WRITE(s1, n);
 
-	append = s1 + strlen(s1);
+	append = s1 + s1len;
 
 	for (i = 0; i < n; i++) {
 		append[i] = s2[i];
@@ -25,6 +31,8 @@ char * strncat(char * restrict s1, const char * restrict s2, size_t n)
 	if (append[i - 1] != '\0') {
 		append[i] = '\0';
 	}
+
+	DANGER_OVER();
 
 	return s1;
 }

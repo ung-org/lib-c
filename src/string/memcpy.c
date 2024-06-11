@@ -13,10 +13,14 @@ void * memcpy(void * restrict s1, const void * restrict s2, size_t n)
 	ASSERT_NONNULL(s1);
 	ASSERT_NONNULL(s2);
 	ASSERT_NOOVERLAP(s1, n, s2, n);
+	DANGEROUS_READ(s2, n);
+	DANGEROUS_WRITE(s1, n);
 
 	for (i = 0; i < n; i++) {
 		dst[i] = src[i];
 	}
+
+	DANGER_OVER();
 
 	/*
 	RETURN_ALWAYS(ARGUMENT(s1));

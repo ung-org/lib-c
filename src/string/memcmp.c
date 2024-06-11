@@ -14,6 +14,8 @@ int memcmp(const void *s1, const void *s2, size_t n)
 	ASSERT_NONNULL(s2);
 	/* no modifications, so overlap is OK */
 
+	/* TODO: TWO dangerous reads */
+
 	for (i = 0; i < n; i++) {
 		if (p[i] != q[i]) {
 			return p[i] - q[i];

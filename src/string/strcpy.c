@@ -6,20 +6,22 @@
 char * strcpy(char * restrict s1, const char * restrict s2)
 {
 	char *p = s1;
+	size_t len = 0;
 
 	SIGNAL_SAFE(0);
+
 	ASSERT_NONNULL(s1);
 	ASSERT_NONNULL(s2);
-
-	DANGER(s2);
-
-	ASSERT_NOOVERLAP(s1, strlen(s2), s2, strlen(s2));
+	DANGEROUS_READ(s2, 0);
+	len = strlen(s2);
+	ASSERT_NOOVERLAP(s1, len, s2, len);
+	DANGEROUS_WRITE(s1, len);
 
 	while ((*s1++ = *s2++) != '\0') {
 		continue;
 	}
 
-	DANGER(0);
+	DANGER_OVER();
 
 	/*
 	RETURN_ALWAYS(ARGUMENT(s1));

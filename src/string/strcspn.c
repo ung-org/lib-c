@@ -10,6 +10,8 @@ size_t strcspn(const char *s1, const char *s2)
 	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(s1);
 	ASSERT_NONNULL(s2);
+
+	/* TODO: two dangerous reads */
 	/* no modification, overlap is OK */
 
 	for (i = 0; s1[i] != '\0'; i++) {

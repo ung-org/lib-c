@@ -6,6 +6,7 @@ errno_t memset_s(void *s, rsize_t smax, int c, rsize_t n)
 {
 	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(s);
+	DANGEROUS_WRITE(s, smax);
 
 	unsigned char *_s = (unsigned char *)s;
 	rsize_t i = 0;
@@ -13,6 +14,8 @@ errno_t memset_s(void *s, rsize_t smax, int c, rsize_t n)
 	while (i < n && i < smax) {
 		_s[i] = (unsigned char)c;
 	}
+
+	DANGER_OVER();
 
 	return 0;
 }

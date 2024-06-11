@@ -8,6 +8,8 @@ errno_t memcpy_s(void * restrict s1, rsize_t s1max, const void * restrict s2, rs
 	ASSERT_NONNULL(s1);
 	ASSERT_NONNULL(s2);
 	ASSERT_NOOVERLAP(s1, s1max, s2, n);
+	DANGEROUS_READ(s2, n);
+	DANGEROUS_WRITE(s1, s1max);
 
 	char *dst = (char*)s1, *src = (char*)s2;
 	rsize_t i = 0;
@@ -15,6 +17,9 @@ errno_t memcpy_s(void * restrict s1, rsize_t s1max, const void * restrict s2, rs
 		dst[i] = src[i];
 		i++;
 	}
+
+	DANGER_OVER();
+
 	return 0;
 }
 

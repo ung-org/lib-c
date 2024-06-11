@@ -8,9 +8,15 @@ errno_t strcpy_s(char * restrict s1, rsize_t s1max, const char * restrict s2)
 	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(s1);
 	ASSERT_NONNULL(s2);
-	ASSERT_NOOVERLAP(s1, s1max, s2, strlen(s2));
+	DANGEROUS_READ(s2, -1);
+	size_t len = strlen(s2);
+	ASSERT_NOOVERLAP(s1, s1max, s2, len);
+	DANGEROUS_WRITE(s1, s1max);
 
 	strncpy(s1, s2, strlen(s2));
+
+	DANGER_OVER();
+
 	return 0;
 }
 

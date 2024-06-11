@@ -8,6 +8,8 @@ void * memmove(void *s1, const void *s2, size_t n)
 	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(s1);
 	ASSERT_NONNULL(s2);
+	DANGEROUS_READ(s2, n);
+	DANGEROUS_WRITE(s1, n);
 
 	if (s1 < s2) {
 		for (size_t i = 0; i < n; i++) {
@@ -21,6 +23,8 @@ void * memmove(void *s1, const void *s2, size_t n)
 		/* last byte */
 		((char*)s1)[n] = ((char*)s2)[n];
 	}
+
+	DANGER_OVER();
 
 	/*
 	RETURN_ALWAYS(ARGUMENT(s1));

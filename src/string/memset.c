@@ -10,10 +10,13 @@ void * memset(void *s, int c, size_t n)
 
 	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(s);
+	DANGEROUS_WRITE(s, n);
 
 	for (i = 0; i < n; i++) {
 		p[i] = (unsigned char)c;
 	}
+
+	DANGER_OVER();
 
 	/*
 	RETURN_ALWAYS(ARGUMENT(s));

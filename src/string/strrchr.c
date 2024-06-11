@@ -10,11 +10,14 @@ char * strrchr(const char *s, int c)
 	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(s);
 
+	DANGEROUS_READ(s, -1);
 	for (i = strlen(s) + 1; i >= 0; i--) {
 		if (s[i] == (char)c) {
+			DANGER_OVER();
 			return (char*)s + i;
 		}
 	}
+	DANGER_OVER();
 
 	/*
 	RETURN_SUCCESS(a pointer to the found character);

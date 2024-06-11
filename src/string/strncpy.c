@@ -11,6 +11,8 @@ char * strncpy(char * restrict s1, const char * restrict s2, size_t n)
 	ASSERT_NONNULL(s1);
 	ASSERT_NONNULL(s2);
 	ASSERT_NOOVERLAP(s1, n, s2, n);
+	DANGEROUS_READ(s2, n);
+	DANGEROUS_WRITE(s1, n);
 
 	for (i = 0; i < n; i++) {
 		s1[i] = s2[i];
@@ -19,6 +21,8 @@ char * strncpy(char * restrict s1, const char * restrict s2, size_t n)
 			break;
 		}
 	}
+
+	DANGER_OVER();
 
 	return s1;
 }

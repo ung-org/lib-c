@@ -8,6 +8,8 @@ errno_t strncat_s(char * restrict s1, rsize_t s1max, const char * restrict s2, r
 	ASSERT_NONNULL(s1);
 	ASSERT_NONNULL(s2);
 	ASSERT_NOOVERLAP(s1, s1max, s2, n);
+	DANGEROUS_READ(s2, n);
+	DANGEROUS_WRITE(s1, s1max);
 
 	char *append = s1 + strlen(s1);
 	for (size_t i = 0; i < n; i++) {
@@ -21,6 +23,8 @@ errno_t strncat_s(char * restrict s1, rsize_t s1max, const char * restrict s2, r
 	if (append[-1] != '\0') {
 		*append = '\0';
 	}
+
+	DANGER_OVER();
 
 	return 0;
 }

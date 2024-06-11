@@ -14,7 +14,7 @@
 #include "_forced/mprotect.h"
 
 #define sysconf(__n) 4096
-#define psiginfo(x, y)	fprintf(stderr, "%s (%p)\n", (char*)(y), (void*)(x))
+#define psiginfo(x, y)	fprintf(stderr, "Segmentation Fault %s (%p)\n", (y) ? (char*)(y) : "", (void*)(x))
 #define sigemptyset(x) memset(x, 0, sizeof(*x))
 #endif
 
@@ -56,21 +56,25 @@ static void __jk_error(const char *s, void *addr, struct jk_source *src)
 static void __jk_sigaction(int sig, siginfo_t *si, void *addr)
 {
 	__signal_h.current = 0;
+	__dangerous.reporting = 1;
 
 	(void)sig; (void)addr;
 
 	__jk_undef();
-
-	if (__dangerous[0].func) {
-		fprintf(stderr, "In call to %s, attempting to read parameter %s (%p)\n", __dangerous[0].func, __dangerous[0].param, __dangerous[0].addr);
-	}
-
-	if (__dangerous[1].func) {
-		fprintf(stderr, "In call to %s, attempting to write parameter %s (%p)\n", __dangerous[1].func, __dangerous[1].param, __dangerous[1].addr);
-	}
-
 	if (!si) {
 		__jk_error("No signal information provided", NULL, NULL);
+	}
+
+	uintptr_t p = (uintptr_t)si->si_addr;
+
+	if (__dangerous.write.func && __dangerous.write.addr <= p && p <= __dangerous.write.addr + __dangerous.write.len) {
+		struct __danger *d = &__dangerous.write;
+		fprintf(stderr, "In call to %s(), failed to write parameter %s (%p) (%p)\n", d->func, d->param, (void*)d->addr, si->si_addr);
+		__jk_error(NULL, NULL, NULL);
+	} else if (__dangerous.read.func && __dangerous.read.addr <= p && p <= __dangerous.read.addr + __dangerous.read.len) {
+		struct __danger *d = &__dangerous.read;
+		fprintf(stderr, "In call to %s(), failed to read parameter %s (%p) (%p)\n", d->func, d->param, (void*)d->addr, si->si_addr);
+		__jk_error(NULL, NULL, NULL);
 	}
 
 	if (si->si_addr == NULL) {

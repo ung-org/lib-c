@@ -32,15 +32,41 @@ extern struct __checked_call {
 _Thread_local
 #endif
 extern struct __dangerous {
-	const char *func;
-	const char *param;
-	const void *addr;
+	int reporting;
+	struct __danger {
+		const char *func;
+		const char *param;
+		uintptr_t addr;
+		size_t len;
+	} read, write;
 } __dangerous;
 
 #ifndef NDEBUG
 #define UNDEFINED(...) __undefined(__VA_ARGS__)
 
-#define DANGER(__s) __dangerous = ((__s != NULL && __dangerous.func == NULL) ? (struct __dangerous){ .func = __func__, .param = #__s, .addr = __s } : (struct __dangerous){ 0 })
+#define DANGEROUS_READ(__s, __l) do { \
+	if (__dangerous.reporting == 0 && __dangerous.read.func == 0) { \
+		__dangerous.read.func = __func__; \
+		__dangerous.read.param = #__s; \
+		__dangerous.read.addr = (uintptr_t)__s; \
+		__dangerous.read.len = __l; \
+	} \
+} while (0)
+
+#define DANGEROUS_WRITE(__s, __l) do { \
+	if (__dangerous.reporting == 0 && __dangerous.write.func == 0) { \
+		__dangerous.write.func = __func__; \
+		__dangerous.write.param = #__s; \
+		__dangerous.write.addr = (uintptr_t)__s; \
+		__dangerous.write.len = __l; \
+	} \
+} while (0)
+
+#define DANGER_OVER() do { \
+	if (__dangerous.reporting == 0) { \
+		__dangerous.read.func = __dangerous.write.func = 0; \
+	} \
+} while (0)
 
 #define ADD_PREV(__val, __arr, __count) do { \
 	void *tmp = realloc((__arr), ((__count) + 1) * sizeof((__arr)[0])); \
@@ -102,6 +128,16 @@ extern struct __dangerous {
 	char *__s2 = (char*)(__p2); \
 	if (((__s1 < __s2) && ((__s1 + (__l1)) > __s2)) || ((__s1 > __s2) && ((__s2 + (__l2)) > __s1))) { \
 		UNDEFINED("In call to %s(), parameters %s (%p-%p) and %s (%p-%p) overlap", __func__, #__p1, __p1, __s1 + __l1 - 1, #__p2, __p2, __s2 + __l2 - 1); \
+	} \
+} while (0)
+
+#define ASSERT_MBS(__s, __fn, __desc) do { \
+	size_t __n = MB_CUR_MAX; \
+	for (size_t __i = 0; __s[__i] != '\0'; __i++) { \
+		wchar_t __wc = L'\0'; \
+		if (0 && mbtowc(&__wc, __s + __i, __n) == -1) { \
+			UNDEFINED("In call to %s(), %s is not a valid multi-byte string", __fn, __desc); \
+		} \
 	} \
 } while (0)
 
@@ -192,7 +228,7 @@ extern struct __dangerous {
 #define UNDEFINED(...)
 #define ASSERT_NOOVERLAP(__x, __y, __s)
 #define ASSERT_NONNULL(x)
-#define DANGER(__s)
+#define ASSERT_MBS(__s, __f, __d)
 #define VCHECK_0(f)
 #define VCHECK_1(f, a)
 #define VCHECK_2(f, a, b)

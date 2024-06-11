@@ -16,6 +16,8 @@ char * strtok(char * restrict s1, const char * restrict s2)
 	}
 	/* nothing is copied, overlap is OK */
 
+	/* TODO: two dangerous reads */
+
 	/*
 	RETURN(CONSTANT(NULL), there are no further tokens, only token separators);
 	RETURN(NONNULL, a pointer to the first character of the next token);

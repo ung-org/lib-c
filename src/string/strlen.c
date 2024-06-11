@@ -9,9 +9,11 @@ size_t strlen(const char *s)
 	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(s);
 
+	DANGEROUS_READ(s, -1);
 	for (i = 0; s[i] != '\0'; i++) {
 		continue;
 	}
+	DANGER_OVER();
 
 	return i;
 }

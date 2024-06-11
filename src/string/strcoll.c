@@ -13,10 +13,16 @@ int strcoll(const char *s1, const char *s2)
 	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(s1);
 	ASSERT_NONNULL(s2);
+
 	/* no modification, overlap is OK */
 
+	DANGEROUS_READ(s1, -1);
 	x1 = malloc(strxfrm(x1, s1, 0));
+	DANGER_OVER();
+
+	DANGEROUS_READ(s2, -1);
 	x2 = malloc(strxfrm(x2, s2, 0));
+	DANGER_OVER();
 
 	if (x1 && x2) {
 		strxfrm(x1, s1, 0);

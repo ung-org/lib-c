@@ -14,8 +14,13 @@ char * strstr(const char *s1, const char *s2)
 	ASSERT_NONNULL(s2);
 	/* no modifcation, overlap is OK */
 
+	DANGEROUS_READ(s1, -1);
 	l1 = strlen(s1);
+	DANGER_OVER();
+
+	DANGEROUS_READ(s2, -1);
 	l2 = strlen(s2);
+	DANGER_OVER();
 	
 	for (p = (char*)s1; p < s1 + l1 - l2; p = strchr(p + 1, *s2)) {
 		if (p == NULL || strncmp(p, s2, l2) == 0) {

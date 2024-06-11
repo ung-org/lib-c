@@ -8,6 +8,7 @@ int strcmp(const char *s1, const char *s2)
 	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(s1);
 	ASSERT_NONNULL(s2);
+	/* TODO: dangerous read * 2 */
 	/* no modifcation, overlap is OK */
 
 	while (*s1 && *s2) {

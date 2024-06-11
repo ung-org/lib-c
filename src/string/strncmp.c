@@ -10,12 +10,17 @@ int strncmp(const char *s1, const char *s2, size_t n)
 	ASSERT_NONNULL(s2);
 	/* no modifcation, overlap is OK */
 
+	DANGEROUS_READ(s1, -1);
 	if (strlen(s1) < n) {
 		n = strlen(s1);
 	}
+	DANGER_OVER();
+
+	DANGEROUS_READ(s2, -1);
 	if (strlen(s2) < n) {
 		n = strlen(s2);
 	}
+	DANGER_OVER();
 
 	/*
 	RETURN(NEGATIVE, ARGUMENT(s1) is less than ARGUMENT(s2));

@@ -8,7 +8,13 @@ char * strcat(char * restrict s1, const char * restrict s2)
 	SIGNAL_SAFE(0);
 	ASSERT_NONNULL(s1);
 	ASSERT_NONNULL(s2);
-	ASSERT_NOOVERLAP(s1, strlen(s1) + strlen(s2), s2, strlen(s2));
+	DANGEROUS_READ(s2, -1);
+	size_t s2len = strlen(s2);
+	DANGER_OVER();
+	DANGEROUS_READ(s1, -1);
+	size_t s1len = strlen(s1);
+	ASSERT_NOOVERLAP(s1, s1len + s2len, s2, s2len);
+	DANGEROUS_WRITE(s1, s1len + s2len);
 
 	/*
 	RETURN_ALWAYS(ARGUMENT(s1));
@@ -18,6 +24,9 @@ char * strcat(char * restrict s1, const char * restrict s2)
 	}
 
 	strcpy(s1 + i, s2);
+
+	DANGER_OVER();
+
 	return s1;
 }
 
