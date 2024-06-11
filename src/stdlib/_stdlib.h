@@ -9,6 +9,9 @@
 #ifndef NDEBUG
 #define ASSERT_CTYPE(__s_ptr) do { \
 	static unsigned int __ctype_epoch = 0; \
+	if (__ctype_epoch == 0) { \
+		__ctype_epoch = __get_ctype_epoch(); \
+	} \
 	if ((__s_ptr) == 0) { \
 		__ctype_epoch = __get_ctype_epoch(); \
 	} else if (__ctype_epoch != __get_ctype_epoch()) { \
